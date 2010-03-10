@@ -1,0 +1,505 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{alma}
+\pagestyle{plain}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{placeins}
+\usepackage{pdflscape}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{textcomp}
+\usepackage{minitoc}
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{listings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead{} % clear all footer fields 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\scriptsize{Matthieu BACHELIER, Florian BARBIN \\ Florent GILET et Jean-Marie GILET}} 
+\fancyfoot[LO,CE]{\scriptsize\textsl{Université de Nantes\\Master Alma}} 
+\fancyfoot[CO,RE]{\scriptsize{\today}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\addtolength{\headheight}{0.5pt}
+\setlength{\footskip}{0in}
+\renewcommand{\footruleskip}{0pt}
+\fancypagestyle{plain}{%
+ \fancyhead{}
+ \renewcommand{\headrulewidth}{0pt}
+}
+
+
+\let\oldchapter\chapter
+\renewcommand{\chapter}{\let\thesection\stdsection\oldchapter}
+
+% Commande perso pour les Annexes dans une section au lieu d'un chapitre.
+\let\stdsection\thesection
+\newcommand{\subappendix}{%
+  \renewcommand{\thesection}{\thechapter.\Alph{section}}%
+  \setcounter{section}{0}
+}
+
+
+\lstset{ % general style for listings
+%   numbers=left
+%   , tabsize=2
+%   , frame=single
+	breaklines=true
+%   , basicstyle=\ttfamily
+%   , numberstyle=\tiny\ttfamily
+%   , framexleftmargin=13mm
+%   , xleftmargin=12mm
+% %, frameround={tttt}
+%   , captionpos=b
+}
+
+\parskip 0.05in
+
+\title{Getting Things Done}
+\author{BACHELIER Matthieu \and BARBIN Florian \and GILET Florent \and GILET Jean-Marie}
+\graphicspath{{livrable_1/images/}{livrable_2/images/}{livrable_3/images/}{livrable_4/images/}{livrable_5/images/}}
+
+\date{\today}
+\makeindex
+
+\begin{document}
+\begin{titlepage}
+
+
+\vspace*{2cm}
+
+
+
+\begin{flushleft}
+	\hspace{1cm} \includegraphics*[width=4cm]{logo.jpg}\\
+	\hspace{1cm} \textsl{12, rue de la Houssinière}\\
+	\hspace{1cm} \textit{44322 Nantes}
+	\hrulefill
+\end{flushleft}
+
+
+
+
+\vspace{2cm}
+
+\begin{flushleft}
+	\hspace{1cm}
+	{\fontfamily{ppl}\fontseries{b}\fontsize{1.0cm}{1.65cm}\selectfont Getting Things Done}
+\end{flushleft}
+
+\begin{flushright}
+	
+	\vspace{1cm}
+
+	\vspace{1cm}
+	BACHELIER Matthieu \\ BARBIN Florian \\ GILET Florent \\ GILET Jean-Marie \\
+	\textit{2009-2010}
+	
+\end{flushright}
+
+
+\vspace{2cm}
+
+\begin{flushleft}
+
+
+
+	\hspace{1cm} \textsc{Master 2 - ALMA}\\
+	
+\end{flushleft}
+
+\hspace*{0,5cm}\hrulefill
+\end{titlepage}
+	
+	\dominitoc
+	\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 1                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include {livrable_1/corps_livrable_1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 2                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include {livrable_2/corps_livrable_2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 3                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include {livrable_3/corps_livrable_3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 4                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include {livrable_4/corps_livrable_4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 5                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include {livrable_5/corps_livrable_5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                BILAN                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Bilan}
+
+\section{Épilogue}
+      Le projet Getting Things Done est maintenant achevé. Ce projet nous a permis de mettre 
+en avant nos connaissances et nos compétences en informatique pour
+un système complexe, comme les objets distribués, la conception logicielle, la manipulation de
+de donénes au sein d'une base et la création d'interfaces homme-machine. 
+
+	Le travail en équipe est un point clé dans l'ensemble de l'analyse et de la conception de 
+l'application et ce projet nous a permis d'acquérir une forte expérience dans le travail collaboratif 
+grâce aux travaux de la promotion M2 ALMA. Bien sûr, il n'a pas été sans mal de mettre en accord nos idées 
+et de nombreuses modifications ont été apportées au fil du temps. Même si la conception aurait pu être plus détaillé
+voire plus riche en contenu, nous sommes assez satisfait d'avoir pu mettre en application nos connaissances afin de 
+créer un projet pas à pas depuis l'analyse jusqu'à l'implémentation. 
+
+\section{Difficultés rencontrées}
+
+	\subsection{CORBA}
+La partie concernant CORBA est celle qui nous a posé le plus de soucis. D'une part, nous avons reçu les \textit{idl} tardivement.
+Nous avons relancé le groupe s'occupant du serveur mais ils avaient, eux aussi, beaucoup de travail à faire. D'autre part, 
+la conversion de structures de données très complexes en structures plus simple spécifiques à CORBA n'a pas été réalisable.
+
+	\subsection{Gestion du temps}
+Même si le projet a été donné en début d'année, la quantité de travail en dehors du module Génie Logiciel a été difficile à maîtriser sur certaines périodes.
+Ainsi, la quantité de temps passé sur les premiers livrables a été bien trop élevé par rapport à la phase de conception. En effet, les premiers livrables sont, 
+sur certains points, assez éloigné de l'implémentation. 
+
+De plus, la création de l'interface homme-machine via Swing, sans éditeur graphique, est une charge supplémentaire.
+
+	\subsection{Acceleo}
+Dans la démarche de conception d'application, nous avons compris l'intérêt d'utiliser des scripts Acceleo afin de rendre pertinent notre analyse du problème.
+Cependant, il est dommage de ne pas pouvoir accéder aux différentes ressources proposées par Obeo car l'écriture de tels script est chronophage.
+
+	\subsection{IHM}
+Nous n'avons pas souhaité utiliser d'outil de génération automatique de code graphique pour plusieurs raisons :
+
+\begin{itemize}
+	\item Le code est bien plus maintenable (code généré difficilement compréhensible).
+	\item Il est aussi plus réutilisable (cf. classe générique \textbf{JDialogGTD} \dots).
+	\item Même si elle n'est pas détaillée, l'IHM comporte une architecture bien spécifique (MVC).
+	\item L'interaction entre le Controleur et le c\oe{}ur de l'application est parfaitement maîtrisée.
+\end{itemize}
+
+Par contre, tous ces points nous ont apporté une meilleure approche de notre système, mais cela nous a pris beaucoup de temps.
+
+\section{Ce qu'il reste à faire}
+Quelques commandes n'ont pas implémentées, même si elles existent dans le c\oe{}ur de l'application.
+Évidemment nous retrouvons la partie communication distante. Il y a aussi quelques commandes de bases qui manquent, comme la suppression 
+d'un contact ou la création d'un contexte personnalisé.
+Il n'est pas possible non plus de pouvoir organiser les tâches en séquences. Le reste est d'ordre optionnel, comme l'internationalisation ou le didacticiel.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             ANNEXE                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\chapter{Configuration d'Hibernate et des différentes tables}
+\lstset{language=xml,frame=single, breaklines=true, basicstyle=\ttfamily,basicstyle=\scriptsize, keywordstyle=\color{red}, 
+commentstyle=\color{bluegreen}, stringstyle=\color{blue}, identifierstyle=\ttfamily}
+	\section{Hibernate}
+\begin{lstlisting}
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ <session-factory>
+  <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+  <property name="show_sql">true</property>
+  <property name="generate_statistics">true</property>
+  <property name="hbm2ddl.auto">update</property>
+  <property name="jdbc.batch_size">1</property>
+
+  <property name="connection.driver_class">org.h2.Driver</property>
+  <property name="connection.url">jdbc:h2:~/test</property>
+  <property name="connection.username">sa</property>
+  <property name="connection.password"></property>
+
+  <mapping resource="fr/alma/modele/persistance/xml/Contact.hbm.xml" />
+  <mapping resource="fr/alma/modele/persistance/xml/Periodicite.hbm.xml" />
+  <mapping resource="fr/alma/modele/persistance/xml/Utilisateur.hbm.xml" />
+  <mapping resource="fr/alma/modele/persistance/xml/Projet.hbm.xml" />
+  <mapping resource="fr/alma/modele/persistance/xml/Tache.hbm.xml" />
+ </session-factory>
+</hibernate-configuration>
+\end{lstlisting}
+
+	\section{Table Utilisateur}
+\begin{lstlisting}
+<hibernate-mapping auto-import="true"
+ package="fr.alma.modele.persistance.xml">
+ <class name="fr.alma.modele.noyau.Utilisateur">
+  <id name="id" type="long">
+   <generator class="increment" />
+  </id>
+  <property name="login" type="java.lang.String" />
+  <property name="password" type="char[]" />
+  <property name="email" type="java.lang.String" />
+  <list name="contacts" cascade="all,delete-orphan">
+   <key column="parent_id"/>
+   <index column="idContacts"/>
+   <one-to-many class="fr.alma.modele.noyau.Contact"/>
+  </list>
+ </class>
+</hibernate-mapping>
+\end{lstlisting}
+
+	\section{Table Projet}
+\begin{lstlisting}
+<hibernate-mapping auto-import="true"
+ package="fr.alma.modele.persistance.xml">
+ <class name="fr.alma.modele.noyau.Projet">
+  <id name="id" type="long">
+   <generator class="increment" />
+  </id>
+  <property name="nom" type="java.lang.String" />
+  <property name="notes" type="java.lang.String" />
+  <property name="contexte" type="java.lang.String" />
+  <property name="idPere" type="long" />
+  <property name="idUtilisateur" type="long" />
+ </class>
+</hibernate-mapping>
+\end{lstlisting}
+
+	\section{Table Tache}
+\begin{lstlisting}
+<hibernate-mapping auto-import="true"
+ package="fr.alma.modele.persistance.xml">
+ <class name="fr.alma.modele.noyau.Tache">
+  <id name="id" type="long">
+   <generator class="increment" />
+  </id>
+  <property name="nom" type="java.lang.String" />
+  <property name="notes" type="java.lang.String" />
+  <property name="contexte" type="java.lang.String" />
+  <property name="idProjet" type="long" />
+  <list name="tags" cascade="all,delete-orphan">
+   <key column="id" />
+   <list-index column="taches_tag"/>
+    <element type="java.lang.String" />
+  </list>
+  <list name="urls" cascade="all,delete-orphan">
+   <key column="id" />
+   <list-index column="taches_url" />
+   <element type="java.lang.String" />
+  </list>
+  <property name="priorite" type="java.lang.Integer" />
+  <property name="tauxEffort" type="java.lang.Integer" />
+  <property name="dateDebut" type="java.util.Date" />
+  <property name="dateEcheance" type="java.util.Date" />
+  <property name="periodicite" type="fr.alma.modele.noyau.Periodicite" />
+ </class>
+</hibernate-mapping>
+\end{lstlisting}
+
+	\section{Table Contact}
+\begin{lstlisting}
+<hibernate-mapping auto-import="true"
+ package="fr.alma.modele.persistance.xml">
+ <class name="fr.alma.modele.noyau.Contact">
+  <id name="id" type="long">
+   <generator class="increment" />
+  </id>
+  <property name="nom" type="java.lang.String" />
+  <property name="adresse" type="java.lang.String" />
+  <property name="email" type="java.lang.String" />
+  <property name="tel" type="java.lang.String" />
+  <property name="idUtilisateur" type="long" />
+ </class>
+</hibernate-mapping>
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Interfaces du pattern DAO}
+\lstset{language=Java}
+	\section{Interface EntiteDao}
+\begin{lstlisting}
+public interface EntiteDao<EntiteGenerique extends EntiteGTD> {
+  public Long creer(EntiteGenerique entite);
+  public EntiteGenerique recuperer(Long entiteId);
+  public void maj(EntiteGenerique entite);
+  public void supprimer(Long entiteId);
+  public void supprimerTout();
+  public List<EntiteGenerique> recupererTout();
+}
+\end{lstlisting}
+
+	\section{Interface UtilisateurDao}
+\begin{lstlisting}
+public interface UtilisateurDao extends EntiteDao<Utilisateur>{
+  public Utilisateur trouverUtilisateur(String login);
+  public Utilisateur trouverUtilisateur(String login, char[] pwd);
+}
+\end{lstlisting}
+
+	\section{Interface ProjetDao}
+\begin{lstlisting}
+public interface ProjetDao extends EntiteDao<Projet> {
+  public Projet recupererProjetRacine(Long idUtilisateur);
+  public Projet recupererPanier();
+  public Projet recupererCorbeille();
+  public List<Projet> recupererSousProjets(Long idPere);
+}
+\end{lstlisting}
+
+	\section{Interface TacheDao}
+\begin{lstlisting}
+public interface TacheDao  extends EntiteDao<Tache> {
+  public List<Tache> recupererTaches(Long idProjet);
+  public void supprimerTaches(Long idProjet);
+}
+\end{lstlisting}
+
+	\section{Interface ContactDao}
+\begin{lstlisting}
+public interface ContactDao extends EntiteDao<Contact>  {
+
+}
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Configuration de Maven}
+Pour pouvoir utiliser notre application, nous avons décidé d'écrire un fichier standard \textbf{pom.xml}. Ce fichier contient toutes les informations nécessaires
+pour la compilation de notre logiciel. Ainsi, sous \textbf{Eclipse}, en utilisant le plugin Maven, nous pouvons compiler et exporter simplement notre projet.
+
+Cependant, tout n'est pas aussi simple et immédiat. Bien que nous avons réutilisé les connaissances acquises en première année de Master 1, dans le module
+Techniques de développement, de gros soucis de dépendances nous ont ralenti dans l'écriture de ce fichier. Mais au final tout semble bien fonctionner et tous les fichiers \textbf{*.jar} ont bien été décompacté puis recompacté dans l'archive finale.
+
+\lstset{language=Xml}
+\begin{lstlisting}
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gtd</groupId>
+	<artifactId>gtd</artifactId>
+	<name>Getting Things Done</name>
+	<version>1.0</version>
+	<description>Getting Things Done
+		Copyright Université de Nantes
+		2009-2010</description>
+	<url>http://code.google.com/p/alma-gtd/</url>
+	<developers>
+		<developer>
+			<name>BACHELIER Matthieu</name>
+			<email>bachelier.matthieu@gmail.com</email>
+		</developer>
+		<developer>
+			<name>BARBIN Florian</name>
+			<email>florian.barbin@gmail.com</email>
+		</developer>
+		<developer>
+			<name>GILET Florent</name>
+			<email>florent.gilet@etu.univ-nantes.fr</email>
+		</developer>
+		<developer>
+			<name>GILET Jean-Marie</name>
+			<email>jm.gilet@gmail.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>Université de Nantes - Master ALMA</name>
+		<url>http://alma.univ-nantes.fr</url>
+	</organization>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fr.alma.main.GTD</mainClass>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>/alma-gtd/src/main/java/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>fr.alma.main.GTD
+							</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.7.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>com.toedter</groupId>
+			<artifactId>jcalendar</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-assembly-plugin</artifactId>
+			<version>2.2-beta-5</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.2.127</version>
+		</dependency>
+	</dependencies>
+</project>
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

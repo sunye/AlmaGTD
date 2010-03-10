@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="compoClasses">
+    <packagedElement xmi:type="uml:Package" xmi:id="_q2PIIM7WEd67aslo9C0uuA" name="ConnectionManager">
+      <packagedElement xmi:type="uml:Class" xmi:id="_tUn2IM7WEd67aslo9C0uuA" name="Session"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_5298YM7WEd67aslo9C0uuA" name="ConnectionManager"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_8DoBMM7WEd67aslo9C0uuA" name="A_&lt;connectionManager>_&lt;session>" memberEnd="_8DoBMc7WEd67aslo9C0uuA _8DoBNM7WEd67aslo9C0uuA">
+        <ownedEnd xmi:id="_8DoBMc7WEd67aslo9C0uuA" name="connectionManager" type="_5298YM7WEd67aslo9C0uuA" association="_8DoBMM7WEd67aslo9C0uuA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8DoBMs7WEd67aslo9C0uuA" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8DoBM87WEd67aslo9C0uuA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_8DoBNM7WEd67aslo9C0uuA" name="session" type="_tUn2IM7WEd67aslo9C0uuA" association="_8DoBMM7WEd67aslo9C0uuA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8DoBNc7WEd67aslo9C0uuA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8DoBNs7WEd67aslo9C0uuA"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_UBXMsM7XEd67aslo9C0uuA" name="ProcessManager">
+      <packagedElement xmi:type="uml:Class" xmi:id="_XtzpQM7XEd67aslo9C0uuA" name="ProcessManager"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_s02UcM7XEd67aslo9C0uuA" name="Tache"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zmZgwM7XEd67aslo9C0uuA" name="DataManager">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0yC0gM7XEd67aslo9C0uuA" name="DataManager"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_FQPFQM7YEd67aslo9C0uuA" name="ServerInterface"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_JOMIms7YEd67aslo9C0uuA" name="A_&lt;serverInterface>_&lt;dataManager>" memberEnd="_JOMIm87YEd67aslo9C0uuA _JOMIns7YEd67aslo9C0uuA">
+        <ownedEnd xmi:id="_JOMIm87YEd67aslo9C0uuA" name="serverInterface" type="_FQPFQM7YEd67aslo9C0uuA" association="_JOMIms7YEd67aslo9C0uuA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JOMInM7YEd67aslo9C0uuA" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JOMInc7YEd67aslo9C0uuA" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_JOMIns7YEd67aslo9C0uuA" name="dataManager" type="_0yC0gM7XEd67aslo9C0uuA" association="_JOMIms7YEd67aslo9C0uuA">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JOMIn87YEd67aslo9C0uuA" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JOMIoM7YEd67aslo9C0uuA" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

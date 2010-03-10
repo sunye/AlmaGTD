@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="SequenceDeconnexionModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="SequenceDeconnexionPackage">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="idCollaboration" name="SequenceDeconnexionCollaboration">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="idInteraction" name="SequenceDeconnexionInteraction">
+        <ownedAttribute xmi:id="_Kxj84clTEd64dKhpRqoZzw" name="Property1" type="_Kxj84MlTEd64dKhpRqoZzw"/>
+        <ownedAttribute xmi:id="_OTiO0MlTEd64dKhpRqoZzw" name="Property2" type="_OThnwMlTEd64dKhpRqoZzw"/>
+        <ownedAttribute xmi:id="_QRfwUclTEd64dKhpRqoZzw" name="Property3" type="_QRfwUMlTEd64dKhpRqoZzw"/>
+        <ownedAttribute xmi:id="_0c814clTEd64dKhpRqoZzw" name="Property4" type="_0c814MlTEd64dKhpRqoZzw"/>
+        <ownedConnector xmi:id="_Kxkj8MlTEd64dKhpRqoZzw" name="Connector1">
+          <end xmi:id="_Kxkj8clTEd64dKhpRqoZzw" role="_Kxj84clTEd64dKhpRqoZzw"/>
+          <end xmi:id="_OTiO0clTEd64dKhpRqoZzw" role="_OTiO0MlTEd64dKhpRqoZzw"/>
+          <end xmi:id="_QRfwUslTEd64dKhpRqoZzw" role="_QRfwUclTEd64dKhpRqoZzw"/>
+          <end xmi:id="_0c9c8MlTEd64dKhpRqoZzw" role="_0c814clTEd64dKhpRqoZzw"/>
+        </ownedConnector>
+        <lifeline xmi:id="_t1kusMlSEd64dKhpRqoZzw" name="" represents="_Kxj84clTEd64dKhpRqoZzw" coveredBy="_0nJJIMlSEd64dKhpRqoZzw _JKw-MMlTEd64dKhpRqoZzw _wlbAIMlSEd64dKhpRqoZzw"/>
+        <lifeline xmi:id="_uiNLMMlSEd64dKhpRqoZzw" name="" represents="_OTiO0MlTEd64dKhpRqoZzw" coveredBy="_0nJwMMlSEd64dKhpRqoZzw _1T6vkMlSEd64dKhpRqoZzw _IUD_sMlTEd64dKhpRqoZzw _JKwXIMlTEd64dKhpRqoZzw _xLQ4IMlSEd64dKhpRqoZzw"/>
+        <lifeline xmi:id="_uzrVsMlSEd64dKhpRqoZzw" name="" represents="_QRfwUclTEd64dKhpRqoZzw" coveredBy="_1T7WoMlSEd64dKhpRqoZzw _2sS3w8lSEd64dKhpRqoZzw _2sTe0MlSEd64dKhpRqoZzw _x4RvIMlSEd64dKhpRqoZzw _2sQbgMlSEd64dKhpRqoZzw"/>
+        <lifeline xmi:id="_tPuaMMlTEd64dKhpRqoZzw" name="" represents="_0c814clTEd64dKhpRqoZzw" coveredBy="_vZYOUMlTEd64dKhpRqoZzw _xr1ZIMlTEd64dKhpRqoZzw _uWmisMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vZYOUMlTEd64dKhpRqoZzw" name="MessageOccurrenceSpecification11" covered="_tPuaMMlTEd64dKhpRqoZzw" event="_vZYOUclTEd64dKhpRqoZzw" message="_vZY1YMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xr1ZIMlTEd64dKhpRqoZzw" name="MessageOccurrenceSpecification12" covered="_tPuaMMlTEd64dKhpRqoZzw" event="_xr2AMMlTEd64dKhpRqoZzw" message="_xr2nQMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6rrec8lSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification7" event="_6rsFgMlSEd64dKhpRqoZzw" message="_6rsFgclSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0nJJIMlSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification1" covered="_t1kusMlSEd64dKhpRqoZzw" event="_0nJwMclSEd64dKhpRqoZzw" message="_0nKXQMlSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0nJwMMlSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification2" covered="_uiNLMMlSEd64dKhpRqoZzw" event="_0nJwMclSEd64dKhpRqoZzw" message="_0nKXQMlSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1T6vkMlSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification3" covered="_uiNLMMlSEd64dKhpRqoZzw" event="_1T7WoclSEd64dKhpRqoZzw" message="_1T79sMlSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1T7WoMlSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification4" covered="_uzrVsMlSEd64dKhpRqoZzw" event="_1T7WoclSEd64dKhpRqoZzw" message="_1T79sMlSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2sS3w8lSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification5" covered="_uzrVsMlSEd64dKhpRqoZzw" event="_2sUF4MlSEd64dKhpRqoZzw" message="_2sUF4clSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2sTe0MlSEd64dKhpRqoZzw" name="MessageOccurrenceSpecification6" covered="_uzrVsMlSEd64dKhpRqoZzw" event="_2sUF4MlSEd64dKhpRqoZzw" message="_2sUF4clSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IUD_sMlTEd64dKhpRqoZzw" name="MessageOccurrenceSpecification8" covered="_uiNLMMlSEd64dKhpRqoZzw" event="_IUEmwMlTEd64dKhpRqoZzw" message="_IUFN0MlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JKwXIMlTEd64dKhpRqoZzw" name="MessageOccurrenceSpecification9" covered="_uiNLMMlSEd64dKhpRqoZzw" event="_JKw-MclTEd64dKhpRqoZzw" message="_JKxlQMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JKw-MMlTEd64dKhpRqoZzw" name="MessageOccurrenceSpecification10" covered="_t1kusMlSEd64dKhpRqoZzw" event="_JKw-MclTEd64dKhpRqoZzw" message="_JKxlQMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_x4RvIMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification3" covered="_uzrVsMlSEd64dKhpRqoZzw" start="_1T7WoMlSEd64dKhpRqoZzw" finish="_2sS3w8lSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_xLQ4IMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification2" covered="_uiNLMMlSEd64dKhpRqoZzw" start="_0nJwMMlSEd64dKhpRqoZzw" finish="_JKwXIMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_wlbAIMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification1" covered="_t1kusMlSEd64dKhpRqoZzw" start="_0nJJIMlSEd64dKhpRqoZzw" finish="_JKw-MMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_uWmisMlTEd64dKhpRqoZzw" name="BehaviorExecutionSpecification7" covered="_tPuaMMlTEd64dKhpRqoZzw" start="_vZYOUMlTEd64dKhpRqoZzw" finish="_xr1ZIMlTEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_yegBoMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification4" start="_6rrec8lSEd64dKhpRqoZzw" finish="_6rrec8lSEd64dKhpRqoZzw"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_zfpVkMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification5"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_2sQbgMlSEd64dKhpRqoZzw" name="BehaviorExecutionSpecification6" covered="_uzrVsMlSEd64dKhpRqoZzw" start="_2sTe0MlSEd64dKhpRqoZzw"/>
+        <message xmi:id="_0nKXQMlSEd64dKhpRqoZzw" name="disconnect()" receiveEvent="_0nJwMMlSEd64dKhpRqoZzw" sendEvent="_0nJJIMlSEd64dKhpRqoZzw"/>
+        <message xmi:id="_1T79sMlSEd64dKhpRqoZzw" name="disconnect()" receiveEvent="_1T7WoMlSEd64dKhpRqoZzw" sendEvent="_1T6vkMlSEd64dKhpRqoZzw"/>
+        <message xmi:id="_2sUF4clSEd64dKhpRqoZzw" name="supprimerIdUtilisateur()" receiveEvent="_2sTe0MlSEd64dKhpRqoZzw" sendEvent="_2sS3w8lSEd64dKhpRqoZzw"/>
+        <message xmi:id="_6rsFgclSEd64dKhpRqoZzw" name="Message4" receiveEvent="_6rrec8lSEd64dKhpRqoZzw"/>
+        <message xmi:id="_IUFN0MlTEd64dKhpRqoZzw" name="&quot;déconnecté&quot;" messageSort="reply" receiveEvent="_IUD_sMlTEd64dKhpRqoZzw"/>
+        <message xmi:id="_JKxlQMlTEd64dKhpRqoZzw" name="&quot;déconnecté&quot;" messageSort="reply" receiveEvent="_JKw-MMlTEd64dKhpRqoZzw" sendEvent="_JKwXIMlTEd64dKhpRqoZzw"/>
+        <message xmi:id="_vZY1YMlTEd64dKhpRqoZzw" name="disconnect()" receiveEvent="_vZYOUMlTEd64dKhpRqoZzw"/>
+        <message xmi:id="_xr2nQMlTEd64dKhpRqoZzw" name="true" messageSort="reply" sendEvent="_xr1ZIMlTEd64dKhpRqoZzw"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_0nJwMclSEd64dKhpRqoZzw" name="CallEvent1"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_1T7WoclSEd64dKhpRqoZzw" name="CallEvent2"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_2sUF4MlSEd64dKhpRqoZzw" name="CallEvent3"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_456l4MlSEd64dKhpRqoZzw" name="CallEvent4"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_6rsFgMlSEd64dKhpRqoZzw" name="CallEvent5"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_IUEmwMlTEd64dKhpRqoZzw" name="CallEvent6"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_JKw-MclTEd64dKhpRqoZzw" name="CallEvent7"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_vZYOUclTEd64dKhpRqoZzw" name="CallEvent8"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_xr2AMMlTEd64dKhpRqoZzw" name="CallEvent9"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Kxj84MlTEd64dKhpRqoZzw" name="IHM"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OThnwMlTEd64dKhpRqoZzw" name="ControleurIHM"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QRfwUMlTEd64dKhpRqoZzw" name="ConnexionLocal"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0c814MlTEd64dKhpRqoZzw" name="ConnexionServeur"/>
+</uml:Model>

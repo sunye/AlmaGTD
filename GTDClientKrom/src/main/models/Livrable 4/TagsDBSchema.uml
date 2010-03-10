@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="TagsDBSchema">
+    <packagedElement xmi:type="uml:Class" xmi:id="_YXsT4ONIEd6QSPsSKUCq8Q" name="TableMap">
+      <ownedAttribute xmi:id="_YXsT4eNIEd6QSPsSKUCq8Q" name="name : Tags"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YXsT4uNIEd6QSPsSKUCq8Q" name="DataBaseMap">
+      <ownedAttribute xmi:id="_YXsT4-NIEd6QSPsSKUCq8Q" name="name : Modèles" visibility="public" isUnique="false"/>
+      <ownedAttribute xmi:id="_YXsT5ONIEd6QSPsSKUCq8Q" name="vendor : GTD_Team"/>
+      <ownedAttribute xmi:id="_YXsT5eNIEd6QSPsSKUCq8Q" name="version : 1.0"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bPF-0ONIEd6QSPsSKUCq8Q" name="ClassMap">
+      <ownedAttribute xmi:id="_bPF-0eNIEd6QSPsSKUCq8Q" name="name : Tags"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dm5jsONIEd6QSPsSKUCq8Q" name="AttributeMap">
+      <ownedAttribute xmi:id="_dm5jseNIEd6QSPsSKUCq8Q" name="name : nom"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5jsuNIEd6QSPsSKUCq8Q" name="AttributeMap"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5js-NIEd6QSPsSKUCq8Q" name="AttributeMap">
+        <ownedAttribute xmi:id="_dm5jtONIEd6QSPsSKUCq8Q" name="name : prioriteDynamique"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5jteNIEd6QSPsSKUCq8Q" name="AttributeMap"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dm5jtuNIEd6QSPsSKUCq8Q" name="AttributeMap">
+      <ownedAttribute xmi:id="_dm5jt-NIEd6QSPsSKUCq8Q" name="name : créateur"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5juONIEd6QSPsSKUCq8Q" name="AttributeMap"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5jueNIEd6QSPsSKUCq8Q" name="AttributeMap">
+        <ownedAttribute xmi:id="_dm5juuNIEd6QSPsSKUCq8Q" name="name : prioriteDynamique"/>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_dm5ju-NIEd6QSPsSKUCq8Q" name="AttributeMap"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dm6KwONIEd6QSPsSKUCq8Q" name="ColumnMap">
+      <ownedAttribute xmi:id="_dm6KweNIEd6QSPsSKUCq8Q" name="name : nom"/>
+      <ownedAttribute xmi:id="_dm6KwuNIEd6QSPsSKUCq8Q" name="isKey : true"/>
+      <ownedAttribute xmi:id="_dm6Kw-NIEd6QSPsSKUCq8Q" name="type : String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dm6KxONIEd6QSPsSKUCq8Q" name="ColumnMap">
+      <ownedAttribute xmi:id="_dm6KxeNIEd6QSPsSKUCq8Q" name="name : créateur"/>
+      <ownedAttribute xmi:id="_dm6KxuNIEd6QSPsSKUCq8Q" name="isKey : false"/>
+      <ownedAttribute xmi:id="_dm6Kx-NIEd6QSPsSKUCq8Q" name="type : Participant"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_syDp2eNJEd6QSPsSKUCq8Q" name="A_&lt;attributeMap>_&lt;columnMap>" memberEnd="_syDp2uNJEd6QSPsSKUCq8Q _syDp3eNJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_syDp2uNJEd6QSPsSKUCq8Q" name="attributeMap" type="_dm5jsONIEd6QSPsSKUCq8Q" association="_syDp2eNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_syDp2-NJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_syDp3ONJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_syDp3eNJEd6QSPsSKUCq8Q" name="columnMap" type="_dm6KwONIEd6QSPsSKUCq8Q" association="_syDp2eNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_syDp3uNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_syDp3-NJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tLig0ONJEd6QSPsSKUCq8Q" name="A_&lt;attributeMap>_&lt;columnMap>_2" memberEnd="_tLig0eNJEd6QSPsSKUCq8Q _tLig1ONJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_tLig0eNJEd6QSPsSKUCq8Q" name="attributeMap" type="_dm5jtuNIEd6QSPsSKUCq8Q" association="_tLig0ONJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tLig0uNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tLig0-NJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_tLig1ONJEd6QSPsSKUCq8Q" name="columnMap" type="_dm6KxONIEd6QSPsSKUCq8Q" association="_tLig0ONJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tLig1eNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tLig1uNJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_02cXBeNJEd6QSPsSKUCq8Q" name="A_&lt;tableMap>_&lt;columnMap>" memberEnd="_02cXBuNJEd6QSPsSKUCq8Q _02cXCeNJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_02cXBuNJEd6QSPsSKUCq8Q" name="tableMap" type="_YXsT4ONIEd6QSPsSKUCq8Q" association="_02cXBeNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02cXB-NJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_02cXCONJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_02cXCeNJEd6QSPsSKUCq8Q" name="columnMap" type="_dm6KwONIEd6QSPsSKUCq8Q" aggregation="shared" association="_02cXBeNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_02cXCuNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_02cXC-NJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1Ymo4ONJEd6QSPsSKUCq8Q" name="A_&lt;tableMap>_&lt;columnMap>_2" memberEnd="_1Ymo4eNJEd6QSPsSKUCq8Q _1Ymo5ONJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_1Ymo4eNJEd6QSPsSKUCq8Q" name="tableMap" type="_YXsT4ONIEd6QSPsSKUCq8Q" association="_1Ymo4ONJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1Ymo4uNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1Ymo4-NJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_1Ymo5ONJEd6QSPsSKUCq8Q" name="columnMap" type="_dm6KxONIEd6QSPsSKUCq8Q" aggregation="shared" association="_1Ymo4ONJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1Ymo5eNJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1Ymo5uNJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_15beCuNJEd6QSPsSKUCq8Q" name="A_&lt;classMap>_&lt;attributeMap>" memberEnd="_15beC-NJEd6QSPsSKUCq8Q _15beDuNJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_15beC-NJEd6QSPsSKUCq8Q" name="classMap" type="_bPF-0ONIEd6QSPsSKUCq8Q" association="_15beCuNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15beDONJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15beDeNJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_15beDuNJEd6QSPsSKUCq8Q" name="attributeMap" type="_dm5jsONIEd6QSPsSKUCq8Q" aggregation="shared" association="_15beCuNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_15beD-NJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_15beEONJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_2arw9uNJEd6QSPsSKUCq8Q" name="A_&lt;classMap>_&lt;attributeMap>_2" memberEnd="_2arw9-NJEd6QSPsSKUCq8Q _2arw-uNJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_2arw9-NJEd6QSPsSKUCq8Q" name="classMap" type="_bPF-0ONIEd6QSPsSKUCq8Q" association="_2arw9uNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2arw-ONJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2arw-eNJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_2arw-uNJEd6QSPsSKUCq8Q" name="attributeMap" type="_dm5jtuNIEd6QSPsSKUCq8Q" aggregation="shared" association="_2arw9uNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2arw--NJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2arw_ONJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_56-A2uNJEd6QSPsSKUCq8Q" name="A_&lt;dataBaseMap>_&lt;tableMap>" memberEnd="_56-A2-NJEd6QSPsSKUCq8Q _56-A3uNJEd6QSPsSKUCq8Q">
+      <ownedEnd xmi:id="_56-A2-NJEd6QSPsSKUCq8Q" name="dataBaseMap" type="_YXsT4uNIEd6QSPsSKUCq8Q" association="_56-A2uNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_56-A3ONJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_56-A3eNJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_56-A3uNJEd6QSPsSKUCq8Q" name="tableMap" type="_YXsT4ONIEd6QSPsSKUCq8Q" aggregation="shared" association="_56-A2uNJEd6QSPsSKUCq8Q">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_56-A3-NJEd6QSPsSKUCq8Q" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_56-A4ONJEd6QSPsSKUCq8Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UZ7H4ON2Ed6A880EecIjXw" name="ColumnMap">
+      <ownedAttribute xmi:id="_UZ7H4eN2Ed6A880EecIjXw" name="name : id"/>
+      <ownedAttribute xmi:id="_UZ7H4uN2Ed6A880EecIjXw" name="isKey : false"/>
+      <ownedAttribute xmi:id="_UZ7H4-N2Ed6A880EecIjXw" name="type : int"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UZ7H5ON2Ed6A880EecIjXw" name="AttributeMap">
+      <ownedAttribute xmi:id="_UZ7H5eN2Ed6A880EecIjXw" name="name : id"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ZQvF2uN2Ed6A880EecIjXw" name="A_&lt;attributeMap>_&lt;columnMap>_3" memberEnd="_ZQvF2-N2Ed6A880EecIjXw _ZQvF3uN2Ed6A880EecIjXw">
+      <ownedEnd xmi:id="_ZQvF2-N2Ed6A880EecIjXw" name="attributeMap" type="_UZ7H5ON2Ed6A880EecIjXw" association="_ZQvF2uN2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZQvF3ON2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZQvF3eN2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_ZQvF3uN2Ed6A880EecIjXw" name="columnMap" type="_UZ7H4ON2Ed6A880EecIjXw" association="_ZQvF2uN2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZQvF3-N2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZQvF4ON2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_aEO_V-N2Ed6A880EecIjXw" name="A_&lt;classMap>_&lt;attributeMap>_3" memberEnd="_aEO_WON2Ed6A880EecIjXw _aEO_W-N2Ed6A880EecIjXw">
+      <ownedEnd xmi:id="_aEO_WON2Ed6A880EecIjXw" name="classMap" type="_bPF-0ONIEd6QSPsSKUCq8Q" association="_aEO_V-N2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aEO_WeN2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aEO_WuN2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_aEO_W-N2Ed6A880EecIjXw" name="attributeMap" type="_UZ7H5ON2Ed6A880EecIjXw" aggregation="shared" association="_aEO_V-N2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aEO_XON2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aEO_XeN2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_as0CSuN2Ed6A880EecIjXw" name="A_&lt;tableMap>_&lt;columnMap>_3" memberEnd="_as0CS-N2Ed6A880EecIjXw _as0CTuN2Ed6A880EecIjXw">
+      <ownedEnd xmi:id="_as0CS-N2Ed6A880EecIjXw" name="tableMap" type="_YXsT4ONIEd6QSPsSKUCq8Q" association="_as0CSuN2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_as0CTON2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_as0CTeN2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_as0CTuN2Ed6A880EecIjXw" name="columnMap" type="_UZ7H4ON2Ed6A880EecIjXw" aggregation="shared" association="_as0CSuN2Ed6A880EecIjXw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_as0CT-N2Ed6A880EecIjXw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_as0CUON2Ed6A880EecIjXw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

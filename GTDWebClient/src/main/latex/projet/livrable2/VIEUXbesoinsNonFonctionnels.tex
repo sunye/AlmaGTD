@@ -1,0 +1,144 @@
+\chapter{Besoins non-fonctionnels}
+
+\section{Utilisabilité}
+
+L'application GTD disposera d'une interface Web. Celle-ci devra étre concue de façon à être ergonomique. Elle devra respecter une cohérence dans ses couleurs et devra etre simple à utiliser. En ce qui concerne sa compatibilité elle devra respecter les standards web tels que le XHTML et CSS3 et ainsi passer les validations W3C.
+
+\medskip
+
+En ce qui concerne la documentation, une aide en ligne devra être mise en oeuvre. Une section du site devra être dédiée à celle-ci. La présence de rollover ou de messages d'aide sur le site pourra également etre utilisée. L'aide en ligne devra suffire, ainsi aucune aide papier ne sera fournie.
+
+
+\medskip
+
+Une courte formation sera faite lors de la livraison et du déploiement de l'application. Elle sera donnée à l'utilisateur principal du logiciel. Elle lui permettra de le prendre en main rapidement.
+
+
+\section{Performance}
+
+	\subsection{Rapidité}
+
+	La communication entre le serveur Web et l'interface graphique doit être suffisament rapide pour ne pas avoir d'une sensation de lenteur. L'interface graphique ne doit pas se figer lors d'une action effectuée par l'utilisateur.
+	En cas de temps d'attente, une notification sous forme d'une barre de progression doit être affichée. La possibilité de mettre en tâche de fond peut être envisagée.
+
+	\subsection{Efficacité}
+
+	L'application doit permettre d'effectuer les actions dans un temps imparti qui reste acceptable par l'utilisateur. Elle doit se limiter à l'utilisation des ressources strictement nécessaires à l'accomplissement des fonctions.
+
+
+	\subsection{Disponibilité}
+
+	Le client Web ne peut être autonome si le serveur Web n'est pas disponible. Cependant lorsque la connexion est coupée entre le serveur web et le serveur GTD, l'application doit tout de même être fonctionnelle en mode déconnecté. 		
+
+
+	\subsection{Précision}
+	
+	Pour chacune des actions réalisées dans le système, l'opération est déterministe. Etant donné que le système effectue des actions basiques, une précision de 1 est tout à fait réalisable. En effet, dans tous les cas de figure, le résultat escompté sera toujours le résultat exact et non pas une approximation.
+
+
+	\subsection{Bande passante}
+
+	Une connexion ADSL 512k est le minimum requis pour permettre à l'application de fonctionner normalement.
+
+	\subsection{Temps de réponse}
+
+	Le temps de réponse entre le serveur Web et le client Web doit être inférieure à 40ms. Les temps de réponses entre le client Web et le serveur Web dépendront de la communication entre le serveur Web et GTD. Les critères en mode non connecté et connecté sont identiques.
+
+
+	
+
+
+	\subsection{Consommation des ressources}
+
+	Le client Web est un client léger utilisant un navigateur. Il est donc indispensable que la consommation des ressources ne soit pas élevée. Le serveur Web étant distant, la consommation des ressources n
+
+
+\section{Fiabilité}
+
+	\subsection{Fréquence et gravité des échecs}
+
+	Le logiciel développé doit permettre de prendre en charges un maximum d' erreurs survenues lors de l'exécution. Par exemple, le traitement d'une mauvaise saisie utilisateur doit être prévue et traitée en fonction.
+\medskip
+Dans la suite, nous distinguons les erreurs critiques auquel nous n'avons pas pensé et les erreurs prévisibles (Par exemple les erreurs de connexion à la BD)
+
+	\subsection{Récupérabilité}
+
+	En ce qui concerne le MTTR (Mean time to repair), lors d'une découverte d'une faute critique, le temps de réparation est fixé à 48h. Cependant, pour les fautes mineures l'assurance de la correction est assurée dans un délai de 1 mois.
+	
+	\subsection{Prédictibilité}
+
+	Certaines erreurs ne sont pas prédictibles dans le temps de part leur nature, mais vont néanmoins êtres prises en compte lors de l'execution du programme. Comme par exemple les erreurs de connection avec le serveur. 
+
+	\subsection{Précision}
+
+
+	\subsection{Temps moyen entre failles}
+Pour mesurer la fiabilité de notre système et définir des contraintes qualités pour le client nous utiliserons les mesures MTBF (mean time between failure) et MTTF (mean Time To Failure). 
+
+
+\section{Sécurité}
+
+Pour respecter la confidentialité des informations saisies par l'utilisateur, une authentification sera requise pour consulter et modifier ses tâches. Seul le propriétaire pourra accéder aux données de son compte. Celui-ci possèdera un identifiant (unique) et un mot de passe qui sera stocké sous forme cryptée dans la base de données afin d'éviter tout vol d'informations. 
+\medskip
+
+De plus, les différentes communcations entre le client et le serveur ainsi qu'entre les deux serveurs doivent être cryptées de manière à assurer aussi la confidentialité des données. 
+
+ 
+
+
+
+\section{Matériels}
+
+Dans un premier temps, l'application serveur sera installé sur une machine relativement puissante, de manière à pouvoir gérer les multiples connexions. Les spécifications de cette machine sont au minimum :
+
+\begin{itemize}
+\item Processeur actuel type Celeron
+\item Mémoire vive de 2go minimum pour gérer les multiples connexions
+\item Disque dur standard
+\end{itemize}
+
+L'utilisation de notre application sera effectué à l'aide d'un client web qui par nature sera léger. N'importe quelle configuration permettant l'affichage de pages web sera fonctionnelle :
+
+\begin{itemize}
+\item Processeur actuel type Celeron
+\item Mémoire vive de 1go minimum
+\item Disque dur standard
+\end{itemize}
+
+
+
+\section{Déploiement}
+
+Notre application se décompose en deux parties distinctes: \\
+La partie cliente est consultable depuis n'importe quelle navigateur web. Elle doit donc être déployée sur un serveur web. Le client est donc indépendant de l'application serveur qui traite les données.
+La partie serveur est de type service. Elle est doit donc être déployée sur un serveur de type jboss, tomcat ... 
+Il est cependant possible de déployer ces deux parties sur le même serveur pour peu qu'il dispose des technologies adéquates.
+
+
+\section{Adaptabilité}
+
+	\subsection{Flexibilité}
+
+L'architecture du système doit être assez flexible pour permettre plus tard de :
+
+\begin{itemize}
+\item  rajouter facilement des extensions (nouvelles fonctionnalités...)
+\item  évoluer vers de nouvelles technologies (passer à un nouveau type d'interface sans toucher à la partie serveur par exemple)
+\item  maintenir celui-ci (corrections, nouvelles versions...)
+\item  internationaliser l'interface\\
+\end{itemize}
+
+	\subsection{Compatibilité}
+
+    Afin de proposer le logiciel au plus grand nombre, l'IHM doit être compatible avec la plupart des navigateurs web existant. Celle-ci étant une page internet, le soucis du système d'exploitation (Windows, Linux, ...) ne pose pas problème, aucune installation n'est nécessaire.
+
+	\subsection{Configurabilité}
+
+L'administrateur pourra facilement paramétrer le serveur pour par exemple limiter le nombre de connexions simultanées, ajouter/modifier/supprimer des comptes utilisateurs, modifier la base de données...
+
+
+
+
+
+
+

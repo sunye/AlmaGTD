@@ -1,0 +1,582 @@
+
+/**
+*
+*
+*	
+*/
+
+
+#include "donneespartagees.h"
+
+
+
+module donneespartagees{
+
+
+	typedef sequence<string> SequenceString;
+
+	typedef sequence<ITag> SequenceTag;
+
+	typedef sequence<ITache> SequenceTache;
+
+	typedef sequence<IContexte> SequenceContexte;
+
+	typedef sequence<IParticipant> SequenceParticipant;
+
+	typedef sequence<IProjet> SequenceProjet;
+
+	typedef sequence<IContact> SequenceContact;
+
+	/**
+	 * Enumeration representant les etats d'avancement possibles d'un projet ou d'une tache.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	enum Avancement {
+	
+		/**
+		 * Indique que la tache ou le projet est a realiser.
+		 */
+		AFAIRE,
+	
+		/**
+		 * Indique que la tache ou le projet est en attente.
+		 */
+		ENATTENTE,
+	
+		/**
+		 * Indique que la tache ou le projet a ete delegue a un participant.
+		 */
+		DELEGUE,
+	
+		/**
+		 * Indique que la tache ou le projet est termine.
+		 */
+		TERMINE
+	};
+
+	/**
+	 * Enumeration representant les differentes frequences de repetition d'une tache possibles.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	enum Frequence {
+	
+		/**
+		 * Indique que la tache doit se repeter tous les jours. 
+		 */
+		JOURNALIER,
+	
+		/**
+		 * Indique que la tache doit se repeter toutes les semaines.
+		 */
+		HEBDOMADAIRE,
+	
+		/**
+		 * Indique que la tache doit se repeter tous les mois.
+		 */
+		MENSUEL,
+	
+		/**
+		 * Indique que la tache doit se repeter tous les ans.
+		 */
+		ANNUEL
+	};
+
+
+	/**
+ 	* Interface regroupant l'ensemble des comportements communs a tous les objets stockes sur le serveur.
+ 	* @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+ 	* @version 1.0.0
+ 	*/
+	interface IObjetServeur{
+
+		attribute string IdentifiantServeur;
+
+		attribute string DateDeDerniereModification;
+
+	};
+
+	/**
+	 * Interface representant un participant.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface IParticipant : IObjetServeur {
+
+		attribute string Pseudonyme;
+	};
+
+	/**
+ 	* Interface representant les idees.
+ 	* @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+ 	* @version 1.0.0
+ 	*/
+	interface IIdee : IObjetServeur {
+
+		attribute string Nom;
+
+		attribute string Description;
+
+		attribute boolean DansLaPoubelle;
+
+		attribute IParticipant Createur;
+
+		/**
+		 * Supprime l'id�e, en la mettant a la poubelle.
+	 	*/
+		void mettreALaPoubelle();
+	
+		/**
+		 * Restaurer la tache depuis la poubelle.
+		 */
+		void restaurer();
+	};
+
+	/**
+	 * Interface representant les tags.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface ITag : IObjetServeur {
+
+		attribute string Nom;
+
+		attribute IParticipant Createur;
+
+	};
+
+	/**
+	 * Interface representant les taches.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface ITache : IObjetServeur {
+
+		/**
+		 * Archive la tache.
+		 */
+		void archiver();
+
+		/**
+		 * Supprime la tache, en la mettant a la poubelle.
+		 */
+		void mettreALaPoubelle();
+
+		/**
+		 * Restaurer la tache depuis la poubelle.
+		 */
+		void restaurer();
+
+		attribute string Nom;
+
+		attribute unsigned long Priorite;
+
+		attribute unsigned long TauxEffort;
+
+		attribute Avancement avancement;
+		
+		attribute Frequence frequence;
+
+		attribute string DateDebut;
+
+		attribute string DateFin;
+
+		attribute boolean DansLaPoubelle;
+
+		attribute boolean DansArchive;
+
+		attribute IParticipant Createur;
+		
+		attribute IParticipant Participant;
+
+		attribute IContexte Contexte;
+
+		attribute SequenceTag ListeDesTags;
+
+		attribute SequenceString ListeDesURLs;
+
+		attribute donneespartagees::IProjet ProjetConteneur;
+
+		attribute SequenceTache ListeTachesAnterieures;
+
+		attribute SequenceContact ListeContacts;
+
+	};
+
+
+	/**
+	 * Interface representant les projets.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface IProjet : IObjetServeur {
+
+		attribute string Nom;
+
+		attribute boolean EstDansPoubelle;
+
+		attribute Avancement avancement;
+
+		attribute IContexte ContexteParDefaut;
+
+		attribute SequenceTache ListeDeTaches;
+
+		attribute SequenceParticipant ListeDeParticipants;
+
+		attribute SequenceProjet ListeDeSousProjets;
+
+		attribute IParticipant Createur;
+
+		attribute SequenceContact ListeContacts;
+
+		attribute boolean DansArchive;
+
+
+		/**
+		 * Ajoute une tache au projet.
+		 * @param t La tache a ajouter.
+		 */
+		 void ajoutTache(in ITache t);
+
+		/**
+		 * Supprime la tache du projet.
+		 * @param t La tache a supprimer.
+		 */
+		 void supprimeTache(in ITache t);
+
+		/**
+		 * Supprime toutes les taches du projet.
+		 */
+		 void supprimerToutesTaches();
+
+		/**
+		 * Archive le projet.
+		 */
+		 void archiver();
+
+		/**
+		 * Supprime le projet, en le mettant a la poubelle.
+		 */
+		 void mettreALaPoubelle();
+
+		/**
+		 * Restaurer le projet depuis la poubelle.
+		 */
+		 void restaurer();	
+
+	};
+
+
+	/**
+	 * Interface representant les contextes d'une tache ou le contexte par defaut d'un projet.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface IContexte : IObjetServeur {
+
+		attribute string Nom;
+
+		attribute IParticipant Createur;
+	};
+
+
+	interface IContact : IObjetServeur {
+
+		attribute string Nom;
+
+		attribute string Email;
+
+		attribute string Adresse;
+
+		attribute string Telephone;
+	};
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+	/**
+ 	* Les differents modes de mise a jour des donnees sur le serveur.
+	* @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+ 	* @version 1.0.0
+ 	*/
+	enum ModeDeMiseAJour {
+	
+		/**
+	 	* Force la mise a jour des donnees sur le serveur.
+	 	* Si des donnees portant le meme identifiant serveur mais ayant une date de
+	 	* derniere modification plus recente se trouvent sur le serveur, les donnees
+	 	* (plus recentes) situees sur le serveur seront ecrasees.
+	 	*/
+		FORCE,
+	
+		/**
+		* Realise la mise a jour sans forcer.
+		* Si des donnees portant le meme identifiant serveur mais ayant une date de
+		* derniere modification plus recente se trouvent sur le serveur, les donnees
+		* (plus recentes) situees sur le serveur ne seront pas ecrasees. Un message
+		* d'erreur (onFailure) sera renvoye par le CallBack indiquant que des donnees
+		* plus recentes ont ete synchronisees.
+		*/
+		WARNING
+	};
+	
+
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	/**
+	 * L'interface de CallBack permettant au client de recevoir sa reponse.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 * @param <T> Le type de reponse desire par le client en cas de succes.
+	 */
+	interface Callback{
+
+		exception UneErreur { string message ; short ligne; };
+
+		/**
+		 * Methode appelee apres la reussite du traitement sur le serveur. 
+		 * @param result Le resultat renvoye par le serveur.
+		 */
+		void onSucces(out Object result);
+		
+		/**
+		 * Methode appelee apres l'echec du traitement sur le serveur.
+		 * @param e L'exception renvoyee par le serveur.
+		 */
+		void onFailure(inout string message) raises (UneErreur);
+	};
+	
+	
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+
+	/**
+	 * Ensemble des methodes disponibles pour les clients utilisant CORBA.
+	 * @author Stephane Begaudeau, Benjamin Gosset, Alex Lagarde, Christophe Renaudineau.
+	 * @version 1.0.0
+	 */
+	interface serveurCORBA{
+		
+		// ################################ METHODE DE CREATION / ENVOI / SUPPRESSION ################################ 
+		
+		/**
+		 * @param idee
+		 * @param identification
+		 * @param callback
+		 */
+		 void creerIdee(in IIdee idee, in string identification, in Callback callback);
+		
+		/**
+		 * @param idee
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 */
+		 void envoyerIdee(in IIdee idee, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param idee
+		 * @param identification
+		 * @param callback
+		 */
+		 void supprimerIdee(in IIdee idee, in string identification, in Callback callback);
+		
+		/**
+		 * @param idee
+		 * @param tache
+		 * @param identification
+		 * @param callback
+		 */
+		 void creerTache(in IIdee idee, in ITache tache, in string identification, in Callback callback);
+		
+		/**
+		 * @param tache
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 */
+		 void envoyerTache(in ITache tache, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param tache
+		 * @param identification
+		 * @param callback
+		 */
+		 void supprimerTache(in ITache tache, in string identification, in Callback callback);
+		
+		/**
+		 * @param idee
+		 * @param projet
+		 * @param identification
+		 * @param callback
+		 */
+		 void creerProjet(in IIdee idee, in IProjet projet, in string identification, in Callback callback);
+		
+		/**
+		 * @param projet
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 */
+		 void envoyerProjet(in IProjet projet, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param projet
+		 * @param identification
+		 * @param callback
+		 */
+		 void supprimerProjet(in IProjet projet, in string identification, in Callback callback);
+		
+		/**
+		 * @param contexte
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void creerContexte(in IObjetServeur contexte, in string identification, in Callback callback);
+		
+		/**
+		 * @param contexte
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void envoyerContexte(in IObjetServeur contexte, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param contexte
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void supprimerContexte(in IObjetServeur contexte, in string identification, in Callback callback);
+		
+		/**
+		 * @param tag
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void creerTag(in ITag tag, in string identification, in Callback callback);
+		
+		/**
+		 * @param tag
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void envoyerTag(in ITag tag, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param tag
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void supprimerTag(in ITag tag, in string identification, in Callback callback);
+
+		/**
+		 * @param contact
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void creerContact(in IContact contact, in string identification, in Callback callback);
+		
+		/**
+		 * @param contact
+		 * @param mode
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void envoyerContact(in IContact contact, in ModeDeMiseAJour mode, in string identification, in Callback callback);
+		
+		/**
+		 * @param contact
+		 * @param identification
+		 * @param callback
+		 * @throws RemoteException
+		 */
+		 void supprimerContact(in IContact contact, in string identification, in Callback callback);
+		
+		// ################################ METHODE DE MODIFICATION ################################
+		
+		 void ajouterTacheAProjet(in ITache tache, in IProjet projet, in string identification, in Callback callback);
+		 void retirerTacheDuProjet(in ITache tache, in IProjet projet, in string identification, in Callback callback);
+
+		 void ajouterParticipantAuProjet(in IProjet projet, in IParticipant nom, in string identification, in Callback callback);
+		 void supprimerParticipantDuProjet(in IProjet projet, in IParticipant nom, in string identification, in Callback callback);
+
+		 void ajouterParticipantDuProjetATache(in IProjet projet, in IParticipant nom, in ITache tache, in string identification, in Callback callback);
+		 void retirerParticipantDeLaTache(in IParticipant nom, in ITache tache, in string identification, in Callback callback);
+		
+		// ################################ METHODE DE RECUPERATION ################################
+		
+		 void downloadInbox(in string date, in string identification, in Callback callback);
+		 void downloadInbox2(in string identification, in Callback callback);
+
+
+		 void downloadPoubelle(in string date, in string identification, in Callback callback);
+		 void downloadPoubelle2(in string identification, in Callback callback);
+
+
+		 void downloadArchive(in string date, in string identification, in Callback callback);
+		 void downloadArchive2(in string identification, in Callback callback);
+
+
+		 void downloadProchainesTaches(in string date, in string identification, in Callback callback);
+		 void downloadProchainesTaches2(in string identification, in Callback callback);
+
+
+		 void downloadProchainesTaches3(in IObjetServeur contexte, in string date, in string identification, in Callback callback);
+		 void downloadProchainesTaches4(in IObjetServeur contexte, in string identification, in Callback callback);
+
+
+		 void downloadCalendrier(in string date, in string identification, in Callback callback);
+		 void downloadCalendrier2(in string identification, in Callback callback);
+
+
+		 void downloadTacheParTag(in string date, in ITag tag, in string identification, in Callback callback);
+		 void downloadTacheParTag2(in ITag tag, in string identification, in Callback callback);
+		
+		
+		// ################################ METHODE DE GESTION DE COMPTE ################################
+
+		 void creerCompte(in string username, in string password, in string pseudo, in string identification, in Callback callback);
+		 void supprimerCompte(in string username, in string password, in string identification, in Callback callback);
+
+		 void modifierPseudo(in string pseudo, in string identification, in Callback callback);
+		 void modifierUsername(in string username, in string identification, in Callback callback);
+		 void modifierMotDePasse(in string oldpPassword, in string newPassword, in string identification, in Callback callback);
+
+		 void login(in string username, in string password, in string identification, in Callback callback);
+		 void disconnect(in string identification, in Callback callback);
+		
+		 void downloadListeParticipant(in string identification, in Callback callback);
+		
+		 void downloadLog(in string date, in string identification, in Callback callback);
+		 void downloadLog2(in string identification, in Callback callback);
+
+		// ################################ METHODE ADMINISTRATEUR ################################
+
+		 void downloadLogAdmin(in string identification, in Callback callback);
+		 void downloadInbox3(in string username, in string identification, in Callback callback);
+		 void downloadTaches(in string username, in string identification, in Callback callback);
+		 void downloadProjets(in string username, in string identification, in Callback callback);
+		 void downloadLog3(in string username, in string identification, in Callback callback);
+	};
+};

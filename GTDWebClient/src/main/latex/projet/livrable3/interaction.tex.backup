@@ -1,0 +1,27 @@
+\chapter{Interactions}
+
+
+Dans le but de décrire la collaboration entre les composants et les contraintes de ceux-ci il est important de montrer quelque exemples de scénarions : \\
+
+\begin{itemize}
+\item Connexion au serveurs
+\item Manipulation de données 
+\item Synchronisation entre les serveurs
+\end{itemize}
+
+%Décrire, à haut-niveau, la collaboration entre les composants majeurs, en faisant référence aux besoins.
+%Utiliser des interactions, c'est à dire, des diagrammes de séquence et des diagrammes de communication. Utiliser éventuellement des diagrammes d'activités.
+%\emph{Ne vous limitez pas à une seule interaction par cas d'utilisation}
+
+\subsection{Connexion au serveurs}
+
+Lé scénario suivant met en évidence la connexion du clientWeb au serveurs GTD et ToodleDo. La gestion des connections est assurée par le composant ConnectionManager. C'est également lui qui va par gérer les sessions utilisateurs.
+
+\begin{figure}[H]
+  \begin{center}
+  \includegraphics[scale=0.6]{livrable3/images/connection.png}
+  \caption{UML - Diagramme de séquences - Connexion au serveurs}
+  \end{center}
+\end{figure}
+
+

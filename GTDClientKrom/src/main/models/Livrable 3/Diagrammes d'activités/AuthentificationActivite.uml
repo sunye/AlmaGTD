@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="AuthentificationActiviteModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="AuthentificationActivitePackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="AuthentificationActiviteActivity">
+      <node xmi:type="uml:InitialNode" xmi:id="_27TAMMoaEd6FItuo5PlDDg" name="InitialNode1" outgoing="_Qhd3OModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_9DkmAMoaEd6FItuo5PlDDg" name="charger" outgoing="_S4kReModEd6FItuo5PlDDg" incoming="_SRzzeModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_bx8X0MobEd6FItuo5PlDDg" name="authentifier" outgoing="_TZ6D-ModEd6FItuo5PlDDg" incoming="_S4kReModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_nm3XYMobEd6FItuo5PlDDg" name="decrypter" outgoing="_UwWSeModEd6FItuo5PlDDg" incoming="_T7twgModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_qK9r0MobEd6FItuo5PlDDg" name="MergeNode1" outgoing="_SRzzeModEd6FItuo5PlDDg" incoming="_Qhd3OModEd6FItuo5PlDDg _elFi-ModEd6FItuo5PlDDg _gBjg8ModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_sVnlgMobEd6FItuo5PlDDg" name="DecisionNode1" outgoing="_T7twgModEd6FItuo5PlDDg _elFi-ModEd6FItuo5PlDDg" incoming="_mFCK8NNgEd64aumMBrjzdQ"/>
+      <node xmi:type="uml:ForkNode" xmi:id="_AZfuEModEd6FItuo5PlDDg" name="ForkNode1"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_Hp8c4ModEd6FItuo5PlDDg" name="DecisionNode2" outgoing="_VcmUeModEd6FItuo5PlDDg _gBjg8ModEd6FItuo5PlDDg _afZf8ModEd6FItuo5PlDDg" incoming="_UwWSeModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_IhRGcModEd6FItuo5PlDDg" name="ActivityFinalNode1" incoming="_afZf8ModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_LVoEcModEd6FItuo5PlDDg" name="RecevoirDonnee" outgoing="_WBwP-ModEd6FItuo5PlDDg" incoming="_VcmUeModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_Mvy8YModEd6FItuo5PlDDg" name="Decrypter" outgoing="_WhtiaModEd6FItuo5PlDDg" incoming="_WBwP-ModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_YZotUModEd6FItuo5PlDDg" name="MergeNode2" incoming="_WhtiaModEd6FItuo5PlDDg"/>
+      <node xmi:type="uml:CallBehaviorAction" xmi:id="_bmJKMNNgEd64aumMBrjzdQ" name="CallBehaviorAction1"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_dW7yYNNgEd64aumMBrjzdQ" name="hasher" outgoing="_mFCK8NNgEd64aumMBrjzdQ" incoming="_TZ6D-ModEd6FItuo5PlDDg"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Qhd3OModEd6FItuo5PlDDg" name="ControlFlow1" source="_27TAMMoaEd6FItuo5PlDDg" target="_qK9r0MobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Qhd3OcodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Qhd3OsodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_SRzzeModEd6FItuo5PlDDg" name="ControlFlow2" source="_qK9r0MobEd6FItuo5PlDDg" target="_9DkmAMoaEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_SRzzecodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_SRzzesodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_S4kReModEd6FItuo5PlDDg" name="ControlFlow3" source="_9DkmAMoaEd6FItuo5PlDDg" target="_bx8X0MobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_S4kRecodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_S4kResodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_TZ6D-ModEd6FItuo5PlDDg" name="ControlFlow4" source="_bx8X0MobEd6FItuo5PlDDg" target="_dW7yYNNgEd64aumMBrjzdQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_TZ6D-codEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_TZ6D-sodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_T7twgModEd6FItuo5PlDDg" name="IdentifiantsValides" source="_sVnlgMobEd6FItuo5PlDDg" target="_nm3XYMobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_T7twgcodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_T7twgsodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_UwWSeModEd6FItuo5PlDDg" name="ControlFlow6" source="_nm3XYMobEd6FItuo5PlDDg" target="_Hp8c4ModEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_UwWSecodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_UwWSesodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_VcmUeModEd6FItuo5PlDDg" name="SiOptionReseauDesactivee" source="_Hp8c4ModEd6FItuo5PlDDg" target="_LVoEcModEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_VcmUecodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_VcmUesodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WBwP-ModEd6FItuo5PlDDg" name="ControlFlow8" source="_LVoEcModEd6FItuo5PlDDg" target="_Mvy8YModEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WBwP-codEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WBwP-sodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WhtiaModEd6FItuo5PlDDg" name="ControlFlow9" source="_Mvy8YModEd6FItuo5PlDDg" target="_YZotUModEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WhtiacodEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WhuJcModEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_afZf8ModEd6FItuo5PlDDg" name="AuthentificationEchouee" source="_Hp8c4ModEd6FItuo5PlDDg" target="_IhRGcModEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_afZf8codEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_afZf8sodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_elFi-ModEd6FItuo5PlDDg" name="IdentifiantsInvalides" source="_sVnlgMobEd6FItuo5PlDDg" target="_qK9r0MobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_elFi-codEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_elFi-sodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_gBjg8ModEd6FItuo5PlDDg" name="AuthentificationReussie" source="_Hp8c4ModEd6FItuo5PlDDg" target="_qK9r0MobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_gBjg8codEd6FItuo5PlDDg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_gBjg8sodEd6FItuo5PlDDg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_mFCK8NNgEd64aumMBrjzdQ" name="ControlFlow5" source="_dW7yYNNgEd64aumMBrjzdQ" target="_sVnlgMobEd6FItuo5PlDDg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_mFCK8dNgEd64aumMBrjzdQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_mFCK8tNgEd64aumMBrjzdQ" value="1"/>
+      </edge>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

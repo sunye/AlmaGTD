@@ -1,0 +1,77 @@
+\documentclass[a4paper, french, 10pt, twoside]{report}
+\usepackage{alma}
+
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[english, frenchb]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{textcomp}
+
+\usepackage{makeidx}
+\usepackage[french]{minitoc}
+\usepackage{url}
+
+\usepackage{float}
+
+%
+%\parindent 0in
+\parskip 0.05in
+
+\author{Jérémy \textsc{Braud} \and Nicolas \textsc{Bremard} \and Cédric \textsc{Krommenhoek} \and Boris \textsc{Lucas}}
+\title{Projet Multi-modules\\
+	\huge{\textsc{Getting Things Done}}}
+
+\makeindex
+
+\begin{document}
+
+\dominitoc
+\selectlanguage{frenchb}
+\maketitle
+
+\begin{abstract}
+La méthode GTD est une démarche d'organisation personnelle applicable par chacun à l'ensemble de ses activités, tant professionnelles que privées. Décrite par David Allen dans son livre, la méthode GTD a pour objectif d'identifier avec sûreté ses priorité à tout moment, et d'agir immédiatement sur la priorité choisie. En effet, pour bien choisir sa priorité et s'y consacrer pleinement, il faut être certain de s'appuyer sur un système que l'on juge fiable.
+\end{abstract}
+
+\setcounter{tocdepth}{2} 
+\tableofcontents
+\listoffigures
+
+
+\include{1_analyse}
+
+
+\include{2_specification}
+
+\include{3_composants}
+
+\include{4_architecture}
+
+\include{5_conception}
+
+\chapter*{Conclusion}
+
+Le développement de cette application nous a permis d'aborder de nouvelles méthodes telles que la génération de code, et d'approfondir des méthodes vu dans d'autres modules telles que la gestion de la persistance, les EJB.. Nous avons ainsi pu utiliser pleinement de nouveaux frameworks et de nouvelles méthodes de travail.
+Nous avons aussi pu mieux maîtriser la gestion et la répartition du travail au sein de notre groupe en même temps que de travailler sur un projet de gestion du travail à faire.
+L'interaction entre les modules s'est révélée aisé grâce aux professeurs qui nous ont guider.
+Ce projet nous a par ailleurs détailler niveau par niveau les différents pas pour donner vie à une idée (passage de l'idée jusqu'au produit final).
+
+
+\begin{thebibliography}{99}
+
+\bibitem{wikipedia}
+Wikipedia, Getting Things Done : \\
+\url{http://en.wikipedia.org/wiki/Getting_Things_Done}
+
+\bibitem{gettingThingsGnome}
+Getting Things GNOME ! : \\
+\url{http://gtg.fritalk.com/}
+
+\end{thebibliography}
+
+
+\end{document}
+

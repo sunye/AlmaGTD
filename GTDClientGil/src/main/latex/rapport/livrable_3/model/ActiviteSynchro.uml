@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="ActiviteSynchroModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="ActiviteSynchroPackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="ActiviteSynchroActivity">
+      <node xmi:type="uml:InitialNode" xmi:id="_uzAmQMohEd62DfkJiESQiw" name="InitialNode1" outgoing="_fzjyKMomEd62DfkJiESQiw" inPartition="_pWPGcMofEd62DfkJiESQiw"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_9Y9jAMohEd62DfkJiESQiw" name="DecisionNode1" inPartition="_oqXe8MofEd62DfkJiESQiw"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_cGXEcMoiEd62DfkJiESQiw" name="AttenteSynchro ServeurDistant" incoming="_fzjyKMomEd62DfkJiESQiw" inPartition="_oqXe8MofEd62DfkJiESQiw"/>
+      <node xmi:type="uml:AcceptEventAction" xmi:id="_6yOp8MokEd62DfkJiESQiw" name="AcceptEventAction1" inPartition="_oqXe8MofEd62DfkJiESQiw"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_jago4MphEd6ARciqVVQM3w" name="CallOperationAction1" inPartition="_pWPGcMofEd62DfkJiESQiw"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_fzjyKMomEd62DfkJiESQiw" name="ControlFlow1" source="_uzAmQMohEd62DfkJiESQiw" target="_cGXEcMoiEd62DfkJiESQiw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_fzjyKcomEd62DfkJiESQiw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_fzjyKsomEd62DfkJiESQiw" value="1"/>
+      </edge>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_oqXe8MofEd62DfkJiESQiw" name="SynchroServerManager" node="_6yOp8MokEd62DfkJiESQiw _cGXEcMoiEd62DfkJiESQiw _9Y9jAMohEd62DfkJiESQiw"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_pWPGcMofEd62DfkJiESQiw" name="ConnexionServeur" node="_jago4MphEd6ARciqVVQM3w _uzAmQMohEd62DfkJiESQiw"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_rGJk4MofEd62DfkJiESQiw" name="ConnexionLocal"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

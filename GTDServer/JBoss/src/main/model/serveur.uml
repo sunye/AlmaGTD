@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="serveur">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_3CUwENjSEd6cN6x_fk6prg" name="ServeurRMI">
+      <ownedOperation xmi:id="_4jp_8NjSEd6cN6x_fk6prg" name="creerCompte">
+        <ownedParameter xmi:id="_ROMnENjTEd6cN6x_fk6prg" name="idee" type="_iO_1oNjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_6X16YNjSEd6cN6x_fk6prg" name="creerContexte"/>
+      <ownedOperation xmi:id="_-Q8S4NjSEd6cN6x_fk6prg" name="creerIdee"/>
+      <ownedOperation xmi:id="__qITYNjSEd6cN6x_fk6prg" name="creerProjet"/>
+      <ownedOperation xmi:id="_AoEiUNjTEd6cN6x_fk6prg" name="creerTache"/>
+      <ownedOperation xmi:id="_BqEK0NjTEd6cN6x_fk6prg" name="creerTag"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_iO_1oNjTEd6cN6x_fk6prg" name="IIdee">
+      <generalization xmi:id="_ktPSU9jWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_Au2DQNjUEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_BsQtwNjUEd6cN6x_fk6prg" name="getDescription"/>
+      <ownedOperation xmi:id="_DBQx0NjUEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_DyJcMNjUEd6cN6x_fk6prg" name="isDansLaPoubelel"/>
+      <ownedOperation xmi:id="_E9JPsNjUEd6cN6x_fk6prg" name="setCreateur"/>
+      <ownedOperation xmi:id="_GdqAMNjUEd6cN6x_fk6prg" name="setDansLaPoubelle"/>
+      <ownedOperation xmi:id="_IAwxsNjUEd6cN6x_fk6prg" name="setDescription"/>
+      <ownedOperation xmi:id="_I-nhENjUEd6cN6x_fk6prg" name="setNom"/>
+      <ownedOperation xmi:id="_1lxyMNjVEd6cN6x_fk6prg" name="mettreALaPoubelle"/>
+      <ownedOperation xmi:id="_6RTGINjVEd6cN6x_fk6prg" name="restaurer"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_jZO0INjTEd6cN6x_fk6prg" name="IContexte">
+      <generalization xmi:id="_jd2uE9jWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_OLf1oNjUEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_O-nUoNjUEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_PrZiINjUEd6cN6x_fk6prg" name="setCreateur">
+        <ownedParameter xmi:id="_ZZ1DYNjhEd6cN6x_fk6prg" name="c" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_QiaCoNjUEd6cN6x_fk6prg" name="setNom">
+        <ownedParameter xmi:id="_kb97INjhEd6cN6x_fk6prg" name="n" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_kcEKINjTEd6cN6x_fk6prg" name="IObjetServeur">
+      <ownedOperation xmi:id="_vdTC8NjTEd6cN6x_fk6prg" name="getDateDeDerniereModification">
+        <ownedParameter xmi:id="_sF_H4NjeEd6cN6x_fk6prg" name="return" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0iroYNjTEd6cN6x_fk6prg" name="getIdentifiant"/>
+      <ownedOperation xmi:id="_1qdv0NjTEd6cN6x_fk6prg" name="getIdentifiantServeur"/>
+      <ownedOperation xmi:id="_3C0C0NjTEd6cN6x_fk6prg" name="setDateDeDerniereModification">
+        <ownedParameter xmi:id="_KPK3ENjhEd6cN6x_fk6prg" name="date" type="_x5KAYNjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_69-Q0NjTEd6cN6x_fk6prg" name="setIdentifiant">
+        <ownedParameter xmi:id="_OTOiYNjhEd6cN6x_fk6prg" name="id" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_8dHIUNjTEd6cN6x_fk6prg" name="setIdentifiantServeur">
+        <ownedParameter xmi:id="_Qn23cNjhEd6cN6x_fk6prg" name="idServeur" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_l9GfENjTEd6cN6x_fk6prg" name="IParticipant">
+      <generalization xmi:id="_j6Wc0tjWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_rsue4NjUEd6cN6x_fk6prg" name="getPseudonyme"/>
+      <ownedOperation xmi:id="_tAB50NjUEd6cN6x_fk6prg" name="setPseudonyme">
+        <ownedParameter xmi:id="_SUCagNjjEd6cN6x_fk6prg" name="pseudo" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_m4iMkNjTEd6cN6x_fk6prg" name="IProjet">
+      <generalization xmi:id="_mDrg0NjWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_x5yMINjWEd6cN6x_fk6prg" name="ajoutTache"/>
+      <ownedOperation xmi:id="_zKzIENjWEd6cN6x_fk6prg" name="archiver"/>
+      <ownedOperation xmi:id="_0H_JENjWEd6cN6x_fk6prg" name="getAvancement"/>
+      <ownedOperation xmi:id="_1QnlENjWEd6cN6x_fk6prg" name="getContexteParDefaut"/>
+      <ownedOperation xmi:id="_3N5KENjWEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_4LT0kNjWEd6cN6x_fk6prg" name="getListeDesParticipants"/>
+      <ownedOperation xmi:id="_5o_TgNjWEd6cN6x_fk6prg" name="getListeDesTaches"/>
+      <ownedOperation xmi:id="_68KLkNjWEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_7qTrANjWEd6cN6x_fk6prg" name="isDansLaPoubelle"/>
+      <ownedOperation xmi:id="_82OEgNjWEd6cN6x_fk6prg" name="mettreALaPoubelle"/>
+      <ownedOperation xmi:id="_-Px4cNjWEd6cN6x_fk6prg" name="restaurer"/>
+      <ownedOperation xmi:id="__KYfgNjWEd6cN6x_fk6prg" name="setAvancement"/>
+      <ownedOperation xmi:id="_AedWgNjXEd6cN6x_fk6prg" name="setContexteParDefaut"/>
+      <ownedOperation xmi:id="_C6xn8NjXEd6cN6x_fk6prg" name="setCreateur"/>
+      <ownedOperation xmi:id="_D7PmcNjXEd6cN6x_fk6prg" name="setDansLaPoubelle"/>
+      <ownedOperation xmi:id="_FnuWYNjXEd6cN6x_fk6prg" name="setListeDesParticipants"/>
+      <ownedOperation xmi:id="_IED18NjXEd6cN6x_fk6prg" name="setListeDesTaches"/>
+      <ownedOperation xmi:id="_Jl3m8NjXEd6cN6x_fk6prg" name="setNom"/>
+      <ownedOperation xmi:id="_KqXw4NjXEd6cN6x_fk6prg" name="supprimerToutesTaches"/>
+      <ownedOperation xmi:id="_L3Ro4NjXEd6cN6x_fk6prg" name="supprimerTache"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_nphkoNjTEd6cN6x_fk6prg" name="ITache">
+      <generalization xmi:id="_lMhPUtjWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_5F3qQNjUEd6cN6x_fk6prg" name="archiver"/>
+      <ownedOperation xmi:id="_6BYQQNjUEd6cN6x_fk6prg" name="getAvancement"/>
+      <ownedOperation xmi:id="_7UYwQNjUEd6cN6x_fk6prg" name="getContexte"/>
+      <ownedOperation xmi:id="_8045sNjUEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_99I7MNjUEd6cN6x_fk6prg" name="getDateDebut"/>
+      <ownedOperation xmi:id="__mk-MNjUEd6cN6x_fk6prg" name="getDateFin"/>
+      <ownedOperation xmi:id="_AjTsMNjVEd6cN6x_fk6prg" name="getFrequence"/>
+      <ownedOperation xmi:id="_Bt2MsNjVEd6cN6x_fk6prg" name="getListeDesTags"/>
+      <ownedOperation xmi:id="_DCJtMNjVEd6cN6x_fk6prg" name="getListeDesURLs"/>
+      <ownedOperation xmi:id="_EVDfgNjVEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_FDAKoNjVEd6cN6x_fk6prg" name="getParticipant"/>
+      <ownedOperation xmi:id="_GKCEINjVEd6cN6x_fk6prg" name="getPriorite"/>
+      <ownedOperation xmi:id="_Hd4RoNjVEd6cN6x_fk6prg" name="getProjetConteneur"/>
+      <ownedOperation xmi:id="_InlEoNjVEd6cN6x_fk6prg" name="getTauxEffort"/>
+      <ownedOperation xmi:id="_gUfl4NjVEd6cN6x_fk6prg" name="isDansLaPoubelle"/>
+      <ownedOperation xmi:id="_hb0aUNjVEd6cN6x_fk6prg" name="mettreALaPoubelle"/>
+      <ownedOperation xmi:id="_5OGjwNjVEd6cN6x_fk6prg" name="restaurer"/>
+      <ownedOperation xmi:id="_BhJ_ENjWEd6cN6x_fk6prg" name="setAvancement"/>
+      <ownedOperation xmi:id="_C9O7gNjWEd6cN6x_fk6prg" name="setContexte"/>
+      <ownedOperation xmi:id="_LC9sgNjWEd6cN6x_fk6prg" name="setCreateur"/>
+      <ownedOperation xmi:id="_MNMD8NjWEd6cN6x_fk6prg" name="setDansLaPoubelle"/>
+      <ownedOperation xmi:id="_Nbm-4NjWEd6cN6x_fk6prg" name="setDateDebut"/>
+      <ownedOperation xmi:id="_OrboANjWEd6cN6x_fk6prg" name="setDateFin"/>
+      <ownedOperation xmi:id="_P19hcNjWEd6cN6x_fk6prg" name="setFrequence"/>
+      <ownedOperation xmi:id="_RV8GcNjWEd6cN6x_fk6prg" name="setListeDesTags"/>
+      <ownedOperation xmi:id="_X6xFYNjWEd6cN6x_fk6prg" name="setListeDesURLs"/>
+      <ownedOperation xmi:id="_ZejMUNjWEd6cN6x_fk6prg" name="setNom"/>
+      <ownedOperation xmi:id="_aSz60NjWEd6cN6x_fk6prg" name="setParticipant"/>
+      <ownedOperation xmi:id="_cdhe4NjWEd6cN6x_fk6prg" name="setPriorite"/>
+      <ownedOperation xmi:id="_dx0YUNjWEd6cN6x_fk6prg" name="setProjetConteneur"/>
+      <ownedOperation xmi:id="_fQze0NjWEd6cN6x_fk6prg" name="setTauxEffort"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_oUsBgNjTEd6cN6x_fk6prg" name="ITag">
+      <generalization xmi:id="_kPyhU9jWEd6cN6x_fk6prg" general="_kcEKINjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_vKMrUNjUEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_w0tFUNjUEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_xl6f0NjUEd6cN6x_fk6prg" name="setCreateur">
+        <ownedParameter xmi:id="_PxFgINjkEd6cN6x_fk6prg" name="c" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_yZpC0NjUEd6cN6x_fk6prg" name="setNom">
+        <ownedParameter xmi:id="_WALfoNjkEd6cN6x_fk6prg" name="n" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZRCfUNjXEd6cN6x_fk6prg" name="AbstractTag" clientDependency="_ttxpQNjXEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_aR-X4NjXEd6cN6x_fk6prg" name="createur" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      <ownedAttribute xmi:id="_vtdpENjXEd6cN6x_fk6prg" name="dateDeDerniereModification" type="_x5KAYNjeEd6cN6x_fk6prg"/>
+      <ownedAttribute xmi:id="_xXgwENjXEd6cN6x_fk6prg" name="identifiant" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      <ownedAttribute xmi:id="_2DCEANjXEd6cN6x_fk6prg" name="identifiantServeur" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      <ownedAttribute xmi:id="_3QA0gNjXEd6cN6x_fk6prg" name="nom" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      <interfaceRealization xmi:id="_ttxpQNjXEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_oUsBgNjTEd6cN6x_fk6prg" client="_ZRCfUNjXEd6cN6x_fk6prg" contract="_oUsBgNjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_85VNcNjXEd6cN6x_fk6prg" name="AbstractTag"/>
+      <ownedOperation xmi:id="_-JvFYNjXEd6cN6x_fk6prg" name="AbstractTag">
+        <ownedParameter xmi:id="_49fXENjkEd6cN6x_fk6prg" name="tag" type="_oUsBgNjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_DOIzYNjYEd6cN6x_fk6prg" name="AbstractTag">
+        <ownedParameter xmi:id="_7lAy8NjkEd6cN6x_fk6prg" name="name" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FyBFYNjYEd6cN6x_fk6prg" name="getDateDeDerniereModification"/>
+      <ownedOperation xmi:id="_KTd3UNjYEd6cN6x_fk6prg" name="getIdentifiant"/>
+      <ownedOperation xmi:id="_LhqIwNjYEd6cN6x_fk6prg" name="getIdentifiantServeur"/>
+      <ownedOperation xmi:id="_M8rVQNjYEd6cN6x_fk6prg" name="setCreateur">
+        <ownedParameter xmi:id="_c0pyMNjmEd6cN6x_fk6prg" name="c" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_PrUFwNjYEd6cN6x_fk6prg" name="setNom">
+        <ownedParameter xmi:id="_eqRQANjmEd6cN6x_fk6prg" name="n" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Q3JmwNjYEd6cN6x_fk6prg" name="setDateDeDerniereModification">
+        <ownedParameter xmi:id="_gC2zkNjmEd6cN6x_fk6prg" name="date" type="_x5KAYNjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_RxYSANjmEd6cN6x_fk6prg" name="setIdentifiant">
+        <ownedParameter xmi:id="_hV8MENjmEd6cN6x_fk6prg" name="id" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_VD82ANjmEd6cN6x_fk6prg" name="setIdentifiantServeur">
+        <ownedParameter xmi:id="_ig0DwNjmEd6cN6x_fk6prg" name="idServeur" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ccB_MNjYEd6cN6x_fk6prg" name="AbstractParticipant" clientDependency="_e5pRI9jYEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_hZewoNjYEd6cN6x_fk6prg" name="pseudonyme" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      <interfaceRealization xmi:id="_e5pRI9jYEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_l9GfENjTEd6cN6x_fk6prg" client="_ccB_MNjYEd6cN6x_fk6prg" contract="_l9GfENjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_jg0QkNjYEd6cN6x_fk6prg" name="AbstractParticipant"/>
+      <ownedOperation xmi:id="_lCjJENjYEd6cN6x_fk6prg" name="AbstractParticipant">
+        <ownedParameter xmi:id="_Ch8awNjjEd6cN6x_fk6prg" name="p" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_mDjTENjYEd6cN6x_fk6prg" name="AbstractParticipant">
+        <ownedParameter xmi:id="_FhpGENjjEd6cN6x_fk6prg" name="pseudo" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_34dzQNjlEd6cN6x_fk6prg" name="setPseudonyme">
+        <ownedParameter xmi:id="__J1IENjlEd6cN6x_fk6prg" name="pseudo" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_6NPSQNjlEd6cN6x_fk6prg" name="setDateDeDerniereModification">
+        <ownedParameter xmi:id="_BYMdENjmEd6cN6x_fk6prg" name="date" type="_x5KAYNjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_73qzwNjlEd6cN6x_fk6prg" name="setIdentifiant">
+        <ownedParameter xmi:id="_Dia48NjmEd6cN6x_fk6prg" name="id" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_9H_MINjlEd6cN6x_fk6prg" name="setIdentifiantServeur">
+        <ownedParameter xmi:id="_FPEoANjmEd6cN6x_fk6prg" name="idServeur" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pFbIoNjYEd6cN6x_fk6prg" name="AbstractContexte" clientDependency="_x9kOANjYEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_64m2YNjYEd6cN6x_fk6prg" name="createur" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      <ownedAttribute xmi:id="_7ocX4NjYEd6cN6x_fk6prg" name="nom" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      <interfaceRealization xmi:id="_x9kOANjYEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_jZO0INjTEd6cN6x_fk6prg" client="_pFbIoNjYEd6cN6x_fk6prg" contract="_jZO0INjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_8z0l4NjYEd6cN6x_fk6prg" name="AbstractContexte"/>
+      <ownedOperation xmi:id="_98TQ4NjYEd6cN6x_fk6prg" name="AbstractContexte">
+        <ownedParameter xmi:id="_BX8iQNjiEd6cN6x_fk6prg" name="ctx" type="_jZO0INjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="__N2YUNjYEd6cN6x_fk6prg" name="AbstractContexte">
+        <ownedParameter xmi:id="_yQT_UNjiEd6cN6x_fk6prg" name="str" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EHoUQNjlEd6cN6x_fk6prg" name="getCreateur"/>
+      <ownedOperation xmi:id="_FVl8MNjlEd6cN6x_fk6prg" name="getNom"/>
+      <ownedOperation xmi:id="_GOghMNjlEd6cN6x_fk6prg" name="setCreateur">
+        <ownedParameter xmi:id="_nBjggNjlEd6cN6x_fk6prg" name="c" type="_l9GfENjTEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_G_VhMNjlEd6cN6x_fk6prg" name="setNom">
+        <ownedParameter xmi:id="_oxgbMNjlEd6cN6x_fk6prg" name="n" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_WHiPYNjlEd6cN6x_fk6prg" name="setDateDeDerniereModification">
+        <ownedParameter xmi:id="_qa73INjlEd6cN6x_fk6prg" name="date" type="_x5KAYNjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_d0tWcNjlEd6cN6x_fk6prg" name="setIdentifiant">
+        <ownedParameter xmi:id="_sWSwkNjlEd6cN6x_fk6prg" name="id" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_fzySQNjlEd6cN6x_fk6prg" name="setIdentifiantServeur">
+        <ownedParameter xmi:id="_t0M5ANjlEd6cN6x_fk6prg" name="idServeur" type="_f_nzANjeEd6cN6x_fk6prg"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yszSkNjYEd6cN6x_fk6prg" name="AbstractIdee" clientDependency="_263Oc9jYEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_EoTO0NjZEd6cN6x_fk6prg" name="createur"/>
+      <ownedAttribute xmi:id="_FdApQNjZEd6cN6x_fk6prg" name="dansLaPoubelle"/>
+      <ownedAttribute xmi:id="_GeFrwNjZEd6cN6x_fk6prg" name="dateDeDerniereModification"/>
+      <ownedAttribute xmi:id="_IFegUNjZEd6cN6x_fk6prg" name="description"/>
+      <ownedAttribute xmi:id="_JFoVwNjZEd6cN6x_fk6prg" name="identifiant"/>
+      <ownedAttribute xmi:id="_J-eCQNjZEd6cN6x_fk6prg" name="identifiantServeur"/>
+      <ownedAttribute xmi:id="_LBwEMNjZEd6cN6x_fk6prg" name="nom"/>
+      <interfaceRealization xmi:id="_263Oc9jYEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_iO_1oNjTEd6cN6x_fk6prg" client="_yszSkNjYEd6cN6x_fk6prg" contract="_iO_1oNjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_MK2aQNjZEd6cN6x_fk6prg" name="AbstractIdee"/>
+      <ownedOperation xmi:id="_NsWCMNjZEd6cN6x_fk6prg" name="AbstractIdee"/>
+      <ownedOperation xmi:id="_PDn-MNjZEd6cN6x_fk6prg" name="AbstractIdee"/>
+      <ownedOperation xmi:id="_1tCBANjmEd6cN6x_fk6prg" name="setCreateur"/>
+      <ownedOperation xmi:id="_3PUTINjmEd6cN6x_fk6prg" name="setDansLaPoubelle"/>
+      <ownedOperation xmi:id="_4WZ3ANjmEd6cN6x_fk6prg" name="setDescription"/>
+      <ownedOperation xmi:id="_5KdxMNjmEd6cN6x_fk6prg" name="setNom"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z-Bp4NjYEd6cN6x_fk6prg" name="AbstractTache" clientDependency="_3c9189jYEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_ZBCpkNjZEd6cN6x_fk6prg" name="avancement"/>
+      <ownedAttribute xmi:id="_Z9nmkNjZEd6cN6x_fk6prg" name="contexte"/>
+      <ownedAttribute xmi:id="_a8j7ENjZEd6cN6x_fk6prg" name="createur"/>
+      <ownedAttribute xmi:id="_2y03UNjZEd6cN6x_fk6prg" name="dansLaPoubelle"/>
+      <ownedAttribute xmi:id="_3_WU0NjZEd6cN6x_fk6prg" name="dateDebut"/>
+      <ownedAttribute xmi:id="_5HmWUNjZEd6cN6x_fk6prg" name="dateFin"/>
+      <ownedAttribute xmi:id="_6GAfUNjZEd6cN6x_fk6prg" name="frequence"/>
+      <ownedAttribute xmi:id="_S-6SkNjaEd6cN6x_fk6prg" name="listeDesTags"/>
+      <ownedAttribute xmi:id="_UWHWENjaEd6cN6x_fk6prg" name="listeDesURLs"/>
+      <ownedAttribute xmi:id="_ZdaAANjaEd6cN6x_fk6prg" name="nom"/>
+      <ownedAttribute xmi:id="_aOZYENjaEd6cN6x_fk6prg" name="participant"/>
+      <ownedAttribute xmi:id="_bGmycNjaEd6cN6x_fk6prg" name="priorite"/>
+      <ownedAttribute xmi:id="_cShzANjaEd6cN6x_fk6prg" name="projetConteneur"/>
+      <ownedAttribute xmi:id="_dW4L8NjaEd6cN6x_fk6prg" name="tauxEffort"/>
+      <interfaceRealization xmi:id="_3c9189jYEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_nphkoNjTEd6cN6x_fk6prg" client="_z-Bp4NjYEd6cN6x_fk6prg" contract="_nphkoNjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_ex5YcNjaEd6cN6x_fk6prg" name="AbstractTache"/>
+      <ownedOperation xmi:id="_f_fM8NjaEd6cN6x_fk6prg" name="AbstractTache"/>
+      <ownedOperation xmi:id="_g6AUcNjaEd6cN6x_fk6prg" name="AbstractTache"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_0yiQANjYEd6cN6x_fk6prg" name="AbstractProjet" clientDependency="_32-4cNjYEd6cN6x_fk6prg" isAbstract="true">
+      <ownedAttribute xmi:id="_mZLS4NjaEd6cN6x_fk6prg" name="avancement"/>
+      <ownedAttribute xmi:id="_ne6L4NjaEd6cN6x_fk6prg" name="contexteParDefaut"/>
+      <ownedAttribute xmi:id="_sofU0NjaEd6cN6x_fk6prg" name="createur"/>
+      <ownedAttribute xmi:id="_txWaUNjaEd6cN6x_fk6prg" name="dansLaPoubelle"/>
+      <ownedAttribute xmi:id="_u1_HINjaEd6cN6x_fk6prg" name="listeDesParticipants"/>
+      <ownedAttribute xmi:id="_wE040NjaEd6cN6x_fk6prg" name="listeDesTaches"/>
+      <ownedAttribute xmi:id="_xR9aUNjaEd6cN6x_fk6prg" name="nom"/>
+      <interfaceRealization xmi:id="_32-4cNjYEd6cN6x_fk6prg" name="InterfaceRealization1" supplier="_m4iMkNjTEd6cN6x_fk6prg" client="_0yiQANjYEd6cN6x_fk6prg" contract="_m4iMkNjTEd6cN6x_fk6prg"/>
+      <ownedOperation xmi:id="_yUU2QNjaEd6cN6x_fk6prg" name="AbstractProjet"/>
+      <ownedOperation xmi:id="_zWKtwNjaEd6cN6x_fk6prg" name="AbstractProjet"/>
+      <ownedOperation xmi:id="_0U4YwNjaEd6cN6x_fk6prg" name="AbstractProjet"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_l_168NjcEd6cN6x_fk6prg" name="ModeDeMiseAJour">
+      <ownedLiteral xmi:id="_oVpUsNjcEd6cN6x_fk6prg" name="WARNING"/>
+      <ownedLiteral xmi:id="_nbyUgNjcEd6cN6x_fk6prg" name="FORCE"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_f_kvsNjeEd6cN6x_fk6prg" name="Boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_f_nL8NjeEd6cN6x_fk6prg" name="Integer"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_f_nzANjeEd6cN6x_fk6prg" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_f_nzAdjeEd6cN6x_fk6prg" name="UnlimitedNatural"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXHxcNjeEd6cN6x_fk6prg" name="boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXIYgNjeEd6cN6x_fk6prg" name="byte"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXIYgdjeEd6cN6x_fk6prg" name="char"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXIYgtjeEd6cN6x_fk6prg" name="double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXI_kNjeEd6cN6x_fk6prg" name="float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXI_kdjeEd6cN6x_fk6prg" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXI_ktjeEd6cN6x_fk6prg" name="long"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_hXJmoNjeEd6cN6x_fk6prg" name="short"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_x5KAYNjeEd6cN6x_fk6prg" name="Date"/>
+</uml:Model>

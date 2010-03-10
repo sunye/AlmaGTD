@@ -1,0 +1,49 @@
+//**********************************************************//
+//**********************************************************//
+//								
+// 			Lisez-moi
+//												 
+//**********************************************************//
+//**********************************************************//
+
+
+//**********************************************************//
+// 			Informations générales
+//**********************************************************//
+
+Dans le dossier "src" se trouve les fichiers sources de notre application.
+Plus particulièrement :
+  dans le dossier src/main/java toutes les classes Java.
+  dans le dossier src/main/resources les fichiers de persistance, se trouve aussi les images nécessaire à la conception de l'interface graphique.
+  dans le dossier src/test/java les fichiers de divers tests.
+  dans le dossier src/test/resources les fichiers properties d'hibernate
+
+
+Dans le dossier "generation" se trouve les fichiers utiles à la génération des classes (*.mt, ...)
+Dans le dossier "idl" se trouve tous les fichiers générés à partir de l'interface idl.
+Dans le dossier "doc" se trouve la javadoc générée.
+Dans le dossier "Documents" se trouve les différents livrables, ainsi que les rapports d'IHM et d'OD.
+Dans le dossier "lib" se trouve les librairies nécesaire à la bonne utilisation de l'application (si on
+n'utilise pas maven)
+
+//**********************************************************//
+// 			Lancement de l'application
+//**********************************************************//
+
+Plusieurs possibilités :
+
+	- Utilisation de Maven (pour reconstruire l'application) : 
+Exécutez le fichier pom.xml (en mode assembly:assembly)
+
+	- En ligne de commande : 
+Se mettre dans le repertoire où se situe l'archive
+Et entrez la commande suivante : java -jar gtd.jar
+
+	- Double clic sur l'archive
+
+//**********************************************************//
+// 			Documentation
+//**********************************************************//
+
+La javadoc se trouve dans le dossier "doc".
+Pour la consulter, double-cliquez sur "index.html".

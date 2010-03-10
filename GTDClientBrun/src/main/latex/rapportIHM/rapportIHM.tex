@@ -1,0 +1,569 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{alma}
+\pagestyle{plain}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{placeins}
+\usepackage{pdflscape}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{tipa}
+\usepackage{textcomp}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead{} % clear all footer fields
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\scriptsize{BRUN Clémentine, LE NY Brendan, PONGE Myrtille
+et\\ RAVENET Brian}}
+\fancyfoot[LO,CE]{\scriptsize\textsl{Université de Nantes\\Master Alma}}
+\fancyfoot[CO,RE]{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\addtolength{\headheight}{0.5pt}
+\setlength{\footskip}{0.5in}
+\renewcommand{\footruleskip}{2pt}
+\fancypagestyle{plain}{%
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\parskip 0.05in
+
+\title{IHM\\
+\begin{large}\textbf{Client GTD : Interface Homme Machine}\end{large}}
+\author{BRUN Clémentine \and LE NY Brendan \and PONGE Myrtille \and RAVENET
+Brian}
+\graphicspath{{images/}}
+
+\date{\today}
+\makeindex
+\begin{document}
+\begin{titlepage}
+
+
+\vspace*{2cm}
+
+
+
+\begin{flushleft}
+\hspace{1cm} \includegraphics*[width=4cm]{images/logo.jpg}\\
+\hspace{1cm} \textsl{12, rue de la Houssinière}\\
+\hspace{1cm} \textit{44322 Nantes}
+\hrulefill
+\end{flushleft}
+
+
+
+
+\vspace{2cm}
+
+\begin{flushleft}
+\hspace{1cm}
+{\fontfamily{ppl}\fontseries{b}\fontsize{1.0cm}{1.65cm}\selectfont Conception
+d'IHM}
+\end{flushleft}
+
+\begin{flushright}
+{\fontfamily{ppl}\fontseries{b}\fontsize{0.8cm}{1.65cm}\selectfont Projet
+Multi-modules : Client GTD}
+\end{flushright}
+
+\begin{center}
+\vspace{3cm}
+\hspace{1cm}
+\begin{tabular}{l r}
+BRUN Clémentine & LE NY Brendan\\
+PONGE Myrtille & RAVENET Brian
+\end{tabular}
+\end{center}
+
+
+\vspace{4cm}
+
+\hspace{0,5cm}
+\begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill}} l r}
+Master 2 - ALMA & \textit{2009-2010}
+\end{tabular*}
+
+\hspace*{0,5cm}\hrulefill
+\end{titlepage}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Introduction}
+Au cours du premier semestre de notre année de Master 2 ALMA, l'un des projets
+que nous avons a réalisé est une application GTD. Ce projet concerne en réalité
+trois matières, le génie logiciel, les objets distribués et les interfaces
+hommes machines. Dans ce rapport, nous vous détaillerons les choix de
+conception dans le cadre de cette dernière matière. Nous vous présenterons
+d'abord les fonctionnalités auxquelles l'utilisateur devra pouvoir avoir accès,
+puis nous expliquerons comment nous les avons intégrées tout en développant une
+application qui respecte les contraintes liées aux interfaces hommes machines.
+Nous expliciterons alors quelles sont ces contraintes au moment où nous les
+rencontrerons et nous expliquerons comment nous avons arrêté nos choix.
+\chapter{Analyse des besoins}
+Une conception d'IHM doit se faire tout en gardant en tête l'utilisation de
+l'application par l'utilisateur final. C'est pourquoi au tout début, il est
+nécessaire de faire une analyse des besoins afin de comprendre ce que
+l'utilisateur attend de cette application.
+\section{Identification des fonctionnalités}
+Nous allons réaliser une application cliente GTD. Il s'agit d'un logiciel de
+gestion de tâches personnelles. Une sorte d'agenda et d'emploi du temps mais au
+concept plus spécialisés avec des notions comme \textit{Tâches} et
+\textit{Projets}. Un utilisateur de cette application peut définir des
+\textit{Projets} qui peuvent contenir des \textit{Tâches}, tout en leur
+affectant des attributs temporels ainsi qu'une priorité de réalisation. Le
+logiciel permet ainsi à l'utilisateur de s'organiser en fonction de la date à
+laquelle la tâche doit être réalisée ainsi qu'à sa priorité. C'est une
+définition un peu grossière et survolée d'une application GTD mais elle est
+suffisante pour comprendre les motivations de réalisation de l'IHM. Voici donc
+ce que le logiciel doit permettre, ajout et suppression de \textit{Projets} et
+de \textit{Tâches}, modification de ceux-ci ainsi que de leur attributs (date,
+priorité, contexte\ldots), consultation de la tâche la plus urgente à réaliser
+par rapport à un projet, un contexte ou globalement et enfin une gestion d'un
+panier à idées. Tout ces concepts sont issus de la GTD telle que l'a définie son
+créateur David Allen. Il est important ici de rappeller que tout ces concepts
+sont déjà définis (par M. David Allen) puisque cela signifie que l'utilisateur
+qui souhaite utiliser cette application connait la méthode GTD et donc ses termes. Il ne sera donc
+pas surpris ou perdu lorsqu'il les rencontrera. Au contraire ils lui serviront
+de repère même.
+\section{Scénarios d'utilisation}
+Nous allons présenter les scénarios les plus importants de la méthode GTD :
+\begin{itemize}
+  \item Ajout d'une idée au \textit{Panier}.
+  \item Création d'une \textit{Tâche}.
+  \item Consultation de la \textit{Tâche} la plus urgente.
+\end{itemize}
+\subsection{Ajout d'une idée au \textit{Panier}}
+L'utilisateur doit avoir accès à un panier auquel il peut ajouter des idées à
+la volée et cela de la manière la plus rapide possible. C'est un scénario
+simple qui se résume à :
+\begin{itemize}
+  \item L'utilisateur a une idée
+  \item Il rentre le nom et le contenu de l'idée dans l'application
+  \item L'idée est ajoutée à la base (le panier) de l'application
+\end{itemize}
+Cette opération est courte puisque l'utilisateur doit pouvoir l'effectuer un
+grand nombre de fois s'il le souhaite.
+\subsection{Création d'une \textit{Tâche}}
+Voici une des opérations les plus importantes. Cette opération est un peu plus
+délicate que la précédente car les attributs à remplir pour définir une tâche
+sont plus nombreux. De plus, une tâche ne peut exister sans un projet, donc il
+faut au préalabe définir un projet afin de pouvoir y ajouter la tâche.
+\begin{itemize}
+  \item L'utilisateur souhaite ajouter une tâche
+  \item L'utilisateur choisit un projet dans lequel ajouter la nouvelle tâche ou
+  le créé le cas échéant
+  \item L'utilisateur renseigne les différents attributs de la nouvelle tâche
+  \item La tâche est ajoutée à la base de l'application
+\end{itemize}
+Si l'utilisateur ne souhaite pas remplir tous les champs, il doit être possible
+de laisser des valeurs par défaut et de modifier la tâche plus tard, lorsque
+l'utilisateur aura rassemblé toutes les informations nécessaires.
+\subsection{Consultation de la \textit{Tâche} la plus urgente}
+Enfin la fonctionnalité qui donne sa raison d'être à la méthode GTD.
+L'application affiche à l'utilisateur la tâche qu'il doit réaliser par rapport
+aux critères de recherches, par projet ou par contexte.
+\begin{itemize}
+  \item L'utilisateur souhaite connaitre la tâche qu'il devait réaliser
+  \item Il choisit selon un projet ou selon un contexte
+  \item L'application détermine la tâche la plus urgente et la montre à
+  l'utilisateur
+  \item L'utilisateur peut ensuite éditer cette tâche, voire la supprimer,
+  suivant l'état de sa réalisation.
+\end{itemize}
+Nous ne détaillerons les autres fonctionnalités, puisque en s'intéressant
+uniquement à celles-ci, qui sont les fonctionnalités principales de la méthode
+GTD, nous pourrons définir tous les choix de conceptions de l'IHM.
+\section{Cas d'utilisation}
+En ce qui concerne donc les cas d'utilisations de ce programme, nous en avons
+extraits les trois suivants : 
+\begin{itemize}
+  \item Gestion des idées et du panier
+  \item Gestion des tâches et des projets
+  \item Gestion des contextes
+\end{itemize}
+En effet ces trois cas d'utilisations (qui se positionnent à un niveau
+d'abstraction assez élevée), représentent bien les fonctionnalités principales
+de la méthode GTD. Nous pouvons déjà dire à ce stade que nous essaierons de
+découper l'interface de l'application suivant ces trois axes d'utilisations.
+\chapter{Conception et implémentation}
+Nous allons maintenant entrer dans la partie ou nous vous détaillons comment
+notre Interface est composée et comment nous avons fait attention aux critères
+de conception centrée utilisateur pour la réalisation de cette application.
+Vous trouverez d'abord une partie décrivant l'interface et l'application, puis
+dans la partie suivante, vous trouverez les justifications liées non seulement
+aux problématiques de conception mais également aux problématiques de la
+méthode GTD. En effet il ne suffit pas de réaliser une application agréable
+pour l'utilisateur mais il faut également qu'elle réponde aux besoins d'une
+application GTD. C'est d'ailleurs un point très important de la conception
+puisqu'il faut savoir faire des concessions afin de réaliser une application
+cohérente.
+\section{Prototypage}
+Nous avons d'abord réalisé des schémas sur papier afin de représenter les interactions
+et les éléments de l'interface. Nous avons défini le découpage de celle-ci suivant les
+trois principaux axes de la méthode GTD et nous avons choisi alors d'utiliser un 
+découpage en onglets pour notre application. Voici une représentation en tableau
+du placement des composants de chacun des onglets. Tout d'abord l'onglet Panier
+:\\
+\begin{tabular}{|c|c|c|}
+\hline
+un champ titre && un bouton ajouter \\ \hline
+une zone de texte &&\\ \hline
+une liste des éléments & une zone de texte &\\ \hline un bouton modifier & un
+bouton traiter &un bouton supprimer
+\\
+\hline
+\end{tabular}
+\subsection{La fenêtre de connection}
+Au lancement de l'application, l'utilisateur doit se connecter pour avoir accès
+à ses données. Ainsi, la première fenêtre qui s'ouvre est la suivante :
+\begin{center}
+\includegraphics[width=7cm]{images/connection}
+\end{center}
+L'utilisateur entre alors son identifiant et son mot de passe.
+
+\subsection{La fenêtre principale}
+Une fois connecté, l'utilisateur arrive à la fenêtre principale de
+l'application. Cette fenêtre est divisée en trois onglets : panier, contexte et
+projet. Ces onglets correspondent au trois vues du système de GTD. La division
+en onglets permet de passer rapidement d'une vue à une autre. L'organisation
+des onglets projet et contexte sera similaire pour permettre une homogénéité et
+une cohérence des données. La gestion par onglet nous permet également de
+diminuer la densité informationnelle par fenêtre sans compliquer l'accès aux
+données.\\
+
+\subsubsection{L'onglet panier}
+L'action la plus utilisée doit être l'ajout d'un élément au panier puisque tout
+ajout dans la base de donnée passe par un ajout dans le panier. Pour faciliter
+cet accès au panier, l'utilisateur arrive directement sur la fenêtre suivante
+correspondant à l'onglet panier :\\
+\begin{center}
+\includegraphics[width=15cm]{images/panier}
+\end{center}
+L'onglet panier se divise en deux parties. Premièrement, en haut nous avons
+deux champs et un bouton qui nous permettent la saisie rapide d'un élément à
+mettre dans le panier. Deuxièmement, dans la partie basse, nous pouvons
+consulter les éléments du panier, les modifier, les supprimer ou les traiter.\\
+Voici un exemple d'ajout dans le panier. On remplit les champs titre et contenu
+puis on clique sur "Ajouter" :
+
+\begin{center}
+\includegraphics[width=15cm]{images/ajoutpanier1}
+\end{center}
+L'élément apparaît ensuite dans la liste des éléments du panier en bas à droite
+de la fenêtre :
+\begin{center}
+\includegraphics[width=15cm]{images/ajoutpanier2}
+\end{center}
+Pour consulter un élément, nous cliquons sur un élément de la liste, nous
+obtenons sa description à droite :
+\begin{center}
+\includegraphics[width=15cm]{images/5consultationelement}
+\end{center}
+Si le contenu contient une erreur, le bouton modifier permet de rectifier le
+contenu de l'élément. Nous pouvons également traiter l'élément du panier,
+c'est-à-dire le transformer en projet, tache ou contexte. Le fait de cliquer
+sur le bouton "Traiter" nous conduit à la fenêtre suivante :
+\begin{center}
+\includegraphics[width=7cm]{images/6traiter}
+\end{center}
+Nous choisissons par exemple de transformer l'élément "Rapport IHM" en projet
+en cliquant sur "Créer projet" :
+\begin{center}
+\includegraphics[width=7cm]{images/7traiterprojet}
+\end{center}
+Nous arrivons à une fenêtre nous permettant d'entrer le nom d'un projet à
+ajouter. En cliquant sur "Creer", le projet s'ajoute à la liste des projets
+dans l'onglet projet que nous verrons plus loin. Une fois l'élément traité, il
+est automatiquement supprimé du panier :
+\begin{center}
+\includegraphics[width=15cm]{images/8traiterprojet}
+\end{center}
+Pour transformer l'élément en contexte, la fenêtre est la même que pour le
+transformer en projet. Nous pouvons également choisir de transformer l'élément
+en tâche. Nous arrivons à la fenêtre suivante :
+\begin{center}
+\includegraphics[width=7cm]{images/9traitertache}
+\end{center}
+Après avoir remplit les champs, nous pouvons créer la tache. Un champ est
+indispensable : le champ parent car une tache ne peut pas exister seul. Pour
+éviter d'avoir un champ parent vide, on met par défaut le premier projet de la
+liste dans le champ parent.
+\subsubsection{L'onglet projet}
+
+Dans cet onglet, nous continuons avec une signifiance des codes simple et courante. Par exemple, nous utilisons des boutons "+" ou "Ajouter" pour l'ajout d'éléments.\\
+Nous nous sommes également occupé de la gestion des erreurs. A chaque fois qu'il manque une donnée au programme pour exécuter ce que veux faire l'utilisateur, un message d'erreur détaillant les données manquantes apparaît.\\
+Nous avons également fait certain contrôle des actions de l'utilisateur. Nous demandons confirmation lors de suppression d'élément. Les fenêtres modales demandant confirmation alourdissent l'IHM. Nous avons donc décider de les utiliser uniquement pour les actions irréversibles c'est-à-dire les suppressions d'éléments. Nous considérons qu'un ajout malencontreux peut ensuite être supprimé tandis que le contraire n'est pas vrai.\\
+Pour guider l'utilisateur, nous avons procédé à un groupement par thème dans cet onglet. L'onglet projet se divise en quatre parties clairement séparées. Ces parties sont :
+\begin{itemize}
+\item En haut, nous disposons des boutons permettant d'ajouter ou de supprimer un projet, une tâche ou un sous-projet.
+\item Sur la droite, une arborescence des projets avec leurs tâches et leurs sous projet.
+\item Sur la gauche dans la partie haute, le détail d'un projet avec son nom, son contexte, la liste de ses contacts et la liste de ses notes.
+\item Sur la gauche dans la partie basse, le détail d'une tache.
+\end{itemize}
+
+
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/1OngletProjet}
+\end{center}
+
+\paragraph{L'arborescence des projets}
+Cette arborescence nous permet d'avoir une vue globale de tous les projets et si nécessaire d'avoir la liste des tâches du projet, la liste des sous-projet et les tâches des sous-projet s'il y en a. L'arborescence est encadrée en rouge sur la vue suivante :
+
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/1OngletProjetArbre}
+\end{center}
+Ci-dessus, nous pouvons voir 3 projets : Maison, Petit projet et Rapport. Le projet maison contient deux taches : laver les vitres et faire le ménages et un sous-projet "Peindre la façade". Le sous-projet "Peindre la façade" contient également deux tâches qui sont : "Acheter de la peinture rouge" et "Acheter de la peinture blanche".
+\paragraph{Détail d'un projet}
+Lorsque l'on clique sur un projet, son détail s'affiche sur la partie gauche. Ci-dessous, le détails du projet maison encadré en rouge :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/10detailProjetEncadre}
+\end{center}
+
+Ci-dessous, nous pouvons voir :
+\begin{itemize}
+\item Le nom du projet dans l'encadré rouge.
+\item Le nom du contexte dans l'encadré orange.
+\item Les éléments relatifs aux notes (détaillés plus loin) dans l'encadré bleu.
+\item Les éléments relatifs aux contacts (détaillés plus loin) dans l'encadré vert.
+\item Les boutons de validation ou d'annulation en cas de modification d'un des champs dans l'encadré violet.
+\end{itemize}
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/10detailProjetEncadre2}
+\end{center}
+Les champs "Nom projet" et "Nom du contexte" sont des champs textes et permettent ainsi de modifier les données. Par exemple, je veux changer le nom du projet "Rapport" que j'ai ajouter précédemment en "Rapport IHM". Pour cela, je clique sur le projet "Rapport", ces données s'affichent dans la partie détail du projet :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/41ModifProjet}
+\end{center}
+Je change maintenant le nom du projet en  l'appelant "Rapport IHM" et je clique sur "Valider les modifications" :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/42ModifProjet}
+\end{center}
+Sur la droite, le nom du projet dans l'arborescence est maintenant "Rapport IHM" :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/43ModifProjetEncadre}
+\end{center}
+
+Passons maintenant aux informations relatives aux notes et contact. Les notes et les contacts d'un projet se présente sous forme de liste avec en dessous un champs texte et encore en dessous un boutons "+"  et un bouton "-". Dans la fenêtre ci-dessous, nous avons déjà trois notes ("Envoyer mail assurance" et "Téléphoner à Yoan" et trois contact (Alice, Pierre et Yoan) :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/11NoteContactEncadre}
+\end{center}
+
+Pour ajouter une note ou un contact, on le ou la saisit dans le champs texte. Ci-dessous, j'ajoute le contact "Damien" avec le numéro "061171121" :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/8AjoutContactEncadre}
+\end{center}
+Je clique ensuite sur le bouton "+" se situant en dessous, le contact s'ajoute ensuite à la liste :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/9AjoutContactEncadre}
+\end{center}
+Je m'aperçoit que le numéro de téléphone que j'ai entré est erroné. Pour modifier une note ou un contact, je clique dessus pour l'éditer dans le champs texte :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/12ModifContact}
+\end{center}
+
+Je le modifie puis je clique sur "Valider les modifications" :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/122ModifContact}
+\end{center}
+Mon contact modifié (on a rajouter un "3" au numéro de téléphone) apparaît immédiatement dans la liste.
+Pour supprimer un contact ou une note, on le sélectionne dans la liste :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/141SupprContact}
+\end{center}
+On clique ensuite sur le bouton "-" se situant en-dessous de la liste des contacts. Un message de confirmation apparaît :
+\begin{center}
+\includegraphics[width=7cm]{images/imageProjet/142SupprContact}
+\end{center}
+Si on clique sur ok, le contact est effectivement supprimer. "Damien" n'apparaît plus dans la fenêtre suivante :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/143SupprContact}
+\end{center}
+Pour garder une bonne cohérence entre la gestion des contacts et celle des notes, elles fonctionnent de façon similaire.\\
+
+Pour modifier les données d'un projet il faut que le projet soit sélectionner dans l'arbre de gauche. Si aucun projet n'est sélectionné, un message d'erreur similaire au message suivant apparaît :
+\begin{center}
+\includegraphics[width=7cm]{images/imageProjet/13ErreurAjoutNote}
+\end{center}
+\paragraph{Le détail d'une tache}
+Lorsque l'on clique sur une tache dans l'arbre à gauche, le détail de cette tache  apparaît dans l'encadré "Détail d'une tache" :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/14detailTacheEncadre}
+\end{center}
+Tout comme dans la partie "Détail d'un projet", tous les champs sont modifiables. Je peux par exemple, changer la priorité de la tache "Laver les vitres", la passer de 1 à 2. Je modifie le champ :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/15ModifTacheEncadre}
+\end{center}
+Puis je clique ensuite sur "Valider les modifications", la tâche modifiée est ainsi réenregistrées.
+Si je modifie par erreur une donnée, par exemple j'efface une partie du nom de la tache :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/16AnnulerModifTacheEncadre}
+\end{center}
+Je peux rétablir les informations en cliquant sur "Annuler" : 
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/16AnnulerModiftache2}
+\end{center}
+
+
+
+\paragraph{Le bouton "Agir"}
+Le bouton "Agir" permet a l'utilisateur de connaître la tache la plus urgente à partir d'un projet (selon la définition de David Allen). Dans notre exemple, sur le projet maison, on obtient la tâche "Laver les vitres" :
+\begin{center}
+\includegraphics[width=9cm]{images/imageProjet/17Agir}
+\end{center}
+Si on appuie sur le bouton "Agir" sans avoir selectionné de projet, le fenêtre suivante apparaît :
+\begin{center}
+\includegraphics[width=7cm]{images/imageProjet/18Agir}
+\end{center}
+
+\paragraph{Les boutons "Ajouter projet" et "Ajouter sous-projet"}
+Pour ajouter un projet, je complète les champs du projet tel que "Nom du projet", "Nom du contexte" et éventuellement des contacts et des notes. Sur l'exemple suivant j'ajoute le projet "Image" dans le contexte "Fac" avec le contact "Bruno".
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/2AjoutProjet}
+\end{center}
+On clique ensuite sur "Ajouter projet", le projet apparaît à gauche : 
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/3AjoutProjetEncadre}
+\end{center}
+Pour ajouter un sous-projet,  la démarche est la même mais un projet (le projet parent) doit-être sélectionner dans l'arbre. Si le projet parent n'est pas sélectionné, le message d'erreur suivant apparaît :
+\begin{center}
+\includegraphics[width=9cm]{images/imageProjet/19erreurAjoutSousproj}
+\end{center}
+
+\paragraph{Le bouton "Ajouter tache"}
+Sans surprise, ce bouton nous permet d'ajouter une tache. Pour cela, nous complétons les champs de la partie "Détail d'une tâche" et nous sélectionnons un projet. Dans l'exemple suivant je sélectionne le projet "Image" et je complète les champs de la tache :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/20AjoutTache}
+\end{center}
+Je clique ensuite sur le bouton "Ajouter tache", la tache apparaît à gauche dans l'arbre :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/21AjoutTacheEncadre}
+\end{center}
+\paragraph{Les boutons de suppression}
+Pour supprimer un tache, on clique sur la tache :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/22supprTache}
+\end{center}
+Puis on clique sur le bouton "Supprimer tache". Comme pour toute les suppressions, une fenêtre de confirmation apparaît : 
+\begin{center}
+\includegraphics[width=7cm]{images/imageProjet/23supprTache}
+\end{center}
+En cliquant sur "OK", la tache est supprimée :
+\begin{center}
+\includegraphics[width=15cm]{images/imageProjet/24supprTache}
+\end{center}
+Si aucune tache n'est sélectionnée, le message d'erreur suivant apparaît :
+\begin{center}
+\includegraphics[width=9cm]{images/imageProjet/25erreurSupprTache}
+\end{center}
+Le bouton de suppression de projet fonctionne de la même façon.
+%Controle explicite???
+
+
+
+
+
+
+
+
+\subsubsection{L'onglet contexte}
+
+\section{Choix de conception}
+\subsection{Les cas d'utilisations}
+Nous avons vu que la méthode GTD pouvait se résumer en trois grands axes. C'est
+pourquoi nous avons choisi de diviser l'interface suivant ces trois axes.
+Lorsque l'utilisateur se trouve face à l'application, il trouve en haut de
+celle-ci, trois onglets qui lui permettent de se positionner dans ces trois
+vues que sont la gestion des idées, des projets et des contextes. Nous voyons
+ici le parfait compromis entre respect des cas d'utilisation et des critères de
+conceptions (critères ergonomiques) puisque ce choix fait office de guidage pour
+l'utilisateur. En effet les noms des onglets l'informe dans quelle vue il se trouve et il sait
+comment se positionner dans une autre rien qu'en regardant les onglets. Cela
+remplit également un autre critère qui est celui de la brieveté. D'un simple
+clic, l'utilisateur peut basculer d'une vue à l'autre sans être noyé dans un
+menu complexe.
+\subsection{Gestion du Panier}
+Nous avons rendu la gestion du panier la plus intuitive et la plus facile
+d'utilisation pour l'utilisateur. En effet, sur la partie haute de l'onglet
+Panier, l'utilisateur voit directement un champ pour le nom de l'idée ainsi qu'une zone de texte pour
+le contenu de celle-ci. De plus, sur la même ligne se trouve un bouton avec la
+mention \textit{Ajouter}. Il peut ainsi ajouter à la volée un grand nombre
+d'idée, ce qui est un des objectifs de la méthode GTD. Dans la partie basse se
+trouve une liste à gauche qui contient les titres des idées qui ont été
+ajoutés. Lorsque l'utilisateur sélectionne une idée de la liste, les champs à
+droite se remplisse et il peut directement éditer l'idée et valider les
+changements en cliquent sur le bouton \textit{Modifier}. De même, il peut
+choisir de supprimer cette idée ou de la traiter. Nous avons donc choisi des
+éléments graphiques qui permettent la bonne implémentation de la méthode GTD
+mais qui procure également à l'utilisateur une interface rapide et simple à
+appréhender. De plus, nous n'avons pas oublié de prendre en compte les notions
+de flexibilité en permettant à l'utilisateur de redimensionner l'espace occupé
+par chaque partie (haute et basse) de cet onglet.
+\subsection{Manipulation des éléments}
+En ce qui concerne les onglets \textit{Projets} et \textit{Contextes}, Leur
+fonctionnement est très similaire. Une partie de l'interface sert à
+selectionner un élément à consulter et une autre sert à visionner les détails
+de cet élément, et à les modifier directement. L'utilisateur retrouvera donc
+ici le même fonctionnement que dans l'onglet Panier. D'avoir choisi
+d'implémenter le même schéma de fonctionnement nous permet de maintenir une
+cohérence dans l'interface. Ainsi l'utilisateur appréhendera de la même manière
+toutes les fonctionnalités du logiciel et ne sera pas perturbé. En effet, il
+est contraignant pour un utilisateur de devoir utiliser un logiciel où le
+fonctionnement diffère d'une fenêtre à l'autre.
+\subsection{Récupération de la tâche prioritaire}
+Cette fonctionnalité a été incluse dans l'interface le plus naturellement
+possible. En effet, puisque la consultation de la tâche prioritaire se fait
+selon un projet ou un contexte, nous avons décidé d'afficher celle-ci avec les
+détails des éléments. Lorsque l'utilisateur sélectionnera par exemple un
+Projet, dans les caractèristiques de ce Projet sera également mentionnée la
+tâche la plus prioritaire de ce Projet. De même pour les contextes. Nous avons
+ainsi évité de surcharger l'interface avec des fonctionnalités et donc des
+boutons et des menus supplémentaires.
+\section{Implémentation}
+Nous avons réalisé notre interface graphique en nous appuyant sur le Design
+Pattern MVC, Modèle Vue Contrôleur et comme toute l'application allait tourner en 
+Java, nous avons utilisé la librairie Swing. De ce fait nous avons complètement séparé
+la partie Interface Graphique de l'application dîte. En effet, nous avons
+travaillé avec des faux composants qui simulaient le comportement du contrôleur
+(grâce à l'utilisation d'Interface Java) et nous avons donc pu réaliser
+l'interface pendant que nous effectuions en parrallèle le développememnt des
+vrais composants. Nous avions déjà essayé dans d'autres projets de séparer les
+données de l'interface mais c'est vraiment dans le cadre de ce projet
+multi-module que nous nous sommes efforcés, non seulement de séparer
+l'interface des données, mais également de séparer le développement des deux,
+ce qui n'était pas forcément le cas avant.
+
+\chapter*{Conclusion}
+Nous avons réalisé l'interface en respectant bon nombre de contraintes qui
+provenaient du sujet du projet, mais également des principes de conception
+d'interfaces. Notre application est intuitive et l'utilisateur peut accéder à
+chaque fonctionnalité de la méthode GTD de façon très rapide. Cela permet à un
+utilisateur débutant de s'en sortir aussi bien qu'un utilisateur expert puisque
+l'application a été conçue afin d'être la plus accessible possible. De plus,
+cela permet également à l'utilisateur expert de ne pas se sentir freiné par
+l'application (ce qui est souvent le cas des utilisateurs qui veulent aller
+plus vite lorsqu'il sont à l'aise). Enfin nous avons complètement séparé la
+conception, le développement et l'implémentation de l'interface du reste de
+l'application. Nous avons donc été capable de mettre en oeuvre la plupart des
+notions vues en cours et en TP sur la réalisation d'Interface Homme Machine.
+Nous pensons qu'il reste du travail à faire sur le côté esthétique de
+l'application mais en ce qui concerne le côté fonctionnel et utilisabilité,
+nous sommes très satisfaits du résultat.
+\end{document}

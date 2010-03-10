@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="panelDetail" alignment="1" max="32767" attributes="0"/>
+                  <Component id="panelGeneral" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panelGeneral" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panelDetail" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="panelGeneral">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Renseignement g&#xe9;n&#xe9;ral"/>
+          </Border>
+        </Property>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="panelGeneral" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelNom" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelDescription" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelContexte" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelProjet" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelEcheancier" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelContacts" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelType" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="comboType" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="boutonContacts" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="scrollDescription" pref="286" max="32767" attributes="0"/>
+                      <Component id="textNom" alignment="0" pref="286" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="comboContexte" pref="139" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="boutonContexte" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="comboProjet" pref="176" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="boutonProjet" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="boutonEcheancier" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textNom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelDescription" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="2" pref="2" max="2" attributes="0"/>
+                          <Component id="scrollDescription" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="comboContexte" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelContexte" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="boutonContexte" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelProjet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboProjet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="boutonProjet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelEcheancier" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="boutonEcheancier" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelContacts" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="boutonContacts" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labelType" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="labelNom">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nom de l&apos;&#xe9;l&#xe9;ment :"/>
+            <Property name="name" type="java.lang.String" value="labelNom" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textNom">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="textNom" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelDescription">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Description :"/>
+            <Property name="name" type="java.lang.String" value="labelDescription" noResource="true"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="scrollDescription">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="scrollDescription" noResource="true"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="textDescription">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="name" type="java.lang.String" value="textDescription" noResource="true"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="labelType">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Type :"/>
+            <Property name="name" type="java.lang.String" value="labelType" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboType">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="T&#xe2;che"/>
+                <StringItem index="1" value="Projet"/>
+              </StringArray>
+            </Property>
+            <Property name="name" type="java.lang.String" value="comboType" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboTypeItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelContexte">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Contexte :"/>
+            <Property name="name" type="java.lang.String" value="labelContexte" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboContexte">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="comboContexte" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="boutonContexte">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nouveau contexte..."/>
+            <Property name="name" type="java.lang.String" value="boutonContexte" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boutonContexteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelContacts">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Contacts :"/>
+            <Property name="name" type="java.lang.String" value="labelContacts" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="boutonContacts">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xe9;rer les contacts"/>
+            <Property name="name" type="java.lang.String" value="boutonContacts" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boutonContactsActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelEcheancier">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ech&#xe9;ancier :"/>
+            <Property name="name" type="java.lang.String" value="labelEcheancier" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="boutonEcheancier">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xe9;rer l&apos;&#xe9;ch&#xe9;ancier"/>
+            <Property name="name" type="java.lang.String" value="boutonEcheancier" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boutonEcheancierActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelProjet">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Projet parent :"/>
+            <Property name="name" type="java.lang.String" value="labelProjet" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="comboProjet">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="comboProjet" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="boutonProjet">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="S&#xe9;lectionner..."/>
+            <Property name="name" type="java.lang.String" value="boutonProjet" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boutonProjetActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="panelDetail">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="panelDetail" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="456" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="145" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>

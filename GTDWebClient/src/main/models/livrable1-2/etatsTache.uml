@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="etatsTacheModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="etatsTachePackage">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="idStateMachine" name="etatsTacheStateMachine">
+      <region xmi:id="idRegion" name="MainRegion">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="__B6tEb8ZEd6RF5FkPuPLyA" name=" "/>
+        <subvertex xmi:type="uml:State" xmi:id="_GmM94L8aEd6RF5FkPuPLyA" name="AFaire"/>
+        <subvertex xmi:type="uml:State" xmi:id="_JgeWoL8aEd6RF5FkPuPLyA" name="EnAttente"/>
+        <subvertex xmi:type="uml:State" xmi:id="_LMzVkL8aEd6RF5FkPuPLyA" name="Déléguée"/>
+        <subvertex xmi:type="uml:State" xmi:id="_M_ZUkr8aEd6RF5FkPuPLyA" name="Finie"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_niwCA78bEd6RF5FkPuPLyA" name="Délégation de la tâche" kind="choice"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_CHkkgL8cEd6RF5FkPuPLyA" name=""/>
+        <transition xmi:id="_W1tSZr8aEd6RF5FkPuPLyA" name="Création de la tâche" kind="local" source="__B6tEb8ZEd6RF5FkPuPLyA" target="_GmM94L8aEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_ubO8xb8bEd6RF5FkPuPLyA" name="Organisation des tâches" source="_GmM94L8aEd6RF5FkPuPLyA" target="_niwCA78bEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_0FLn1b8bEd6RF5FkPuPLyA" name="oui" source="_niwCA78bEd6RF5FkPuPLyA" target="_LMzVkL8aEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_C5o6pb8cEd6RF5FkPuPLyA" name="Réactualisation" source="_LMzVkL8aEd6RF5FkPuPLyA" target="_CHkkgL8cEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_JaIMJb8cEd6RF5FkPuPLyA" name="non" source="_niwCA78bEd6RF5FkPuPLyA" target="_JgeWoL8aEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_Y0b-Bb8cEd6RF5FkPuPLyA" name="Réalisation de la tâche" source="_JgeWoL8aEd6RF5FkPuPLyA" target="_M_ZUkr8aEd6RF5FkPuPLyA"/>
+        <transition xmi:id="_cZUaBL8cEd6RF5FkPuPLyA" name="Réactualisation" source="_M_ZUkr8aEd6RF5FkPuPLyA" target="_CHkkgL8cEd6RF5FkPuPLyA"/>
+      </region>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

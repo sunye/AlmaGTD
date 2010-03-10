@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="DeploymentDiagramModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DeploymentDiagram">
+    <packagedElement xmi:type="uml:Node" xmi:id="_iv7eQNEZEd61H5OzRhVvOQ" name="Node1">
+      <nestedClassifier xmi:type="uml:Device" xmi:id="_km2joNEZEd61H5OzRhVvOQ" name="Device1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Node" xmi:id="_2uh6stEZEd61H5OzRhVvOQ" name="PC Utilisateur">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_1lSlQtEaEd61H5OzRhVvOQ" name="JVM">
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_59SgQtEaEd61H5OzRhVvOQ" name="Device1"/>
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_Pus-ItEbEd61H5OzRhVvOQ" name="Device2"/>
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_3CjkwtErEd61H5OzRhVvOQ" name="IHMSwing"/>
+        <nestedClassifier xmi:type="uml:DataType" xmi:id="_v0U2sNHfEd6M-dv6T0O5WA" name="ExecutionEnvironment1"/>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_44_VItHfEd6M-dv6T0O5WA" name="Node1"/>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_E-yz4tHhEd6M-dv6T0O5WA" name="&lt;&lt;Langage Java>> IHM GTD">
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_cbUyANEsEd61H5OzRhVvOQ" name="IHMSwing" clientDependency="_nzaFg9HlEd6M-dv6T0O5WA"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_O3pk0NHgEd6M-dv6T0O5WA" name="ControleurIHM" clientDependency="_qbBgpNHoEd6M-dv6T0O5WA"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_6RkmwNHhEd6M-dv6T0O5WA" name="&lt;&lt;Langage Java>> Client GTD">
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_2TmYgNHlEd6M-dv6T0O5WA" name="ConnexionServeur" clientDependency="_rd5k1dHmEd6M-dv6T0O5WA _wjlFNdHmEd6M-dv6T0O5WA"/>
+          <nestedClassifier xmi:type="uml:Artifact" xmi:id="_hpE_UNHnEd6M-dv6T0O5WA" name="InterfaceServeur.idl" clientDependency="_lvgpNNHnEd6M-dv6T0O5WA"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Aq54oNHoEd6M-dv6T0O5WA" name="SynchronisationServeur"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_pFB-ENHoEd6M-dv6T0O5WA" name="ConnexionLocale" clientDependency="_3fKP49HpEd6M-dv6T0O5WA _6QpgFNHpEd6M-dv6T0O5WA"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Uzds4NHpEd6M-dv6T0O5WA" name="BaseDeDonnees" clientDependency="_SfBD0NjVEd69u6B2AyWG9A _7YEg89jVEd69u6B2AyWG9A"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_w9tVENHpEd6M-dv6T0O5WA" name="GestionnaireDeDonnees" clientDependency="_6nQpQ9HpEd6M-dv6T0O5WA _7jXsM9HpEd6M-dv6T0O5WA"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_gOW-INjUEd69u6B2AyWG9A" name="Hibernate">
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_RMKU0NjVEd69u6B2AyWG9A" name="Device1"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_3v6ugNjVEd69u6B2AyWG9A" name="session Hibernate"/>
+        </nestedClassifier>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Node" xmi:id="_pYOiwtErEd61H5OzRhVvOQ" name="Node1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Device" xmi:id="_23wIItEZEd61H5OzRhVvOQ" name="Device1"/>
+    <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_3JKBMNEZEd61H5OzRhVvOQ" name="ExecutionEnvironment1"/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_HIFtotEbEd61H5OzRhVvOQ" name="Device2"/>
+    <packagedElement xmi:type="uml:Artifact" xmi:id="_wiyfQtEbEd61H5OzRhVvOQ" name="Artifact1"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="__UNFENHfEd6M-dv6T0O5WA" name=""/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_L7ANgNHgEd6M-dv6T0O5WA" name="ExecutionEnvironment2"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_89rdINHgEd6M-dv6T0O5WA" name="Node2"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_-SCA8NHgEd6M-dv6T0O5WA" name="Node2"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_DEDlgNHhEd6M-dv6T0O5WA" name="Device3"/>
+    <packagedElement xmi:type="uml:Manifestation" xmi:id="_nzaFg9HlEd6M-dv6T0O5WA" name="" supplier="_O3pk0NHgEd6M-dv6T0O5WA" client="_cbUyANEsEd61H5OzRhVvOQ"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_CyXmUtHmEd6M-dv6T0O5WA" name="Serveur">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_Ty-RgNHvEd6M-dv6T0O5WA" name="JVM">
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_Ty-RgdHvEd6M-dv6T0O5WA" name="Device1"/>
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_Ty-RgtHvEd6M-dv6T0O5WA" name="Device2"/>
+        <nestedClassifier xmi:type="uml:Device" xmi:id="_Ty-Rg9HvEd6M-dv6T0O5WA" name="IHMSwing"/>
+        <nestedClassifier xmi:type="uml:DataType" xmi:id="_Ty-RhNHvEd6M-dv6T0O5WA" name="ExecutionEnvironment1"/>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_Ty-RhdHvEd6M-dv6T0O5WA" name="Node1"/>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_Ty-RhtHvEd6M-dv6T0O5WA" name="&lt;&lt;Langage Java>> IHM GTD">
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-Rh9HvEd6M-dv6T0O5WA" name="IHMSwing"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RiNHvEd6M-dv6T0O5WA" name="ControleurIHM"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_Ty-RidHvEd6M-dv6T0O5WA" name="&lt;&lt;Langage Java>> Client GTD">
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RitHvEd6M-dv6T0O5WA" name="ConnexionServeur"/>
+          <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Ty-Ri9HvEd6M-dv6T0O5WA" name="InterfaceServeur.idl"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RjNHvEd6M-dv6T0O5WA" name="SynchronisationServeur"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RjdHvEd6M-dv6T0O5WA" name="ConnexionLocale"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RjtHvEd6M-dv6T0O5WA" name="BaseDeDonnees"/>
+          <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Ty-Rj9HvEd6M-dv6T0O5WA" name="BaseDeDonnees.txt"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Ty-RkNHvEd6M-dv6T0O5WA" name="GestionnaireDeDonnees"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_qsGfANHnEd6M-dv6T0O5WA" name="&lt;&lt;Langage Java>>Serveur GTD">
+          <ownedComment xmi:id="_KR480NHvEd6M-dv6T0O5WA">
+            <body>etc....</body>
+          </ownedComment>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_qsGfAdHnEd6M-dv6T0O5WA" name="IHMSwing"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_qsGfAtHnEd6M-dv6T0O5WA" name="ControleurIHM"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_Kt1oENHmEd6M-dv6T0O5WA" name="SynchroAvecClientGTD" clientDependency="_bnj-RdHmEd6M-dv6T0O5WA _mvcRo9HmEd6M-dv6T0O5WA _omnOpdHmEd6M-dv6T0O5WA _qXO3tdHmEd6M-dv6T0O5WA"/>
+        </nestedClassifier>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_bnj-RdHmEd6M-dv6T0O5WA" name="&lt;&lt;TCP/IP>> CORBA" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_Kt1oENHmEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_mvcRo9HmEd6M-dv6T0O5WA" name="Deployment1" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_Kt1oENHmEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_omnOpdHmEd6M-dv6T0O5WA" name="Deployment2" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_Kt1oENHmEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Manifestation" xmi:id="_qXO3tdHmEd6M-dv6T0O5WA" name="Manifestation1" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_Kt1oENHmEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_rd5k1dHmEd6M-dv6T0O5WA" name="&lt;&lt;TCP/IP>> CORBA" supplier="_Kt1oENHmEd6M-dv6T0O5WA" client="_2TmYgNHlEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_wjlFNdHmEd6M-dv6T0O5WA" name="&lt;&lt;TCP/IP>> CORBA" supplier="_Kt1oENHmEd6M-dv6T0O5WA" client="_2TmYgNHlEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_lvgpNNHnEd6M-dv6T0O5WA" name="" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_hpE_UNHnEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_qbBgpNHoEd6M-dv6T0O5WA" name="" supplier="_pFB-ENHoEd6M-dv6T0O5WA" client="_O3pk0NHgEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_lR-GtdHpEd6M-dv6T0O5WA" name="" supplier="_Uzds4NHpEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_3fKP49HpEd6M-dv6T0O5WA" name="" supplier="_Uzds4NHpEd6M-dv6T0O5WA" client="_pFB-ENHoEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_6QpgFNHpEd6M-dv6T0O5WA" name="Deployment3" supplier="_w9tVENHpEd6M-dv6T0O5WA" client="_pFB-ENHoEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_6nQpQ9HpEd6M-dv6T0O5WA" name="Deployment4" supplier="_2TmYgNHlEd6M-dv6T0O5WA" client="_w9tVENHpEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Deployment" xmi:id="_7jXsM9HpEd6M-dv6T0O5WA" name="Deployment5" supplier="_Uzds4NHpEd6M-dv6T0O5WA" client="_w9tVENHpEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_SfBD0NjVEd69u6B2AyWG9A" name="Dependency1" supplier="_RMKU0NjVEd69u6B2AyWG9A" client="_Uzds4NHpEd6M-dv6T0O5WA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_7YEg89jVEd69u6B2AyWG9A" name="" supplier="_3v6ugNjVEd69u6B2AyWG9A" client="_Uzds4NHpEd6M-dv6T0O5WA"/>
+  </packagedElement>
+</uml:Model>

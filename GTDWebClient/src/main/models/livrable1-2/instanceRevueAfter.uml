@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="instanceRevueAfter">
+    <packagedElement xmi:type="uml:Class" xmi:id="_jXZq8LPuEd6mhL7qoNstaw" name="user1 : Utilisateur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ktRRsLPuEd6mhL7qoNstaw" name="bureau : EspaceDeTravail"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mKGcELPuEd6mhL7qoNstaw" name="info1 : Informations"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pkSD8LPuEd6mhL7qoNstaw" name="panierUser1 : Panier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sphWkLPuEd6mhL7qoNstaw" name="tache1 : Tache"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uoQUILPuEd6mhL7qoNstaw" name="contextTache1 : Contexte"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yJMrULPuEd6mhL7qoNstaw" name="newyork : Endroit"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_qGuiWrPxEd6mhL7qoNstaw" name="A_&lt;user1 : Utilisateur>_&lt;panierUser1 : Panier>" memberEnd="_qGuiW7PxEd6mhL7qoNstaw _qGuiXrPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_qGuiW7PxEd6mhL7qoNstaw" name="user1 : Utilisateur" type="_jXZq8LPuEd6mhL7qoNstaw" association="_qGuiWrPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qGuiXLPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qGuiXbPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_qGuiXrPxEd6mhL7qoNstaw" name="panierUser1 : Panier" type="_pkSD8LPuEd6mhL7qoNstaw" association="_qGuiWrPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qGuiX7PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qGuiYLPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_qXvZ2rPxEd6mhL7qoNstaw" name="A_&lt;panierUser1 : Panier>_&lt;info1 : Informations>" memberEnd="_qXvZ27PxEd6mhL7qoNstaw _qXvZ3rPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_qXvZ27PxEd6mhL7qoNstaw" name="panierUser1 : Panier" type="_pkSD8LPuEd6mhL7qoNstaw" association="_qXvZ2rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXvZ3LPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXvZ3bPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_qXvZ3rPxEd6mhL7qoNstaw" name="info1 : Informations" type="_mKGcELPuEd6mhL7qoNstaw" association="_qXvZ2rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qXvZ37PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qXvZ4LPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_qrSA6rPxEd6mhL7qoNstaw" name="A_&lt;user1 : Utilisateur>_&lt;bureau : EspaceDeTravail>" memberEnd="_qrSA67PxEd6mhL7qoNstaw _qrSA7rPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_qrSA67PxEd6mhL7qoNstaw" name="user1 : Utilisateur" type="_jXZq8LPuEd6mhL7qoNstaw" association="_qrSA6rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qrSA7LPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qrSA7bPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_qrSA7rPxEd6mhL7qoNstaw" name="bureau : EspaceDeTravail" type="_ktRRsLPuEd6mhL7qoNstaw" association="_qrSA6rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qrSA77PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qrSA8LPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_q_3w2rPxEd6mhL7qoNstaw" name="A_&lt;bureau : EspaceDeTravail>_&lt;tache1 : Tache>" memberEnd="_q_3w27PxEd6mhL7qoNstaw _q_3w3rPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_q_3w27PxEd6mhL7qoNstaw" name="bureau : EspaceDeTravail" type="_ktRRsLPuEd6mhL7qoNstaw" association="_q_3w2rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q_3w3LPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q_3w3bPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_q_3w3rPxEd6mhL7qoNstaw" name="tache1 : Tache" type="_sphWkLPuEd6mhL7qoNstaw" association="_q_3w2rPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q_3w37PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q_3w4LPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ra0nerPxEd6mhL7qoNstaw" name="A_&lt;tache1 : Tache>_&lt;contextTache1 : Contexte>" memberEnd="_ra0ne7PxEd6mhL7qoNstaw _ra0nfrPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_ra0ne7PxEd6mhL7qoNstaw" name="tache1 : Tache" type="_sphWkLPuEd6mhL7qoNstaw" association="_ra0nerPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ra0nfLPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ra0nfbPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_ra0nfrPxEd6mhL7qoNstaw" name="contextTache1 : Contexte" type="_uoQUILPuEd6mhL7qoNstaw" association="_ra0nerPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ra0nf7PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ra0ngLPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_rvcMmrPxEd6mhL7qoNstaw" name="A_&lt;contextTache1 : Contexte>_&lt;newyork : Endroit>" memberEnd="_rvcMm7PxEd6mhL7qoNstaw _rvcMnrPxEd6mhL7qoNstaw">
+      <ownedEnd xmi:id="_rvcMm7PxEd6mhL7qoNstaw" name="contextTache1 : Contexte" type="_uoQUILPuEd6mhL7qoNstaw" association="_rvcMmrPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rvcMnLPxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rvcMnbPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_rvcMnrPxEd6mhL7qoNstaw" name="newyork : Endroit" type="_yJMrULPuEd6mhL7qoNstaw" association="_rvcMmrPxEd6mhL7qoNstaw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rvcMn7PxEd6mhL7qoNstaw" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rvcMoLPxEd6mhL7qoNstaw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

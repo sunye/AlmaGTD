@@ -1,0 +1,959 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 2                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Spécification d'exigences logicielles}
+	\minitoc
+
+		\section{Introduction}
+
+			\subsection{Objectif}
+
+Ce deuxième livrable se focalise sur la spécification des exigences logicielles de notre application. Nous sommes concernés par l'application cliente de ce projet centrée autour de la méthode GTD. Nous considérons tout au long de ce document que les conditions sont idéales pour la partie que nous allons décrire. Le terme idéal signifie ici que pour fonctionner, notre client a besoin d'un ensemble de données et de messages associés. Ces messages arrivent toujours à destination, les données produites sont valides, et le serveur distant est toujours disponible.
+
+		%\section{Conventions}
+
+			\subsection{Audience}
+Ce document s'adresse à un chef de projet (ou à un professeur).
+
+			\subsection{Portée du document}
+Ce document se focalise sur l'application dite cliente d'un système.
+
+			\subsection{Définitions, acronymes et abréviations}
+\begin{itemize}
+	\item GTD : Getting Things Done (méthode de gestion de tâches quotidienne ou professionelle dans un système distribué)
+	\item Client GTD : application locale généralement stockée sur le poste de travail d'un utilisateur.
+	\item IHM GTD : C'est l'Interface Homme-Machine permettant à l'utilisateur d'utiliser l'application.
+\end{itemize}
+
+			\subsection{Organisation du chapitre}
+
+Dans ce deuxième livrable, nous avons exprimé tous les besoins de notre système GTD (besoins fonctionnels et besoins non fonctionnels). Dans un premier temps, nous avons détaillé les cas d'utilisation du premier livrable en détaillant des sous-cas. Dans un second temps, nous avons exprimé, de façon littérale, tous les aspects dont notre application a besoin. Cette étape est nécessaire dans l'analyse et la spécification de notre système puisqu'elle permet de se rendre compte de notre vision en tant que client GTD du système.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Description générale}
+
+		\subsection{Perspectives du produit}
+Cette application est un nouveau produit GTD parmi la foule de logiciels disponibles à l'heure actuelle. Les composants principaux sont représentés dans le diagramme ci-après :
+
+
+		\includegraphics{architecture_gtd.png}
+
+		\subsection{Fonctions du produit}
+Le client GTD doit permettre à un utilisateur de gérer efficacement des tâches. Il doit pouvoir les retrouver très simplement, en effectuant divers tris, ou en les organisant en projets.
+
+		\subsection{Caractéristiques et classes d'utilisateurs}
+Cette application est destinée au grand public. N'importe qui doit pouvoir créer ses propres tâches et cela très rapidement. Cependant, des notions minimales sont requises pour bien exploiter les différentes fonctionalités du logiciel. Ainsi, l'utilisateur lambda doit être familié avec les concepts de contexte et de tri.
+
+		\subsection{Environnement opérationnel}
+%<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
+	\paragraph{}
+Le logiciel doit pouvoir s'éxécuter indépendamment du matériel sur lequel l'utilisateur travail. En effet, la configuration minimale demande une carte graphique ayant 65535 couleurs, un processeur 1GHz et un espace disque de 5Go. Cette application se destine à une poste traditionnel type Desktop. Une utilisation sur ordinateur portable est possible aussi. Pour cela, l'IHM doit être conçue de façon à être utilisée sur des résolutions peu élevées.
+
+	\paragraph{}
+Le client GTD se base sur le langage Java. Une machine virtuelle doit donc être disponible sur le poste cible.
+
+		\subsection{Contraintes de conception et d'implémentation}
+L'implémentation ne pourra se faire que lorsque tous les groupes de ce projet multi-module seront d'accord sur les interfaces à établir. Comme cela n'arrivera probablement pas, le groupe gérant la conception du serveur GTD imposera les spécifications qui lui sont propre.
+
+		\subsection{Documentation utilisateur}
+Le GTD aura une documentation interne permettant à l'utilisateur de retrouver rapidement comment réaliser ses actions. Cette documentation reprend les différents cas d'utilisation décrits prochainement. Cette documentation peut être soit au format papier, soit au format électronique. Une documentation papier permet aux utilisateurs ayant peu d'expérience, avec un environnement multi-fenêtré, d'avoir sous les yeux toutes les informations utiles.
+
+		\subsection{Hypothèses et dépendances}
+%Décrire tout élément de faisabilité technique, disponibilité de sous-système ou de composant ou toute autre hypothèse liée au projet de laquelle dépend la viabilité du logiciel.
+Une application telle que la méthode GTD peut être utilisée chez les professionnel et les particuliers. On peut donc prévoir une utilisation à grande échelle même si ce genre d'application existe déjà. La viabilité de l'application dépend donc de la fréquence d'utilisation des utilisateurs.
+	
+%<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Fonctionnalités du logiciel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Créer une tâche}
+\subsubsection{Description}
+Fonctionnalité centrale du client GTD, la création d'une tâche doit être aisée et immédiate pour l'utilisateur. Le cas d'utilisation suivant présente le scénario général de création d'une tâche.\\
+
+\begin{usecase}{Créer une tâche}
+
+\begin{information}
+\item[Goal in the context:]
+Proposer à l'utilisateur de concrétiser une idée ou un ensemble d'action sous forme de tâche.
+
+\item[Scope:]
+Client GTD et serveur GTD
+
+\item[Level:]
+Primary Task
+
+\item[Success End Condition:]
+La tâche est créée, les attributs obligatoires sont renseignés.
+
+\item[Failed End Condition:]
+La tâche n'est pas créée.
+
+\item[Primary actor:]
+L'utilisateur
+
+\item[Trigger:]
+Action de demander la création d'une tâche par l'utilisateur.
+
+\item[Precondition:]
+
+\item[Postcondition:]
+	
+\end{information}
+
+\begin{scenario}
+\item Le client GTD est correctement lancé.
+
+\item L'utilisateur demande la création d'une tâche.
+
+\item L'utilisateur renseigne au minimum le nom, le contexte, le projet,date de début et fin.
+
+\item Le Client GTD définit la tâche comme active.
+
+\item Le Client GTD ajoute la tâche.
+
+\item L'utilisateur peut complèter sa tâche dès qu'il le souhaite.\\
+\end{scenario}
+
+\begin{extension}
+\item[3a] Un nom identique existe dans le projet.
+	\item[3a1] L'utilisateur saisi un nouveau nom.
+\item[3b] Le projet n'existe pas.
+	\item[3a2] UC Créer projet.\\
+\end{extension}
+
+\begin{subvariation}
+	\item[3a] L'utilisateur précise une échéance en plus du nom et des notes.
+\end{subvariation}
+
+\paragraph{}
+\subsubsection{Exigences fonctionnelles}
+Le diagramme de séquence suivant a pour objectif de présenter de manière générale les entités et leurs interactions lors de l'ajout d'une tâche.\\
+
+	\includegraphics[scale=0.65]{UC_creer_tache.png}
+	
+\end{usecase}
+
+
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Créer une tâche simple}
+Ce cas d'utilisation crée une tâche au même titre que le cas d'utilisation précédent. En revanche, cette fonctionnalité offre la possibilité à l'utilisateur d'exprimer une simple "idée" sans obligation de décrire le projet ou l'échéance associée. Le client GTD attribut alors à la tâche un projet "Panier" qui regroupe l'ensemble des idées.\\
+\subsubsection{Description}
+\begin{usecase}{Créer une tâche simple}
+
+\begin{information}
+\item[Goal in the context:]
+Proposer à l'utilisateur de créer une tâche rapidement sans avoir une idée encore précise sur ses échéances, son projet ou son contexte
+
+\item[Scope:]
+Client GTD et serveur GTD
+
+\item[Level:]
+Primary Task
+
+\item[Success End Condition:]
+La tâche est créée, les attributs obligatoires sont renseignés par le client GTD avec des valeurs par défaut.
+
+\item[Failed End Condition:]
+La tâche n'est pas créée.
+
+\item[Primary actor:]
+L'utilisateur
+
+\item[Trigger:]
+Action de créer une tâche simple de l'utilisateur
+
+\item[Precondition:]
+
+\item[Postcondition:]
+	
+\end{information}
+
+\begin{scenario}
+\item Le client GTD est correctement lancé.
+\item L'utilisateur demande la création d'une tâche simple.
+\item L'utilisateur renseigne le nom de la tâche et des notes (éventuellement).
+\item L'application attribut un projet et un contexte par défaut.
+\item L'application renseigne la date du jour comme date de début et fin par défaut.
+\item Le client GTD défini la tâche comme active.
+\item Le client GTD ajoute la tâche.
+\item L'utilisateur peut compléter sa tâche dès qu'il le souhaite.\\
+\end{scenario}
+
+\begin{extension}
+	\item[3a] Un nom identique existe dans le projet par défaut.
+		\item[3a1] L'utilisateur saisi un nouveau nom.\\
+\end{extension}
+
+\begin{subvariation}
+	\item[3a] L'utilisateur précise une échéance en plus du nom et des notes.
+\end{subvariation}
+
+\paragraph{}
+\subsubsection{Exigences fonctionnelles}
+Similaire au cas d'utilisation précédent, ce scénario intègre le "panier", une instance de projet. Une tâche simple (ou une idée) ne diffère pas d'une tâche classique.\\
+
+	\includegraphics[scale=0.65]{UCTacheSimple.png}
+	
+\end{usecase}
+
+			
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Synchroniser les tâches}
+En déplacement ou depuis un autre poste, que ce soit un client GTD ou bien un client web, l'utilisateur doit pouvoir retrouver l'ensemble de ses tâches. La fonctionnalité de synchronisation offre la possibilité de synchroniser le contenu local avec un serveur GTD distant. N'étant pas un gestionnaire de version, cette fonctionnalité ne pourra s'appuyer que sur les dates de dernière modification des tâches.\\
+			\subsubsection{Description}
+
+\begin{usecase}{Synchroniser les tâches}
+
+\begin{information}
+\item[Goal in the context:]
+L'utilisateur souhaite synchroniser son client GTD local avec le serveur GTD.
+
+\item[Scope:]
+Client et serveur GTD
+
+\item[Level:]
+Sous-fonction
+
+\item[Success End Condition:]
+Les tâches de l'utilisateur sont identiques sur le serveur et le client local. Le nombre de tâche est aussi identique.
+
+\item[Failed End Condition:]
+La synchronisation échoue : le client ne parvient pas à obtenir les dernières modifications disponibles sur le serveur, ou bien il ne parvient pas à envoyer les mises à jour (nouvelles tâches, changement d'état, de date, etc.).
+
+\item[Primary actor:]
+L'utilisateur
+
+\item[Trigger:]
+Le client GTD effectue la synchronisation à chacun de ses démarrages et fermetures.
+
+\item[Precondition:]
+
+\item[Postcondition:]
+	
+\end{information}
+
+\begin{scenario}
+\item L'utilisateur lance le client GTD.
+\item Le client GTD se connecte au serveur.
+\item Le client GTD demande au serveur sa liste de tâches.
+\item Le client GTD récupère les tâches plus récentes sur le serveur.
+\item Le client GTD envoi les tâches plus récentes en local au serveur.
+\item Le client GTD achève la synchronisation et se déconnecte.\\
+\end{scenario}
+
+\begin{extension}
+\item[2a] Le client GTD ne parvient pas à créer la liaison avec le serveur
+	\item[2a1] Le client GTD interrompt la synchronisation
+\end{extension}
+
+\begin{subvariation}
+	\item Fermeture du client GTD 
+\end{subvariation}
+
+\paragraph{}
+\subsubsection{Exigences fonctionnelles}
+Le scénario suivant est une représentation général et simplifié du mécanisme de synchronisation. Son objectif est de présenter les principales entités actrices de cette fonctionnalité.\\
+
+	\includegraphics[scale=0.65]{UCSynchroniser.png}
+	
+\end{usecase}
+\\
+Il nous semblait intéressant de compléter ce cas d'utilisation par un diagramme d'activité présentant une première approche pour déterminer les mises à jour à effectuer.\\
+
+Ce premier diagramme d'activité décrit l'envoi des dernières modifications locales au serveur. Cette étape doit être réalisée systématiquement à la fermeture de l'application et éventuellement à l'ouverture dans le cas d'un échec d'envoi au serveur lors d'une précédente fermeture.
+\\
+\includegraphics[scale=0.65]{UCSynchronserSend.png}\\
+
+
+Autre étape de la synchronisation, la mise à jour depuis le serveur. Le premier diagramme d'activité décrit la mise à jour des tâches et projets existants. Le second est la mise à jour consistant à supprimer les tâches et projets locaux ne figurant plus sur le serveur (partant du principe que toutes nouvelles tâches créees a été préalablement envoyées).\\
+
+Mise à jour des tâches et projets :
+
+\includegraphics[scale=0.65]{UCSynchronserUpdate.png}\\
+
+Suppression des tâches et projets :
+
+\includegraphics[scale=0.65]{UCSynchronserDelete.png}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\subsection{Création de compte}
+
+			\subsubsection{Description}
+ 	Pour que notre application GTD soit multi-utilisateurs, nous devons gérer la création de compte qui servira à la gestion local du GTD et à sa partie Serveur.
+		\begin{usecase}{Création de compte}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite créer un compte pour utiliser son logiciel. 
+
+\item[Scope:]
+Client et serveur GTD 
+
+\item[Level:]
+Sous-fonction 
+
+\item[Precondition:]
+L'utilisateur n'a pas de compte. 
+
+\item[Success End Condition:]
+L'utilisateur a créé son compte qui lui permettra d'utiliser toutes les fonctionnalités de son logiciel. 
+
+\item[Failed End Condition:]
+L'utilisateur créé juste un compte local, le compte serveur sera créé ultérieurement. 
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+La création d'un compte se déroule lors du démarrage de l'application, au même moment que l'identification.  
+
+
+\item[Postcondition:]
+La tâche est correctement créée, les attributs obligatoires sont renseignés.\\
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application GTD.
+	\item L'utilisateur choisit de créer un compte. 
+	\item L'utilisateur rentre son login/mot de passe.
+	\item L'application demande une création de compte au serveur. 
+	\item Le serveur renvoie une notification de succès de la création de compte. \\
+\end{scenario}
+
+\begin{extension}
+	\item[3a] Mauvais renseignement login/mot de passe (mauvaise confirmation de mot de passe, mot de passe trop court ...)
+		\subitem 3a1 Les demander à nouveau 
+	\item[4a] Impossible de créer la liaison avec le serveur 
+		\subitem 4a1 Création d'un compte local 
+	\item[5a] Interruption de l'échange (perte de liaison avec le serveur par exemple) 
+		\subitem 5a1 Nouvelle tentative\\
+\end{extension}
+
+\begin{relatedinfos}
+\item[Priority:]
+Maximale
+
+\item[Performance Target:]
+Quelques secondes 
+
+\item[Frequency:]
+À la première utilisation du GTD
+
+\end{relatedinfos}
+	
+		\end{usecase}
+
+			\subsubsection{Exigences fonctionnelles}
+
+\paragraph{}
+Afin d'illustrer le canevas ci-dessus, nous allons présenter un diagramme d'activité et un scénario expliquant les différentes étapes que peuvent rencontrer les utilisateurs. 
+
+
+		\includegraphics[width=15cm]{CreationCompte.png}
+
+
+
+		\includegraphics[width=14cm]{CreationCompteActivite.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Se connecter au serveur}
+
+			\subsubsection{Description}
+La connexion à l'application GTD permet au logiciel de mettre à jour les données de l'utilisateur sur l'application local mais aussi les données stockées sur le serveur, si la connection peut être effectuée.
+		\begin{usecase}{Se connecter au serveur}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite se connecter au serveur GTD.
+
+\item[Scope:]
+Client et serveur GTD 
+
+\item[Level:]
+Sous-fonction 
+
+\item[Success End Condition:]
+L'utilisateur est connecté, il peut alors mettre à jour ses tâches où les récupérer. 
+
+\item[Failed End Condition:]
+Le client GTD n'est pas parvenu à se connecter au serveur.
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+On peut imaginer que la connexion se déclenche à chaque démarrage et aussi sur une demande de l'utilisateur. \\
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur demande de connexion. 
+	\item L'utilisateur tente d'établir une liaison avec le serveur.
+	\item L'utilisateur s'identifie.
+	\item L'utilisateur est connecté.\\
+\end{scenario}
+
+\begin{extension}
+	\item[2a] Impossible de créer la liaison avec le serveur 
+		\subitem 2a1 Interruption de la connexion
+		\subitem 2a2 Utilisation du client en local 
+	\item[3a] Impossible d'identifier l'utilisateur
+		\subitem 3a1 Pas de compte créé - Création d'un nouveau compte (uses case créer compte)
+		\subitem 3a2 Identifiant(s)/mot(s) de passe incorrect(s)
+	\item[5a] Interruption de la connexion (perte de liaison avec le serveur par exemple) 
+		\subitem 5a1 Nouvelle tentative\\
+\end{extension}
+
+\begin{relatedinfos}
+\item[Priority:]
+Haute
+
+\item[Performance Target:]
+Quelques secondes 
+
+\item[Frequency:]
+À chaque lancement du logiciel si possible et à la demande de l'utilisateur.
+
+\end{relatedinfos}
+	
+		\end{usecase}
+
+			\subsubsection{Exigences fonctionnelles}
+
+Voici un scénario permettant de mettre en évidence comment la connexion à l'application (local et serveur) est réalisée.
+
+
+		\includegraphics[width=15cm]{Connexion.png}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Se déconnecter}
+
+			\subsubsection{Description}
+	Nous avons choisi de décrire comment la déconnection était gérée dans notre application. Cette fonctionnalité est importante dans notre GTD, car elle permet de sauvegarder les données à la fin de l'utilisation du logiciel.
+		\begin{usecase}{Se déconnecter}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite quitter le programme.
+
+\item[Scope:]
+Client et serveur GTD 
+
+\item[Level:]
+Sous-fonction 
+
+\item[Preconditions:]
+L'utilisateur a lancé préalablement le client. 
+
+\item[Success End Condition:]
+Les données mises à jour durant l'éxecution du client sont mises à jour sur le serveur. 
+
+\item[Failed End Condition:]
+Echec de la mise à jour des données, les données ne seront stockées qu'en local. 
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+La déconnexion se déclenche lors de la fermeture de l'application.
+
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application GTD.
+	\item L'utilisateur effectue des modifications, des ajouts de tâches. \dots
+	\item L'utilisateur demande à quitter l'application.
+	\item L'application synchronise les données avec le serveur.
+	\item L'application ferme normalement. \\
+\end{scenario}
+
+\begin{extension}
+	\item[4a] Impossible de créer la liaison avec le serveur 
+		\subitem 4a1 Stockage local  
+	\item[4b] Interruption de l'échange (perte de liaison avec le serveur par exemple) 
+		\subitem 4b1 Nouvelle tentative\\
+\end{extension}
+
+\begin{relatedinfos}
+\item[Priority:]
+Haute
+
+\item[Performance Target:]
+Quelques secondes 
+
+\item[Frequency:]
+À chaque fin d'utilisation du client. 
+
+\end{relatedinfos}
+	
+		\end{usecase}
+
+			\subsubsection{Exigences fonctionnelles}
+\paragraph{}
+Voici maintenant le scénario, qui illustre le canevas.
+
+
+		\includegraphics[width=14cm]{Deconnection.jpg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Créer un projet}
+	
+			\subsubsection{Description}
+Cette fonctionnalité permet de créer de nouveaux projets pour permettre par la suite d'attacher différentes tâches à ces projets.
+		\begin{usecase}{Créer un projet}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite créer un projet le plus rapidement possible dans la limite du possible 
+
+\item[Scope:]
+Client et serveur GTD 
+
+\item[Level:]
+Sous-fonction 
+
+\item[Preconditions:]
+
+\item[Success End Condition:]
+Le projet est crée avec les attributs nécessaires, les tâches sont attachées au projet ou aux sous-projets du projet. 
+
+\item[Failed End Condition:]
+Le projet n'est pas crée.
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+Action de créer un projet via l'IHM.\\
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application GTD.
+	\item L'utilisateur demande la création d'un projet.
+	\item L'utilisateur renseigne le nom du projet.
+	\item L'application attribut des notes et un contexte par défaut.
+	\item L'application a ajouté le projet.
+	\item L'utilisateur voit le projet ajouté grâce à l'IHM.
+	\item L'utilisateur ajoute des tâches à ce projet en glissant dans le "dossier" projet crée.
+	\item L'application met à jour les tâches (leurs contextes par rapport au contexte du projet), l'IHM aussi. 
+	\item L'utilisateur peut complèter son projet dès qu'il le souhaite.
+\end{scenario}
+
+\begin{extension}
+	\item[3a] Le nom du projet existe déjà
+		\subitem 3a1 En demander un nouveau   
+	\item[4b] L'utilisateur souhaite renseigner des notes et un contexte 
+		\subitem 4b1  Il remplit ce qu'il souhaite\\
+\end{extension}
+
+\begin{subvariation}
+	\item[5a] L'utilisateur peut créer un projet vide  
+	\item[7b] L'utilisateur ajoute des sous-projets \\
+\end{subvariation}
+
+\begin{relatedinfos}
+\item[Priority:]
+Haute
+
+\item[Performance Target:]
+Ajout instantanné. 
+
+\item[Frequency:]
+Autant de fois que l'utilisateur le souhaite.
+
+\end{relatedinfos}
+	
+		\end{usecase}
+
+			\subsubsection{Exigences fonctionnelles}
+
+\paragraph{}
+Afin d'illustrer le canevas ci-dessus, nous allons présenter un diagramme de séquence 
+
+
+		\includegraphics[width=14cm]{CreerprojetScenario.jpg}
+
+
+		\includegraphics[width=12cm]{CreerprojetScenarioSuite.jpg}
+
+\paragraph{}
+Nous avons établi un diagramme de séquence afin d'étudier le fonctionnement séquentiel de la création d'un projet et pour une future implémentation. Mais, cela rend le diagramme assez lourd donc pour plus de lisibilité, nous avons construit un diagrammme d'activité résumant le cas de création d'un projet.
+
+
+		\includegraphics[width=17cm]{CreerprojetActivite.png}
+
+\paragraph{}
+Un projet ressemble étrangement à une tâche. En effet, un projet peut être vide et on peut le compléter plus tard. Nous avons choisi cet aspect car on laisse à l'utilisateur le choix de remplir son projet quand il le souhaite (dans le cas présent, l'utilisateur n'est pas obligé de spécifier toutes les tâches lors de la creation de son projet). Il en est de même pour l'ajout de sous-projets. Bien évidemment, si l'on ajoute des tâches dites "en séquence", on inclut toutes les tâches de la séquence dans le projet cible.
+On peut observer la génération d'identifiant de projet lors de sa création. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Organiser les tâches}
+
+			\subsubsection{Description}
+			Cette fonctionnalité permet de modifier les attributs d'une tâches comme le contexte de la tâche ou encore sa date d'expiration
+		\begin{usecase}{Organiser les tâches}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite modifier une tâche qu'il a crée auparavant.
+
+\item[Scope:]
+Client
+
+\item[Level:]
+Sous-fonction 
+
+\item[Preconditions:]
+Un ensemble de tâches existe
+
+\item[Success End Condition:]
+La tâche a été modifier
+
+\item[Failed End Condition:]
+
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+Action de modifier un critère d'une tâche via l'IHM.\\
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application GTD.
+	\item L'utilisateur choisit l'attribut qu'il souhaite modifier.
+	\item L'IHM se met à jour \\
+\end{scenario}
+
+\begin{extension}
+	\item[2a] Le critère de modification se trouve parmi l'ensemble \{échéance, taux d'effort, etc \dots\} \\
+\end{extension}
+
+%\begin{subvariation}
+%	\item[5a] L'utilisateur peut créer un projet vide 
+%\end{subvariation}
+
+\begin{relatedinfos}
+\item[Priority:]
+Haute
+
+\item[Performance Target:]
+Instantané
+
+\item[Frequency:]
+Autant de fois que l'utilisateur le souhaite.
+
+\end{relatedinfos}
+	
+		\end{usecase}
+
+			\subsubsection{Exigences fonctionnelles}
+			\paragraph{}
+		Voici un diagramme d'activité permettant de mettre en évidence, comment l'application va gérer la modification d'attribut. \\
+		\includegraphics[width=17cm]{OrganiserActivite.jpg}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 		\subsection{Récupérer les tâches}
+
+			\subsubsection{Description}
+	Dans cette partie nous allons nous intéresser à la manière dont l'utilisateur va récupérer ses tâches. Si l'opération se déroule convenablement, toutes les tâches qui lui sont attribuées seront affichées par ordre de date d'expiration la plus récente.
+		\begin{usecase}{Récupérer les tâches}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite récupérer les tâches qui lui sont attribuées .
+
+\item[Scope:]
+Client
+
+\item[Level:]
+Sous-fonction 
+
+\item[Preconditions:]
+Un ensemble de tâches existe
+
+\item[Success End Condition:]
+Le client affiche la liste des tâches triées selon la date d'échéance
+
+\item[Failed End Condition:]
+
+
+\item[Primary actor:]
+L'utilisateur 
+
+\item[Trigger:]
+Au démarrage de l'application, après que les données se soient synchronisées.\\
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application GTD.
+	\item Le client GTD récupère tous les projets.
+	\item L'utilisateur récupère toutes les tâches de chaque projet. 
+	\item Le client trie les tâches par tâche dont la date d'échéance est la plus proche \\
+\end{scenario}
+
+%\begin{extension}
+%	\item[2a] Le critère de tri est parmi l'ensemble \{échéance, taux d'effort, etc \dots\} \\
+%\end{extension}
+
+%\begin{subvariation}
+%	\item[5a] L'utilisateur peut créer un projet vide 
+%\end{subvariation}
+
+\begin{relatedinfos}
+\item[Priority:]
+Haute
+
+\item[Performance Target:]
+Instantané
+
+\item[Frequency:]
+A chaque démarrage de l'application.
+
+\end{relatedinfos}
+
+	
+		\end{usecase}
+		\subsubsection{Exigences fonctionnelles}
+
+\paragraph{}
+Voici un scénario correspondant au canevas que nous avons décrit ci dessus.
+
+		\includegraphics[width=17cm]{review.png}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Exigences des interfaces externes}
+		\subsection{Interface utilisateur}
+%<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>
+
+%banniere GTD
+%barre d'outils en dessous de la bannière
+%Bouton connexion en haut à droite avec champs textes
+%Bouton pour editer une tache ( bloc écrit ) à droite d'une tache
+%Bouton pour supprimer une tache ( poubelle ) à droite
+%Bouton pour ajouter une tache ( une tache ) dans une barre en dessous de la banniere
+%Message d'erreurs bloquant l'application en affichant un message qu'on doti lire obligatoirement 
+%Lorsque l'on remplis des champs textes (lors des créations), l'astérisque annonce un champ obligatoire alors que le reste est optionnel. 
+
+L'interface utilisateur doit impérativement être divisée en au moins deux parties. Une division possible que l'on retrouve dans beaucoup d'applications, est d'avoir une barre latérale (traditionnellement sur le côté gauche) et une zone de consultation ou de saisie occupant la majeure partie de l'écran. Pour pouvoir organiser rapidement les tâches selon les contextes, on peut imaginer une série d'étiquettes (ou d'icônes) correspondant à ces derniers dans la partie supérieure de cette zone de consultation.
+
+Cette interface doit aussi suivre quelques conventions que l'on retrouve dans bon nombre d'applications. Ainsi, l'utilisation des raccourcis claviers est nécessaire. Voici quelques raccourcis envisagés :
+\begin{itemize}
+	\item Ctrl+T : Création d'une tâche
+	\item Ctrl+P : Création d'un projet
+	\item Suppr : Suppression de l'élément préalablement sélectionné avec message d'avertissement
+\end{itemize}
+
+		\subsection{Interface matérielle}
+%<Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.>
+Ecran 17'' minimum pour avoir un rendu honnête. 
+
+		\subsection{Interfaces ou protocoles de communication}
+%<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+Bien que le logiciel client puisse être utilisé uniquement en local, une connexion Internet est requise pour communiquer avec le serveur. Le client GTD et le serveur GTD communiquent entre eux grâce au protocole défini par l'architecture CORBA.
+
+		\subsection{Contraintes de mémoire}
+Permettre à l'utilisateur d'être sur notre application et sur d'autres application en parallèle.
+
+		\subsection{Hypothèses et dépendances}
+Il n'y a aucune dépendances. L'application est indépendante d'autres applications sauf d'avoir un réseau afin de communiquer avec le serveur.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Autres exigences non-fonctionnelles}
+
+		\subsection{Utilisabilité}
+
+			\subsubsection{Facteurs Humains}
+
+Quelque soit le type d'utilisateur (novice ou professionnel en informatique) qui utilise notre logiciel, il ne doit pas avoir de problème d'utilisation. Le logiciel doit être simple. On ne doit pas demander d'actions complexes à l'utilisateur. Si l'utilisateur n'est pas au point sur la création de tâches et de projets directement, il pourra changer de méthode de travail. En effet, nous prévoyons une sorte d'agenda (probablement dans un onglet) contenant tous les jours d'un mois donné afin de ranger les taches et les projets plus facilement. 
+
+			\subsubsection{Esthétique}
+
+Lorsque l'utilisateur utilise notre logiciel, il doit être agréablement surpris. L'interface graphique doit sortir de l'ordinaire tout en restant cohérente.
+
+			\subsubsection{Cohérence de l'IHM}
+
+L'utilisateur doit être à l'aise avec l'interface graphique. En effet, il doit trouver rapidement et simplement les actions qu'il doit effectuer. L'utilisateur doit avoir le sentiment de travailler dans des conditions qu'il connait déjà. En effet, les automatismes des IHM doivent être respectés (la disposition des différents éléments graphique, couleurs,...). L'utilisation de couleurs communes est privilégiée car l'utilisateur ne doit pas être fatigué à cause de l'IHM.
+
+			\subsubsection{Aide en ligne et contextuelle}
+
+À tout moment, l'utilisateur, si besoin est, doit savoir ce qu'il fait. C'est pour cela qu'un commentaire sera affiché si l'utilisateur hésite à faire une action.
+
+			\subsubsection{Assistants et agents}
+
+Nous n'utiliserons pas d'agents puisque cela peut devenir penible au démarrage du GTD. En effet, nous estimons que la plupart des utilisateur desactiverons cet agent donc nous ne l'implementerons pas. Par contre, nous pouvons créer une fenêtre d'assistance dont le contenu guidera pas à pas l'utilisateur, s'il souhaite être assisté (en cochant par exemple sur une case assistance).
+
+			\subsubsection{Supports de formation}
+
+Afin d'aiguiller l'utilisateur dans ses choix, des didacticiels doivent être fournis. Un format vidéo est appréciable. Si besoin, nous pouvons aussi activer le didactitiel lors du démarrage de l'application et l'utilisateur decidera de le passer ou non.
+
+
+			\subsubsection{Autres}
+
+Dans un cadre plus professionnel, le temps de formation nécessaire à un utilisateur normal ou expert avant d'être productif sera le même. Une première fois l'application testée, l'amateur ou l'expert en informatique pourra ré-utiliser parfaitement l'application.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Fiabilité}
+
+			\subsubsection{Fréquence et gravité des échecs}
+
+Nous autoriserons au plus un incident toute les heures, afin de ne pas exaspérer l'utilisateur.
+
+			\subsubsection{Récupérabilité}
+
+Dans n'importe quelles circonstances, l'utilisateur pourra revenir d'un cran en arrière si quelque chose de non voulu se produit.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Exigences de performance}
+
+			\subsubsection{Rapidité}
+
+Quelque soit les actions faites par l'utilisateur, chaque action doit prendre moins de 30 secondes (que se soit la connexion à son compte, la création d'une tâche, \dots). Même le temps d'attente doit être inférieur à 30 secondes afin que l'utilisateur ne se sente pas délaissé et ennuyé (lors par exemple de la synchronisation avec le serveur, l'affichage par tri, \dots).
+
+			\subsubsection{Efficacité}
+
+Bien évidemment, toutes les fonctionnalités dites "primaires" doivent être respectées  et implémentées (créer une tâche,...). Il se peut que l'on puisse rajouter quelques actions (choix de couleur de l'interface graphique, tutoriel interactif, \dots).
+
+			\subsubsection{Disponibilité}
+
+Le logiciel doit pouvoir s'utiliser 24h/24 et 7j/7. Pour cela, le serveur doit être disponible dans ces mêmes horaires sauf période de maintenance (pour cela le serveur préviendra avec un message d'une maintenance durant le temps requis).
+
+			\subsubsection{Temps de réponse}
+
+lié à la rapidité, voir Performance-Rapidité)
+
+			\subsection{Temps de récupération d'une erreur}
+
+Le temps de récupération d'une erreur doit être instanné alors chaque cas d'erreur devra être traité.
+
+			\subsubsection{Consommation des ressources}
+
+La consommation sera la plus basse possible. En effet, il ne s'agit pas d'un logiciel en 3 dimensions capable d'effectuer des super calculs, donc le GTD devra consommer autant qu'un logiciel de gestion.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Maintenabilité}
+
+Lors de l'implémentation, il sera aisé d'ajouter des fonctionnalités, d'en supprimer ou d'en éditer grâce à l'utilisation d'interface.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Exigences de sécurité}
+
+On peut prévoir une réplication des données toutes les nuits et des sauvegardes sur différents serveurs. On sauvegardera les actions de l'utilisateur à intervalles réguliers. Par contre, les données envoyées au serveur ne seront pas cryptées car nous considérons l'application GTD comme non confidentielle.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Attributs de qualité logicielle}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Autres exigences}
+
+		\subsection{Adaptabilité}
+
+			\subsubsection{Testabilité}
+
+L'implémentation logiciel aura en parallèle une implémentation de test afin de tester la totalité des fonctionnalités du logiciel, mais aussi la gestion du code, \dots
+
+			\subsubsection{Extensibilité}
+
+D'autres logiciels pourront utiliser notre logiciel ou l'exécuter au sein même d'un autre logiciel, nous pensons donc le créer sous forme d'un plugin ou pouvoir le mettre sous forme d'un plugin si ce n'est pas faisable immédiatemment.
+
+			\subsubsection{Comptabilité}
+
+Le logiciel sera indépendant de toutes plateforme et de tout autres services externes. Ainsi, il pourra être associé à d'autres application GTD si l'utilisateur en utilise plusieurs par exemple.
+
+			\subsubsection{Configurabilité}
+
+L'utilisateur pourra, selon son désir, remanié l'interface graphique (la couleur, les barres de menu,...) et aussi la langue.
+
+			\subsubsection{Installabilité}
+
+Le logiciel fonctionnant sur n'importe quel machine, nous proposons de crée une archive (par système d'exploitation) avec le logiciel dans son intégralité et son README correspondant(c'est à a dire pas d'installation complexe). Ce système permet aux utilisateurs amateurs de pouvoir installer facilement l'application sans que le système d'exploitation autorise ou non cette application.
+
+			\subsubsection{Internationalisation}
+
+Nous implémenterons dans le logiciel la capacité de choisir sa langue en cliquant respectivement sur des "petits drapeaux" en haut à gauche de la fenêtre (ne pouvant effectuer toutes les traductions de langues au monde, nous nous restreindrons aux langues Anglais, Français, Espagnol.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Déploiement}
+
+Le logiciel doit pouvoir s'éxécuter sur n'importe quel plateforme (Windows/Linux/Mac) et pour cela, nous allons utiliser le langage Java puisqu'il est adapté à toutes formes de plateforme. De plus, ce langage est entré dans les normes. L'utilisateur doit avoir la machine virtuelle Java d'installé sur son poste pour pouvoir utiliser ce logiciel. S'il ne la possède pas, une version récente et stable doit être fournie avec le support d'installation, ou facilement téléchargeable (voire intégré dans une archive) si le logiciel est totalement dématérialisé.
+
+		\section{Classification des exigences fonctionnelles}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Code & Exigence & Type\\
+\hline
+EX1 & Créer une tâche & essentielle\\
+\hline
+EX2 & Créer une tâche simple & essentielle\\
+\hline
+EX3 & Synchroniser les tâches & optionelle\\
+\hline
+EX4 & Création de compte & optionelle\\
+\hline
+EX5 & Se connecter au serveur & optionelle\\
+\hline
+EX6 & Se déconnecter & optionelle\\
+\hline
+EX7 & Créer un projet & essentielle\\
+\hline
+EX8 & Organiser les tâches & essentielle\\
+\hline
+EX9 & Récuperer les tâches & essentielle\\
+\hline
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+	
+		\paragraph{}
+    Dans cette deuxième partie, nous avons explicité toutes les fonctionnalités à traiter lors de la spécification des composants.  
+
+    Nous présiserons la spécification des composants dans le troisième livrable en détaillant ce que nous avons décris dans cette analyse.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="AuthentificationSequenceModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="AuthentificationSequencePackage">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="idCollaboration" name="AuthentificationSequenceCollaboration">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="idInteraction" name="AuthentificationSequenceInteraction">
+        <ownedAttribute xmi:id="_5A2gQdNWEd64aumMBrjzdQ" name="Property1" type="_5A2gQNNWEd64aumMBrjzdQ"/>
+        <ownedAttribute xmi:id="_BH8jMdNXEd64aumMBrjzdQ" name="Property2" type="_BH8jMNNXEd64aumMBrjzdQ"/>
+        <ownedAttribute xmi:id="_tXWREdNXEd64aumMBrjzdQ" name="Property3" type="_tXWRENNXEd64aumMBrjzdQ"/>
+        <ownedAttribute xmi:id="_7RPuMdNZEd64aumMBrjzdQ" name="Property4" type="_7RPuMNNZEd64aumMBrjzdQ"/>
+        <ownedConnector xmi:id="_5A4VcNNWEd64aumMBrjzdQ" name="Connector1">
+          <end xmi:id="_5A48gNNWEd64aumMBrjzdQ" role="_5A2gQdNWEd64aumMBrjzdQ"/>
+          <end xmi:id="_BH9KQNNXEd64aumMBrjzdQ" role="_BH8jMdNXEd64aumMBrjzdQ"/>
+          <end xmi:id="_tXW4INNXEd64aumMBrjzdQ" role="_tXWREdNXEd64aumMBrjzdQ"/>
+          <end xmi:id="_7RPuMtNZEd64aumMBrjzdQ" role="_7RPuMdNZEd64aumMBrjzdQ"/>
+        </ownedConnector>
+        <lifeline xmi:id="_zYQgENNWEd64aumMBrjzdQ" name="" represents="_5A2gQdNWEd64aumMBrjzdQ" coveredBy="_GoW3wtNXEd64aumMBrjzdQ _wZbIsNNcEd64aumMBrjzdQ _FDaTMNNXEd64aumMBrjzdQ"/>
+        <lifeline xmi:id="_8tpiINNWEd64aumMBrjzdQ" name="" represents="_BH8jMdNXEd64aumMBrjzdQ" coveredBy="_GoXe0NNXEd64aumMBrjzdQ _0-BukNNXEd64aumMBrjzdQ _rL6-gNNbEd64aumMBrjzdQ _BuEVwNNcEd64aumMBrjzdQ _Tfr9QNNcEd64aumMBrjzdQ _wZYscNNcEd64aumMBrjzdQ _FlwLQNNXEd64aumMBrjzdQ _7kDqkNNbEd64aumMBrjzdQ"/>
+        <lifeline xmi:id="_p5_ZYNNXEd64aumMBrjzdQ" name="" represents="_tXWREdNXEd64aumMBrjzdQ" coveredBy="_0-CVoNNXEd64aumMBrjzdQ _CXyTENNaEd64aumMBrjzdQ _BC010NNbEd64aumMBrjzdQ _rL5wYNNbEd64aumMBrjzdQ _wpORgNNXEd64aumMBrjzdQ"/>
+        <lifeline xmi:id="_2B9l4NNZEd64aumMBrjzdQ" name="" represents="_7RPuMdNZEd64aumMBrjzdQ" coveredBy="_CXy6INNaEd64aumMBrjzdQ _BC0OwNNbEd64aumMBrjzdQ _BuFj4NNcEd64aumMBrjzdQ _TfqIENNcEd64aumMBrjzdQ _-1LH8NNZEd64aumMBrjzdQ _ArmzMNNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GoW3wtNXEd64aumMBrjzdQ" name="MessageOccurrenceSpecification1" covered="_zYQgENNWEd64aumMBrjzdQ" event="_GoYF4NNXEd64aumMBrjzdQ" message="_GoYF4dNXEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GoXe0NNXEd64aumMBrjzdQ" name="MessageOccurrenceSpecification2" covered="_8tpiINNWEd64aumMBrjzdQ" event="_GoYF4NNXEd64aumMBrjzdQ" message="_GoYF4dNXEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0-BukNNXEd64aumMBrjzdQ" name="MessageOccurrenceSpecification3" covered="_8tpiINNWEd64aumMBrjzdQ" event="_0-C8sNNXEd64aumMBrjzdQ" message="_0-C8sdNXEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0-CVoNNXEd64aumMBrjzdQ" name="MessageOccurrenceSpecification4" covered="_p5_ZYNNXEd64aumMBrjzdQ" event="_0-C8sNNXEd64aumMBrjzdQ" message="_0-C8sdNXEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CXyTENNaEd64aumMBrjzdQ" name="MessageOccurrenceSpecification5" covered="_p5_ZYNNXEd64aumMBrjzdQ" event="_CXzhMNNaEd64aumMBrjzdQ" message="_CXzhMdNaEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CXy6INNaEd64aumMBrjzdQ" name="MessageOccurrenceSpecification6" covered="_2B9l4NNZEd64aumMBrjzdQ" event="_CXzhMNNaEd64aumMBrjzdQ" message="_CXzhMdNaEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BC0OwNNbEd64aumMBrjzdQ" name="MessageOccurrenceSpecification7" covered="_2B9l4NNZEd64aumMBrjzdQ" event="_BC1c4NNbEd64aumMBrjzdQ" message="_BC1c4dNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BC010NNbEd64aumMBrjzdQ" name="MessageOccurrenceSpecification8" covered="_p5_ZYNNXEd64aumMBrjzdQ" event="_BC1c4NNbEd64aumMBrjzdQ" message="_BC1c4dNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rL5wYNNbEd64aumMBrjzdQ" name="MessageOccurrenceSpecification9" covered="_p5_ZYNNXEd64aumMBrjzdQ" event="_rL6-gdNbEd64aumMBrjzdQ" message="_rL7lkNNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rL6-gNNbEd64aumMBrjzdQ" name="MessageOccurrenceSpecification10" covered="_8tpiINNWEd64aumMBrjzdQ" event="_rL6-gdNbEd64aumMBrjzdQ" message="_rL7lkNNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BuEVwNNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification11" covered="_8tpiINNWEd64aumMBrjzdQ" event="_BuGK8NNcEd64aumMBrjzdQ" message="_BuGyANNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BuFj4NNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification12" covered="_2B9l4NNZEd64aumMBrjzdQ" event="_BuGK8NNcEd64aumMBrjzdQ" message="_BuGyANNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_TfqIENNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification13" covered="_2B9l4NNZEd64aumMBrjzdQ" event="_Tfr9QdNcEd64aumMBrjzdQ" message="_TftLYNNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tfr9QNNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification14" covered="_8tpiINNWEd64aumMBrjzdQ" event="_Tfr9QdNcEd64aumMBrjzdQ" message="_TftLYNNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wZYscNNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification15" covered="_8tpiINNWEd64aumMBrjzdQ" event="_wZbvwNNcEd64aumMBrjzdQ" message="_wZbvwdNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wZbIsNNcEd64aumMBrjzdQ" name="MessageOccurrenceSpecification16" covered="_zYQgENNWEd64aumMBrjzdQ" event="_wZbvwNNcEd64aumMBrjzdQ" message="_wZbvwdNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_FDaTMNNXEd64aumMBrjzdQ" name="BehaviorExecutionSpecification1" covered="_zYQgENNWEd64aumMBrjzdQ" start="_GoW3wtNXEd64aumMBrjzdQ" finish="_wZbIsNNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_FlwLQNNXEd64aumMBrjzdQ" name="BehaviorExecutionSpecification2" covered="_8tpiINNWEd64aumMBrjzdQ" start="_GoXe0NNXEd64aumMBrjzdQ" finish="_rL6-gNNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_wpORgNNXEd64aumMBrjzdQ" name="BehaviorExecutionSpecification3" covered="_p5_ZYNNXEd64aumMBrjzdQ" start="_0-CVoNNXEd64aumMBrjzdQ" finish="_rL5wYNNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_-1LH8NNZEd64aumMBrjzdQ" name="BehaviorExecutionSpecification4" covered="_2B9l4NNZEd64aumMBrjzdQ" start="_CXy6INNaEd64aumMBrjzdQ" finish="_BC0OwNNbEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_7kDqkNNbEd64aumMBrjzdQ" name="BehaviorExecutionSpecification5" covered="_8tpiINNWEd64aumMBrjzdQ" start="_BuEVwNNcEd64aumMBrjzdQ" finish="_wZYscNNcEd64aumMBrjzdQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ArmzMNNcEd64aumMBrjzdQ" name="BehaviorExecutionSpecification6" covered="_2B9l4NNZEd64aumMBrjzdQ" start="_BuFj4NNcEd64aumMBrjzdQ" finish="_TfqIENNcEd64aumMBrjzdQ"/>
+        <message xmi:id="_GoYF4dNXEd64aumMBrjzdQ" name="charger(String login, String motDePasse)" receiveEvent="_GoXe0NNXEd64aumMBrjzdQ" sendEvent="_GoW3wtNXEd64aumMBrjzdQ"/>
+        <message xmi:id="_0-C8sdNXEd64aumMBrjzdQ" name="authentifier(String login,String motDePasse)" receiveEvent="_0-CVoNNXEd64aumMBrjzdQ" sendEvent="_0-BukNNXEd64aumMBrjzdQ"/>
+        <message xmi:id="_CXzhMdNaEd64aumMBrjzdQ" name="hasher(String motDePasse)" receiveEvent="_CXy6INNaEd64aumMBrjzdQ" sendEvent="_CXyTENNaEd64aumMBrjzdQ"/>
+        <message xmi:id="_BC1c4dNbEd64aumMBrjzdQ" name="return motDePasseHashé" messageSort="reply" receiveEvent="_BC010NNbEd64aumMBrjzdQ" sendEvent="_BC0OwNNbEd64aumMBrjzdQ"/>
+        <message xmi:id="_rL7lkNNbEd64aumMBrjzdQ" name="return identifiantsValides" messageSort="reply" receiveEvent="_rL6-gNNbEd64aumMBrjzdQ" sendEvent="_rL5wYNNbEd64aumMBrjzdQ"/>
+        <message xmi:id="_BuGyANNcEd64aumMBrjzdQ" name="decrypter(Fichier entree)" receiveEvent="_BuFj4NNcEd64aumMBrjzdQ" sendEvent="_BuEVwNNcEd64aumMBrjzdQ"/>
+        <message xmi:id="_TftLYNNcEd64aumMBrjzdQ" name="return fichierDecrypte" messageSort="reply" receiveEvent="_Tfr9QNNcEd64aumMBrjzdQ" sendEvent="_TfqIENNcEd64aumMBrjzdQ"/>
+        <message xmi:id="_wZbvwdNcEd64aumMBrjzdQ" name="return authentificationReussie" messageSort="reply" receiveEvent="_wZbIsNNcEd64aumMBrjzdQ" sendEvent="_wZYscNNcEd64aumMBrjzdQ"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_GoYF4NNXEd64aumMBrjzdQ" name="CallEvent1"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_0-C8sNNXEd64aumMBrjzdQ" name="CallEvent2"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_CXzhMNNaEd64aumMBrjzdQ" name="CallEvent3"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_BC1c4NNbEd64aumMBrjzdQ" name="CallEvent4"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_rL6-gdNbEd64aumMBrjzdQ" name="CallEvent5"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_BuGK8NNcEd64aumMBrjzdQ" name="CallEvent6"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_Tfr9QdNcEd64aumMBrjzdQ" name="CallEvent7"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_wZbvwNNcEd64aumMBrjzdQ" name="CallEvent8"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5A2gQNNWEd64aumMBrjzdQ" name="ControleCentral"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_BH8jMNNXEd64aumMBrjzdQ" name="GestionnaireDePersistence"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tXWRENNXEd64aumMBrjzdQ" name="Authentification"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7RPuMNNZEd64aumMBrjzdQ" name="Chiffrement/Hashage"/>
+</uml:Model>

@@ -1,0 +1,12 @@
+\chapter{Diagramme d'activités}
+
+
+Le diagramme suivant représente les différentes interactions du système.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.44]{diagrams/gtd-flow-chart.png}
+\caption{Diagramme UML d'activités - Vision générale du système}
+\end{center}
+\end{figure}
+

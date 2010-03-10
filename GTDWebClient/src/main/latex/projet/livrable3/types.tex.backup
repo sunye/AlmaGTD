@@ -1,0 +1,33 @@
+\chapter{Spécification des types utilisés}
+
+Spécifiez ici les types utilisés par les interfaces (seulement ceux qui ne font pas partie des types de base UML).
+
+\section{Session}
+
+La classe \code{Session} va permetre de stocker des informations relatives au serveurs GTD et ToodleDo . Elle possède les attributs suivants:
+\begin{description}
+	\item[IdSession]: l'id de la session utilisateur
+	\item[loginGTD]: le login du serveur GTD
+	\item[passwordGTD]: le mot de passe du serveur GTD
+	\item[loginToodleDo]: le login du serveur ToodleDo
+	\item[passwordToodleDo]: le mot de passe du serveur ToodleDo
+\end{description}
+
+
+
+\section{Task}
+
+La classe \code{Task} va permetre de stocker des informations relatives a une tache . Elle possède les attributs suivants:
+\begin{description}
+	\item[nom]: nom de la tache
+	\item[dateDebut]: le login du serveur GTD
+	\item[dateEcheance]: le mot de passe du serveur GTD
+	\item[priorite]: le login du serveur ToodleDo
+	\item[tauxEffort]: le mot de passe du serveur ToodleDo
+	\item[duree]: le mot de passe du serveur ToodleDo
+	\item[etat]: le mot de passe du serveur ToodleDo
+	\item[tachePrecedente]: le mot de passe du serveur ToodleDo
+	\item[note]: le mot de passe du serveur ToodleDo
+	\item[repetition]: le mot de passe du serveur ToodleDo
+	\item[contexte]: le mot de passe du serveur ToodleDo
+\end{description}

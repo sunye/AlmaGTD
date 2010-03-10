@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" name="DiagrammeDActiviteModel" xmi:id="idModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DiagrammeDActivitePackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="DiagrammeDActiviteActivity"/>
+  </packagedElement>
+</uml:Model>

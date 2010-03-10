@@ -1,0 +1,382 @@
+\documentclass[a4paper, french, 10pt]{report}
+\usepackage{alma}
+
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[english, frenchb]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{textcomp}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead{} % clear all footer fields 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\scriptsize{Jean, Marie \\ Charlie et les autres}} 
+\fancyfoot[LO,CE]{\scriptsize\textsl{UniversitÃ© de Nantes\\Master Alma}} 
+\fancyfoot[CO,RE]{\scriptsize{\today}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\addtolength{\headheight}{0.5pt}
+\setlength{\footskip}{0in}
+\renewcommand{\footruleskip}{0pt}
+\fancypagestyle{plain}{%
+ \fancyhead{}
+ \renewcommand{\headrulewidth}{0pt}
+}
+
+%
+%\parindent 0in
+\parskip 0.05in
+
+
+\title{Titre du projet}
+\author{Jean, Marie, Charlie et les autres}
+\date{}
+
+
+
+
+\begin{document}
+\selectlanguage{frenchb}
+\maketitle
+
+\begin{abstract}
+	rÃ©sumÃ© du rapport
+\end{abstract}
+ 
+\tableofcontents
+ 
+
+\chapter{Analyse du problÃ¨me}
+ 
+\section{Exemple de code OCL}
+\begin{ocl}
+context Etudiant::age() : Integer
+post correct: result = (today - naissance).years()
+
+context Typename::operationName(param1: type1, ...): Type
+post: result = ...
+
+context Typename::operationName(param1: type1, ...): Type
+post resultOk: result = ...
+\end{ocl}
+
+\section{Exemple d'un cas d'utilisation}
+
+\subsection{RÃ©aliser une affectation}
+
+\begin{usecase}{RÃ©aliser une affectation}
+
+\begin{information}
+
+\item[Goal in the context:]
+Le chef de dÃ©partement rÃ©alise la confirmation d'un souhait d'un enseignant (validation) ou impose une intervention dans le dÃ©partement Ã  un enseignant (affectation ``forÃ§Ã©e''). L'enseignant devra se soumettre aux dÃ©cisions du chef de dÃ©partement que ce soit pour une validation d'un souhait ou une affectation imposÃ©e.
+
+\item[Scope:]
+DÃ©partement
+
+\item[Level:]
+RÃ©sumÃ©
+
+\item[Precondition:]
+Le chef de dÃ©partement connait pour l'enseignant concernÃ© : les souhaits (seulement ceux dÃ©jÃ  publiÃ©s par l'enseignant), les possibles conflits et les affectations le concernant.
+
+\item[Success End Condition:]
+L'enseignant est affectÃ© Ã  un ou plusieurs enseignements (souhait validÃ© ou intervention imposÃ©e). Le volume horaire total effectuÃ© par l'enseignant a Ã©tÃ© recalculÃ©.
+
+\item[Failed End Condition:]
+L'affectation n'a pas Ã©tÃ© rÃ©alisÃ©e (l'enseignement est dÃ©jÃ  affectÃ© Ã  un autre enseignant : conflit).
+
+\item[Primary actor:]
+Chef de dÃ©partement.
+
+\item[Trigger:]
+Demande de rÃ©alisation d'une affectation faite par le chef de dÃ©partement.\\
+
+\end{information}
+
+%\\
+\begin{scenario}
+\item Le chef de dÃ©partement demande au systÃ¨me de visualiser l'ensemble des souhaits des enseignants.
+\item Le systÃ¨me renvoie les souhaits qui ont Ã©tÃ© publiÃ©s par les enseignants.
+\item Le chef de dÃ©partement sÃ©lectionne des souhaits, selon certains critÃ¨res (l'enseignant, le module concernÃ©, \dots).
+\item Le systÃ¨me renvoie les souhaits correspondants aux critÃ¨res.  
+\item Le chef de dÃ©partement choisit un v\oe u d'un enseignant afin de le valider.
+\item Le systÃ¨me valide le v\oe u, l'enseignement associÃ© au v\oe u est affectÃ© Ã  l'enseignant concernÃ© : c'est-Ã -dire que le v\oe u donne lieu Ã  une intervention effective.\\
+\end{scenario}
+
+%\\
+\begin{extension}
+\item[5a] Le chef de dÃ©partement choisit d'imposer une intervention Ã  un enseignant dans son dÃ©partement (affectation imposÃ©e).
+\item[5a1] Le systÃ¨me affecte l'intervention Ã  l'enseignant.
+\item[5b] L'utilisateur choisit de valider une demande d'intervention extÃ©rieure ou une demande spÃ©ciale (remplacement, encadrement de stage, congÃ©s, \dots) de l'enseignant.
+\item[5b1] Le systÃ¨me affecte l'intervention ou valide la demande spÃ©ciale de l'enseignant sans crÃ©er de conflits avec les autres enseignants.\\
+\end{extension}
+\end{usecase}
+
+\section{Exemple d'un dictionnaire de donnÃ©es}
+	
+	\begin{tabular}{|p{3cm}|p{6cm}|p{2cm}|p{4cm}|}
+
+\hline \textbf{Notion} & \textbf{DÃ©finition} &\textbf{Traduit en} & \textbf{Nom informatique} \\
+
+\hline Affectation & Action de dÃ©terminer une \textbf{intervention}, i.e. d'associer un \textbf{enseignant} Ã  un \textbf{enseignement} donnÃ©. C'est le \textbf{chef de dÃ©partement} qui est chargÃ© de dÃ©terminer les diffÃ©rentes affectations en fonction, le plus souvent, des \textbf{v\oe ux} rÃ©alisÃ©s par les divers \textbf{enseignants}. & &\\
+
+\hline Chef de dÃ©partement & Acteur du systÃ¨me. Il est le responsable d'un \textbf{dÃ©partement} : il gÃ¨re les \textbf{modules} (ainsi que les \textbf{enseignements} associÃ©s), les \textbf{enseignants} et leurs \textbf{interventions} pour son \textbf{dÃ©partement}. & Acteur & ChefDepartement \\
+
+\hline Conflit & Fait que deux \textbf{v\oe ux} soit imcompatibles (i.e. que deux \textbf{enseignants} aient Ã©mis les mÃªmes choix concernant un ou des \textbf{enseignements}). C'est au \textbf{chef de dÃ©partement} de rÃ©gler les conflits en rÃ©alisant les affectations. & &\\
+
+\hline Contrat de service & Nombre d'heures minimum (et parfois nombre d'heures maximum) d'\textbf{enseignements} Ã  effectuer pour un \textbf{enseignant} donnÃ©. Il est indÃ©pendant des \textbf{dÃ©partements} dans lequels l'\textbf{enseignant} intervient : il est unique et seulement dÃ©terminÃ© par le statut de l'\textbf{enseignant}. & Classe & ContratDeService \\
+
+\hline DÃ©partement & EntitÃ© administrative (d'une universitÃ©) identifiÃ©e par un nom. Il comprend un ensemble de \textbf{modules} et d'\textbf{enseignants} qui lui sont rattachÃ©s. Chaque dÃ©partement a pour responsable un \textbf{chef de dÃ©partement}. Plusieurs \textbf{enseignants} peuvent donner des \textbf{enseignements} pour le compte de chaque \textbf{dÃ©partement}. & Classe & Departement  \\
+
+\hline Enseignant & Personne "physique" travaillant pour le compte d'un \textbf{dÃ©partement} et identifiÃ©e par son nom, son prÃ©nom et son statut. Un enseignant peut "intervenir" dans diffÃ©rents \textbf{dÃ©partements} pour dispenser un certain nombre d'\textbf{enseignements}. C'est un Ã©galement un acteur du sytÃ¨me puiqu'il peut effectuer des \textbf{v\oe ux} concernant les \textbf{enseignements} qu'il dÃ©sire donner. & Classe et Acteur & Enseignant \\
+
+\hline
+\end{tabular}
+
+\chapter{SpÃ©cification d'exigences logicielles}
+% Template proposÃ© par "The Unified Process for EDUcation (UPEDU)"
+% http://www.yoopeedoo.org/upedu/
+
+%Selon le wikipedia \url{http://fr.wikipedia.org/wiki/Exigence_(ingÃ©nierie)}
+%De bonnes exigences doivent Ãªtre :
+% * NÃ©cessaires â€“ Elles doivent porter sur des Ã©lÃ©ments nÃ©cessaires, c'est-Ã -dire des Ã©lÃ©ments importants du systÃ¨me que d'autres composants du systÃ¨me ne pourraient pas compenser.
+% * Non ambiguÃ«s â€“ Elles doivent Ãªtre susceptibles de n'avoir qu'une seule interprÃ©tation.
+% * Concises â€“ Elles doivent Ãªtre Ã©noncÃ©es dans un langage qui soit prÃ©cis, bref et agrÃ©able Ã  lire, et qui de plus communique l'essence de ce qui est exigÃ©.
+% * CohÃ©rentes â€“ Elles ne doivent pas contredire d'autres exigences Ã©tablies, ni Ãªtre contredites par d'autres exigences. De plus, elle doit, d'un Ã©noncÃ© d'exigence au suivant, utiliser des termes et un langage qui signifie la mÃªme chose.
+% * ComplÃ¨tes â€“ Elles doivent Ãªtre Ã©noncÃ©es entiÃ¨rement en un endroit et d'une faÃ§on qui ne force pas le lecteur Ã  regarder un texte supplÃ©mentaire pour savoir ce que l'exigence signifie.
+% * Accessibles â€“ Elles doivent Ãªtre rÃ©alistes quant Ã  aux moyens mis en Å“uvre en termes d'argent disponible, avec les ressources disponibles, dans le temps disponible.
+% * VÃ©rifiables â€“ Elles doivent permettre de dÃ©terminer si elles ont Ã©tÃ© atteintes ou non selon l'une de quatre mÃ©thodes possibles : inspection, analyse, dÃ©monstration, ou test.
+
+\section{Introduction}
+Lâ€™introduction donne une vue dâ€™ensemble de tout le document. On y prÃ©sente toute information que le lecteur a besoin pour  comprendre le document. Elle comprend lâ€™objectif du document, sa portÃ©e, les dÃ©finitions, acronymes et abrÃ©viations, les rÃ©fÃ©rences et une vue dâ€™ensemble du document.
+Note : La SEL comporte lâ€™ensemble des exigences logicielles pour une portion ou pour tout le systÃ¨me. La prÃ©sente spÃ©cification est adaptÃ©e pour  un projet utilisant une modÃ©lisation de cas dâ€™utilisation. Cet artÃ©fact est un paquetage qui comprend les cas dâ€™utilisation du modÃ¨le des cas dâ€™utilisation et les spÃ©cifications supplÃ©mentaires applicables ainsi que les autres informations pertinentes.
+Plusieurs amÃ©nagements dâ€™une SEL sont possibles. La norme (IEEE830-1998) est la rÃ©fÃ©rence pour de plus amples explications ainsi que pour dâ€™autres options dâ€™organisation du document.
+
+\subsection{Objectif}
+PrÃ©ciser les objectifs de ce chapitre. La SEL doit dÃ©crire le comportement externe de lâ€™application ou du sous-systÃ¨me identifiÃ©. Elle dÃ©crit aussi les exigences non-fonctionnelles et les autres facteurs nÃ©cessaires Ã  une description complÃ¨te et comprÃ©hensible des exigences pour le logiciel.
+
+	\subsection{Conventions}
+%<Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.>
+
+	\subsection{Audience}
+%<Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.>
+
+	\subsection{PortÃ©e du document}
+Une brÃ¨ve description de la portÃ©e de ce document, lâ€™application quâ€™il dÃ©crit, les caractÃ©ristiques ou autres sous-systÃ¨mes auxquels lâ€™application est associÃ©e, le ou les modÃ¨les de cas dâ€™utilisation quâ€™il dÃ©crit ainsi que tout autre chose qui peut Ãªtre influencÃ©e ou affectÃ©e par ce document.
+
+	\subsection{DÃ©finitions, acronymes et abrÃ©viations}
+	Ã‰numÃ©rer les dÃ©finitions de tous les termes, acronymes et abrÃ©viations nÃ©cessaires Ã  la comprÃ©hension du document dâ€™architecture logicielle. Cette information peut renvoyer Ã  lâ€™artÃ©fact Glossaire du projet..
+
+
+	\subsection{RÃ©fÃ©rences}
+Cette section comporte la liste de tous les documents citÃ©s dans le document. Chaque document doit Ãªtre identifiÃ© par son titre, son numÃ©ro, lorsque applicable, sa date et lâ€™organisation qui lâ€™a publiÃ©e. Les sources qui peuvent fournir les rÃ©fÃ©rences doivent Ãªtre citÃ©es. Cette derniÃ¨re information peut Ãªtre elle-mÃªme une rÃ©fÃ©rence Ã  une annexe ou Ã  un autre document.
+
+	\subsection{Organisation du chapitre}
+Cette section dÃ©crit le contenu du reste du document  et explique comment le document est organisÃ©.
+
+\section{Description gÃ©nÃ©rale}
+DÃ©crire les principaux facteurs qui affectent le produit et ses exigences. On nâ€™y Ã©nonce pas des exigences spÃ©cifiques, mais on y fournit une toile de fond aux exigences qui sont dÃ©finies en dÃ©tail Ã  la section 3 afin dâ€™en faciliter la comprÃ©hension. Cela comprend les items suivants:
+
+	\subsection{Perspectives du produit}
+%<Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.>
+
+	\subsection{Fonctions du produit}
+DÃ©crire briÃ¨vement les fonctions principales du logiciel. Par exemple : 
+Les fonctions dâ€™un systÃ¨me de gestion peuvent Ãªtre la maintenance dâ€™un compte client, accÃ©der Ã  lâ€™Ã©tat de compte du client et produire la facturation.
+
+	
+	\subsection{CaractÃ©ristiques et classes d'utilisateurs}
+DÃ©crire les caractÃ©ristiques gÃ©nÃ©rales des utilisateurs qui ont un impact sur les exigences du document. Cela inclut le niveau de scolaritÃ©, lâ€™expÃ©rience et lâ€™expertise technique.
+%<Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.>
+
+	\subsection{Environnement opÃ©rationnel}
+%<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
+
+	\subsection{Contraintes de conception et d'implÃ©mentation}
+%<Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customerâ€™s organization will be responsible for maintaining the delivered software).>
+
+	\subsection{Documentation utilisateur}
+%<List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.>
+
+	\subsection{HypothÃ¨ses et dÃ©pendances}
+DÃ©crire tout Ã©lÃ©ment de faisabilitÃ© technique, disponibilitÃ© de sous-systÃ¨me ou de composant ou toute autre hypothÃ¨se liÃ©e au projet de laquelle dÃ©pend la viabilitÃ© du logiciel.
+	
+%<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
+
+\subsection{Exigences reportÃ©es}
+Ã‰numÃ©rer les exigences qui peuvent Ãªtre rÃ©alisÃ©es dans des versions futures du systÃ¨me.
+
+
+
+\section{FonctionnalitÃ©s du logiciel}
+DÃ©crire les exigences fonctionnelles du systÃ¨me qui peuvent Ãªtre exprimÃ©es et langage naturel. Pour plusieurs applications, câ€™est la partie principale de la SEL et son organisation doit, par consÃ©quent, Ãªtre bien rÃ©flÃ©chie. Elle est habituellement hiÃ©rarchisÃ©e par caractÃ©ristiques, mais elle peut lâ€™Ãªtre, par utilisateur ou par sous-systÃ¨me. Les exigences fonctionnelles peuvent inclure les caractÃ©ristiques, les capacitÃ©s et la sÃ©curitÃ©.
+
+Lorsque des outils de dÃ©veloppement, tels des rÃ©fÃ©rentiels dâ€™exigences ou des outils de modÃ©lisation sont utilisÃ©s, on peut rÃ©fÃ©rer Ã  ces donnÃ©es en indiquant lâ€™endroit et le nom de cet outil]
+
+	\subsection{Cas d'utilisation num. 1}
+% N'utilisez pas le nom "Cas d'utilisation 1", mais le nom du cas d'utilisation en quelques mots.
+
+	\subsubsection{Description}
+% Utilisez le canevas de cockburn pour dÃ©crire le cas d'utilisation
+% Indiquez la priotitÃ©: Haute, Moyenne et Basse
+% Indiquez, Ã©ventuellement, des mesures spÃ©cifiques, comme le profit, le coÃ»t, les risques, etc. 
+% (sur une Ã©chelle relative d'un minimum de 1 Ã  un maximum de 9))
+
+	\subsubsection{Exigences fonctionnelles}
+%<Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use â€œTBDâ€ as a placeholder to indicate when necessary information is not yet available.>
+
+%<Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.>
+
+%REQ-1:	
+%REQ-2:	
+
+
+
+\section{Exigences des interfaces externes}
+	\subsection{Interface utilisateur}
+%<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>	
+
+	\subsection{Interface matÃ©rielle}
+%<Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.>
+
+	\subsection{Interface logicielle}
+%<Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.>
+
+	\subsection{Interfaces ou protocoles de communication}
+%<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+
+	\subsection{Contraintes de mÃ©moire}
+
+	\subsection{HypothÃ¨ses et dÃ©pendances}
+
+\section{Autres exigences non-fonctionnelles}
+
+DÃ©crire les exigences qui ne sont pas incluses dans les cas dâ€™utilisation ainsi que les exigences non-fonctionnelles. On peut rÃ©fÃ©rer au document de SpÃ©cifications supplÃ©mentaires.
+
+	\subsection{UtilisabilitÃ©} 
+	DÃ©crire les exigences qui affectent lâ€™utilisabilitÃ© comme, par exemple:
+	\begin{itemize}
+		\item Le temps de formation nÃ©cessaire Ã  un utilisateur normal ou expert avant dâ€™Ãªtre productif.
+		\item Les temps dâ€™exÃ©cution pour les tÃ¢ches courantes
+		\item Les exigences pour satisfaire aux standards dâ€™utilisabilitÃ© dâ€™interface graphique de, par exemple, Microsoft.
+	\end{itemize}
+	
+	\subsubsection{Nom de lâ€™exigence dâ€™utilisabilitÃ© 1}
+	Description de lâ€™exigence 
+
+	\subsection{FiabilitÃ© }
+	
+	DÃ©crire les exigences qui affectent la fiabilitÃ© comme, par exemple:
+	\begin{itemize}
+
+	\item	La disponibilitÃ©: le pourcentage dâ€™heures dâ€™utilisation, les pÃ©riodes de maintenance, mode dâ€™opÃ©ration lors de dÃ©gradation, etc.
+	\item	DurÃ©e moyenne de fonctionnement avant dÃ©faillance, exprimÃ©e en heures, en jours, en mois ou en annÃ©es.
+	\item	DurÃ©e moyenne de rÃ©tablissement, qui est le dÃ©lai moyen de rÃ©paration d'une unitÃ© fonctionnelle aprÃ¨s une dÃ©faillance.
+	\item	Exactitude. prÃ©cision, souvent dÃ©finie par de normes, requise pour les extrants.
+	\item	Nombre maximum dâ€™anomalies exprimÃ© habituellement en KLOC, en dÃ©faut par millier de ligne de code ou par points de fonction
+	\item	CriticitÃ© dâ€™anomalie, mineure, significative, critique en dÃ©crivant ce que critique signifie. 
+	 
+	\end{itemize}
+	
+		\subsubsection{Nom de lâ€™exigence de fiabilitÃ© 1}
+		Description de lâ€™exigence
+		
+	\subsection{Exigences de performance}
+	DÃ©crire les caractÃ©ristiques de la performance du systÃ¨me. RÃ©fÃ©rer les cas dâ€™utilisation lorsque applicable.
+
+	\begin{itemize}
+	\item	Temps de rÃ©ponse par transaction (moyen, maximum)
+	\item	DÃ©bit (transactions par seconde)
+	\item	CapacitÃ© (nombre de client ou de transaction que le systÃ¨me doit supporter)
+	\item	Mode dâ€™opÃ©ration lors de dÃ©gradation (Mode dâ€™opÃ©ration acceptable lorsque la performance du systÃ¨me se dÃ©tÃ©riore)
+	\item	Utilisation de ressources (mÃ©moire, disque, communications, etc.
+	\end{itemize}
+	
+	\subsubsection{Nom de lâ€™exigence de performance 1}
+	Description de lâ€™exigence
+
+	\subsection{MaintenabilitÃ©}
+	
+	DÃ©crire les exigences qui permettent dâ€™assurer le support et la maintenabilitÃ© du systÃ¨me comme, par exemple, les normes de codage, le conventions dâ€™identification, les bibliothÃ¨ques de classe, lâ€™accÃ¨s Ã  la maintenance, les services de maintenances, etc. 
+
+	\subsubsection{Nom de lâ€™exigence de maintenabilitÃ© 1}
+	Description de lâ€™exigence
+
+	\subsection{Exigences de sÃ»retÃ©}
+%<Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the productâ€™s design or use. Define any safety certifications that must be satisfied.>
+
+	\subsection{Exigences de sÃ©curitÃ©}
+	Identifier les donnÃ©es qui doivent Ãªtre protÃ©gÃ©es et le type de menace auquel elles sont exposÃ©es comme, par exemple, menaces physiques, types de personnes qui peuvent Ãªtre la source de menace, les exigences dâ€™accÃ¨s au systÃ¨me, lâ€™encryptage des donnÃ©es, la vÃ©rifiabilitÃ© qui est la dÃ©tection des anomalies et des opÃ©rations frauduleuses. 
+
+	Ã‰numÃ©rer la liste des objets qui doivent faire lâ€™objet dâ€™une protection physique ou logique
+
+	\subsection{Attributs de qualitÃ© logicielle}
+	
+%<Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.>
+
+\section{Autres exigences}
+%<Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.>
+
+
+\section{Classification des exigences fonctionnelles}
+
+Ã‰numÃ©rer dans un tableau toutes les exigences fonctionnelles et leur type, essentielle, souhaitable ou optionnelle. Elles peuvent Ãªtre triÃ©es par leur ordre dâ€™apparition dans le document ou par type.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Code & Exigence & Type\\
+\hline
+REQ-1 & exigence 1 & optionnelle\\
+\hline
+REQ-2 & exigence 2 & essentielle\\
+\hline
+\end{tabular}
+\end{center}
+
+\chapter{Architecture}
+ 
+% your text here
+ 
+\chapter{SpÃ©cification des composants}
+ 
+% your text here
+ 
+\chapter{Conception dÃ©taillÃ©e}
+ 
+% your text here
+ 
+\chapter{ImplÃ©mentation}
+ 
+% your text here
+
+
+\begin{thebibliography}{99}
+  
+\bibitem{baba_books}
+Books of Shrii Shrii Anandamurti (Prabhat Ranjan Sarkar): \\
+http://shop.anandamarga.org/books/sarkar/eledit70.htm
+ 
+\bibitem{anandamitra}
+Avtk. Ananda Mitra Ac., \emph{The Spiritual Philosophy of Shrii Shrii Anandamurti: A Commentary on Ananda Sutram}, Ananda Marga Publications (1991) \\
+ISBN: 81-7252-119-7
+ 
+\end{thebibliography}
+  
+\appendix
+\chapter{Glossaire}
+%<Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.>
+\end{document}

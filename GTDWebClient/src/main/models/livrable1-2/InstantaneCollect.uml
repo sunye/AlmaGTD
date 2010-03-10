@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="InstantaneCollect">
+    <packagedElement xmi:type="uml:Class" xmi:id="_gX9LMLPWEd6A9Yqts8QhOQ" name="user1 : Utilisateur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_hPvu2LPWEd6A9Yqts8QhOQ" name="panierUser1 : Panier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iD0QGLPWEd6A9Yqts8QhOQ" name="Analyser les sources : Informations"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RLADYLPXEd6A9Yqts8QhOQ" name="Faire une documentation : Informations">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_RfOm8LPXEd6A9Yqts8QhOQ" name="infos1User1 : Informations"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RsBs0LPXEd6A9Yqts8QhOQ" name="Faire lire la révision : Informations"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_m9mNALPXEd6A9Yqts8QhOQ" name="user1 : Utilisateur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sfFfqLPXEd6A9Yqts8QhOQ" name="panierUser1 : Panier"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_rXyuLLPcEd6A9Yqts8QhOQ" name="A_&lt;user1 : Utilisateur>_&lt;panierUser1 : Panier>_2" memberEnd="_rXyuLbPcEd6A9Yqts8QhOQ _rXyuMLPcEd6A9Yqts8QhOQ">
+      <ownedEnd xmi:id="_rXyuLbPcEd6A9Yqts8QhOQ" name="user1 : Utilisateur" type="_m9mNALPXEd6A9Yqts8QhOQ" association="_rXyuLLPcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rXyuLrPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rXyuL7PcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_rXyuMLPcEd6A9Yqts8QhOQ" name="panierUser1 : Panier" type="_sfFfqLPXEd6A9Yqts8QhOQ" association="_rXyuLLPcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rXyuMbPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rXyuMrPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_r66CS7PcEd6A9Yqts8QhOQ" name="A_&lt;user1 : Utilisateur>_&lt;panierUser1 : Panier>" memberEnd="_r66CTLPcEd6A9Yqts8QhOQ _r66CT7PcEd6A9Yqts8QhOQ">
+      <ownedEnd xmi:id="_r66CTLPcEd6A9Yqts8QhOQ" name="user1 : Utilisateur" type="_gX9LMLPWEd6A9Yqts8QhOQ" association="_r66CS7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r66CTbPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r66CTrPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_r66CT7PcEd6A9Yqts8QhOQ" name="panierUser1 : Panier" type="_hPvu2LPWEd6A9Yqts8QhOQ" association="_r66CS7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r66CULPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r66CUbPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_te4We7PcEd6A9Yqts8QhOQ" name="A_&lt;panierUser1 : Panier>_&lt;infos1 : Informations>" memberEnd="_te4WfLPcEd6A9Yqts8QhOQ _te4Wf7PcEd6A9Yqts8QhOQ">
+      <ownedEnd xmi:id="_te4WfLPcEd6A9Yqts8QhOQ" name="panierUser1 : Panier" type="_hPvu2LPWEd6A9Yqts8QhOQ" association="_te4We7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_te4WfbPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_te4WfrPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_te4Wf7PcEd6A9Yqts8QhOQ" name="infos1 : Informations" type="_iD0QGLPWEd6A9Yqts8QhOQ" association="_te4We7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_te4WgLPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_te4WgbPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tx7OS7PcEd6A9Yqts8QhOQ" name="A_&lt;panierUser1 : Panier>_&lt;info2 : Informations>" memberEnd="_tx7OTLPcEd6A9Yqts8QhOQ _tx7OT7PcEd6A9Yqts8QhOQ">
+      <ownedEnd xmi:id="_tx7OTLPcEd6A9Yqts8QhOQ" name="panierUser1 : Panier" type="_hPvu2LPWEd6A9Yqts8QhOQ" association="_tx7OS7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tx7OTbPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tx7OTrPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_tx7OT7PcEd6A9Yqts8QhOQ" name="info2 : Informations" type="_RLADYLPXEd6A9Yqts8QhOQ" association="_tx7OS7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tx7OULPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tx7OUbPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_uHywm7PcEd6A9Yqts8QhOQ" name="A_&lt;panierUser1 : Panier>_&lt;info2 : Informations>_2" memberEnd="_uHywnLPcEd6A9Yqts8QhOQ _uHywn7PcEd6A9Yqts8QhOQ">
+      <ownedEnd xmi:id="_uHywnLPcEd6A9Yqts8QhOQ" name="panierUser1 : Panier" type="_hPvu2LPWEd6A9Yqts8QhOQ" association="_uHywm7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uHywnbPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uHywnrPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_uHywn7PcEd6A9Yqts8QhOQ" name="info2 : Informations" type="_RsBs0LPXEd6A9Yqts8QhOQ" association="_uHywm7PcEd6A9Yqts8QhOQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uHywoLPcEd6A9Yqts8QhOQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uHywobPcEd6A9Yqts8QhOQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

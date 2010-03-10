@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="InstantaneProcessBefore">
+    <packagedElement xmi:type="uml:Class" xmi:id="_i1ZPQLPcEd66Yr9o5bYvvg" name="Faire la documentation : Information"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_i1ZPQbPcEd66Yr9o5bYvvg" name="Panier">
+      <ownedAttribute xmi:id="_i1ZPQrPcEd66Yr9o5bYvvg" name="informations" type="_i1ZPQLPcEd66Yr9o5bYvvg" isUnique="false" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i1ZPQ7PcEd66Yr9o5bYvvg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i1ZPRLPcEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_i1ZPRbPcEd66Yr9o5bYvvg" name="collect">
+        <ownedParameter xmi:id="_i1ZPRrPcEd66Yr9o5bYvvg" name=" " type="_i1ZPQLPcEd66Yr9o5bYvvg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_i1ZPR7PcEd66Yr9o5bYvvg" name="process"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_kqhk4LPcEd66Yr9o5bYvvg" name="p1 : Panier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3YA-yLPcEd66Yr9o5bYvvg" name="Guillaume : Utilisateur">
+      <ownedAttribute xmi:id="_FhSNQLPiEd66Yr9o5bYvvg" name="bureau : EspaceDeTravail" type="_bmHoWLPgEd66Yr9o5bYvvg" aggregation="composite" association="_FhSNTbPiEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FhSNQbPiEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FhSNQrPiEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JFRQYLPtEd66Yr9o5bYvvg" name="p1 : Panier" type="_kqhk4LPcEd66Yr9o5bYvvg" aggregation="composite" association="_JFRQbbPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFRQYbPtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFRQYrPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9-VLeLPcEd66Yr9o5bYvvg" name="Faire Vérifier la documentation : Information"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PaKeTLPfEd66Yr9o5bYvvg" name="A_&lt;info1 : Information>_&lt;p1 : Panier>" memberEnd="_PaKeTbPfEd66Yr9o5bYvvg _PaKeULPfEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_PaKeTbPfEd66Yr9o5bYvvg" name="info1 : Information" type="_i1ZPQLPcEd66Yr9o5bYvvg" association="_PaKeTLPfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PaKeTrPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PaKeT7PfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_PaKeULPfEd66Yr9o5bYvvg" name="p1 : Panier" type="_kqhk4LPcEd66Yr9o5bYvvg" association="_PaKeTLPfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PaKeUbPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PaKeUrPfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Psfka7PfEd66Yr9o5bYvvg" name="A_&lt;info 2 : Information>_&lt;p1 : Panier>" memberEnd="_PsfkbLPfEd66Yr9o5bYvvg _Psfkb7PfEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_PsfkbLPfEd66Yr9o5bYvvg" name="info 2 : Information" type="_9-VLeLPcEd66Yr9o5bYvvg" association="_Psfka7PfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PsfkbbPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PsfkbrPfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_Psfkb7PfEd66Yr9o5bYvvg" name="p1 : Panier" type="_kqhk4LPcEd66Yr9o5bYvvg" association="_Psfka7PfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PsfkcLPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PsfkcbPfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_RWvfu7PfEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;p1 : Panier>" memberEnd="_RWvfvLPfEd66Yr9o5bYvvg _RWvfv7PfEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_RWvfvLPfEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_3YA-yLPcEd66Yr9o5bYvvg" association="_RWvfu7PfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWvfvbPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWvfvrPfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_RWvfv7PfEd66Yr9o5bYvvg" name="p1 : Panier" type="_kqhk4LPcEd66Yr9o5bYvvg" association="_RWvfu7PfEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RWvfwLPfEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RWvfwbPfEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bmHoWLPgEd66Yr9o5bYvvg" name="Bureau : EspaceDeTravail"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8tte2LPhEd66Yr9o5bYvvg" name="Au Bureau : Contexte"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FhSNTbPiEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;bureau : EspaceDeTravail>" memberEnd="_FhSNTrPiEd66Yr9o5bYvvg _FhSNQLPiEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_FhSNTrPiEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_3YA-yLPcEd66Yr9o5bYvvg" association="_FhSNTbPiEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FhSNT7PiEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FhSNULPiEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Go8--rPtEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;bureau : EspaceDeTravail>_2" memberEnd="_Go8--7PtEd66Yr9o5bYvvg _Go8-_rPtEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_Go8--7PtEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_3YA-yLPcEd66Yr9o5bYvvg" association="_Go8--rPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Go8-_LPtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Go8-_bPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_Go8-_rPtEd66Yr9o5bYvvg" name="bureau : EspaceDeTravail" type="_bmHoWLPgEd66Yr9o5bYvvg" association="_Go8--rPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Go8-_7PtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Go8_ALPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_JFRQbbPtEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;p1 : Panier>_2" memberEnd="_JFRQbrPtEd66Yr9o5bYvvg _JFRQYLPtEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_JFRQbrPtEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_3YA-yLPcEd66Yr9o5bYvvg" association="_JFRQbbPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFRQb7PtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFRQcLPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_VOE1SrPtEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;p1 : Panier>_3" memberEnd="_VOE1S7PtEd66Yr9o5bYvvg _VOE1TrPtEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_VOE1S7PtEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_3YA-yLPcEd66Yr9o5bYvvg" association="_VOE1SrPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VOE1TLPtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VOE1TbPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_VOE1TrPtEd66Yr9o5bYvvg" name="p1 : Panier" type="_kqhk4LPcEd66Yr9o5bYvvg" association="_VOE1SrPtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VOE1T7PtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VOE1ULPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_XFSOi7PtEd66Yr9o5bYvvg" name="A_&lt;bureau : EspaceDeTravail>_&lt;contexte1 : Contexte>" memberEnd="_XFSOjLPtEd66Yr9o5bYvvg _XFSOj7PtEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_XFSOjLPtEd66Yr9o5bYvvg" name="bureau : EspaceDeTravail" type="_bmHoWLPgEd66Yr9o5bYvvg" association="_XFSOi7PtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XFSOjbPtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XFSOjrPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_XFSOj7PtEd66Yr9o5bYvvg" name="contexte1 : Contexte" type="_8tte2LPhEd66Yr9o5bYvvg" association="_XFSOi7PtEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XFSOkLPtEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XFSOkbPtEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_EPCFwLPjEd66Yr9o5bYvvg" name="InstantaneProcessAfter">
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCFwbPjEd66Yr9o5bYvvg" name="Info1 : Information"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCFwrPjEd66Yr9o5bYvvg" name="Panier">
+      <ownedAttribute xmi:id="_EPCFw7PjEd66Yr9o5bYvvg" name="informations" type="_EPCFwbPjEd66Yr9o5bYvvg" isUnique="false" aggregation="composite">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCFxLPjEd66Yr9o5bYvvg" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCFxbPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_EPCFxrPjEd66Yr9o5bYvvg" name="collect">
+        <ownedParameter xmi:id="_EPCFx7PjEd66Yr9o5bYvvg" name=" " type="_EPCFwbPjEd66Yr9o5bYvvg"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_EPCFyLPjEd66Yr9o5bYvvg" name="process"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCFybPjEd66Yr9o5bYvvg" name="p1 : Panier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCFyrPjEd66Yr9o5bYvvg" name="Guillaume : Utilisateur">
+      <ownedAttribute xmi:id="_EPCFy7PjEd66Yr9o5bYvvg" name="bureau : EspaceDeTravail" type="_EPCF5LPjEd66Yr9o5bYvvg" aggregation="composite" association="_EPCF7bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCFzLPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCFzbPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCFzrPjEd66Yr9o5bYvvg" name="info 2 : Information"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EPCFz7PjEd66Yr9o5bYvvg" name="A_&lt;info1 : Information>_&lt;p1 : Panier>" memberEnd="_EPCF0LPjEd66Yr9o5bYvvg _EPCF07PjEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_EPCF0LPjEd66Yr9o5bYvvg" name="info1 : Information" type="_EPCFwbPjEd66Yr9o5bYvvg" association="_EPCFz7PjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF0bPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF0rPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_EPCF07PjEd66Yr9o5bYvvg" name="p1 : Panier" type="_EPCFybPjEd66Yr9o5bYvvg" association="_EPCFz7PjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF1LPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF1bPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EPCF1rPjEd66Yr9o5bYvvg" name="A_&lt;info 2 : Information>_&lt;p1 : Panier>" memberEnd="_EPCF17PjEd66Yr9o5bYvvg _EPCF2rPjEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_EPCF17PjEd66Yr9o5bYvvg" name="info 2 : Information" type="_EPCFzrPjEd66Yr9o5bYvvg" association="_EPCF1rPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF2LPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF2bPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_EPCF2rPjEd66Yr9o5bYvvg" name="p1 : Panier" type="_EPCFybPjEd66Yr9o5bYvvg" association="_EPCF1rPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF27PjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF3LPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EPCF3bPjEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;p1 : Panier>" memberEnd="_EPCF3rPjEd66Yr9o5bYvvg _EPCF4bPjEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_EPCF3rPjEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_EPCFyrPjEd66Yr9o5bYvvg" association="_EPCF3bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF37PjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF4LPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_EPCF4bPjEd66Yr9o5bYvvg" name="p1 : Panier" type="_EPCFybPjEd66Yr9o5bYvvg" association="_EPCF3bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF4rPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF47PjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCF5LPjEd66Yr9o5bYvvg" name="Bureau : EspaceDeTravail">
+      <ownedAttribute xmi:id="_EPCF5bPjEd66Yr9o5bYvvg" name="contexte1 : Contexte" type="_EPCF6LPjEd66Yr9o5bYvvg" aggregation="composite" association="_EPCF6bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF5rPjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF57PjEd66Yr9o5bYvvg" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_EPCF6LPjEd66Yr9o5bYvvg" name="Contexte1 : Contexte"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EPCF6bPjEd66Yr9o5bYvvg" name="A_&lt;bureau : EspaceDeTravail>_&lt;contexte1 : Contexte>" memberEnd="_EPCF6rPjEd66Yr9o5bYvvg _EPCF5bPjEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_EPCF6rPjEd66Yr9o5bYvvg" name="bureau : EspaceDeTravail" type="_EPCF5LPjEd66Yr9o5bYvvg" association="_EPCF6bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF67PjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF7LPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_EPCF7bPjEd66Yr9o5bYvvg" name="A_&lt;guillaume : Utilisateur>_&lt;bureau : EspaceDeTravail>" memberEnd="_EPCF7rPjEd66Yr9o5bYvvg _EPCFy7PjEd66Yr9o5bYvvg">
+      <ownedEnd xmi:id="_EPCF7rPjEd66Yr9o5bYvvg" name="guillaume : Utilisateur" type="_EPCFyrPjEd66Yr9o5bYvvg" association="_EPCF7bPjEd66Yr9o5bYvvg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EPCF77PjEd66Yr9o5bYvvg" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EPCF8LPjEd66Yr9o5bYvvg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

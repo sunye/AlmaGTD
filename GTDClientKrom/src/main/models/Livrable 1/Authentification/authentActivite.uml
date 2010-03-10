@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="authentActiviteModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="authentActivitePackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="authentActiviteActivity">
+      <node xmi:type="uml:InitialNode" xmi:id="_25CaAL_gEd6EwLPCa9tNbQ" name="InitialNode1" outgoing="_CsYdgL_nEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:CallBehaviorAction" xmi:id="_aY-rIL_mEd6EwLPCa9tNbQ" name="Entrer les identifiants"/>
+      <node xmi:type="uml:CallBehaviorAction" xmi:id="_uShocL_mEd6EwLPCa9tNbQ" name="Choisir &quot;S'authentifier&quot;"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_yk5ckL_mEd6EwLPCa9tNbQ" name="&#xA;&#xA;%%%%%%%%% USE CASE 6 %%%%%%%%%&#xA;&#xA;\subsection{Connection au logiciel}&#xA;&#xA;\subsubsection{Canevas de Cockburn}&#xA;&#xA;\begin{usecase}{Authentification d'un utilisateur sur le logiciel}&#xA;\begin{information}&#xA;\item[Goal in context~:] Authentifier un utilisateur pour qu'il ait accès à ces données cryptées&#xA;\item[Scope~:] Le logiciel&#xA;\item[Level~:] Primary Task&#xA;\item[Pre-conditions~:] L'utilisateur est enregistré&#xA;\item[Post-conditions~:] L'utilisateur est authentifié&#xA;\item[Success End Condition~:] L'utilisateur est authentifié&#xA;\item[Failed End Condition~:] L'utilisateur n'est pas authentifié&#xA;\item[Primary actor~:] L'utilisateur&#xA;\item[Trigger~:] L'utilisateur&#xA;\\&#xA;\end{information}&#xA;\begin{scenario}&#xA;\item L'utilisateur demande à s'authentifier&#xA;\item Le logiciel lui affiche une fenêtre d'authentification&#xA;\item L'utilisateur rentre ses identifiants&#xA;\item Le système vérifie si les identifiants sont corrects&#xA;\item L'utilisateur est authentifié&#xA;\\&#xA;\end{scenario}&#xA;&#xA;\begin{extension}&#xA;\item[4a] Les identifiants sont incorrects&#xA;\\&#xA;\end{extension}&#xA;&#xA;\begin{relatedinformation}&#xA;\item[Priority~:] Haute&#xA;\item[Performance target~:] Obligatoire&#xA;\item[Frequency~:] A chaque lancement du logiciel&#xA;\\&#xA;\end{relatedinformation}&#xA;&#xA;\end{usecase}&#xA;&#xA;&#xA;\subsubsection{Diagramme d'activité} &#xA;L'authentification de l'utilisateur est représenté par le diagramme d'activité \ref{authentActivite}.&#xA;\begin{figure}[!ht]&#xA;\begin{center}&#xA;\includegraphics[width=12cm]{images/authentActivite.png}&#xA;\caption{Diagramme d'activité de l'authentification de l'utilisateur}&#xA;\label{authentActivite}&#xA;\end{center}&#xA;\end{figure}&#xA;&#xA;&#xA;%%%%%%%%% USE CASE 7 %%%%%%%%%&#xA;&#xA;\subsection{Connection au serveur}&#xA;&#xA;\subsubsection{Canevas de Cockburn}&#xA;&#xA;\begin{usecase}{Synchroniser les données avec le serveur}&#xA;\begin{information}&#xA;\item[Goal in context~:] Se connecter avec le serveur pour mettre à jour les données&#xA;\item[Scope~:] Le serveur&#xA;\item[Level~:] Summary&#xA;\item[Pre-conditions~:] disposer d'une interface réseau active&#xA;\item[Post-conditions~:] déconnection du serveur réussie&#xA;\item[Success End Condition~:] les données ont été synchronisé&#xA;\item[Failed End Condition~:] la synchronisation a échouée&#xA;\item[Primary actor~:] Le logiciel&#xA;\item[Trigger~:] Fréquence déterminée dans les préférences utilisateur/ Déclenchement manuel de l'utilisateur&#xA;\\&#xA;\end{information}&#xA;\begin{scenario}&#xA;\item Le logiciel envoi des données modifiées au serveur&#xA;\item Le serveur retourne les données qui ont été modifiées sur lui et pas sur le client&#xA;\\&#xA;\end{scenario}&#xA;&#xA;\begin{extension}&#xA;\item[2a] Des conflits de mises à jour apparaissent : on a besoin de l'utilisateur pour les lever&#xA;\\&#xA;\end{extension}&#xA;&#xA;\begin{variation}&#xA;\item[1.1] La connection avec le serveur est perdue; une synchronisation ultérieure est programmée.&#xA;\\&#xA;\end{variation}&#xA;&#xA;\begin{relatedinformation}&#xA;\item[Priority~:] Faible&#xA;\item[Performance target~:] Invisible à l'utilisateur&#xA;\item[Frequency~:] Fréquence déterminée dans les préférences utilisateur/ Déclenchement manuel de l'utilisateur&#xA;\\&#xA;\end{relatedinformation}&#xA;\begin{openissues}&#xA;\item Que se passe-t-il dans le cas de conflit de date entre les données en ligne et locales ?&#xA;\\&#xA;\end{openissues}&#xA;\end{usecase}&#xA;&#xA;&#xA;\subsubsection{Diagramme d'activités} &#xA;L'échange avec le serveur est décrit par le diagramme d'activités \ref{connectionActivite}.&#xA;\begin{figure}[!ht]&#xA;\begin{center}&#xA;\includegraphics[width=12cm]{images/connectionActivite.png}&#xA;\caption{Diagramme d'activité de la synchronisation avec le serveur}&#xA;\label{connectionActivite}&#xA;\end{center}&#xA;\end{figure}&#xA;"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_4vTwYL_mEd6EwLPCa9tNbQ" name="Choisir &quot;S'authentifier&quot;" outgoing="_IPoqsL_nEd6EwLPCa9tNbQ" incoming="_ADDOUL_oEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_7P1MYL_mEd6EwLPCa9tNbQ" name="Entrer les identifiants" outgoing="_I2YhoL_nEd6EwLPCa9tNbQ" incoming="_IPoqsL_nEd6EwLPCa9tNbQ _MHMLEL_nEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_9CutYL_mEd6EwLPCa9tNbQ" name="DecisionNode1" outgoing="_JaxoIL_nEd6EwLPCa9tNbQ _MHMLEL_nEd6EwLPCa9tNbQ _9DUt0L_nEd6EwLPCa9tNbQ" incoming="_I2YhoL_nEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_AKAAUL_nEd6EwLPCa9tNbQ" name="InitialNode2"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_AxZXgL_nEd6EwLPCa9tNbQ" name="ActivityFinalNode1" incoming="_gzbUIL_oEd6EwLPCa9tNbQ _O9sosL_oEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_ufM9EL_nEd6EwLPCa9tNbQ" name="Utiliser le logiciel" outgoing="_aLA1sL_oEd6EwLPCa9tNbQ" incoming="_JaxoIL_nEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:MergeNode" xmi:id="_4MQ4QL_nEd6EwLPCa9tNbQ" name="MergeNode1" outgoing="_ADDOUL_oEd6EwLPCa9tNbQ" incoming="_CsYdgL_nEd6EwLPCa9tNbQ _9DUt0L_nEd6EwLPCa9tNbQ _eAEbsL_oEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_Qqe6oL_oEd6EwLPCa9tNbQ" name="Arret du logiciel" outgoing="_gzbUIL_oEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_WI9VgL_oEd6EwLPCa9tNbQ" name="DecisionNode2" outgoing="_O9sosL_oEd6EwLPCa9tNbQ _eAEbsL_oEd6EwLPCa9tNbQ" incoming="_aLA1sL_oEd6EwLPCa9tNbQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_CsYdgL_nEd6EwLPCa9tNbQ" name="ControlFlow1" source="_25CaAL_gEd6EwLPCa9tNbQ" target="_4MQ4QL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_CsYdgb_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_CsYdgr_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_IPoqsL_nEd6EwLPCa9tNbQ" name="ControlFlow2" source="_4vTwYL_mEd6EwLPCa9tNbQ" target="_7P1MYL_mEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_IPoqsb_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_IPoqsr_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_I2YhoL_nEd6EwLPCa9tNbQ" name="ControlFlow3" source="_7P1MYL_mEd6EwLPCa9tNbQ" target="_9CutYL_mEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_I2Yhob_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_I2Yhor_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_JaxoIL_nEd6EwLPCa9tNbQ" name="Identifiants corrects" source="_9CutYL_mEd6EwLPCa9tNbQ" target="_ufM9EL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_JaxoIb_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_JaxoIr_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_MHMLEL_nEd6EwLPCa9tNbQ" name="Identifiants incorrects" source="_9CutYL_mEd6EwLPCa9tNbQ" target="_7P1MYL_mEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_MHMLEb_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_MHMLEr_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_9DUt0L_nEd6EwLPCa9tNbQ" name="Annulation" source="_9CutYL_mEd6EwLPCa9tNbQ" target="_4MQ4QL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_9DUt0b_nEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_9DUt0r_nEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ADDOUL_oEd6EwLPCa9tNbQ" name="ControlFlow5" source="_4MQ4QL_nEd6EwLPCa9tNbQ" target="_4vTwYL_mEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ADDOUb_oEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ADDOUr_oEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_O9sosL_oEd6EwLPCa9tNbQ" name="Arrêt du logiciel" source="_WI9VgL_oEd6EwLPCa9tNbQ" target="_AxZXgL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_O9sosb_oEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_O9sosr_oEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_aLA1sL_oEd6EwLPCa9tNbQ" name="ControlFlow6" source="_ufM9EL_nEd6EwLPCa9tNbQ" target="_WI9VgL_oEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_aLA1sb_oEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_aLA1sr_oEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_eAEbsL_oEd6EwLPCa9tNbQ" name="Déconnection/Changement d'utilisateur" source="_WI9VgL_oEd6EwLPCa9tNbQ" target="_4MQ4QL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_eAEbsb_oEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_eAEbsr_oEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_gzbUIL_oEd6EwLPCa9tNbQ" name="ControlFlow8" source="_Qqe6oL_oEd6EwLPCa9tNbQ" target="_AxZXgL_nEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_gzbUIb_oEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_gzbUIr_oEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	    <parent>
+	        <groupId>fr.alma</groupId>
+	        <artifactId>GTDServer</artifactId>
+	        <version>1.0</version>
+	    </parent>
+		
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>fr.alma</groupId>
+	<artifactId>GTDServerGUI</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>GTD-Server-GUI</name>
+	<scm>
+		<connection>scm:svn:http://serveurgtd.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://serveurgtd.googlecode.com/svn/trunk/</developerConnection>
+		<url>http://code.google.com/p/serveurgtd/</url>
+	</scm>
+    <dependencies>
+        <dependency>
+            <groupId>com.extjs</groupId>
+            <artifactId>gxt</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+    </dependencies>
+</project>

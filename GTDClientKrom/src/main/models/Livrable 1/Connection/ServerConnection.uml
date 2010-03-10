@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="ServerConnectionModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="ServerConnectionPackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="ServerConnectionActivity">
+      <node xmi:type="uml:InitialNode" xmi:id="_sX_RkL_qEd6EwLPCa9tNbQ" name="InitialNode1" outgoing="_GJrG8L_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_0j_CoL_qEd6EwLPCa9tNbQ" name="Demander une mise à jour des données" outgoing="_JAY1YL_rEd6EwLPCa9tNbQ" incoming="_Xtx24L_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_74cuwL_qEd6EwLPCa9tNbQ" name="DecisionNode1" outgoing="_JcT8YL_rEd6EwLPCa9tNbQ _YVdh8L_rEd6EwLPCa9tNbQ" incoming="_JAY1YL_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_8dYn0L_qEd6EwLPCa9tNbQ" name="Recevoir les données du serveur" outgoing="_J4dF2L_rEd6EwLPCa9tNbQ" incoming="_JcT8YL_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="__bR8UL_qEd6EwLPCa9tNbQ" name="DecisionNode2" outgoing="_KgNpYL_rEd6EwLPCa9tNbQ _LCny4L_rEd6EwLPCa9tNbQ _e_fJ8L_rEd6EwLPCa9tNbQ" incoming="_J4dF2L_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_AQE2UL_rEd6EwLPCa9tNbQ" name="ActivityFinalNode1" incoming="_KgNpYL_rEd6EwLPCa9tNbQ _MAphaL_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_Bxp90L_rEd6EwLPCa9tNbQ" name="Demander à l'utilisateur de résoudre les conflits" outgoing="_MAphaL_rEd6EwLPCa9tNbQ" incoming="_LCny4L_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_O6kU0L_rEd6EwLPCa9tNbQ" name="Programmer une mise à jour ultérieure" outgoing="_Y_kO4L_rEd6EwLPCa9tNbQ" incoming="_YVdh8L_rEd6EwLPCa9tNbQ _e_fJ8L_rEd6EwLPCa9tNbQ"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_V_wO0L_rEd6EwLPCa9tNbQ" name="DecisionNode3" outgoing="_Xtx24L_rEd6EwLPCa9tNbQ" incoming="_GJrG8L_rEd6EwLPCa9tNbQ _Y_kO4L_rEd6EwLPCa9tNbQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_GJrG8L_rEd6EwLPCa9tNbQ" name="ControlFlow1" source="_sX_RkL_qEd6EwLPCa9tNbQ" target="_V_wO0L_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_GJrG8b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_GJrG8r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_JAY1YL_rEd6EwLPCa9tNbQ" name="ControlFlow2" source="_0j_CoL_qEd6EwLPCa9tNbQ" target="_74cuwL_qEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_JAY1Yb_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_JAY1Yr_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_JcT8YL_rEd6EwLPCa9tNbQ" name="Données envoyées" source="_74cuwL_qEd6EwLPCa9tNbQ" target="_8dYn0L_qEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_JcT8Yb_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_JcT8Yr_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_J4dF2L_rEd6EwLPCa9tNbQ" name="ControlFlow4" source="_8dYn0L_qEd6EwLPCa9tNbQ" target="__bR8UL_qEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_J4dF2b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_J4dF2r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_KgNpYL_rEd6EwLPCa9tNbQ" name="Mise à jour effectuée" source="__bR8UL_qEd6EwLPCa9tNbQ" target="_AQE2UL_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_KgNpYb_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_KgNpYr_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_LCny4L_rEd6EwLPCa9tNbQ" name="Présence de conflits de mises à jour" source="__bR8UL_qEd6EwLPCa9tNbQ" target="_Bxp90L_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_LCny4b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_LCny4r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_MAphaL_rEd6EwLPCa9tNbQ" name="ControlFlow7" source="_Bxp90L_rEd6EwLPCa9tNbQ" target="_AQE2UL_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_MAphab_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_MAphar_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Xtx24L_rEd6EwLPCa9tNbQ" name="ControlFlow8" source="_V_wO0L_rEd6EwLPCa9tNbQ" target="_0j_CoL_qEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Xtx24b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Xtx24r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YVdh8L_rEd6EwLPCa9tNbQ" name="Erreur de connection" source="_74cuwL_qEd6EwLPCa9tNbQ" target="_O6kU0L_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YVdh8b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YVdh8r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Y_kO4L_rEd6EwLPCa9tNbQ" name="ControlFlow10" source="_O6kU0L_rEd6EwLPCa9tNbQ" target="_V_wO0L_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Y_kO4b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Y_kO4r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_e_fJ8L_rEd6EwLPCa9tNbQ" name="Erreur de connection" source="__bR8UL_qEd6EwLPCa9tNbQ" target="_O6kU0L_rEd6EwLPCa9tNbQ">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_e_fJ8b_rEd6EwLPCa9tNbQ" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_e_fJ8r_rEd6EwLPCa9tNbQ" value="1"/>
+      </edge>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

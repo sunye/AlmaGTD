@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" name="DiagrammeDeSequenceModel" xmi:id="idModel">
+  <packagedElement xmi:type="uml:Package" name="DiagrammeDeSequencePackage" xmi:id="idPackage">
+    <packagedElement xmi:type="uml:Collaboration" name="DiagrammeDeSequenceCollaboration" xmi:id="idCollaboration">
+      <ownedBehavior xmi:type="uml:Interaction" name="DiagrammeDeSequenceInteraction" xmi:id="idInteraction"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

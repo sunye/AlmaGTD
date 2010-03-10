@@ -1,0 +1,43 @@
+\section{Composant ProcessManager}
+
+Le processManager est le composant dédié au traitement métier de
+l'application.Il fait parti du WebServer et intervient une fois que le
+ ConnectionManager a établit la connexion à un serveur GTD et/ou ToodleDo.
+Son rôle est donc d'effectuer les calculs et vérification. Ses fonctionnalités
+sont les suivantes :\\
+\begin{itemize}
+  \item CRUD Idées
+  \item CRUD Tâches
+  \item CRUD Projet
+  \item CRUD Notes
+  \item CRUD Contexte
+  \item Vérification des contraintes métier avant chaque opération
+  \item Synchronisation des données
+\end{itemize}
+
+
+\subsection*{Couche métier de l'application}
+Le ProcessManager contient toute la couche métier de l'application. A un niveau
+plus générique, elle correspond au données stockées dans le serveur GTD. Ces
+classes seront cependant amenées à 'voyager' entre les composants car elles
+seront utilisées comme conteneur de données dans les échanges.
+
+    
+\subsection*{Précondition à chaque opération}
+Avant chaque opération demandée à la couche métier, il est nécessaire de
+vérifier que les modifications pourront être faites sur les serveurs distants.
+Pour ce faire, le ProcessManager peut vérifier que la session est utilisable
+via l'interface qui la relie au ConnectionManager, à savoir IConnManager.
+
+\subsection*{Execution d'une opération}
+Le processManager est le coeur métier de l'application, il se situe donc entre
+l'ihm et les données. Il reçoit donc les appels du WebClient, modifie sa
+représentation interne des donneés puis demande la modification au DataManager.
+Cette chaine d'execution est la même pour chaque opération. En effet,
+l'application travaille directement avec les serveur GTD et ToodleDo, il n'est
+en effet pas concevable de fournir une application mise à disposition sur un
+serveur Web, sans internet. Le mode non connecté n'est donc pas recevable; la
+couche données de l'application est donc le serveur GTD ou ToodleDo lui même.
+
+\subsection*{Synchronisation des données}
+Le composant processManager permet également d'assurer la synchronisation entre les serveurs GTD et ToodleDo. C'est lui qui prend en charge la mise à jour des données d'un serveur vers l'autre. Pour cela, il va notamment utiliser les dates de modification des entités.

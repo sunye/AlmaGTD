@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Renseignement d&apos;une T&#xe2;che"/>
+      </Border>
+    </Property>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelTauxEffort" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPriorite" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelLiens" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTags" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="textTags" alignment="0" pref="101" max="32767" attributes="1"/>
+                  <Component id="textLiens" alignment="0" pref="101" max="32767" attributes="1"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="spinnerTauxEffort" alignment="0" max="32767" attributes="1"/>
+                      <Component id="spinnerPriorite" alignment="0" pref="49" max="32767" attributes="1"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="ajouterLiens" min="-2" max="-2" attributes="0"/>
+                  <Component id="ajouterTags" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelPriorite" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="spinnerPriorite" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelTauxEffort" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="spinnerTauxEffort" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelLiens" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textLiens" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ajouterLiens" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelTags" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textTags" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ajouterTags" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="labelPriorite">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Priorit&#xe9; :"/>
+        <Property name="name" type="java.lang.String" value="labelPriorite" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTauxEffort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Taux d&apos;effort :"/>
+        <Property name="name" type="java.lang.String" value="labelTauxEffort" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelLiens">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Liens :"/>
+        <Property name="name" type="java.lang.String" value="labelLiens" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTags">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tags :"/>
+        <Property name="name" type="java.lang.String" value="labelTags" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerPriorite">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="spinnerPriorite" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(model1)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="int min = 0;&#xa;int max = 5; //il faut bien s&apos;arreter quelque part!&#xa;int step = 1;&#xa;int initValue = 2;  &#x9;&#x9;   &#xa;javax.swing.SpinnerModel model1 = new javax.swing.SpinnerNumberModel(initValue, min, max, step);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerTauxEffort">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="spinnerTauxEffort" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(model2)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="int max2 = 100;&#xa;int initValue2 = 50;  &#x9;&#x9;   &#xa;javax.swing.SpinnerModel model2 = new javax.swing.SpinnerNumberModel(initValue2, min, max2, step);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textLiens">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="textLiens" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="textLiensCaretUpdate"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textLiensActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textTags">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="textTags" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="caretUpdate" listener="javax.swing.event.CaretListener" parameters="javax.swing.event.CaretEvent" handler="textTagsCaretUpdate"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textTagsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ajouterLiens">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ajouter"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="ajouterLiens" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajouterLiensActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ajouterTags">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ajouter"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="name" type="java.lang.String" value="ajouterTags" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajouterTagsActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

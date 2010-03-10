@@ -1,0 +1,104 @@
+\ProvidesPackage{alma}
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{hyperref}
+\RequirePackage[utf8]{inputenc}
+
+\lstnewenvironment{ocl}{\lstset{
+inputencoding=utf8,
+texcl,
+language=[decorative]OCL,
+morekeywords={flatten,body,init,OrderedSet,Tuple,TupleType,def,attr,oclIsUndefined,oclIsInvalid,OclState,let,in},
+basicstyle=\color{blue}\small,
+frame=tb,
+flexiblecolumns,
+commentstyle=\itshape,
+sensitive,
+morecomment=[l][itshape]{--},
+escapechar=&}}{}
+
+\lstnewenvironment{java}{\lstset{language=Java, basicstyle=\color{magenta}\footnotesize,frame=tb}}{}
+
+\lstnewenvironment{cpp}{\lstset{language=[ansi]C++,basicstyle=\color{blue}\footnotesize,frame=tb}}{}
+
+%
+% Convenience commands 
+%
+\newcommand{\code}[1]{\textbf{\lstinline!#1!}}
+
+
+%
+% Paper dimensions
+%
+\hoffset=-1cm
+\voffset=-.3cm
+\textwidth=16cm
+\textheight=22cm
+\oddsidemargin=1.5cm
+\evensidemargin=.5cm
+
+
+\global\let\@author\@empty
+\global\let\@date\@empty
+%\global\let\date\relax
+%\global\let\author\relax
+
+
+%
+% Footers and headers
+%
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{} % clear all footer fields 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\scriptsize{Master Alma}} 
+\fancyfoot[LO,CE]{\scriptsize\textsl{Université de Nantes}} 
+\fancyfoot[CO,RE]{\scriptsize{\url{http://alma.univ-nantes.fr}}}
+
+
+%
+% Use Case environment
+%
+\newcounter{UsecaseCount}
+\setcounter{UsecaseCount}{0}
+\newenvironment{usecase}[1]
+{\stepcounter{UsecaseCount}
+\begin{center}
+{\noindent\textbf Use Case: \arabic{UsecaseCount} \---} #1
+\end{center}
+\noindent\hrulefill\par\smallskip}
+{\par\noindent\hrulefill\smallskip}
+
+%
+% Information environment
+%
+\newenvironment{information}
+{\noindent\textbf{CHARACTERISTIC INFORMATION}\\\begin{description}}
+{\end{description}}
+
+%
+% Scenario environment
+%
+\newenvironment{scenario}
+{\noindent\textbf{MAIN SUCCESS SCENARIO}\\\begin{enumerate}}
+{\end{enumerate}}
+
+%
+% Extension environment
+%
+\newenvironment{extension}
+{\noindent\textbf{EXTENSIONS}\\\begin{list}{}{}}
+{\end{list}}
+

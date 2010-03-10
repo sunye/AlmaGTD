@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Stereotypes="http:///schemas/Stereotypes/_DQFkwNViEd6sTLdWmA-sUQ/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/Stereotypes/_DQFkwNViEd6sTLdWmA-sUQ/2 Stereotypes.uml#_DQGL0NViEd6sTLdWmA-sUQ">
+  <uml:Model xmi:id="_qb8akM37EdqwVrslYOdUDA">
+    <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="TypeEnum">
+      <packagedElement xmi:type="uml:Class" xmi:id="_FISxcNewEd6az_1868ttdQ" name="Periodicite">
+        <ownedAttribute xmi:id="_FISxcdewEd6az_1868ttdQ" name="idPeriod">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_FISxctewEd6az_1868ttdQ" name="frequence" type="_FISxdNewEd6az_1868ttdQ"/>
+        <ownedAttribute xmi:id="_FISxc9ewEd6az_1868ttdQ" name="dateFinRepetition" type="_p-DYQNewEd6az_1868ttdQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_FISxdNewEd6az_1868ttdQ" name="EnumFrequence">
+        <ownedLiteral xmi:id="_FISxddewEd6az_1868ttdQ" name="EvenementPonctuel"/>
+        <ownedLiteral xmi:id="_FISxdtewEd6az_1868ttdQ" name="Journaliere"/>
+        <ownedLiteral xmi:id="_FISxd9ewEd6az_1868ttdQ" name="Hebdomadaire"/>
+        <ownedLiteral xmi:id="_FISxeNewEd6az_1868ttdQ" name="Mensuelle"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_lvr6YNewEd6az_1868ttdQ" name="Frequence">
+        <ownedAttribute xmi:id="_v-OK8NewEd6az_1868ttdQ" name="idFrequence">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_xgt4cNewEd6az_1868ttdQ" name="type" type="_3REtgNewEd6az_1868ttdQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_p-DYQNewEd6az_1868ttdQ" name="TDate">
+        <ownedAttribute xmi:id="_p-DYQdewEd6az_1868ttdQ" name="jour">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_p-DYQtewEd6az_1868ttdQ" name="mois">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_p-DYQ9ewEd6az_1868ttdQ" name="annee">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_p-DYRNewEd6az_1868ttdQ" name="heure">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_p-DYRdewEd6az_1868ttdQ" name="minute">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_p-DYRtewEd6az_1868ttdQ" name="seconde">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_3REtgNewEd6az_1868ttdQ" name="varchar2"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_euF1ANeyEd6az_1868ttdQ" name="Periodicite">
+        <ownedAttribute xmi:id="_euF1AdeyEd6az_1868ttdQ" name="idPeriod">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_euF1AteyEd6az_1868ttdQ" name="idFrequence">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_euF1A9eyEd6az_1868ttdQ" name="dateFinRepetition" type="_p-DYQNewEd6az_1868ttdQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_lu8BmteyEd6az_1868ttdQ" name="A_&lt;periodicite>_&lt;frequence>" memberEnd="_lu8Bm9eyEd6az_1868ttdQ _lu8BnteyEd6az_1868ttdQ">
+        <ownedEnd xmi:id="_lu8Bm9eyEd6az_1868ttdQ" name="periodicite" visibility="private" type="_euF1ANeyEd6az_1868ttdQ" association="_lu8BmteyEd6az_1868ttdQ">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lu8BnNeyEd6az_1868ttdQ" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lu8BndeyEd6az_1868ttdQ" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_lu8BnteyEd6az_1868ttdQ" name="frequence" type="_lvr6YNewEd6az_1868ttdQ" association="_lu8BmteyEd6az_1868ttdQ">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lu8Bn9eyEd6az_1868ttdQ" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lu8BoNeyEd6az_1868ttdQ" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_hZJX8NewEd6az_1868ttdQ">
+      <eAnnotations xmi:id="_hZL0MNewEd6az_1868ttdQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="Stereotypes.uml#_DQGL0NViEd6sTLdWmA-sUQ"/>
+      </eAnnotations>
+      <appliedProfile href="Stereotypes.uml#_OMXhYNU8Ed6USMZGx9FQiA"/>
+    </profileApplication>
+  </uml:Model>
+  <Stereotypes:Table xmi:id="_h2jssNewEd6az_1868ttdQ" base_Class="_FISxcNewEd6az_1868ttdQ"/>
+  <Stereotypes:PK xmi:id="_iYMaINewEd6az_1868ttdQ" base_Feature="_FISxcdewEd6az_1868ttdQ"/>
+  <Stereotypes:PK xmi:id="_04xZYNewEd6az_1868ttdQ" base_Feature="_v-OK8NewEd6az_1868ttdQ"/>
+  <Stereotypes:Table xmi:id="_gP_FkNeyEd6az_1868ttdQ" base_Class="_euF1ANeyEd6az_1868ttdQ"/>
+  <Stereotypes:PK xmi:id="_gwRIINeyEd6az_1868ttdQ" base_Feature="_euF1AdeyEd6az_1868ttdQ"/>
+  <Stereotypes:FK xmi:id="_i8HUoNeyEd6az_1868ttdQ" base_Feature="_euF1AteyEd6az_1868ttdQ"/>
+  <Stereotypes:Table xmi:id="_lQJMwNeyEd6az_1868ttdQ" base_Class="_lvr6YNewEd6az_1868ttdQ"/>
+</xmi:XMI>

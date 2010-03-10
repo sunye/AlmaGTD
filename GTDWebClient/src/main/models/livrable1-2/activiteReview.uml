@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="DefaultNameModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DefaultNamePackage">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="idStateMachine" name="DefaultNameStateMachine">
+      <region xmi:id="idRegion" name="MainRegion">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_lkQbcMNBEd6eFsiYUMA0MQ" name=" "/>
+        <subvertex xmi:type="uml:State" xmi:id="_BRJZQMNCEd6eFsiYUMA0MQ" name="Mettre à jour le contexte courant"/>
+        <subvertex xmi:type="uml:State" xmi:id="_NPIOMMNCEd6eFsiYUMA0MQ" name="Mettre à jour les vues"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_Z0GKoMNCEd6eFsiYUMA0MQ" name="Pseudostate1" kind="fork"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_0iuwcMNCEd6eFsiYUMA0MQ" name="Pseudostate2" kind="join"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_1dfIgMNCEd6eFsiYUMA0MQ" name="FinalState1"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_VjHywMNEEd6eFsiYUMA0MQ" name=" " kind="entryPoint"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_Yr8k4MNEEd6eFsiYUMA0MQ" name=" "/>
+        <subvertex xmi:type="uml:State" xmi:id="_ahP5oMNEEd6eFsiYUMA0MQ" name="Indiquer les tâches réalisées"/>
+        <subvertex xmi:type="uml:State" xmi:id="_i0eUEMNEEd6eFsiYUMA0MQ" name="Supprimer les tâches finies"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_qnKNQsNEEd6eFsiYUMA0MQ" name="FinalState2"/>
+        <transition xmi:id="_78UNJMNCEd6eFsiYUMA0MQ" name=" " source="_lkQbcMNBEd6eFsiYUMA0MQ" target="_Z0GKoMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_9kH4cMNCEd6eFsiYUMA0MQ" name=" " source="_Z0GKoMNCEd6eFsiYUMA0MQ" target="_NPIOMMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_B4AIdMNDEd6eFsiYUMA0MQ" name=" " source="_NPIOMMNCEd6eFsiYUMA0MQ" target="_0iuwcMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_DFJRBMNDEd6eFsiYUMA0MQ" name=" " source="_BRJZQMNCEd6eFsiYUMA0MQ" target="_0iuwcMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_EbRWdMNDEd6eFsiYUMA0MQ" name=" " source="_0iuwcMNCEd6eFsiYUMA0MQ" target="_1dfIgMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_GMKP08NEEd6eFsiYUMA0MQ" name=" " source="_Z0GKoMNCEd6eFsiYUMA0MQ" target="_BRJZQMNCEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_rcIGYMNEEd6eFsiYUMA0MQ" name=" " source="_Yr8k4MNEEd6eFsiYUMA0MQ" target="_ahP5oMNEEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_sZ1r1MNEEd6eFsiYUMA0MQ" name=" " source="_ahP5oMNEEd6eFsiYUMA0MQ" target="_i0eUEMNEEd6eFsiYUMA0MQ"/>
+        <transition xmi:id="_tjATUsNEEd6eFsiYUMA0MQ" name=" " source="_i0eUEMNEEd6eFsiYUMA0MQ" target="_qnKNQsNEEd6eFsiYUMA0MQ"/>
+      </region>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

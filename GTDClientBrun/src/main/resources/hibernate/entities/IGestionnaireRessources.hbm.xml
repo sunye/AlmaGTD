@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" package="fr.univnantes.alma.gtd.model.gestionnaireressources">
+    <class name="fr.univnantes.alma.gtd.model.gestionnaireressources.IGestionnaireRessources">
+	   	<id name="id" column="iGestionnaireRessourcesId" type="java.lang.Integer">
+          <generator class="increment"/>
+        </id>
+	    <discriminator column="type" type="string"/>
+		    <subclass name="fr.univnantes.alma.gtd.model.gestionnaireressources.GestionnaireRessources">
+		        <bag name="projets" cascade="all" access="field">
+	                 <key column="id"/>
+	                 <one-to-many class="fr.univnantes.alma.gtd.model.gestionnaireressources.Projet"/>
+	         </bag>
+	         <bag name="contacts" cascade="all"  access="field">
+	                 <key column="id"/>
+	                 <one-to-many class="fr.univnantes.alma.gtd.model.gestionnaireressources.Contact"/>
+	         </bag>
+	         <bag name="contextes" cascade="all"  access="field">
+	                 <key column="id"/>
+	                 <one-to-many class="fr.univnantes.alma.gtd.model.gestionnaireressources.Contexte"/>
+	         </bag>
+	         <bag name="idees" cascade="all"  access="field">
+	                 <key column="id"/>
+	                 <one-to-many class="fr.univnantes.alma.gtd.model.gestionnaireressources.Idee"/>
+	         </bag>
+	    </subclass>
+	    
+	</class>  
+</hibernate-mapping>

@@ -1,0 +1,727 @@
+\chapter{Spécification d'exigences logicielles}
+
+\setcounter{minitocdepth}{1}
+\minitoc
+
+% Template proposé par "The Unified Process for EDUcation (UPEDU)"
+% http://www.yoopeedoo.org/upedu/
+
+%Selon le wikipedia \url{http://fr.wikipedia.org/wiki/Exigence_(ingénierie)}
+%De bonnes exigences doivent être :
+% * Nécessaires – Elles doivent porter sur des éléments nécessaires, c'est-à-dire des éléments importants du système que d'autres composants du système ne pourraient pas compenser.
+% * Non ambiguës – Elles doivent être susceptibles de n'avoir qu'une seule interprétation.
+% * Concises – Elles doivent être énoncées dans un langage qui soit précis, bref et agréable à lire, et qui de plus communique l'essence de ce qui est exigé.
+% * Cohérentes – Elles ne doivent pas contredire d'autres exigences établies, ni être contredites par d'autres exigences. De plus, elle doit, d'un énoncé d'exigence au suivant, utiliser des termes et un langage qui signifie la même chose.
+% * Complètes – Elles doivent être énoncées entièrement en un endroit et d'une façon qui ne force pas le lecteur à regarder un texte supplémentaire pour savoir ce que l'exigence signifie.
+% * Accessibles – Elles doivent être réalistes quant à aux moyens mis en œuvre en termes d'argent disponible, avec les ressources disponibles, dans le temps disponible.
+% * Vérifiables – Elles doivent permettre de déterminer si elles ont été atteintes ou non selon l'une de quatre méthodes possibles : inspection, analyse, démonstration, ou test.
+
+\section{Introduction}
+%L’introduction donne une vue d’ensemble de tout le document. On y présente toute information que le lecteur a besoin pour  comprendre le document. Elle comprend l’objectif du document, sa portée, les définitions, acronymes et abréviations, les références et une vue d’ensemble du document.
+%Note : La SEL comporte l’ensemble des exigences logicielles pour une portion ou pour tout le système. La présente spécification est adaptée pour  un projet utilisant une modélisation de cas d’utilisation. Cet artéfact est un paquetage qui comprend les cas d’utilisation du modèle des cas d’utilisation et les spécifications supplémentaires applicables ainsi que les autres informations pertinentes.
+%Plusieurs aménagements d’une SEL sont possibles. La norme (IEEE830-1998) est la référence pour de plus amples explications ainsi que pour d’autres options d’organisation du document.
+
+Dans ce chapitre, nous allons spécifier les fonctionnalités du logiciel per\-met\-tant de mettre en pratique la méthode GTD pour un particulier.
+ On utilisera donc l'analyse effectuée dans le chapitre précédent, en prenant en compte le fait que nous spécifions cette fois un logiciel, et non une méthode généraliste.
+
+
+	\subsection{Objectif}
+%Préciser les objectifs de ce chapitre. La SEL doit décrire le comportement externe de l’application ou du sous-système identifié. Elle décrit 	aussi les exigences non-fonctionnelles et les autres facteurs nécessaires à une description complète et compréhensible des exigences pour le logiciel.
+
+L'objectif poursuivi est donc de décrire de manière précise le comportement et les fonctionnalités du futur logiciel GTD.
+ Nous allons également lister toutes les conditions qu'il doit vérifier, ainsi que tous les facteurs extérieurs desquels il dépend.
+
+	\subsection{Conventions}
+%<Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.>
+
+
+Nous assumerons dans ce documents que l'utilisateur est capable d'utiliser un ordinateur et est au courant des exigences et effets liés à cette utilisation.
+
+	\subsection{Audience}
+%<Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.>
+
+Ce document est essentiellement destiné aux développeurs du projet et au chef de projet, car ce sont eux qui devront mettre en place ce qui y est décrit.
+Cependant, le responsable de la relation client devra vérifier que c'est bien ce qui est attendu, et les testeurs devront s'y référer.
+Accessoirement, il doit être compréhensible, et apprécié par le correcteur.
+
+	\subsection{Portée du document}
+%Une brève description de la portée de ce document, l’application qu’il décrit, les caractéristiques ou autres sous-systèmes auxquels l’application est associée, le ou les modèles de cas d’utilisation qu’il décrit ainsi que tout autre chose qui peut être influencée ou affectée par ce document.
+
+Nous décrivons ici une application client instrumentant la méthode GTD, destinée à un usage professionnel et/ou personnel. L'application visée a pour but d'être accessible pour un assez large public, mais pourra éventuellement dépendre (dans le cas d'une utilisation professionnelle en particulier) d'un serveur distant.
+On devra donc également prendre en compte cette dépendance dans les spécifications.
+On décrira dans les parties suivantes des cas d'utilisation représentatifs des principales fonctionnalités offertes par le logiciel.
+
+	\subsection{Définitions, acronymes et abréviations}
+	%Énumérer les définitions de tous les termes, acronymes et abréviations nécessaires à la compréhension du document d’architecture logicielle. Cette information peut renvoyer à l’artéfact Glossaire du projet..
+
+	Voir Dictionnaire de données (partie 1).
+
+
+	%\subsection{Références}
+%Cette section comporte la liste de tous les documents cités dans le document. Chaque document doit être identifié par son titre, son numéro, lorsque applicable, sa date et l’organisation qui l’a publiée. Les sources qui peuvent fournir les références doivent être citées. Cette dernière information peut être elle-même une référence à une annexe ou à un autre document.
+
+
+
+	%\subsection{Organisation du chapitre}
+%Cette section décrit le contenu du reste du document  et explique comment le document est organisé.
+
+\section{Description générale}
+%<Décrire les principaux facteurs qui affectent le produit et ses exigences. On n’y énonce pas des exigences spécifiques, mais on y fournit une toile de fond aux exigences qui sont définies en détail à la section 3 afin d’en faciliter la compréhension. Cela comprend les items suivants:>
+
+Le logiciel que nous concevons devra respecter un certain nombre de spé\-ci\-fi\-ca\-tions provenant de différentes sources~: utilisateur, système d'exploitation ou encore la méthode GTD. Ces spécifications concernent un large éventail d'aspects du logiciel~:
+
+
+	\subsection{Perspectives du produit}
+%<Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.>
+
+Le logiciel que nous développons s'inscrit dans la suite de logiciel de style GTD.
+Nous développons plus particulièrement le composant représentant la partie logiciel client d'un système client/serveur.
+\\
+Le produit final fera l'interface entre un utilisateur et son compte GTD stocké sur le serveur. Le logiciel sera capable d'accéder aux informations du serveur (réception/envoi), mais aussi de fonctionner hors connexion (de faire la mise à jour sur le serveur plus tard ou de permettre une utilisation complètement locale).
+
+\begin{figure}
+\includegraphics[width=12cm]{images/projet-gtd001}
+\end{figure}
+
+
+	\subsection{Fonctions du produit}
+%<Décrire brièvement les fonctions principales du logiciel. Par exemple : >
+%<Les fonctions d’un système de gestion peuvent être la maintenance d’un compte client, accéder à l’état de compte du client et produire la facturation.>
+Le logiciel comportera différents sous-systèmes offrant chacun plusieurs fonctionnalités.
+Un système de gestion des ``choses à faire/idées''~: enregistrements de nouvelles idées à partir de l'utilisateur, demande à l'utilisateur des informations sur chaque idées pour appliquer un traitement.
+\\
+Un système de gestion des tâches : place les tâches dans les catégories adéquates, vérifie si les tâches en attente doivent le rester, supprimer/archiver les tâches achevées.
+Il devra également disposer des éléments suivants :
+\begin{itemize}
+\item Un système de connexion utilisateur : connexion , déconnexion, préférences (changement du mot de passe, ...).
+\item Un système connexion au serveur : envoi (immédiat ou différé), réception (globale ou par paquets).
+\item Un système de cryptage/décryptage.
+\end{itemize}
+
+
+
+	\subsection{Caractéristiques et classes d'utilisateurs}
+%<Décrire les caractéristiques générales des utilisateurs qui ont un impact sur les exigences du document. Cela inclut le niveau de scolarité, l’expérience et l’expertise technique.>
+%<Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.>
+
+Nous comptons orienter notre logiciel pour cibler les utilisateurs ayant de nombreuses choses à faire et qui ont besoin de s'organiser.
+\\
+Le client pourra être aussi bien un homme d'affaire qu'un artisan, la seule nécessité est que le client ait un réel besoin d'organisation.
+\\
+Nous projetons de développer le logiciel pour qu'un utilisateur lambda puisse l'utiliser. Un minimum de connaissance sera nécessaire mais pas plus que pour la méthode GTD elle-même.
+\\
+Ce sont souvent les personnes occupées qui ont le plus besoin d'organisation, ces personnes utiliseront probablement le logiciel tous les jours car ils auront besoin  d'ajouter ou de réaliser des tâches souvent.
+
+	\subsection{Environnement opérationnel}
+%<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
+
+Nous prévoyons que notre logiciel puisse être exécuter sur différents systèmes d'exploitation (MacOS, Linux, Windows). Il sera nécessaire que ce système d'exploitation possède une machine virtuelle Java.
+\\
+Pour l'utilisation avec un serveur, une connexion (réseau ou internet) sera nécessaire pour la liaison avec lui.
+
+	\subsection{Contraintes de conception et d'implémentation}
+%<Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).>
+
+Dans le but de déployer notre logiciel sur un grand nombre de plateformes, nous avons décidé de le développer en Java.
+\\
+Pour une harmonie et un code propre, nous développerons un checkstyle\footnote{outil de contrôle de code, permet de vérifier le style d'un code source} pour notre projet.
+
+
+	\subsection{Documentation utilisateur}
+%<List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.>
+
+Nous comptons écrire trois types de documentation:
+
+\begin{itemize}
+\item une aide en ligne (dans le logiciel) en html~;
+\item un manuel (fichier texte décrivant les principales manipulations) en pdf~;
+\item un tutoriel vidéo sur YouTube\footnote{\url{http://www.youtube.com/}}.
+\end{itemize}
+
+
+	\subsection{Hypothèses et dépendances}
+%<Décrire tout élément de faisabilité technique, disponibilité de sous-système ou de composant ou toute autre hypothèse liée au projet de laquelle dépend la viabilité du logiciel.>
+%<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
+
+On assume que le mode de connexion et le format des données pour communiquer avec le serveur sont normalisés avec l'équipe de développement du serveur GTD.
+
+
+\subsection{Exigences reportées}
+%<Énumérer les exigences qui peuvent être réalisées dans des versions futures du système.>
+
+Etant soumis à des contraintes temporelles, nous avons choisi de reporter la spécification des intégrations avec des logiciels déjà présents sur la machine (calendrier, liste de contacts, etc.).
+
+
+
+\section{Fonctionnalités du logiciel}
+%Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel.
+%Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie.
+%Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être par uti\-li\-sa\-teur ou par sous-système.
+%Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.
+
+%Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation, sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil.
+
+Dans cette section, nous reprenons les cas d'utilisation de la méthode GTD et nous les adaptons pour un système informatique.
+	\subsection{Collecte des choses à faire}
+
+Le logiciel permet de recenser les choses à faire, de manière rapide et simple, à n'importe quel moment (y compris pendant l'exécution d'une autre tâche par le logiciel).
+
+
+	\subsubsection{Description}
+% Utilisez le canevas de cockburn pour décrire le cas d'utilisation
+% Indiquez la priotité: Haute, Moyenne et Basse
+% Indiquez, éventuellement, des mesures spécifiques, comme le profit, le coût, les risques, etc.
+% (sur une échelle relative d'un minimum de 1 à un maximum de 9))
+
+	\begin{usecase}{Collecter des choses à faire}
+	\begin{information}
+	\item[Goal in context~:] Récupérer des choses à faire et les ajouter à la liste de choses à faire
+	\item[Scope~:] La méthode GTD
+	\item[Level~:] Summary
+	\item[Pre-conditions~:] L'utilisateur est identifié, et a des choses à faire non classées dans le système
+	\item[Post-conditions~:] Toutes les choses à faire sont enregistrées.
+	\item[Success End Condition~:] Toutes les choses à faire désirées ont été enregistrées pour l'utilisateur.
+	\item[Failed End Condition~:] Les choses à faire données par l'utilisateur ont été perdues
+	\item[Primary actor~:] L'utilisateur, toute personne voulant être mieux organisée
+	\item[Trigger~:] L'utilisateur a demandé à rentrer des choses à faire
+	\\
+	\end{information}
+	\begin{scenario}
+	\item L'utilisateur demande à ajouter des choses à faire
+	\item Le système enregistre les choses à faire tant que l'utilisateur en ajoute
+	\item L'utilisateur arrête la saisie
+	\\
+	\end{scenario}
+	\begin{relatedinformation}
+	\item[Priority~:] Moyenne
+	\item[Performance target~:] Quelques secondes par chose à faire
+	\item[Frequency~:] Régulièrement (potentiellement tous les jours, ou même plusieurs fois par jour)
+	\item[Channel to primary actor~:] Action directe de l'utilisateur
+	\\
+	\end{relatedinformation}
+	\begin{openissues}
+	\item Que se passe-t-il si le système perd une ou plusieurs choses à faire?
+	\\
+	\end{openissues}
+	\end{usecase}
+
+
+
+	\subsubsection{Exigences fonctionnelles}
+%<Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary information is not yet available.>
+
+%<Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.>
+
+%REQ-1:
+%REQ-2:
+\begin{description}
+ \item[EXIGE-1~:] L'ajout de nouvelle chose à faire doit être disponible à tout moment, quel que soit la tâche effectuée par le système.
+ \item[EXIGE-2~:] Dès qu'une chose à faire est ajoutée, elle est sauvegardée de manière persistante, même si la saisie ne s'arrête pas.
+ \end{description}
+
+
+
+
+
+
+	\subsection{Traitement}
+
+	Le logiciel permet de passer en revue les choses à faire une à une, et offre la possibilité à l'utilisateur de choisir le traitement  à effectuer : le faire tout de suite (implique suppression de la chose à faire), transformation en tâche (et spécification de la tâche), transformation en projet (et spécification de la première tâche de ce projet au moins) ou en sous-projet.
+
+
+\subsubsection{Description}
+
+	\begin{usecase}{Traitement}
+	\begin{information}
+	\item[Goal in context~:] On effectue le traitement (création d'un projet contenant une décomposition de la tâche courante, l'utilisateur effectue la tâche, la délègue, la reporte, l'archive) d'une ou plusieurs choses à faire de la liste
+	\item[Scope~:] La gestion des priorités après traitement, la création de la liste de choses à faire
+	\item[Level~:] Summary
+	\item[Pre-conditions~:] Liste de choses à faire non-vide
+	\item[Post-conditions~:] Les tâches traitées apparaissent dans les donnée stockée
+	\item[Success End Condition~:] Le chose à faire supprimée de la liste a été traitée (et la tâche a été effectuée, déléguée, transformée, ...)
+	\item[Failed End Condition~:] Le traitement a échoué
+	\item[Primary actor~:] L'utilisateur
+	\item[Trigger~:] L'utilisateur
+	\\
+	\end{information}
+	\begin{scenario}
+	\item L'utilisateur demande à lancer le traitement des choses à faire.
+	\item Le système lui affiche la première chose à faire
+	\item Le système demande le traitement adéquat à appliquer (voir Goal)
+	\item L'utilisateur entre des informations, afin de créer la tâche ou le projet correspondant à la chose à faire
+	\item Le système enregistre la tâche ou le projet
+	\item Le système supprime la chose à faire qui vient d'être traitée
+	\item Arrêt de la procédure de traitement
+	\\
+	\end{scenario}
+
+	\begin{variation}
+	\item[4a.] L'utilisateur entre des informations, afin de créer la tâche ou le projet correspondant à la chose à faire
+	\item[4a1.] L'utilisateur effectue la tâche immédiatement, et saut à l'étape 6.
+	\item[4a2.] Il n'y a pas encore de contexte adapté à cette tâche, création d'un nouveau contexte.
+	\item[7a.] Arrêt de la procédure de traitement
+	\item[7a1.] On remplace l'arrêt du traitement par le retour à l'étape 2 (on passe à la chose à faire suivante).
+	\\
+	\end{variation}
+
+	\begin{relatedinformation}
+	\item[Priority~:] Moyenne
+	\item[Performance target~:] Moins de deux minutes par chose à faire
+	\item[Frequency~:] Régulièrement (une fois par semaine?)
+	\item[Channel to primary actor~:] Action directement effectuée par l'utilisateur
+	\\
+	\end{relatedinformation}
+	\begin{openissues}
+	\item Que se passe-t-il si la tâche créée n'est pas sauvegardée~?
+	\item Que se passe-t-il si la chose à faire n'est pas supprimée~?
+	\\
+	\end{openissues}
+	\end{usecase}
+
+
+\subsubsection{Exigences fonctionnelles}
+
+\begin{description}
+\item[EXIGE-3~:] Le traitement doit pouvoir être interrompu à tout moment, et on doit pouvoir le reprendre à l'endroit exact ou l'on était rendu.
+\item[EXIGE-4~:] Une tâche ou un projet créé lors du traitement doit immédiatement être sauvegardé de manière persistante.
+\item[EXIGE-5~:] Une fois qu'une chose à faire a été traitée, elle doit être supprimée de la liste.
+\item[EXIGE-6~:] Lors d'une création (de tâche ou de projet), tous les champs obligatoire doivent être renseigné, afin de permettre l'organisation automatique des tâches.
+ \end{description}
+
+
+	\subsection{Organisation}
+
+\subsubsection{Description}
+
+\begin{usecase}{Organiser les éléments stockés dans les dossiers}
+\begin{information}
+\item[Goal in context~:] Gérer les priorités, les contextes et tout autres attributs pour définir l'ensemble des prochaines actions à partir des tâches existantes.
+\item[Scope~:] La création des tâches, leurs actions et leurs attributs.
+\item[Level~:] Primary Task
+\item[Pre-conditions~:] avoir des tâches déjà créées.
+\item[Post-conditions~:]
+\item[Success End Condition~:] Toutes les tâches ont été triées.
+\item[Failed End Condition~:] Tâches inorganisable, signalisation à l'utilisateur.
+\item[Primary actor~:] Le système
+\item[Trigger~:] Après le traitement/Après chaque modification
+\\
+\end{information}
+\begin{scenario}
+\item Le système étudie une à une les tâches existantes et calcule leur priorité
+\item Le système trie toutes les tâches en fonction de leur priorité (la plus forte priorité en tête)
+\\
+\end{scenario}
+\begin{variation}
+\item[2a.] Deux tâches ont exactement la même priorité
+\item[2a1.] Le système indique au sein de la tâche qu'il place avant l'autre qu'il existe également une autre tâche de même priorité~; l'utilisateur sera en conséquent averti en temps voulu
+\end{variation}
+\begin{relatedinformation}
+\item[Priority~:] Haute
+\item[Performance target~:] Invisible à l'utilisateur
+\item[Frequency~:] Après le traitement/Après chaque modification
+\\
+\end{relatedinformation}
+\begin{openissues}
+\item Que se passe-t-il dans le cas de conflit priorité/échéance ?
+\\
+\end{openissues}
+\end{usecase}
+
+
+\subsubsection{Exigences fonctionnelles}
+\begin{description}
+ \item[EXIGE-7~:] L'organisation des taches doit pouvoir se faire sans intervention humaine
+ \end{description}
+
+
+
+	\subsection{Revue}
+
+Le logiciel passe régulièrement en revue toutes les tâches, afin de redéfinir les priorités de chacune (par exemple, dans le cas ou une tâche arrive très bientôt à sa date d'échéance).
+
+\subsubsection{Description}
+
+\begin{usecase}{Vérification des données stockées}
+\begin{information}
+\item[Goal in context~:] Vérifier si aucune tâche dans En Attente ou dans Un Jour n'est passée à l'état actif  et met l'échéancier à jour.
+\item[Scope~:] Les tâches
+\item[Level~:] Primary Task
+\item[Pre-conditions~:] Il y a des tâches à examiner.
+\item[Post-conditions~:] L'échéancier a été mis à jour.
+\item[Success End Condition~:] Toutes les tâches examinées ont été activées
+\item[Failed End Condition~:] Erreur système.
+\item[Primary actor~:] Le logiciel
+\item[Trigger~:] Au démarrage de l'application ou à minuit
+\\
+\end{information}
+\begin{scenario}
+\item Vérifier dans En Attente si des tâches sont devenues actives
+\item Vérifier dans Un Jour si il est possible de réaliser une tâche
+%\item Vérification si il y a un jour1 dans l'échéancier, et, si c'est le cas, ajoute ses projets dans le dossier Projets (en ajoutant sa première tâche dans Prochaines Actions) .
+\item Mettre à jour l'échéancier
+\item Transférer les tâches dans Prochaines Action
+\\
+\end{scenario}
+\begin{relatedinformation}
+\item[Priority~:] Haute
+\item[Frequency~:] A chaque fois qu'un utilisateur démarre le logiciel ou au moins une fois par jour
+\\
+\end{relatedinformation}
+\end{usecase}
+
+\subsubsection{Exigences fonctionnelles}
+
+\begin{description}
+ \item[EXIGE-8~:] Le passage en revue doit pouvoir être interrompu rapidement et à tout moment, et on doit pouvoir le reprendre à l'endroit exact ou l'on était rendu.
+ \end{description}
+
+	\subsection{Faire}
+
+Le logiciel renvoie, en fonction d'un contexte donné par l'utilisateur, la (ou les) tâche(s) prioritaire(s).
+
+\subsubsection{Description}
+
+\begin{usecase}{Réaliser une tâche}
+\begin{information}
+\item[Goal in context~:] Proposer à l'utilisateur d'effectuer la tâche la plus prioritaire du dossier Prochaines Actions, dans le contexte ou il se trouve.
+\item[Scope~:] Le contenu des Prochaines Actions
+\item[Level~:] PrimaryTask
+\item[Pre-conditions~:] L'utilisateur a du temps pour réaliser une tâche et il y a des tâches à effectuer.
+\item[Post-conditions~:] L'utilisateur à réalisée la tâche prédéfini.
+\item[Success End Condition~:] Ancienne tâche archivée et la seconde Prochaine Action devient la première.
+\item[Failed End Condition~:] La tâche n'a pas été supprimée ou l'utilisateur n'a pas réalisé son travail.
+\item[Primary actor~:] L'utilisateur
+\item[Trigger~:] L'utilisateur
+\\
+\end{information}
+\begin{scenario}
+\item L'utilisateur demande à faire une tâche
+\item L'utilisateur donne le contexte dans lequel il se trouve.
+\item Le logiciel choisit la tâche.
+\item L'utilisateur indique qu'il a fini la tâche
+\item La tâche est supprimée
+\item Mise à jour des Prochaines Actions
+\item L'utilisateur ne fait plus d'actions
+\\
+\end{scenario}
+\begin{extension}
+\item[4a.] L'utilisateur n'a pas fini la tâche.
+\item[4a1.] Le logiciel ne modifie rien.
+\item[7a.] L'utilisateur demande une nouvelle tâche à faire
+\item[7a1.] Retour à l'étape 3.
+\\
+\end{extension}
+\begin{variation}
+\item[6.1.] Si une tâche est En Attente de la tâche réalisée, le système doit recalculer sa priorité, éventuellement la placer comme Prochaine Action à réaliser.
+\\
+\end{variation}
+\begin{relatedinformation}
+\item[Priority~:] Haute
+\item[Frequency~:] A chaque fois que l'utilisateur demande une tâche à effectuer
+\\
+\end{relatedinformation}
+\begin{openissues}
+\item Que se passe-t-il si l'utilisateur ne finit jamais de tâches~?
+\\
+\end{openissues}
+\end{usecase}
+
+\subsubsection{Exigences fonctionnelles}
+
+\begin{description}
+ \item[EXIGE-9~:] Quand il demande une tâche à faire, l'utilisateur doit toujours récupérer la même tâche pour un contexte donné tant qu'elle n'est pas finie.%pour pas le perturber et douter du choix imposé
+ \item[EXIGE-10~:] Quand il demande une tâche à faire, l'utilisateur doit tout de même pouvoir sélectionner une tâche différente de celle proposée si il estime qu'elle ne convient pas.
+ \end{description}
+
+%%%%%%%%% USE CASE 6 %%%%%%%%%
+
+\subsection{Authentification de l'utilisateur}
+
+\subsubsection{Canevas de Cockburn}
+
+\begin{usecase}{Authentification d'un utilisateur sur le logiciel}
+\begin{information}
+\item[Goal in context~:] Authentifier un utilisateur pour qu'il ait accès à ces données cryptées
+\item[Scope~:] Le logiciel
+\item[Level~:] Primary Task
+\item[Pre-conditions~:] L'utilisateur est enregistré
+\item[Post-conditions~:] L'utilisateur est authentifié
+\item[Success End Condition~:] L'utilisateur est authentifié
+\item[Failed End Condition~:] L'utilisateur n'est pas authentifié
+\item[Primary actor~:] L'utilisateur
+\item[Trigger~:] L'utilisateur
+\\
+\end{information}
+\begin{scenario}
+\item L'utilisateur demande à s'authentifier
+\item Le logiciel lui affiche une fenêtre d'authentification
+\item L'utilisateur rentre ses identifiants
+\item Le système vérifie si les identifiants sont corrects
+\item L'utilisateur est authentifié
+\\
+\end{scenario}
+
+\begin{extension}
+\item[4a.] Les identifiants sont incorrects
+\item[4a1.] Retour à l'étape 2
+\\
+\end{extension}
+
+\begin{variation}
+\item[3.1.] L'utilisateur a oublié son mot de passe; le logiciel le lui renvoie par e-mail.
+\\
+\end{variation}
+
+\begin{relatedinformation}
+\item[Priority~:] Haute
+\item[Performance target~:] Obligatoire
+\item[Frequency~:] A chaque lancement du logiciel
+\\
+\end{relatedinformation}
+
+\end{usecase}
+
+\subsubsection{Diagramme d'activité}
+L'authentification de l'utilisateur est représenté par le diagramme d'activité \ref{authentActivite}.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=12cm]{images/authentActivite.png}
+\caption{Diagramme d'activité de l'authentification de l'utilisateur}
+\label{authentActivite}
+\end{center}
+\end{figure}
+
+
+%%%%%%%%% USE CASE 7 %%%%%%%%%
+
+\subsection{Connection au serveur}
+
+\subsubsection{Canevas de Cockburn}
+
+\begin{usecase}{Synchroniser les données avec le serveur}
+\begin{information}
+\item[Goal in context~:] Se connecter avec le serveur pour mettre à jour les données
+\item[Scope~:] Le serveur
+\item[Level~:] Summary
+\item[Pre-conditions~:] disposer d'une interface réseau active
+\item[Post-conditions~:] déconnexion du serveur réussie
+\item[Success End Condition~:] les données ont été synchronisé
+\item[Failed End Condition~:] la synchronisation a échouée
+\item[Primary actor~:] Le logiciel
+\item[Trigger~:] Fréquence déterminée dans les préférences utilisateur/ Déclenchement manuel de l'utilisateur
+\\
+\end{information}
+\begin{scenario}
+\item Le logiciel envoi des données modifiées au serveur
+\item Le serveur retourne les données qui ont été modifiées sur lui et pas sur le client
+\\
+\end{scenario}
+
+\begin{extension}
+\item[2a.] Des conflits de mises à jour apparaissent : on a besoin de l'utilisateur pour les gérer
+\\
+\end{extension}
+
+\begin{variation}
+\item[1.1.] La connexion avec le serveur est perdue; une synchronisation ultérieure est programmée.
+\item[1.2.] Le serveur demande une authentification; le logiciel doit s'authentifier auprès du serveur.
+\\
+\end{variation}
+
+\begin{relatedinformation}
+\item[Priority~:] Faible
+\item[Performance target~:] Invisible à l'utilisateur
+\item[Frequency~:] Fréquence déterminée dans les préférences utilisateur/ Déclenchement manuel de l'utilisateur
+\\
+\end{relatedinformation}
+\begin{openissues}
+\item Que se passe-t-il dans le cas de conflit de date entre les données en ligne et locales ?
+\\
+\end{openissues}
+\end{usecase}
+
+
+\subsubsection{Diagramme d'activités}
+L'échange avec le serveur est décrit par le diagramme d'activités \ref{connectionActivite}.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=12cm]{images/connectionActivite.png}
+\caption{Diagramme d'activité de la synchronisation avec le serveur}
+\label{connectionActivite}
+\end{center}
+\end{figure}
+
+
+\section{Exigences des interfaces externes}
+	\subsection{Interface utilisateur}
+%<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>
+
+\subsubsection{IHM}
+L'IHM\footnote{Interface Homme Machine} doit être claire et non ambigüe.
+Elle doit disposer d'un bouton très accessible "Nouvelle chose à faire" ainsi que de "Traitement des choses à faire".
+Les tâches doivent être triées par contexte et accessibles de manière intuitive (onglets ou arborescence).
+Elle doit disposer d'un accès aisé à la prochaine action et aux informations la composant.
+
+Si nous devions créer une première interface, notre premier jet pourrais ressembler au logiciel Getting Things Gnome\cite{gettingThingsGnome}. (voir illustration \ref{gettingThingsGnome})
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=12cm]{images/gettingThingsGnome.png}
+\caption{Screenshot du logiciel Getting Things Gnome}
+\label{gettingThingsGnome}
+\end{center}
+\end{figure}
+
+Lors des prochains livrables, nous devons organiser l'IHM selon le canevas de présentation vu dans le cours du même nom.
+
+\subsubsection{Aides contextuelles}
+L'interface doit disposer d'aides contextuelle sur tous les éléments de menus et icônes, et d'éventuellement une aide en ligne.
+De plus, on peut ajouter des informations qui dépendent de l'expérience de l'utilisateur.
+
+\subsubsection{Documentation}
+Elle doit comprendre, de manière distincte :
+\begin{itemize}
+ \item explications simples et concises de la méthode GTD.
+ \item explications rapides des fonctionnalités de base de l'outil.
+ \item explications complètes de toutes les fonctionnalités de l'outil.
+\end{itemize}
+
+\subsubsection{Support de formation}
+L'utilisateur doit pouvoir apprendre par lui-même à utiliser l'outil, à l'aide d'un tutoriel concis.
+
+	\subsection{Interface matérielle}
+%<Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.>
+
+La machine hôte doit disposer d'une connexion à internet, afin de pouvoir se connecter à un serveur distant.
+Le programme devra être installé sur un ordinateur, car elle ne sera pas défini pour un appareil mobile.
+
+	\subsection{Interface logicielle}
+%<Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.>
+
+La machine hôte devra disposer d'un système d'exploitation pouvant supporter l'environnement d'exécution Java\footnote{Le JRE actuel est la version 1.6} car Java est le langage de programmation le plus portable, et permettant un développement très rapide.
+Nous ne savons pas encore quelles sont les bibliothèques ou bases de données qui seront utilisées. Ce point devra être éclairci lors des prochains livrables, voire lors de l'implémentation.
+
+	\subsection{Interfaces ou protocoles de communication}
+%<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+
+Le programme doit offrir la possibilité de se connecter au serveur par l'utilisation de CORBA.
+L'interface de communication des objets doit nous être fournie par le serveur, et le programme doit pouvoir l'utiliser.
+Nous devrons donc nous mettre d'accord avec l'équipe chargée de l'implémentation de cette interface.
+Ce serveur pourra se trouver n'importe où, que ce soit sur une machine locale où sur internet.
+La communication doit se faire de manière sécurisée (cryptée) et acquittée, de manière à ne pas avoir de doublons ou de pertes d'information.
+
+	\subsection{Contraintes de mémoire}
+
+Nous ne pouvons pas pour l'instant prédire combien de mémoire le programme utilisera~; nous compléterons ce point lors des prochains livrables.
+Cependant, il parait évident que notre logiciel devant pouvoir être utilisé par un maximum de personnes, il devra pouvoir s'exécuter sur une machine disposant de ressources mémoire moyennes, voire basses (par rapport à la moyenne des ordinateurs particuliers).
+Cela permettra également une réactivité accrue.
+
+	%\subsection{Hypothèses et dépendances}
+
+\section{Autres exigences non-fonctionnelles}
+
+	\subsection{Utilisabilité}
+
+	\subsubsection{Outil simple}
+L'outil doit être aisément accessible à un utilisateur ne connaissant pas la méthode GTD~; cet utilisateur ne doit pas avoir à passer beaucoup de temps à se former sur l'outil avant d'être productif.
+
+	\subsubsection{Outil complet}
+L'outil doit répondre aux attentes d'un utilisateur expérimenté à la fois sur la méthode GTD et sur l'utilisation de cet outil, c'est à dire qu'il doit être en mesure d'effectuer toutes les opérations qu'il désire, notamment celles qui sont récurrentes, de manière très rapide et efficace.
+
+	\subsubsection{Outil respectant les standards}
+L'interface homme-machine doit respecter les standards des principaux développeurs de logiciels (Microsoft, Apple, etc.), afin d'être plus ergonomique et d'accélérer le processus d'adaptation de l'utilisateur à l'outil.
+
+
+	\subsection{Fiabilité}
+
+	\subsubsection{Disponibilité de l'outil}
+L'outil nécessite de pouvoir fonctionner continuellement durant la période éveillée de son utilisateur, à cause de la saisie de choses à faire qui peut avoir lieu à n'importe quel moment.
+
+	\subsubsection{Autres exigences de fiabilité}
+A ce niveau d'avancement du projet, les autres exigences de fiabilité de l'outil ne peuvent pas encore être spécifiées, à savoir ~:
+\begin{itemize}
+ \item Durée moyenne de fonctionnement avant défaillance
+ \item Durée moyenne de rétablissement
+ \item Précision de l'outil
+ \item Nombre maximum d'anomalies
+ \item Criticité
+\end{itemize}
+
+	\subsection{Exigences de performance}
+Nous ne pouvons pas encore définir ce type d'exigences au niveau actuel d'avancement du projet.
+
+
+	\subsection{Maintenabilité}
+
+	\subsubsection{Norme de codage}
+Afin de faciliter la relecture de notre code, nous avons choisi de respecter des critères de codage que nous définirons dans notre checkstyle.
+
+
+	\subsection{Exigences de sûreté}
+
+	\subsubsection{Précautions à prendre}
+Cet outil présente les mêmes risques que n'importe quel autre logiciel, notamment vis-à-vis de l'épilepsie ou de la fatigue visuelle due à l'écran.
+
+	\subsubsection{Sûreté vis-à-vis de la perte de données}
+Certaines données importantes de l'utilisateur n'existent qu'au sein de son outil~; il est donc primordial que ces données ne puissent pas être perdues.
+De même, en cas d'erreur du programme ou du système, les données doivent être récupérées.
+
+
+	\subsection{Exigences de sécurité}
+
+	\subsubsection{Confidentialité des données}
+Afin de préserver la confidentialité des données, chaque compte d'utilisateur doit être protégé par mot de passe.
+Les fichiers assurant la persistance des données de l'utilisateur doivent également être sécurisé, par exemple à l'aide d'un cryptage.
+De même, les données transitant sur Internet (notamment pour la mise à jour entre le client et le serveur) doivent elles aussi être cryptées.
+
+
+	\subsection{Attribut de qualité logicielle}
+
+%<Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.>
+
+Le logiciel, de par le fait qu'il doit être adressé à un assez large public, devra présenter une grande facilité d'apprentissage.
+Il devra néanmoins permettre, pour un utilisateur expérimenté, une utilisation fluide et efficace des fonctionnalités plus avancées.
+En outre, L'application devra bien sûr être la plus réactive possible (moins de deux secondes pour une action) pour offrir une utilisation agréable, et être assez robuste pour des systèmes (matériel et OS) peu efficaces.
+
+\section{Autres exigences}
+%<Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.>
+
+Nous ne pouvons pour l'instant définir les autre exigences du logiciel qui sera développé. Ce points sera à éclaircir lors des prochains livrables.
+
+\section{Classification des exigences fonctionnelles}
+
+%Énumérer dans un tableau toutes les exigences fonctionnelles et leur type, essentielle, souhaitable ou optionnelle.
+%Elles peuvent être triées par leur ordre d’apparition dans le document ou par type.
+
+\begin{center}
+\begin{tabular}{|p{1.7cm}|p{8cm}|p{1.7cm}|}
+\hline
+Code & Exigence & Type\\
+\hline
+EXIGE-1 & L'ajout de nouvelle chose à faire doit être disponible à tout moment, quel que soit la tâche effectuée par le système. & essentielle\\
+\hline
+EXIGE-2 & Dès qu'une chose à faire est ajoutée, elle est sauvegardée de manière persistante, même si la saisie ne s'arrête pas. & essentielle\\
+\hline
+EXIGE-3 & Le traitement doit pouvoir être interrompu à tout moment, et on doit pouvoir le reprendre à l'endroit exact ou l'on était rendu. & souhaitable\\
+\hline
+EXIGE-4 & Une tâche ou un projet créé lors du traitement doit immédiatement être sauvegardé de manière persistante. & essentielle\\
+\hline
+EXIGE-5 & Une fois qu'une chose à faire a été traitée, elle doit être supprimée de la liste. & essentielle\\
+\hline
+EXIGE-6 & Lors d'une création (de tâche ou de projet), tous les champs obligatoire doivent être renseigné, afin de permettre l'organisation automatique des tâches. & essentielle\\
+\hline
+EXIGE-7 & L'organisation des taches doit pouvoir se faire sans intervention humaine & souhaitable\\
+\hline
+EXIGE-8 & Le passage en revue doit pouvoir être interrompu rapidement et à tout moment, et on doit pouvoir le reprendre à l'endroit exact ou l'on était rendu. & souhaitable\\
+\hline
+EXIGE-9 & Quand il demande une tâche à faire, l'utilisateur doit toujours récupérer la même tâche pour un contexte donné tant qu'elle n'est pas finie. & souhaitable\\
+\hline
+EXIGE-10 & Quand il demande une tâche à faire, l'utilisateur doit tout de même pouvoir sélectionner une tâche différente de celle proposée si il estime qu'elle ne convient pas. & essentielle\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\section{Conclusion}
+
+Maintenant que nous avons définis tous nos critères et toutes nos exigences, nous pouvons nous concentrer sur finir l'analyse pour pouvoir enfin réaliser notre logiciel.

@@ -1,0 +1,68 @@
+\chapter{Spécification des types utilisés}
+
+Spécifiez ici les types utilisés par les interfaces (seulement ceux qui ne font pas partie des types de base UML).
+
+\section{Session}
+
+La classe \code{Session} va permettre de stocker des informations relatives au serveurs GTD et ToodleDo . Elle possède les attributs suivants:\\
+
+\begin{description}
+	\item[IdSession]: l'id de la session utilisateur
+	\item[loginGTD]: le login du serveur GTD
+	\item[passwordGTD]: le mot de passe du serveur GTD
+	\item[IdSessionGTD]: l'id de la session utilisateur sur le serveur GTD
+	\item[loginToodleDo]: le login du serveur ToodleDo
+	\item[passwordToodleDo]: le mot de passe du serveur ToodleDo
+	\item[IdSessionToodleDo]: l'id de la session utilisateur sur le serveur ToodleDo
+\end{description}
+
+
+
+\section{Task}
+
+La classe \code{Task} va permettre de stocker des informations relatives à une tâche. Elle possède les attributs suivants:\\
+
+\begin{description}
+	\item[name]: nom de la tâche.
+	\item[dateBegin]: date de début de la tâche.
+	\item[dateFinish]: date d'échéance de la tâche.
+	\item[priorite]: priorite de la tache.
+	\item[rateEffort]: taux d'effort de la tâche.
+	\item[time]: durée de la tâche.
+	\item[state]: état de la tache {EnAttente,Afaire,Finie,Déléguée}.
+	\item[previousTask]: la tâche précédant (à réaliser avant) de la tâche.
+	\item[notes]: notes associées à la tâche.
+	\item[repeat]: la  répétition de la tache {Mensuelle,Hebdomadaire,Journalière}
+	\item[context]: le contexte nécessaire à la réalisation de la tâche.
+\end{description}
+
+
+
+\section{Project}
+
+La classe \code{Project} va permettre de stocker des informations relatives à un Projet. Elle possède les attributs suivants:\\
+
+\begin{description}
+	\item[name]: nom du projet.
+	\item[defaultContext]: le connexte associé au projet.
+	\item[tasks]: la liste des tâches du projet.
+	\item[parentProject]: le projet parent du projet.
+	\item[childProjects]: la liste des sous projets du projet.
+	\item[notes]: notes associées au projet.
+\end{description}
+
+\section{Context}
+
+La classe \code{Context} spécifie par exemple l'environnement, le lieu, les outils avec lesquels la tâches ou le projet seront effectués. Elle possède les attributs suivants:\\
+
+\begin{description}
+	\item[properties]: propriétés du contexte (lieu, environnement, outils, ...).
+\end{description}
+
+\section{Idea}
+
+\code{Idea} modélise les idées que pourrait avoir l'utilisateur et qu'il lui semble important de noter. En réalité ce sera juste une chaîne de caractères.\\
+
+\begin{description}
+	\item[content]: idée.
+\end{description}

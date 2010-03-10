@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="DescriptionModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DescriptionPackage">
+    <packagedElement xmi:type="uml:Component" xmi:id="idComponent" name="DescriptionComponent">
+      <packagedElement xmi:type="uml:Package" xmi:id="_w6GjcMhREd6fYPtz9vle-w" name="Serveur">
+        <packagedElement xmi:type="uml:Component" xmi:id="_zqH0AMhREd6fYPtz9vle-w" name="ConnexionServeur"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_3SBHwMhREd6fYPtz9vle-w" name="SynchroServerManager"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_EG-oAMhSEd6fYPtz9vle-w" name="Client">
+        <packagedElement xmi:type="uml:Component" xmi:id="_LpFHgMhSEd6fYPtz9vle-w" name="ConnexionLocal"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_ZxwSYMhSEd6fYPtz9vle-w" name="GestionUtilisateurLocal"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_emeloMhSEd6fYPtz9vle-w" name="GestionnaireDeTaches"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_iQ0JYMhSEd6fYPtz9vle-w" name="BD"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_mgnKoMhSEd6fYPtz9vle-w" name="Utilisateur">
+        <packagedElement xmi:type="uml:Component" xmi:id="_semMAMhSEd6fYPtz9vle-w" name="IHMUtilisateur"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_vpurQMhSEd6fYPtz9vle-w" name="ControleurUtilisateur"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

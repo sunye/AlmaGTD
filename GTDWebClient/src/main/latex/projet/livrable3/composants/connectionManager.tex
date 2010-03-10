@@ -1,0 +1,31 @@
+
+\section{Composant ConnectionManager}
+
+
+Ce composant s'occupe de gérer l'ensemble des sessions utilisateurs. 
+En effet notre client Web pouvant être utilisé par une multitude de personnes, le composant s'occupe d'assurer 
+l'identification vers le serveur GTD et/ou ToodleDo, la connexion entre notre
+serveur Web et le serveur GTD et/ou ToodleDo. Lors d'une perte de connexion
+entre le client et le serveur Web, il s'occupera d'envoyer une demande de
+déconnexion vers le(s) serveur(s).
+
+	\subsection{Gestion des comptes ToodleDo et du serveur GTD}
+	L'application fonctionne avec différents serveurs. Ainsi, le choix qui à été fait consiste à regrouper les informations de chaque serveur (login, password) au sein d'un meta-compte. Celui-ci, dispose de son propre login et mot de passe. Il permet à l'utilisateur de saisir un seul couple login mot de passe pour se connecter aux serveurs ToodleDo et GTD. Les informations concernant ses comptes sont stockées localement sur le serveur d'application.
+
+	\subsection{Liaison vers le client}
+	La communication avec le client sera effectuée à l'aide de l'interface
+	IGTDWebServer. Cette interface expose toutes les méthodes de
+	ConnectionManager et ProcessManager. Le WebServer peut grâce à elle,
+	rediriger les bons appels de connexion/déconnexion vers le composant
+	ConnectionManager, et les appels métiers vers ProcessManager.
+
+
+	\subsection{Liaison vers DataManager}
+	La communication avec le composant DataManager est effectuée par
+	l'implémentation des méthodes décrites par l'interface du composant ConnectToServer.
+	
+	\subsection{Test des connexions et gestion des erreurs}
+	Ce composant doit permettre d'indiquer aux autres composants l'état des connexions en temps réel. Pour cela lors de la phase de 
+	connexion, il teste la disponibilité des deux serveurs à savoir du serveur GTD
+	et de ToodleDo. L'interception des exceptions permettra de modifier l'état des
+	connexions à chaque instant. En effet, lorsqu'une exception sera levée de la part du DataManager, il en informera ses observateurs (dont ConnectionManager). Ce dernier mettra alors à jour les données de connexion.

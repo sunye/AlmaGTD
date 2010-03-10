@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 3                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Spécification des composants}
+
+		\section{Introduction}
+
+			\subsection{Objectif}
+Préciser les objectifs de ce chapitre. 
+
+			\subsection{Organisation du chapitre}
+Cette section décrit le contenu du reste du chapitre  et explique comment le document est organisé.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Description des composants}
+
+Établir les frontières du système.
+
+Division du système en composants.
+
+Décrire le comportement souhaité des composants.
+
+\subsection{Le composant A}
+
+\begin{figure}[htbp]
+	\centering
+%		\includegraphics[scale=1]{file}
+	\caption{Le composant A et ses interfaces}
+	\label{fig:label}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\section{Interactions}
+
+Décrire, à haut-niveau, la collaboration entre les composants majeurs, en faisant référence aux besoins.
+
+Utiliser des interactions, c'est à dire, des diagrammes de séquence et des diagrammes de communication. Utiliser éventuellement des diagrammes d'activités.
+
+\emph{Ne vous limitez pas à une seule interaction par cas d'utilisation}
+
+\subsection{Nom du cas d'utilisation}
+
+\begin{figure}[htbp]
+	\centering
+		% \includegraphics[scale=1]{file}
+	\caption{Interaction \--- Création d'une tâche}
+	\label{fig:label}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		% \includegraphics[scale=1]{file}
+	\caption{Interaction \--- Création d'une tâche répétitive}
+	\label{fig:label}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Spécification des interfaces}
+
+		\subsection{Interface A}
+	
+Présentation de l'interface en UML (ou HUTN). Description du comportement de chaque opération. Spécification éventuelle des pré-conditions en OCL.
+	
+\begin{itemize}
+	\item \code{getTasksForDate(Date) : Task[*]} \\
+	Retrouve un ensemble de tâches pour une date donnée.
+\begin{ocl}
+getTasksForDate(Date) : Task[*]
+pre: 
+-- Le package \emph{listings} n'est pas compatible avec UTF8.
+-- Donc, n'utilisez pas d'accent.
+\end{ocl}
+	
+	\item \code{removeAllTalks()} \\
+	Efface toutes les tâches, éteint le serveur et débranche son câble de la prise électrique.
+	
+	\item \code{getTaskForNamde(String, Number) : Task} \\
+	Retrouve une tâche à partir de son nom et son numéro de téléphone.
+\end{itemize}	
+
+		\subsection{Interface B}
+TODO
+	
+		\subsection{Interface C}
+TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Spécification des types utilisés}
+
+Spécifiez ici les types utilisés par les interfaces (seulement ceux qui ne font pas partie des types de base UML).
+
+		\subsection{Task}
+
+	La classe \code{Task} représente une Tâche. Elle possède les attributs suivants:
+	\begin{description}
+		\item[name]: le nom de la tâche.
+		\item[isActive]: détermine si la tâche est activée ou non.
+	\end{description}
+
+\begin{figure}[htbp]
+	\centering
+		%\includegraphics[scale=1]{task}
+	\caption{La classe Task}
+	\label{fig:taks}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+TODO

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_wVMvUcDtEd6-BOS_kEWeWA" activeDiagram="_wVgRUMDtEd6-BOS_kEWeWA">
+  <model href="UCSynchronserA.uml#idActivity"/>
+  <diagrams xmi:id="_wVgRUMDtEd6-BOS_kEWeWA" position="0,0" size="100,100" name="UCSynchronserA" viewport="0,48">
+    <property xmi:id="_wuFwcMDtEd6-BOS_kEWeWA" key="pageFormatName" value="A3"/>
+    <property xmi:id="_wuFwccDtEd6-BOS_kEWeWA" key="diagramWidth" value="1188"/>
+    <property xmi:id="_wuFwcsDtEd6-BOS_kEWeWA" key="diagramHeight" value="1680"/>
+    <property xmi:id="_wuFwc8DtEd6-BOS_kEWeWA" key="pageMarginName" value="Small Margin"/>
+    <property xmi:id="_wuFwdMDtEd6-BOS_kEWeWA" key="diagramTopMargin" value="20"/>
+    <property xmi:id="_wuFwdcDtEd6-BOS_kEWeWA" key="diagramBottomMargin" value="20"/>
+    <property xmi:id="_wuFwdsDtEd6-BOS_kEWeWA" key="diagramLeftMargin" value="20"/>
+    <property xmi:id="_wuFwd8DtEd6-BOS_kEWeWA" key="diagramRightMargin" value="20"/>
+    <property xmi:id="_wuFweMDtEd6-BOS_kEWeWA" key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_wVgRUcDtEd6-BOS_kEWeWA" presentation="org.topcased.modeler.uml.activitydiagram">
+      <element href="UCSynchronserA.uml#idActivity"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" xmi:id="_zVR1IMDtEd6-BOS_kEWeWA" position="354,12" size="30,30">
+      <anchorage xmi:id="_ndpqYMDuEd6-BOS_kEWeWA" graphEdge="_CcGN0MDvEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zVR1IcDtEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_zZAekMDtEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Pqv14MDuEd6-BOS_kEWeWA" position="295,286" size="150,60">
+      <anchorage xmi:id="_ndpqYcDuEd6-BOS_kEWeWA" graphEdge="_C2nmocDvEd6-BOS_kEWeWA _7dRxIMIYEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Pqv14cDuEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_Pqv14sDuEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_kD8joMDuEd6-BOS_kEWeWA" position="297,466" size="150,60">
+      <anchorage xmi:id="_C2nmoMDvEd6-BOS_kEWeWA" graphEdge="_VNR04cDvEd6-BOS_kEWeWA _KwKOYMDyEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_kD8jocDuEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_kD8josDuEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_CcGN0MDvEd6-BOS_kEWeWA" anchor="_ndpqYMDuEd6-BOS_kEWeWA _MBRZ0MIXEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_CcGN0cDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_CcGN2MDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CcGN0sDvEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CcGN08DvEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CcGN1MDvEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CcGN1cDvEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CcGN1sDvEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CcGN18DvEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_C2nmocDvEd6-BOS_kEWeWA" anchor="_ndpqYcDuEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_C2nmosDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_C2nmqcDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_C2nmo8DvEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C2nmpMDvEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C2nmpcDvEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C2nmpsDvEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_C2nmp8DvEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_C2nmqMDvEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_S9x3cMDvEd6-BOS_kEWeWA" position="152,747" size="50,50">
+      <anchorage xmi:id="_VNR04MDvEd6-BOS_kEWeWA" graphEdge="_0umGkMDvEd6-BOS_kEWeWA _6FLJscDvEd6-BOS_kEWeWA _2ePCwMDwEd6-BOS_kEWeWA _iscoYMDyEd6-BOS_kEWeWA _6tgNoMDyEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_S9x3ccDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_S-OjYMDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_VNR04cDvEd6-BOS_kEWeWA" anchor="_C2nmoMDvEd6-BOS_kEWeWA _Cgvn0MDwEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_VNR04sDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_VNR06cDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VNR048DvEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_VNR05MDvEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_VNR05cDvEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_VNR05sDvEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VNR058DvEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_VNR06MDvEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_aTA_oMDvEd6-BOS_kEWeWA" position="101,855" size="150,60">
+      <anchorage xmi:id="_6FLJsMDvEd6-BOS_kEWeWA" graphEdge="_6FLJscDvEd6-BOS_kEWeWA _OlUFkcDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_aTA_ocDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_aTKwoMDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_qo7eIMDvEd6-BOS_kEWeWA" position="348,622" size="50,50">
+      <anchorage xmi:id="_Cgvn0MDwEd6-BOS_kEWeWA" graphEdge="_QCD3wcDwEd6-BOS_kEWeWA _dieIwcDwEd6-BOS_kEWeWA _AAvTwMDxEd6-BOS_kEWeWA _VNR04cDvEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_qo7eIcDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_qo7eIsDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_t1038MDvEd6-BOS_kEWeWA" position="223,696" size="245,45">
+      <anchorage xmi:id="_0uc8oMDvEd6-BOS_kEWeWA" graphEdge="_0umGkMDvEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_t1038cDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_t3UFsMDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_0umGkMDvEd6-BOS_kEWeWA" anchor="_0uc8oMDvEd6-BOS_kEWeWA _VNR04MDvEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_0umGkcDvEd6-BOS_kEWeWA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_6FLJscDvEd6-BOS_kEWeWA" anchor="_VNR04MDvEd6-BOS_kEWeWA _6FLJsMDvEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6FLJssDvEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_6FLJucDvEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6FLJs8DvEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6FLJtMDvEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6FLJtcDvEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6FLJtsDvEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6FLJt8DvEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6FLJuMDvEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_Cgvn0cDwEd6-BOS_kEWeWA" anchor="_nwol4MDwEd6-BOS_kEWeWA _4teFAMDxEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Cgvn0sDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_Cgvn2cDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Cgvn08DwEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_Cgvn1MDwEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_Cgvn1cDwEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_Cgvn1sDwEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Cgvn18DwEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Cgvn2MDwEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_MftLUMDwEd6-BOS_kEWeWA" position="390,563" size="150,45">
+      <anchorage xmi:id="_QCD3wMDwEd6-BOS_kEWeWA" graphEdge="_QCD3wcDwEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_MftLUcDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_MftLUsDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_QCD3wcDwEd6-BOS_kEWeWA" anchor="_QCD3wMDwEd6-BOS_kEWeWA _Cgvn0MDwEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_QCD3wsDwEd6-BOS_kEWeWA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_XUnfYMDwEd6-BOS_kEWeWA" position="102,616" size="150,60">
+      <anchorage xmi:id="_dieIwMDwEd6-BOS_kEWeWA" graphEdge="_dieIwcDwEd6-BOS_kEWeWA _2ePCwMDwEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_XUnfYcDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_XUnfYsDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_dieIwcDwEd6-BOS_kEWeWA" anchor="_Cgvn0MDwEd6-BOS_kEWeWA _dieIwMDwEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_dieIwsDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_dieIycDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_dieIw8DwEd6-BOS_kEWeWA" visible="false" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_dieIxMDwEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_dieIxcDwEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_dieIxsDwEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_dieIx8DwEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_dieIyMDwEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_nMIKoMDwEd6-BOS_kEWeWA" position="549,623" size="50,50">
+      <anchorage xmi:id="_nwol4MDwEd6-BOS_kEWeWA" graphEdge="_AAvTwMDxEd6-BOS_kEWeWA _Cgvn0cDwEd6-BOS_kEWeWA _t9LyQcDxEd6-BOS_kEWeWA _ZvDPkMDyEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_nMIKocDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_nNBigMDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_2ePCwMDwEd6-BOS_kEWeWA" anchor="_dieIwMDwEd6-BOS_kEWeWA _VNR04MDvEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_2ePCwcDwEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_2ePCyMDwEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_2ePCwsDwEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_2ePCw8DwEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_2ePCxMDwEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_2ePCxcDwEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_2ePCxsDwEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_2ePCx8DwEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_AAvTwMDxEd6-BOS_kEWeWA" anchor="_Cgvn0MDwEd6-BOS_kEWeWA _nwol4MDwEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_AAvTwcDxEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_AAvTyMDxEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_AAvTwsDxEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AAvTw8DxEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AAvTxMDxEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AAvTxcDxEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_AAvTxsDxEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_AAvTx8DxEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_n2oDsMDxEd6-BOS_kEWeWA" position="635,675" size="150,50">
+      <anchorage xmi:id="_t9LyQMDxEd6-BOS_kEWeWA" graphEdge="_t9LyQcDxEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_n2oDscDxEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_n2oDssDxEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_t9LyQcDxEd6-BOS_kEWeWA" anchor="_t9LyQMDxEd6-BOS_kEWeWA _nwol4MDwEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_t9LyQsDxEd6-BOS_kEWeWA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_2hZ2EMDxEd6-BOS_kEWeWA" position="498,743" size="150,60">
+      <anchorage xmi:id="_4teFAMDxEd6-BOS_kEWeWA" graphEdge="_Cgvn0cDwEd6-BOS_kEWeWA _6tgNoMDyEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_2hZ2EcDxEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_2hZ2EsDxEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_CLDZwMDyEd6-BOS_kEWeWA" position="346,384" size="50,50">
+      <anchorage xmi:id="_G6vcAMDyEd6-BOS_kEWeWA" graphEdge="_C2nmocDvEd6-BOS_kEWeWA _IPFYwcDyEd6-BOS_kEWeWA _KwKOYMDyEd6-BOS_kEWeWA _PR_a0cDyEd6-BOS_kEWeWA _ZvDPkMDyEd6-BOS_kEWeWA _h47EQMDzEd6-BOS_kEWeWA _oowZUMDzEd6-BOS_kEWeWA _6Pb8IMDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_CLDZwcDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_CLDZwsDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_DpYY8MDyEd6-BOS_kEWeWA" position="127,332" size="150,46">
+      <anchorage xmi:id="_IPFYwMDyEd6-BOS_kEWeWA" graphEdge="_IPFYwcDyEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_DpYY8cDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_DpYY8sDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_IPFYwcDyEd6-BOS_kEWeWA" anchor="_IPFYwMDyEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_IPFYwsDyEd6-BOS_kEWeWA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_KwKOYMDyEd6-BOS_kEWeWA" anchor="_G6vcAMDyEd6-BOS_kEWeWA _C2nmoMDvEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_KwKOYcDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_KwKOaMDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_KwKOYsDyEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_KwKOY8DyEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_KwKOZMDyEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_KwKOZcDyEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_KwKOZsDyEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_KwKOZ8DyEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_N8TaQMDyEd6-BOS_kEWeWA" position="864,499" size="40,40">
+      <anchorage xmi:id="_PR_a0MDyEd6-BOS_kEWeWA" graphEdge="__IBSoMIaEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_N8TaQcDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_N8wGMMDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_PR_a0cDyEd6-BOS_kEWeWA" anchor="_G6vcAMDyEd6-BOS_kEWeWA _GlaGsMIaEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_PR_a0sDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_PR_a2cDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_PR_a08DyEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_PR_a1MDyEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_PR_a1cDyEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_PR_a1sDyEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_PR_a18DyEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_PR_a2MDyEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_ZvDPkMDyEd6-BOS_kEWeWA" anchor="_nwol4MDwEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ZvDPkcDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_ZvDPmMDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ZvDPksDyEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ZvDPk8DyEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ZvDPlMDyEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="-8" vDistance="-4"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ZvDPlcDyEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ZvDPlsDyEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject" offset="84,-28"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ZvDPl8DyEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+      <waypoints>[0, -147, 203, 92]</waypoints>
+      <waypoints>[0, -311, 203, -72]</waypoints>
+      <waypoints>[-103, -311, 100, -72]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_iscoYMDyEd6-BOS_kEWeWA" anchor="_VNR04MDvEd6-BOS_kEWeWA _aGLgscDzEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_iscoYcDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_iscoaMDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_iscoYsDyEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_iscoY8DyEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_iscoZMDyEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_iscoZcDyEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_iscoZsDyEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_iscoZ8DyEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+      <waypoints>[-94, 0, 0, 258]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_6tgNoMDyEd6-BOS_kEWeWA" anchor="_4teFAMDxEd6-BOS_kEWeWA _VNR04MDvEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6tgNocDyEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_6tgNqMDyEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6tgNosDyEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6tgNo8DyEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6tgNpMDyEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6tgNpcDyEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6tgNpsDyEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6tgNp8DyEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_L7JlYMDzEd6-BOS_kEWeWA" position="101,967" size="150,60">
+      <anchorage xmi:id="_OlUFkMDzEd6-BOS_kEWeWA" graphEdge="_OlUFkcDzEd6-BOS_kEWeWA _oowZUMDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_L7JlYcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_L7SvUMDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_OlUFkcDzEd6-BOS_kEWeWA" anchor="_6FLJsMDvEd6-BOS_kEWeWA _OlUFkMDzEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_OlUFksDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_OlUFmcDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_OlUFk8DzEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_OlUFlMDzEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="62" vDistance="-62"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_OlUFlcDzEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_OlUFlsDzEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_OlUFl8DzEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_OlUFmMDzEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Wch5cMDzEd6-BOS_kEWeWA" position="58,489" size="50,50">
+      <anchorage xmi:id="_aGLgscDzEd6-BOS_kEWeWA" graphEdge="_aGLgssDzEd6-BOS_kEWeWA _iscoYMDyEd6-BOS_kEWeWA _h47EQMDzEd6-BOS_kEWeWA _5wIxAcDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Wch5ccDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_Wch5csDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Xhq8kMDzEd6-BOS_kEWeWA" position="114,538" size="172,27">
+      <anchorage xmi:id="_aGLgsMDzEd6-BOS_kEWeWA" graphEdge="_aGLgssDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Xhq8kcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_Xhq8ksDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_aGLgssDzEd6-BOS_kEWeWA" anchor="_aGLgsMDzEd6-BOS_kEWeWA _aGLgscDzEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_aGLgs8DzEd6-BOS_kEWeWA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_h47EQMDzEd6-BOS_kEWeWA" anchor="_aGLgscDzEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_h47EQcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_h47ESMDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_h47EQsDzEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_h47EQ8DzEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_h47ERMDzEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_h47ERcDzEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_h47ERsDzEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_h47ER8DzEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_oowZUMDzEd6-BOS_kEWeWA" anchor="_OlUFkMDzEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_oowZUcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_oowZWMDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_oowZUsDzEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_oowZU8DzEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_oowZVMDzEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_oowZVcDzEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_oowZVsDzEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject" offset="2,23"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_oowZV8DzEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+      <waypoints>[-157, 0, -351, 588]</waypoints>
+      <waypoints>[-157, -683, -351, -95]</waypoints>
+      <waypoints>[87, -683, -107, -95]</waypoints>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_0QU5YMDzEd6-BOS_kEWeWA" position="10,371" size="150,77">
+      <anchorage xmi:id="_5wIxAMDzEd6-BOS_kEWeWA" graphEdge="_6Pb8IMDzEd6-BOS_kEWeWA _5wIxAcDzEd6-BOS_kEWeWA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_0QU5YcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_0QeDUMDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_5wIxAcDzEd6-BOS_kEWeWA" anchor="_aGLgscDzEd6-BOS_kEWeWA _5wIxAMDzEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_5wIxAsDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_5wIxCcDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_5wIxA8DzEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_5wIxBMDzEd6-BOS_kEWeWA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_5wIxBcDzEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_5wIxBsDzEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_5wIxB8DzEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_5wIxCMDzEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_6Pb8IMDzEd6-BOS_kEWeWA" anchor="_5wIxAMDzEd6-BOS_kEWeWA _G6vcAMDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6Pb8IcDzEd6-BOS_kEWeWA" presentation="default">
+        <element href="UCSynchronserA.uml#_6Pb8KMDzEd6-BOS_kEWeWA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6Pb8IsDzEd6-BOS_kEWeWA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6Pb8I8DzEd6-BOS_kEWeWA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6Pb8JMDzEd6-BOS_kEWeWA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_6Pb8JcDzEd6-BOS_kEWeWA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6Pb8JsDzEd6-BOS_kEWeWA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6Pb8J8DzEd6-BOS_kEWeWA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_JLbOEcIXEd6Ra_gS3kwZwA" position="295,65" size="150,60">
+      <anchorage xmi:id="_MBRZ0MIXEd6Ra_gS3kwZwA" graphEdge="_CcGN0MDvEd6-BOS_kEWeWA _uIaeQMIXEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_JLbOEsIXEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_JLccMMIXEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_aoor0MIXEd6Ra_gS3kwZwA" position="344,160" size="50,50">
+      <anchorage xmi:id="_uIZQIMIXEd6Ra_gS3kwZwA" graphEdge="_uIaeQMIXEd6Ra_gS3kwZwA _lVsO8MIYEd6Ra_gS3kwZwA _o5yAwMIYEd6Ra_gS3kwZwA _7dRxIMIYEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_aoor0cIXEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_aoxOsMIXEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_uIaeQMIXEd6Ra_gS3kwZwA" anchor="_MBRZ0MIXEd6Ra_gS3kwZwA _uIZQIMIXEd6Ra_gS3kwZwA">
+      <property xmi:id="_uqDywMIXEd6Ra_gS3kwZwA" key="router" value="Rectilinear"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_uIaeQcIXEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_uIaeSMIXEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_uIaeQsIXEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_uIaeQ8IXEd6Ra_gS3kwZwA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_uIaeRMIXEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_uIaeRcIXEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_uIaeRsIXEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_uIaeR8IXEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Zor1QMIYEd6Ra_gS3kwZwA" position="93,145" size="150,80">
+      <anchorage xmi:id="_lVrn4MIYEd6Ra_gS3kwZwA" graphEdge="_lVsO8MIYEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Zor1QcIYEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_Zo1mQMIYEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_lVsO8MIYEd6Ra_gS3kwZwA" anchor="_lVrn4MIYEd6Ra_gS3kwZwA _uIZQIMIXEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_lVsO8cIYEd6Ra_gS3kwZwA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_nqC3MMIYEd6Ra_gS3kwZwA" position="667,166" size="40,40">
+      <anchorage xmi:id="_o5xZsMIYEd6Ra_gS3kwZwA" graphEdge="_o5yAwMIYEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_nqC3McIYEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_nqI90MIYEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_o5yAwMIYEd6Ra_gS3kwZwA" anchor="_uIZQIMIXEd6Ra_gS3kwZwA _o5xZsMIYEd6Ra_gS3kwZwA">
+      <property xmi:id="_qSQ2oMIYEd6Ra_gS3kwZwA" key="router" value="Oblique"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_o5yAwcIYEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_o5yn1MIYEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_o5yAwsIYEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_o5yAw8IYEd6Ra_gS3kwZwA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_o5yn0MIYEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_o5yn0cIYEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_o5yn0sIYEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_o5yn08IYEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_7dRxIMIYEd6Ra_gS3kwZwA" anchor="_uIZQIMIXEd6Ra_gS3kwZwA _ndpqYcDuEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_7dRxIcIYEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_7dRxKMIYEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_7dRxIsIYEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_7dRxI8IYEd6Ra_gS3kwZwA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_7dRxJMIYEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_7dRxJcIYEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_7dRxJsIYEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_7dRxJ8IYEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_5_6l0MIZEd6Ra_gS3kwZwA" position="436,379" size="150,60">
+      <anchorage xmi:id="_GlaGsMIaEd6Ra_gS3kwZwA" graphEdge="_PR_a0cDyEd6-BOS_kEWeWA _aUrGoMIaEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_5_6l0cIZEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_5_7M4MIZEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_PRZmcMIaEd6Ra_gS3kwZwA" position="609,277" size="150,60">
+      <anchorage xmi:id="_ovDskMIaEd6Ra_gS3kwZwA" graphEdge="_ovEToMIaEd6Ra_gS3kwZwA _yrz0IMIbEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_PRZmccIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_PRaNgMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_UQ3xIMIaEd6Ra_gS3kwZwA" position="660,386" size="50,50">
+      <anchorage xmi:id="_aUqfkMIaEd6Ra_gS3kwZwA" graphEdge="_aUrGoMIaEd6Ra_gS3kwZwA _ovEToMIaEd6Ra_gS3kwZwA _43nrkMIaEd6Ra_gS3kwZwA _SNSTUcIbEd6Ra_gS3kwZwA _36oCYMIbEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_UQ3xIcIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_UQ4YMMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_aUrGoMIaEd6Ra_gS3kwZwA" anchor="_GlaGsMIaEd6Ra_gS3kwZwA _aUqfkMIaEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_aUrGocIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_aUrtsMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_aUrGosIaEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_aUrGo8IaEd6Ra_gS3kwZwA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_aUrGpMIaEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_aUrGpcIaEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_aUrGpsIaEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_aUrGp8IaEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_ovEToMIaEd6Ra_gS3kwZwA" anchor="_aUqfkMIaEd6Ra_gS3kwZwA _ovDskMIaEd6Ra_gS3kwZwA">
+      <property xmi:id="_pbFsIMIaEd6Ra_gS3kwZwA" key="router" value="Oblique"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ovETocIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_ovE6s8IaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ovETosIaEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ovETo8IaEd6Ra_gS3kwZwA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ovETpMIaEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_ovE6sMIaEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="22" vDistance="-16"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ovE6scIaEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ovE6ssIaEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_xdTPEMIaEd6Ra_gS3kwZwA" position="611,490" size="150,60">
+      <anchorage xmi:id="_43nEgMIaEd6Ra_gS3kwZwA" graphEdge="_43nrkMIaEd6Ra_gS3kwZwA __IBSoMIaEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_xdTPEcIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_xdT2IMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_43nrkMIaEd6Ra_gS3kwZwA" anchor="_aUqfkMIaEd6Ra_gS3kwZwA _43nEgMIaEd6Ra_gS3kwZwA">
+      <property xmi:id="_7ZE7sMIaEd6Ra_gS3kwZwA" key="router" value="Oblique"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_43nrkcIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_43oSoMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_43nrksIaEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_43nrk8IaEd6Ra_gS3kwZwA" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_43nrlMIaEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_43nrlcIaEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_43nrlsIaEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_43nrl8IaEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="__IBSoMIaEd6Ra_gS3kwZwA" anchor="_43nEgMIaEd6Ra_gS3kwZwA _PR_a0MDyEd6-BOS_kEWeWA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__IBSocIaEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#__IBSqMIaEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="__IBSosIaEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__IBSo8IaEd6Ra_gS3kwZwA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__IBSpMIaEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__IBSpcIaEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="__IBSpsIaEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="__IBSp8IaEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_NAvV8MIbEd6Ra_gS3kwZwA" position="780,380" size="150,43">
+      <anchorage xmi:id="_SNSTUMIbEd6Ra_gS3kwZwA" graphEdge="_SNSTUcIbEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_NAvV8cIbEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_NAxLIMIbEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_SNSTUcIbEd6Ra_gS3kwZwA" anchor="_SNSTUMIbEd6Ra_gS3kwZwA _aUqfkMIaEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_SNSTUsIbEd6Ra_gS3kwZwA" presentation="default" typeInfo="CommentLink"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_uOhJcMIbEd6Ra_gS3kwZwA" position="826,278" size="150,60">
+      <anchorage xmi:id="_yrww0MIbEd6Ra_gS3kwZwA" graphEdge="_yrz0IMIbEd6Ra_gS3kwZwA _36oCYMIbEd6Ra_gS3kwZwA"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_uOhJccIbEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_uOhwgMIbEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_yrz0IMIbEd6Ra_gS3kwZwA" anchor="_ovDskMIaEd6Ra_gS3kwZwA _yrww0MIbEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_yrz0IcIbEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_yr0bMMIbEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_yrz0IsIbEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_yrz0I8IbEd6Ra_gS3kwZwA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_yrz0JMIbEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_yrz0JcIbEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_yrz0JsIbEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_yrz0J8IbEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_36oCYMIbEd6Ra_gS3kwZwA" anchor="_yrww0MIbEd6Ra_gS3kwZwA _aUqfkMIaEd6Ra_gS3kwZwA">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_36oCYcIbEd6Ra_gS3kwZwA" presentation="default">
+        <element href="UCSynchronserA.uml#_36opcMIbEd6Ra_gS3kwZwA"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_36oCYsIbEd6Ra_gS3kwZwA" id="stereotypeEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_36oCY8IbEd6Ra_gS3kwZwA" visible="false" id="guardEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_36oCZMIbEd6Ra_gS3kwZwA" visible="false" id="weightEdgeObject" uDistance="6" vDistance="-6"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_36oCZcIbEd6Ra_gS3kwZwA" visible="false" id="nameEdgeObject" uDistance="6" vDistance="6"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_36oCZsIbEd6Ra_gS3kwZwA" visible="false" id="interruptibleEdgeObject"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_36oCZ8IbEd6Ra_gS3kwZwA" visible="false" id="interruptibleIconEdgeObject"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

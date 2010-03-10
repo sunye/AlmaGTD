@@ -1,0 +1,51 @@
+MainModel : http:///AADL/component
+
+context Projet
+	inv :
+		self.contexteParDefaut->notEmpty() implies
+		(self.tache->forAll(each | each.contexte.propriétés->includesAll(self.contexteParDefaut.propriétés)) and
+		self.sousProjet->forAll(each | each.contexte.propriétés->includesAll(self.contexteParDefaut.propriétés)))
+
+context Tache
+	inv :
+		self.projet->empty() implies self.tachePrécédente->empty() and
+		self.tachePrécédente->notEmpty() implies self.tachePrécédente != self and
+		self.projet->notEmpty() implies self.projet = self.tachePrécédente.projet and
+		self.dateDebut <= self.dateEcheance and
+		self.dateEchance >= self.repetition.dateArret and
+		self.tauxEffort >= 0 and
+		self.tauxEffort <= 99 and
+		self.priorité >= 1 and
+		self.priorité <= 5 and
+		self.duree <= (self.dateEcheance - self.dateDebut)
+
+context Vue
+	inv :
+		self.généréPar.tache->includesAll(self.tache)
+
+context Vue::nextTache() : Tache
+	post : 
+		result = self.tache->first()
+
+context EspaceDeTravail::organise(v : Vue)
+	post :
+		v.tache = v.tache@pre->asOrderedSet() and
+		self.tache->forAll(each | (each@pre.oclInState(AFaire)) implies (each.oclInState(EnAttente)))
+
+context EspaceDeTravail::review()
+	post :
+		self.tache->notExists(each | each.oclInState(Finie))
+
+context EspaceDeTravail::do(t : Tache)
+	pre :
+		t.tachePrécédente->notEmpty() implies t.tachePrécédente.oclInState(Finie) and
+		t.tachePrécédente.oclInState(Finie) and
+		not(t.oclInState(Finie)) and
+		self.contexteCourant.propriétés->includesAll(t.contexte.propiétés)
+	post :
+		t.oclInState(Finie)
+
+context Panier::process()
+	post :
+		self.informations->empty()
+

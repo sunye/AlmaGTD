@@ -1,0 +1,335 @@
+\chapter{Spécification des interfaces}
+
+
+
+\section{Composant ProcessManager}
+
+	Ce composant représente la couche métier de notre application, le coeur de la méthode GTD avec ses concepts et relations. C'est celui-ci qui s'assurera de la création, modification, suppression et cohérence des données.
+
+	\subsection{Interface IProcessManager}
+	
+	
+	\begin{itemize}
+		\item \code{createTask(session : Session, task : Task) : boolean} \\
+		Créée la tache task dans la couche métier du ProcessManager et demande la
+		création au DataManager sur le Serveur GTD et/ou ToodleDoo.
+\begin{ocl}
+context IProcessManager::createTask(session : Session, task : Task) : boolean
+pre: 
+	idSession != null and idSession != "" and
+	task != null and
+	task.name != "" and
+	task.context != null and
+	task.dateBegin <= task.dateFinish and
+	task.effortRate >= 0 and
+	task.effortRate <= 99 and
+	task.priorite >= 1 and
+	task.priorite <= 5 and
+	task.time <= (task.dateFinish - task.dateBegin)		
+\end{ocl}
+
+		\item \code{updateTask(session : Session, task : Task) : boolean} \\
+		Mets à jour la tâche identifiée par l'instance task dans la couche métier du
+		ProcessManager et demande la mise à jour au DataManager sur le Serveur GTD
+		et/ou ToodleDoo. Faire attention que dans une séquence de tâche, il n'y ait pas deux fois la même. Renvoie vrai si la mise à jour a pu être effectuée.
+\begin{ocl}
+context IProcessManager::updateTask(session : Session, task : Task) : Boolean
+pre: 
+	task != null and idSession != null and idSession != ""
+post :
+	result = task.project->empty() implies task.previousTask->empty() and
+	task.previousTask->notEmpty() implies task.previousTask != task and
+	task.project->notEmpty() implies task.project = task.previousTask.project and
+	task.dateStop >= task.repeat.dateFinish	
+\end{ocl}
+		
+		\item \code{delTask(session : Session, taskId : String) : boolean} \\
+		Supprime la tâche identifiée par l'identifiant taskId dans la couche métier
+		du ProcessManager et demande la supression sur le serveur GTD et/ou ToodleDoo
+		au DataManager.
+		Il faudra gérer le cas où la tâche elle même précède une autre... Renvoie vraie si la suppression a pu être effectuée.
+		
+		\item \code{getTask(session : Session, taskId : String) : Task} \\
+		Renvoie l'instance de Task (niveau metier) représentant la tâche identifiée
+		par l'id taskId.
+		
+		\item \code{getTasks(session : Session) : List<Paire<Task>> } \\
+		Permet le récupérer l'ensemble des taches.
+		
+		\item \code{createNote(session : Session, note : Note) : boolean} \\
+		Créée la note note dans la couche métier du ProcessManager et demande la
+		création au DataManager sur le Serveur GTD et/ou ToodleDoo.
+\begin{ocl}
+context IProcessManager::createNote(session : Session, note : Note) : Boolean
+pre: 
+	Note.content != null and Note.content != ""
+\end{ocl}
+
+		\item \code{updateNote(session : Session, note : Note) : boolean} \\
+		Mets à jour la note identifiée par l'instance note dans la couche métier du
+		ProcessManager et demande la mise à jour au DataManager sur le Serveur GTD
+		et/ou ToodleDoo.
+\begin{ocl}
+context IProcessManager::updateNote(session : Session, note : Note) : Boolean
+pre: 
+	Note.content != null and Note.content != ""
+\end{ocl}
+		
+		\item \code{delNote(session : Session, noteId : String) : boolean} \\
+		Supprime la note identifiée par l'identifiant noteId dans la couche métier
+		du ProcessManager et demande la supression sur le serveur GTD et/ou ToodleDoo
+		au DataManager.
+		
+		\item \code{getNote(session : Session, noteId : String) : Note} \\
+		Renvoie l'instance de Note (niveau metier) représentant la note identifiée
+		par l'id noteId.
+		
+		\item \code{getNotes(session : Session) : List<Paire<Note>> } \\
+		Permet le récupérer l'ensemble des notes.		
+		
+		\item \code{createProject(session : Session, project : Project) : boolean} \\
+		Créée le projet project dans la couche métier du ProcessManager et demande la
+		création au DataManager sur le Serveur GTD et/ou ToodleDoo.
+		Le \textbf{Set(Task)} implique qu'un projet ne contiendra pas plusieurs fois la même tâche, de même pour les sous projets.
+\begin{ocl}
+context IProcessManager::createProject(session : Session, project : Project) : boolean
+pre: 
+	idSession != null and idSession != "" and
+	project != null and
+	project.tasks->isSet() and
+	project.childProjects->isSet()
+\end{ocl}
+
+		\item \code{updateProject(session : Session, project : Project) : boolean} \\
+		Mets à jour le projet identifié par l'instance project dans la couche métier
+		du ProcessManager et demande la mise à jour au DataManager sur le Serveur GTD
+		et/ou ToodleDoo.
+		Renvoie vrai si la modification a été faite avec succès, par exemple il faudra vérifier que la hiérarchie de projets/sous-projets est bien un arbre.
+\begin{ocl}
+context IProcessManager::updateProject(session : Session, p : Project) : boolean
+pre: 
+	idSession != null and idSession != "" and
+	p != null
+post:
+	result = p.defaultContext->notEmpty() implies
+		(p.tasks->forAll(each | each.context.properties->includesAll(self.defaultContext.properties)) and
+		p.childProjects->forAll(each | each.context.properties->includesAll(p.defaultContext.properties)))
+\end{ocl}
+		
+		\item \code{delProject(session : Session, projectId : String) : boolean} \\
+		Supprime le projet identifié par l'identifiant projectId dans la couche métier
+		du ProcessManager et demande la supression sur le serveur GTD et/ou ToodleDoo
+		au DataManager.
+Les éventuelles tâches du projet deviendront indépendante, on veillera aussi que le projet ne contient pas de sous-projets. Renvoie vrai si la suppression a marchée.
+		
+		\item \code{getProject(session : Session, projectId : String) : Project} \\
+		Renvoie l'instance de Project (niveau métier) représentant le projet
+		identifié par l'id projectId.
+		
+		\item \code{getProjects(session : Session) : List<Paire<Project>> } \\
+		Permet le récupérer l'ensemble des projets et leurs sous projets.
+		
+
+		\item \code{createContext(session : Session, context : Context) : boolean} \\
+		Créée le contexte context dans la couche métier du ProcessManager et demande
+		la création au DataManager sur le Serveur GTD et/ou ToodleDoo.
+\begin{ocl}
+context IProcessManager::createContext(session : Session, context : Context) : boolean
+pre: 
+	idSession != null and idSession != "" and
+	context.properties->notEmpty()
+\end{ocl}
+
+		\item \code{updateContext(session : Session, context : Context) : boolean} \\
+		Mets à jour le contexte identifié par l'instance project dans la couche métier
+		du ProcessManager et demande la mise à jour au DataManager sur le Serveur GTD
+		et/ou ToodleDoo.
+		
+		\item \code{delContext(session : Session, contextId : String) : boolean} \\
+		Supprime le contexte identifié par l'identifiant projectId dans la couche métier
+		du ProcessManager et demande la suppression sur le serveur GTD et/ou ToodleDoo
+		au DataManager.
+		
+		\item \code{getContext(session : Session, contextId : String) : Context} \\
+		Renvoie l'instance de Context (niveau métier) représentant le contexte
+		identifié par l'id contextId.
+		
+		\item \code{getContexts(session : Session) : List<Paire<Context>} \\
+		Renvoie l'ensemble des contextes.
+		
+		\item \code{createIdea(session : Session, idea : Idea) : boolean} \\
+		Créer l'idée idea dans la couche métier du ProcessManager et demande
+		la création au DataManager sur le Serveur GTD et/ou ToodleDoo.
+\begin{ocl}
+context IProcessManager::createIdea(session : Session, idea : Idea) : boolean
+pre: 
+	idSession != null and idSession != "" and
+	idea.content != ""
+\end{ocl}
+
+		\item \code{updateIdea(session : Session, idea : Idea) : boolean} \\
+		Mets à jour l'idée identifiée par l'instance idea dans la couche
+		métier du ProcessManager et demande la mise à jour au DataManager sur le Serveur GTD
+		et/ou ToodleDoo.
+		
+		\item \code{delIdea(session : Session, ideaId : String) : boolean} \\
+		Supprime l'idée identifiée par l'identifiant ideaId dans la couche métier
+		du ProcessManager et demande la suppression sur le serveur GTD et/ou ToodleDoo
+		au DataManager.
+		
+		\item \code{getIdea(session : Session, ideaId : String) : Idea} \\
+		Renvoie l'instance de Idea (niveau metier) représentant l'idée
+		identifiée par l'id ideaId.
+		
+		\item \code{getIdeas(session : Session) : List<Paire<Idea>>} \\
+		Renvoie l'ensemble des contextes
+	
+	\end{itemize}
+	
+	
+	\subsection{Interface IConnManager}
+	Cette interface permet de communiquer avec le composant DataManager. C'est notamment à travers elle que les demandes de connexion et déconnexion seront effectuées, afin de garantir un niveau de transparence et de généricité.
+	
+	
+	\begin{itemize}
+		\item \code{connect(String loginGTD,String passGTD, String loginTdoo, String pass Tdoo) : String } \\
+		Vérifie les couples utilisateurs/mot de passes auprès des serveurs (GTD et ToodleDo) et établit la connexion.
+		Retourne null si erreur ou l'id de la session si connecté.
+		\item \code{disconnect(String session) : void} \\
+		Permet de déconnecter l'utilisateur, en supprimant la session du GTDWebServer.
+		\item \code{isAlive(String session) : boolean} \\
+		Renvoie true si la session identifiée par la chaîne de caractères 'session' est active, false sinon.
+		\item \code{createAccount(String login,String pass) : boolean} \\
+		Renvoie true si la création de compte a réussi, false sinon.
+		\item \code{delAccount(String login) : boolean} \\
+		Renvoie true si la suppression de compte a réussi, false sinon.
+		\item \code{updateAccount(String session,String login,String pass) : boolean} \\
+		Renvoie true si la modification des informations a réussi, false sinon.
+	\end{itemize}	
+
+
+\section{Composant ConnectionManager}
+
+	\subsection{Interface IConnectionCheck}
+	Afin de permettre au composant ProcessManager de vérifier si la session est
+	toujours active sur les serveurs GTDWebServer, ToodleDo et GTDServer, la
+	méthode suivante est définie :
+	
+	\begin{itemize}
+		\item \code{isAlive(String session) : boolean} \\
+		Renvoie true si la session identifiée par la chaîne de caractères 'session' est active, false sinon.
+	\end{itemize}	
+	
+	
+	\subsection{Interface IConnManager}
+	Cette interface permet de communiquer avec le composant WebClient, elle est déléguée au WebServer. C'est notamment à travers elle que les demandes de connexion et déconnexion seront effectuées. Afin de garantir un niveau de transparence et de généricité
+	
+	\begin{itemize}
+		\item \code{connect(String loginGTD,String passGTD, String loginTdo, String pass Tdo) : String } \\
+		Vérifie les couples utilisateurs/mot de passes auprès des serveurs (GTD et ToodleDo) et établit la connexion.
+		Retourne null si erreur ou l'id de la session si connecté.
+		\item \code{disconnect(String session) : void} \\
+		Permet de déconnecter l'utilisateur, en supprimant la session du GTDWebServer.
+		\item \code{isAlive(String session) : boolean} \\
+		Renvoie true si la session identifiée par la chaine de caractère 'session' est active, false sinon.
+
+	\end{itemize}	
+
+
+
+
+\section{Composant DataManager}
+
+\subsection{IToDataManager}
+
+Le but de cette interface est d'offrir la possibilité d'enregistrer les données du composant ProcessManager sur les serveurs ToodleDo et GTD de façon transparente. On va ainsi avoir les méthodes suivantes permettant la persistance des données : \\
+
+\begin{itemize}
+
+
+	\item \code{createTask(Session session,Task task) : boolean } \\
+	Permet la création  d'une tâche sur les serveurs GTD et ToodleDo. Renvoie false si la création a échouée true dans le cas contraire.
+	\item \code{updateTask(Session session,Task task) : boolean } \\
+	Permet la modification d'une tâche sur les serveurs GTD et ToodleDo. Renvoie false si la modification a échouée true dans le cas contraire.
+	\item \code{removeTask(Session session,Task task) : boolean } \\
+	Permet la suppresion d'une tâche sur les serveurs GTD et ToodleDo. Renvoie false si la suppression a échouée true dans le cas contraire.
+	\item \code{getTasks(Session session) : List<Paire<Task>> } \\
+	Permet le récupérer l'ensemble des taches.
+	\item \code{getTask(Session session,String taskId) : Task} \\
+	Permet le récupérer la tâche identifiée par l'id taskId.
+	\item \code{commitIdea(Session session,List<Task>) : boolean} \\
+	Permet de renvoyer les tâches à synchroniser après les avoir choisis sur le GUI.
+
+	\item \code{createProject(Session session,Project project) : boolean } \\
+	Permet la création d'un projet sur les serveurs GTD et ToodleDo. Renvoie false si la création a échouée true dans le cas contraire.
+	\item \code{updateProject(Session session,Project project) : boolean } \\
+	Permet la modification d'un projet sur les serveurs GTD et ToodleDo. Renvoie false si la modification a échouée true dans le cas contraire.
+	\item \code{removeProject(Session session,Project project) : boolean } \\
+	Permet la suppression d'une projet sur les serveurs GTD et ToodleDo. Renvoie false si la suppression a échouée true dans le cas contraire.
+	\item \code{getProjects(Session session) : List<Paire<Project>> } \\
+	Permet le récupérer l'ensemble des projets et leurs sous projets.
+	\item \code{getProject(Session session,String projectId) : Project} \\
+	Permet le récupérer le projet identifié par l'id projectId.
+	\item \code{commitIdea(Session session,List<Project>) : boolean} \\
+	Permet de renvoyer les projets à synchroniser après les avoir choisis sur le GUI.
+
+
+	\item \code{createNote(Session session,Note note) : boolean } \\
+	Permet la création  d'une note sur  le serveurs GTD. Renvoie false si la création a échouée true dans le cas contraire.
+	\item \code{updateNote(Note note) : boolean } \\
+	Permet la modification d'une note sur le serveurs GTD. Renvoie false si la modification a échouée true dans le cas contraire.
+	\item \code{removeNote(Session session,Note note) : boolean } \\
+	Permet la suppression d'une note sur  le serveurs GTD. Renvoie false si la suppression a échouée true dans le cas contraire.
+	\item \code{getNotes(Session session) : List<Paire<Note>> } \\
+	Permet le récupérer l'ensemble des notes.
+	\item \code{getNote(Session session,String noteId) : Note} \\
+	Permet le récupérer la note identifiée par l'id noteId.
+	\item \code{commitNote(Session session,List<Note>) : boolean} \\
+	Permet de renvoyer les notes à synchroniser après les avoir choisis sur le GUI.
+
+	\item \code{createContext(Session session,Context context) : boolean} \\
+	Permet la création  d'un contexte sur  le serveurs GTD. Renvoie false si la création a échouée true dans le cas contraire.
+	\item \code{updateContext(Session session,Context context) : boolean} \\
+	Permet la modification  d'un contexte sur  le serveurs GTD. Renvoie false si la modification a échouée true dans le cas contraire.
+	\item \code{removeContext(Session session,String contextId) : boolean} \\
+	Permet la suppression  d'un contexte sur  le serveurs GTD. Renvoie false si la suppression a échouée true dans le cas contraire.
+	\item \code{getContexts(String sessionId) : List<Paire<Context>} \\
+	Renvoie l'ensemble des contextes.
+	\item \code{getContext(Session session,String contextId) : Context} \\
+	Permet de récupérer le contexte identifié par l'id contextId.
+	\item \code{commitContext(Session session,List<Context>) : boolean} \\
+	Permet de renvoyer les context à synchroniser après les avoir choisis sur le GUI.
+		
+		
+	\item \code{createIdea(Session session,Idea idea) : boolean} \\
+	Permet la création  d'une idée sur  le serveurs GTD. Renvoie false si la création a échouée true dans le cas contraire.
+	\item \code{updateIdea(Session session,Idea idea) : boolean} \\
+	Permet la modification  d'une idée sur  le serveurs GTD. Renvoie false si la modification a échouée true dans le cas contraire.
+	\item \code{removeIdea(Session session,String ideaId) : boolean} \\
+	Permet la suppresion  d'une idée  sur  le serveurs GTD. Renvoie false si la suppresion a échouée true dans le cas contraire.
+	\item \code{getIdeas(String contextId) : List<Paire<Idea>>} \\
+	Renvoie l'ensemble des contextes
+	\item \code{getIdea(Session session,String ideaId) : Idea} \\
+	Permet le récupérer l'idée identifiée par l'id ideaId.
+	\item \code{commitIdea(Session session,List<Idea>) : boolean} \\
+	Permet de renvoyer les idées à synchroniser après les avoir choisis sur le GUI.
+	
+	
+	
+\end{itemize}	
+
+
+
+
+\subsection{IConnectToServers}
+
+\begin{itemize}
+	\item \code{connect(Session session) : boolean } \\
+	Permet de connecter la session utilisateur aux serveurs GTD et ToodleDO. 
+	\item \code{disconnect(Session session) : boolean} \\
+	Permet de deconnecter la session associée aux serveurs GTD et ToodleDO	
+	\item \code{createAccount(Session session) : boolean} \\
+	Permet la création d'un compte sur les serveurs GTD et ToodleDO	
+	\item \code{deleteAccount(Session session) : boolean} \\
+	Permet la suppression des comptes associées aux serveurs GTD et ToodleDO	
+\end{itemize}	

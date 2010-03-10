@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%PAS TOUCHER
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+\chapter{Autres exigences non-fonctionnelles}
+
+Dans ce chapitre, l'ensemble des exigences autres que fonctionnelles est défini. 
+Décrire les exigences qui ne sont pas incluses dans les cas d’utilisation ainsi que les exigences non-fonctionnelles. On peut référer au document de spécifications supplémentaires.
+
+
+
+
+
+
+	\section{Utilisabilité} 		
+	
+
+	L'application GTD disposera d'une interface Web. Celle-ci devra être conçue de façon à être ergonomique. Elle devra respecter une cohérence dans ses couleurs et devra être simple à utiliser. En ce qui concerne sa compatibilité, elle devra respecter les standards web tels que le XHTML et CSS3 et ainsi passer les validations W3C. L'utilisation du logiciel devra permettre de manipuler des tâches rapidement afin de ne pas rendre son utilisation trop contraignante. Il ne faut pas perdre de vue que ce logiciel est destiné à l'organisation des tâches quotidiennes : son utilisation ne doit pas faire l'objet d'une nouvelle tâche quotidienne !
+	
+	
+	
+	
+	\section{Fiabilité }
+	
+	%Décrire les exigences qui affectent la fiabilité comme, par exemple:
+	%\begin{itemize}
+
+%	\item	La disponibilité: le pourcentage d’heures d’utilisation, les périodes de maintenance, mode d’opération lors de dégradation, etc.
+%	\item	Durée moyenne de fonctionnement avant défaillance, exprimée en heures, en jours, en mois ou en années.
+%	\item	Durée moyenne de rétablissement, qui est le délai moyen de réparation d'une unité fonctionnelle après une défaillance.
+%	\item	Exactitude. précision, souvent définie par de normes, requise pour les extrants.
+%	\item	Nombre maximum d’anomalies exprimé habituellement en KLOC, en défaut par millier de ligne de code ou par points de fonction
+%	\item	Criticité d’anomalie, mineure, significative, critique en décrivant ce que critique signifie. 
+	 
+%	\end{itemize}
+	
+	
+		\subsection{Fréquence et gravité des échecs}
+	
+		Le logiciel développé doit permettre de prendre en charges un maximum d'erreurs survenues lors de l'exécution. Par exemple, le traitement d'une mauvaise saisie utilisateur doit être prévue et traitée en fonction.
+		\medskip
+		Dans la suite, nous distinguons les erreurs critiques auquel nous n'avons pas pensées et les erreurs prévisibles (par exemple les erreurs de connexion à la BD).
+		
+		\subsection{Temps moyen entre failles}
+		Pour mesurer la fiabilité de notre système et définir des contraintes qualités pour le client nous utiliserons les mesures MTBF (mean time between failure) et MTTF (mean Time To Failure). Notre MTBF de référence pour ce logiciel devra être borné à la valeur 30 jours.
+
+		
+		
+		\subsection{Prédictibilité}
+		Certaines erreurs ne sont pas prédictibles dans le temps de part leur nature, mais vont néanmoins êtres prises en compte lors de l'éxecution du programme. Comme par exemple les erreurs de connexion avec le serveur. 
+		
+		\subsection{Récupérabilité}
+		En ce qui concerne le MTTR (Mean time to repair), lors d'une découverte d'une faute critique, le temps de réparation est fixé à 48h. Cependant, pour les fautes mineures l'assurance de la correction est assurée dans un délai de 1 mois.
+	
+		
+		
+		
+		
+	\section{Exigences de performance}
+	
+	%Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.
+
+	%\begin{itemize}
+	%\item	Temps de réponse par transaction (moyen, maximum)
+	%\item	Débit (transactions par seconde)
+	%\item	Capacité (nombre de client ou de transaction que le système doit supporter)
+	%\item	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)
+	%\item	Utilisation de ressources (mémoire, disque, communications, etc.
+	%\end{itemize}
+	
+		
+		\subsection{Rapidité}
+
+		La communication entre le serveur Web et l'interface graphique doit être suffisament rapide pour ne pas ressentir une sensation de lenteur. L'interface graphique ne doit pas se figer lors d'une action effectuée par l'utilisateur.
+		En cas de temps d'attente, une notification sous forme d'une barre de progression doit être affichée. La possibilité de mettre en tâche de fond peut être envisagée.
+
+		\subsection{Efficacité}		
+		L'application doit permettre d'effectuer les actions dans un temps imparti qui reste acceptable pour l'utilisateur. Elle doit se limiter à l'utilisation des ressources strictement nécessaires à l'accomplissement des fonctions.
+		
+		
+		\subsection{Disponibilité}	
+		Le client Web ne peut pas être autonome si le serveur Web n'est pas disponible. Cependant lorsque la connexion est coupée entre le serveur web et le serveur GTD, l'application doit tout de même être fonctionnelle avec ToodleDo, ou l'inverse. Cependant, en cas de coupure des deux serveurs aucune action ne sera réalisable.		
+	
+	
+		\subsection{Précision}		
+		Pour chacune des actions réalisées dans le système, l'opération est déterministe. Etant donné que le système effectue des actions basiques, une précision de 1 est tout à fait réalisable. En effet, dans tous les cas de figure, le résultat escompté sera toujours le résultat exact et non pas une approximation.
+	
+	
+		\subsection{Bande passante}	
+		Une connexion ADSL 512k est le minimum requis pour permettre à l'application de fonctionner normalement.
+		
+		\subsection{Capacité}
+		Le serveur doit permettre d'assurer un minimum de 500 connexions multiples. Les contraintes techniques liées au serveur sont décrites dans ce livrable.
+	
+		\subsection{Temps de réponse}	
+		Le temps de réponse entre le serveur Web et le client Web doit être inférieur à 40ms. Les temps de réponses entre le client Web et le serveur Web dépendront de la communication entre le serveur Web et les serveurs Toodle et GTD. 
+
+		\subsection{Utilisation des ressources}
+		L'utilisation du client Web ne doit pas dépasser 30mo de mémoire vive. Etant donné qu'il est susceptible que l'utilisateur effectue d'autres actions en même temps, il est indispensable que le client Web ne consomme pas trop de ressources.
+	
+
+\section{Adaptabilité}
+
+L'architecture du système doit être assez flexible pour permettre plus tard de : \\
+
+\begin{itemize}
+\item  rajouter facilement des extensions (nouvelles fonctionnalités...)
+\item  évoluer vers de nouvelles technologies (passer à un nouveau type d'interface sans toucher à la partie serveur par exemple)
+\item  maintenir celui-ci (corrections, nouvelles versions...)
+\item  internationaliser l'interface\\
+\end{itemize}
+
+
+	\section{Maintenabilité}
+	
+	%Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, les bibliothèques de classe, l’accès à la maintenance, les services de maintenances, etc. 
+
+	\subsection{Normes de codage}
+	Dans le but de rendre le code source lisible et homogène celui-ci devra respecter la norme de codage java définie par SUN.
+
+	
+	
+
+	\section{Exigences de sûreté}
+%<Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the product’s design or use. Define any safety certifications that must be satisfied.>
+
+Le logiciel est considéré comme sûr, aucune perte de données ou de dommage matériel ne peut résulter de son utilisation. Cependant, lors de l'installation du serveur web, l'administrateur devra s'assurer qu'aucun problème de compatibilité ne sera engendré (Par exemple utilisation d'un port déja utilisé). 
+
+	\section{Exigences de sécurité}
+	%Identifier les données qui doivent être protégées et le type de menace auquel elles sont exposées comme, par exemple, menaces physiques, types de personnes qui peuvent être la source de menace, les exigences d’accès au système, l’encryptage des données, la vérifiabilité qui est la détection des anomalies et des opérations frauduleuses. 
+%Énumérer la liste des objets qui doivent faire l’objet d’une protection physique ou logique
+
+	L'application est destinée à une utilisation multi-utilisateurs. Pour gérer la confidentialité des données, une identification lors de l'ouverture du logiciel est demandée. Comme citée dans la section description générale, les demandes de connexion seront cryptées à l'aide du protocole HTTPS.
+
+	\section{Attributs de qualité logicielle}
+	
+%<Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.>
+
+	\subsection{Disponibilité}
+	L'utilisation du logiciel étant possible en mode déconnecté, la disponibilité du serveur GTD devra être assurée avec un minimum de 60\% afin d'avoir une base d'informations suffisament à jour.
+	
+	\subsection{Tests logiciels}
+	Afin d'assurer une cohérence dans le processus de développement, le code source devra disposé de tests unitaires (par exemple JUnit). L'ensemble de ceux-ci devront couvrir le code à 80\%.
+
+	\subsection{Interopérabilité}
+	Le serveur Web étant indépendant du client, l'utilisation d'un nouveau client Web peut être totalement envisageable à partir du moment où les interfaces requises par l'application déployée sur ce serveur sont respectées.
+
+	\subsection{Portabilité}
+	L'interface logicielle se basant sur les technologies du Web, n'importe quel navigateur récent permettra de l'utiliser. Il sera donc opérationnel sur n'importe quel plateforme (Windows, Unix ...).
+	
+
+
+
+

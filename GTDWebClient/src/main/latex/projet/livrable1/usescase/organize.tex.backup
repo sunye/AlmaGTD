@@ -1,0 +1,52 @@
+\section {Organisation des données}
+
+Le cas d'utilisation organisation des données constitue la troisième étape de la méthode GTD. Comme on va le voir, elle a pour but d'organiser les tâches suivants différents paramètres : \\
+\begin{itemize}
+\item Le contexte de l'utilisateur
+\item La priorité des tâches
+\item Du temps disponible pour les tâches
+\item De l'énergie disponible à la réalisation des tâches
+\end{itemize}
+
+
+\subsection {Cockburn}
+
+
+\subsection {Scénarios}
+Le scénario suivant correspond au scénario présenté dans le cockburn sous forme UML. Comme on peut le voir l'organisation se divise en deux grandes étapes :\\
+\begin{itemize}
+\item Le regroupement des tâches participant à un même travail
+\item Organisation des tâches en fonction de leurs contextes, des priorités.
+\end{itemize}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{diagrams/ScenarioOrganiser.png}
+\caption{Diagramme UML Scénario - Organisation des données}
+\end{center}
+\end{figure}
+
+
+\subsection {Diagramme d'objets}
+
+\subsubsection{Vision du système avant l'étape d'oganisation}
+Comme on peut le voir sur le diagramme suivant, les tâches ne sont pas liées entre elles. Elles sont indépendantes et disposes d'un état et d'un contexte. On a également un espace de travail lié à un contexte, celui-ci n'est pas lié au tâches.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{diagrams/instantaneOrganiserBefore.png}
+\caption{Diagramme UML Objet - Instantanné avant l'étape organisation}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Vision du système après l'étape d'oganisation}
+Sur le schéma suivant une étape d'organisation à été effectuée. Ainsi, comme on peut le voir les tâches sont liés entre elles grâce à la relation tâche précédente. De plus, dans l'exemple suivant certaines tâches correspondent à la réalisation d'un même travail. C'est pourquoi elles sont contenues dans un projet, ici Projet GLO. On observe également par rapport au schéma précédent que les tâches sont reliées à l'espace de travail à travers un objet vue. La vue contiend les tâches dont le contexte correspond au contexte définit dans la vue. Ici par exemple, le contexte de la tâche inscription suaps ne correspond pas au contexte définit dans la vue, c'est pourquoi la tâche n'est pas associée à cette vue.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{diagrams/instantaneOrganiserAfter.png}
+\caption{Diagramme UML Objet - Instantanné après l'étape organisation}
+\end{center}
+\end{figure}
+

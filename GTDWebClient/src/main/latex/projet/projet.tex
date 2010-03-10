@@ -1,0 +1,72 @@
+
+\documentclass[a4paper, french, 12pt]{report}
+\usepackage{alma}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage[english, frenchb]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{textcomp}
+\usepackage{float}
+
+
+%
+%\parindent 0in
+\parskip 0.05in
+
+
+%\title{Titre du projet}
+%\author{Jean, Marie, Charlie et les autres}
+%\date{}
+
+
+\begin{document}
+\selectlanguage{frenchb}
+
+\include{mainPage}
+
+%\begin{abstract}
+%	résumé du rapport
+%\end{abstract}
+
+\tableofcontents
+
+\part{Livrable 1}
+\include{livrable1/introduction}
+\include{livrable1/dictionnaire}
+\include{livrable1/casutilisation}
+\include{livrable1/diagactivite}
+\include{livrable1/diagclasses}
+\include{livrable1/conclusion}
+
+\part{Livrable 2}
+\include{livrable2/introduction}
+\include{livrable2/descriptionGen}
+\include{livrable2/fonctionnalitesLog}
+\include{livrable2/ExigencesDesInterfaceExt}
+\include{livrable2/AutresExigencesNonFonc}
+\include{livrable2/AutresExigences}
+\include{livrable2/ClassificationExigencesFonc}
+\include{livrable2/gui}
+
+\part{Livrable 3}
+
+\include{livrable3/introduction}
+\include{livrable3/descriptionsCompos}
+\include{livrable3/interaction}
+\include{livrable3/interfaces}
+\include{livrable3/types}
+\include{livrable3/conclusion}
+
+
+\part{Livrable 4 et 5}
+\include{livrable4/livrable4-5}
+
+
+\listoffigures
+
+
+\end{document} 

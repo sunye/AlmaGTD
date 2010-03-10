@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_OMXhYNU8Ed6USMZGx9FQiA" name="Stereotypes">
+  <eAnnotations xmi:id="_avPMENU8Ed6USMZGx9FQiA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_DQGL0NViEd6sTLdWmA-sUQ" name="Stereotypes" nsURI="http:///schemas/Stereotypes/_DQFkwNViEd6sTLdWmA-sUQ/2" nsPrefix="Stereotypes">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_DQGL0dViEd6sTLdWmA-sUQ" name="PK">
+        <eAnnotations xmi:id="_DQGL0tViEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_X2rqwNVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_DQGL09ViEd6sTLdWmA-sUQ" name="base_Feature" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Feature"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_DQGL1dViEd6sTLdWmA-sUQ" name="FK">
+        <eAnnotations xmi:id="_DQGL1tViEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_a2Dl8NVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_DQGL19ViEd6sTLdWmA-sUQ" name="base_Feature" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Feature"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_DQGL2dViEd6sTLdWmA-sUQ" name="Table">
+        <eAnnotations xmi:id="_DQGL2tViEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d2wW0NVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_DQGL29ViEd6sTLdWmA-sUQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_hK5oINVhEd6sTLdWmA-sUQ" name="Stereotypes" nsURI="http:///schemas/Stereotypes/_hKxFQNVhEd6sTLdWmA-sUQ/1" nsPrefix="Stereotypes">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hK5oIdVhEd6sTLdWmA-sUQ" name="PK">
+        <eAnnotations xmi:id="_hK5oItVhEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_X2rqwNVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hK5oI9VhEd6sTLdWmA-sUQ" name="base_Feature" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Feature"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hK5oJdVhEd6sTLdWmA-sUQ" name="FK">
+        <eAnnotations xmi:id="_hK5oJtVhEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_a2Dl8NVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hK5oJ9VhEd6sTLdWmA-sUQ" name="base_Feature" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Feature"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hK5oKdVhEd6sTLdWmA-sUQ" name="Table">
+        <eAnnotations xmi:id="_hK5oKtVhEd6sTLdWmA-sUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_d2wW0NVhEd6sTLdWmA-sUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hK5oK9VhEd6sTLdWmA-sUQ" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_avPMEdU8Ed6USMZGx9FQiA" name="Stereotypes" nsURI="http:///schemas/Stereotypes/_avGCINU8Ed6USMZGx9FQiA/0" nsPrefix="Stereotypes"/>
+  </eAnnotations>
+  <elementImport xmi:id="_P3DhkNU8Ed6USMZGx9FQiA" alias="">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <elementImport xmi:id="_ZZaBktU8Ed6USMZGx9FQiA">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Feature"/>
+  </elementImport>
+  <packageImport xmi:id="_b3qnYCWuEd62NaW46C6lHg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_X2rqwNVhEd6sTLdWmA-sUQ" name="PK">
+    <redefinedClassifier xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    <ownedAttribute xmi:id="_ad2hUNVhEd6sTLdWmA-sUQ" name="base_Feature" association="_ad0FE9VhEd6sTLdWmA-sUQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Feature"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_ad0FE9VhEd6sTLdWmA-sUQ" name="Feature_Pk" memberEnd="_ad0sINVhEd6sTLdWmA-sUQ _ad2hUNVhEd6sTLdWmA-sUQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ad0sINVhEd6sTLdWmA-sUQ" name="extension_Pk" type="_X2rqwNVhEd6sTLdWmA-sUQ" aggregation="composite" association="_ad0FE9VhEd6sTLdWmA-sUQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_a2Dl8NVhEd6sTLdWmA-sUQ" name="FK">
+    <redefinedClassifier xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    <ownedAttribute xmi:id="_ddGgtdVhEd6sTLdWmA-sUQ" name="base_Feature" association="_ddGgs9VhEd6sTLdWmA-sUQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Feature"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_ddGgs9VhEd6sTLdWmA-sUQ" name="Feature_FK" memberEnd="_ddGgtNVhEd6sTLdWmA-sUQ _ddGgtdVhEd6sTLdWmA-sUQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ddGgtNVhEd6sTLdWmA-sUQ" name="extension_FK" type="_a2Dl8NVhEd6sTLdWmA-sUQ" aggregation="composite" association="_ddGgs9VhEd6sTLdWmA-sUQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_d2wW0NVhEd6sTLdWmA-sUQ" name="Table">
+    <ownedAttribute xmi:id="_fBxYcNVhEd6sTLdWmA-sUQ" name="base_Class" association="_fBwxYNVhEd6sTLdWmA-sUQ">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_fBwxYNVhEd6sTLdWmA-sUQ" name="Class_Table" memberEnd="_fBwxYdVhEd6sTLdWmA-sUQ _fBxYcNVhEd6sTLdWmA-sUQ">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_fBwxYdVhEd6sTLdWmA-sUQ" name="extension_Table" type="_d2wW0NVhEd6sTLdWmA-sUQ" aggregation="composite" association="_fBwxYNVhEd6sTLdWmA-sUQ"/>
+  </packagedElement>
+</uml:Profile>

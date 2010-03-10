@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<chain:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:chain="http://www.obeo.fr/acceleo/chain">
+  <repository>
+    <files xsi:type="chain:Model" path="/alma-gtd/Documents/livrable_5/model/conceptionGenerale.uml"/>
+    <files xsi:type="chain:Folder" path="/alma-gtd/src/"/>
+    <files xsi:type="chain:Log" path="/alma-gtd/generation/chaineGeneration.log.txt"/>
+    <files xsi:type="chain:EmfMetamodel" path="http://www.eclipse.org/uml2/2.1.0/UML"/>
+    <files xsi:type="chain:Generator" path="/alma-gtd/generation/classe.mt"/>
+    <files xsi:type="chain:Generator" path="/alma-gtd/generation/interface.mt"/>
+    <files xsi:type="chain:Generator" path="/alma-gtd/generation/enum.mt"/>
+  </repository>
+  <actions>
+    <actions xsi:type="chain:Generate" documentation="classe" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.4" folder="//@repository/@files.1"/>
+    <actions xsi:type="chain:Generate" documentation="interface" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.5" folder="//@repository/@files.1"/>
+    <actions xsi:type="chain:Generate" documentation="enum" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.6" folder="//@repository/@files.1"/>
+  </actions>
+</chain:Chain>

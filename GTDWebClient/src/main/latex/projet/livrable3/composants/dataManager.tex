@@ -1,0 +1,55 @@
+
+\section{Composant DataManager}
+
+
+Le composant DataManager va faire le lien entre la couche métier (le composant
+ProcessManager) et les serveurs GTD / ToodleDo. Il va donc permettre de répondre
+au problématiques suivantes : \\
+
+\begin{itemize}
+ \item Permettre la communication entre le ConnectionManager et les serveurs GTD
+ et ToodleDo
+ \item Permettre de renvoyer à la couche métier les données en provenance du
+ serveur GTD et ToodleDo
+ \item Permettre la synchronisation du serveur GTD au serveur ToodleDo
+ \item Permettre la synchronisation du serveur ToodleDo au serveur GTD\\
+\end{itemize}
+
+
+
+
+\subsection{Gestion des serveurs GTD et ToodleDo}
+
+Le composant DataManager doit rendre l'utilisation des
+serveurs ToodleDo et GTD transparente pour la couche métier (ProcessManager).
+Ainsi, les données envoyées et reçues par celle-ci seront génériques et donc de
+niveau métier. Cependant, lors de la transmission des données du DataManager au
+serveur GTD et ToodleDo, le DataManager va devoir les adapter au bon format des
+serveurs. En effet, un certain nombre de concepts diffèrent d'un serveur à l'autre. 
+Par exemple, la notion de notes présente dans le serveur GTD ne l'est pas dans ToodleDo. 
+De plus, il faut considérer différents scénarios possibles en cas de problèmes
+avec les serveurs :
+
+
+\subsubsection*{Gestion des connexions}
+
+Comme le montre le diagramme de composant, le DataManager est le seul composant
+relié aux serveurs. Il va donc devoir gérer les connexions et les transactions et va faire le lien entre la session utilisateur et les deux serveurs. Les couples login/password associés aux serveurs ne sont pas stockés dans ce composant mais dans le composant ConnectionManager.
+
+
+
+\subsubsection*{Le serveur ToodleDo n'est plus disponible}
+
+Si jamais le serveur ToodleDo venait à être indisponible, le DataManager
+doit prévenir le composant ProcessManager, qui lui même informera le GUI.
+Etant donné que ToodleDo ne dispose pas de toutes les fonctionnalités de GTD,
+l'utilisateur ne constatera pas de différence sur la GUI. Une synchronisation
+ultérieure sera nécessaire pour conserver une cohérence des données entre le
+serveur GTD et ToodleDo.
+
+\subsubsection*{Le serveur GTD n'est plus disponible}
+Les fonctionnalités GTD étant plus nombreuses, en cas d'indisponibilité du
+serveur GTD, l'affichage des données sera limitée sur la GUI. En effet, les
+données, bien que génériques, seront limitées aux fonctionnalités du serveur
+ToodleDo. En cas d'indisponibilité des deux serveurs, le Data manager
+l'informera au ConnectionManager.

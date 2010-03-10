@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>fr.alma</groupId>
+        <artifactId>AlmaGTD</artifactId>
+        <version>1.0</version>
+    </parent>
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>fr.alma</groupId>
+	<artifactId>GTDClientGil</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>Module GTD Client B</name>
+    	<description>Getting Things Done
+		BACHELIER, BARBIN, GILET et GILET
+		Copyright Université de Nantes
+		2009-2010</description>
+	<url>http://code.google.com/p/alma-gtd/</url>
+
+	<scm>
+		<connection>scm:svn:http://alma-gtd.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://alma-gtd.googlecode.com/svn/trunk/</developerConnection>
+		<url>http://code.google.com/p/alma-gtd/</url>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.7.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>com.toedter</groupId>
+			<artifactId>jcalendar</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.2.127</version>
+		</dependency>
+	</dependencies>
+
+
+	<developers>
+		<developer>
+			<name>BACHELIER Matthieu</name>
+			<email>bachelier.matthieu@gmail.com</email>
+		</developer>
+		<developer>
+			<name>BARBIN Florian</name>
+			<email>florian.barbin@gmail.com</email>
+		</developer>
+		<developer>
+			<name>GILET Florent</name>
+			<email>florent.gilet@etu.univ-nantes.fr</email>
+		</developer>
+		<developer>
+			<name>GILET Jean-Marie</name>
+			<email>jm.gilet@gmail.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>Université de Nantes - Master ALMA</name>
+		<url>http://alma.univ-nantes.fr</url>
+	</organization>
+
+</project>

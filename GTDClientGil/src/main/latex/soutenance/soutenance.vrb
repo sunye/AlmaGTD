@@ -1,0 +1,13 @@
+\frametitle {Exemple d'utilisation du patron DAO}
+\begin{exampleblock}{Récupérer les tâches d'un projet spécifique}
+\begin{lstlisting}[basicstyle=\small]
+@Override
+public List<Tache> recupererTaches(Long id) {
+  Session s = getSession();
+  Query q = s.createQuery("from Tache where idprojet = :idprojet");
+  q.setParameter("idprojet", id);
+  List<Tache> results = (List<Tache>) q.list();
+  return results;
+}
+\end{lstlisting}
+\end{exampleblock}

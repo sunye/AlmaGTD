@@ -1,0 +1,407 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 1                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Analyse des besoins}
+	\minitoc
+	
+		\section{Introduction}
+
+	\paragraph{}
+Le but premier du Projet multi-modules est de réaliser une application permettant de mettre en oeuvre la méthode GTD (Getting Things Done). C'est à dire un gestionnaire de tâches quotidiennes dans un système distribué. Nous allons donc faire l'analyse et la conception par objets de l'application. Dans un premier temps, nous analyserons le problème dans sa globalité. Ensuite, nous spécifierons nos besoins (tels l'utilisabilité, la sécurité, la performance, \dots). Puis nous spécifierons les composants présent dans notre application finale. Il ne nous restera plus qu'à créer l'architecture physique de l'application. Et enfin, nous détaillerons la conception de notre "logiciel".
+
+	\paragraph{}
+Dans ce premier livrable, nous avons rassemblé tous les éléments que composent un système GTD. Et Nous avons donc fais l'analyse du système GTD selon notre propre vision. Dans un premier temps, nous avons défini un dictionnaire de données nous permettant d'être en accord avec tous les termes que nous utilisons. Dans un second temps, nous avons recensé quelques cas d'utilisation refletant les interactions d'un utilisateur avec le système (comprenant les descriptions textuelles, des instantannés, \dots). Pour finir, nous avons proposé un premier diagramme de classes (niveau analyse).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{Dictionnaire des données}
+
+La méthode GTD est aussi nommée "the art of stress-free productivity". Elle décrit une méthode de gestion des priorités quotidiennes. En effet, une GTD est une démarche d'organisation personnelle applicable par chacun à l'ensemble de ses activités, tant professionnelles que privées. Cette méthode suit un processus structuré ( recensement, traitement, organisation, revue, action), afin de mieux gérer son temps et donc d'accroître l'efficacité recherchée. La méthode GTD part du principe qu'une action ne peut se lancer n'importe où, ni n'importe quand. GTD précise donc quatre critères pour décider quoi faire à un instant donné (contexte, temps disponible, capacité physique, priorité).\\
+
+\begin{tabular}{| p{0.35\textwidth} | p{0.55\textwidth} |}
+	\hline
+NOTION & Définition \\
+	\hline
+Recensement & Noter immédiatement tout sujet qui retient l'attention - événement, objet, document, idée - et qui pourrait potentiellement requérir une action ultérieure. \\
+	\hline
+Traitement & Formuler, pour tout sujet, le résultat concret à produire. Dès qu'il y a plusieurs choses à faire pour parvenir à ce résultat, formuler la première action concrète par laquelle l'enclencher. \\
+	\hline
+Organisation & Mise en place sans attendre des rappels pour les actions qui ne peuvent être exécutées immédiatement : soit dans un agenda (temps bloqué), soit dans une liste au contexte appropriée, soit dans une liste "en attente" si une action est confiée à un tiers, soit placés dans un échéancier (notamment quand il y a des documents ou justificatifs), classement des données de référence. \\
+	\hline
+Revue & Réexaminer très fréquemment - et passer au peigne fin au moins une fois par semaine dans la « revue hebdomadaire » - toutes les tâches et les projets en cours et nouveaux. \\
+	\hline
+\end{tabular}
+
+\begin{tabular}{| p{0.35\textwidth} | p{0.55\textwidth} |}
+	\hline
+NOTION & Définition \\
+	\hline
+Action & C'est l'activité que l'utilisateur va effectuer. \\
+	\hline
+Contexte & C'est l'endroit où l'on se trouve, les outils disponibles, les limites et les possibilités de l'environnement. \\
+	\hline
+Temps disponible & Le temps libre avant la prochaine obligation, le temps estimé de la réalisation de chaque prochaine action listée. \\
+	\hline
+Capacité physique & C'est l'énergie dont on dispose, et les actions qui s'accordent à cette vigueur. \\
+	\hline
+Priorité & Pour deux actions nécessitant le même contexte, le même temps disponible et la même capacité physique, laquelle a le plus d'importance. \\
+	\hline
+Projet & Un projet regroupe des actions et éventuellement des sous-projets. Les tâches à accomplir se trouve à l'intérieur d'un projet. \\
+	\hline
+Tache & Dans la coordination de projet, une tâche constitue la fraction élémentaire du travail à fournir pour produire un résultat. Elle peut se voir allouer des ressources particulières et se voir enserrée dans des contraintes (échéance, durée, conditions d'enclenchement). Une tâche est réalisée par l'exécution d'une ou plusieurs actions. \\
+	\hline
+Echéancier & Pour classer les documents, pièces, justificatifs à traiter. \\
+	\hline
+Agenda & L'agenda est une modélisation des choses à faire en affichant que les périodes allouées à une activité définie : rendez-vous, échéances, temps bloqués (routines régulières, isolement sur une tâche). \\
+	\hline
+ACTION & Définition \\
+	\hline
+Collecter les tâches & C'est le recensement des choses à faire.\\
+\hline
+Réviser les tâches & Une fois les données recensées, c'est la récupération ou le rangement des tâches de l'utilisateur. \\
+	\hline
+Organiser les tâches & C'est le Classement des documents et informations utiles de manière à les rendre immédiatement disponibles au moment où on en aura besoin : listes par contexte, dossiers, échéancier, agenda,etc . C'est aussi la création, suppressions et éditions des tâches. \\
+	\hline
+\end{tabular}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Cas d'utilisation}
+		\begin{usecase}{Cas d'utilisation global}
+
+Nous avons distingué quatre cas d'utilisations correspondant à des fonctionnalités que nous pensons indispensable du point de vu de l'utilisateur.\\
+
+	\includegraphics[scale=0.75]{UsesCases.png}\\
+	
+\textbf{Collecter les tâches}\\	
+
+C'est la récupération des tâches de l'utilisateur, en utilisant tous les outils disponibles. Ce processus doit être immédiat.\\
+	
+\textbf{Ajouter une tache}\\
+
+L'idée est que l'utilisateur puisse rapidement créer une tâche dès qu'il souhaite concrétiser une ou plusieurs actions. Le nombre d'attributs à renseigner obligatoirement doit être limité au maximum. Par exemple on peut imaginer que l'utilisateur n'a pas encore connaissance des échéances ou bien de la priorité au moment de la création de la tâche.\\
+
+\textbf{Réviser les taches}\\
+
+C'est visualiser l'ensemble de ses tâches aisément. L'utilisateur doit pouvoir consulter ce qu'il a à faire sans forcément apporter des modifications.\\
+
+\textbf{Organiser les tâches}\\
+
+Autre fonctionnalité importante, l'organisation des tâches. Afin de prendre les meilleurs décision, l'utilisateur doit pouvoir organiser ces tâches simplement selon différents critères (projet, contexte, échéances, états, etc. \dots).\\
+
+		\end{usecase}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{usecase}{Collecter}
+%TODO
+%\end{usecase}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{usecase}{Créer une tâche}
+			
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur souhaite créer une tâche correspondant à une action à réaliser un sein d'un projet particulier.
+
+\item[Scope:]
+Système GTD
+
+\item[Level:]
+Primary Task
+
+\item[Success End Condition:]
+La tâche est correctement créée selon le souhait de l'utilisateur.
+
+\item[Failed End Condition:]
+La tâche n'est pas ou pas correctement créée selon les informations de l'utilisateur.
+
+\item[Primary actor:]
+Utilisateur du client GTD
+
+\item[Priority:]
+Maximale
+
+\item[Frequency:]
+
+
+\item[Precondition:]
+Aucune
+
+\item[Postcondition:]
+La tâche est correctement créée, les attributs obligatoires sont renseignés.
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur souhaite ajouter une nouvelle tâche correspondant à une ou plusieurs actions qu'il souhaite réaliser.
+	\item L'utilisateur nomme la tâche
+	\item L'utilisateur attribut ensuite un projet et un contexte
+	\item L'utilisateur décrit la tâche sous forme de notes
+	\item L'utilisateur paramétre l'agenda (renseignement de la date de début et de l'échéance. Répétition ou non et arrêt de la répétition)
+	\item L'utilisateur renseigne le taux d'effort, la priorité
+\end{scenario}
+
+\begin{extension}
+	\item[3a] Le projet n'existe pas
+		\item[3a1] -L'utilisateur en créer un nouveau 
+	\item[3b] Le contexte n'existe pas
+		\item[3b1] -L'utilisateur en créer un nouveau 
+	\item[5a] L'utilisateur ne renseigne pas l'agenda
+		\item[5a1] -La tâche n'est pas planifiée et est supposée à effectuer dans la journée
+	\item[5b] L'utilisateur renseigne des dates incohérentes (par exemple : date de fin < date de début)
+		\item[5b1] -L'utilisateur en renseigne de nouvelles 
+	\item[6a] Le taux d'effort et/ou la priorité ne sont pas renseignés
+		\item[6a1] -Le système GTD attribut des valeurs par défaut 
+\end{extension}
+
+			%\subsection*{Scénario}
+
+	\includegraphics[scale=0.75]{UCCreerTache.png}
+	
+\end{usecase}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\begin{usecase}{Réviser les tâches}
+
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur veut relever les tâches qu'il doit effectuer et les trier selon ses critères.
+
+\item[Scope:]
+Client GTD
+
+\item[Level:]
+Primary Task
+
+\item[Success End Condition:]
+L'utilisateur obtient toutes les tâches qu'il doit effectuer.
+
+\item[Failed End Condition:]
+L'utilisateur n'a pu avoir accès aux tâches attribuées.
+
+\item[Primary actor:]
+Utilisateur du client GTD
+
+\item[Priority:]
+Maximale
+
+\item[Trigger:]
+L'utilisateur a accès aux tâches qu'il a à effectuer.
+
+\item[Precondition:]
+Aucune
+
+\item[Postcondition:]
+La tâche est correctement créée, les attributs obligatoires sont renseignés.
+	
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur lance l'application.
+	\item L'application récupère les tâches de l'utilisateur.
+	\item L'application retourne les tâches à l'utilisateur.
+	\item L'utilisateur organise alors ses tâches selon ses critères (projet, contexte, états \dots)(uses cases organiser)\\
+\end{scenario}
+
+\begin{extension}
+	\item La version de la liste locale des tâches n'est pas correcte. 
+		\subitem Le logiciel va automatiquement se synchroniser avec le serveur pour mettre à jour les tâches (use case Synchronisation)
+\end{extension}
+
+\begin{subvariation}
+	\item L'utilisateur peut effectuer sa collecte depuis le serveur web 
+\end{subvariation}
+
+			%\subsection*{Scénario}
+
+	\includegraphics[scale=0.75]{DiagseqCollecter.png}
+
+\end{usecase}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{usecase}{Organiser les tâches}
+
+\begin{information}
+
+\item[Goal in the context:]
+L'utilisateur veut effectuer des actions sur les tâches (trier / ajouter / éditer / supprimer / déléguer)
+
+\item[Scope:]
+Client GTD
+
+\item[Level:]
+Primary Task
+
+\item[Success End Condition:]
+L'utilisateur est satisfait de la nouvelle organisation de ses tâches.
+
+\item[Primary actor:]
+Utilisateur du client GTD
+
+\item[Priority:]
+Maximale
+
+\item[Trigger:]
+L'ensemble de tâches vient d'être récupéré.
+
+\item[Precondition:]
+Un ensemble de tâche est à disposition de l'utilisateur
+
+\item[Postcondition:]
+	
+\end{information}
+
+\begin{scenario}
+	\item L'utilisateur voit l'ensemble de ses tâches.
+	\item L'utilisateur décide de trier ses tâches selon l'échéance.
+	\item L'application affiche les tâches correctement modifiées.\\
+\end{scenario}
+
+\begin{subvariation}
+	\item L'utilisateur  décide de trier ses tâches selon la priorité
+	\item L'utilisateur  décide de trier ses tâches selon l'état
+	\item L'utilisateur  décide de trier ses tâches selon la date de création
+	\item L'utilisateur  décide de trier ses tâches selon le taux d'effort demandé
+	\item L'utilisateur  décide de trier ses tâches selon la fréquence de répétition
+	\item L'utilisateur  décide d'ajouter une tâche
+	\item L'utilisateur  décide d'éditer une tâche
+	\item L'utilisateur  décide de supprimer une tâche
+	\item L'utilisateur  décide de déléguer une tâche à  un tiers
+\end{subvariation}
+
+			%\subsection*{Scénario}
+
+	\includegraphics[scale=0.75]{DiagseqOrganiser.png}
+	
+\end{usecase}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{OCL}
+		\subsection{Tâches}
+
+Liste des contraintes textuelles des tâches:
+\begin{itemize}
+	\item Une tâche a un identifiant unique et un nom de tache non vide
+	\item Une tâche ne peut pas avoir commencé dans le passé
+	\item La date d'échéance d'une tâche ne peut être antérieure à sa création
+	\item Les notes d'une tâche ne sont pas vides (afin d'avoir au moins une information concrète sur la tâche)
+	\item La priorité d'une tâche se mesure sur une échelle de 1 à 5
+	\item La fréquence de répetition d'une tâche se mesure sur une échelle de 0 à 99
+	\item La fréquence d'une tâche est soit journalière, hebdomadaire ou mensuelle
+	\item La date d'arrêt de la répétition est antérieure à sa date d'échéance et postérieure de la date du jour\\
+\end{itemize}
+
+Et leur traduction en OCL :
+
+\begin{ocl}
+Context Tache
+ inv:
+  self->isUnique(id);
+		
+  self.nom -> notEmpty();
+
+  self.dateDebut >= Date::now()
+
+  self.dateEcheance > self.dateDebut;
+	
+  self.priorite <=5 and self.priorite >= 1;
+
+  self.tauxEffort <=99 and self.tauxEffort >= 0;
+
+  self.Periodicite.dateFinRepetition >= Date::now() and self.Periodicite.dateFinRepetition <= self.dateEcheance;
+
+\end{ocl}
+
+		\subsection{Projet}
+		
+Liste des contraintes textuelles des projets :
+\begin{itemize}
+	\item Le projet a un identifiant unique et un nom de projet non vide \\
+\end{itemize}
+
+Et la traduction en OCL :
+
+\begin{ocl}
+Context Projet
+ inv:
+   self->isUnique(id);
+
+   self->isUnique(nom);
+
+   self.nom -> notEmpty();
+
+\end{ocl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Instantanés}
+	
+\paragraph{}
+Les instantannés suivants nous montrent facilement le comportement de nos cas d'utilisations.
+
+		\subsection{Réviser}
+		
+Lorsque Paul a révisé les tâches qu'il possédait, il en résulte la récupération de ses tâches.
+
+\begin{center}
+	\includegraphics[scale=0.75]{InstanCollecterAvant.png}
+	\includegraphics[scale=0.55]{InstanCollecterApres.png}
+\end{center}
+
+		\subsection{Organiser}
+La tâche \textbf{t2} a été déplacé du projet 2 au projet 1.
+
+\begin{center}
+	\includegraphics[scale=0.55]{InstanOrganiserAvant.png}
+	\includegraphics[scale=0.55]{InstanOrganiserApres.png}
+\end{center}
+
+		\subsection{Ajouter}
+Paul a créé une nouvelle tâche dans le projet 1.
+\begin{center}
+	\includegraphics[scale=0.55]{InstanAjouterAvant.png}
+	\includegraphics[scale=0.55]{InstanAjouterApres.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Diagramme de classes}
+
+\paragraph{}
+La classe Tâche est le centre du système : elle contient tous les attributs contenu dans le sujet. Mais, nous avons détaché les classes Context, Periodicité et Etat car celles-ci sont réutilisées et ont des comportement bien spécifiques. Les séquences de tâches sont representés puisqu'une tache est relié à une autre. Les projets contiennent des tâches et des sous-projets. C'est l'utilisateur qui gérera ses projets et ses tâches. Un utilisateur est une personne (entité rajoutée puisqu'il faut faire le lien avec les contacts des tâches). Il ne faut oublier qu'un projet est inscrit à un contexte.
+
+\begin{center}
+	\includegraphics[scale=0.60]{DiagClasses.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+	
+\paragraph{}
+Dans cette première partie, nous avons relevé les problèmes que posaient le système GTD (tels que le fonctionnement, les contraintes, \dots), tout en ayant un haut niveau d'abstraction, afin de se concentrer sur les spécificités du système et non pas se focaliser sur les besoins ou la conception. 
+
+\paragraph{}
+Nous présiserons les besoins dans le deuxième livrable en détaillant ce que nous avons décrit dans cette analyse. Puis, nous expliciterons nos objectifs réels (GTD, Agenda, Échéancier, \dots). 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="UsesCases">
+    <packagedElement xmi:type="uml:Package" xmi:id="_cPWFYLM5Ed6BcMaA4ceMig" name="ClientGTD">
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_e6tfcLM5Ed6BcMaA4ceMig" name="Organiser Les taches">
+        <include xmi:id="_UfQBYLPiEd68ac-fF92JXQ" name="Include1" addition="_F8dV8NA0Ed6litO8JddKuA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_g1fxIrM5Ed6BcMaA4ceMig" name="Collecter les taches">
+        <include xmi:id="_Qe0R0LPiEd68ac-fF92JXQ" name="Include1" addition="_e6tfcLM5Ed6BcMaA4ceMig"/>
+        <include xmi:id="_VcFssNA0Ed6litO8JddKuA" name="Include2" addition="_j71P8rM5Ed6BcMaA4ceMig"/>
+        <extend xmi:id="_hdp8FLPjEd68ac-fF92JXQ" name="Extend1" extendedCase="_n0Od0rM5Ed6BcMaA4ceMig" extensionLocation="_ixWYkLPjEd68ac-fF92JXQ"/>
+        <extensionPoint xmi:id="_4_hq8LPjEd68ac-fF92JXQ" name="ExtensionPoint1"/>
+        <extensionPoint xmi:id="_8rN5kLPjEd68ac-fF92JXQ" name="ExtensionPoint2"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_j71P8rM5Ed6BcMaA4ceMig" name="Ajouter une tache"/>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_n0Od0rM5Ed6BcMaA4ceMig" name="Synchroniser les taches" clientDependency="_rMbHdLPjEd68ac-fF92JXQ">
+        <extend xmi:id="_5ADPZLPjEd68ac-fF92JXQ" name="Extend1" extendedCase="_g1fxIrM5Ed6BcMaA4ceMig" extensionLocation="_4_hq8LPjEd68ac-fF92JXQ"/>
+        <extend xmi:id="_8rqlgLPjEd68ac-fF92JXQ" name="Extend2" extendedCase="_g1fxIrM5Ed6BcMaA4ceMig" extensionLocation="_8rN5kLPjEd68ac-fF92JXQ"/>
+        <extensionPoint xmi:id="_hdMpELPjEd68ac-fF92JXQ" name="ExtensionPoint1"/>
+        <extensionPoint xmi:id="_ixWYkLPjEd68ac-fF92JXQ" name=" "/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_qgMU17M5Ed6BcMaA4ceMig" name="A_&lt;collecter les taches>_&lt;utilisateur>" memberEnd="_qgMU2LM5Ed6BcMaA4ceMig _qgMU27M5Ed6BcMaA4ceMig">
+        <ownedEnd xmi:id="_qgMU2LM5Ed6BcMaA4ceMig" name="collecter les taches" type="_g1fxIrM5Ed6BcMaA4ceMig" association="_qgMU17M5Ed6BcMaA4ceMig">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qgMU2bM5Ed6BcMaA4ceMig" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qgMU2rM5Ed6BcMaA4ceMig" value="1"/>
+        </ownedEnd>
+        <ownedEnd xmi:id="_qgMU27M5Ed6BcMaA4ceMig" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_qgMU17M5Ed6BcMaA4ceMig">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qgMU3LM5Ed6BcMaA4ceMig" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qgMU3bM5Ed6BcMaA4ceMig" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:UseCase" xmi:id="_F8dV8NA0Ed6litO8JddKuA" name="Reviser les tâches"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_dPHgULM5Ed6BcMaA4ceMig" name="Utilisateur"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_pxQLNrM5Ed6BcMaA4ceMig" name="" memberEnd="_pxQLN7M5Ed6BcMaA4ceMig _pxQLOrM5Ed6BcMaA4ceMig">
+      <ownedEnd xmi:id="_pxQLN7M5Ed6BcMaA4ceMig" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_pxQLNrM5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pxQLOLM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pxQLObM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_pxQLOrM5Ed6BcMaA4ceMig" name="organiser Les taches" type="_e6tfcLM5Ed6BcMaA4ceMig" association="_pxQLNrM5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pxQLO7M5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pxQLPLM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_rwp3J7M5Ed6BcMaA4ceMig" name="" memberEnd="_rwp3KLM5Ed6BcMaA4ceMig _rwp3K7M5Ed6BcMaA4ceMig">
+      <ownedEnd xmi:id="_rwp3KLM5Ed6BcMaA4ceMig" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_rwp3J7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwp3KbM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwp3KrM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_rwp3K7M5Ed6BcMaA4ceMig" name="collecter les taches" type="_g1fxIrM5Ed6BcMaA4ceMig" association="_rwp3J7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rwp3LLM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rwp3LbM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_sHKSp7M5Ed6BcMaA4ceMig" name="" memberEnd="_sHKSqLM5Ed6BcMaA4ceMig _sHKSq7M5Ed6BcMaA4ceMig">
+      <ownedEnd xmi:id="_sHKSqLM5Ed6BcMaA4ceMig" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_sHKSp7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sHKSqbM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sHKSqrM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_sHKSq7M5Ed6BcMaA4ceMig" name="ajouter une tache" type="_j71P8rM5Ed6BcMaA4ceMig" association="_sHKSp7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sHKSrLM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sHKSrbM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_sfvxx7M5Ed6BcMaA4ceMig" name="A_&lt;utilisateur>_&lt;synchroniser les taches>" memberEnd="_sfvxyLM5Ed6BcMaA4ceMig _sfvxy7M5Ed6BcMaA4ceMig">
+      <ownedEnd xmi:id="_sfvxyLM5Ed6BcMaA4ceMig" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_sfvxx7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sfvxybM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sfvxyrM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_sfvxy7M5Ed6BcMaA4ceMig" name="synchroniser les taches" type="_n0Od0rM5Ed6BcMaA4ceMig" association="_sfvxx7M5Ed6BcMaA4ceMig">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sfvxzLM5Ed6BcMaA4ceMig" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sfvxzbM5Ed6BcMaA4ceMig" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_rMbHdLPjEd68ac-fF92JXQ" name="Dependency1" supplier="_g1fxIrM5Ed6BcMaA4ceMig" client="_n0Od0rM5Ed6BcMaA4ceMig"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Wk69BtA0Ed6litO8JddKuA" name="" memberEnd="_Wk69B9A0Ed6litO8JddKuA _Wk69CtA0Ed6litO8JddKuA">
+      <ownedEnd xmi:id="_Wk69B9A0Ed6litO8JddKuA" name="utilisateur" type="_dPHgULM5Ed6BcMaA4ceMig" association="_Wk69BtA0Ed6litO8JddKuA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Wk69CNA0Ed6litO8JddKuA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Wk69CdA0Ed6litO8JddKuA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_Wk69CtA0Ed6litO8JddKuA" name="reviser les tâches" type="_F8dV8NA0Ed6litO8JddKuA" association="_Wk69BtA0Ed6litO8JddKuA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Wk69C9A0Ed6litO8JddKuA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Wk69DNA0Ed6litO8JddKuA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

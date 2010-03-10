@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true"
+	package="fr.alma.modele.persistance.xml">
+	<class name="fr.alma.modele.noyau.Tache">
+		<id name="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="nom" type="java.lang.String" />
+		<property name="notes" type="java.lang.String" />
+		<property name="contexte" type="java.lang.String" />
+		<property name="idProjet" type="long" />
+
+		<list name="tags" cascade="save-update">
+			<key column="id" />
+			<list-index column="taches_tag" />
+			<element type="java.lang.String" />
+		</list>
+
+		<list name="urls" cascade="save-update">
+			<key column="id" />
+			<list-index column="taches_url" />
+			<element type="java.lang.String" />
+		</list>
+
+		<property name="priorite" type="java.lang.Integer" />
+		<property name="tauxEffort" type="java.lang.Integer" />
+		<property name="dateDebut" type="java.util.Date" />
+		<property name="dateEcheance" type="java.util.Date" />
+		<property name="periodicite" type="fr.alma.modele.noyau.Periodicite" />
+
+		<!--
+			<property name="etat" column="etat"
+			type="fr.alma.modele.noyau.etat.EtatUserType" access="field" />
+		-->
+
+	</class>
+</hibernate-mapping>
+

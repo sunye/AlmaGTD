@@ -1,0 +1,515 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 4                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Architecture}
+	\minitoc
+
+		\section{Introduction}
+
+			\subsection{Objectif}
+
+	Le but de ce livrable est de définir l'architecture de notre application en tant que Client GTD. Cette étape va nous permettre d'avoir 
+	une idée de comment nos données vont transiter d'un composant à un autre. En effet, en spécifiant l'organisation spatiale de l'application
+	 et les environnements dans lequel l'application va évoluée, nous allons implicitement montrer comment s'organise nos éléments architecturaux.
+
+			\subsection{Organisation du chapitre}
+
+Dans un premier temps, nous détaillerons l'architecture de notre système grâce à un diagramme de deploiement. Puis, nous montrerons comment
+ s'organise les données dans la base de données locale. Pour finir, nous preparerons la conception détaillé (prochain livrable) en détaillant
+  les stéréotypes, les différents types utilisés, les normes de nommages, et les scripts de génération de code.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Architecture de l'applicaton}
+
+Cette section décrit l'architecture de l'application, illustrée par le diagramme de déploiment ci-dessous.	
+
+\subsection {Langage de l'application}
+
+Notre application sera développée en JAVA pour ses caractéristiques générales (Orienté Objet, simplicité, portable, etc.). L'IHM sera 
+probablement conçu avec la bibliothèque graphique Swing.
+
+\subsection {CORBA}
+
+Le cahier des charges précise que la liaison avec le serveur GTD doit être effectuée selon l'architecture CORBA (Common Object Request Broker Architecture).
+\subsubsection {ORB}
+Cela implique de notre part la mise en place d'un ORB (Object Request Broker) afin de rendre possible les appels aux objets du serveur GTD.
+Il existe plusieurs ORB open sources pour java tel que JacORB ou bien openORB.\\
+
+Autre point important, la définition des interfaces IDL, qui doivent être communes avec le serveur GTD.
+
+\subsection {Persistance}
+
+Les données de l'utilisateur doivent bien entendu persister. Il est impératif d'incorporer ce mécanisme pour que l'utilisateur puisse retrouver
+ses tâches et ses projets après la fermeture du programme. La persistance des données en locale est requise et n'est pas qu'une fonctionnalité de 
+confort. Bien que les données soient régulièrement synchronisées avec le serveur, il ne faut pas oublier que cette application peut se suffire à 
+elle-même. En effet, exiger une connexion Internet pour la sauvegarde des données est une contrainte assez forte. Cependant, le déploiement d'un 
+serveur de base de données (Oracle par exemple) nous parait peu adapté.\\
+
+Plusieurs choix s'offrent alors à nous pour persister nos données. Le plus simple est de transposer notre modélisation des composants et des 
+classes qui leurs sont rattachées dans une base de données relationnelle. Pour cela, le langage Java propose différentes API : Java Persistence
+API, JDO, EJB3, etc. Or le sujet de ce projet multi-module impose une liaison CORBA avec le serveur. Pour mettre en \oe{}uvre cette liaison, 
+les EJB3 sont une solution élégante sans être trop complexe. Mais cela implique du côté client, d'avoir un serveur JBoss de configuré. Ce choix 
+sous-entend que le serveur JBoss se lance et se ferme à chaque démarrage de l'application.\\
+
+Notre application a pour vocation de s'exécuter sur un poste client, et ceci de manière rapide. Elle doit donc être la plus légère possible. Cette
+contrainte est à prendre en compte, notamment dans le choix de l'architecture de la persistance. Dans ce cas de figure, les bases de données "lourdes"
+- type Oracle par exemple - sont à proscrire. On préfèrera utiliser une base de données embarquées, qui s'exécutera dans le même environnement 
+(même JVM donc) que notre client GTD. Autre élément, le choix de la base de données embarquées : celle-ci devra bien s'interfacer avec un framework
+type Hibernate, que nous pensons utiliser afin d'assurer le mapping entre nos objets Java, et la base de données.
+
+Notre choix portera donc sur la base de données H2. Écrite en Java, elle s'embarque sans problème dans n'importe quelle application java. Autre point 
+intéressant, Hibernate sait parfaitement s'interfacer avec ce type de base de données.
+
+Afin d'améliorer la rapidité du logiciel lors du lancement, on pourrait alors mettre de côté JBoss et les EJB3. Il existe une API de sérialisation des
+données nommée XStream. Elle permet d'éviter l'élaboration d'une base de données relationnelle. En effet, cette API permet de sérialiser les classes 
+dans un flux XML. Ce n'est pas vraiment une API de persistance comme Hibernate mais elle a l'avantage de ne pas avoir à faire ce mapping propre aux 
+SGBD relationnels.
+
+\subsection {Architecture générale}
+\begin{figure}[h]
+	\includegraphics[scale=0.9]{DeploymentDiagram.png}
+	\caption{Diagramme de déploiement}
+\end{figure}
+
+\FloatBarrier
+
+Il ne nous reste plus qu'à établir le schéma de la base de données locale afin de nous lancer dans la définition des classes. \\
+En ce qui concerne le schéma des bases de données suivant, nous sommes restés cohérent avec le schéma proposé par le serveur GTD.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Schéma des bases de données}
+		
+\subsection{Schéma global}
+
+D'après le schéma ci-dessous, un certain nombre de remarques doivent être mentionnées.
+
+\subsubsection{Projet par défaut}
+Toute idée créée est automatiquement ajoutée dans le projet ayant comme identifiant le nombre 0. C'est le projet qui englobe tous les autres projets.
+Ce projet est correspond alors à notre panier qui reçoit les idées rapidement saisies par l'utilisateur.
+
+\subsubsection{Contexte par défaut}
+Un projet peut contenir un contexte par défaut.
+
+\subsubsection{Gestion des Urls et des Tags}
+Une tâche peut recevoir un ensemble d'urls et de tags pour compléter sa description. Nous avons choisi de ne pas partager cet ensemble d'informations
+avec les autres tâches que l'utilisateur conçoit. Ceci se justifie en deux points.
+
+\begin{enumerate}
+	\item Les ressources d'une tâches sont rarement communes avec une autre tâche.
+	\item Partager ces ressources entre toutes les tâches augmente la complexité de la base de données qui dépasse largement le cadre de cette 
+	application. Il faudrait dans ce cas créer un ensemble de tables d'association ; ce qui diminuerait la facilité de l'écriture des requêtes pour
+	 interroger la base.
+\end{enumerate}
+
+\subsubsection{Liste de contact}
+Contrairement à ce qui vient d'être évoqué ci-dessus, la liste de contact ne peut être modélisée autrement que par une table d'association entre les 
+tables \textbf{Utilisateur} et \textbf{Tache}.
+
+\subsubsection{Gestion des sous-projets}
+De la même façon que pour la liste des contacts, les sous-projets seront modélisés par une table d'association.
+
+\begin{landscape}
+\subsection{Schéma global}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=19cm]{bdd_globale.png}
+	\caption{Schéma de la base de données}
+\end{figure}
+
+\end{landscape}
+
+\subsection{Types énumérés}
+Il est évident que la base de données que nous allons choisir au final devra supporter les types énumérés. Dans le cas contraire, une conversion de
+ces types en table de paramétrage est possible. Chaque valeur de l'énumération est converti en un nombre entier. Mais cette étape oblige de rajouter
+des contraintes d'intégrité. Ainsi, cette dernière devra interdire des valeurs définies en dehors des nombres entier définis dans chaque table de
+paramètre. Cette transformation est modélisée dans le schéma ci-dessous.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{bdd_avec_enum.png}
+	\caption{Base de données supportant les énumérations}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{bdd_sans_enum.png}
+	\caption{Base de données avec tables de paramètres}
+\end{figure}
+
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Stéréotypes \& sémantique associée}
+		
+			\subsection{Base de données}
+			
+\subsubsection{Table}
+Les classes de bases peuvent recevoir ce stéréotype pour les considérer comme des entités persistantes dans une base de données.
+\begin{figure}[h]
+	\centering
+	\includegraphics{stereotypeTable.png}
+	\caption{Stéréotype applicable à une table}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Primary key \& Foreign key}
+Les attributs habituels d'une classe sont modifiés. Ce stéréotype reproduit le concept de clé primaire et de clé étrangère propre à une base de données
+relationnelle.
+\begin{figure}[h]
+	\centering
+	\includegraphics{stereotypePkFk.png}
+	\caption{Stéréotype applicable à un attribut}
+\end{figure}
+
+\FloatBarrier
+
+			\subsection{Déploiement}
+
+\subsubsection{Stéréotypes de base}
+\begin{itemize}
+	\item Component
+	\item Artifact
+\end{itemize}
+
+\subsubsection{Stéréotypes spécifiques}
+\begin{itemize}
+	\item Java
+	\item EJB3
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Traduction de l'UML \& génération du code source}
+
+			\subsection{Traduction des types UML}
+
+Le tableau ci-dessous nous montre comment chaque type UML, que nous utilisons, va être traduit dans les différents langages que nous utilisons.
+
+\begin{center}
+\begin{tabular}{| l | l | l | l |}
+	\hline
+\bf{Types UML} & \bf{Classes Java} & \bf{Types CORBA} & \bf{Types SQL} \\
+	\hline
+string & java.lang.String & string & varchar2 \\
+	\hline
+unlimited natural& java.lang.long & long long & number \\
+	\hline
+integer & java.lang.Integer & long & integer \\
+	\hline
+boolean & java.lang.Boolean & boolean & boolean \\
+	\hline
+\end{tabular}
+\end{center}
+
+			\subsection{Norme de nommage}
+Les noms de variables, de classes, d'interfaces et de packages seront traduits de manière à respecter les conventions de nommage Java :
+
+\subsubsection{Variables}
+\begin{enumerate}
+	\item 1\up{ère} lettre en minuscule
+	\item mélange de minuscules
+	\item majuscule pour la première lettre de chaque mot suivant
+	\item caractères alphanumériques
+\end{enumerate}
+
+\subsubsection{Classes et interfaces}
+\begin{enumerate}
+	\item 1\up{ère} lettre en Majuscule
+	\item mélange de minuscules
+	\item majuscule pour la première lettre de chaque mot suivant
+\end{enumerate}
+
+\subsubsection{Packages}
+\begin{enumerate}
+	\item tout en minuscule
+	\item caractères alphanumériques 
+\end{enumerate}
+
+\subsubsection{Attributs}
+\begin{enumerate}
+	\item Les attributs sont tous générés comme privé
+	\item Les accesseurs sont nommés get + nomAttribut (avec la 1\up{ère} lettre en majuscule)
+	\item Les modifieurs sont nommés set + nomAttribut (avec la 1\up{ère} lettre en majuscule)
+\end{enumerate}
+
+			\subsection{Scripts de génération automatique Acceleo}    
+
+Pour que les sources de notre application respectent notre modèle, mais aussi dans un souci de gagner du temps, nous utiliserons de la génération
+de code automatique à partir de nos modèles UML.
+L'outils Acceleo permet cette génération selon les règles que nous avons défini précédemment. Ces règles sont écrites sous formes de templates,
+disponibles en annexe.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+Nous avons présenté l'architecture de notre système en détail, et plus particulièrement les différentes technologies que nous utiliserons grâce
+au diagramme de deploiement. Les schémas de base de données nous permet de mieux comprendre comment nos données vont être organisées. Et grâce aux
+détails des stéréotypes, des normes de nommage, et des scripts accéléo, nous allons gagner du temps pour l'implémentation des interfaces et des classes
+que nous présenterons dans le prochain livrable, qui concerne la conception détaillé.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subappendix
+\section{Templates Acceleo}
+% première annexe
+
+Nous avons écrit un certain nombre de scripts Acceleo pour générer le code Java depuis notre modele. Nos scripts sont séparés en deux fichiers,
+l'un pour générer les classes, l'autre pour générer les interfaces.
+
+	\subsection{Fichier class.mt}
+
+\lstset{language=java,frame=single, breaklines=true, basicstyle=\ttfamily,basicstyle=\scriptsize, keywordstyle=\color{red}, 
+commentstyle=\color{blue}, stringstyle=\color{blue}, identifierstyle=\ttfamily}
+\begin{lstlisting}
+<%
+metamodel http://www.eclipse.org/uml2/2.1.0/UML
+
+import PathUtil
+import ImportUtil
+%>
+<%script type="uml.Class" name="classe" file="<%package.name.toPath() + "/" +name%>.java"%>
+package <%package.name%>;
+<%gestImport%>
+//<%startUserCode%> for imports
+import java.util.List;
+
+//<%endUserCode%>
+
+
+/**
+ * @brief
+ * @version
+ * @author Université de Nantes
+ */
+public <%if (isAbstract){%>abstract <%}%>class <%name%> <%if (generalization){%>extends <%superClass.name%><%}%> <%if (interfaceRealization){%>implements <%for (interfaceRealization.sep(", ")){%><%interfaces%><%}%><%}%> {
+	
+
+	 <%for (attribute[association == null]){%>
+	/**  */
+	private <%declarationAtt%>
+
+	<%}%>
+	<%for (attribute[association != null]){%>
+	/**  */
+	private <%declarationAsso%>
+	<%}%>
+
+	
+	public <%name%> () {
+		super();
+	}
+	 	
+	<%-- Methodes importées de l interface --%>
+	<%for (interfaceRealization.contract.ownedOperation){%>
+	<%methodesInterfaces%>
+	<%}%>
+	
+	<%-- Methodes définies dans la super-classe (si abstraites)--%> 
+	 	<%if (superClass.isAbstract){%>	
+	 	<%superClass.methodesAbstraites%>
+	 	<%}%>
+	 	
+	<%-- Methodes définies dans la classe --%> 	
+	<%for (ownedOperation){%>
+	<%methodes%>
+	<%}%>
+	 
+	//GETTER
+	<%for (attribute){%><%getter%><%}%>
+	
+	//SETTER
+	<%for (attribute){%><%setter%><%}%>
+}
+
+
+<%-- -------------------------------------------------------------------%>
+<%-- --------------------DEBUT DES SCRIPTS -----------------------------%>
+<%-- -------------------------------------------------------------------%>
+
+
+<%script type="Parameter" name="declaration"%>
+<%resolveType%> <%name%>
+
+<%script type="Property" name="declarationAtt"%>
+<%if (upper == -1){%>List<<%type.name%>> <%name%>s;
+<%}else{%>
+<%type.name%> <%name%>;<%}%>
+
+<%script type="Property" name="declarationAsso"%>
+<%if (upper == -1){%>List<<%type.name%>> <%name%>s;
+<%}else{%>
+<%type.name%> <%name%>;<%}%>
+
+<%script type="Property" name="getter"%>
+<%if (visibility == "public" || visibility == "protected") {%>
+	<%visibility%> <%if (upper == -1){%>List<<%type.name%>> get<%name.toU1Case()%>s() {
+		return <%name%>s;
+	<%}else{%><%type.name%> get<%name.toU1Case()%>() {
+		return <%name%>;
+	<%}%>	}
+	
+<%}%>
+
+<%script type="Property" name="setter"%>
+<%if (visibility == "public" || visibility == "protected") {%>
+	<%visibility%> <%if (upper == -1){%>void set<%name.toU1Case()%>s(List<<%type.name%>> <%name%>s) {
+		this.<%name%>s = <%name%>s;
+	<%}else{%>void set<%name.toU1Case()%>(<%type.name%> <%name%>) {
+		this.<%name%> = <%name%>;
+	<%}%>	}
+	
+<%}%>
+
+<%script type="InterfaceRealization" name="interfaces"%>
+<%contract.name%>
+
+<%script type="Operation" name="methodes"%>
+/**
+	<%for (ownedParameter[direction == "in"]){%>
+	* @param <%name%>
+	<%}%>
+	<%for (ownedParameter[direction == "return"]){%>
+	* @return <%resolveType%>
+	<%}%>
+	*/
+ <%if (isAbstract){%>	
+	<%visibility%> abstract <%ownedParameter[direction == "return"].resolveType%> <%name%>(<%ownedParameter[direction == "in"].declaration.sep(", ")%>);<%}else{%>
+	<%visibility%> <%ownedParameter[direction == "return"].resolveType%> <%name%>(<%ownedParameter[direction == "in"].declaration.sep(", ")%>) {
+		//<%startUserCode%> for <%name%> method body
+		//TODO
+		<%if (ownedParameter[direction == "return"]){%>
+		return null;
+		<%}%>
+		//<%endUserCode%>
+	}<%}%>
+	
+<%script type="Operation" name="methodesInterfaces"%>
+/**
+	<%for (ownedParameter[direction == "in"]){%>
+	* @param <%name%>
+	<%}%>
+	<%for (ownedParameter[direction == "return"]){%>
+	* @return <%resolveType%>
+	<%}%>
+	*/
+	<%visibility%> <%ownedParameter[direction == "return"].resolveType%> <%name%>(<%ownedParameter[direction == "in"].declaration.sep(", ")%>) {
+		//<%startUserCode%> for <%name%> method body
+		//TODO
+		<%if (ownedParameter[direction == "return"]){%>
+		return null;
+		<%}%>
+		//<%endUserCode%>
+	}
+	
+	<%script type="Class" name="methodesAbstraites"%>
+
+	 	<%for (ownedOperation){%>
+	 	<%if (isAbstract){%>
+	<%visibility%> <%ownedParameter[direction == "return"].resolveType%> <%name%>(<%ownedParameter[direction == "in"].declaration.sep(", ")%>) {
+		//<%startUserCode%> for <%name%> method body
+		//TODO
+		<%if (ownedParameter[direction == "return"]){%>
+		return null;
+		<%}%>
+		//<%endUserCode%>	
+	}
+	 	<%}%>
+	 	<%}%>
+	 	
+<%script type="Class" name="gestImport"%>
+
+<%-- import de la superclasse --%>
+<%if (superClass != null && superClass.package.name != package.name){%>
+<%(superClass.package.name+"."+superClass.name).addToImport()%>
+<%}%>
+<%-- import des interfaces --%>
+<%for (interfaceRealization){%>
+<%(contract.package.name+"."+contract.name).addToImport()%>
+<%}%>
+<%-- import des types des attributs --%>
+<%for (attribute){%>
+<%if (type.package.name != "UMLPrimitiveTypes"){%>
+<%(type.package.name+"."+type.name).addToImport()%>
+<%}%><%}%>
+<%-- import des types des signatures de méthodes --%>
+<%for (ownedOperation){%>
+<%for (ownedParameter){%>
+<%if (type.package.name != "UMLPrimitiveTypes"){%>
+<%(type.package.name+"."+type.name).addToImport()%>
+<%}%><%}%><%}%>
+<%getImports()%>
+
+<%script type="Parameter" name="resolveType"%>
+<%if (upper == -1){%>List<<%type.name%>><%}else{%><%type.name%><%}%>
+\end{lstlisting}
+
+
+	\subsection{interface.mt}
+	
+\begin{lstlisting}
+<%
+metamodel http://www.eclipse.org/uml2/2.1.0/UML
+import PathUtil
+import ImportUtil
+%>
+
+<%script type="uml.Interface" name="interface" file="<%package.name.toPath() + "/" +name%>.java"%>
+package <%package.name%>;
+<%gestImport%>
+//<%startUserCode%> for imports
+import java.util.List;
+
+//<%endUserCode%>
+
+<%visibility%> interface <%name%> {
+<%for (ownedOperation){%>
+	<%visibility%> <%ownedParameter[direction == "return"].resolveType%> <%name%>(<%ownedParameter[direction == "in"].declaration.sep(", ")%>);
+	<%}%>
+}
+
+
+<%script type="Parameter" name="declaration"%>
+<%resolveType%> <%name%>
+
+<%script type="uml.Interface" name="gestImport"%>
+<%-- import des types des signatures de méthodes --%>
+<%for (ownedOperation){%>
+<%for (ownedParameter){%>
+<%if (type.package.name != "UMLPrimitiveTypes"){%>
+<%if (!type.name.startsWith("List")){%>
+<%(type.package.name+"."+type.name).addToImport()%>
+<%}%>
+<%}%><%}%><%}%>
+<%getImports()%>
+
+<%script type="Parameter" name="resolveType"%>
+<%if (upper == -1){%>List<<%type.name%>><%}else{%><%type.name%><%}%>
+\end{lstlisting}
+
+	\subsection{enum.mt}
+	
+\begin{lstlisting}
+<%
+metamodel http://www.eclipse.org/uml2/2.1.0/UML
+
+import PathUtil
+%>
+
+<%script type="Enumeration" name="generateEnum" file="<%package.name.toPath() + "/" +name%>.java"%>
+package <%package.name%>;
+
+public enum <%name%> {
+	<%ownedLiteral.name.sep(",\n")%>
+}
+\end{lstlisting}	
+ 

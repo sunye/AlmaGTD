@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" package="fr.univnantes.alma.gtd.model.gestionnaireressources">
+    <class name="fr.univnantes.alma.gtd.model.gestionnaireressources.Tache" >
+        <id name="id" column="tacheId" type="java.lang.Integer">
+          <generator class="increment"/>
+        </id>
+        <property name="nom" type="java.lang.String"/>
+        <property name="priorite" type="java.lang.Integer"/>
+        <property name="effort" type="java.lang.Integer"/>
+		<many-to-one name="etatTache" class="fr.univnantes.alma.gtd.model.gestionnaireressources.EtatTache" access="field"/>
+   		<bag name="liens" access="field">
+    		<key column="OWNER"/>
+    		<element type="string"/>
+		</bag>
+		<bag name="notes"  access="field">
+    		<key column="OWNER"/>
+    		<element type="string"/>
+		</bag>
+	 </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+
+\section{Composant ClientWeb}
+L'utilisateur se connectera au serveur GTD à l'aide du composant WebClient. Ce
+composant est une RIA (Rich Internet Application). Le programme initialement écrit en Java sera transformé à l'aide du compilateur GWT en langage Web (javascript, HTML et css). Il permet donc
+d'alléger la charge du serveur web : Contrairement à du
+jsp qui est exécuté sur le serveur web, celui-ci va être exécuté sur le client.
+
+\medskip
+
+Le composant WebClient va utiliser les interfaces fournies par le
+WebServer. Celui-ci est en effet un service, les appels vont donc être réalisés
+via RPC (en javascript). GoogleWebToolkit fournit l'ensemble des outils nécessaires à la
+réalisation de cette communication.

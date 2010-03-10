@@ -1,0 +1,83 @@
+
+\section{Traitement des informations}
+\begin{usecase}{Process}
+
+\begin{information}
+\item[Acteur: ] Utilisateur
+\item[Niveau:] Tâche principale
+\item[Portée:] IHM, Base de donnée 
+\item[Pré-condition:] L'utilisateur est connecté au serveur web. 
+\item[Post-condition:] Une tâche est créée sur le serveur GTD. 
+\item[Priorité:] (5/5) : Cette étape est necessaire pour chacun des prochains cas d'utilisation.
+\item[Fréquence:] De façon ponctuelle.	
+\end{information}	
+
+\begin{scenario}
+\item[1] L'utilisateur regarde les éléments affichés dans sa boite à idées.
+\item[2] L'utilisateur saisie les informations relatives à la tâche qu'il souhaite créer (nom, date debut, date fin, priorité, temps et energie requis ...).
+\item[3] L'utilisateur crée la tâche.
+\end{scenario}	
+
+\begin{extension}
+	\item[1]L'utilisateur oublie de remplir un champ obligatoire.
+\end{extension}
+\end{usecase}
+
+\subsection{Exigences fonctionnelles}
+%<Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary information is not yet available.>
+
+%<Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.>
+
+%REQ-1:	
+%REQ-2:
+\begin{itemize}	\renewcommand{\labelitemi}{}
+	\item \textbf{FONC51} - Affichage de la boite à idées,
+	\item \textbf{FONC52} - Saisie des informations relatives à une tâche,
+	\item \textbf{FONC53} - Création d'une tâche,
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Synchronisation}
+\begin{usecase}{Synchronisation}
+
+\begin{information}
+\item[Acteur: ] Serveur Web
+\item[Niveau:] Tâche principale
+\item[Portée:] Base de donnée serveur Web et GTD
+\item[Pré-condition:] Le serveur web n'est pas synchronisé avec le serveur GTD 
+\item[Post-condition:] Le serveur web et GTD sont synchronisés
+\item[Priorité:] (5/5) : Cette étape est necessaire pour assurer une persistance des informations.
+\item[Fréquence:] A chacune des transactions
+\end{information}	
+
+\begin{scenario}
+\item[1] L'utilisateur effectue une opération sur le client web
+\item[2] Le serveur web enregistre les modifications utilisateur en mettant à jour sa base de données
+\item[3] Le serveur web envoi les modifications effectuées au serveur GTD
+\end{scenario}	
+
+\begin{extension}
+	\item[1]La connexion entre le serveur web et GTD est interrompue
+	\item[2]La connexion entre le serveur web et GTD se rétablie
+\end{extension}
+\end{usecase}
+
+\subsection{Exigences fonctionnelles}
+%<Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary information is not yet available.>
+
+%<Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.>
+
+%REQ-1:	
+%REQ-2:
+\begin{itemize}	\renewcommand{\labelitemi}{}
+	\item \textbf{FONC61} - Enregistrement des modifications sur le serveur web,
+	\item \textbf{FONC62} - Enregistrement des modifications sur le serveur GTD,
+	\item \textbf{FONC63} - Enregistrement des modifications sur le serveur GTD après une perte de connexion
+\end{itemize}
+

@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_PD00QOMmEd6wZpOZrSGQdQ" activeDiagram="_PD00QeMmEd6wZpOZrSGQdQ">
+  <model href="ContactDBSchema.uml#_w8IxIM37EdqwVrslYOdUDA"/>
+  <diagrams xmi:id="_PD00QeMmEd6wZpOZrSGQdQ" position="0,0" size="100,100" name="ContactDBSchema" viewport="35,0">
+    <property xmi:id="_PEMnsOMmEd6wZpOZrSGQdQ" key="pageFormatName" value="A4"/>
+    <property xmi:id="_PEMnseMmEd6wZpOZrSGQdQ" key="diagramWidth" value="840"/>
+    <property xmi:id="_PEMnsuMmEd6wZpOZrSGQdQ" key="diagramHeight" value="1188"/>
+    <property xmi:id="_PEMns-MmEd6wZpOZrSGQdQ" key="pageMarginName" value="Small Margin"/>
+    <property xmi:id="_PEMntOMmEd6wZpOZrSGQdQ" key="diagramTopMargin" value="20"/>
+    <property xmi:id="_PEMnteMmEd6wZpOZrSGQdQ" key="diagramBottomMargin" value="20"/>
+    <property xmi:id="_PEMntuMmEd6wZpOZrSGQdQ" key="diagramLeftMargin" value="20"/>
+    <property xmi:id="_PEMnt-MmEd6wZpOZrSGQdQ" key="diagramRightMargin" value="20"/>
+    <property xmi:id="_PEMnuOMmEd6wZpOZrSGQdQ" key="orientation" value="landscape"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_PD00QuMmEd6wZpOZrSGQdQ" presentation="org.topcased.modeler.uml.classdiagram">
+      <element href="ContactDBSchema.uml#_w8IxIM37EdqwVrslYOdUDA"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" xmi:id="_QtJigOMmEd6wZpOZrSGQdQ" position="394,265" size="111,-1">
+      <anchorage xmi:id="_s2CqYeMnEd6wZpOZrSGQdQ" graphEdge="_s2FGoOMnEd6wZpOZrSGQdQ _DpJOwOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtJigeMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_QtHGQOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtJiguMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtJig-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtJihOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGQOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtObAOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtObAeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGQeMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtObAuMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtObA-MmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGQuMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtPCEOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtPCEeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGQ-MmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtJiheMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtJihuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtJih-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGQOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_QtKwoOMmEd6wZpOZrSGQdQ" position="42,133" size="111,-1">
+      <anchorage xmi:id="_sBK34OMnEd6wZpOZrSGQdQ" graphEdge="_sBMtEOMnEd6wZpOZrSGQdQ __feDoOMnEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtKwoeMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_QtHGROMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtKwouMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtKwo-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtKwpOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGROMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtPpIOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtPpIeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGReMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtKwpeMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtKwpuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtKwp-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGROMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_QtL-wOMmEd6wZpOZrSGQdQ" position="334,17" size="122,-1">
+      <anchorage xmi:id="__fbnYOMnEd6wZpOZrSGQdQ" graphEdge="__feDoOMnEd6wZpOZrSGQdQ _AbSysOMoEd6wZpOZrSGQdQ _A1mwIOMoEd6wZpOZrSGQdQ _BS5wIOMoEd6wZpOZrSGQdQ _tW1qsONxEd6A880EecIjXw"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtL-weMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_QtHGRuMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtL-wuMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtL-w-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtL-xOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGRuMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtQQMOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtQQMeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGR-MmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtL-xeMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtL-xuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtL-x-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGRuMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_QtMl0OMmEd6wZpOZrSGQdQ" position="341,536" size="121,-1">
+      <anchorage xmi:id="_B1vXcOMoEd6wZpOZrSGQdQ" graphEdge="_B1xzsOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtMl0eMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_QtHGSOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtMl0uMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtMl0-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtMl1OMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGSOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtQ3QOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtQ3QeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGSeMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtReUOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtReUeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGSuMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtReUuMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtReU-MmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGS-MmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtMl1eMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtMl1uMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtMl1-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGSOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_QtNM4OMmEd6wZpOZrSGQdQ" position="354,440" size="98,-1">
+      <anchorage xmi:id="_B1vXceMoEd6wZpOZrSGQdQ" graphEdge="_B1xzsOMoEd6wZpOZrSGQdQ _CZLbsOMoEd6wZpOZrSGQdQ _C70OsOMoEd6wZpOZrSGQdQ _DpJOwOMoEd6wZpOZrSGQdQ _EDxVQOMoEd6wZpOZrSGQdQ _vUu6wONxEd6A880EecIjXw"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtNM4eMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_QtHGTOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtNM4uMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtNM4-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtNM5OMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGTOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_QtSFYOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtSFYeMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_QtHGTeMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_QtNM5eMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_QtNM5uMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_QtNM5-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_QtHGTOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_6NuSoOMmEd6wZpOZrSGQdQ" position="206,136" size="132,-1">
+      <anchorage xmi:id="_sb324OMnEd6wZpOZrSGQdQ" graphEdge="_sb6TIOMnEd6wZpOZrSGQdQ _AbSysOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6NuSoeMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_6NsdcOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_6NuSouMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_6NuSo-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6NuSpOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_6NsdcOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_6NvgwOMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6NvgweMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_6NsdceMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_6NuSpeMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_6NuSpuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6NuSp-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_6NsdcOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_8AURoOMmEd6wZpOZrSGQdQ" position="374,135" size="136,-1">
+      <anchorage xmi:id="_s2CqYOMnEd6wZpOZrSGQdQ" graphEdge="_s2FGoOMnEd6wZpOZrSGQdQ _A1mwIOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8AURoeMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_8ATDgOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_8AURouMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_8AURo-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8AURpOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_8ATDgOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_8AWG0OMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8AWG0eMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_8ATDgeMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_8AURpeMmEd6wZpOZrSGQdQ">
+        <property xmi:id="_8AURpuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8AURp-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_8ATDgOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="__BMBoOMmEd6wZpOZrSGQdQ" position="559,135" size="147,-1">
+      <anchorage xmi:id="_tP1DYOMnEd6wZpOZrSGQdQ" graphEdge="_tP3foOMnEd6wZpOZrSGQdQ _BS5wIOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__BMBoeMmEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#__BKzgOMmEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="__BMBouMmEd6wZpOZrSGQdQ">
+        <property xmi:id="__BMBo-MmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__BMBpOMmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#__BKzgOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="__BN20OMmEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__BN20eMmEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#__BKzgeMmEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="__BMBpeMmEd6wZpOZrSGQdQ">
+        <property xmi:id="__BMBpuMmEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__BMBp-MmEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#__BKzgOMmEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_LiK18OMnEd6wZpOZrSGQdQ" position="51,257" size="111,-1">
+      <anchorage xmi:id="_sBK34eMnEd6wZpOZrSGQdQ" graphEdge="_sBMtEOMnEd6wZpOZrSGQdQ _CZLbsOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiK18eMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_LiJAwOMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_LiK18uMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_LiK18-MnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiK19OMnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_LiJAwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_LiMEEOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiMrIOMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_LiJAweMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_LiNSMOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiNSMeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_LiJn0OMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_LiN5QOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiN5QeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_LiJn0eMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_LiK19eMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_LiK19uMnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_LiK19-MnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_LiJAwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Mcmd4OMnEd6wZpOZrSGQdQ" position="217,262" size="111,-1">
+      <anchorage xmi:id="_sb324eMnEd6wZpOZrSGQdQ" graphEdge="_sb6TIOMnEd6wZpOZrSGQdQ _EDxVQOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Mcmd4eMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_MclPwOMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_Mcmd4uMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_Mcmd4-MnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Mcmd5OMnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_MclPwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_McnsAOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_McnsAeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_MclPweMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_Mco6IOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Mco6IeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_MclPwuMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_McphMOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_McphMeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_MclPw-MnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_Mcmd5eMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_Mcmd5uMnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Mcmd5-MnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_MclPwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_ND9_4OMnEd6wZpOZrSGQdQ" position="596,270" size="111,-1">
+      <anchorage xmi:id="_tP1qcOMnEd6wZpOZrSGQdQ" graphEdge="_tP3foOMnEd6wZpOZrSGQdQ _C70OsOMoEd6wZpOZrSGQdQ"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ND9_4eMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_ND8xwOMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_ND9_4uMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_ND9_4-MnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ND9_5OMnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_ND8xwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_ND_1EOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ND_1EeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_ND8xweMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_NEAcIOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_NEAcIeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_ND8xwuMnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_NEBDMOMnEd6wZpOZrSGQdQ" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_NEBDMeMnEd6wZpOZrSGQdQ" presentation="default">
+            <element href="ContactDBSchema.uml#_ND8xw-MnEd6wZpOZrSGQdQ"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_ND9_5eMnEd6wZpOZrSGQdQ">
+        <property xmi:id="_ND9_5uMnEd6wZpOZrSGQdQ" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ND9_5-MnEd6wZpOZrSGQdQ" presentation="default">
+          <element href="ContactDBSchema.uml#_ND8xwOMnEd6wZpOZrSGQdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_sBMtEOMnEd6wZpOZrSGQdQ" anchor="_sBK34OMnEd6wZpOZrSGQdQ _sBK34eMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_sBMtEeMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_sBNUIOMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtEuMnEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtE-MnEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtFOMnEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtFeMnEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtFuMnEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sBMtF-MnEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_sBMtGOMnEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_sBMtGeMnEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_sb6TIOMnEd6wZpOZrSGQdQ" anchor="_sb324OMnEd6wZpOZrSGQdQ _sb324eMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_sb6TIeMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_sb6TKuMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TIuMnEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TI-MnEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TJOMnEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TJeMnEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TJuMnEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_sb6TJ-MnEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_sb6TKOMnEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_sb6TKeMnEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_s2FGoOMnEd6wZpOZrSGQdQ" anchor="_s2CqYOMnEd6wZpOZrSGQdQ _s2CqYeMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_s2FGoeMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_s2FGquMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGouMnEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGo-MnEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGpOMnEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGpeMnEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGpuMnEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_s2FGp-MnEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_s2FGqOMnEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_s2FGqeMnEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_tP3foOMnEd6wZpOZrSGQdQ" anchor="_tP1DYOMnEd6wZpOZrSGQdQ _tP1qcOMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_tP3foeMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_tP3fquMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fouMnEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fo-MnEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fpOMnEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fpeMnEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fpuMnEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tP3fp-MnEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_tP3fqOMnEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_tP3fqeMnEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="__feDoOMnEd6wZpOZrSGQdQ" anchor="__fbnYOMnEd6wZpOZrSGQdQ _sBK34OMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="__feDoeMnEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#__feDquMnEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDouMnEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDo-MnEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDpOMnEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDpeMnEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDpuMnEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="__feDp-MnEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="__feDqOMnEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="__feDqeMnEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_AbSysOMoEd6wZpOZrSGQdQ" anchor="__fbnYOMnEd6wZpOZrSGQdQ _sb324OMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_AbSyseMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_AbSyuuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSysuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSys-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSytOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSyteMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSytuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_AbSyt-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_AbSyuOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_AbSyueMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_A1mwIOMoEd6wZpOZrSGQdQ" anchor="__fbnYOMnEd6wZpOZrSGQdQ _s2CqYOMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_A1mwIeMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_A1mwKuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwIuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwI-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwJOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwJeMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwJuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_A1mwJ-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_A1mwKOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_A1mwKeMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_BS5wIOMoEd6wZpOZrSGQdQ" anchor="__fbnYOMnEd6wZpOZrSGQdQ _tP1DYOMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_BS6XMOMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_BS6XOeMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XMeMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XMuMoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XM-MoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XNOMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XNeMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_BS6XNuMoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_BS6XN-MoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_BS6XOOMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_B1xzsOMoEd6wZpOZrSGQdQ" anchor="_B1vXcOMoEd6wZpOZrSGQdQ _B1vXceMoEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_B1xzseMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_B1xzuuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xzsuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xzs-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xztOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xzteMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xztuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_B1xzt-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_B1xzuOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_B1xzueMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_CZLbsOMoEd6wZpOZrSGQdQ" anchor="_B1vXceMoEd6wZpOZrSGQdQ _sBK34eMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_CZLbseMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_CZLbuuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbsuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbs-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbtOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbteMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbtuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_CZLbt-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CZLbuOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CZLbueMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_C70OsOMoEd6wZpOZrSGQdQ" anchor="_B1vXceMoEd6wZpOZrSGQdQ _tP1qcOMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_C70OseMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_C701wOMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70OsuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70Os-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70OtOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70OteMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70OtuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_C70Ot-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_C70OuOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_C70OueMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_DpJOwOMoEd6wZpOZrSGQdQ" anchor="_B1vXceMoEd6wZpOZrSGQdQ _s2CqYeMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_DpJOweMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_DpJOyuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOwuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOw-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOxOMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOxeMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOxuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_DpJOx-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_DpJOyOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_DpJOyeMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_EDxVQOMoEd6wZpOZrSGQdQ" anchor="_B1vXceMoEd6wZpOZrSGQdQ _sb324eMnEd6wZpOZrSGQdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_EDxVQeMoEd6wZpOZrSGQdQ" presentation="default">
+        <element href="ContactDBSchema.uml#_EDxVSuMoEd6wZpOZrSGQdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVQuMoEd6wZpOZrSGQdQ" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVQ-MoEd6wZpOZrSGQdQ" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVROMoEd6wZpOZrSGQdQ" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVReMoEd6wZpOZrSGQdQ" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVRuMoEd6wZpOZrSGQdQ" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_EDxVR-MoEd6wZpOZrSGQdQ" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_EDxVSOMoEd6wZpOZrSGQdQ" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_EDxVSeMoEd6wZpOZrSGQdQ" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_V5DKkONxEd6A880EecIjXw" position="754,141" size="100,-1">
+      <anchorage xmi:id="_r2ggYONxEd6A880EecIjXw" graphEdge="_r2i8oONxEd6A880EecIjXw _tW1qsONxEd6A880EecIjXw"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_V5DKkeNxEd6A880EecIjXw" presentation="default">
+        <element href="ContactDBSchema.uml#_V5Fm0ONxEd6A880EecIjXw"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_V5DKkuNxEd6A880EecIjXw">
+        <property xmi:id="_V5DKk-NxEd6A880EecIjXw" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_V5DKlONxEd6A880EecIjXw" presentation="default">
+          <element href="ContactDBSchema.uml#_V5Fm0ONxEd6A880EecIjXw"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_qdFPUONxEd6A880EecIjXw" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_qdFPUeNxEd6A880EecIjXw" presentation="default">
+            <element href="ContactDBSchema.uml#_qdGdcONxEd6A880EecIjXw"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_V5DxoONxEd6A880EecIjXw">
+        <property xmi:id="_V5DxoeNxEd6A880EecIjXw" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_V5DxouNxEd6A880EecIjXw" presentation="default">
+          <element href="ContactDBSchema.uml#_V5Fm0ONxEd6A880EecIjXw"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_Ywi8IONxEd6A880EecIjXw" position="752,270" size="100,-1">
+      <anchorage xmi:id="_r2ggYeNxEd6A880EecIjXw" graphEdge="_r2i8oONxEd6A880EecIjXw _vUu6wONxEd6A880EecIjXw"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Ywi8IeNxEd6A880EecIjXw" presentation="default">
+        <element href="ContactDBSchema.uml#_YwkxUONxEd6A880EecIjXw"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_Ywi8IuNxEd6A880EecIjXw">
+        <property xmi:id="_Ywi8I-NxEd6A880EecIjXw" key="eStructuralFeatureID" value="37"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Ywi8JONxEd6A880EecIjXw" presentation="default">
+          <element href="ContactDBSchema.uml#_YwkxUONxEd6A880EecIjXw"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_a9NoAONxEd6A880EecIjXw" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_a9NoAeNxEd6A880EecIjXw" presentation="default">
+            <element href="ContactDBSchema.uml#_a9OPEONxEd6A880EecIjXw"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_e2fmsONxEd6A880EecIjXw" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_e2fmseNxEd6A880EecIjXw" presentation="default">
+            <element href="ContactDBSchema.uml#_e2g00ONxEd6A880EecIjXw"/>
+          </semanticModel>
+        </contained>
+        <contained xsi:type="di:GraphNode" xmi:id="_heMowONxEd6A880EecIjXw" position="0,0" size="-1,-1">
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_heMoweNxEd6A880EecIjXw" presentation="default">
+            <element href="ContactDBSchema.uml#_heN24ONxEd6A880EecIjXw"/>
+          </semanticModel>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_Ywi8JeNxEd6A880EecIjXw">
+        <property xmi:id="_Ywi8JuNxEd6A880EecIjXw" key="eStructuralFeatureID" value="47"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Ywi8J-NxEd6A880EecIjXw" presentation="default">
+          <element href="ContactDBSchema.uml#_YwkxUONxEd6A880EecIjXw"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_km2bwONxEd6A880EecIjXw" position="578,489" size="234,72">
+      <property xmi:id="_km2bweNxEd6A880EecIjXw" key="noteValue" value="L'id est un lien vers l'élément contenant le contact."/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_km2bwuNxEd6A880EecIjXw" presentation="default" typeInfo="Note"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_r2i8oONxEd6A880EecIjXw" anchor="_r2ggYONxEd6A880EecIjXw _r2ggYeNxEd6A880EecIjXw">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_r2i8oeNxEd6A880EecIjXw" presentation="default">
+        <element href="ContactDBSchema.uml#_r2jjsONxEd6A880EecIjXw"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8ouNxEd6A880EecIjXw" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8o-NxEd6A880EecIjXw" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8pONxEd6A880EecIjXw" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8peNxEd6A880EecIjXw" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8puNxEd6A880EecIjXw" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_r2i8p-NxEd6A880EecIjXw" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_r2i8qONxEd6A880EecIjXw" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_r2i8qeNxEd6A880EecIjXw" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_tW1qsONxEd6A880EecIjXw" anchor="__fbnYOMnEd6wZpOZrSGQdQ _r2ggYONxEd6A880EecIjXw">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_tW1qseNxEd6A880EecIjXw" presentation="default">
+        <element href="ContactDBSchema.uml#_tW2RwONxEd6A880EecIjXw"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qsuNxEd6A880EecIjXw" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qs-NxEd6A880EecIjXw" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qtONxEd6A880EecIjXw" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qteNxEd6A880EecIjXw" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qtuNxEd6A880EecIjXw" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_tW1qt-NxEd6A880EecIjXw" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_tW1quONxEd6A880EecIjXw" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_tW1queNxEd6A880EecIjXw" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_vUu6wONxEd6A880EecIjXw" anchor="_B1vXceMoEd6wZpOZrSGQdQ _r2ggYeNxEd6A880EecIjXw">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_vUu6weNxEd6A880EecIjXw" presentation="default">
+        <element href="ContactDBSchema.uml#_vUvh0ONxEd6A880EecIjXw"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6wuNxEd6A880EecIjXw" visible="false" id="srcNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6w-NxEd6A880EecIjXw" visible="false" id="srcPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6xONxEd6A880EecIjXw" visible="false" id="srcCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6xeNxEd6A880EecIjXw" visible="false" id="targetNameEdgeObject" uDistance="10" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6xuNxEd6A880EecIjXw" visible="false" id="targetPropertiesEdgeObject" uDistance="25" vDistance="10"/>
+      <contained xsi:type="di:EdgeObjectUV" xmi:id="_vUu6x-NxEd6A880EecIjXw" visible="false" id="targetCountEdgeObject" uDistance="10" vDistance="-10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_vUu6yONxEd6A880EecIjXw" visible="false" id="middleNameEdgeObject" offset="0,10"/>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_vUu6yeNxEd6A880EecIjXw" visible="false" id="stereotypeEdgeObject" offset="0,-10"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

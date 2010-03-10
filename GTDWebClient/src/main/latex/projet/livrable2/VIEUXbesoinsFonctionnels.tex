@@ -1,0 +1,69 @@
+\chapter{Besoins fonctionnels}
+
+Ce chapitre présente la liste des besoins fonctionnels de l'application GTD. Nous précisont ici le livrable1 : en effet, la partie précédente concerne la méthode GTD. Il s'agit maintenant de présenter les fonctionnalités que devra offrir le système à l'utilisateur pour pouvoir appliquer la méthode GTD.\\
+
+Notre partie concerne le client web et le serveur web. Cependant, d'un point de vue fonctionnalités, l'interface sera le point d'entrée de l'application et devra donc fournir toutes les fonctions du système global à travers cette interface.\\
+
+\section{Sous-cas d'utilisation}
+
+\begin{enumerate} \renewcommand{\labelitemi}{$\bullet$}
+
+
+\item \textbf{Identification}
+\\L'utilisateur doit pouvoir retrouver ses données dans l'application multi-utilisateur. Cela implique la gestion de plusieurs comptes. De plus, l'utilisation de compte pour la connexion s'inscrit parfaitement dans le critère de sécurisation.
+\\\\Besoins fonctionnels :	
+	\begin{itemize}	\renewcommand{\labelitemi}{$\Rightarrow$}
+	\item Saisie des identifiants,
+	\item Inscription,
+	\item Regéneration de mot de passe.\\
+	\end{itemize}
+	
+\item \textbf{Collect}
+\\L'application n'a normalement pas à intervenir dans cette étape. Le recensement des idées est effectivement un processus utilisateur. Cependant, un pense-bête a idées non traitées par l'utilisateur peut s'avérer fort utile dans le cas où l'utilisateur est interrompu dans son processus.Un pense bête permet alors de stocker les idées non traitées.
+\\\\Besoins fonctionnels :
+	\begin{itemize}	\renewcommand{\labelitemi}{$\Rightarrow$}
+	\item Saisie des idées,
+	\item Suppression des idées.\\
+	\end{itemize}
+	
+
+\item \textbf{Process}
+\\Pendant le process, l'utilisateur doit pouvoir saisir les tâches qu'il a recensé comme telle.
+\\\\Besoins fonctionnels :
+	\begin{itemize}	\renewcommand{\labelitemi}{$\Rightarrow$}
+	\item Saisie de tâches,
+	\item Affectation des paramètres de la tâche (nom, date debut, date fin, priorité, temps et energie requis ...).\\
+	\end{itemize}
+	
+\item \textbf{Organisation}
+\\L'organisation des tâches concerne la définition de contraintes intra tâche.
+\\\\Besoins fonctionnels :
+	\begin{itemize}	\renewcommand{\labelitemi}{$\Rightarrow$}
+	\item Suppression d'une tâche,
+	\item Affectation d'une tâche à un projet,
+	\item Ordonnancement des tâches en séquence dans un projet, 
+	\item Modification d'une tâche.\\
+	\end{itemize}
+	
+
+\item \textbf{Revue}	
+\\Après avoir actualiser les informations, et re-collecter/re-traiter, il doit être possible de consulter les données selon différentes vues.
+\\\\Besoins fonctionnels :
+	\begin{itemize}	\renewcommand{\labelitemi}{$\Rightarrow$}
+	\item Définir son contexte (type status msn)
+	\item Afficher la liste des tâches
+		\begin{itemize}
+			\item par échéancier,
+			\item par agenda,
+			\item par projet (collapse),
+			\item selon un contexte.\\
+		\end{itemize}
+	\item Lien vers l'interface de process?
+	\item Interface de nettoyage ?
+	\end{itemize}
+	
+\end{enumerate}
+
+\section{Multi-utilisateur}
+
+Le système doit être capable de gérer plusieurs utilisateurs. Ainsi, chaque compte correspond à un utilisateur et ses stoque ses données. Cependant, chaque compte est hermetique et ne possède aucune relation avec les autres. En effet, la définition de la méthode GTD selon David Allen, la décrit comme un méthode dédié à optimiser le temps de travail d'un utilisateur, la méthode est donc strictement personnel; le fait de déléguer une tâche n'implique donc pas de dépendances envers un autre compte par exemple.

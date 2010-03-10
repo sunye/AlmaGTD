@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: Generateur
+Bundle-SymbolicName: Generateur
+Bundle-Version: 1.0.0
+Bundle-Localization: plugin
+Require-Bundle: fr.obeo.acceleo.gen

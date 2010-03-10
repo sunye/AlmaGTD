@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	    <parent>
+	        <groupId>fr.alma</groupId>
+	        <artifactId>AlmaGTD</artifactId>
+	        <version>1.0</version>
+	    </parent>
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>fr.alma</groupId>
+	<artifactId>GTDClientKrom</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>Module GTD Client Krom</name>
+	<description>Instrumentation de la méthode GTD conçue dans le cadre de notre projet multi-modules</description>
+
+	<scm>
+		<connection>scm:svn:http://multiprojets.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://multiprojets.googlecode.com/svn/trunk/</developerConnection>
+		<url>http://code.google.com/p/multiprojets/</url>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${compileSource}</source>
+					<target>${compileSource}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>fr.alma.gtd.ihm.MainIHM</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>java</executable>
+					<mainClass>fr.alma.gtd.ihm.MainIHM</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-5</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>fr.alma.gtd.ihm.MainIHM</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.2.125</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.6.ga</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.transaction</groupId>
+					<artifactId>jta</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.4.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+	</dependencies>
+
+	<developers>
+		<developer>
+			<id>jeremy.braud</id>
+			<name>BRAUD Jeremy</name>
+			<email>braud.jeremy@gmail.com</email>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<organization>Alma</organization>
+			<timezone>+2</timezone>
+		</developer>
+		<developer>
+			<id>nicolas.bremard</id>
+			<name>BREMARD Nicolas</name>
+			<email>nickos64252@gmail.com</email>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<organization>Alma</organization>
+			<timezone>+2</timezone>
+		</developer>
+		<developer>
+			<id>cedric.krommenhoek</id>
+			<name>KROMMENHOEK Cedric</name>
+			<email>cedric.krommenhoek@gmail.com</email>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<organization>Alma</organization>
+			<timezone>+2</timezone>
+		</developer>
+		<developer>
+			<id>boris.lucas</id>
+			<name>LUCAS Boris</name>
+			<email>borislucas@wanadoo.fr</email>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<organization>Alma</organization>
+			<timezone>+2</timezone>
+		</developer>
+	</developers>
+
+</project>

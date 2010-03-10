@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" package="fr.univnantes.alma.gtd.model.gestionnaireressources">
+    <class name="fr.univnantes.alma.gtd.model.gestionnaireressources.EtatTache">
+	   	<id name="id" column="etatTacheId" type="java.lang.Integer">
+          <generator class="increment"/>
+        </id>
+	    <discriminator column="type" type="string"/>
+	    <subclass name="fr.univnantes.alma.gtd.model.gestionnaireressources.AFaire">  
+	    </subclass>
+	    <subclass name="fr.univnantes.alma.gtd.model.gestionnaireressources.EnAttente">  
+	    </subclass>
+	    <subclass name="fr.univnantes.alma.gtd.model.gestionnaireressources.Deleguee">  
+	    </subclass>
+	    <subclass name="fr.univnantes.alma.gtd.model.gestionnaireressources.Finie">  
+	    </subclass>
+	</class>  
+</hibernate-mapping>

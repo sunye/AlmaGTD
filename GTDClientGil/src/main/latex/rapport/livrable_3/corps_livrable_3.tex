@@ -1,0 +1,1009 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 3                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Spécification des composants}
+	\minitoc
+
+		\section{Introduction}
+
+			\subsection{Objectif}
+
+	Le but de ce livrable est de définir les composants dans notre système en tant que Client GTD. Cette étape va nous permettre d'avoir une idée plus précise de comment notre architecture va s'organiser. En effet, en spécifiant les interfaces des composants, nous allons implicitement montrer comment les différents composants vont dialoguer.
+
+			\subsection{Organisation du chapitre}
+
+	Dans un premier temps, nous détaillerons les différents composants qui composent notre système. Puis, nous illustrerons les dialogues entre composants en décrivant des diagrammes de séquences et d'activités. Pour finir, nous expliciterons le rôle de chaque interface présente dans le diagramme de composants.
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Description des composants}
+
+En tant que Client GTD, nous nous interesserons pas à la partie Serveur Web puisqu'en aucun cas nous ne traiterons ou receverons de données de leur part. \\
+Bien que l'application cliente pourra s'éxécuter en local, nous serons en étroite relation avec le serveur GTD si le client en a besoin. En effet, nous devons prévoir l'envoi de données sur le serveur afin que le client puisse récupérer ses données. Par contre, nous ne dialoguerons qu'avec le c\oe{}ur du serveur et non via son IHM. Ainsi, on peut facilement délimiter notre système en tant que client GTD.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.7]{limites.png}
+	\caption{Limites du système}
+\end{figure}
+
+\FloatBarrier
+
+Une fois les limites du sytème fixées, on peut décrire plus facilement l'organisation de nos composants. Nous avons décomposé le système en trois applications où chaque application est représentée par un package. Il est à noter que les noms des composants sont à titre indicatif.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=10cm]{composant_client.png}
+	\caption{Package client}
+\end{figure}
+
+
+C'est le package central, il possède les composants ConnexionLocale, GestionUtilisateurs, GestionTaches et BD.
+\begin{itemize}
+	\item ConnexionLocale : c'est le composant permettant de traiter les données.
+	\item GestionUtilisateurs : ce composant sert à créer et authentifier des utilisateurs.
+	\item GestionTaches : c'est le composant permettant de créer des tâches et des projets.
+	\item BD : c'est le composant permettant de stocker ce que l'application a besoin. C'est à dire pour chaque utilisateurs, leurs tâches, leurs projets, leurs configurations\ldots Il assure la persistence des données.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=10cm]{composant_utilisateur.png}
+	\caption{Package utilisateur}
+\end{figure}
+
+C'est le package relatif à l'utilisateur, il possède le composant IHMUtilisateur et ControleurUtilisateur
+\begin{itemize}
+	\item IHMUtilisateur : C'est le composant décrivant l'interface homme-machine. C'est l'apparence graphique que l'utilisateur voit lorsqu'il utilise l'application.
+	\item ControleurUtilisateur : C'est le composant permettant de contrôler les actions faites par l'utilisateur afin qu'elles soient traitées.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=7cm]{composant_serveur.png}
+	\caption{Package serveur}
+\end{figure}
+
+\FloatBarrier
+
+C'est le package relatif au serveur, il possède le composant ConnexionServeur et SynchronisationServeur
+\begin{itemize}
+	\item ConnexionServeur : C'est le composant permettant de faire le lien entre le client GTD et le serveur GTD.
+	\item SynchronisationServeur : C'est le composant qui gère les transactions entre le client GTD et le serveur GTD.
+\end{itemize}
+
+Il ne nous reste plus qu'à décrire les interactions entres ces différents composants.       
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\section{Interactions}
+
+\paragraph{}
+Les trois packages évoqués ci-dessus interagissent de la manière suivante. Voici une modélisation (globale) que nous proposons pour le client GTD.
+
+\begin{landscape}
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.85]{Architecture.png}
+	\caption{Diagramme de Composant}
+\end{figure}
+\end{landscape}
+
+%\includegraphics[scale=1]{file}
+
+%% Utiliser des interactions, c'est à dire, des diagrammes de séquence et des diagrammes de communication. Utiliser éventuellement des diagrammes d'activités.
+
+%%\emph{Ne vous limitez pas à une seule interaction par cas d'utilisation}
+
+
+\begin{landscape}
+\subsection{Connexion}
+\paragraph{}
+Si un utilisateur tente de se connecter à l'application, on vérifie tout d'abord s'il est enregistré en local. S'il ne l'est pas, on renvoi une notification d'erreur, sinon l'utilisateur est bien connecté. \\
+Parallèlement, on vérifie s'il est inscrit sur le serveur. Pour cela, on vérifie dans la base de donnée si l'utilisateur possède un compte serveur. S'il n'en possède pas, on ping le serveur et s'il répond favorablement, on envoi une requête de création de compte. Une fois le compte sur le serveur crée, on n'oubli pas de mettre à jour la base de donnée car l'utilisateur possède maintenant un compte distant. Pour finir, on envoi une notification à l'utilisateur du fait de la création de son compte distant.
+
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.5]{Capture.png}
+	\caption{Connexion de l'utilisateur}
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+Le diagramme d'activité suivant nous renseigne de la marche à suivre lors de la connexion de l'utilisateur.
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{ConnectionA.png}
+	\caption{Connexion de l'utilisateur}
+\end{figure}
+
+\end{landscape}
+\subsection{Déconnexion}
+Le diagramme ci-dessous explique comment l'utilisateur se déconnecte et décrit les intéractions produites entre les différents composants de notre système. La déconnexion va agir sur le composant ConnexionLocal mais aussi si l'utilisateur est connecté sur le composant ConnexionServeur.
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{SeqDeconnexion.png}
+	\caption{Déconnexion de l'utilisateur}
+\end{figure}
+
+\subsection{Ajout d'un projet}
+Lors de l'ajout d'un projet, l'IHM va proposer à l'utilisateur de remplir les champs correspondants aux différents attributs d'un projet. Le composant ControleurIHM va créé une instance de ce projet pour ensuite grâce aux interactions entre les autres composants, l'ajouter dans le GestionnaireDeTâche mais aussi dans la BD.
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{SeqAjoutProjet.png}
+	\caption{Ajout d'un projet utilisateur}
+\end{figure}
+
+\subsection{Ajout d'une tâche}
+De la même manière que l'ajout d'un projet, l'IHM va proposer à l'utilisateur de remplir les champs correspondants aux différents attributs d'une tâche. Nous n'avons pas décrit que si l'utilisateur ne choisit pas dans l'attribut idProjet, le projet correspondant à la tâche alors le contrôleur de l'IHM va automatiquement choisir le projet par défaut nommé "Panier".
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{SeqAjoutTache.png}
+	\caption{Ajout d'une tâche utilisateur}
+\end{figure}
+\FloatBarrier
+
+\subsection{Modification d'une tâche}
+Ce diagramme décrit comment l'utilisateur peut modifier une tâche présente dans notre système GTD. Nous n'avons pas décrit la façon dont l'utilisateur va modifier un projet car cette opération se déroule de la même manière que la modification de tâche. L'utilisateur récupère la tâche qu'il souhaite modifier. Une fois qu'il l'a récupéré, l'IHM va lui proposer une fenêtre où il pourra modifier les attributs de cette tâche (hormis l'identifiant unique de la tâche). Le contrôleur va alors modifier cette tâche, et interagir avec les autres composants pour modifier cette tâche dans le Gestionnaire de Tâche mais aussi dans la base de données local.
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.6]{SeqModifTache.png}
+	\caption{Modification d'une tâche}
+\end{figure}
+
+\begin{landscape}
+	\subsection{Synchroniser}
+	Le serveur informe le client GTD qu'il est connecté. À partir de cet instant, une modélisation possible de la synchronisation est de considérer que les données les plus récentes sont prioritaires. Ce fonctionnement est présenté dans le diagramme de séquence suivant :
+	\begin{figure}[!h]
+		\centering
+			\includegraphics[scale=0.77]{SequenceSynchro.png}
+		\caption{Synchroniser le serveur distant et le client local}
+	\end{figure}
+\end{landscape}
+
+\begin{landscape}
+	Voici un second diagramme de séquence présentant le déroulement du système lorsque les données sur le serveur distant sont plus récentes que celles sur l'application locale. 
+	\begin{figure}[!h]
+		\centering
+			\includegraphics[scale=0.77]{SequenceSynchroUpdate.png}
+		\caption{Synchroniser le serveur distant et le client local}
+	\end{figure}
+\end{landscape}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Spécification des interfaces}
+		
+		\paragraph{}
+		Dans cette partie, nous allons spécifier les méthodes des interfaces de nos composants. Pour des raisons de cohérences avec nos diagrammes de séquences, nous avons dupliqué certaines méthodes (connect,disconnect, \dots) dans différentes interfaces.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceControleur }
+	
+\begin{itemize}
+	\item \code{connect(String login,String mdp) : String idUtilisateur} \\
+	Connecte l'utilisateur à l'application local et éventuellement s'il est connecté au serveur.
+\begin{ocl}
+connect(String login,String mdp) : String id_utilisateur
+pre: 
+-- Le "login" est le login d'un utilisateur, il doit être non nul. Le "mdp" est le mot de passe correspondant au login de l'utilisateur, il doit lui aussi être non nul.
+post:
+-- L'utilisateur est connecté au client local et si la connexion peut être établie avec le serveur, il est connecté au serveur. Il récupère un identifiant de connexion généré automatiquement valable pour un temps donné (session).
+\end{ocl}
+
+	\item \code{disconnect(String idUtilisateur) : String reponse} \\
+	Déconnecte l'utilisateur de l'application local et du serveur si celui-ci est connecté.
+\begin{ocl}
+disconnect(String idUtilisateur) : String reponse
+pre: 
+-- idUtilisateur est l'identifiant de connexion non nul récupéré après la connexion.
+post:
+-- L'utilisateur est déconnecté et l'application renvoie une notification à l'utilisateur.
+\end{ocl}
+
+	\item \code{creerUtilisateur(String login, String mdp) : String reponse} \\
+	Crée un nouvel utilisateur pour l'application local et le serveur distant.
+\begin{ocl}
+creerUtilisateur(String login,String mdp) : String reponse
+pre: 
+-- Le "login" est le login d'un utilisateur, il doit être non nul. Le "mdp" est le mot de passe correspondant au login de l'utilisateur, il doit lui aussi être non nul.
+-- l'utilisateur n'existe pas déjà.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que son compte a été créé.
+\end{ocl}
+
+	\item \code{creerTache(Tache t, int idProjet) : String reponse} \\
+	Ajoute une nouvelle tâche "t" au projet ayant pour identifiant "idProjet".
+\begin{ocl}
+creerTache(Tache t, int idProjet) : String reponse
+pre: 
+-- l'identifiant du projet "idProjet" peut être nul, la tâche "t" sera alors ajouté au projet par défaut nommé Panier. La tâche "t" ne peut pas être nulle.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que sa tâche a été ajoutée avec succès.
+\end{ocl}
+
+
+	\item \code{modifierTache(Tache t) : String reponse} \\
+	Modifie la tâche "t" de l'utilisateur.
+\begin{ocl}
+modifierTache(Tache t) : String reponse
+pre: 
+-- La tâche "t" ne peut pas être nulle.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que sa tâche a été modifiée avec succès.
+\end{ocl}
+
+	\item \code{supprimerTache(Tache t) : String reponse} \\
+	Supprime la tâche "t" de l'utilisateur.
+\begin{ocl}
+supprimerTache(Tache t) : String reponse
+pre: 
+-- La tâche "t" ne peut pas être nulle.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que sa tâche a été supprimée avec succès.
+\end{ocl}
+
+\item \code{creerProjet(Projets p) : String reponse} \\
+	Ajoute un nouveau projet au client GTD.
+\begin{ocl}
+creerProjet(Projet p) : String reponse
+pre: 
+-- La projet "p" ne peut pas être nul.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que son projet a été ajouté avec succès.
+\end{ocl}
+
+	\item \code{modififerProjet(Projet p) : String reponse} \\
+	Modifie le projet "p" de l'utilisateur.
+\begin{ocl}
+modififerProjet(Projet p) : String reponse
+pre: 
+-- Le projet "p" ne peut pas être nul.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que son projet a été modifié avec succès.
+\end{ocl}
+
+	\item \code{supprimerProjet(Projet p) : String reponse} \\
+	Supprime le projet "p" de l'utilisateur.
+\begin{ocl}
+supprimerProjet(Projet p) : String reponse
+pre: 
+-- Le projet "p" ne peut pas être nul.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que son projet a été supprimé avec succès.
+\end{ocl}
+	
+	\item \code{getProjet(String nomProjet) : Projet p} \\
+	Récupère le projet ayant pour nom "nomProjet" de l'utilisateur.
+\begin{ocl}
+getProjet(String nomProjet) : Projet p
+pre: 
+-- Le nom du projet doit exister.
+post:
+-- L'utilisateur reçoit le projet dont le nom est "nomProjet".
+\end{ocl}
+
+
+	\item \code{getProjets() : list<Projet> p} \\
+	Récupère les projets de l'utilisateur.
+\begin{ocl}
+getProjets() : list<Projet> p
+post:
+-- L'utilisateur reçoit tous ses projets.
+\end{ocl}
+
+	\item \code{getTaches() : List<Tache> l} \\
+	Récupère toutes les tâches d'un utilisateur.
+\begin{ocl}
+getTaches() : List<Tache> l
+post:
+-- L'utilisateur reçoit la liste des tâches .
+\end{ocl}
+
+	\item \code{getTaches(int idProjet) : List<Tache> l} \\
+	Récupère les tâches d'un projet ayant pour identifiant "idProjet".
+\begin{ocl}
+getTaches(int idProjet) : List<Tache> l
+pre: 
+-- L'identifiant doit exister.
+post:
+-- L'utilisateur reçoit la liste des tâches du projet dont l'identifiant est "idProjet".
+\end{ocl}
+
+\item \code{getTache(int idTache) : Tache l} \\
+	Récupère la tâche ayant pour identifiant "idTache".
+\begin{ocl}
+getTache(int idTache) : Tache l
+pre: 
+-- L'identifiant de la tâche doit exister.
+post:
+-- L'utilisateur reçoit la tâche dont l'identifiant est "idTache".
+\end{ocl}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceIHM }
+
+\begin{itemize}
+	
+	\item \code{connect(String login, String mdp) : String} \\
+	Connecte l'utilisateur à l'application local et éventuellement s'il est connecté au serveur.
+\begin{ocl}
+connect(String login,String mdp) : String id_utilisateur
+pre: 
+-- Le "login" est le login d'un utilisateur, il doit être non nul. Le "mdp" est le mot de passe correspondant au login de l'utilisateur, il doit lui aussi être non nul.
+post:
+-- L'utilisateur est connecté au client local et si la connexion peut être établie avec le serveur, il est connecté au serveur. Il récupère une notification de connexion.
+
+\end{ocl}
+
+\item \code{disconnect() : String} \\
+	Déconnecte l'utilisateur de l'application local et du serveur si celui-ci est connecté.
+\begin{ocl}
+disconnect() : String reponse
+pre: 
+-- idUtilisateur est l'identifiant de connexion non nul récupéré après la connexion.
+post:
+-- L'utilisateur est déconnecté et l'application renvoie une notification à l'utilisateur.
+
+\end{ocl}
+
+\item \code{creerTache(int id, String nom, String etat, int priorite, int tauxEffort, Context context,}
+\code{Date dateDebut, Date dateEcheance, String[] notes, String[] urls, String[] tags,}\\
+\code{Contact[] listeContact, Periodicite per, Tache tacheSuivant, int idProjet) : String reponse } \\
+	Ajoute une nouvelle tâche  au projet ayant pour titre "nomProjet". L'attribut id et nom ne peut être nuls. Les autres attributs peuvent ne pas avoir de valeur.
+\begin{ocl}
+creerTache(int id,String nom,String etat,int priorite,int tauxEffort,Context context,Date dateDebut,Date dateEcheance,String[] notes,String[] urls,String[] tags,Contact[] listeContact,Periodicite per,Tache tacheSuivant,int idProjet) : String reponse
+pre: 
+-- L'identifiant du Projet "idProjet" peut être nul, la tâche "t" sera alors ajouté au projet par défaut nommé Panier. 
+-- L'attribut id et nom ne peut être nuls. Les autres attributs peuvent ne pas avoir de valeur.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que sa tâche a été ajoutée avec succès.
+
+\end{ocl}
+
+
+\item \code{creerProjet(int id, String nom,String[] notes,Projet[] listeProjet) : String reponse} \\
+	Ajoute un nouveau projet au client GTD.
+\begin{ocl}
+creerProjet(int id, String nom,String[] notes,Projet[] listeProjet) : String reponse
+pre: 
+-- L'identifiant "id" et le nom sont des attributs non nul.
+post:
+-- L'utilisateur reçoit un message pour lui notifier que son projet a été ajouté avec succès.
+
+\end{ocl}
+
+	\item \code{getProjet(String nomProjet) : Projet p} \\
+	Récupère le projet ayant pour nom "nomProjet" de l'utilisateur.
+\begin{ocl}
+getProjet(String nomProjet) : Projet p
+pre: 
+-- Le nom du projet doit exister.
+post:
+-- L'utilisateur reçoit le projet dont le nom est "nomProjet".
+\end{ocl}
+
+
+	\item \code{getProjets() : list<Projet> p} \\
+	Récupère les projets de l'utilisateur.
+\begin{ocl}
+getProjets() : list<Projet> p
+post:
+-- L'utilisateur reçoit tous ses projets.
+\end{ocl}
+
+	\item \code{getTaches() : List<Tache> l} \\
+	Récupère toutes les tâches d'un utilisateur.
+\begin{ocl}
+getTaches() : List<Tache> l
+post:
+-- L'utilisateur reçoit la liste des tâches .
+\end{ocl}
+
+	\item \code{getTaches(int idProjet) : List<Tache> l} \\
+	Récupère les tâches d'un projet ayant pour identifiant "idProjet".
+\begin{ocl}
+getTaches(int idProjet) : List<Tache> l
+pre: 
+-- L'identifiant doit exister.
+post:
+-- L'utilisateur reçoit la liste des tâches du projet dont l'identifiant est "idProjet".
+\end{ocl}
+
+\item \code{getTache(int idTache) : Tache l} \\
+	Récupère la tâche ayant pour identifiant "idTache".
+\begin{ocl}
+getTache(int idTache) : Tache l
+pre: 
+-- L'identifiant de la tâche doit exister.
+post:
+-- L'utilisateur reçoit la tâche dont l'identifiant est "idTache".
+\end{ocl}
+
+\end{itemize}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceConnexionLocal}
+		
+\begin{itemize}
+
+	\item \code{connect(String login,String mdp) : String idUtilisateur} \\
+	Connecte l'utilisateur à l'application local et éventuellement s'il est connecté au serveur.
+\begin{ocl}
+connect(String login,String mdp) : String id_utilisateur
+pre: 
+-- Le "login" est le login d'un utilisateur, il doit être non nul. Le "mdp" est le mot de passe correspondant au login de l'utilisateur, il doit lui aussi être non nul.
+post:
+-- L'utilisateur est connecté au client local et si la connexion peut être établie avec le serveur, il est connecté au serveur. Il récupère un identifiant de connexion généré automatiquement valable pour un temps donné (session).
+\end{ocl}
+
+	\item \code{disconnect() : String} \\
+	Déconnecte l'utilisateur de l'application local et du serveur si celui-ci est connecté.
+\begin{ocl}
+disconnect() : String reponse
+pre: 
+-- idUtilisateur est l'identifiant de connexion non nul récupéré après la connexion.
+post:
+-- L'utilisateur est déconnecté et l'application renvoie une notification à l'utilisateur.
+\end{ocl}
+
+\item \code{checkUtilisateurPasswd(String user, String pwd) : Boolean} \\
+	Vérifie les identifiants de l'utilisateur.
+\begin{ocl}
+checkUtilisateurPasswd(String user, String pwd) : Boolean
+pre: 
+-- L'utilisateur existe dans le système.
+\end{ocl}
+
+	\item \code{ajouterUtilisateur(String user, String pwd) : String} \\
+	Ajoute un nouvel utilisateur en local.
+\begin{ocl}
+ajouterUtilisateur(String user, String pwd) : String
+pre: 
+-- L'utilisateur n'existe pas dans le système.
+post:
+-- L'utilisateur est ajouté dans le système.
+\end{ocl}
+
+	\item \code{supprimerUtilisateur(String user, String pwd) : String} \\
+	Supprime un utilisateur existant en local.
+\begin{ocl}
+supprimerUtilisateur(String user, String pwd) : String
+pre: 
+-- L'utilisateur existe dans le système.
+post:
+-- L'utilisateur est supprimé du système.
+\end{ocl}
+
+	\item \code{setServeur(String login, boolean value) : String reponse } \\
+
+Modifie la valeur de l'attribut "serveur" de l'utilisateur. Cet attribut permet de savoir si oui ou non l'utilisateur a un compte sur le serveur.
+
+\begin{ocl}
+setServeur(String login, boolean value) : String reponse 
+pre: 
+--L'utilisateur existe déjà.
+post: 
+--La valeur de l'attribut est à jour.
+\end{ocl}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceGestionnaire}
+
+\begin{itemize}
+
+	\item \code{ajouterTache(Tache t,int idProjet,String idUtilisateur) : String} \\
+	Ajoute une tâche à un projet identifié par son nom à l'utilisateur dont l'identifiant est idUtilisateur.
+\begin{ocl}
+ajouterTache(Tache t,int idProjet,String idUtilisateur) : String
+pre: 
+-- La tâche n'existe pas dans le système.
+post:
+-- La tâche a été créée.
+\end{ocl}
+
+	\item \code{supprimerTache(Tache t) : String} \\
+	Supprime une tâche
+\begin{ocl}
+supprimerTache(Tache t) : String
+pre: 
+-- La tâche existe dans le système.
+post:
+-- La tâche a été supprimée.
+\end{ocl}
+
+	\item \code{updateTache(Tache t) : String} \\
+	Met à jour une tâche.
+\begin{ocl}
+updateTache(Tache t) : String
+pre: 
+-- La tâche existe dans le système.
+post:
+-- La tâche a été modifiée.
+\end{ocl}
+
+	\item \code{ajouterProjet(Projet p,String idUtilisateur) : String} \\
+	Ajoute un nouveau projet à l'utilisateur dont l'identifiant est idUtilisateur.
+\begin{ocl}
+ajouterProjet(Projet p,String idUtilisateur) : String
+pre: 
+-- Le projet n'existe pas dans le système.
+post:
+-- Le projet a été ajouté.
+\end{ocl}
+
+	\item \code{supprimerProjet(Projet p) : String} \\
+	Supprime un projet et l'ensemble des tâches qui lui sont rattachées.
+\begin{ocl}
+supprimerProjet(Projet p) : String
+pre: 
+-- Le projet existe dans le système.
+post:
+-- Le projet et ses tâches ont été supprimés.
+\end{ocl}
+
+	\item \code{updateProjet(Projet p) : String} \\
+	Met à jour un projet.
+\begin{ocl}
+updateProjet(Projet p) : String
+pre: 
+-- Le projet existe dans le système.
+post:
+-- Le projet a été modifié.
+\end{ocl}
+
+	\item \code{getProjet(String nomProjet) : Projet p} \\
+	Récupère le projet ayant pour nom "nomProjet" de l'utilisateur.
+\begin{ocl}
+getProjet(String nomProjet) : Projet p
+pre: 
+-- Le nom du projet doit exister.
+post:
+-- L'utilisateur reçoit le projet dont le nom est "nomProjet".
+\end{ocl}
+
+
+	\item \code{getProjets() : list<Projet> p} \\
+	Récupère les projets de l'utilisateur.
+\begin{ocl}
+getProjets() : list<Projet> p
+post:
+-- L'utilisateur reçoit tous ses projets.
+\end{ocl}
+
+	\item \code{getTaches() : List<Tache> l} \\
+	Récupère toutes les tâches d'un utilisateur.
+\begin{ocl}
+getTaches() : List<Tache> l
+post:
+-- L'utilisateur reçoit la liste des tâches .
+\end{ocl}
+
+	\item \code{getTaches(int idProjet) : List<Tache> l} \\
+	Récupère les tâches d'un projet ayant pour identifiant "idProjet".
+\begin{ocl}
+getTaches(int idProjet) : List<Tache> l
+pre: 
+-- L'identifiant doit exister.
+post:
+-- L'utilisateur reçoit la liste des tâches du projet dont l'identifiant est "idProjet".
+\end{ocl}
+
+	\item \code{getTache(int idTache) : Tache l} \\
+	Récupère la tâche ayant pour identifiant "idTache".
+\begin{ocl}
+getTache(int idTache) : Tache l
+pre: 
+-- L'identifiant de la tâche doit exister.
+post:
+-- L'utilisateur reçoit la tâche dont l'identifiant est "idTache".
+\end{ocl}
+
+	\item \code{getModifs(Date d) : List<Projet> l} \\
+	Récupère un ensemble de modifications à partir d'une date donnée.
+\begin{ocl}
+getModifs(Date d) : List<Projet> l
+post:
+-- La date doit être bien formée.
+\end{ocl}
+
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceGestionnaireCompte}
+
+
+\begin{itemize}
+
+\item \code{existeUtilisateur(String login, String passwd) : boolean reponse} \\
+
+Vérification de l'existence d'un utilisateur dans la base de données.
+Retourne faux si aucun utilisateur ne correspond au login et mot de passe.
+
+\begin{ocl}
+existeUtilisateur(String login, String passwd) : boolean reponse
+pre: 
+--« login » est l'identifiant non nul du client et « password » est le mot de passe associé au login du client, le mot de passe est non nul.
+post: 
+
+\end{ocl}
+
+\item \code{creerCompte(String login, String passwd) : String reponse} \\
+
+Créer un compte utilisateur en local.
+
+\begin{ocl}
+creerCompte(String login, String passwd) : String reponse
+pre: 
+--Le login n'est pas déjà utilisé.
+post: 
+--Le compte est créée en local.
+\end{ocl}
+
+\item \code{existeServeur(String login) : boolean reponse} \\
+
+Vérifie si l'utilisateur a créé un compte sur le serveur GTD.
+
+\begin{ocl}
+existeServeur(String login) : boolean reponse
+pre: 
+--L'utilisateur existe déjà.
+post: 
+\end{ocl}
+
+\item \code{setServeur(String login, boolean value) : String reponse } \\
+
+Modifie la valeur de l'attribut "serveur" de l'utilisateur. Cet attribut permet de savoir si oui ou non l'utilisateur a un compte sur le serveur.
+
+\begin{ocl}
+setServeur(String login, boolean value) : String reponse 
+pre: 
+--L'utilisateur existe déjà.
+post: 
+--La valeur de l'attribut est à jour.
+\end{ocl}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceCopieLocal}
+
+\begin{itemize}
+\item \code{ajouterProjetBD(Projet p, String idUtilisateur) : String reponse} \\
+
+Ajoute le projet de l'utilisateur dont l'identifiant est idUtilisateur à la base de données.
+retourne vrai si la tache est ajouté
+\begin{ocl}
+ajouterProjet(Projet p, String idUtilisateur) : String reponse
+pre: 
+--Le projet n'existe pas et l'utilisateur existe.
+post: 
+--Le projet est correctement ajouté.
+\end{ocl}
+
+
+\item \code{ajouterTacheBD(Tache p, int idProjet, String idUtilisateur) : String reponse} \\
+
+Ajoute la tache de l'utilisateur dont l'identifiant est idUtilisateur à la base de données dans le projet identifier par idProjet.
+
+\begin{ocl}
+ajouterTache(Tache p, int idProjet, String idUtilisateur) : String reponse
+pre: 
+--La tâche n'existe pas et l'utilisateur existe.
+--Le projet de la tâche existe
+post: 
+--La tache est correctement ajoutée au projet.
+\end{ocl}
+
+
+\item \code{modifierTache(Tache p, Utilisateur u) : String reponse} \\
+
+modifie la tache de l'utilisateur u à la base de données.
+
+\begin{ocl}
+modifierTache(Tache p, Utilisateur u) : String reponse
+pre: 
+-- La tâche et l'utilisateur existent.
+-- Le projet de la tâche existe
+post: 
+-- La tâche est correctement modifiée.
+\end{ocl}
+
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceServeur}
+Interface nécessaire pour créer un compte, supprimer un compte client afin de se connecter, se déconnecter ou récupérer des informations relatif au serveur GTD.
+
+\begin{itemize}
+
+	\item \code{creerCompte(String login, String password) : String reponse } \\
+
+Créer un compte client sur le serveur GTD.
+
+\begin{ocl}
+creerCompte(String login, String password) : String reponse
+pre: 
+-- «login» est l'identifiant non nul du client et «password» est le mot de passe associé au login du client, le mot de passe est non nul.
+post: 
+-- Le compte du client est crée sur le serveur GTD qui renvoie une notification d'erreur ou de succès.
+\end{ocl}
+
+	\item \code{supprimerCompte(String login, String password) : String reponse } \\
+
+Supprime un compte client sur le serveur GTD.
+
+\begin{ocl}
+supprimerCompte(String login, String password) : String reponse
+pre: 
+-- «login» est l'identifiant non nul du client et «password» est le mot de passe associé au login du client, le mot de passe est non nul.
+-- Le compte d'identifiant «login» et de mot de passe «password» existe dans la base de donnée du serveur GTD.
+post: 
+-- Le compte du client est supprimé sur le serveur GTD qui renvoie une notification d'erreur ou de succès.
+\end{ocl}
+
+	\item \code{connect(String login, String password) : String idServeur } \\
+
+Connecte le client au serveur GTD.
+
+\begin{ocl}
+connect(String login, String password) : String idServeur
+pre: 
+-- «login» est l'identifiant non nul du client et «password» est le mot de passe associé au login du client, le mot de passe est non nul.
+post: 
+-- Connecte le client au serveur GTD et récupère un identifiant de connexion généré automatiquement valable pour un temps donné (session).
+\end{ocl}
+	
+	\item \code{disconnect() : String reponse } \\
+
+Déconnecte le client du serveur GTD.
+
+\begin{ocl}
+disconnect() : String reponse
+post: 
+-- Déconnecte le client du serveur GTD qui renvoie une notification «reponse».
+\end{ocl}
+
+	\item \code{getInfosServeur() : String } \\
+
+Récupère les informations rélatives au serveur, c'est à dire le taux d'utilisation, le temps de latence, l'état du serveur\dots
+
+\begin{ocl}
+getInfosServeur() : String reponse
+pre: 
+-- Le serveur est connecté.
+post: 
+-- Le client récupère les informations du serveur GTD qui renvoie une notification «reponse».
+\end{ocl}
+
+	\item \code{verifierModifs(Date d) : String reponse} \\
+	
+Vérifie sur le composant ConnexionLocal que des actions ont été enregistré par l'utilisateur.
+
+\begin{ocl}
+verifierModifs(Date d) : String reponse
+pre: 
+-- Aucune
+post:
+-- Renvoie un état correspondant au log
+\end{ocl}
+
+	\item \code{getModifsLocales(Date d) : List<Projet> projets} \\
+	
+Récupère en local la liste des dernières modifications apportées par l'utilisateur
+
+\begin{ocl}
+getModifsLocales(Date d) : List<Projet> projets
+pre: 
+-- Le client possède des informations plus récentes que celles à disposition sur le serveur.
+post:
+-- La liste des projets est la différence entre les deux dernières synchronisations.
+\end{ocl}
+
+	\item \code{getPolitiqueGestionConflits() : String} \\
+	
+Interroge le composant SynchroServerManager pour décider de la façon dont les tâches et les projets doivent être mis à jour.
+
+\begin{ocl}
+getPolitiqueGestionConflits() : String
+pre: 
+-- Le logger produit des informations valides et exploitables.
+post: 
+\end{ocl}
+
+	\item \code{setProjets(List<Projet>) : String} \\
+	
+Remplace tous les projets de l'application locale. Renvoie un message de confirmation.
+
+\begin{ocl}
+setProjets(List<Projet>) : String
+pre: 
+-- La liste de projets doit être bien formée
+post: 
+-- L'ensemble des projets à été remplacé par la nouvelle liste de projets.
+\end{ocl}
+
+	\item \code{resetLog() : void} \\
+	
+Efface sur le fichier de log présent dans le composant ConnexionLocal
+
+\begin{ocl}
+resetLog() : void
+pre: 
+-- Le fichier de log doit exister.
+post: 
+-- Le fichier de log est nettoyé.
+\end{ocl}
+
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\subsection{InterfaceSynchronisation}
+Interface nécessaire pour effectuer des opérations relatives au client, l'envoi de tâches, de projets\dots
+
+\begin{itemize}
+
+	\item \code{getDerniereSynchro() : Date d} \\
+Demande au serveur distant la date de la dernière synchronisation.
+
+\begin{ocl}
+getDerniereSynchro() : Date d
+pre: 
+-- La connexion avec le serveur doit être établie
+\end{ocl}
+
+	\item \code{update() : List<Projets> lprojets } \\
+Le client récupère sa liste de projets sur le serveur GTD en mettant à jour sa propre application.
+
+\begin{ocl}
+update() : List<Projets> lprojets
+pre: 
+--Le client s'est préalablement connecté au serveur GTD.
+post: 
+--Le client à bien récupérer ses tâches.
+\end{ocl}
+
+	\item \code{commit() : String reponse } \\
+Le client envoie tout le contenu de son application sur le serveur GTD
+
+\begin{ocl}
+commit() : String reponse
+pre: 
+--Le client s'est préalablement connecté au serveur GTD.
+post: 
+--Le contenu du client à bien été sauvegardé sur le serveur GTD qui reçoit une notification «reponse».
+\end{ocl}
+
+	\item \code{commit(List<Projets> lprojets) : String reponse } \\
+Le client envoie une liste de projets qu'il désire sur le serveur GTD
+
+\begin{ocl}
+commit(List<Projets> lprojets) : String reponse
+pre: 
+--Le client s'est préalablement connecté au serveur GTD.
+post: 
+--Le contenu du client à bien été sauvegardé sur le serveur GTD qui reçoit une notification «reponse».
+\end{ocl}
+
+	\item \code{estSynchro(Boolean v) : String } \\
+Le client indique au serveur qu'il est synchronisé. Il reçoit en retour un message de confirmation de la part du serveur.
+
+\begin{ocl}
+estSynchro(Boolean v) : String
+pre: 
+-- Le client s'est préalablement connecté au serveur GTD.
+post:
+-- Le message émit par le serveur est de la même nature que celui envoyé par le client.
+\end{ocl}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Spécification des types utilisés}
+
+		\subsection{Tache}
+
+	La classe \code{Tache} représente une Tâche. Elle possède les attributs suivants:
+	\begin{description}
+		\item[id]: l'identifiant de la tâche.
+		\item[nom]: le nom de la tâche.
+		\item[etat]: détermine l'état d'une tâche.
+		\item[priorite]: attribut déterminant la priorité d'une tâche. Ses valeurs vont de 1 à 5.
+		\item[tauxEffort]: détermine l'effort que l'on doit produire pour réaliser un tâche (valeur comprise de 0 à 99).
+		\item[context]: attribut déterminant dans quel contexte se trouve la tâche à effectuer.
+		\item[dateDebut]: date de début de la tâche.
+		\item[dateEcheance]: date de fin de la tâche.
+		\item[notes]: détermine les notes relatives à la tâche.
+		\item[urls]: liste d'urls relativent à la tâche.
+		\item[tags]: liste de tags.
+		\item[listeContact]: liste des contacts qui sont liés à la tâche.
+		\item[per]: fréquence dont la tâche doit être effectuée.
+		\item[tacheSuivante]: tâche qui doit être effectuer après la résolution de la tâche courante.
+		\item[idProjet]: identifiant permettant de localiser où la tâche est stockée.
+	\end{description}
+
+\subsection{Projet}
+
+	La classe \code{Projet} représente un Projet. Elle possède les attributs suivants:
+	\begin{description}
+
+		\item[id]: l'identifiant du projet.
+		\item[nom]: le nom du projet.
+		\item[notes]: détermine les notes relatives au projet.
+		\item[listeTache]: liste des tâches du projet
+		\item[sousProjet]: liste de projet determinant les sous projets d'un projet
+	\end{description}
+
+\subsection{Context}
+
+	La classe \code{Context} représente le contexte d'une tâche. Elle possède les attributs suivants:
+	\begin{description}
+
+		\item[nom]: le nom du contexte.
+	\end{description}
+
+\subsection{Date}
+
+	La classe \code{Date} représente le format d'une date:
+	\begin{description}
+
+		\item[annee]: l'annee de la date.
+		\item[mois]: le mois de la date.
+		\item[jour]: le jour de la date.
+		\item[heure]: l'heure de la journée.
+		\item[minute]: les minutes.
+		\item[seconde]: les secondes.
+		
+	\end{description}
+
+\begin{figure}[!h]
+	\centering
+		\includegraphics[scale=0.65]{DiagClasseLivrable3.png}
+	\caption{Diagramme de classe décrivant les différents types utilisés}
+\end{figure}
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+
+        Maintenant que des différents composants du sytème ont été décomposés, nous allons définir plus facilement les sous éléments présents dans ces composants et ainsi pouvoir construire l'architecture de notre application et le schéma de la base de données.
+
+Cependant, il est à noter que la spécification des interfaces dans ce livrable sera probablement très différente une fois l'application
+terminée et fonctionnelle. En effet, il est assez difficile de prévoir avec exactitude le comportement des méthodes sans avoir précisé
+totalement l'architecture. L'interface homme-machine n'étant pas définie, il est d'autant plus compliqué de formaliser les commandes associées 
+aux interactions de l'utilisateur.

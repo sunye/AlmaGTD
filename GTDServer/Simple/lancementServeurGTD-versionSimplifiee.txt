@@ -1,0 +1,19 @@
+// pour compiler les stubs (dans le répertoire bin)
+
+rmic MainServeur
+rmic CallBackLogin
+rmic CallBackTelecharger
+rmic CallBackDisconnect
+
+// pour lancer le registre RMI
+
+rmiregistry&
+
+// pour lancer le serveur
+
+java -Djava.security.policy=mypolicy -Djava.rmi.server.codebase=CHEMIN_DU_REPERTOIRE_BIN MainServeur
+
+// pour lancer le client
+
+java -Djava.security.policy=mypolicy -Djava.rmi.server.codebase=CHEMIN_DU_REPERTOIRE_BIN MainClient
+

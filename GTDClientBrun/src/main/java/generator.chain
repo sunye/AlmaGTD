@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<chain:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:chain="http://www.obeo.fr/acceleo/chain">
+  <repository>
+    <files xsi:type="chain:Model" path="/GTDVrai/Models/Diag classe.uml"/>
+    <files xsi:type="chain:Folder" path="/GTD_final/src/main/java"/>
+    <files xsi:type="chain:Log" path="/GTD_final/src/main/java/generator.log.txt"/>
+    <files xsi:type="chain:EmfMetamodel" path="http://www.eclipse.org/uml2/2.1.0/UML"/>
+    <files xsi:type="chain:Generator" path="/GTDVrai/src/class.mt"/>
+    <files xsi:type="chain:Generator" path="/GTDVrai/src/interface.mt"/>
+  </repository>
+  <actions>
+    <actions xsi:type="chain:Generate" documentation="class" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.4" folder="//@repository/@files.1"/>
+    <actions xsi:type="chain:Generate" documentation="interface" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.5" folder="//@repository/@files.1"/>
+  </actions>
+</chain:Chain>

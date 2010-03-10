@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" activeDiagram="//@diagrams.0">
+  <model href="DiagrammeDeSequence.uml#//@packagedElement.0/@packagedElement.0/@ownedBehavior.0"/>
+  <diagrams position="0,0" size="100,100" name="DiagrammeDeSequence" viewport="0,0">
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" presentation="org.topcased.modeler.uml.sequencediagram">
+      <element href="DiagrammeDeSequence.uml#//@packagedElement.0/@packagedElement.0/@ownedBehavior.0"/>
+    </semanticModel>
+  </diagrams>
+</diagrams:Diagrams>

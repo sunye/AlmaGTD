@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="Model">
+    <packagedElement xmi:type="uml:Actor" xmi:id="_bnN3MLKxEd6wDNcYKlF_7A" name="User"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_dJvkcLKyEd6wDNcYKlF_7A" name="UseCase1"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_nAdx8LKyEd6wDNcYKlF_7A" name="Utilisateur"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_XAra0LK6Ed6wDNcYKlF_7A" name="Collecter des informations">
+      <extend xmi:id="_st0qcLK_Ed6wDNcYKlF_7A"/>
+      <extend xmi:id="_Rn7rtLNCEd6aN57-9ASy_w" name="Extend1" extendedCase="_xVFtULK7Ed6wDNcYKlF_7A" extensionLocation="_Rnx6sLNCEd6aN57-9ASy_w"/>
+      <extensionPoint xmi:id="_MJlMoLNCEd6aN57-9ASy_w" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_ijUXkLK6Ed6wDNcYKlF_7A" name="Traiter les informations">
+      <include xmi:id="_O6HpVLM8Ed6aN57-9ASy_w" name="Include1" addition="_TYMMkLM7Ed6aN57-9ASy_w"/>
+      <include xmi:id="_aF-dw7M8Ed6aN57-9ASy_w" name="Include2" addition="_qIetgLM7Ed6aN57-9ASy_w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_M-OpALK7Ed6wDNcYKlF_7A" name="Organiser les données">
+      <ownedUseCase xmi:id="_NLQ_cLK7Ed6wDNcYKlF_7A" name="Collecter les informations"/>
+      <include xmi:id="_bkoXpLM9Ed6aN57-9ASy_w" name="Include1" addition="_UbKakrM9Ed6aN57-9ASy_w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_xVFtULK7Ed6wDNcYKlF_7A" name="Réactualiser">
+      <ownedUseCase xmi:id="_xVFtUbK7Ed6wDNcYKlF_7A" name="Collecter les informations"/>
+      <include xmi:id="_woaWpLNBEd6aN57-9ASy_w" name="Include1" addition="_eYdNUrNBEd6aN57-9ASy_w"/>
+      <include xmi:id="_2bcsRLNBEd6aN57-9ASy_w" name="Include2" addition="_0qgTErNBEd6aN57-9ASy_w"/>
+      <include xmi:id="_6BOgJLNBEd6aN57-9ASy_w" name="Include3" addition="_3rUYsrNBEd6aN57-9ASy_w"/>
+      <extensionPoint xmi:id="_qR6HkLNBEd6aN57-9ASy_w" name="ExtensionPoint1"/>
+      <extensionPoint xmi:id="_Rnx6sLNCEd6aN57-9ASy_w" name="ExtensionPoint2"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_c6s3ULK8Ed6wDNcYKlF_7A" name="" memberEnd="_c6s3UbK8Ed6wDNcYKlF_7A _c6s3VLK8Ed6wDNcYKlF_7A">
+      <ownedEnd xmi:id="_c6s3UbK8Ed6wDNcYKlF_7A" name="utilisateur" type="_nAdx8LKyEd6wDNcYKlF_7A" association="_c6s3ULK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c6s3UrK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c6s3U7K8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_c6s3VLK8Ed6wDNcYKlF_7A" name="traitement des informations" type="_ijUXkLK6Ed6wDNcYKlF_7A" association="_c6s3ULK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c6s3VbK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_c6s3VrK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_eBqfZrK8Ed6wDNcYKlF_7A" name="" memberEnd="_eBqfZ7K8Ed6wDNcYKlF_7A _eBqfarK8Ed6wDNcYKlF_7A">
+      <ownedEnd xmi:id="_eBqfZ7K8Ed6wDNcYKlF_7A" name="utilisateur" type="_nAdx8LKyEd6wDNcYKlF_7A" association="_eBqfZrK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eBqfaLK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eBqfabK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_eBqfarK8Ed6wDNcYKlF_7A" name="collecte d'informations" type="_XAra0LK6Ed6wDNcYKlF_7A" association="_eBqfZrK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eBrGcLK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eBrGcbK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ed-n9rK8Ed6wDNcYKlF_7A" name="" memberEnd="_ed-n97K8Ed6wDNcYKlF_7A _ed-n-rK8Ed6wDNcYKlF_7A">
+      <ownedEnd xmi:id="_ed-n97K8Ed6wDNcYKlF_7A" name="utilisateur" type="_nAdx8LKyEd6wDNcYKlF_7A" association="_ed-n9rK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ed-n-LK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ed-n-bK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_ed-n-rK8Ed6wDNcYKlF_7A" name="organisation des données" type="_M-OpALK7Ed6wDNcYKlF_7A" association="_ed-n9rK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ed-n-7K8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ed-n_LK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_e8DEALK8Ed6wDNcYKlF_7A" name="" memberEnd="_e8DEAbK8Ed6wDNcYKlF_7A _e8DEBLK8Ed6wDNcYKlF_7A">
+      <ownedEnd xmi:id="_e8DEAbK8Ed6wDNcYKlF_7A" name="utilisateur" type="_nAdx8LKyEd6wDNcYKlF_7A" association="_e8DEALK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e8DEArK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e8DEA7K8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_e8DEBLK8Ed6wDNcYKlF_7A" name="mise au point" type="_xVFtULK7Ed6wDNcYKlF_7A" association="_e8DEALK8Ed6wDNcYKlF_7A">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e8DrELK8Ed6wDNcYKlF_7A" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e8DrEbK8Ed6wDNcYKlF_7A" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_TYMMkLM7Ed6aN57-9ASy_w" name="Sélection des informations pertinentes">
+      <extend xmi:id="_QzQ8RLM8Ed6aN57-9ASy_w" name="Extend1" extendedCase="_qIetgLM7Ed6aN57-9ASy_w" extensionLocation="_wtSeULM7Ed6aN57-9ASy_w"/>
+      <extensionPoint xmi:id="_YjxrMLM8Ed6aN57-9ASy_w" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qIetgLM7Ed6aN57-9ASy_w" name="Création de tâches">
+      <extend xmi:id="_YkEmJbM8Ed6aN57-9ASy_w" name="Extend1" extendedCase="_TYMMkLM7Ed6aN57-9ASy_w" extensionLocation="_YjxrMLM8Ed6aN57-9ASy_w"/>
+      <extensionPoint xmi:id="_wtSeULM7Ed6aN57-9ASy_w" name="ExtensionPoint1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_UbKakrM9Ed6aN57-9ASy_w" name="Regroupement des tâches">
+      <include xmi:id="_ONSpoLNqEd6Q-8Hi6JOtVQ" name="Include1" addition="_LsPCILNqEd6Q-8Hi6JOtVQ"/>
+      <extensionPoint xmi:id="_0FEgMLNAEd6aN57-9ASy_w" name="ExtensionPoint1"/>
+      <extensionPoint xmi:id="_355csLNAEd6aN57-9ASy_w" name="ExtensionPoint2"/>
+      <extensionPoint xmi:id="_5N73cLNAEd6aN57-9ASy_w" name="ExtensionPoint3"/>
+      <extensionPoint xmi:id="_5vwyILNAEd6aN57-9ASy_w" name="ExtensionPoint4"/>
+      <extensionPoint xmi:id="_6KJBALNAEd6aN57-9ASy_w" name="ExtensionPoint5"/>
+      <extensionPoint xmi:id="_FhxAkLNBEd6aN57-9ASy_w" name="ExtensionPoint6"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eYdNUrNBEd6aN57-9ASy_w" name="Maj contextes"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_0qgTErNBEd6aN57-9ASy_w" name="Examen agenda"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_3rUYsrNBEd6aN57-9ASy_w" name="Examen Echeancier"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_LsPCILNqEd6Q-8Hi6JOtVQ" name="Création de projet"/>
+  </packagedElement>
+</uml:Model>

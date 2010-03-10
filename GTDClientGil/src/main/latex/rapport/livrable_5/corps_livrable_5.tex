@@ -1,0 +1,267 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          LIVRABLE 5                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\chapter{Conception détaillée}
+	\minitoc
+
+		\section{Introduction}
+
+			\subsection{Objectif}
+			
+	Suite à la description de l'architecture de notre application énoncée dans
+le livrable précédent, nous allons décrire en détail les concepts et l'organisation de tous les
+composants, à l'exception des IHM. Ce livrable a pour but de spécifier au
+maximum l'architecture du projet au niveau conception de l'application. Ceci permettant
+d'implémenter plus aisément le système.
+			
+			\subsection{Organisation du chapitre}
+			
+	Ce livrable se décompose en deux parties. La première concernera la partie locale de l'application, 
+c'est à dire la couche métier de l'application et la persistance des données dans la base de données côté utilisateur. 
+Ensuite, la deuxième partie concernera la partie distante, c'est à dire la gestion des données par le serveur. 
+Nous reviendrons par ailleurs sur les cas d'utilisations du livrable un et deux.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Prélude}
+		
+Avant de continuer sur notre lancée, nous avons regardé en détail les spécifications des interfaces du serveur GTD. Nous avons
+discuté des différents conflits qui pouvaient subvenir. Nous en avons conclu, vu les différentes visions de chaque groupe (en tant que client GTD) 
+et même les efforts fournis par le serveur pour s'adapter à chaque vision, qu'il était impossible de mettre en relation nos entités.
+Par exemple, l'ajout d'une simple tâche est relativement différente entre notre vision du client et celle du serveur.
+C'est pour cela qu'il a été quasi-impossible de gérer la partie CORBA.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\section{Architecture détaillée}
+		
+			\subsection{Objectif}
+			
+	Nous allons exposer dans cette partie toute l'architecture détaillée (niveau conception) 
+de la partie locale de notre application. Nous allons donc avoir une approche dite "top-down" 
+en partant d'un niveau d'abstraction assez générale (vue package) pour finir à un niveau plus précis (diagramme de classes).
+			
+			\subsection{Vue package}
+			
+	Nous avons réalisé dans un premier temps un diagramme de package (présenté ci-dessous)
+permettant d'avoir une idée précise de l'organisation du projet.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{packageDiagram.png}
+	\caption{Diagramme de packages}
+\end{figure}
+
+\FloatBarrier
+
+Ce diagramme est composé de deux principaux packages :
+
+\begin{itemize}
+	\item fr.alma.ihm
+	\item fr.alma.modele
+\end{itemize}
+
+L'interface homme-machine (IHM) de notre application se base sur le pattern MVC (Modèle-Vue-Contrôleur). 
+Nous avons donc fait en sorte que la modélisation des packages se fasse sur ces trois concepts.
+
+\paragraph{fr.alma\\}
+Ce package organise les concepts de notre application. Il contient : \\
+
+\begin{itemize}
+	\item Le package "controleur" contiendra toutes les classes liées à la gestion des interactions utilisateurs. 
+	\item Le package "ihm" comportera les classes nécessaire à la couche graphique (Swing).
+	\item Le package "main" qui ne contiendra que la classe principale. C'est le point d'entrée de notre application.
+	\item Le package "modele" contiendra le c\oe{}ur de l'application.
+	\item Le package "observer" contiendra toutes les classes liées à la réalisation du \textit{pattern} MVC (ici le \textit{desgin pattern} Observer). 
+\end{itemize}
+
+Nous ne détaillerons pas plus le package IHM dans la suite de ce livrable par respect du cahier des charges. Cependant, nous tenons à 
+préciser qu'il contient lui aussi un ensemble de sous-packages.
+
+\paragraph{fr.alma.modele\\}
+Ce package contient la couche métier. À l'intérieur, on trouvera encore un ensemble de sous-packages.
+			
+\begin{itemize}
+	\item Le package "gestionnaire" contiendra toutes les classes pour faire le lien entre l'IHM et le modèle.
+	\item Le package "noyau" contiendra toutes nos classes métier ainsi que tout le processus logique qui en découle.
+	\item Le package "persistance" contiendra toutes les classes en relation avec la base de données embarquée.
+	\item Le package "serveur" contiendra toutes les classes pour la communication avec le serveur distant.
+\end{itemize}		
+
+		\subsection{Description détaillée des packages}	
+
+Les packages étant définis, nous pouvons approfondir leur contenu à l'aide de diagrammes de classes.
+
+\subsubsection{package fr.alma.modele.observer}
+
+Notre application GTD fonctionnant sur le modèle MVC, il faudra en premier lieu mettre en place ce patron de conception.
+Simple à mettre en \oe{}vre, il permet une raffraichissement automatique des différentes vues. Ce sera fort pratique dans notre cas
+car on disposera d'une vue générale pour la gestion des tâches, ainsi que d'un agenda et d'un échéancier. L'ajout d'une tâche étant une modification
+de notre modèle, ce dernier devra informer les vues qui lui sont rattachées de se mettre à jour.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.85]{observer.png}
+	\caption{Utilisation du \textit{design pattern} Observateur}
+\end{figure}
+
+\subsubsection{package fr.alma.modele.ihm}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.85]{ihm.png}
+	\caption{Simplification de la représentation de l'IHM}
+\end{figure}
+
+\begin{landscape}
+			\subsubsection{package fr.alma.modele.noyau}
+Ce package est le c\oe{}ur de l'application. Il contient toutes les classes indépendantes (par exemple : la classe Tâche, Projet, Utilisateur, \dots).
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.85]{noyau.png}
+	\caption{Diagramme de classes du noyau}
+\end{figure}
+\end{landscape}
+
+\FloatBarrier
+
+En reprenant le diagramme de classes du livrable 1, nous avons pu factoriser certains termes de la tâche, 
+tels que les tags, les urls, \dots C'est-à-dire les éléments secondaires dont on sait qu'ils ne portent que peu de propriétés.
+De plus, nous avons amélioré le diagramme afin que les éléments nécessaires soit présents, tel que contacts, \dots
+Les relations et les différents types des attributs ont été aussi revus.
+
+Afin d'implémenter le \textit{design pattern} DAO. Nous devrons créer une classe abstraite \textbf{EntiteGTD} qui devra impérativement contenir
+au moins un identifiant, pour le stockage dans la base de données. Puis, par le biais de l'héritage, nous étendrons toutes les classes concrètes du noyau 
+de cette classe.
+
+\subsubsection{package fr.alma.modele.noyau.etat}
+Chaque tâche possède son propre état. Aussi, l'utilisation du \textit{desing pattern} Etat nous semble essentielle pour gérer plus finement ces différents
+états.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.85]{etat.png}
+	\caption{Diagramme de classes du noyau}
+\end{figure}
+
+\begin{landscape}
+		\subsubsection{package fr.alma.modele.gestionnaire}	
+Ce package permettra de gérer les actions sur les données (par utilisateur, \dots). En effet, il fait le lien entre l'interface homme-machine, le noyau de l'application et la base de données.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.8]{gestionnaire.png}
+	\caption{Diagramme de classes du gestionnaire}
+\end{figure}
+\end{landscape}		
+				
+				\subsubsection{package fr.alma.modele.serveur}
+				
+Ce package contiendra les interfaces nécessaires à la liaison CORBA et tous les éléments 
+nécessaires à la réalisation de la connexion avec le serveur GTD.	
+
+Les IDL étant communes au serveur GTD et l'ensemble des clients, les entités échangées avec le serveur ne sont pas identiques aux nôtres. Cela 
+s'explique notamment par les choix que nous avons fait indépendamment de l'équipe qui développe le serveur GTD.
+ 
+La conversion entre les types des entités échangées avec le serveur et notre application locale est assurée par une classe outil. Cette classe sera
+la classe \textbf{ConversionTypes}. Ainsi, les composants ConnexionServeur et Synchronisation, travaillent en toute transparence avec les entités que nous avons défini.			
+				
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{serveur.png}
+	\caption{Diagramme de classes du serveur}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.9]{sdSynchro.png}
+	\caption{Synchronisation avec le serveur distant}
+\end{figure}
+\end{landscape}			
+				
+				\subsubsection{package fr.alma.modele.persistence}
+				
+Ce package gérera la persistance des données et tout le système de base de données en général.
+
+Notre application est destinée à une utilisation locale et n'offre pas de services distants. Il s'agit donc ici de faire persister des entités 
+représentées par de simples classes. Dans le but de découpler au maximum la partie métier de la gestion de données, nous avons utilisé le patron de 
+conception DAO (figure \ref{diagClassesPersistance}). Ainsi, pour chaque entité que nous souhaitons voir persister, un DAO correspondant offre les opérations 
+d'accès, d'insertion, de recherche, etc. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.75]{persistance.png}
+	\caption{Diagramme de classes de la persistance}
+	\label{diagClassesPersistance}
+\end{figure}
+
+Notre superinterface \textbf{EntiteDAO} sera une 
+interface très générique. Cette interface sera paramétrée par des classes qui étendront la classe abstraite \textbf{EntiteGTD} de notre modèle de données.
+
+Afin de simplifier l'écriture de notre code, l'utilisation d'une fabrique de DAO a été proposé. Ce singleton sera le seul a pouvoir créer des objets issus
+des classes d'implémentation des sous-interfaces de \textbf{EntiteDAO}, couplées avec la classe abstraite \textbf{AbstractDAO}.
+
+Cette dernière aura l'avantage de factoriser un grand nombre de méthodes communes aux classes implémentant les DAO. Par exemple, la récupération d'une
+entité s'effectura toujours grâce à la méthode suivante :
+
+\lstset{language=Java}
+\begin{lstlisting}
+@Override
+public EntiteGenerique recuperer(Long entityId) {
+  Session s = getSession();
+  EntiteGenerique e = (EntiteGenerique) s.get(getEntity(), entityId);
+  return e;
+}
+\end{lstlisting}
+
+Cependant, toutes les méthodes ne sont pas factorisables et nous devrons compléter certains DAO. Pour cela, en fonction
+des cas que nous avons repéré, nous devrons spécifier quelques méthodes. Cela sera le cas dans la classe d'implémentation \textbf{TacheDaoImpl}. On retrouve
+la méthode suivante :
+
+\begin{lstlisting}
+@Override
+public List<Tache> recupererTaches(Long idProjet) {
+  Session s = getSession();
+  Query query = s.createQuery("from Tache where idprojet = :idprojet");
+  query.setParameter("idprojet", idProjet);
+  List<Tache> results = (List<Tache>) query.list();
+  return results;
+}
+\end{lstlisting}
+
+\begin{landscape}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.8]{sequenceDAO.png}
+	\caption{Diagramme de séquence, persistance des entités}
+\end{figure}
+\end{landscape}			
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Conclusion}
+	
+\paragraph{}
+Dans ce dernier livrable, nous avons détaillé les composants spécifiés dans le livrable 3. Cette étape est l'une des plus
+importante car elle nous permet de voir comment notre application va s'organiser, et comment l'architecture est conçue. 
+De plus, on a maintenant une idée assez claire de l'organisation du code source.
+
+\paragraph{}
+Grâce à ce dernier livrable, nous allons pouvoir implémenter aisément notre application en tant que Client GTD. 
+Grâce aux scripts accéléo et aux descriptions des packages, des interfaces, \dots, nous allons pouvoir générer automatiquement
+tous les éléments nécessaires afin que notre logiciel fonctionne. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{landscape}
+	\subappendix
+	\section{Vue générale}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.6]{vueGenerale.png}
+	\caption{Diagramme de classe global}
+\end{figure}
+\end{landscape}	
+	
+

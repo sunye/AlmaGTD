@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_gUzhU_vnEd6GVdJAWTCYPA" name="EntiteGenerique">
+  <eAnnotations xmi:id="_tjB2IfvnEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_k7aqoPvoEd6GVdJAWTCYPA" name="EntiteGenerique" nsURI="http:///schemas/EntiteGenerique/_k7Q5oPvoEd6GVdJAWTCYPA/3" nsPrefix="EntiteGenerique">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_k7aqofvoEd6GVdJAWTCYPA" name="EntiteGTD">
+        <eAnnotations xmi:id="_k7aqovvoEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_hzRqcPvnEd6GVdJAWTCYPA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_k7aqo_voEd6GVdJAWTCYPA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_k7aqpfvoEd6GVdJAWTCYPA" name="base_Interface" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_jAE_UfvoEd6GVdJAWTCYPA" name="EntiteGenerique" nsURI="http:///schemas/EntiteGenerique/_jAE_UPvoEd6GVdJAWTCYPA/2" nsPrefix="EntiteGenerique">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_jAE_UvvoEd6GVdJAWTCYPA" name="EntiteGTD">
+        <eAnnotations xmi:id="_jAE_U_voEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_hzRqcPvnEd6GVdJAWTCYPA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_jAE_VPvoEd6GVdJAWTCYPA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_g3zrQfvoEd6GVdJAWTCYPA" name="EntiteGenerique" nsURI="http:///schemas/EntiteGenerique/_g3zrQPvoEd6GVdJAWTCYPA/1" nsPrefix="EntiteGenerique">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_g3zrQvvoEd6GVdJAWTCYPA" name="EntiteGTD">
+        <eAnnotations xmi:id="_g3zrQ_voEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_hzRqcPvnEd6GVdJAWTCYPA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_g3zrRPvoEd6GVdJAWTCYPA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_tjB2IvvnEd6GVdJAWTCYPA" name="EntiteGenerique" nsURI="http:///schemas/EntiteGenerique/_tjB2IPvnEd6GVdJAWTCYPA/0" nsPrefix="EntiteGenerique">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_tjB2I_vnEd6GVdJAWTCYPA" name="EntiteGTD">
+        <eAnnotations xmi:id="_tjB2JPvnEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_hzRqcPvnEd6GVdJAWTCYPA"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_tjB2JfvnEd6GVdJAWTCYPA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_j1ARoPvnEd6GVdJAWTCYPA">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <elementImport xmi:id="_hYYowvvoEd6GVdJAWTCYPA">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Interface"/>
+  </elementImport>
+  <packageImport xmi:id="_b3qnYCWuEd62NaW46C6lHg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_hzRqcPvnEd6GVdJAWTCYPA" name="EntiteGTD">
+    <ownedAttribute xmi:id="_rtf35_vnEd6GVdJAWTCYPA" name="base_Class" association="_rtf35fvnEd6GVdJAWTCYPA">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_kLXGt_voEd6GVdJAWTCYPA" name="base_Interface" association="_kLXGtfvoEd6GVdJAWTCYPA">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Interface"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_rtf35fvnEd6GVdJAWTCYPA" name="Class_EntiteGTD" memberEnd="_rtf35vvnEd6GVdJAWTCYPA _rtf35_vnEd6GVdJAWTCYPA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_rtf35vvnEd6GVdJAWTCYPA" name="extension_EntiteGTD" type="_hzRqcPvnEd6GVdJAWTCYPA" aggregation="composite" association="_rtf35fvnEd6GVdJAWTCYPA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_kLXGtfvoEd6GVdJAWTCYPA" name="Interface_EntiteGTD" memberEnd="_kLXGtvvoEd6GVdJAWTCYPA _kLXGt_voEd6GVdJAWTCYPA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_kLXGtvvoEd6GVdJAWTCYPA" name="extension_EntiteGTD" type="_hzRqcPvnEd6GVdJAWTCYPA" aggregation="composite" association="_kLXGtfvoEd6GVdJAWTCYPA"/>
+  </packagedElement>
+  <profileApplication xmi:id="_QZ5HUPvoEd6GVdJAWTCYPA" appliedProfile="_gUzhU_vnEd6GVdJAWTCYPA">
+    <eAnnotations xmi:id="_QZ5HUfvoEd6GVdJAWTCYPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tjB2IvvnEd6GVdJAWTCYPA"/>
+  </profileApplication>
+</uml:Profile>

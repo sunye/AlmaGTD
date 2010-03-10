@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="instantane">
+    <packagedElement xmi:type="uml:Class" xmi:id="_6voboLOsEd6oFLjYzMwAiQ" name="Courant"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vobobOsEd6oFLjYzMwAiQ" name="entrées : Liste des choses à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCsLOsEd6oFLjYzMwAiQ" name="Faire la GLO : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCsbOsEd6oFLjYzMwAiQ" name="Dormir : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCsrOsEd6oFLjYzMwAiQ" name="Un jour"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCs7OsEd6oFLjYzMwAiQ" name="Archive"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCtLOsEd6oFLjYzMwAiQ" name="Gravir le Mont-Blanc : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCtbOsEd6oFLjYzMwAiQ" name="Archive"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCtrOsEd6oFLjYzMwAiQ" name="entrées : Liste des choses à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCt7OsEd6oFLjYzMwAiQ" name="Futur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCuLOsEd6oFLjYzMwAiQ" name="Futur"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCubOsEd6oFLjYzMwAiQ" name="Courant"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCurOsEd6oFLjYzMwAiQ" name="Appeler le docteur : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCu7OsEd6oFLjYzMwAiQ" name="Un jour"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCvLOsEd6oFLjYzMwAiQ" name="traitées : Liste des tâches"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6vpCvbOsEd6oFLjYzMwAiQ" name="traitées : Liste des tâches"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XdWkULOtEd6oFLjYzMwAiQ" name="Gravir le Mont-Blanc : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XdWkUbOtEd6oFLjYzMwAiQ" name="Dormir : Chose à faire"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZvIZsLOtEd6oFLjYzMwAiQ" name="Faire la GLO : Chose à faire">
+      <ownedAttribute xmi:id="_FRgCcLOuEd6oFLjYzMwAiQ" name="Date de début : 01/10/09"/>
+      <ownedAttribute xmi:id="_Ie0TALOuEd6oFLjYzMwAiQ" name="Echéance : 20/10/09"/>
+      <ownedAttribute xmi:id="_S2LvcLOuEd6oFLjYzMwAiQ" name="Priorité : 3"/>
+      <ownedAttribute xmi:id="_VLD8ILOuEd6oFLjYzMwAiQ" name="Taux d'effort : 87"/>
+      <ownedAttribute xmi:id="_adISsLOuEd6oFLjYzMwAiQ" name="Liens : http://coursdeglo.fr"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_-OeEkLOtEd6oFLjYzMwAiQ" name="Appeler le docteur"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_d_IPQLOtEd6oFLjYzMwAiQ" name="Appeler le docteur : Chose à faire">
+      <ownedAttribute xmi:id="_w5mVMLOtEd6oFLjYzMwAiQ" name="note : &quot;Je crois que je suis malade&quot;"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_fvG_ILOtEd6oFLjYzMwAiQ" name="Docteur : Contact">
+      <ownedAttribute xmi:id="_kENXILOtEd6oFLjYzMwAiQ" name="numéro : 911"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3l3_8LOtEd6oFLjYzMwAiQ" name="Cacher les restes du cadavre : Chose à faire">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_8-qpkLOtEd6oFLjYzMwAiQ" name="Cacher les restes du cadavre"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-cmnMLOtEd6oFLjYzMwAiQ" name="Appeler le docteur"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_gbgVoLOuEd6oFLjYzMwAiQ" name="A_&lt;appeler le docteur>_&lt;liste des choses à faire>" memberEnd="_gbgVobOuEd6oFLjYzMwAiQ _gbgVpLOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_gbgVobOuEd6oFLjYzMwAiQ" name="appeler le docteur" type="_6vpCurOsEd6oFLjYzMwAiQ" association="_gbgVoLOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gbgVorOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gbgVo7OuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_gbgVpLOuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_gbgVoLOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gbgVpbOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gbgVprOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_hLfoKrOuEd6oFLjYzMwAiQ" name="A_&lt;faire la GLO>_&lt;liste des choses à faire>" memberEnd="_hLfoK7OuEd6oFLjYzMwAiQ _hLfoLrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_hLfoK7OuEd6oFLjYzMwAiQ" name="faire la GLO" type="_6vpCsLOsEd6oFLjYzMwAiQ" association="_hLfoKrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hLfoLLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hLfoLbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_hLfoLrOuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_hLfoKrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hLfoL7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hLfoMLOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ibJ5OrOuEd6oFLjYzMwAiQ" name="A_&lt;dormir>_&lt;liste des choses à faire>" memberEnd="_ibJ5O7OuEd6oFLjYzMwAiQ _ibJ5PrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_ibJ5O7OuEd6oFLjYzMwAiQ" name="dormir" type="_6vpCsbOsEd6oFLjYzMwAiQ" association="_ibJ5OrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ibJ5PLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ibJ5PbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_ibJ5PrOuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_ibJ5OrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ibJ5P7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ibJ5QLOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lEqSGrOuEd6oFLjYzMwAiQ" name="A_&lt;liste des choses à faire>_&lt;cacher les restes du cadavre>" memberEnd="_lEqSG7OuEd6oFLjYzMwAiQ _lEqSHrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_lEqSG7OuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_lEqSGrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lEqSHLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lEqSHbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_lEqSHrOuEd6oFLjYzMwAiQ" name="cacher les restes du cadavre" type="_3l3_8LOtEd6oFLjYzMwAiQ" association="_lEqSGrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lEqSH7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lEqSILOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lydMOrOuEd6oFLjYzMwAiQ" name="A_&lt;gravir le Mont-Blanc>_&lt;liste des choses à faire>" memberEnd="_lydMO7OuEd6oFLjYzMwAiQ _lydMPrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_lydMO7OuEd6oFLjYzMwAiQ" name="gravir le Mont-Blanc" type="_6vpCtLOsEd6oFLjYzMwAiQ" association="_lydMOrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lydMPLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lydMPbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_lydMPrOuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_lydMOrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lydMP7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lydMQLOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_niIaGrOuEd6oFLjYzMwAiQ" name="A_&lt;liste des choses à faire>_&lt;appeler le docteur>" memberEnd="_niIaG7OuEd6oFLjYzMwAiQ _niIaHrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_niIaG7OuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vpCtrOsEd6oFLjYzMwAiQ" association="_niIaGrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niIaHLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niIaHbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_niIaHrOuEd6oFLjYzMwAiQ" name="appeler le docteur" type="_-cmnMLOtEd6oFLjYzMwAiQ" association="_niIaGrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_niIaH7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_niIaILOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_pkU7ULOuEd6oFLjYzMwAiQ" name="Cacher les restes du cadavre : Chose à faire">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_pkU7UbOuEd6oFLjYzMwAiQ" name="Cacher les restes du cadavre"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_r6wAKLOuEd6oFLjYzMwAiQ" name="A_&lt;liste des choses à faire>_&lt;cacher les restes du cadavre>_2" memberEnd="_r6wAKbOuEd6oFLjYzMwAiQ _r6wALLOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_r6wAKbOuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vpCtrOsEd6oFLjYzMwAiQ" association="_r6wAKLOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r6wAKrOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r6wAK7OuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_r6wALLOuEd6oFLjYzMwAiQ" name="cacher les restes du cadavre" type="_pkU7ULOuEd6oFLjYzMwAiQ" association="_r6wAKLOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r6wALbOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r6wALrOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_siNoyrOuEd6oFLjYzMwAiQ" name="A_&lt;liste des choses à faire>_&lt;dormir>" memberEnd="_siNoy7OuEd6oFLjYzMwAiQ _siNozrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_siNoy7OuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vpCtrOsEd6oFLjYzMwAiQ" association="_siNoyrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_siNozLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_siNozbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_siNozrOuEd6oFLjYzMwAiQ" name="dormir" type="_XdWkUbOtEd6oFLjYzMwAiQ" association="_siNoyrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_siNoz7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_siNo0LOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tFeG2rOuEd6oFLjYzMwAiQ" name="A_&lt;liste des choses à faire>_&lt;gravir le Mont-Blanc>" memberEnd="_tFeG27OuEd6oFLjYzMwAiQ _tFeG3rOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_tFeG27OuEd6oFLjYzMwAiQ" name="liste des choses à faire" type="_6vpCtrOsEd6oFLjYzMwAiQ" association="_tFeG2rOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tFeG3LOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tFeG3bOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_tFeG3rOuEd6oFLjYzMwAiQ" name="gravir le Mont-Blanc" type="_XdWkULOtEd6oFLjYzMwAiQ" association="_tFeG2rOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tFeG37OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tFeG4LOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_tmg-arOuEd6oFLjYzMwAiQ" name="A_&lt;liste des tâches>_&lt;appeler le docteur>" memberEnd="_tmg-a7OuEd6oFLjYzMwAiQ _tmg-brOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_tmg-a7OuEd6oFLjYzMwAiQ" name="liste des tâches" type="_6vpCvbOsEd6oFLjYzMwAiQ" association="_tmg-arOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tmg-bLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tmg-bbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_tmg-brOuEd6oFLjYzMwAiQ" name="appeler le docteur" type="_d_IPQLOtEd6oFLjYzMwAiQ" association="_tmg-arOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tmg-b7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tmg-cLOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_t_6V2rOuEd6oFLjYzMwAiQ" name="A_&lt;liste des tâches>_&lt;faire la GLO>" memberEnd="_t_6V27OuEd6oFLjYzMwAiQ _t_6V3rOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_t_6V27OuEd6oFLjYzMwAiQ" name="liste des tâches" type="_6vpCvbOsEd6oFLjYzMwAiQ" association="_t_6V2rOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_6V3LOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t_6V3bOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_t_6V3rOuEd6oFLjYzMwAiQ" name="faire la GLO" type="_ZvIZsLOtEd6oFLjYzMwAiQ" association="_t_6V2rOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_6V37OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t_6V4LOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ulB1GrOuEd6oFLjYzMwAiQ" name="A_&lt;appeler le docteur>_&lt;docteur>" memberEnd="_ulB1G7OuEd6oFLjYzMwAiQ _ulB1HrOuEd6oFLjYzMwAiQ">
+      <ownedEnd xmi:id="_ulB1G7OuEd6oFLjYzMwAiQ" name="appeler le docteur" type="_d_IPQLOtEd6oFLjYzMwAiQ" association="_ulB1GrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ulB1HLOuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ulB1HbOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_ulB1HrOuEd6oFLjYzMwAiQ" name="docteur" type="_fvG_ILOtEd6oFLjYzMwAiQ" association="_ulB1GrOuEd6oFLjYzMwAiQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ulB1H7OuEd6oFLjYzMwAiQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ulB1ILOuEd6oFLjYzMwAiQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOeYcLPREd6P17j2pmkVxA" name="futur : Echéancier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOgNoLPREd6P17j2pmkVxA" name="plusTard : En attente"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOgNobPREd6P17j2pmkVxA" name="peutEtre : Un jour"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOgNorPREd6P17j2pmkVxA" name="mesProjets : Projets"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOgNo7PREd6P17j2pmkVxA" name="urgent : Prochaines actions"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QOgNpLPREd6P17j2pmkVxA" name="passé : Archive"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqVfwLPREd6P17j2pmkVxA" name="futur : Echéancier"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqVfwbPREd6P17j2pmkVxA" name="plusTard : En attente"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqVfwrPREd6P17j2pmkVxA" name="peutEtre : Un jour"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqVfw7PREd6P17j2pmkVxA" name="mesProjets : Projets"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqWG0LPREd6P17j2pmkVxA" name="urgent : Prochaines actions"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UqWG0bPREd6P17j2pmkVxA" name="passé : Archive"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_WVZjULPlEd6nKPnESA00PQ" name="A_&lt;cacher les restes du cadavre : Chose à faire>_&lt;entrées : Liste des choses à faire>" memberEnd="_WVZjUbPlEd6nKPnESA00PQ _WVZjVLPlEd6nKPnESA00PQ">
+      <ownedEnd xmi:id="_WVZjUbPlEd6nKPnESA00PQ" name="cacher les restes du cadavre : Chose à faire" type="_3l3_8LOtEd6oFLjYzMwAiQ" association="_WVZjULPlEd6nKPnESA00PQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WVZjUrPlEd6nKPnESA00PQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WVZjU7PlEd6nKPnESA00PQ" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_WVZjVLPlEd6nKPnESA00PQ" name="entrées : Liste des choses à faire" type="_6vobobOsEd6oFLjYzMwAiQ" association="_WVZjULPlEd6nKPnESA00PQ">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WVZjVbPlEd6nKPnESA00PQ" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WVZjVrPlEd6nKPnESA00PQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

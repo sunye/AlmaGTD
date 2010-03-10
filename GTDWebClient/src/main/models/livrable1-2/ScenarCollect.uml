@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="ScenarCollectModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="ScenarCollectPackage">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="idCollaboration" name="ScenarCollectCollaboration">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="idInteraction" name="ScenarCollectInteraction">
+        <lifeline xmi:id="_f1thYLM0Ed6Pmbtqv7-kHA" name="Utilisateur" coveredBy="_yWn30LM0Ed6Pmbtqv7-kHA __k7FIbM0Ed6Pmbtqv7-kHA __k7FILM0Ed6Pmbtqv7-kHA _xwXwILM0Ed6Pmbtqv7-kHA __k5P8LM0Ed6Pmbtqv7-kHA"/>
+        <lifeline xmi:id="_gwfuoLM0Ed6Pmbtqv7-kHA" name="Systeme" coveredBy="_yWn30bM0Ed6Pmbtqv7-kHA _yWTuwLM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__k7FILM0Ed6Pmbtqv7-kHA" name="MessageOccurrenceSpecification3" covered="_f1thYLM0Ed6Pmbtqv7-kHA" event="__k7sMLM0Ed6Pmbtqv7-kHA" message="__k7sMbM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__k7FIbM0Ed6Pmbtqv7-kHA" name="MessageOccurrenceSpecification4" covered="_f1thYLM0Ed6Pmbtqv7-kHA" event="__k7sMLM0Ed6Pmbtqv7-kHA" message="__k7sMbM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yWn30LM0Ed6Pmbtqv7-kHA" name="MessageOccurrenceSpecification1" covered="_f1thYLM0Ed6Pmbtqv7-kHA" event="_yWoe4LM0Ed6Pmbtqv7-kHA" message="_yWoe4bM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yWn30bM0Ed6Pmbtqv7-kHA" name="MessageOccurrenceSpecification2" covered="_gwfuoLM0Ed6Pmbtqv7-kHA" event="_yWoe4LM0Ed6Pmbtqv7-kHA" message="_yWoe4bM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_xwXwILM0Ed6Pmbtqv7-kHA" name="BehaviorExecutionSpecification1" covered="_f1thYLM0Ed6Pmbtqv7-kHA" start="__k7FILM0Ed6Pmbtqv7-kHA" finish="_yWn30LM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_yWTuwLM0Ed6Pmbtqv7-kHA" name="BehaviorExecutionSpecification2" covered="_gwfuoLM0Ed6Pmbtqv7-kHA" start="_yWn30bM0Ed6Pmbtqv7-kHA" finish="_yWn30bM0Ed6Pmbtqv7-kHA"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="__k5P8LM0Ed6Pmbtqv7-kHA" name="BehaviorExecutionSpecification3" covered="_f1thYLM0Ed6Pmbtqv7-kHA" start="__k7FIbM0Ed6Pmbtqv7-kHA" finish="__k7FIbM0Ed6Pmbtqv7-kHA"/>
+        <message xmi:id="_yWoe4bM0Ed6Pmbtqv7-kHA" name="2: Saisie" receiveEvent="_yWn30bM0Ed6Pmbtqv7-kHA" sendEvent="_yWn30LM0Ed6Pmbtqv7-kHA"/>
+        <message xmi:id="__k7sMbM0Ed6Pmbtqv7-kHA" name="1 : Recensement informations" receiveEvent="__k7FIbM0Ed6Pmbtqv7-kHA" sendEvent="__k7FILM0Ed6Pmbtqv7-kHA"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_yWoe4LM0Ed6Pmbtqv7-kHA" name="CallEvent1"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="__k7sMLM0Ed6Pmbtqv7-kHA" name="CallEvent2"/>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="architectureModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="architecturePackage">
+    <packagedElement xmi:type="uml:Component" xmi:id="idComponent" name="architectureComponent">
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_yZkhgMR0Ed6twY_u1qcgcQ" name="IHMUtilisateur" clientDependency="_-GC6QsR1Ed6twY_u1qcgcQ _HAvH4sR3Ed6twY_u1qcgcQ">
+        <packagedElement xmi:type="uml:Usage" xmi:id="_-GC6QsR1Ed6twY_u1qcgcQ" name="Usage1" supplier="_oGFqEMR1Ed6twY_u1qcgcQ" client="_yZkhgMR0Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_HAvH4sR3Ed6twY_u1qcgcQ" name="Usage2" supplier="_FX8lIMR3Ed6twY_u1qcgcQ" client="_yZkhgMR0Ed6twY_u1qcgcQ"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_0ud8UMR0Ed6twY_u1qcgcQ" name="ControleurUtilisateur" clientDependency="_B34-wsR3Ed6twY_u1qcgcQ _GVpjgcR3Ed6twY_u1qcgcQ">
+        <interfaceRealization xmi:id="_GVpjgcR3Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_FX8lIMR3Ed6twY_u1qcgcQ" client="_0ud8UMR0Ed6twY_u1qcgcQ" contract="_FX8lIMR3Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_B34-wsR3Ed6twY_u1qcgcQ" name="Usage1" supplier="_oGFqEMR1Ed6twY_u1qcgcQ" client="_0ud8UMR0Ed6twY_u1qcgcQ"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_9hVgIMR0Ed6twY_u1qcgcQ" name="ConnexionLocal" clientDependency="_qhiY0MR1Ed6twY_u1qcgcQ _TfoG8sR2Ed6twY_u1qcgcQ _2aUIMsR2Ed6twY_u1qcgcQ __k1XAsR2Ed6twY_u1qcgcQ _MlCd8sR3Ed6twY_u1qcgcQ _qNlZQsnfEd6FZervzurqPw">
+        <interfaceRealization xmi:id="_qhiY0MR1Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_oGFqEMR1Ed6twY_u1qcgcQ" client="_9hVgIMR0Ed6twY_u1qcgcQ" contract="_oGFqEMR1Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_TfoG8sR2Ed6twY_u1qcgcQ" name="Usage1" supplier="_KFXzAMR2Ed6twY_u1qcgcQ" client="_9hVgIMR0Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_2aUIMsR2Ed6twY_u1qcgcQ" name="Usage2" supplier="_y0hGMMR2Ed6twY_u1qcgcQ" client="_9hVgIMR0Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="__k1XAsR2Ed6twY_u1qcgcQ" name="Usage3" supplier="_gkY9wMR2Ed6twY_u1qcgcQ" client="_9hVgIMR0Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_MlCd8sR3Ed6twY_u1qcgcQ" name="Usage4" supplier="_LYMQUMR3Ed6twY_u1qcgcQ" client="_9hVgIMR0Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_qNlZQsnfEd6FZervzurqPw" name="Usage5" supplier="_lDG4cMnfEd6FZervzurqPw" client="_9hVgIMR0Ed6twY_u1qcgcQ"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_WUOK8MR1Ed6twY_u1qcgcQ" name="PersitenceManager" clientDependency="_0NMJUMR2Ed6twY_u1qcgcQ _7mAJ8cR2Ed6twY_u1qcgcQ _WNx50sR3Ed6twY_u1qcgcQ">
+        <packagedElement xmi:type="uml:Usage" xmi:id="_WNx50sR3Ed6twY_u1qcgcQ" name="Usage1" supplier="_SGIH8MR3Ed6twY_u1qcgcQ" client="_WUOK8MR1Ed6twY_u1qcgcQ"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_oGFqEMR1Ed6twY_u1qcgcQ" name="InterfaceControleur"/>
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_LYMQUMR3Ed6twY_u1qcgcQ" name="InterfaceServeur"/>
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_SGIH8MR3Ed6twY_u1qcgcQ" name="Interface8"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_xfd8kMUrEd6AWLYHHlLzXQ" name="ConnexionServeur" clientDependency="_L_0RAsR3Ed6twY_u1qcgcQ _Al-Bo8UsEd6AWLYHHlLzXQ _CfH7osUsEd6AWLYHHlLzXQ">
+        <interfaceRealization xmi:id="_L_0RAsR3Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_LYMQUMR3Ed6twY_u1qcgcQ" client="_3KWmYMRoEd6twY_u1qcgcQ _xfd8kMUrEd6AWLYHHlLzXQ" contract="_LYMQUMR3Ed6twY_u1qcgcQ"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_CfH7osUsEd6AWLYHHlLzXQ" name="Usage1" supplier="__vyAgMUrEd6AWLYHHlLzXQ" client="_xfd8kMUrEd6AWLYHHlLzXQ"/>
+      </nestedClassifier>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Al-Bo8UsEd6AWLYHHlLzXQ" name="Dependency1" supplier="__vyAgMUrEd6AWLYHHlLzXQ" client="_xfd8kMUrEd6AWLYHHlLzXQ"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DRoWoMUsEd6AWLYHHlLzXQ" name="Serveur">
+        <packagedElement xmi:type="uml:Interface" xmi:id="__vyAgMUrEd6AWLYHHlLzXQ" name="InterfaceSynchronisation"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_3KWmYMRoEd6twY_u1qcgcQ" name="SynchroServerManager" clientDependency="_L_0RAsR3Ed6twY_u1qcgcQ _B-U7ssUsEd6AWLYHHlLzXQ">
+          <interfaceRealization xmi:id="_B-U7ssUsEd6AWLYHHlLzXQ" name="InterfaceRealization1" supplier="__vyAgMUrEd6AWLYHHlLzXQ" client="_3KWmYMRoEd6twY_u1qcgcQ" contract="__vyAgMUrEd6AWLYHHlLzXQ"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_LWiBMMUsEd6AWLYHHlLzXQ" name="Client">
+        <packagedElement xmi:type="uml:Component" xmi:id="_BQJ7QMR1Ed6twY_u1qcgcQ" name="GestionUtilisateurLocal" clientDependency="_QbvfMsR2Ed6twY_u1qcgcQ _ttwLQsR3Ed6twY_u1qcgcQ">
+          <interfaceRealization xmi:id="_QbvfMsR2Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_KFXzAMR2Ed6twY_u1qcgcQ" client="_BQJ7QMR1Ed6twY_u1qcgcQ" contract="_KFXzAMR2Ed6twY_u1qcgcQ"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_ttwLQsR3Ed6twY_u1qcgcQ" name="Usage1" supplier="_y0hGMMR2Ed6twY_u1qcgcQ" client="_BQJ7QMR1Ed6twY_u1qcgcQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4qT04MR2Ed6twY_u1qcgcQ" name="InterfaceCopieLocal"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_KFXzAMR2Ed6twY_u1qcgcQ" name="InterfaceConnexionLocal"/>
+        <packagedElement xmi:type="uml:Component" xmi:id="_D-S8gMR1Ed6twY_u1qcgcQ" name="GestionnaireDeTaches" clientDependency="_hwdvUsR2Ed6twY_u1qcgcQ _8I9GAsR2Ed6twY_u1qcgcQ">
+          <interfaceRealization xmi:id="_hwdvUsR2Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_gkY9wMR2Ed6twY_u1qcgcQ" client="_D-S8gMR1Ed6twY_u1qcgcQ" contract="_gkY9wMR2Ed6twY_u1qcgcQ"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_8I9GAsR2Ed6twY_u1qcgcQ" name="Usage1" supplier="_4qT04MR2Ed6twY_u1qcgcQ" client="_D-S8gMR1Ed6twY_u1qcgcQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Component" xmi:id="_bSn-oMR1Ed6twY_u1qcgcQ" name="BD" clientDependency="_T4jH0MR3Ed6twY_u1qcgcQ _7mAJ8cR2Ed6twY_u1qcgcQ _0NMJUMR2Ed6twY_u1qcgcQ _pzdCAsnfEd6FZervzurqPw">
+          <interfaceRealization xmi:id="_T4jH0MR3Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_SGIH8MR3Ed6twY_u1qcgcQ" client="_bSn-oMR1Ed6twY_u1qcgcQ" contract="_SGIH8MR3Ed6twY_u1qcgcQ"/>
+          <interfaceRealization xmi:id="_7mAJ8cR2Ed6twY_u1qcgcQ" name="InterfaceRealization2" supplier="_4qT04MR2Ed6twY_u1qcgcQ" client="_WUOK8MR1Ed6twY_u1qcgcQ _bSn-oMR1Ed6twY_u1qcgcQ" contract="_4qT04MR2Ed6twY_u1qcgcQ"/>
+          <interfaceRealization xmi:id="_0NMJUMR2Ed6twY_u1qcgcQ" name="InterfaceRealization1" supplier="_y0hGMMR2Ed6twY_u1qcgcQ" client="_WUOK8MR1Ed6twY_u1qcgcQ _bSn-oMR1Ed6twY_u1qcgcQ" contract="_y0hGMMR2Ed6twY_u1qcgcQ"/>
+          <interfaceRealization xmi:id="_pzdCAsnfEd6FZervzurqPw" name="InterfaceRealization3" supplier="_lDG4cMnfEd6FZervzurqPw" client="_bSn-oMR1Ed6twY_u1qcgcQ" contract="_lDG4cMnfEd6FZervzurqPw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_y0hGMMR2Ed6twY_u1qcgcQ" name="InterfaceGestionnaireCompte"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_gkY9wMR2Ed6twY_u1qcgcQ" name="InterfaceGestionnaire"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_lDG4cMnfEd6FZervzurqPw" name="InterfaceBD"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Yfv6MMUsEd6AWLYHHlLzXQ" name="Utilisateur">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_FX8lIMR3Ed6twY_u1qcgcQ" name="InterfaceIHM"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

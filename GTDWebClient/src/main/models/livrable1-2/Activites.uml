@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="Activites">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_cUTTULM4Ed6aN57-9ASy_w" name="" submachineState="_WocuULM5Ed6aN57-9ASy_w _ngx9YLM5Ed6aN57-9ASy_w">
+      <region xmi:id="_cUTTUbM4Ed6aN57-9ASy_w">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_jd7BYLM4Ed6aN57-9ASy_w" name="Initial"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_3MCx0LM4Ed6aN57-9ASy_w" name="Pseudostate1" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_S83NYLM5Ed6aN57-9ASy_w" name="Collecte">
+          <region xmi:id="_S83NYbM5Ed6aN57-9ASy_w" name="Region1">
+            <subvertex xmi:type="uml:State" xmi:id="_WocuULM5Ed6aN57-9ASy_w" name="recensement" submachine="_cUTTULM4Ed6aN57-9ASy_w"/>
+            <subvertex xmi:type="uml:State" xmi:id="_ngx9YLM5Ed6aN57-9ASy_w" name="saisie" submachine="_cUTTULM4Ed6aN57-9ASy_w"/>
+            <transition xmi:id="_pPMnBLM5Ed6aN57-9ASy_w" name="" kind="local" source="_WocuULM5Ed6aN57-9ASy_w" target="_ngx9YLM5Ed6aN57-9ASy_w"/>
+          </region>
+        </subvertex>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_4XF3k7NXEd6aN57-9ASy_w" name="Initial"/>
+        <subvertex xmi:type="uml:State" xmi:id="_6MhIIrNXEd6aN57-9ASy_w" name="Collecte effectuée"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_UP9b4LNYEd6aN57-9ASy_w" name="Information nécessite une action" kind="choice"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_wXRE0LNYEd6aN57-9ASy_w" name="La tâche prends moins de 2 min" kind="choice"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_BpvogLN1Ed6KheIMePwEsw" name="Doit-on la garder ?" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Kjl-ELN1Ed6KheIMePwEsw" name="Poubelle"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_m5vUQLN1Ed6KheIMePwEsw" name="Engendrera-t-elle une tâche ?" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_uVU8ELN1Ed6KheIMePwEsw" name="Consulter si besoin"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-rc18LN1Ed6KheIMePwEsw" name="Faire la tâche"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_aPnVkLN2Ed6KheIMePwEsw" name="L'action peut être faite dans le contexte actuelle ?" kind="choice"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_Kh3N0LN3Ed6KheIMePwEsw" name="Création de la tâche" kind="junction"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_eY7e4LN3Ed6KheIMePwEsw" name="Action suivante " kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_pVnO4LN3Ed6KheIMePwEsw" name="Faire la tâche"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_3fUUgLN3Ed6KheIMePwEsw" name="Suis-je la bonne personne pour accomplir la tâche ?" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_K6HgULN4Ed6KheIMePwEsw" name="En attente"/>
+        <subvertex xmi:type="uml:State" xmi:id="_W7OhwLN4Ed6KheIMePwEsw" name="Dossiers"/>
+        <subvertex xmi:type="uml:State" xmi:id="_YxNzALN4Ed6KheIMePwEsw" name="Agenda"/>
+        <subvertex xmi:type="uml:State" xmi:id="_h9EekLN4Ed6KheIMePwEsw" name="Echéancier"/>
+        <transition xmi:id="_kqiwFLM5Ed6aN57-9ASy_w" name="" kind="local" source="_jd7BYLM4Ed6aN57-9ASy_w" target="_WocuULM5Ed6aN57-9ASy_w"/>
+        <transition xmi:id="_JMcrJrNYEd6aN57-9ASy_w" name="collecte" kind="local" source="_4XF3k7NXEd6aN57-9ASy_w" target="_6MhIIrNXEd6aN57-9ASy_w"/>
+        <transition xmi:id="_Zsy4BbNYEd6aN57-9ASy_w" name="Transition1" kind="local" source="_6MhIIrNXEd6aN57-9ASy_w" target="_UP9b4LNYEd6aN57-9ASy_w"/>
+        <transition xmi:id="_2QRflbNYEd6aN57-9ASy_w" name="Oui" kind="local" source="_UP9b4LNYEd6aN57-9ASy_w" target="_wXRE0LNYEd6aN57-9ASy_w"/>
+        <transition xmi:id="_F-YtgLN1Ed6KheIMePwEsw" name="Non" kind="local" source="_UP9b4LNYEd6aN57-9ASy_w" target="_BpvogLN1Ed6KheIMePwEsw"/>
+        <transition xmi:id="_Nm6lJLN1Ed6KheIMePwEsw" name="Non" kind="local" source="_BpvogLN1Ed6KheIMePwEsw" target="_Kjl-ELN1Ed6KheIMePwEsw"/>
+        <transition xmi:id="_rWzVcLN1Ed6KheIMePwEsw" name="Oui" kind="local" source="_BpvogLN1Ed6KheIMePwEsw" target="_m5vUQLN1Ed6KheIMePwEsw"/>
+        <transition xmi:id="_xVjy5LN1Ed6KheIMePwEsw" name="Non" kind="local" source="_m5vUQLN1Ed6KheIMePwEsw" target="_uVU8ELN1Ed6KheIMePwEsw"/>
+        <transition xmi:id="_3dxHQLN1Ed6KheIMePwEsw" name="Oui" kind="local" source="_m5vUQLN1Ed6KheIMePwEsw" target="_UP9b4LNYEd6aN57-9ASy_w"/>
+        <transition xmi:id="_CeGBI7N2Ed6KheIMePwEsw" name="Oui" kind="local" source="_wXRE0LNYEd6aN57-9ASy_w" target="_aPnVkLN2Ed6KheIMePwEsw"/>
+        <transition xmi:id="_FDIUQLN3Ed6KheIMePwEsw" name="Oui" kind="local" source="_aPnVkLN2Ed6KheIMePwEsw" target="_-rc18LN1Ed6KheIMePwEsw"/>
+        <transition xmi:id="_MvSHorN3Ed6KheIMePwEsw" name="Non" kind="local" source="_aPnVkLN2Ed6KheIMePwEsw" target="_Kh3N0LN3Ed6KheIMePwEsw"/>
+        <transition xmi:id="_Nh9hwLN3Ed6KheIMePwEsw" name="Non" kind="local" source="_wXRE0LNYEd6aN57-9ASy_w" target="_Kh3N0LN3Ed6KheIMePwEsw"/>
+        <transition xmi:id="_g4-ZxLN3Ed6KheIMePwEsw" name="" kind="local" source="_Kh3N0LN3Ed6KheIMePwEsw" target="_eY7e4LN3Ed6KheIMePwEsw"/>
+        <transition xmi:id="_sce5MLN3Ed6KheIMePwEsw" name="Durée &lt; 2 min" kind="local" source="_eY7e4LN3Ed6KheIMePwEsw" target="_pVnO4LN3Ed6KheIMePwEsw"/>
+        <transition xmi:id="_AnW3FLN4Ed6KheIMePwEsw" name="" kind="local" source="_eY7e4LN3Ed6KheIMePwEsw" target="_3fUUgLN3Ed6KheIMePwEsw"/>
+        <transition xmi:id="_MWW00LN4Ed6KheIMePwEsw" name="On délègue" kind="local" source="_3fUUgLN3Ed6KheIMePwEsw" target="_K6HgULN4Ed6KheIMePwEsw"/>
+        <transition xmi:id="_kYfYJLN4Ed6KheIMePwEsw" name="Pour moi" kind="local" source="_3fUUgLN3Ed6KheIMePwEsw" target="_W7OhwLN4Ed6KheIMePwEsw"/>
+        <transition xmi:id="_mZzIkLN4Ed6KheIMePwEsw" name="" kind="local" source="_3fUUgLN3Ed6KheIMePwEsw" target="_YxNzALN4Ed6KheIMePwEsw"/>
+        <transition xmi:id="_q7H-sLN4Ed6KheIMePwEsw" name="" kind="local" source="_3fUUgLN3Ed6KheIMePwEsw" target="_h9EekLN4Ed6KheIMePwEsw"/>
+      </region>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

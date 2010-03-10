@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="src">
+    <packagedElement xmi:type="uml:Package" xmi:id="_wJR1sN9WEd6DwZBr4h7B5g" name="fr.alma.ihm" clientDependency="_0Jyg9t9aEd68pr6-eXOg3Q">
+      <packagedElement xmi:type="uml:Package" xmi:id="_4Z3rgt9ZEd68pr6-eXOg3Q" name="vue" clientDependency="_nOBOFN9aEd68pr6-eXOg3Q _4EhpcN9gEd68pr6-eXOg3Q"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_9x-_st9ZEd68pr6-eXOg3Q" name="controleur" clientDependency="_nrnwFN9aEd68pr6-eXOg3Q"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_xtw7sN9gEd68pr6-eXOg3Q" name="observeur"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_8K4mYN9WEd6DwZBr4h7B5g" name="fr.alma.modele">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FYrZYN9cEd68pr6-eXOg3Q" name="noyau"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_lVAWoN9dEd68pr6-eXOg3Q" name="gestionnaire" clientDependency="_paGjxt9dEd68pr6-eXOg3Q _fCA4UN-OEd6_KJ2CEqdcmA _oVM68N-OEd6_KJ2CEqdcmA"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_4lnLMN-KEd6_KJ2CEqdcmA" name="persistance"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_lC748N-OEd6_KJ2CEqdcmA" name="serveur"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_nOBOFN9aEd68pr6-eXOg3Q" name="Dependency1" supplier="_9x-_st9ZEd68pr6-eXOg3Q" client="_4Z3rgt9ZEd68pr6-eXOg3Q"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_nrnwFN9aEd68pr6-eXOg3Q" name="Dependency2" supplier="_4Z3rgt9ZEd68pr6-eXOg3Q" client="_9x-_st9ZEd68pr6-eXOg3Q"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_0Jyg9t9aEd68pr6-eXOg3Q" name="Dependency3" supplier="_8K4mYN9WEd6DwZBr4h7B5g" client="_wJR1sN9WEd6DwZBr4h7B5g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_paGjxt9dEd68pr6-eXOg3Q" name="Dependency4" supplier="_FYrZYN9cEd68pr6-eXOg3Q" client="_lVAWoN9dEd68pr6-eXOg3Q"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_4EhpcN9gEd68pr6-eXOg3Q" name="Dependency5" supplier="_xtw7sN9gEd68pr6-eXOg3Q" client="_4Z3rgt9ZEd68pr6-eXOg3Q"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fCA4UN-OEd6_KJ2CEqdcmA" name="Dependency6" supplier="_4lnLMN-KEd6_KJ2CEqdcmA" client="_lVAWoN9dEd68pr6-eXOg3Q"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_oVM68N-OEd6_KJ2CEqdcmA" name="Dependency7" supplier="_lC748N-OEd6_KJ2CEqdcmA" client="_lVAWoN9dEd68pr6-eXOg3Q"/>
+  </packagedElement>
+</uml:Model>

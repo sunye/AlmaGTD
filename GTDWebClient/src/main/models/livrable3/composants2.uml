@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="composantsModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="composantsPackage">
+    <packagedElement xmi:type="uml:Component" xmi:id="idComponent" name="composantsComponent">
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_qLobIshjEd6b5ajLwsnZlw" name="IGTDWebServer"/>
+      <nestedClassifier xmi:type="uml:Component" xmi:id="_dfWvMMlHEd6Qmv4TRHjMZg" name="WebServer">
+        <ownedComment xmi:id="_kBjP4MlSEd6Qmv4TRHjMZg">
+          <body>&lt;&lt;delegate>></body>
+        </ownedComment>
+        <ownedComment xmi:id="_1f154NAwEd6i84OGsto84g">
+          <body>&lt;&lt;delegate>></body>
+        </ownedComment>
+        <ownedComment xmi:id="_2JKjsNAwEd6i84OGsto84g">
+          <body>&lt;&lt;delegate>></body>
+        </ownedComment>
+        <ownedComment xmi:id="_8jlpcNAwEd6i84OGsto84g">
+          <body>&lt;&lt;delegate>></body>
+        </ownedComment>
+        <ownedComment xmi:id="_9Cek4NAwEd6i84OGsto84g">
+          <body>&lt;&lt;delegate>></body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_DKJgkMlIEd6Qmv4TRHjMZg" name="Port1" clientDependency="_0ZQQYMlNEd6Qmv4TRHjMZg _8gAVEslNEd6Qmv4TRHjMZg _pxGekMlQEd6Qmv4TRHjMZg" type="_qLobIshjEd6b5ajLwsnZlw" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_f2QNo8hhEd6b5ajLwsnZlw" name="Port3" clientDependency="_wyfP0shiEd6b5ajLwsnZlw" aggregation="composite"/>
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_fQjfk8hhEd6b5ajLwsnZlw" name="Port2" clientDependency="_obr88shiEd6b5ajLwsnZlw" aggregation="composite"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_eIQQMshgEd6b5ajLwsnZlw" name="ProcessManager">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_bzkbU8hhEd6b5ajLwsnZlw" name="Port1" clientDependency="_rx7RYMlREd6Qmv4TRHjMZg" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_cUy5E8hhEd6b5ajLwsnZlw" name="Port2" clientDependency="_Lezr08qwEd6mc7AvlpZrYQ" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="__RbQoMlJEd6Qmv4TRHjMZg" name="Port3" clientDependency="_VhYLAMlSEd6Qmv4TRHjMZg" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_qqbc4M16Ed6JQdyydZ3CHg" name="Port5" type="_o73pUs16Ed6JQdyydZ3CHg" aggregation="composite"/>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_o73pUs16Ed6JQdyydZ3CHg" name="GTDFactory"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_Tp2XoshgEd6b5ajLwsnZlw" name="ConnectionManager">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_DKtSY8hlEd6b5ajLwsnZlw" name="Port4" clientDependency="_TY8EMskYEd6u5qu5LyokjA" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_bP9X88hhEd6b5ajLwsnZlw" name="Port2" clientDependency="_TJ3hEMlSEd6Qmv4TRHjMZg" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_ahkj4MlREd6Qmv4TRHjMZg" name="Port1" type="_fijxgMlREd6Qmv4TRHjMZg" aggregation="composite"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_NxUokshhEd6b5ajLwsnZlw" name="DataManager">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_eTT0MMhhEd6b5ajLwsnZlw" name="Port1" clientDependency="_dvSEo8hiEd6b5ajLwsnZlw" type="__fZTgsqvEd6mc7AvlpZrYQ" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_NS-LhMkYEd6u5qu5LyokjA" name="Port4" type="_ONrgQckYEd6u5qu5LyokjA" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_6vaWU8qvEd6mc7AvlpZrYQ" name="Port2" clientDependency="_8oZ4Q8qvEd6mc7AvlpZrYQ" aggregation="composite"/>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_7JMIQ8qvEd6mc7AvlpZrYQ" name="Port3" clientDependency="_8KAsE8qvEd6mc7AvlpZrYQ" aggregation="composite"/>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Interface" xmi:id="_ONrgQckYEd6u5qu5LyokjA" name="IConnectToServer"/>
+        <nestedClassifier xmi:type="uml:Interface" xmi:id="_fijxgMlREd6Qmv4TRHjMZg" name="IConnectionCheck"/>
+        <nestedClassifier xmi:type="uml:Interface" xmi:id="__fZTgsqvEd6mc7AvlpZrYQ" name="IToDataManager"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_TWzqYMhhEd6b5ajLwsnZlw" name="IGTDServer"/>
+      <nestedClassifier xmi:type="uml:Interface" xmi:id="_VRTBIshhEd6b5ajLwsnZlw" name="IToodleDoServer"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_dvSEo8hiEd6b5ajLwsnZlw" name="Usage3" client="_eTT0MMhhEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_obr88shiEd6b5ajLwsnZlw" name="Usage4" supplier="_TWzqYMhhEd6b5ajLwsnZlw" client="_fQjfk8hhEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_wyfP0shiEd6b5ajLwsnZlw" name="Usage5" supplier="_VRTBIshhEd6b5ajLwsnZlw" client="_f2QNo8hhEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_5wq2U8hjEd6b5ajLwsnZlw" name="Usage6" supplier="_qLobIshjEd6b5ajLwsnZlw" client="_fO-gU8hjEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_TY8EMskYEd6u5qu5LyokjA" name="Usage1" supplier="_ONrgQckYEd6u5qu5LyokjA" client="_DKtSY8hlEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Uy_8gMkaEd6u5qu5LyokjA" name="webclient">
+        <packagedElement xmi:type="uml:Component" xmi:id="_DudR8MhgEd6b5ajLwsnZlw" name="GUI">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_fO-gU8hjEd6b5ajLwsnZlw" name="Port2" clientDependency="_5wq2U8hjEd6b5ajLwsnZlw" aggregation="composite"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_0ZQQYMlNEd6Qmv4TRHjMZg" name="Usage2" client="_DKJgkMlIEd6Qmv4TRHjMZg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_8gAVEslNEd6Qmv4TRHjMZg" name="Usage7" client="_DKJgkMlIEd6Qmv4TRHjMZg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_pxGekMlQEd6Qmv4TRHjMZg" name="Usage8" client="_DKJgkMlIEd6Qmv4TRHjMZg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_rx7RYMlREd6Qmv4TRHjMZg" name="Usage9" supplier="_fijxgMlREd6Qmv4TRHjMZg" client="_bzkbU8hhEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_TJ3hEMlSEd6Qmv4TRHjMZg" name="Usage10" supplier="_DKJgkMlIEd6Qmv4TRHjMZg" client="_bP9X88hhEd6b5ajLwsnZlw"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_VhYLAMlSEd6Qmv4TRHjMZg" name="expose" supplier="_DKJgkMlIEd6Qmv4TRHjMZg" client="__RbQoMlJEd6Qmv4TRHjMZg"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_8KAsE8qvEd6mc7AvlpZrYQ" name="Usage11" supplier="_f2QNo8hhEd6b5ajLwsnZlw" client="_7JMIQ8qvEd6mc7AvlpZrYQ"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_8oZ4Q8qvEd6mc7AvlpZrYQ" name="Usage12" supplier="_fQjfk8hhEd6b5ajLwsnZlw" client="_6vaWU8qvEd6mc7AvlpZrYQ"/>
+      <packagedElement xmi:type="uml:Usage" xmi:id="_Lezr08qwEd6mc7AvlpZrYQ" name="Usage13" supplier="__fZTgsqvEd6mc7AvlpZrYQ" client="_cUy5E8hhEd6b5ajLwsnZlw"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_ymIfkNNWEd64aumMBrjzdQ" activeDiagram="_ymIfkdNWEd64aumMBrjzdQ">
+  <model href="AuthentificationSequence.uml#idInteraction"/>
+  <diagrams xmi:id="_ymIfkdNWEd64aumMBrjzdQ" position="0,0" size="100,100" name="AuthentificationSequence" viewport="27,0">
+    <property xmi:id="_ymazcNNWEd64aumMBrjzdQ" key="pageFormatName" value="A3"/>
+    <property xmi:id="_ymazcdNWEd64aumMBrjzdQ" key="diagramWidth" value="1188"/>
+    <property xmi:id="_ymbagNNWEd64aumMBrjzdQ" key="diagramHeight" value="1680"/>
+    <property xmi:id="_ymbagdNWEd64aumMBrjzdQ" key="pageMarginName" value="Small Margin"/>
+    <property xmi:id="_ymbagtNWEd64aumMBrjzdQ" key="diagramTopMargin" value="20"/>
+    <property xmi:id="_ymbag9NWEd64aumMBrjzdQ" key="diagramBottomMargin" value="20"/>
+    <property xmi:id="_ymbahNNWEd64aumMBrjzdQ" key="diagramLeftMargin" value="20"/>
+    <property xmi:id="_ymbahdNWEd64aumMBrjzdQ" key="diagramRightMargin" value="20"/>
+    <property xmi:id="_ymbahtNWEd64aumMBrjzdQ" key="orientation" value="portrait"/>
+    <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ymIfktNWEd64aumMBrjzdQ" presentation="org.topcased.modeler.uml.sequencediagram">
+      <element href="AuthentificationSequence.uml#idInteraction"/>
+    </semanticModel>
+    <contained xsi:type="di:GraphNode" xmi:id="_zYPR8NNWEd64aumMBrjzdQ" position="41,40" size="100,531">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_zYPR8dNWEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_zYQgENNWEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_FDZFENNXEd64aumMBrjzdQ" position="40,28" size="20,433">
+        <anchorage xmi:id="_GoVCkNNXEd64aumMBrjzdQ" position="9,10" graphEdge="_GoWQsdNXEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_wZWQMNNcEd64aumMBrjzdQ" position="11,410" graphEdge="_wZW3QNNcEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_FDZFEdNXEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_FDaTMNNXEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_8toUANNWEd64aumMBrjzdQ" position="248,40" size="175,499">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_8toUAdNWEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_8tpiINNWEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_Flu9INNXEd64aumMBrjzdQ" position="77,30" size="20,271">
+        <anchorage xmi:id="_GoWQsNNXEd64aumMBrjzdQ" position="7,8" graphEdge="_GoWQsdNXEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_09_5YNNXEd64aumMBrjzdQ" position="10,44" graphEdge="_0-BHgNNXEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_rL37MNNbEd64aumMBrjzdQ" position="11,245" graphEdge="_rL4iQNNbEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Flu9IdNXEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_FlwLQNNXEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_7kCccNNbEd64aumMBrjzdQ" position="77,376" size="20,70">
+        <anchorage xmi:id="_BuB5gNNcEd64aumMBrjzdQ" position="9,12" graphEdge="_BuDHoNNcEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_TfoS4NNcEd64aumMBrjzdQ" position="10,55" graphEdge="_Tfo58NNcEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_wZVpINNcEd64aumMBrjzdQ" position="7,62" graphEdge="_wZW3QNNcEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_7kCccdNbEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_7kDqkNNbEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_GoWQsdNXEd64aumMBrjzdQ" anchor="_GoVCkNNXEd64aumMBrjzdQ _GoWQsNNXEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_GoW3wNNXEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_GoYF4dNXEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_GoW3wdNXEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_p5-LQNNXEd64aumMBrjzdQ" position="549,40" size="100,349">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_p5-LQdNXEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_p5_ZYNNXEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_wpNDYNNXEd64aumMBrjzdQ" position="40,59" size="20,232">
+        <anchorage xmi:id="_0-AgcNNXEd64aumMBrjzdQ" position="10,15" graphEdge="_0-BHgNNXEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_CXwd4NNaEd64aumMBrjzdQ" position="11,41" graphEdge="_CXxsANNaEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_BCzAoNNbEd64aumMBrjzdQ" position="13,70" graphEdge="_BCzAodNbEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_rL3UINNbEd64aumMBrjzdQ" position="7,216" graphEdge="_rL4iQNNbEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_wpNDYdNXEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_wpORgNNXEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_0-BHgNNXEd64aumMBrjzdQ" anchor="_09_5YNNXEd64aumMBrjzdQ _0-AgcNNXEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_0-BHgdNXEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_0-C8sdNXEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_0-BHgtNXEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_2B8XwNNZEd64aumMBrjzdQ" position="721,40" size="152,491">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_2B8XwdNZEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_2B9l4NNZEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_-1J50NNZEd64aumMBrjzdQ" position="40,88" size="20,50">
+        <anchorage xmi:id="_CXxE8NNaEd64aumMBrjzdQ" position="7,12" graphEdge="_CXxsANNaEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_BCxygNNbEd64aumMBrjzdQ" position="9,41" graphEdge="_BCzAodNbEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_-1J50dNZEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_-1LH8NNZEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_ArllENNcEd64aumMBrjzdQ" position="66,390" size="20,50">
+        <anchorage xmi:id="_BuCgkNNcEd64aumMBrjzdQ" position="7,0" graphEdge="_BuDHoNNcEd64aumMBrjzdQ"/>
+        <anchorage xmi:id="_TfnEwNNcEd64aumMBrjzdQ" position="10,43" graphEdge="_Tfo58NNcEd64aumMBrjzdQ"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ArllEdNcEd64aumMBrjzdQ" presentation="default">
+          <element href="AuthentificationSequence.uml#_ArmzMNNcEd64aumMBrjzdQ"/>
+        </semanticModel>
+      </contained>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_CXxsANNaEd64aumMBrjzdQ" anchor="_CXwd4NNaEd64aumMBrjzdQ _CXxE8NNaEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_CXxsAdNaEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_CXzhMdNaEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_CXxsAtNaEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_BCzAodNbEd64aumMBrjzdQ" anchor="_BCxygNNbEd64aumMBrjzdQ _BCzAoNNbEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_BCzAotNbEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_BC1c4dNbEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_BCznsNNbEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_ICIKQNNbEd64aumMBrjzdQ" position="434,231" size="328,75">
+      <property xmi:id="_ICIKQdNbEd64aumMBrjzdQ" key="noteValue" value="Le composant Authentification compare le mot de passe hashé avec ceux valides dans la liste des couples utilisateurs/mots de passe.&#xA;On peut ainsi savoir si le couple utilisateur/mot de passe entre est valide ou non."/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_ICIKQtNbEd64aumMBrjzdQ" presentation="default" typeInfo="Note"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_rL4iQNNbEd64aumMBrjzdQ" anchor="_rL3UINNbEd64aumMBrjzdQ _rL37MNNbEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_rL4iQdNbEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_rL7lkNNbEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_rL4iQtNbEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_BuDHoNNcEd64aumMBrjzdQ" anchor="_BuB5gNNcEd64aumMBrjzdQ _BuCgkNNcEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_BuDHodNcEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_BuGyANNcEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_BuDHotNcEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_Tfo58NNcEd64aumMBrjzdQ" anchor="_TfnEwNNcEd64aumMBrjzdQ _TfoS4NNcEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Tfo58dNcEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_TftLYNNcEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_Tfo58tNcEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+    <contained xsi:type="di:GraphNode" xmi:id="_biIwwNNcEd64aumMBrjzdQ" position="173,377" size="364,37">
+      <property xmi:id="_biIwwdNcEd64aumMBrjzdQ" key="noteValue" value="Si le booleen retourné est valide, on sait qu'un fichier correspondant à cet utilisateur existe."/>
+      <semanticModel xsi:type="di:SimpleSemanticModelElement" xmi:id="_biIwwtNcEd64aumMBrjzdQ" presentation="default" typeInfo="Note"/>
+    </contained>
+    <contained xsi:type="di:GraphEdge" xmi:id="_wZW3QNNcEd64aumMBrjzdQ" anchor="_wZVpINNcEd64aumMBrjzdQ _wZWQMNNcEd64aumMBrjzdQ">
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_wZW3QdNcEd64aumMBrjzdQ" presentation="default">
+        <element href="AuthentificationSequence.uml#_wZbvwdNcEd64aumMBrjzdQ"/>
+      </semanticModel>
+      <contained xsi:type="di:EdgeObjectOffset" xmi:id="_wZW3QtNcEd64aumMBrjzdQ" id="nameEdgeObject" offset="0,-10"/>
+    </contained>
+  </diagrams>
+</diagrams:Diagrams>

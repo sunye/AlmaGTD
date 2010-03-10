@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagrams:Diagrams xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.topcased.org/DI/1.0" xmlns:diagrams="http://www.topcased.org/Diagrams/1.0" xmi:id="_68BZELLAEd6CCvFHalbWkA" activeDiagram="_87v1ILLAEd6CCvFHalbWkA">
+  <model href="UCCreer-tache.uml#_w8IxIM37EdqwVrslYOdUDA"/>
+  <subdiagrams xmi:id="_87tY4LLAEd6CCvFHalbWkA">
+    <model href="UCCreer-tache.uml#_87sKwbLAEd6CCvFHalbWkA"/>
+    <diagrams xmi:id="_87v1ILLAEd6CCvFHalbWkA" position="0,0" size="100,100" name="Scénario UC1" viewport="0,0">
+      <property xmi:id="_87y4cLLAEd6CCvFHalbWkA" key="pageFormatName" value="A4"/>
+      <property xmi:id="_87y4cbLAEd6CCvFHalbWkA" key="diagramWidth" value="840"/>
+      <property xmi:id="_87y4crLAEd6CCvFHalbWkA" key="diagramHeight" value="1188"/>
+      <property xmi:id="_87y4c7LAEd6CCvFHalbWkA" key="pageMarginName" value="Small Margin"/>
+      <property xmi:id="_87y4dLLAEd6CCvFHalbWkA" key="diagramTopMargin" value="20"/>
+      <property xmi:id="_87y4dbLAEd6CCvFHalbWkA" key="diagramBottomMargin" value="20"/>
+      <property xmi:id="_87y4drLAEd6CCvFHalbWkA" key="diagramLeftMargin" value="20"/>
+      <property xmi:id="_87y4d7LAEd6CCvFHalbWkA" key="diagramRightMargin" value="20"/>
+      <property xmi:id="_87y4eLLAEd6CCvFHalbWkA" key="orientation" value="portrait"/>
+      <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_87v1IbLAEd6CCvFHalbWkA" presentation="org.topcased.modeler.uml.sequencediagram">
+        <element href="UCCreer-tache.uml#_87sKwbLAEd6CCvFHalbWkA"/>
+      </semanticModel>
+      <contained xsi:type="di:GraphNode" xmi:id="_Kb51MLLGEd6CCvFHalbWkA" position="153,393" size="434,58">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Kb51MbLGEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_Kb7DULLGEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_Kb51MrLGEd6CCvFHalbWkA">
+          <property xmi:id="_Kb51M7LGEd6CCvFHalbWkA" key="eStructuralFeatureID" value="15"/>
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Kb51NLLGEd6CCvFHalbWkA" presentation="default">
+            <element href="UCCreer-tache.uml#_Kb7DULLGEd6CCvFHalbWkA"/>
+          </semanticModel>
+          <contained xsi:type="di:GraphNode" xmi:id="_Kb51NbLGEd6CCvFHalbWkA">
+            <property xmi:id="_Kb51NrLGEd6CCvFHalbWkA" key="eStructuralFeatureID" value="15"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_Kb51N7LGEd6CCvFHalbWkA" presentation="default">
+              <element href="UCCreer-tache.uml#_Kb7DUbLGEd6CCvFHalbWkA"/>
+            </semanticModel>
+          </contained>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_9iVhwLLFEd6CCvFHalbWkA" position="153,318" size="436,65">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_9iVhwbLFEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_9iWv4LLFEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_9iVhwrLFEd6CCvFHalbWkA">
+          <property xmi:id="_9iVhw7LFEd6CCvFHalbWkA" key="eStructuralFeatureID" value="15"/>
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_9iVhxLLFEd6CCvFHalbWkA" presentation="default">
+            <element href="UCCreer-tache.uml#_9iWv4LLFEd6CCvFHalbWkA"/>
+          </semanticModel>
+          <contained xsi:type="di:GraphNode" xmi:id="_9iVhxbLFEd6CCvFHalbWkA">
+            <property xmi:id="_9iVhxrLFEd6CCvFHalbWkA" key="eStructuralFeatureID" value="15"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_9iVhx7LFEd6CCvFHalbWkA" presentation="default">
+              <element href="UCCreer-tache.uml#_9iWv4bLFEd6CCvFHalbWkA"/>
+            </semanticModel>
+          </contained>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_14q6UbLIEd6YR7X7Nguy9A" position="129,590" size="404,132">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_14q6UrLIEd6YR7X7Nguy9A" presentation="default">
+          <element href="UCCreer-tache.uml#_14svgLLIEd6YR7X7Nguy9A"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_14q6U7LIEd6YR7X7Nguy9A">
+          <property xmi:id="_14q6VLLIEd6YR7X7Nguy9A" key="eStructuralFeatureID" value="15"/>
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_14q6VbLIEd6YR7X7Nguy9A" presentation="default">
+            <element href="UCCreer-tache.uml#_14svgLLIEd6YR7X7Nguy9A"/>
+          </semanticModel>
+          <contained xsi:type="di:GraphNode" xmi:id="_14q6VrLIEd6YR7X7Nguy9A">
+            <property xmi:id="_14q6V7LIEd6YR7X7Nguy9A" key="eStructuralFeatureID" value="15"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_14q6WLLIEd6YR7X7Nguy9A" presentation="default">
+              <element href="UCCreer-tache.uml#_14svgbLIEd6YR7X7Nguy9A"/>
+            </semanticModel>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_4LMWkLLIEd6YR7X7Nguy9A" position="0,0" size="50,50">
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_4LMWkbLIEd6YR7X7Nguy9A" presentation="default">
+              <element href="UCCreer-tache.uml#_4LM9oLLIEd6YR7X7Nguy9A"/>
+            </semanticModel>
+          </contained>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_esU6ELLJEd6YR7X7Nguy9A" position="120,751" size="460,136">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_esU6EbLJEd6YR7X7Nguy9A" presentation="default">
+          <element href="UCCreer-tache.uml#_esVhILLJEd6YR7X7Nguy9A"/>
+        </semanticModel>
+        <contained xsi:type="di:GraphNode" xmi:id="_esU6ErLJEd6YR7X7Nguy9A">
+          <property xmi:id="_esU6E7LJEd6YR7X7Nguy9A" key="eStructuralFeatureID" value="15"/>
+          <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_esU6FLLJEd6YR7X7Nguy9A" presentation="default">
+            <element href="UCCreer-tache.uml#_esVhILLJEd6YR7X7Nguy9A"/>
+          </semanticModel>
+          <contained xsi:type="di:GraphNode" xmi:id="_esU6FbLJEd6YR7X7Nguy9A">
+            <property xmi:id="_esU6FrLJEd6YR7X7Nguy9A" key="eStructuralFeatureID" value="15"/>
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_esU6F7LJEd6YR7X7Nguy9A" presentation="default">
+              <element href="UCCreer-tache.uml#_esVhIbLJEd6YR7X7Nguy9A"/>
+            </semanticModel>
+          </contained>
+          <contained xsi:type="di:GraphNode" xmi:id="_fK66kLLJEd6YR7X7Nguy9A" position="0,0" size="50,50">
+            <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_fK66kbLJEd6YR7X7Nguy9A" presentation="default">
+              <element href="UCCreer-tache.uml#_fK66krLJEd6YR7X7Nguy9A"/>
+            </semanticModel>
+          </contained>
+        </contained>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_-dpFsLLAEd6CCvFHalbWkA" position="400,40" size="157,852">
+        <anchorage xmi:id="_b2WPoLLCEd6CCvFHalbWkA" position="83,72" graphEdge="_b2WPobLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_vgI5sLLCEd6CCvFHalbWkA" position="78,113" graphEdge="_vgKH0LLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_26MQcLLCEd6CCvFHalbWkA" position="88,152" graphEdge="_26MQcbLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_Gp_xMLLDEd6CCvFHalbWkA" position="79,189" graphEdge="_GqAYQLLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_JBWDELLDEd6CCvFHalbWkA" position="80,252" graphEdge="_JBWDEbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_dzqbcLLDEd6CCvFHalbWkA" position="79,445" graphEdge="_dzrCgbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_g1lUULLDEd6CCvFHalbWkA" position="78,484" graphEdge="_g1lUUbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_jxTCELLEEd6CCvFHalbWkA" position="78,544" graphEdge="_jxTpILLEEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_mNFIALLEEd6CCvFHalbWkA" position="76,585" graphEdge="_mNFIAbLEEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_sc9xsLLEEd6CCvFHalbWkA" position="77,730" graphEdge="_sc9xsbLEEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_iXlAobLFEd6CCvFHalbWkA" position="80,293" graphEdge="_iXlnsLLFEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_iXlAoLLFEd6CCvFHalbWkA" position="78,330" graphEdge="_iXlnsLLFEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_NVR2ELLGEd6CCvFHalbWkA" position="76,405" graphEdge="_NVSdIbLGEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_NVSdILLGEd6CCvFHalbWkA" position="78,366" graphEdge="_NVSdIbLGEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_6FjKcLLIEd6YR7X7Nguy9A" position="79,671" graphEdge="_6FjxgbLIEd6YR7X7Nguy9A"/>
+        <anchorage xmi:id="_6FjxgLLIEd6YR7X7Nguy9A" position="77,620" graphEdge="_6FjxgbLIEd6YR7X7Nguy9A"/>
+        <anchorage xmi:id="_ZJ-r0LLJEd6YR7X7Nguy9A" position="79,836" graphEdge="_ZJ_S4bLJEd6YR7X7Nguy9A"/>
+        <anchorage xmi:id="_ZJ_S4LLJEd6YR7X7Nguy9A" position="79,790" graphEdge="_ZJ_S4bLJEd6YR7X7Nguy9A"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_-dpFsbLAEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_-eRX0LLAEd6CCvFHalbWkA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_3EaY4LLBEd6CCvFHalbWkA" position="102,40" size="151,849">
+        <anchorage xmi:id="_b2VokLLCEd6CCvFHalbWkA" position="74,72" graphEdge="_b2WPobLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_vgJgwLLCEd6CCvFHalbWkA" position="73,113" graphEdge="_vgKH0LLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_26LpYLLCEd6CCvFHalbWkA" position="76,152" graphEdge="_26MQcbLCEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_Gp_xMbLDEd6CCvFHalbWkA" position="84,189" graphEdge="_GqAYQLLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_JBVcALLDEd6CCvFHalbWkA" position="79,252" graphEdge="_JBWDEbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_dzrCgLLDEd6CCvFHalbWkA" position="76,445" graphEdge="_dzrCgbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_g1ktQLLDEd6CCvFHalbWkA" position="74,484" graphEdge="_g1lUUbLDEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_jxTCEbLEEd6CCvFHalbWkA" position="75,544" graphEdge="_jxTpILLEEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_mNEg8LLEEd6CCvFHalbWkA" position="75,585" graphEdge="_mNFIAbLEEd6CCvFHalbWkA"/>
+        <anchorage xmi:id="_sc9KoLLEEd6CCvFHalbWkA" position="74,730" graphEdge="_sc9xsbLEEd6CCvFHalbWkA"/>
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_3EaY4bLBEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_3Ea_8LLBEd6CCvFHalbWkA"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_b2WPobLCEd6CCvFHalbWkA" anchor="_b2VokLLCEd6CCvFHalbWkA _b2WPoLLCEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_b2WPorLCEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_b2YE0bLCEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_b2WPo7LCEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_vgKH0LLCEd6CCvFHalbWkA" anchor="_vgI5sLLCEd6CCvFHalbWkA _vgJgwLLCEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_vgKH0bLCEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_vgLV8bLCEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_vgKH0rLCEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_26MQcbLCEd6CCvFHalbWkA" anchor="_26LpYLLCEd6CCvFHalbWkA _26MQcLLCEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_26MQcrLCEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_26OFobLCEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_26MQc7LCEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_GqAYQLLDEd6CCvFHalbWkA" anchor="_Gp_xMLLDEd6CCvFHalbWkA _Gp_xMbLDEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_GqAYQbLDEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_GqCNcbLDEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_GqAYQrLDEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_JBWDEbLDEd6CCvFHalbWkA" anchor="_JBVcALLDEd6CCvFHalbWkA _JBWDELLDEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_JBWDErLDEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_JBYfUbLDEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_JBWDE7LDEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_dzrCgbLDEd6CCvFHalbWkA" anchor="_dzqbcLLDEd6CCvFHalbWkA _dzrCgLLDEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_dzrCgrLDEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_dzuF0bLDEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_dzrCg7LDEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_g1lUUbLDEd6CCvFHalbWkA" anchor="_g1ktQLLDEd6CCvFHalbWkA _g1lUULLDEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_g1lUUrLDEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_g1o-sbLDEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_g1lUU7LDEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_jxTpILLEEd6CCvFHalbWkA" anchor="_jxTCELLEEd6CCvFHalbWkA _jxTCEbLEEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_jxTpIbLEEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_jxXTgLLEEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_jxTpIrLEEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_mNFIAbLEEd6CCvFHalbWkA" anchor="_mNEg8LLEEd6CCvFHalbWkA _mNFIALLEEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_mNFIArLEEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_mNIyYbLEEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_mNFIA7LEEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_sc9xsbLEEd6CCvFHalbWkA" anchor="_sc9KoLLEEd6CCvFHalbWkA _sc9xsLLEEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_sc9xsrLEEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_sdCDIbLEEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_sc9xs7LEEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_iXlnsLLFEd6CCvFHalbWkA" anchor="_iXlAoLLFEd6CCvFHalbWkA _iXlAobLFEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_iXlnsbLFEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_iXpSEbLFEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_iXlnsrLFEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_NVSdIbLGEd6CCvFHalbWkA" anchor="_NVR2ELLGEd6CCvFHalbWkA _NVSdILLGEd6CCvFHalbWkA">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_NVSdIrLGEd6CCvFHalbWkA" presentation="default">
+          <element href="UCCreer-tache.uml#_NVWukbLGEd6CCvFHalbWkA"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_NVSdI7LGEd6CCvFHalbWkA" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_6FjxgbLIEd6YR7X7Nguy9A" anchor="_6FjKcLLIEd6YR7X7Nguy9A _6FjxgLLIEd6YR7X7Nguy9A">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_6FjxgrLIEd6YR7X7Nguy9A" presentation="default">
+          <element href="UCCreer-tache.uml#_6FsUYLLIEd6YR7X7Nguy9A"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_6Fjxg7LIEd6YR7X7Nguy9A" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphEdge" xmi:id="_ZJ_S4bLJEd6YR7X7Nguy9A" anchor="_ZJ-r0LLJEd6YR7X7Nguy9A _ZJ_S4LLJEd6YR7X7Nguy9A">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_ZJ_S4rLJEd6YR7X7Nguy9A" presentation="default">
+          <element href="UCCreer-tache.uml#_ZKGAkbLJEd6YR7X7Nguy9A"/>
+        </semanticModel>
+        <contained xsi:type="di:EdgeObjectOffset" xmi:id="_ZJ_S47LJEd6YR7X7Nguy9A" id="nameEdgeObject" offset="0,-10"/>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_uOpugLOEEd6PcLOvJ__gtg" position="579,303" size="150,25">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_uOpugbOEEd6PcLOvJ__gtg" presentation="default">
+          <element href="UCCreer-tache.uml#_uOpugrOEEd6PcLOvJ__gtg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_x9CEwLOEEd6PcLOvJ__gtg" position="598,391" size="163,33">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_x9CEwbOEEd6PcLOvJ__gtg" presentation="default">
+          <element href="UCCreer-tache.uml#_x9Cr0LOEEd6PcLOvJ__gtg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_1AyJoLOEEd6PcLOvJ__gtg" position="543,568" size="208,77">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_1AyJobOEEd6PcLOvJ__gtg" presentation="default">
+          <element href="UCCreer-tache.uml#_1AywsLOEEd6PcLOvJ__gtg"/>
+        </semanticModel>
+      </contained>
+      <contained xsi:type="di:GraphNode" xmi:id="_9FPIQLOEEd6PcLOvJ__gtg" position="587,753" size="182,73">
+        <semanticModel xsi:type="di:EMFSemanticModelBridge" xmi:id="_9FPIQbOEEd6PcLOvJ__gtg" presentation="default">
+          <element href="UCCreer-tache.uml#_9FPvULOEEd6PcLOvJ__gtg"/>
+        </semanticModel>
+      </contained>
+    </diagrams>
+  </subdiagrams>
+  <subdiagrams xmi:id="_wpMo8LLBEd6CCvFHalbWkA"/>
+</diagrams:Diagrams>

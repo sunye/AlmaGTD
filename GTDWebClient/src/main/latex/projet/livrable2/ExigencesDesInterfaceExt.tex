@@ -1,0 +1,38 @@
+
+\chapter{Exigences des interfaces externes}
+	\section{Interface utilisateur}
+%<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>	
+
+	L'application GTD disposera d'une interface Web. Celle-ci devra être concue de façon à être ergonomique. Elle devra respecter une cohérence dans ses couleurs et devra être simple à utiliser. En ce qui concerne sa compatibilité elle devra respecter les standards web tels que le XHTML et CSS3 et ainsi passer les validations W3C. Elle devra reprendre tous les éléments décris dans le chapitre fonctionnalités du logiciel.
+	
+	\section{Interface matérielle}
+%<Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.>
+
+Pour la communication entre le Client et le serveur web, les deux postes distants devront disposer d'une interface réseau ethernet. Une connexion ADSL 512k est le minimum requis pour permettre à l'application de fonctionner normalement. De même, la communication entre le serveur web et les serveurs GTD et ToodleDo se fera à travers une connexion ADSL 512K minimum.
+
+
+
+
+\section{Interface logicielle}
+%<Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.>
+
+La connexion entre le serveur web et les serveurs va se faire grâce à un certain nombre d'interfaces définies par les serveurs GTD et ToodleDo. L'application utilisera ces interfaces à travers RMI et REST pour le server ToodleDo.
+
+
+
+	\section{Interfaces ou protocoles de communication}
+%<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+
+Pour réaliser la communication entre le client et le serveur Web, les données transiterons à travers le protocol HTTPS. L'utilisation de HTTPS se fera pour permettre une sécurisation des données, HTTPS étant une combinaison de HTTP et d'une couche de chiffrement SSL ou TLS.
+
+\medskip
+
+La communication entre le serveur web et le serveur GTD se fera grâce à RMI (Remote method invocation). La communication entre le serveur web et le serveur Toodle se fera grâce à REST.
+
+
+\section{Contraintes de mémoire}
+Dans le but de limiter la charge sur le serveur web et GTD, le programme devra limiter au maximum le nombre de ses requêtes. De même, l'envoi de données à travers le réseau se limitera à l'envoi d'objets inférieurs à 500Ko.
+
+
+
+

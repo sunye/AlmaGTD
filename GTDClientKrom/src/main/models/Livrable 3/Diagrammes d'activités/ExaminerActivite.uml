@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="ExaminerActiviteModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="ExaminerActivitePackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="ExaminerActiviteActivity">
+      <node xmi:type="uml:InitialNode" xmi:id="_-7MkUNWyEd6thf7f_r3YXw" name="InitialNode1" outgoing="_grZIatWzEd6thf7f_r3YXw"/>
+      <node xmi:type="uml:ForkNode" xmi:id="_FQAxUNWzEd6thf7f_r3YXw" name="ForkNode1"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_LVDc8tWzEd6thf7f_r3YXw" name="Examiner" outgoing="_hOzXedWzEd6thf7f_r3YXw" incoming="_grZIatWzEd6thf7f_r3YXw"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_RssUcNWzEd6thf7f_r3YXw" name="Obtenir la liste des éléments" outgoing="_m0miWNWzEd6thf7f_r3YXw" incoming="_hOzXedWzEd6thf7f_r3YXw"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_lHjKotWzEd6thf7f_r3YXw" name="DecisionNode1" outgoing="_xcfuGdWzEd6thf7f_r3YXw" incoming="_m0miWNWzEd6thf7f_r3YXw _Tmt7uNW0Ed6thf7f_r3YXw"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_qbV_gtWzEd6thf7f_r3YXw" name="Prochaine action" outgoing="_GSsg6NW0Ed6thf7f_r3YXw" incoming="_xcfuGdWzEd6thf7f_r3YXw"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_1kRbwtWzEd6thf7f_r3YXw" name="Mise à jour" outgoing="_Rc9Z6NW0Ed6thf7f_r3YXw" incoming="_GSsg6NW0Ed6thf7f_r3YXw"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_PzLYotW0Ed6thf7f_r3YXw" name="DecisionNode2" outgoing="_Tmt7uNW0Ed6thf7f_r3YXw _dnVsGNW0Ed6thf7f_r3YXw" incoming="_Rc9Z6NW0Ed6thf7f_r3YXw"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_cfLxMNW0Ed6thf7f_r3YXw" name="ActivityFinalNode1" incoming="_dnVsGNW0Ed6thf7f_r3YXw"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_grZIatWzEd6thf7f_r3YXw" name="ControlFlow1" source="_-7MkUNWyEd6thf7f_r3YXw" target="_LVDc8tWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_grZIa9WzEd6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_grZIbNWzEd6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_hOzXedWzEd6thf7f_r3YXw" name="ControlFlow2" source="_LVDc8tWzEd6thf7f_r3YXw" target="_RssUcNWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_hOzXetWzEd6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_hOzXe9WzEd6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_m0miWNWzEd6thf7f_r3YXw" name="ControlFlow3" source="_RssUcNWzEd6thf7f_r3YXw" target="_lHjKotWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_m0miWdWzEd6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_m0miWtWzEd6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_xcfuGdWzEd6thf7f_r3YXw" name="ControlFlow4" source="_lHjKotWzEd6thf7f_r3YXw" target="_qbV_gtWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_xcfuGtWzEd6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_xcfuG9WzEd6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_GSsg6NW0Ed6thf7f_r3YXw" name="ControlFlow5" source="_qbV_gtWzEd6thf7f_r3YXw" target="_1kRbwtWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_GSsg6dW0Ed6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_GSsg6tW0Ed6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Rc9Z6NW0Ed6thf7f_r3YXw" name="ControlFlow6" source="_1kRbwtWzEd6thf7f_r3YXw" target="_PzLYotW0Ed6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Rc9Z6dW0Ed6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Rc9Z6tW0Ed6thf7f_r3YXw" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Tmt7uNW0Ed6thf7f_r3YXw" name="la liste n'est pas vide" source="_PzLYotW0Ed6thf7f_r3YXw" target="_lHjKotWzEd6thf7f_r3YXw">
+        <guard xmi:type="uml:Expression" xmi:id="_pVvz8NW0Ed6thf7f_r3YXw"/>
+        <weight xmi:type="uml:Expression" xmi:id="_nb59cNW0Ed6thf7f_r3YXw"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_dnVsGNW0Ed6thf7f_r3YXw" name="la liste est vide" source="_PzLYotW0Ed6thf7f_r3YXw" target="_cfLxMNW0Ed6thf7f_r3YXw">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_dnVsGdW0Ed6thf7f_r3YXw" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_dnVsGtW0Ed6thf7f_r3YXw" value="1"/>
+      </edge>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_BXj5ENWzEd6thf7f_r3YXw" name="ActivityPartition1"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="DiagseqCollecterModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DiagseqCollecterPackage">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="idCollaboration" name="DiagseqCollecterCollaboration">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="idInteraction" name="DiagseqCollecterInteraction">
+        <ownedAttribute xmi:id="_xGC3YLNNEd6CWutzHb_M8w" name="Property1" type="_xGCQULNNEd6CWutzHb_M8w"/>
+        <ownedAttribute xmi:id="_3I3VcLNNEd6CWutzHb_M8w" name="Property2" type="_3I2uYLNNEd6CWutzHb_M8w"/>
+        <ownedConnector xmi:id="_xGMBULNNEd6CWutzHb_M8w" name="Connector1">
+          <end xmi:id="_xGQSwLNNEd6CWutzHb_M8w" role="_xGC3YLNNEd6CWutzHb_M8w"/>
+          <end xmi:id="_3I3VcbNNEd6CWutzHb_M8w" role="_3I3VcLNNEd6CWutzHb_M8w"/>
+        </ownedConnector>
+        <lifeline xmi:id="_tTDt8LNNEd6CWutzHb_M8w" name="Toto" represents="_xGC3YLNNEd6CWutzHb_M8w" coveredBy="_bMm-kLNQEd6CWutzHb_M8w _7ySQQLNQEd6CWutzHb_M8w _4NJ8oLNQEd6CWutzHb_M8w _VweGALNQEd6CWutzHb_M8w"/>
+        <lifeline xmi:id="_zihg4LNNEd6CWutzHb_M8w" name="GTD" represents="_3I3VcLNNEd6CWutzHb_M8w" coveredBy="_kAKe4LNQEd6CWutzHb_M8w _kALF8LNQEd6CWutzHb_M8w _7yRCILNQEd6CWutzHb_M8w _iiaugLNQEd6CWutzHb_M8w _kAG0gLNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4NJ8oLNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification4" covered="_tTDt8LNNEd6CWutzHb_M8w" event="_4NKjsLNQEd6CWutzHb_M8w" message="_4NKjsbNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kAKe4LNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification2" covered="_zihg4LNNEd6CWutzHb_M8w" event="_kALF8bNQEd6CWutzHb_M8w" message="_kALtALNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kALF8LNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification3" covered="_zihg4LNNEd6CWutzHb_M8w" event="_kALF8bNQEd6CWutzHb_M8w" message="_kALtALNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7yRCILNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification5" covered="_zihg4LNNEd6CWutzHb_M8w" event="_7ySQQbNQEd6CWutzHb_M8w" message="_7yS3ULNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ySQQLNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification6" covered="_tTDt8LNNEd6CWutzHb_M8w" event="_7ySQQbNQEd6CWutzHb_M8w" message="_7yS3ULNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bMm-kLNQEd6CWutzHb_M8w" name="MessageOccurrenceSpecification1" covered="_tTDt8LNNEd6CWutzHb_M8w" event="_bMnloLNQEd6CWutzHb_M8w" message="_bMoMsLNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_VweGALNQEd6CWutzHb_M8w" name="BehaviorExecutionSpecification1" covered="_tTDt8LNNEd6CWutzHb_M8w" start="_bMm-kLNQEd6CWutzHb_M8w" finish="_7ySQQLNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_iiaugLNQEd6CWutzHb_M8w" name="BehaviorExecutionSpecification2" covered="_zihg4LNNEd6CWutzHb_M8w" start="_kAKe4LNQEd6CWutzHb_M8w" finish="_kAKe4LNQEd6CWutzHb_M8w"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kAG0gLNQEd6CWutzHb_M8w" name="BehaviorExecutionSpecification3" covered="_zihg4LNNEd6CWutzHb_M8w" start="_kALF8LNQEd6CWutzHb_M8w" finish="_7yRCILNQEd6CWutzHb_M8w"/>
+        <message xmi:id="_bMoMsLNQEd6CWutzHb_M8w" name="Recupérer taches" messageSort="asynchCall" sendEvent="_bMm-kLNQEd6CWutzHb_M8w"/>
+        <message xmi:id="_kALtALNQEd6CWutzHb_M8w" name="Recuperer projets et taches" messageSort="asynchCall" receiveEvent="_kALF8LNQEd6CWutzHb_M8w" sendEvent="_kAKe4LNQEd6CWutzHb_M8w"/>
+        <message xmi:id="_4NKjsbNQEd6CWutzHb_M8w" name="Liste des Projets" receiveEvent="_4NJ8oLNQEd6CWutzHb_M8w"/>
+        <message xmi:id="_7yS3ULNQEd6CWutzHb_M8w" name="Pas de taches" receiveEvent="_7ySQQLNQEd6CWutzHb_M8w" sendEvent="_7yRCILNQEd6CWutzHb_M8w"/>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3I2uYLNNEd6CWutzHb_M8w" name="ClientGTD"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_UFCUYLNPEd6CWutzHb_M8w" name="CallEvent1"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_bMnloLNQEd6CWutzHb_M8w" name="CallEvent2"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_kALF8bNQEd6CWutzHb_M8w" name="CallEvent3"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_4NKjsLNQEd6CWutzHb_M8w" name="CallEvent4"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_7ySQQbNQEd6CWutzHb_M8w" name="CallEvent5"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_xGCQULNNEd6CWutzHb_M8w" name="Utilisateur"/>
+</uml:Model>

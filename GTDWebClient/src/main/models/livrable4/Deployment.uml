@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="DeploymentModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="DeploymentPackage">
+    <ownedRule xmi:id="_PsRS8AUVEd-XSdtepa0fog" name="Constraint1"/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_cRq40ARHEd-VSaNDXFFTgA" name="Device1"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_eQpuAARHEd-VSaNDXFFTgA" name="Node1"/>
+    <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_fS1jwARHEd-VSaNDXFFTgA" name="ExecutionEnvironment1"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_gwafkARIEd-VSaNDXFFTgA" name="Client Web"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_ipF4cARIEd-VSaNDXFFTgA" name="Serveur Web">
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_pBtAUARIEd-VSaNDXFFTgA" name="Artifact1"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Node" xmi:id="_jzoY8ARIEd-VSaNDXFFTgA" name="Serveur GTD"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_lATncARIEd-VSaNDXFFTgA" name="Serveur ToodleDo"/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_sp-ukARIEd-VSaNDXFFTgA" name="Device2"/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_ugwC8ARIEd-VSaNDXFFTgA" name="Station de Travail{OS=Linux,Windows...}">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_HNtr8ARJEd-VSaNDXFFTgA" name="ExecutionEnvironment1"/>
+      <nestedClassifier xmi:type="uml:Node" xmi:id="_7FncQARJEd-VSaNDXFFTgA" name="Client Web "/>
+      <nestedClassifier xmi:type="uml:Artifact" xmi:id="_GqxFAARLEd-VSaNDXFFTgA" name="Client Web.exe"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Device" xmi:id="_z9Z44ARIEd-VSaNDXFFTgA" name="Serveur Web">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_lZUdAARLEd-VSaNDXFFTgA" name="Serveur d'application Tomcat">
+        <nestedClassifier xmi:type="uml:Node" xmi:id="_rDwTcARPEd-VSaNDXFFTgA" name="Serveur.jar"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_Cgx-gAUUEd-XSdtepa0fog" name="serveur.war"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Device" xmi:id="_1BDuQARIEd-VSaNDXFFTgA" name="Serveur GTD"/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_15i1cARIEd-VSaNDXFFTgA" name="Serveur ToodleDo"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_km5-EARKEd-VSaNDXFFTgA" name="Interface1"/>
+    <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_fKimlARLEd-VSaNDXFFTgA" name="HTTP" memberEnd="_fKj0sARLEd-VSaNDXFFTgA _fKkbwARLEd-VSaNDXFFTgA">
+      <ownedEnd xmi:id="_fKj0sARLEd-VSaNDXFFTgA" name="source" type="_ugwC8ARIEd-VSaNDXFFTgA" association="_fKimlARLEd-VSaNDXFFTgA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fKj0sQRLEd-VSaNDXFFTgA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fKj0sgRLEd-VSaNDXFFTgA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_fKkbwARLEd-VSaNDXFFTgA" name="target" type="_z9Z44ARIEd-VSaNDXFFTgA" association="_fKimlARLEd-VSaNDXFFTgA">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fKkbwQRLEd-VSaNDXFFTgA" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fKkbwgRLEd-VSaNDXFFTgA" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DeploymentSpecification" xmi:id="_xFd7EARLEd-VSaNDXFFTgA" name="DeploymentSpecification1"/>
+    <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_JFj6JAUUEd-XSdtepa0fog" name="RMI" memberEnd="_JFlIQAUUEd-XSdtepa0fog _JFlvUAUUEd-XSdtepa0fog">
+      <ownedEnd xmi:id="_JFlIQAUUEd-XSdtepa0fog" name="source" type="_15i1cARIEd-VSaNDXFFTgA" association="_JFj6JAUUEd-XSdtepa0fog">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFlIQQUUEd-XSdtepa0fog" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFlIQgUUEd-XSdtepa0fog" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_JFlvUAUUEd-XSdtepa0fog" name="target" type="_z9Z44ARIEd-VSaNDXFFTgA" association="_JFj6JAUUEd-XSdtepa0fog">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JFlvUQUUEd-XSdtepa0fog" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JFlvUgUUEd-XSdtepa0fog" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CommunicationPath" xmi:id="_KwRvgAUUEd-XSdtepa0fog" name="REST" memberEnd="_KwSWkAUUEd-XSdtepa0fog _KwS9oAUUEd-XSdtepa0fog">
+      <ownedEnd xmi:id="_KwSWkAUUEd-XSdtepa0fog" name="source" type="_1BDuQARIEd-VSaNDXFFTgA" association="_KwRvgAUUEd-XSdtepa0fog">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KwSWkQUUEd-XSdtepa0fog" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KwSWkgUUEd-XSdtepa0fog" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_KwS9oAUUEd-XSdtepa0fog" name="target" type="_z9Z44ARIEd-VSaNDXFFTgA" association="_KwRvgAUUEd-XSdtepa0fog">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KwS9oQUUEd-XSdtepa0fog" value="1"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KwS9ogUUEd-XSdtepa0fog" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Node" xmi:id="_dZNZgAUUEd-XSdtepa0fog" name="Node2"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_kEEH8AUUEd-XSdtepa0fog" name="Node3"/>
+    <packagedElement xmi:type="uml:DeploymentSpecification" xmi:id="_m-bAQAUUEd-XSdtepa0fog" name="DeploymentSpecification2"/>
+    <packagedElement xmi:type="uml:Artifact" xmi:id="_oujhIAUUEd-XSdtepa0fog" name="" fileName=""/>
+    <packagedElement xmi:type="uml:Device" xmi:id="_2Mo24AUUEd-XSdtepa0fog" name=""/>
+    <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_3JcdYAUUEd-XSdtepa0fog" name=""/>
+    <packagedElement xmi:type="uml:DeploymentSpecification" xmi:id="_3mgz4AUUEd-XSdtepa0fog" name="DeploymentSpecification3"/>
+    <packagedElement xmi:type="uml:Node" xmi:id="_YNhiUAUVEd-XSdtepa0fog" name="Node4"/>
+    <profileApplication xmi:id="_vywLcARKEd-VSaNDXFFTgA">
+      <eAnnotations xmi:id="_vy1rAARKEd-VSaNDXFFTgA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </packagedElement>
+</uml:Model>

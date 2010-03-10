@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         
+    <parent>
+    <groupId>fr.alma</groupId>
+    <artifactId>AlmaGTD</artifactId>
+    <version>1.0</version>
+  </parent>
+
+         
+         
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>fr.alma</groupId>
+	<artifactId>GTDClientBrun</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<name>Module GTDClientBrun</name>
+	<scm>
+		<connection>scm:svn:http://gtdbbcm.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://gtdbbcm.googlecode.com/svn/trunk/</developerConnection>
+		<url>http://code.google.com/p/gtdbbcm/</url>
+	</scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+            <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.4.0.GA</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

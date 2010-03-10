@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="idModel" name="IdentificationModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="idPackage" name="IdentificationPackage">
+    <packagedElement xmi:type="uml:Activity" xmi:id="idActivity" name="IdentificationActivity">
+      <ownedComment xmi:id="_Pb0GAMMzEd6AcKO2R8_pVg" annotatedElement="_m7cjwMM0Ed6AcKO2R8_pVg">
+        <body>Les identifiants sont vérifiées et renvoi true en cas de succès</body>
+      </ownedComment>
+      <ownedComment xmi:id="_yE39AMM5Ed6AcKO2R8_pVg" annotatedElement="_Gmq00MM0Ed6AcKO2R8_pVg">
+        <body>Saisie du nom d'utilisateur et du mot de passe&#xD;
+</body>
+      </ownedComment>
+      <node xmi:type="uml:InitialNode" xmi:id="_kmLc4MMxEd6AcKO2R8_pVg" name="InitialNode1" outgoing="_gBCoUMMyEd6AcKO2R8_pVg _lvyT0MMyEd6AcKO2R8_pVg" inPartition="_ltuB0MMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_dbb4AMMyEd6AcKO2R8_pVg" name="" outgoing="__1vwGMMyEd6AcKO2R8_pVg" incoming="_gBCoUMMyEd6AcKO2R8_pVg _lvyT0MMyEd6AcKO2R8_pVg" inPartition="_pSS70MMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_82nFcMMyEd6AcKO2R8_pVg" name="Verification" outgoing="_KeWGcMMzEd6AcKO2R8_pVg" incoming="__1vwGMMyEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_IK9HgMMzEd6AcKO2R8_pVg" name="DecisionNode1" incoming="_KeWGcMMzEd6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_EEImoMM0Ed6AcKO2R8_pVg" name="InitialNode2" outgoing="_Q_Wf5MM0Ed6AcKO2R8_pVg" inPartition="_ltuB0MMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_Gmq00MM0Ed6AcKO2R8_pVg" name="Saisie des informations" outgoing="_w1DGIMM0Ed6AcKO2R8_pVg" incoming="_Q_Wf5MM0Ed6AcKO2R8_pVg _Gg-nEMM1Ed6AcKO2R8_pVg _aRXZoMM7Ed6AcKO2R8_pVg"/>
+      <node xmi:type="uml:InputPin" xmi:id="_KXfbEMM0Ed6AcKO2R8_pVg" name="" inPartition="_ltuB0MMzEd6AcKO2R8_pVg">
+        <upperBound xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KXfbEcM0Ed6AcKO2R8_pVg" value="*"/>
+      </node>
+      <node xmi:type="uml:ReadLinkAction" xmi:id="_XtkrYMM0Ed6AcKO2R8_pVg" name="Vérification des identifiants" outgoing="_JebPoMM1Ed6AcKO2R8_pVg" incoming="_w1DGIMM0Ed6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:DecisionNode" xmi:id="_m7cjwMM0Ed6AcKO2R8_pVg" name="DecisionNode2" outgoing="_Gg-nEMM1Ed6AcKO2R8_pVg _aRXZoMM7Ed6AcKO2R8_pVg _btWaAMM8Ed6AcKO2R8_pVg" incoming="_JebPoMM1Ed6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:ReadStructuralFeatureAction" xmi:id="_EyUBoMM8Ed6AcKO2R8_pVg" name="ReadStructuralFeatureAction1" inPartition="_--ydcMMzEd6AcKO2R8_pVg"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="_N-nZIMM8Ed6AcKO2R8_pVg" name="ActivityFinalNode1" incoming="_btWaAMM8Ed6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_gBCoUMMyEd6AcKO2R8_pVg" name="ControlFlow1" source="_kmLc4MMxEd6AcKO2R8_pVg" target="_dbb4AMMyEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_gBCoUcMyEd6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_gBCoUsMyEd6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_lvyT0MMyEd6AcKO2R8_pVg" name="ControlFlow2" source="_kmLc4MMxEd6AcKO2R8_pVg" target="_dbb4AMMyEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_lvyT0cMyEd6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_lvyT0sMyEd6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="__1vwGMMyEd6AcKO2R8_pVg" name="ControlFlow3" source="_dbb4AMMyEd6AcKO2R8_pVg" target="_82nFcMMyEd6AcKO2R8_pVg" inPartition="_pSS70MMzEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="__1wXIMMyEd6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="__1wXIcMyEd6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_KeWGcMMzEd6AcKO2R8_pVg" name="ControlFlow4" source="_82nFcMMyEd6AcKO2R8_pVg" target="_IK9HgMMzEd6AcKO2R8_pVg" inPartition="_pSS70MMzEd6AcKO2R8_pVg _--ydcMMzEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_KeWGccMzEd6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_KeWGcsMzEd6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Q_Wf5MM0Ed6AcKO2R8_pVg" name="ControlFlow5" source="_EEImoMM0Ed6AcKO2R8_pVg" target="_Gmq00MM0Ed6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Q_Wf5cM0Ed6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Q_Wf5sM0Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_w1DGIMM0Ed6AcKO2R8_pVg" name="ControlFlow6" source="_Gmq00MM0Ed6AcKO2R8_pVg" target="_XtkrYMM0Ed6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_w1DGIcM0Ed6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_w1DGIsM0Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Gg-nEMM1Ed6AcKO2R8_pVg" name="ControlFlow7" source="_m7cjwMM0Ed6AcKO2R8_pVg" target="_Gmq00MM0Ed6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Gg-nEcM1Ed6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Gg-nEsM1Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_JebPoMM1Ed6AcKO2R8_pVg" name="ControlFlow8" source="_XtkrYMM0Ed6AcKO2R8_pVg" target="_m7cjwMM0Ed6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_JebPocM1Ed6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_JebPosM1Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_aRXZoMM7Ed6AcKO2R8_pVg" name="ControlFlow9" source="_m7cjwMM0Ed6AcKO2R8_pVg" target="_Gmq00MM0Ed6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_aRXZocM7Ed6AcKO2R8_pVg"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_aRXZosM7Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_btWaAMM8Ed6AcKO2R8_pVg" name="ControlFlow10" source="_m7cjwMM0Ed6AcKO2R8_pVg" target="_N-nZIMM8Ed6AcKO2R8_pVg" inPartition="_--ydcMMzEd6AcKO2R8_pVg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_btWaAcM8Ed6AcKO2R8_pVg" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_btWaAsM8Ed6AcKO2R8_pVg" value="1"/>
+      </edge>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_ltuB0MMzEd6AcKO2R8_pVg" name="Utilisateur" node="_kmLc4MMxEd6AcKO2R8_pVg _KXfbEMM0Ed6AcKO2R8_pVg _EEImoMM0Ed6AcKO2R8_pVg"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_pSS70MMzEd6AcKO2R8_pVg" name="ActivityPartition1" node="_dbb4AMMyEd6AcKO2R8_pVg" edge="__1vwGMMyEd6AcKO2R8_pVg _KeWGcMMzEd6AcKO2R8_pVg"/>
+      <group xmi:type="uml:ActivityPartition" xmi:id="_--ydcMMzEd6AcKO2R8_pVg" name="Serveur Web" node="_IK9HgMMzEd6AcKO2R8_pVg _m7cjwMM0Ed6AcKO2R8_pVg _EyUBoMM8Ed6AcKO2R8_pVg _XtkrYMM0Ed6AcKO2R8_pVg _N-nZIMM8Ed6AcKO2R8_pVg" edge="_KeWGcMMzEd6AcKO2R8_pVg _JebPoMM1Ed6AcKO2R8_pVg _btWaAMM8Ed6AcKO2R8_pVg"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,485 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+
+\usetheme{Warsaw}
+
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\lstset{
+	language=Java,
+	breaklines=true
+}
+
+
+\begin{document}
+
+\title[Projet multi-modules]{Soutenance du projet Multi-modules}
+
+\institute{Université de Nantes - Master 2 ALMA}
+
+\author[M. BACHELIER \and F. BARBIN \and F. GILET et J-M. GILET]{Matthieu BACHELIER \and Florian BARBIN \and Florent GILET \and Jean-Marie GILET}
+
+\date{Jeudi 4 février 2010}
+
+\logo{\includegraphics{images/logo2.jpg}}
+
+\frame{\titlepage}
+
+\section[Plan]{}
+	\frame{\tableofcontents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+%%%%%
+
+	\subsection{Principes de base de GTD}
+	\frame
+	{
+		\frametitle{Analyse de la méthode \textit{Getting Things Done} (GTD)}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.45]{images/UsesCases.png}
+		\end{figure}
+	}
+	\frame
+	{
+		\frametitle{Présentation de la méthode \textit{Getting Things Done} (GTD)}
+
+		Les \textit{CRUD}\footnote{Create, read, update and delete} de GTD sont les suivantes :
+
+		\begin{itemize}
+			\item<2-> Créer un projet / une tâche
+			\item<3-> Consulter un projet / une tâche
+			\item<4-> Mettre à jour un projet / une tâche
+			\item<5-> Supprimer un projet / une tâche
+		\end{itemize}
+	}
+
+%%%%%
+
+	\subsection{Fonctionnalités avancées}
+	\frame
+	{
+		\frametitle{Fonctionnalités avancées}
+
+		Le cahier des charges stipule d'implémenter les fonctionnalités suivantes :
+
+		\begin{itemize}
+			\item<2-> Gérer en local la persistance des données
+			\item<3-> Communiquer avec un serveur distant (via {\rmfamily\textsc{corba}})
+			\item<4-> Gestion des comptes utilisateurs
+		\end{itemize}
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Travaux accomplis}
+
+%%%%%
+
+	\subsection{Compétences nécessaires à la réalisation du projet}
+	\frame
+	{
+		\frametitle{Modules concernés par ce projet}
+
+		\begin{enumerate}
+			\item<1->Module Génie Logiciel à Objets II (Scénarios, Architecture, choix des \textit{design patterns}, \dots)
+			\item<1->Module Objets Distribués (CORBA)
+			\item<1->Module Interfaces Homme-Machine (Ergonomie, bonnes pratiques, \dots)
+		\end{enumerate}
+
+		\begin{itemize}
+			\item<2->Cependant, les modules des années passées sont utiles aussi
+			\begin{itemize}
+				\item<3-> Génie Logiciel à Objets I
+				\item<3-> Techniques Objets Avancés
+				\item<3-> Techniques de développement (\LaTeX{}, {\rmfamily\textsc{maven}}, \dots)
+			\end{itemize}
+		\end{itemize}
+	}
+
+%%%%%
+
+	\subsection{Présentation de notre application}
+	\frame
+	{
+		\frametitle{Le client GTD}
+		\only<1>
+		{
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.6]{images/architecture_gtd.png}
+			\end{figure}
+		}
+		\only<2>
+		{
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.6]{images/architecture_gtd_2.png}
+			\end{figure}
+		}
+		
+	}
+	\frame
+	{
+		\frametitle{Premier lancement de notre GTD}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.37]{images/connexionMac.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+		\frametitle{Créer un projet}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.5]{images/ajoutProjetPopup.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+		\frametitle{Créer une tâche}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.45]{images/ajoutTachePopup.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+		\frametitle{Menu}
+		Elle dispose d'un menu pour l'organisation des tâches :
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.5]{images/menu.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+		\frametitle{Organisation générale}
+		Les tâches sont organisées dans une arborescence à gauche :
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.5]{images/arborescence.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+		\frametitle{Effectuer une action}
+		Les actions s'effectuent via le menu ou la barre d'outils :
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.5]{images/actions.png}
+		\end{figure}
+	}
+
+	\frame
+	{
+
+		\frametitle{Autres fonctionnalités}
+		Notre application possède encore plein d'autres écrans mais les principaux ont été présentés ici.
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Un peu de technique}
+
+%%%%%
+
+	\subsection{Composants}
+	\frame
+	{
+		\frametitle{Diagramme de composants}
+		\vspace{-0.5cm}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.45]{images/Architecture.png}
+		\end{figure}
+	}
+
+%%%%%
+
+	\subsection{Génération du code}
+	\frame
+	{
+		\frametitle{Acceleo}
+		\begin{itemize}
+			\item Génération du code source via Acceleo
+			\item Le squelette est généré suivant les règles définies dans les templates
+			\item Seules les relations de compositions sont traduites
+		\end{itemize}
+	}
+	\begin{frame}[fragile]
+	
+	
+		\frametitle{Acceleo}
+		\begin{exampleblock}{Récupérer les attributs d'une classe}
+			\begin{lstlisting}[basicstyle=\small]
+	<%for (attribute[association == null]){%>
+	/**  */
+	private <%declarationAtt%>
+
+	<%}%>
+	<%for (attribute[association != null]){%>
+	/**  */
+	private <%declarationAsso%>
+	<%}%>
+			\end{lstlisting}
+		\end{exampleblock}
+	\end{frame}
+
+%%%%%
+
+	\subsection{\it{Design patterns}}	
+	\frame
+	{
+		\frametitle{ \it{Design patterns}}
+		\begin{block}{Modèle - Vue - Contrôleur}
+			C'est un patron composite :
+			\begin{itemize}
+				\item Observeur-Observable
+				\item Stratégie
+			\end{itemize}
+		\end{block}
+
+		\pause
+
+		\begin{exampleblock}{fr.alma.observer}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=0.5]{images/observer.png}
+				\end{figure}
+			\end{center}
+		\end{exampleblock}
+	}
+	
+	\frame
+	{
+		\begin{block}{Patron de conception \textit{Strategy}}
+			\begin{itemize}
+				\item Changer dynamiquement de stratégie (algorithme) selon le contexte
+			\end{itemize}
+		\end{block}
+	
+		\pause
+	
+		\begin{exampleblock}{Implémentation}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=0.25]{images/serveur.png}
+				\end{figure}
+			\end{center}
+		\end{exampleblock}
+	}
+
+	\frame
+	{
+		\begin{block}{Le modèle joue aussi le rôle d'une façade}
+			\begin{itemize}
+				\item Interface relativement \og simple \fg
+				\item Réduit les dépendances
+			\end{itemize}
+		\end{block}
+
+		\pause
+
+		\begin{exampleblock}{Implémentation par classe abstraite}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=0.5]{images/facade.png}
+				\end{figure}
+			\end{center}
+		\end{exampleblock}
+	}
+
+	\frame
+	{
+		\begin{block}{\textit{Data Access Object}}
+			\begin{itemize}
+				\item Données persistantes dans des classes à part (permet de s'abstraire des classes métier)
+				\item Plus de souplesse $\implies$ plus grande complexité de mise en \oe{}uvre
+			\end{itemize}
+		\end{block}
+	}
+
+	\frame
+	{
+		\begin{exampleblock}{Implémentation utilisant une fabrique (\textit{Factory} et \textit{Singleton})}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=0.45]{images/persistance.png}
+				\end{figure}
+			\end{center}
+		\end{exampleblock}
+	}
+
+	\frame
+	{
+		\begin{block}{Patron de conception État}
+			\begin{itemize}
+				\item Changer le comportement d'un objet tout en conservant la même instance de l'objet
+			\end{itemize}
+		\end{block}
+
+		\pause
+
+		\begin{exampleblock}{Implémentation}
+			\begin{center}
+				\begin{figure}
+					\includegraphics[scale=0.45]{images/etat.png}
+				\end{figure}
+			\end{center}
+		\end{exampleblock}
+	}
+
+%%%%%
+
+	\subsection{Gestion de la persistance}
+	\frame
+	{
+		\frametitle{Le choix Hibernate}
+
+		Notre choix :
+		\begin{itemize}
+			\item Utilisation d'une base de données embarquée
+			\item Mapping géré par des fichiers {\rmfamily\textsc{xml}}
+		\end{itemize}
+
+		\pause
+
+		En conséquence :
+		\begin{itemize}
+			\item Pas de déploiement sur un serveur (JBoss par exemple)
+			\item Pas besoin d'utiliser {\rmfamily\textsc{jdbc}}
+		\end{itemize}
+	}
+	
+	\frame
+	{
+		\frametitle{La base de données H2}
+		\begin{itemize}
+			\item Très rapide, open source, possiblité d'utiliser l'API {\rmfamily\textsc{jdbc}}
+			\item Utilisation en mode embarqué ou en mode serveur
+			\item Console basée sur un navigateur
+			\item Langage de requête ressemblant à Oracle
+			\item Notre application ne nécessite pas de stocker énormement de données 
+		\end{itemize}
+	}
+	
+	\begin{frame}[fragile]
+		\begin{exampleblock}{La classe Projet}
+			\begin{lstlisting}[basicstyle=\small]
+public class Projet extends EntiteGTD implements IProjet
+{
+  private String nom;
+  private String notes;
+  private List<ITache> taches;
+  private String contexte;
+  private List<IProjet> sousProjets;
+  private Long idPere;
+  private Long idUtilisateur; 
+  ... // constructeurs & méthodes
+}
+			\end{lstlisting}
+		\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\begin{exampleblock}{Et le \textit{mapping} {\rmfamily\textsc{xml}} correspondant}
+			\begin{lstlisting}[basicstyle=\small]
+...
+<class name="fr.alma.modele.noyau.Projet">
+  <id name="id" type="long">
+    <generator class="increment"/>
+  </id>
+  <property name="nom" type="String"/>
+  <property name="notes" type="String"/>
+  <property name="contexte" type="String"/>
+  <property name="idPere" type="long"/>
+  <property name="idUtilisateur" type="long"/>
+</class>
+			\end{lstlisting}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemple d'utilisation du patron DAO}
+		\begin{exampleblock}{Récupérer les tâches d'un projet spécifique}
+			\begin{lstlisting}[basicstyle=\small]
+@Override
+public List<Tache> recupererTaches(Long id) {
+  Session s = getSession();
+  Query q = s.createQuery("from Tache where idprojet = :idprojet");
+  q.setParameter("idprojet", id);
+  List<Tache> results = (List<Tache>) q.list();
+  return results;
+}
+			\end{lstlisting}
+		\end{exampleblock}
+	\end{frame}
+
+	\subsection{Tests}
+	\frame
+	{
+		\frametitle{Quelques tests}
+		\begin{itemize}
+			\item Test fonctionnels
+			\item Test d'intégration
+			\item Test unitaires
+		\end{itemize}
+	}	
+	
+	\subsection{Ce qu'il reste à faire}
+	\frame
+	{
+		\frametitle{Fonctionnalités}
+		\begin{itemize}
+			\item Inclusion des états dans une tâche
+			\item Onglet Agenda
+			\item Rendu graphique de l'échéancier
+			\item Liaison avec le serveur
+			\item Tests de validation
+		\end{itemize}
+	}	
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section*{Conclusion}
+
+	\subsection*{Quelques chiffres}
+	\frame
+	{
+		\frametitle{Quelques chiffres pour résumer ce projet}
+		\begin{itemize}
+			\item $75$ classes (dont $40$ pour l'IHM)
+			\item $463$ méthodes
+			\item $5218$ lignes de code
+			\item Complexité cyclomatique moyenne de $1,38$
+			\item Plus de $500$ \textit{commits}
+			\item Et environ 15 cafetières pleines \dots
+		\end{itemize}
+	}
+
+	\subsection*{Questions}
+	\frame
+	{
+		\frametitle{Questions}
+		\begin{center}
+			Deuxième partie de la soutenance consacrée aux diverses questions sur le projet.
+		\end{center}
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

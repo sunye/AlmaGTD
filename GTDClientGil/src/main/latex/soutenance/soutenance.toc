@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {french}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Principes de base de GTD}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{Fonctionnalit\'es avanc\'ees}{9}{0}{1}
+\beamer@sectionintoc {3}{Travaux accomplis}{13}{0}{2}
+\beamer@subsectionintoc {3}{1}{Comp\'etences n\'ecessaires \`a la r\'ealisation du projet}{13}{0}{2}
+\beamer@subsectionintoc {3}{2}{Pr\'esentation de notre application}{16}{0}{2}
+\beamer@sectionintoc {4}{Un peu de technique}{25}{0}{3}
+\beamer@subsectionintoc {4}{1}{Composants}{25}{0}{3}
+\beamer@subsectionintoc {4}{2}{G\'en\'eration du code}{26}{0}{3}
+\beamer@subsectionintoc {4}{3}{\it {Design patterns}}{28}{0}{3}
+\beamer@subsectionintoc {4}{4}{Gestion de la persistance}{38}{0}{3}
+\beamer@subsectionintoc {4}{5}{Tests}{44}{0}{3}
+\beamer@subsectionintoc {4}{6}{Ce qu'il reste \`a faire}{45}{0}{3}

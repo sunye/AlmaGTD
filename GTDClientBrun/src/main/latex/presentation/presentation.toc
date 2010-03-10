@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {french}
+\beamer@sectionintoc {2}{Conception}{5}{0}{1}
+\beamer@sectionintoc {3}{Persistance locale}{8}{0}{2}
+\beamer@sectionintoc {4}{Persistance distante}{18}{0}{3}
+\beamer@sectionintoc {5}{G\'en\'eration de code}{21}{0}{4}
+\beamer@sectionintoc {6}{Interface Homme Machine}{24}{0}{5}
+\beamer@sectionintoc {7}{Retour sur le projet}{28}{0}{6}

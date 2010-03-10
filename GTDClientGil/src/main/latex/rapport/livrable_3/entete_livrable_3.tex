@@ -1,0 +1,114 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{alma}
+\pagestyle{plain}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{placeins}
+\usepackage{pdflscape}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tipa}
+\usepackage{textcomp}
+\usepackage{minitoc}
+
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead{} % clear all footer fields 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\scriptsize{Matthieu BACHELIER, Florian BARBIN \\ Florent GILET et Jean-Marie GILET}} 
+\fancyfoot[LO,CE]{\scriptsize\textsl{Université de Nantes\\Master Alma}} 
+\fancyfoot[CO,RE]{\scriptsize{\today}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\addtolength{\headheight}{0.5pt}
+\setlength{\footskip}{0in}
+\renewcommand{\footruleskip}{0pt}
+\fancypagestyle{plain}{%
+ \fancyhead{}
+ \renewcommand{\headrulewidth}{0pt}
+}
+
+\parskip 0.05in
+
+\title{Getting Things Done\\
+\begin{large}\textbf{Spécification des composants}\end{large}}
+\author{BACHELIER Matthieu \and BARBIN Florian \and GILET Florent \and GILET Jean-Marie}
+\graphicspath{{images/}}
+
+\date{\today}
+\makeindex
+\begin{document}
+\begin{titlepage}
+
+
+\vspace*{2cm}
+
+
+
+\begin{flushleft}
+	\hspace{1cm} \includegraphics*[width=4cm]{images/logo.jpg}\\
+	\hspace{1cm} \textsl{12, rue de la Houssinière}\\
+	\hspace{1cm} \textit{44322 Nantes}
+	\hrulefill
+\end{flushleft}
+
+
+
+
+\vspace{2cm}
+
+\begin{flushleft}
+	\hspace{1cm}
+	{\fontfamily{ppl}\fontseries{b}\fontsize{1.0cm}{1.65cm}\selectfont Getting Things Done :}
+\end{flushleft}
+
+\begin{flushright}
+
+	{\fontfamily{ppl}\fontseries{b}\fontsize{0.8cm}{1.45cm}\selectfont Spécification des composants}
+
+	
+	\vspace{1cm}
+	
+	{\Large Projet : Livrable 3}\\
+
+	\vspace{1cm}
+	BACHELIER Matthieu \\ BARBIN Florian \\ GILET Florent \\ GILET Jean-Marie \\
+	\textit{2009-2010}
+	
+\end{flushright}
+
+
+\vspace{2cm}
+
+\begin{flushleft}
+
+
+
+	\hspace{1cm} \textsc{Master 2 - ALMA}\\
+	
+\end{flushleft}
+
+\hspace*{0,5cm}\hrulefill
+\end{titlepage}
+
+	\dominitoc
+	\tableofcontents
+
+\include{corps_livrable_3}
+
+\end{document}

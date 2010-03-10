@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" package="fr.univnantes.alma.gtd.model.gestionnaireressources">
+    <class name="fr.univnantes.alma.gtd.model.gestionnaireutilisateur.Utilisateur" >     
+        <id name="id" column="utilisateurId" type="java.lang.Integer">
+          <generator class="foreign">
+          	<param name="property">iGestionnaireRessources</param>
+          </generator>
+        </id>
+        <property name="login" type="java.lang.String"/>
+        <property name="pwd" type="java.lang.String"/>
+		<one-to-one name="iGestionnaireRessources" class="fr.univnantes.alma.gtd.model.gestionnaireressources.IGestionnaireRessources" access="field"/>
+    </class>
+</hibernate-mapping>

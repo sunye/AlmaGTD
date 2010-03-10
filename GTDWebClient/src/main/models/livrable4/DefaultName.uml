@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA">
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="DefaultName">
+    <packagedElement xmi:type="uml:Package" xmi:id="_KOQ1gPt6Ed6QlIqq2bX6rw" name="server">
+      <packagedElement xmi:type="uml:Class" xmi:id="_UqMo4Pt6Ed6QlIqq2bX6rw" name="WebServerManager">
+        <ownedAttribute xmi:id="_vduq4Pt8Ed6QlIqq2bX6rw" name="toProcessManager" type="_PYOHAPt8Ed6QlIqq2bX6rw" aggregation="composite" association="_vdv5Cvt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vduq4ft8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vduq4vt8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_wopl4Pt8Ed6QlIqq2bX6rw" name="toDataManager" type="_BBvwsPt8Ed6QlIqq2bX6rw" aggregation="composite" association="_worbEPt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wopl4ft8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wopl4vt8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_xkJk0Pt8Ed6QlIqq2bX6rw" name="connectToServer" type="_Mv1IcPt8Ed6QlIqq2bX6rw" aggregation="composite" association="_xkMBEPt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xkJk0ft8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xkJk0vt8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_bzYDUPuAEd6QlIqq2bX6rw" name="connectToServer" visibility="private" type="_Mv1IcPt8Ed6QlIqq2bX6rw"/>
+        <ownedAttribute xmi:id="_lTVWovuAEd6QlIqq2bX6rw" name="toDataManager" visibility="private" type="_BBvwsPt8Ed6QlIqq2bX6rw"/>
+        <ownedAttribute xmi:id="_pb_OEvuAEd6QlIqq2bX6rw" name="toProcessManager" visibility="private" type="_PYOHAPt8Ed6QlIqq2bX6rw"/>
+        <ownedAttribute xmi:id="_niSSwvuGEd6QlIqq2bX6rw" name="toConnectionManager" visibility="private" type="_0AY5kPuDEd6QlIqq2bX6rw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_dLqBsPt8Ed6QlIqq2bX6rw" name="processmanager">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_PYOHAPt8Ed6QlIqq2bX6rw" name="ToProcessManager">
+          <generalization xmi:id="_J6kOs_uAEd6QlIqq2bX6rw" general="_Xh4D0Pt-Ed6QlIqq2bX6rw"/>
+          <generalization xmi:id="_Kg7rIPuAEd6QlIqq2bX6rw" general="_a4yf0Pt_Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Xh4D0Pt-Ed6QlIqq2bX6rw" name="WorkspaceManager">
+          <ownedAttribute xmi:id="_WxMi4PuAEd6QlIqq2bX6rw" name="processManager" type="_a4yf0Pt_Ed6QlIqq2bX6rw" aggregation="composite" association="_WxNxCvuAEd6QlIqq2bX6rw">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxMi4fuAEd6QlIqq2bX6rw" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxMi4vuAEd6QlIqq2bX6rw" value="1"/>
+          </ownedAttribute>
+          <ownedOperation xmi:id="_8YpFUPuAEd6QlIqq2bX6rw" name="createWorkspace">
+            <ownedParameter xmi:id="_Enk1oPuBEd6QlIqq2bX6rw" name="return" type="__yBb8PuAEd6QlIqq2bX6rw" direction="return"/>
+            <ownedParameter xmi:id="_GrbjwPuBEd6QlIqq2bX6rw" name="session" type="_4yKt4PuAEd6QlIqq2bX6rw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_BgE5MvuBEd6QlIqq2bX6rw" name="deleteWorkspace">
+            <ownedParameter xmi:id="_DNF0oPuBEd6QlIqq2bX6rw" name="return" type="__yBb8PuAEd6QlIqq2bX6rw" direction="return"/>
+            <ownedParameter xmi:id="_JSGrEPuBEd6QlIqq2bX6rw" name="session" type="_4yKt4PuAEd6QlIqq2bX6rw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_a4yf0Pt_Ed6QlIqq2bX6rw" name="ProcessManager"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_kVBJsPt_Ed6QlIqq2bX6rw" name="ProcessManagerImpl" clientDependency="_xOQtA_t_Ed6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_xOQtA_t_Ed6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_PYOHAPt8Ed6QlIqq2bX6rw" client="_kVBJsPt_Ed6QlIqq2bX6rw" contract="_PYOHAPt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_nx4SIPt_Ed6QlIqq2bX6rw" name="Workspace" clientDependency="_F1t5M_uAEd6QlIqq2bX6rw _Lyvw9PuDEd6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_F1t5M_uAEd6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_a4yf0Pt_Ed6QlIqq2bX6rw" client="_nx4SIPt_Ed6QlIqq2bX6rw" contract="_a4yf0Pt_Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_WxNxCvuAEd6QlIqq2bX6rw" name="A_&lt;workspaceManager>_&lt;processManager>" memberEnd="_WxNxC_uAEd6QlIqq2bX6rw _WxMi4PuAEd6QlIqq2bX6rw">
+          <ownedEnd xmi:id="_WxNxC_uAEd6QlIqq2bX6rw" name="workspaceManager" type="_Xh4D0Pt-Ed6QlIqq2bX6rw" association="_WxNxCvuAEd6QlIqq2bX6rw">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxNxDPuAEd6QlIqq2bX6rw" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WxNxDfuAEd6QlIqq2bX6rw" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_l9xXkPt8Ed6QlIqq2bX6rw" name="datamanager">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Mv1IcPt8Ed6QlIqq2bX6rw" name="ConnectToServer"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_BBvwsPt8Ed6QlIqq2bX6rw" name="ToDataManager">
+          <generalization xmi:id="_1ICs4Pt9Ed6QlIqq2bX6rw" general="_6gChwPt8Ed6QlIqq2bX6rw"/>
+          <generalization xmi:id="_1qrf4Pt9Ed6QlIqq2bX6rw" general="_4fyhQPt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_3OPZ0Pt8Ed6QlIqq2bX6rw" name="Server">
+          <generalization xmi:id="_RE9gM_t9Ed6QlIqq2bX6rw" general="_Mv1IcPt8Ed6QlIqq2bX6rw"/>
+          <generalization xmi:id="_XZ3z0_t9Ed6QlIqq2bX6rw" general="_4fyhQPt8Ed6QlIqq2bX6rw"/>
+          <generalization xmi:id="_ZZvZ0Pt9Ed6QlIqq2bX6rw" general="_9RCCsPt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4fyhQPt8Ed6QlIqq2bX6rw" name="DataManager"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_6gChwPt8Ed6QlIqq2bX6rw" name="DataManagerSync"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_9RCCsPt8Ed6QlIqq2bX6rw" name="DataManagerNoSync"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_fInoMPt9Ed6QlIqq2bX6rw" name="ServerGTDImpl" clientDependency="_nJdSIPt9Ed6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_nJdSIPt9Ed6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_3OPZ0Pt8Ed6QlIqq2bX6rw" client="_fInoMPt9Ed6QlIqq2bX6rw" contract="_3OPZ0Pt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_h8IRoPt9Ed6QlIqq2bX6rw" name="ServerToodleDoImpl" clientDependency="_nijuo_t9Ed6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_nijuo_t9Ed6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_3OPZ0Pt8Ed6QlIqq2bX6rw" client="_h8IRoPt9Ed6QlIqq2bX6rw" contract="_3OPZ0Pt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_qhHxgPt9Ed6QlIqq2bX6rw" name="DataManagerImpl" clientDependency="_8KxIw_t9Ed6QlIqq2bX6rw _8msPw_t9Ed6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_8KxIw_t9Ed6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_BBvwsPt8Ed6QlIqq2bX6rw" client="_qhHxgPt9Ed6QlIqq2bX6rw" contract="_BBvwsPt8Ed6QlIqq2bX6rw"/>
+          <interfaceRealization xmi:id="_8msPw_t9Ed6QlIqq2bX6rw" name="InterfaceRealization2" supplier="_Mv1IcPt8Ed6QlIqq2bX6rw" client="_qhHxgPt9Ed6QlIqq2bX6rw" contract="_Mv1IcPt8Ed6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_DzHaOvt-Ed6QlIqq2bX6rw" name="A_&lt;dataManagerImpl>_&lt;server>" memberEnd="_DzHaO_t-Ed6QlIqq2bX6rw _DzHaPvt-Ed6QlIqq2bX6rw">
+          <ownedEnd xmi:id="_DzHaO_t-Ed6QlIqq2bX6rw" name="dataManagerImpl" type="_qhHxgPt9Ed6QlIqq2bX6rw" association="_DzHaOvt-Ed6QlIqq2bX6rw">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DzHaPPt-Ed6QlIqq2bX6rw" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DzHaPft-Ed6QlIqq2bX6rw" value="1"/>
+          </ownedEnd>
+          <ownedEnd xmi:id="_DzHaPvt-Ed6QlIqq2bX6rw" name="server" type="_3OPZ0Pt8Ed6QlIqq2bX6rw" association="_DzHaOvt-Ed6QlIqq2bX6rw">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DzHaP_t-Ed6QlIqq2bX6rw" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DzHaQPt-Ed6QlIqq2bX6rw" value="1"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_vdv5Cvt8Ed6QlIqq2bX6rw" name="A_&lt;webServerManager>_&lt;toProcessManager>" memberEnd="_vdv5C_t8Ed6QlIqq2bX6rw _vduq4Pt8Ed6QlIqq2bX6rw">
+        <ownedEnd xmi:id="_vdv5C_t8Ed6QlIqq2bX6rw" name="webServerManager" type="_UqMo4Pt6Ed6QlIqq2bX6rw" association="_vdv5Cvt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vdv5DPt8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vdv5Dft8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_worbEPt8Ed6QlIqq2bX6rw" name="A_&lt;webServerManager>_&lt;toDataManager>" memberEnd="_worbEft8Ed6QlIqq2bX6rw _wopl4Pt8Ed6QlIqq2bX6rw">
+        <ownedEnd xmi:id="_worbEft8Ed6QlIqq2bX6rw" name="webServerManager" type="_UqMo4Pt6Ed6QlIqq2bX6rw" association="_worbEPt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_worbEvt8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_worbE_t8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_xkMBEPt8Ed6QlIqq2bX6rw" name="A_&lt;webServerManager>_&lt;connectToServer>" memberEnd="_xkMBEft8Ed6QlIqq2bX6rw _xkJk0Pt8Ed6QlIqq2bX6rw">
+        <ownedEnd xmi:id="_xkMBEft8Ed6QlIqq2bX6rw" name="webServerManager" type="_UqMo4Pt6Ed6QlIqq2bX6rw" association="_xkMBEPt8Ed6QlIqq2bX6rw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xkMBEvt8Ed6QlIqq2bX6rw" value="1"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xkMBE_t8Ed6QlIqq2bX6rw" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_3pfOkPuAEd6QlIqq2bX6rw" name="types">
+        <packagedElement xmi:type="uml:Class" xmi:id="_4yKt4PuAEd6QlIqq2bX6rw" name="Session"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ektMIP6ZEd6CyMndqi9gUQ" name="DataManagerResult"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_t2WOoPuCEd6QlIqq2bX6rw" name="connectionmanager">
+        <packagedElement xmi:type="uml:Class" xmi:id="_8h8gYPuCEd6QlIqq2bX6rw" name="ConnManager" clientDependency="_EsnmU_uEEd6QlIqq2bX6rw _E-eLUPuEEd6QlIqq2bX6rw _5jq0lPuGEd6QlIqq2bX6rw _GOCOZPuHEd6QlIqq2bX6rw">
+          <interfaceRealization xmi:id="_EsnmU_uEEd6QlIqq2bX6rw" name="InterfaceRealization1" supplier="_0AY5kPuDEd6QlIqq2bX6rw" client="_8h8gYPuCEd6QlIqq2bX6rw" contract="_0AY5kPuDEd6QlIqq2bX6rw"/>
+          <interfaceRealization xmi:id="_E-eLUPuEEd6QlIqq2bX6rw" name="InterfaceRealization2" supplier="_wXjKoPuDEd6QlIqq2bX6rw" client="_8h8gYPuCEd6QlIqq2bX6rw" contract="_wXjKoPuDEd6QlIqq2bX6rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_wXjKoPuDEd6QlIqq2bX6rw" name="ConnectionCheck">
+          <ownedOperation xmi:id="_wMoCIPuFEd6QlIqq2bX6rw" name="isAlive">
+            <ownedParameter xmi:id="_x9dGkPuFEd6QlIqq2bX6rw" name="return" type="__yBb8PuAEd6QlIqq2bX6rw" direction="return"/>
+            <ownedParameter xmi:id="_zRStAPuFEd6QlIqq2bX6rw" name="session" type="_4yKt4PuAEd6QlIqq2bX6rw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_0AY5kPuDEd6QlIqq2bX6rw" name="ToConnectionManager"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_Lyvw9PuDEd6QlIqq2bX6rw" name="Usage1" supplier="_BBvwsPt8Ed6QlIqq2bX6rw" client="_nx4SIPt_Ed6QlIqq2bX6rw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_5jq0lPuGEd6QlIqq2bX6rw" name="Usage2" supplier="_PYOHAPt8Ed6QlIqq2bX6rw" client="_8h8gYPuCEd6QlIqq2bX6rw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GOCOZPuHEd6QlIqq2bX6rw" name="Usage3" supplier="_Mv1IcPt8Ed6QlIqq2bX6rw" client="_8h8gYPuCEd6QlIqq2bX6rw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yBb8PuAEd6QlIqq2bX6rw" name="boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yIwsPuAEd6QlIqq2bX6rw" name="byte"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yIwsfuAEd6QlIqq2bX6rw" name="char"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yIwsvuAEd6QlIqq2bX6rw" name="double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yIws_uAEd6QlIqq2bX6rw" name="float"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yIwtPuAEd6QlIqq2bX6rw" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yJXwPuAEd6QlIqq2bX6rw" name="long"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="__yJXwfuAEd6QlIqq2bX6rw" name="short"/>
+</uml:Model>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true"
+	package="fr.alma.modele.persistance.xml">
+	<class name="fr.alma.modele.noyau.Projet">
+		<id name="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="nom" type="java.lang.String" />
+		<property name="notes" type="java.lang.String" />
+		<property name="contexte" type="java.lang.String" />
+		<property name="idPere" type="long" />
+		<property name="idUtilisateur" type="long" />
+		<!-- <list name="taches" cascade="all">
+            <key column="parent_id"/>
+            <index column="idx"/>
+            <one-to-many class="fr.alma.modele.noyau.Tache"/>
+        </list>
+        <list name="sousProjets" cascade="all" >
+            <key column="parent_id"/>
+            <index column="idx"/>
+            <one-to-many class="fr.alma.modele.noyau.Projet" />
+        </list> -->
+	</class>
+</hibernate-mapping>

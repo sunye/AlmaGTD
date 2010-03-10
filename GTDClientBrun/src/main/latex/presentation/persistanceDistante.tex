@@ -1,0 +1,54 @@
+\section{Persistance distante}
+
+\begin{frame}
+\frametitle{Persistance distante, source de complexité}
+%Nous avions à faire : Communication corba avec le serveur.\\
+\textbf{Problèmes rencontrés :}
+\begin{itemize}
+\item Mauvaise évaluation du temps.
+\item Mauvaise synchronisation avec les autres groupes.%On a recu les idl tard
+\item Problème de cohésion des modèles.
+\end{itemize}
+\textbf{Conséquence sur GTD :}
+\begin{itemize}
+\item Fonctionnalités non implémentées dans GTD.
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Solution de persistance sur un serveur distant via CORBA}
+\begin{itemize}
+\item Implémentation de l'interface IPersistance utilisée dans la persistance locale. Voici les fonctions que nous aurions implémentées pour chaque élément persistant :
+\lstset{breaklines=true, basicstyle=\footnotesize ,  language=java}
+\begin{lstlisting}
+public List<Idee> findAllIdees();
+public Idee findIdee(final Integer id);
+public Boolean update(final Idee entity);
+public Boolean deleteAllIdees();
+public Boolean delete(final Idee entity);
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Solution de persistance sur un serveur distant via CORBA}
+\begin{itemize}
+\item Patron de conception proxy pour définir l'ensemble de classe représentant les classes du modèle. Les instances de ces classes seraient des représentations des objets corba distants.
+\item Ces classes contiendraient un IOR permettant de trouver l'objet distant.
+\item Regroupement des opérations serait dans une classe unique, seul le type d'objet que l'on fait persister varie.
+\item Paramétrage de cette classe unique par un type T représentant le type d'objet à persister.\\
+Signature des classes :
+\lstset{breaklines=true, basicstyle=\footnotesize ,  language=java}
+\begin{lstlisting}
+abstract class ObjetDistant<T extends GTDEntity>
+class TacheImpl extends ObjetDistant<Tache> implements Tache
+\end{lstlisting}
+\item Pour communiquer avec le serveur nous aurions besoin de l'adresse du registre CORBA qui serai dans un attribut.
+\end{itemize}
+%Nous pouvons ainsi assurer la représentation en locale d'objet distants qu'on peut sauvegarder puis récupérer. Il faut toutefois avoir recours à un mécanisme d'identification auprès du serveur. La session d'identification doit être initiée auprès du serveur dès le démarrage de l'application, cette connexion doit être maintenue afin de permettre toute instanciation tardive.
+
+\end{frame}
+
