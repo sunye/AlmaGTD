@@ -17,7 +17,7 @@ import fr.alma.modele.persistance.dao.UtilisateurDao;
 import fr.alma.modele.persistance.dao.impl.AbstractDao;
 
 /**
- * Classe BC représentant la base de données locale
+ * Classe BD représentant la base de données locale
  * @version 1.0
  * @author Université de Nantes
  */
@@ -70,7 +70,7 @@ public class BD extends AbstractDao<EntiteGTD> implements IGestionnaireComptes, 
 		//Start of user code for existeUtilisateur method body
 		UtilisateurDao uDao = DaoFactory.createUtilisateurDao();
 		Utilisateur u = uDao.trouverUtilisateur(login);
-		return u.getId();
+		return (u != null) ? u.getId(): null;
 		//End of user code
 	}
 

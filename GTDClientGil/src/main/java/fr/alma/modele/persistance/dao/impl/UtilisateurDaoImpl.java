@@ -15,6 +15,11 @@ import fr.alma.modele.persistance.dao.UtilisateurDao;
  */
 public class UtilisateurDaoImpl extends AbstractDao<Utilisateur> implements UtilisateurDao {
 
+
+        /**
+         * Renvoie tous les utilisateurs de la base
+         * @return
+         */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Utilisateur> recupererTout() {

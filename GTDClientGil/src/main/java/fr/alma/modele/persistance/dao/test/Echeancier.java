@@ -1,4 +1,4 @@
-package fr.alma.modele.persistence.dao.test;
+package fr.alma.modele.persistance.dao.test;
 
 import java.util.ArrayList;
 import java.util.List;
