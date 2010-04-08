@@ -16,7 +16,7 @@ import fr.alma.modele.noyau.IProjet;
  * @since 2009
  * @version 0.1
  */
-public class AjouterProjetPopup extends AbstractAjouterEditerProjet {
+public final class AjouterProjetPopup extends AbstractAjouterEditerProjet {
 
 	/**
 	 * UID généré.

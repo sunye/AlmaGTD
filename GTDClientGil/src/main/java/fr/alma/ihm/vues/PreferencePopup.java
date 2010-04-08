@@ -29,7 +29,7 @@ import fr.alma.ihm.vues.generale.popup.JDialogGTD;
  * @since 2009
  * @version 1.0
  */
-public class PreferencePopup extends JDialogGTD {
+public final class PreferencePopup extends JDialogGTD {
 
 	/**
 	 * UID généré.
@@ -39,8 +39,8 @@ public class PreferencePopup extends JDialogGTD {
 	/**
 	 * Tailles statiques de la fenêtre.
 	 */
-	private int TAILLE_HAUTEUR = 325;
-	private int TAILLE_LARGEUR = 480; 
+	private int tailleHauteur = 325;
+	private int tailleLargeur = 480; 
 	
 	/**
 	 * instance de la classe (pattern singleton).
@@ -61,13 +61,13 @@ public class PreferencePopup extends JDialogGTD {
 	 * Constructeur.
 	 */
 	private PreferencePopup() {
-		setSize(TAILLE_LARGEUR, TAILLE_HAUTEUR);
+		setSize(tailleLargeur, tailleHauteur);
 		setTitle("Préférences");
 
 		titre.setText("Modification des préférences");
 		soustitre.setText("Configurer les paramètres de votre application.");
 		ImageIcon imgProjet = new ImageIcon(getClass().getResource("/images/preferences_48.png"));
-		afficheTitre(imgProjet, new Dimension(TAILLE_LARGEUR, 64));
+		afficheTitre(imgProjet, new Dimension(tailleLargeur, 64));
 		afficheCorps();
 		doGTDLayout();
 		initActionListeners();

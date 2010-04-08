@@ -15,7 +15,7 @@ import fr.alma.ihm.vues.ApplicationGTD;
  * @since 2009
  * @version 0.1
  */
-public class CreationComptePopup extends JDialogGTD {
+public final class CreationComptePopup extends JDialogGTD {
 
 	/**
 	 * UID généré.
@@ -25,8 +25,8 @@ public class CreationComptePopup extends JDialogGTD {
 	/**
 	 * Tailles statiques de la fenêtre.
 	 */
-	private int TAILLE_HAUTEUR = 320;
-	private int TAILLE_LARGEUR = 480;
+	private int tailleHauteur = 320;
+	private int tailleLargeur = 480;
 	
 	/**
 	 * instance de la classe (pattern singleton).
@@ -46,7 +46,7 @@ public class CreationComptePopup extends JDialogGTD {
 	 */
 	private CreationComptePopup() {
 		super();
-		setSize(TAILLE_LARGEUR, TAILLE_HAUTEUR);
+		setSize(tailleLargeur, tailleHauteur);
 		setTitle("Nouveau compte");
 		
 		titre.setText("Creation de Compte");
@@ -54,7 +54,7 @@ public class CreationComptePopup extends JDialogGTD {
 		soustitre.setSize(375, 64);
 		soustitre.setText("Afin de pouvoir utiliser Getting Things Done, il est nécessaire de posséder un compte utilisateur pour conserver vos tâches sur le serveur.");
 		ImageIcon imgCompte = new ImageIcon(getClass().getResource("/images/login_48.png"));
-		afficheTitre(imgCompte, new Dimension(TAILLE_LARGEUR, 64));
+		afficheTitre(imgCompte, new Dimension(tailleLargeur, 64));
 		afficheCorps();
 		doGTDLayout();
 		initActionListeners();

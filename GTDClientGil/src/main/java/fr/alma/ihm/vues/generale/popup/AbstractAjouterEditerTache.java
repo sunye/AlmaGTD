@@ -40,8 +40,8 @@ public abstract class AbstractAjouterEditerTache extends JDialogGTD {
 	/**
 	 * Tailles statiques de la fenêtre.
 	 */
-	private int TAILLE_HAUTEUR = 540;
-	private int TAILLE_LARGEUR = 480;
+	private int tailleHauteur = 540;
+	private int tailleLargeur = 480;
 
 	/**
 	 * Différents types de boutons
@@ -70,9 +70,9 @@ public abstract class AbstractAjouterEditerTache extends JDialogGTD {
 	 */
 	public AbstractAjouterEditerTache() {
 		super();
-		setSize(TAILLE_LARGEUR, TAILLE_HAUTEUR);
+		setSize(tailleLargeur, tailleHauteur);
 		ImageIcon imgProjet = new ImageIcon(getClass().getResource("/images/vueGenerale/ajouterTache_48.png"));
-		afficheTitre(imgProjet, new Dimension(TAILLE_LARGEUR, 64));
+		afficheTitre(imgProjet, new Dimension(tailleLargeur, 64));
 		textAreaNotes.setRows(3);
 		textAreaNotes.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 	}

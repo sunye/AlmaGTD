@@ -279,7 +279,7 @@ public class Menu extends JMenuBar implements ActionListener {
 	 * (visible ou non) selon sur quel objet on se situe.
 	 * @param b le booleen pour savoir quels objets activer ou désactiver
 	 */
-	public void setEstConnecte(Boolean b) {
+	public final void setEstConnecte(Boolean b) {
 		if (b.equals(true)) {
 			itemAjouterProjet.setEnabled(true);
 			itemAjouterTache.setEnabled(true);

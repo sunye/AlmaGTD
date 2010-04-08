@@ -21,7 +21,7 @@ import fr.alma.ihm.vues.ApplicationGTD;
  * @since 2009
  * @version 0.1
  */
-public class ConnexionPopup extends JDialogGTD implements ActionListener {
+public final class ConnexionPopup extends JDialogGTD implements ActionListener {
 
 	/**
 	 * UID généré.
@@ -37,8 +37,8 @@ public class ConnexionPopup extends JDialogGTD implements ActionListener {
 	/**
 	 * Tailles statiques de la fenêtre.
 	 */
-	private int TAILLE_HAUTEUR = 300;
-	private int TAILLE_LARGEUR = 480; 
+	private int tailleHauteur = 300;
+	private int tailleLargeur = 480; 
 
 	/**
 	 * instance de la classe (pattern singleton).
@@ -58,13 +58,13 @@ public class ConnexionPopup extends JDialogGTD implements ActionListener {
 	 */
 	private ConnexionPopup() {
 		super();
-		setSize(TAILLE_LARGEUR, TAILLE_HAUTEUR);
+		setSize(tailleLargeur, tailleHauteur);
 		setTitle("Connexion");
 
 		titre.setText("Connexion à l'application");
 		soustitre.setText("Veuillez saisir vos identifiants pour utiliser Getting Things Done");
 		ImageIcon imgConnexion = new ImageIcon(getClass().getResource("/images/connexion_48.png"));
-		afficheTitre(imgConnexion, new Dimension(TAILLE_LARGEUR, 64));
+		afficheTitre(imgConnexion, new Dimension(tailleLargeur, 64));
 		afficheCorps();
 		doSpecificLayout();
 		initActionListeners();

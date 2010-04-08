@@ -27,8 +27,8 @@ public abstract class AbstractAjouterEditerProjet extends JDialogGTD implements 
 	/**
 	 * Tailles statiques de la fenêtre.
 	 */
-	private int TAILLE_HAUTEUR = 300;
-	private int TAILLE_LARGEUR = 480; 
+	private int tailleHauteur = 300;
+	private int tailleLargeur = 480; 
 	
 	/**
 	 * Champs de saisies
@@ -41,9 +41,9 @@ public abstract class AbstractAjouterEditerProjet extends JDialogGTD implements 
 	 * Constructeur.
 	 */
 	public AbstractAjouterEditerProjet() {
-		setSize(TAILLE_LARGEUR, TAILLE_HAUTEUR);
+		setSize(tailleLargeur, tailleHauteur);
 		ImageIcon imgProjet = new ImageIcon(getClass().getResource("/images/vueGenerale/ajouterProjet_48.png"));
-		afficheTitre(imgProjet, new Dimension(TAILLE_LARGEUR, 64));
+		afficheTitre(imgProjet, new Dimension(tailleLargeur, 64));
 		jTextAreaNotes.setRows(3);
 		jTextAreaNotes.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 	}
