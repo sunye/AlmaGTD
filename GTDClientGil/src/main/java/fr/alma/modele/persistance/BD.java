@@ -54,11 +54,13 @@ public class BD extends AbstractDao<EntiteGTD> implements IGestionnaireComptes, 
 	public Long existeUtilisateur(String login, char[] mdp) {
 		//Start of user code for existeUtilisateur method body
 		UtilisateurDao uDao = DaoFactory.createUtilisateurDao();
-		if (uDao.trouverUtilisateur(login, mdp) != null) {
-			Utilisateur u = uDao.trouverUtilisateur(login);
-			return u.getId();
+
+                Utilisateur user = uDao.trouverUtilisateur(login, mdp);
+                Long userId = null;
+		if ( user != null) {
+			userId =  user.getId();
 		}
-		return null;
+		return userId;
 		//End of user code
 	}
 

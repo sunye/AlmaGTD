@@ -15,37 +15,41 @@ import fr.alma.modele.persistance.dao.ProjetDao;
  * @author Université de Nantes
  */
 public class ProjetDaoImpl extends AbstractDao<Projet> implements ProjetDao {
+    
+        private final static String IDUTILISATEURVAR = "utilisateurid";
+        private final static String STARTREQUETE = "from Projet where idutilisateur = :"+IDUTILISATEURVAR;
+    
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Projet> recupererTout() {
 		Session s = getSession();
-		Query query = s.createQuery("from Projet where idutilisateur = :idutilisateur");
-		query.setParameter("idutilisateur", Modele.getIdUtilisateur());
+		Query query = s.createQuery(STARTREQUETE);
+		query.setParameter(IDUTILISATEURVAR, Modele.getIdUtilisateur());
 		return (List<Projet>) query.list();
 	}
 
 	@Override
 	public Projet recupererProjetRacine() {
 		Session s = getSession();
-		Query query = s.createQuery("from Projet where idutilisateur = :idutilisateur and idpere is null");
-		query.setParameter("idutilisateur", Modele.getIdUtilisateur());
+		Query query = s.createQuery(STARTREQUETE+" and idpere is null");
+		query.setParameter(IDUTILISATEURVAR, Modele.getIdUtilisateur());
 		return (Projet) query.uniqueResult();
 	}
 	
 	@Override
 	public Projet recupererPanier() {
 		Session s = getSession();
-		Query query = s.createQuery("from Projet where idutilisateur = :idutilisateur and nom = 'Panier'");
-		query.setParameter("idutilisateur", Modele.getIdUtilisateur());
+		Query query = s.createQuery(STARTREQUETE+" and nom = 'Panier'");
+		query.setParameter(IDUTILISATEURVAR, Modele.getIdUtilisateur());
 		return (Projet) query.uniqueResult();
 	}
 	
 	@Override
 	public Projet recupererCorbeille() {
 		Session s = getSession();
-		Query query = s.createQuery("from Projet where idutilisateur = :idutilisateur and nom = 'Corbeille'");
-		query.setParameter("idutilisateur", Modele.getIdUtilisateur());
+		Query query = s.createQuery(STARTREQUETE+" and nom = 'Corbeille'");
+		query.setParameter(IDUTILISATEURVAR, Modele.getIdUtilisateur());
 		return (Projet) query.uniqueResult();
 	}
 
@@ -53,8 +57,8 @@ public class ProjetDaoImpl extends AbstractDao<Projet> implements ProjetDao {
 	@Override
 	public List<Projet> recupererSousProjets(Long idPere) {
 		Session s = getSession();
-		Query query = s.createQuery("from Projet where idutilisateur = :idutilisateur and idpere = :idpere");
-		query.setParameter("idutilisateur", Modele.getIdUtilisateur());
+		Query query = s.createQuery(STARTREQUETE+" and idpere = :idpere");
+		query.setParameter(IDUTILISATEURVAR, Modele.getIdUtilisateur());
 		query.setParameter("idpere", idPere);
 		return (List<Projet>) query.list();
 	}
