@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -56,6 +57,7 @@ public class Controleur implements IControleur {
 	 */
 	public static final DateFormat DATEFORMAT = new SimpleDateFormat(
 			"dd/MM/yyyy", Locale.FRANCE);
+        private static final int MINPASSWORDLEN = 8;
 
 	/**
 	 * Constructeur.
@@ -80,7 +82,7 @@ public class Controleur implements IControleur {
 		// on force le login à ne pas avoir d'espace afin de respecter les
 		// normes
 		// et à le contrôler plus aisément
-		login2 = login.replaceAll(" ", "");
+		String login2 = login.replaceAll(" ", "");
 		if (login2.length() != 0 && mdp.length != 0) {
 			// vérifier la bonne connexion signifie regarder ne bd si
 			// l'utilisateur est enregistré
@@ -149,6 +151,15 @@ public class Controleur implements IControleur {
 
 		// vérification qu les noms de passe correspondent
 		Boolean mdp_identiques = Boolean.TRUE;
+                // Vérification de la longueur du mot de passe.
+                if(password.length < MINPASSWORDLEN){
+                    ApplicationGTD
+					.getInstance()
+					.gererMessage(2,
+							"Le mot de passe a une longueur inférieure à 8.");
+                }
+
+
 		if (password.length == password2.length) {
 			for (int i = 0; i < password.length; i++) {
 				mdp_identiques = (password[i] == password2[i]);
@@ -172,7 +183,12 @@ public class Controleur implements IControleur {
 						.getInstance()
 						.gererMessage(2,
 								"La connexion a échoué - Les champs obligatoires ne doivent pas etre vide");
-			} else {
+			} else if (login2.length() < 4){
+                            ApplicationGTD
+						.getInstance()
+						.gererMessage(2,
+								"Le nom d'utilisateur doit au moins être de taille 4.");
+                        } else {
 				modele.creerCompte(login2, password, email);
 				ApplicationGTD.getInstance().gererMessage(1,
 						"La création du compte est réussie");
@@ -380,7 +396,7 @@ public class Controleur implements IControleur {
 	 *            l'action effectuée (ajouter ou editer)
 	 */
 	@Override
-	public void ajouterEditerProjet(HashMap<Integer, Object> valeurs, TypeAction action) {
+	public void ajouterEditerProjet(Map<Integer, Object> valeurs, TypeAction action) {
 
 		String nom = null;
 		String notes = null;

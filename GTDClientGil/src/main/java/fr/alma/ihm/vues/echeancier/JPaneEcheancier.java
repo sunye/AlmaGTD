@@ -55,7 +55,7 @@ public class JPaneEcheancier extends JScrollPane {
 		ArrayList<Echeancier> l = new ArrayList<Echeancier>();
 		taches = getListeTacheEcheance();
 		for(Tache t : taches){
-			l.add(new Echeancier(t.getNom(), t.getContexte(), Controleur.df.format(t.getDateEcheance())));
+			l.add(new Echeancier(t.getNom(), t.getContexte(), Controleur.DATEFORMAT.format(t.getDateEcheance())));
 		}
 		for (int i=0; i< l.size();i++){
 			GridBagConstraints gbc1 = new GridBagConstraints();
@@ -123,11 +123,11 @@ public class JPaneEcheancier extends JScrollPane {
 		this.echeancier = echeancier;
 	}
 
-	public ArrayList<Tache> getTaches() {
+	public List<Tache> getTaches() {
 		return taches;
 	}
 
-	public void setTaches(ArrayList<Tache> taches) {
+	public void setTaches(List<Tache> taches) {
 		this.taches = taches;
 	}
 }

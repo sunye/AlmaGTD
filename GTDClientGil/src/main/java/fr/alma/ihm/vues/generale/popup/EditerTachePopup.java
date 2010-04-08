@@ -73,15 +73,15 @@ public class EditerTachePopup extends AbstractAjouterEditerTache {
 		textFieldNomTache.setText(tache.getNom());
 
 		if (tache.getDateDebut() != null) {
-			textFieldDateDebut.setText(Controleur.df.format(tache.getDateDebut()));
+			textFieldDateDebut.setText(Controleur.DATEFORMAT.format(tache.getDateDebut()));
 		}
 
 		if (tache.getDateEcheance() != null) {
-			textFieldDateEcheance.setText(Controleur.df.format(tache.getDateEcheance()));
+			textFieldDateEcheance.setText(Controleur.DATEFORMAT.format(tache.getDateEcheance()));
 		}
 
 		if (tache.getPeriodicite().getDateFinRepetition() != null) {
-			textFieldDateFinRep.setText(Controleur.df.format(tache.getPeriodicite().getDateFinRepetition()));
+			textFieldDateFinRep.setText(Controleur.DATEFORMAT.format(tache.getPeriodicite().getDateFinRepetition()));
 		}
 
 		comboBoxContexte.setSelectedItem(tache.getContexte());
@@ -106,13 +106,13 @@ public class EditerTachePopup extends AbstractAjouterEditerTache {
 		//comboBoxFrequence.setSelectedItem(tache.getPeriodicite().getFrequence());
 
 		comboBoxContexte.addItem("");
-		for (IContexte c : Contexte.values()) {
-			comboBoxContexte.addItem(c.toString());
+		for (IContexte context : Contexte.values()) {
+			comboBoxContexte.addItem(context.toString());
 		}
 
 		comboBoxFrequence.addItem("");
-		for (Frequence f : Frequence.values()) {
-			comboBoxFrequence.addItem(f.toString());
+		for (Frequence frequence : Frequence.values()) {
+			comboBoxFrequence.addItem(frequence.toString());
 		}
 
 		if (tache.getTauxEffort() != null) {
@@ -137,6 +137,7 @@ public class EditerTachePopup extends AbstractAjouterEditerTache {
 	public void initActionListeners() {
 		jButtonOK.addActionListener(this);
 		jButtonAnnuler.addActionListener(new ActionListener() {
+                        @Override
 			public void actionPerformed(ActionEvent arg0) {
 				EditerTachePopup.getInstance().dispose();
 			}

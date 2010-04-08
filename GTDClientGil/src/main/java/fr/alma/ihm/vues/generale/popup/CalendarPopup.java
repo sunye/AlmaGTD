@@ -94,12 +94,12 @@ public class CalendarPopup extends JDialog {
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
 			System.out.println(arg0.getSource().toString());
-			dateField.setText(Controleur.df.format(cal.getDate()));
+			dateField.setText(Controleur.DATEFORMAT.format(cal.getDate()));
 		}
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			dateField.setText(Controleur.df.format(cal.getDate()));
+			dateField.setText(Controleur.DATEFORMAT.format(cal.getDate()));
 		}
 
 		@Override
@@ -108,7 +108,7 @@ public class CalendarPopup extends JDialog {
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
-			dateField.setText(Controleur.df.format(cal.getDate()));
+			dateField.setText(Controleur.DATEFORMAT.format(cal.getDate()));
 		}
 
 		@Override
