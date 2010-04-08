@@ -11,30 +11,27 @@ import fr.univnantes.alma.gtd.model.gestionnaireutilisateur.Utilisateur;
 
 public class UtilisateurDAOImpl extends AbstractDAO implements UtilisateurDAO{
 
-	@Override
+	
 	public Boolean deleteAll() {
-		Session s = HibernateUtil.getSession();
-        Transaction tx = s.beginTransaction();
-        Query q = s.createQuery("delete from Utilisateur");
-        q.executeUpdate();
-        tx.commit();
+		Session session = HibernateUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("delete from Utilisateur");
+        query.executeUpdate();
+        transaction.commit();
         return true;
 	}
 
-	@Override
+	
 	public Utilisateur find(Integer id) {
-		Session s = HibernateUtil.getSession();
-        Utilisateur entity = (Utilisateur) s.get(Utilisateur.class.getCanonicalName(), id);
-        return entity;
+		Session session = HibernateUtil.getSession();
+        return (Utilisateur) session.get(Utilisateur.class.getCanonicalName(), id);
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Utilisateur> findAll() {
-		Session s = HibernateUtil.getSession();
-        Criteria criteria = s.createCriteria(Utilisateur.class.getCanonicalName());
-        List<Utilisateur> results = (List<Utilisateur>) criteria.list();
-        return results;	
+		Session session = HibernateUtil.getSession();
+        Criteria criteria = session.createCriteria(Utilisateur.class.getCanonicalName());
+        return (List<Utilisateur>) criteria.list();
 	}
 
 }
