@@ -36,8 +36,8 @@ public class Tache extends GTDEntity{
 	private List<String> notes = new ArrayList<String>();
 	private EtatTache etatTache;
 
-	
-	
+
+
 	// Start of user code for attributes in Tache
 	private Projet parent;
 	private IPersistance persistance = GTDEntity.PERSISTANCE;
@@ -47,9 +47,9 @@ public class Tache extends GTDEntity{
 	public Tache() {
 		super();
 	}
-	
+
 	/**
-	 * sans preciser le projet parent
+	 * constructeur sans preciser le projet parent
 	 * @param nom
 	 * @param priorite
 	 * @param effort
@@ -58,39 +58,47 @@ public class Tache extends GTDEntity{
 	 * @param liens
 	 * @param note
 	 */
-	public Tache(final String nom, final Integer priorite, final Integer effort, final Date reveil, final Date echeance, final List<String> liens, final List<String> notes) {
+	public Tache(final TacheExtendInfo info, final Date reveil, final Date echeance) {
 		super();
-		this.nom = nom;
-		this.priorite = priorite;
-		this.effort = effort;
+		this.nom = info.getNom();
+		this.priorite = info.getPriorite();
+		this.effort = info.getEffort();
 		this.reveil = reveil;
 		this.echeance = echeance;
-		this.liens = liens;
-		this.notes = notes;
+		this.liens = info.getLiens();
+		this.notes = info.getNotes();
 		this.etatTache = EtatTache.AFAIRE;
 	}
-	
-	public Tache( final String nom
-				, final Integer priorite
-				, final Integer effort
-				, final Date reveil
-				, final Date echeance
-				, final List<String> liens
-				, final List<String> note
-				, final Projet parent
-				) {
-		this	( nom
-				, priorite
-				, effort
-				, reveil
-				, echeance
-				, liens
-				, note
-				);
+
+	/**
+	 * constructeur en précisant le projet parent
+	 * @param nom
+	 * @param priorite
+	 * @param effort
+	 * @param reveil
+	 * @param echeance
+	 * @param liens
+	 * @param note
+	 * @param parent
+	 */
+	public Tache( final TacheExtendInfo info
+			, final Date reveil
+			, final Date echeance
+			, final Projet parent
+	) {
+		this.nom = info.getNom();
+		this.priorite = info.getPriorite();
+		this.effort = info.getEffort();
+		this.reveil = reveil;
+		this.echeance = echeance;
+		this.liens = info.getLiens();
+		this.notes = info.getNotes();
+
+
 		this.parent = parent;
 		this.etatTache = EtatTache.AFAIRE;
 	}
-	
+
 	public Projet getParent() {
 		return parent;
 	}
@@ -98,42 +106,42 @@ public class Tache extends GTDEntity{
 	public void setParent(Projet parent) {
 		this.parent = parent;
 	}
-	
+
 	public List<String> getNotes() {
 		return this.notes;
 	}
 	public List<String> getLiens() {
 		return this.liens;
 	}
-	
+
 	public void addLien(String lien) {
 		this.liens.add(lien);
 		persistance.update(this);
 	}
-	
+
 	public void addNote(String note) {
 		this.liens.add(note);
 		persistance.update(this);
 	}
-	
+
 	public void removeNote(String note){
 		this.notes.remove(notes);
 		persistance.update(this);
 	}
-	
+
 	public void removeLien(String lien){
 		this.notes.remove(lien);
 		persistance.update(this);
 	}
-	
-	
+
+
 	// End of user code
 	public String getNom() {
 		// Start of user code for getter of nom
 		return this.nom;
 		// End of user code
 	}
-	
+
 	public void setNom(String nom) {
 		// Start of user code for setter of nom
 		this.nom = nom;
@@ -144,7 +152,7 @@ public class Tache extends GTDEntity{
 		return this.priorite;
 		// End of user code
 	}
-	
+
 	public void setPriorite(Integer priorite) {
 		// Start of user code for setter of priorite
 		this.priorite = priorite;
@@ -155,7 +163,7 @@ public class Tache extends GTDEntity{
 		return this.effort;
 		// End of user code
 	}
-	
+
 	public void setEffort(Integer effort) {
 		// Start of user code for setter of effort
 		this.effort = effort;
@@ -166,7 +174,7 @@ public class Tache extends GTDEntity{
 		return this.reveil;
 		// End of user code
 	}
-	
+
 	public void setReveil(Date reveil) {
 		// Start of user code for setter of reveil
 		this.reveil = reveil;
@@ -177,16 +185,16 @@ public class Tache extends GTDEntity{
 		return this.echeance;
 		// End of user code
 	}
-	
+
 	public void setEcheance(Date echeance) {
 		// Start of user code for setter of echeance
 		this.echeance = echeance;
 		// End of user code
 	}
-	
+
 	public EtatTache getEtatTache() {
-	return this.etatTache;
-}
+		return this.etatTache;
+	}
 	public void setEtatTache(EtatTache etatTache) {
 		this.etatTache = etatTache;
 	}
@@ -199,7 +207,7 @@ public class Tache extends GTDEntity{
 	public void deleguee() {
 		// Start of user code for deleguee method body
 		this.etatTache.deleguee();
-		
+
 		// End of user code
 	}
 	public void enAttente() {
@@ -215,9 +223,9 @@ public class Tache extends GTDEntity{
 	public String toString(){
 		return this.getNom();
 	}
-	
+
 	public List<EtatTache> prochainsEtats() {
 		return this.etatTache.etatsProchains();
 	}
-	
+
 }
