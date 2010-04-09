@@ -11,10 +11,7 @@
 
 package fr.alma.gtd.ihm.renseignement;
 
-import fr.alma.gtd.entities.Contact;
 import fr.alma.gtd.entities.Tache;
-import fr.alma.gtd.ihm.Controleur;
-import java.util.Collection;
 
 /**
  *
@@ -93,7 +90,7 @@ public class PanelAfficher extends javax.swing.JPanel {
 
         textContexte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textContexteActionPerformed(evt);
+                textContexteActionPerformed();
             }
         });
 
@@ -113,7 +110,7 @@ public class PanelAfficher extends javax.swing.JPanel {
 
         textPriorite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textPrioriteActionPerformed(evt);
+                textPrioriteActionPerformed();
             }
         });
 
@@ -251,11 +248,11 @@ public class PanelAfficher extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textContexteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textContexteActionPerformed
+    private void textContexteActionPerformed() {//GEN-FIRST:event_textContexteActionPerformed
         
     }//GEN-LAST:event_textContexteActionPerformed
 
-    private void textPrioriteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPrioriteActionPerformed
+    private void textPrioriteActionPerformed() {//GEN-FIRST:event_textPrioriteActionPerformed
         
     }//GEN-LAST:event_textPrioriteActionPerformed
 

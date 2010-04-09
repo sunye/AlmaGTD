@@ -58,7 +58,7 @@ public class DialogSelectionProjet extends javax.swing.JDialog {
         arborescence.setCellRenderer(new fr.alma.gtd.ihm.tree.MyTreeRenderer());
         arborescence.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
-                arborescenceValueChanged(evt);
+                arborescenceValueChanged();
             }
         });
         jScrollPane1.setViewportView(arborescence);
@@ -68,14 +68,14 @@ public class DialogSelectionProjet extends javax.swing.JDialog {
         annuler.setText("Annuler");
         annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
         valider.setText("Valider");
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -105,7 +105,7 @@ public class DialogSelectionProjet extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void arborescenceValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_arborescenceValueChanged
+	private void arborescenceValueChanged() {//GEN-FIRST:event_arborescenceValueChanged
 		//arborescence.setSelectionPath(evt.getNewLeadSelectionPath());
 		if (arborescence.getLastSelectedPathComponent() != null) {
 			//System.out.println(((DefaultMutableTreeNode) arborescence.getLastSelectedPathComponent()).getUserObject().toString());
@@ -113,11 +113,11 @@ public class DialogSelectionProjet extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_arborescenceValueChanged
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 		this.setVisible(false);
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+	private void annulerActionPerformed() {//GEN-FIRST:event_annulerActionPerformed
 		this.selection = null;
 		this.setVisible(false);
 	}//GEN-LAST:event_annulerActionPerformed

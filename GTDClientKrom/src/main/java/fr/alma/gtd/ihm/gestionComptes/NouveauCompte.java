@@ -60,31 +60,31 @@ public class NouveauCompte extends javax.swing.JDialog {
 
         mdpConfirmationText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mdpConfirmationTextActionPerformed(evt);
+                mdpConfirmationTextActionPerformed();
             }
         });
 
         mdpText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mdpTextActionPerformed(evt);
+                mdpTextActionPerformed();
             }
         });
 
         loginText.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                loginTextCaretUpdate(evt);
+                loginTextCaretUpdate();
             }
         });
         loginText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTextActionPerformed(evt);
+                loginTextActionPerformed();
             }
         });
 
         annulerButton.setText("Annuler");
         annulerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerButtonActionPerformed(evt);
+                annulerButtonActionPerformed();
             }
         });
 
@@ -92,7 +92,7 @@ public class NouveauCompte extends javax.swing.JDialog {
         validerButton.setEnabled(false);
         validerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerButtonActionPerformed(evt);
+                validerButtonActionPerformed();
             }
         });
 
@@ -146,30 +146,30 @@ public class NouveauCompte extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
+	private void validerButtonActionPerformed() {//GEN-FIRST:event_validerButtonActionPerformed
 		loginInfo = new LoginInfo(loginText.getText(), mdpText.getText(), mdpConfirmationText.getText());
 		setVisible(false);
 	}//GEN-LAST:event_validerButtonActionPerformed
 
-	private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
+	private void annulerButtonActionPerformed() {//GEN-FIRST:event_annulerButtonActionPerformed
 		loginInfo.setAnnule(true);
 		setVisible(false);
 	}//GEN-LAST:event_annulerButtonActionPerformed
 
-	private void loginTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextActionPerformed
-		this.validerButtonActionPerformed(evt);
+	private void loginTextActionPerformed() {//GEN-FIRST:event_loginTextActionPerformed
+		this.validerButtonActionPerformed();
 	}//GEN-LAST:event_loginTextActionPerformed
 
-	private void loginTextCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_loginTextCaretUpdate
+	private void loginTextCaretUpdate() {//GEN-FIRST:event_loginTextCaretUpdate
 		this.validerButton.setEnabled(this.loginText.getText().length() > 0);
 	}//GEN-LAST:event_loginTextCaretUpdate
 
-	private void mdpTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdpTextActionPerformed
-		this.validerButtonActionPerformed(evt);
+	private void mdpTextActionPerformed() {//GEN-FIRST:event_mdpTextActionPerformed
+		this.validerButtonActionPerformed();
 	}//GEN-LAST:event_mdpTextActionPerformed
 
-	private void mdpConfirmationTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdpConfirmationTextActionPerformed
-		this.validerButtonActionPerformed(evt);
+	private void mdpConfirmationTextActionPerformed() {//GEN-FIRST:event_mdpConfirmationTextActionPerformed
+		this.validerButtonActionPerformed();
 	}//GEN-LAST:event_mdpConfirmationTextActionPerformed
 
     /**

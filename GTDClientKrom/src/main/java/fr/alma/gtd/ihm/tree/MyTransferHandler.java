@@ -37,8 +37,7 @@ public class MyTransferHandler extends TransferHandler {
 	public boolean importData(TransferHandler.TransferSupport th) {
 		Transferable tr = th.getTransferable();
 		Component cp = th.getComponent();
-		if (tr.isDataFlavorSupported(MyTransferable.data)) {
-			if (cp instanceof JTree) {
+		if ((tr.isDataFlavorSupported(MyTransferable.data)) && (cp instanceof JTree)) {
 				JTree tree = (JTree) cp;
 				JTree.DropLocation location = tree.getDropLocation();
 				TreePath path = location.getPath();
@@ -75,7 +74,6 @@ public class MyTransferHandler extends TransferHandler {
 					e.printStackTrace();
 				}
 				return true;
-			}
 		}
 		return false;
 	}

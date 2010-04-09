@@ -62,7 +62,7 @@ public class DialogEcheancier extends javax.swing.JDialog {
         activation.setText("Activer l'échéancier");
         activation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                activationActionPerformed(evt);
+                activationActionPerformed();
             }
         });
 
@@ -76,7 +76,7 @@ public class DialogEcheancier extends javax.swing.JDialog {
         debutBouton.setEnabled(false);
         debutBouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                debutBoutonActionPerformed(evt);
+                debutBoutonActionPerformed();
             }
         });
 
@@ -90,7 +90,7 @@ public class DialogEcheancier extends javax.swing.JDialog {
         finBouton.setEnabled(false);
         finBouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                finBoutonActionPerformed(evt);
+                finBoutonActionPerformed();
             }
         });
 
@@ -103,14 +103,14 @@ public class DialogEcheancier extends javax.swing.JDialog {
         annuler.setText("Annuler");
         annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
         valider.setText("Valider");
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -171,20 +171,20 @@ public class DialogEcheancier extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void activationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activationActionPerformed
+	private void activationActionPerformed() {//GEN-FIRST:event_activationActionPerformed
 		activerChamps(activation.isSelected());
 	}//GEN-LAST:event_activationActionPerformed
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+	private void annulerActionPerformed() {//GEN-FIRST:event_annulerActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_annulerActionPerformed
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 		infos = new InfosEcheancier(activation.isSelected(), dateDebut, dateFin, (String) frequenceCombo.getSelectedItem());
 		setVisible(false);
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void debutBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debutBoutonActionPerformed
+	private void debutBoutonActionPerformed() {//GEN-FIRST:event_debutBoutonActionPerformed
 		Date date = new DialogDate(null, true).showDialog();
 		if (date != null) {
 			dateDebut = date;
@@ -193,7 +193,7 @@ public class DialogEcheancier extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_debutBoutonActionPerformed
 
-	private void finBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finBoutonActionPerformed
+	private void finBoutonActionPerformed() {//GEN-FIRST:event_finBoutonActionPerformed
 		Date date = new DialogDate(null, true).showDialog();
 		if (date != null) {
 			dateFin = date;

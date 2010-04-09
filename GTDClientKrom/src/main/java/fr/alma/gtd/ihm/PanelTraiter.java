@@ -79,7 +79,7 @@ public class PanelTraiter extends javax.swing.JPanel {
         });
         listeCAF.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listeCAFValueChanged(evt);
+                listeCAFValueChanged();
             }
         });
         scrollPaneListeCAF.setViewportView(listeCAF);
@@ -95,7 +95,7 @@ public class PanelTraiter extends javax.swing.JPanel {
         validerButton.setName("validerButton"); // NOI18N
         validerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerButtonActionPerformed(evt);
+                validerButtonActionPerformed();
             }
         });
 
@@ -166,10 +166,9 @@ public class PanelTraiter extends javax.swing.JPanel {
 
 	private void arborescenceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_arborescenceMousePressed
 		//Lors d'un clic droit
-		if(evt.getButton() == java.awt.event.MouseEvent.BUTTON3){
-			//Si on a cliqué sur l'arbre, on peut récupérer l'indice de la ligne avec cette méthode
-			//Sinon, la méthode retourne -1
-			if(arborescence.getRowForLocation(evt.getX(), evt.getY()) != -1){
+		//Si on a cliqué sur l'arbre, on peut récupérer l'indice de la ligne avec cette méthode
+		//Sinon, la méthode retourne -1
+		if((evt.getButton() == java.awt.event.MouseEvent.BUTTON3) && (arborescence.getRowForLocation(evt.getX(), evt.getY()) != -1)){
 				//On peut récupérer le chemin du noeud qui a généré l'événement
 				arborescence.setSelectionPath(arborescence.getPathForLocation(evt.getX(), evt.getY()));
 				//On peut donc en déduire le noeud
@@ -183,7 +182,6 @@ public class PanelTraiter extends javax.swing.JPanel {
 				eraseMenu.addActionListener(new TreeEraseMenuListener(node));
 				jpm.add(eraseMenu);
 				jpm.show(arborescence, evt.getX(), evt.getY());
-			}
 		}
 	}//GEN-LAST:event_arborescenceMousePressed
 
@@ -204,12 +202,12 @@ public class PanelTraiter extends javax.swing.JPanel {
 		}
 	}//GEN-LAST:event_listeCAFMousePressed
 
-	private void listeCAFValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listeCAFValueChanged
+	private void listeCAFValueChanged() {//GEN-FIRST:event_listeCAFValueChanged
 		String nom = controleur.getNomChoseAFaire(listeCAF.getSelectedValue());
 		panelRenseignement.setNomElement(nom);
 	}//GEN-LAST:event_listeCAFValueChanged
 
-	private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
+	private void validerButtonActionPerformed() {//GEN-FIRST:event_validerButtonActionPerformed
 		InfosRenseignement infos = panelRenseignement.getRenseignements();
 		controleur.ajoutElement(infos);
 		int index = listeCAF.getSelectedIndex();

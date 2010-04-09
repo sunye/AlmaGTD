@@ -79,24 +79,24 @@ public class PanelRenseignementTache extends javax.swing.JPanel {
         textLiens.setName("textLiens"); // NOI18N
         textLiens.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                textLiensCaretUpdate(evt);
+                textLiensCaretUpdate();
             }
         });
         textLiens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textLiensActionPerformed(evt);
+                textLiensActionPerformed();
             }
         });
 
         textTags.setName("textTags"); // NOI18N
         textTags.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                textTagsCaretUpdate(evt);
+                textTagsCaretUpdate();
             }
         });
         textTags.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textTagsActionPerformed(evt);
+                textTagsActionPerformed();
             }
         });
 
@@ -105,7 +105,7 @@ public class PanelRenseignementTache extends javax.swing.JPanel {
         ajouterLiens.setName("ajouterLiens"); // NOI18N
         ajouterLiens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterLiensActionPerformed(evt);
+                ajouterLiensActionPerformed();
             }
         });
 
@@ -114,7 +114,7 @@ public class PanelRenseignementTache extends javax.swing.JPanel {
         ajouterTags.setName("ajouterTags"); // NOI18N
         ajouterTags.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterTagsActionPerformed(evt);
+                ajouterTagsActionPerformed();
             }
         });
 
@@ -167,27 +167,27 @@ public class PanelRenseignementTache extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-	private void textLiensCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_textLiensCaretUpdate
+	private void textLiensCaretUpdate() {//GEN-FIRST:event_textLiensCaretUpdate
 		ajouterLiens.setEnabled(textLiens.getText().length() > 0);
 	}//GEN-LAST:event_textLiensCaretUpdate
 
-	private void textLiensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textLiensActionPerformed
+	private void textLiensActionPerformed() {//GEN-FIRST:event_textLiensActionPerformed
 		ajouterLien();
 	}//GEN-LAST:event_textLiensActionPerformed
 
-	private void ajouterLiensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterLiensActionPerformed
+	private void ajouterLiensActionPerformed() {//GEN-FIRST:event_ajouterLiensActionPerformed
 		ajouterLien();
 	}//GEN-LAST:event_ajouterLiensActionPerformed
 
-	private void textTagsCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_textTagsCaretUpdate
+	private void textTagsCaretUpdate() {//GEN-FIRST:event_textTagsCaretUpdate
 		ajouterTags.setEnabled(textTags.getText().length()>0);
 	}//GEN-LAST:event_textTagsCaretUpdate
 
-	private void textTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTagsActionPerformed
+	private void textTagsActionPerformed() {//GEN-FIRST:event_textTagsActionPerformed
 		ajouterTag();
 	}//GEN-LAST:event_textTagsActionPerformed
 
-	private void ajouterTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterTagsActionPerformed
+	private void ajouterTagsActionPerformed() {//GEN-FIRST:event_ajouterTagsActionPerformed
 		ajouterTag();
 	}//GEN-LAST:event_ajouterTagsActionPerformed
 

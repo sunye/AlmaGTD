@@ -92,7 +92,7 @@ public class PanelRenseignement extends javax.swing.JPanel {
         boutonContexte.setName("boutonContexte"); // NOI18N
         boutonContexte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonContexteActionPerformed(evt);
+                boutonContexteActionPerformed();
             }
         });
 
@@ -103,7 +103,7 @@ public class PanelRenseignement extends javax.swing.JPanel {
         boutonContacts.setName("boutonContacts"); // NOI18N
         boutonContacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonContactsActionPerformed(evt);
+                boutonContactsActionPerformed();
             }
         });
 
@@ -114,7 +114,7 @@ public class PanelRenseignement extends javax.swing.JPanel {
         boutonEcheancier.setName("boutonEcheancier"); // NOI18N
         boutonEcheancier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonEcheancierActionPerformed(evt);
+                boutonEcheancierActionPerformed();
             }
         });
 
@@ -127,7 +127,7 @@ public class PanelRenseignement extends javax.swing.JPanel {
         boutonProjet.setName("boutonProjet"); // NOI18N
         boutonProjet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonProjetActionPerformed(evt);
+                boutonProjetActionPerformed();
             }
         });
 
@@ -241,7 +241,7 @@ public class PanelRenseignement extends javax.swing.JPanel {
 		cl.show(panelDetail, (String) evt.getItem());
 	}//GEN-LAST:event_comboTypeItemStateChanged
 
-	private void boutonContexteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonContexteActionPerformed
+	private void boutonContexteActionPerformed() {//GEN-FIRST:event_boutonContexteActionPerformed
 		String contexte = new DialogAjoutContexte(null, true).showDialog();
 		if (contexte != null) {
 			Object selection = controleur.ajoutContexte(contexte);
@@ -249,18 +249,18 @@ public class PanelRenseignement extends javax.swing.JPanel {
 		}
 	}//GEN-LAST:event_boutonContexteActionPerformed
 
-	private void boutonProjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonProjetActionPerformed
+	private void boutonProjetActionPerformed() {//GEN-FIRST:event_boutonProjetActionPerformed
 		Projet selection = (Projet) new DialogSelectionProjet(null, true).showDialog();
 		if (selection != null) {
 			comboProjet.setSelectedItem(selection);
 		}
 	}//GEN-LAST:event_boutonProjetActionPerformed
 
-	private void boutonEcheancierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonEcheancierActionPerformed
+	private void boutonEcheancierActionPerformed() {//GEN-FIRST:event_boutonEcheancierActionPerformed
 		echeancier = dialogEcheancier.showDialog();
 	}//GEN-LAST:event_boutonEcheancierActionPerformed
 
-	private void boutonContactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonContactsActionPerformed
+	private void boutonContactsActionPerformed() {//GEN-FIRST:event_boutonContactsActionPerformed
 		contacts = dialogContact.showDialog();
 	}//GEN-LAST:event_boutonContactsActionPerformed
 

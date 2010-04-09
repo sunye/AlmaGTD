@@ -70,20 +70,20 @@ public class DialogAjoutContact extends javax.swing.JDialog {
 
         textPrenom.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                textPrenomCaretUpdate(evt);
+                textPrenomCaretUpdate();
             }
         });
 
         textNom.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                textNomCaretUpdate(evt);
+                textNomCaretUpdate();
             }
         });
 
         annuler.setText("Annuler");
         annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
@@ -91,7 +91,7 @@ public class DialogAjoutContact extends javax.swing.JDialog {
         valider.setEnabled(false);
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -155,11 +155,11 @@ public class DialogAjoutContact extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+	private void annulerActionPerformed() {//GEN-FIRST:event_annulerActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_annulerActionPerformed
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 		this.infos = new Contact(textNom.getText(), textPrenom.getText());
 		this.infos.setAdresse(textAdresse.getText());
 		this.infos.setEmail(textEMail.getText());
@@ -167,11 +167,11 @@ public class DialogAjoutContact extends javax.swing.JDialog {
 		setVisible(false);
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void textNomCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_textNomCaretUpdate
+	private void textNomCaretUpdate() {//GEN-FIRST:event_textNomCaretUpdate
 		activerValider();
 	}//GEN-LAST:event_textNomCaretUpdate
 
-	private void textPrenomCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_textPrenomCaretUpdate
+	private void textPrenomCaretUpdate() {//GEN-FIRST:event_textPrenomCaretUpdate
 		activerValider();
 	}//GEN-LAST:event_textPrenomCaretUpdate
 

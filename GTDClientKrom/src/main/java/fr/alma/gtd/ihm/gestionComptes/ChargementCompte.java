@@ -56,19 +56,19 @@ public class ChargementCompte extends javax.swing.JDialog {
 
         loginText.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                loginTextCaretUpdate(evt);
+                loginTextCaretUpdate();
             }
         });
         loginText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTextActionPerformed(evt);
+                loginTextActionPerformed();
             }
         });
 
         annulerBotton.setText("Annuler");
         annulerBotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerBottonActionPerformed(evt);
+                annulerBottonActionPerformed();
             }
         });
 
@@ -76,13 +76,13 @@ public class ChargementCompte extends javax.swing.JDialog {
         chargerButton.setEnabled(false);
         chargerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chargerButtonActionPerformed(evt);
+                chargerButtonActionPerformed();
             }
         });
 
         mdpText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mdpTextActionPerformed(evt);
+                mdpTextActionPerformed();
             }
         });
 
@@ -128,26 +128,26 @@ public class ChargementCompte extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void annulerBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerBottonActionPerformed
+	private void annulerBottonActionPerformed() {//GEN-FIRST:event_annulerBottonActionPerformed
 		loginInfo.setAnnule(true);
 		setVisible(false);
 	}//GEN-LAST:event_annulerBottonActionPerformed
 
-	private void chargerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chargerButtonActionPerformed
+	private void chargerButtonActionPerformed() {//GEN-FIRST:event_chargerButtonActionPerformed
 		loginInfo = new LoginInfo(loginText.getText(), mdpText.getText());
 		setVisible(false);
 	}//GEN-LAST:event_chargerButtonActionPerformed
 
-	private void loginTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextActionPerformed
-		this.chargerButtonActionPerformed(evt);
+	private void loginTextActionPerformed() {//GEN-FIRST:event_loginTextActionPerformed
+		this.chargerButtonActionPerformed();
 	}//GEN-LAST:event_loginTextActionPerformed
 
-	private void loginTextCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_loginTextCaretUpdate
+	private void loginTextCaretUpdate() {//GEN-FIRST:event_loginTextCaretUpdate
 		this.chargerButton.setEnabled(this.loginText.getText().length() > 0);
 	}//GEN-LAST:event_loginTextCaretUpdate
 
-	private void mdpTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdpTextActionPerformed
-		this.chargerButtonActionPerformed(evt);
+	private void mdpTextActionPerformed() {//GEN-FIRST:event_mdpTextActionPerformed
+		this.chargerButtonActionPerformed();
 	}//GEN-LAST:event_mdpTextActionPerformed
 
     /**

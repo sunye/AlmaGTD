@@ -61,7 +61,7 @@ public class LoginInfo {
 	}
 
 	public boolean compareMdp() {
-		return this.mdp.equals(this.mdpConfirme);
+		return (this.mdp.equals(this.mdpConfirme) && mdp.length()>5);
 	}
 
 }

@@ -54,21 +54,21 @@ public class DialogAjoutContexte extends javax.swing.JDialog {
 
         textContexte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textContexteActionPerformed(evt);
+                textContexteActionPerformed();
             }
         });
 
         annuler.setText("Annuler");
         annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
         valider.setText("Valider");
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -104,7 +104,7 @@ public class DialogAjoutContexte extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 		String temp = this.textContexte.getText();
 		if (temp.length() > 0) {
 			this.contexte = temp;
@@ -114,12 +114,12 @@ public class DialogAjoutContexte extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+	private void annulerActionPerformed() {//GEN-FIRST:event_annulerActionPerformed
 		this.setVisible(false);
 	}//GEN-LAST:event_annulerActionPerformed
 
-	private void textContexteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textContexteActionPerformed
-		validerActionPerformed(evt);
+	private void textContexteActionPerformed() {//GEN-FIRST:event_textContexteActionPerformed
+		validerActionPerformed();
 	}//GEN-LAST:event_textContexteActionPerformed
 
     /**

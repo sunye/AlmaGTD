@@ -83,12 +83,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         ajoutTextField.setName("ajoutTextField"); // NOI18N
         ajoutTextField.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
-                ajoutTextFieldCaretUpdate(evt);
+                ajoutTextFieldCaretUpdate();
             }
         });
         ajoutTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajoutTextFieldActionPerformed(evt);
+                ajoutTextFieldActionPerformed();
             }
         });
 
@@ -97,7 +97,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         boutonAjouter.setName("boutonAjouter"); // NOI18N
         boutonAjouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boutonAjouterActionPerformed(evt);
+                boutonAjouterActionPerformed();
             }
         });
 
@@ -167,7 +167,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         ajoutElement.setName("ajoutElement"); // NOI18N
         ajoutElement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajoutElementActionPerformed(evt);
+                ajoutElementActionPerformed();
             }
         });
         barBoutons.add(ajoutElement);
@@ -180,7 +180,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         actualiserTaches.setName("JButton1"); // NOI18N
         actualiserTaches.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualiserTachesActionPerformed(evt);
+                actualiserTachesActionPerformed();
             }
         });
         barBoutons.add(actualiserTaches);
@@ -195,7 +195,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         nouveauCompte.setName("nouveauCompte"); // NOI18N
         nouveauCompte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nouveauCompteActionPerformed(evt);
+                nouveauCompteActionPerformed();
             }
         });
         Fichier.add(nouveauCompte);
@@ -205,7 +205,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         ouvrirCompte.setName("ouvrirCompte"); // NOI18N
         ouvrirCompte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ouvrirCompteActionPerformed(evt);
+                ouvrirCompteActionPerformed();
             }
         });
         Fichier.add(ouvrirCompte);
@@ -216,7 +216,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         fermerCompte.setName("fermerCompte"); // NOI18N
         fermerCompte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fermerCompteActionPerformed(evt);
+                fermerCompteActionPerformed();
             }
         });
         Fichier.add(fermerCompte);
@@ -227,7 +227,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         nouvelleTache.setName("nouvelleTache"); // NOI18N
         nouvelleTache.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nouvelleTacheActionPerformed(evt);
+                nouvelleTacheActionPerformed();
             }
         });
         Fichier.add(nouvelleTache);
@@ -240,7 +240,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         quitter.setName("quitter"); // NOI18N
         quitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quitterActionPerformed(evt);
+                quitterActionPerformed();
             }
         });
         Fichier.add(quitter);
@@ -254,7 +254,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         preferences.setName("preferences"); // NOI18N
         preferences.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                preferencesActionPerformed(evt);
+                preferencesActionPerformed();
             }
         });
         Edition.add(preferences);
@@ -264,7 +264,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         contacts.setName("contacts"); // NOI18N
         contacts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactsActionPerformed(evt);
+                contactsActionPerformed();
             }
         });
         Edition.add(contacts);
@@ -274,7 +274,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         contexts.setName("contexts"); // NOI18N
         contexts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contextsActionPerformed(evt);
+                contextsActionPerformed();
             }
         });
         Edition.add(contexts);
@@ -308,7 +308,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         aPropos.setName("aPropos"); // NOI18N
         aPropos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aProposActionPerformed(evt);
+                aProposActionPerformed();
             }
         });
         Aide.add(aPropos);
@@ -341,12 +341,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
+    private void quitterActionPerformed() {//GEN-FIRST:event_quitterActionPerformed
         controleur.deconnexion();
 		System.exit(0);
     }//GEN-LAST:event_quitterActionPerformed
 
-    private void aProposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aProposActionPerformed
+    private void aProposActionPerformed() {//GEN-FIRST:event_aProposActionPerformed
         String mess = "Instrumentation de la méthode GTD!\n";
         mess += "\nProgrammé par :\n" +
                 "    -Braud Jérémy\n" +
@@ -358,11 +358,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, mess, "A propos", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_aProposActionPerformed
 
-	private void preferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preferencesActionPerformed
+	private void preferencesActionPerformed() {//GEN-FIRST:event_preferencesActionPerformed
 		fenetrePreferences.setVisible(true);
 	}//GEN-LAST:event_preferencesActionPerformed
 
-	private void nouvelleTacheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nouvelleTacheActionPerformed
+	private void nouvelleTacheActionPerformed() {//GEN-FIRST:event_nouvelleTacheActionPerformed
 		DialogTache dialog = new DialogTache(this, true);
 //		dt.setVisible(true);
 		InfosRenseignement infos = dialog.showDialog();
@@ -375,31 +375,31 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 		}
 	}//GEN-LAST:event_nouvelleTacheActionPerformed
 
-	private void boutonAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonAjouterActionPerformed
+	private void boutonAjouterActionPerformed() {//GEN-FIRST:event_boutonAjouterActionPerformed
 		ajouterChoseAFaire();
 	}//GEN-LAST:event_boutonAjouterActionPerformed
 
-	private void ajoutTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutTextFieldActionPerformed
+	private void ajoutTextFieldActionPerformed() {//GEN-FIRST:event_ajoutTextFieldActionPerformed
 		ajouterChoseAFaire();
 	}//GEN-LAST:event_ajoutTextFieldActionPerformed
 
-	private void ajoutTextFieldCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_ajoutTextFieldCaretUpdate
+	private void ajoutTextFieldCaretUpdate() {//GEN-FIRST:event_ajoutTextFieldCaretUpdate
 		boutonAjouter.setEnabled(ajoutTextField.getText().length() > 0);
 	}//GEN-LAST:event_ajoutTextFieldCaretUpdate
 
-	private void nouveauCompteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nouveauCompteActionPerformed
+	private void nouveauCompteActionPerformed() {//GEN-FIRST:event_nouveauCompteActionPerformed
 		controleur.nouveauCompte(new NouveauCompte(this, true));
 	}//GEN-LAST:event_nouveauCompteActionPerformed
 
-	private void ouvrirCompteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ouvrirCompteActionPerformed
+	private void ouvrirCompteActionPerformed() {//GEN-FIRST:event_ouvrirCompteActionPerformed
 		controleur.chargerCompte(new ChargementCompte(this, true));
 	}//GEN-LAST:event_ouvrirCompteActionPerformed
 
-	private void fermerCompteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fermerCompteActionPerformed
+	private void fermerCompteActionPerformed() {//GEN-FIRST:event_fermerCompteActionPerformed
 		controleur.deconnexion();
 	}//GEN-LAST:event_fermerCompteActionPerformed
 
-	private void ajoutElementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutElementActionPerformed
+	private void ajoutElementActionPerformed() {//GEN-FIRST:event_ajoutElementActionPerformed
 		DialogTache dialog = new DialogTache(this, true);
 		InfosRenseignement infos = dialog.showDialog();
 		if (infos != null) {
@@ -411,15 +411,15 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 		}
 	}//GEN-LAST:event_ajoutElementActionPerformed
 
-	private void contactsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactsActionPerformed
+	private void contactsActionPerformed() {//GEN-FIRST:event_contactsActionPerformed
 		new DialogGestionContacts(this, true).setVisible(true);
 	}//GEN-LAST:event_contactsActionPerformed
 
-	private void contextsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contextsActionPerformed
+	private void contextsActionPerformed() {//GEN-FIRST:event_contextsActionPerformed
 		new DialogGestionContextes(this, true).setVisible(true);
 	}//GEN-LAST:event_contextsActionPerformed
 
-        private void actualiserTachesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualiserTachesActionPerformed
+        private void actualiserTachesActionPerformed() {//GEN-FIRST:event_actualiserTachesActionPerformed
             controleur.organiserTaches();
             actaliser();
         }//GEN-LAST:event_actualiserTachesActionPerformed

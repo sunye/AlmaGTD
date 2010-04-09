@@ -41,7 +41,7 @@ public class DialogFaire extends javax.swing.JDialog {
         annuler.addActionListener(new java.awt.event.ActionListener() {
 			@Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
@@ -50,7 +50,7 @@ public class DialogFaire extends javax.swing.JDialog {
         valider.addActionListener(new java.awt.event.ActionListener() {
 			@Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -80,12 +80,12 @@ public class DialogFaire extends javax.swing.JDialog {
         pack();
     }// </editor-fold>
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {
+	private void validerActionPerformed() {
 		Controleur.getInstance().supprimerTache(tache);
 		setVisible(false);
 	}
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {
+	private void annulerActionPerformed() {
 		setVisible(false);
 	}
 

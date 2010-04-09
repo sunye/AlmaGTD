@@ -39,14 +39,14 @@ public class DialogGestionContextes extends javax.swing.JDialog {
         ajouter.setText("Ajouter un contexte");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterActionPerformed(evt);
+                ajouterActionPerformed();
             }
         });
 
         ok.setText("OK");
         ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okActionPerformed(evt);
+                okActionPerformed();
             }
         });
 
@@ -91,7 +91,7 @@ public class DialogGestionContextes extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
+	private void ajouterActionPerformed() {//GEN-FIRST:event_ajouterActionPerformed
 		String contexte = new DialogAjoutContexte(null, true).showDialog();
 		if (contexte != null) {
 			Contexte contexteAdd = (Contexte) controleur.ajoutContexte(contexte);
@@ -99,7 +99,7 @@ public class DialogGestionContextes extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_ajouterActionPerformed
 
-	private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
+	private void okActionPerformed() {//GEN-FIRST:event_okActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_okActionPerformed
 

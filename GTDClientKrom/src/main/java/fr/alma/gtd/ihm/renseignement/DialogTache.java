@@ -39,7 +39,7 @@ public class DialogTache extends javax.swing.JDialog {
         annuler.setName("annuler"); // NOI18N
         annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                annulerActionPerformed();
             }
         });
 
@@ -47,7 +47,7 @@ public class DialogTache extends javax.swing.JDialog {
         valider.setName("valider"); // NOI18N
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -77,7 +77,7 @@ public class DialogTache extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 //		InfosRenseignement infosRenseignement = panelRenseignement.getRenseignements();
 //		if (infosRenseignement.getNom().length() > 0) {
 //			Controleur.getInstance().ajoutElement(infosRenseignement);
@@ -89,7 +89,7 @@ public class DialogTache extends javax.swing.JDialog {
 		setVisible(false);
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+	private void annulerActionPerformed() {//GEN-FIRST:event_annulerActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_annulerActionPerformed
 

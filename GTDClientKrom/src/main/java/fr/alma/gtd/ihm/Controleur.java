@@ -1,6 +1,6 @@
 package fr.alma.gtd.ihm;
 
-import fr.alma.gtd.util.VisitorPrioriteImpl;
+import fr.alma.gtd.util.impl.VisitorPrioriteImpl;
 import fr.alma.gtd.entities.Contact;
 import fr.alma.gtd.ihm.renseignement.PanelRenseignement;
 import fr.alma.gtd.controle.AuthentificationCompte;

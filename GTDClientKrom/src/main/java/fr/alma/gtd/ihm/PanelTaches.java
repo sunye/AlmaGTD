@@ -109,7 +109,7 @@ public class PanelTaches extends javax.swing.JPanel {
         checkAll.setName("checkAll"); // NOI18N
         checkAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkAllActionPerformed(evt);
+                checkAllActionPerformed();
             }
         });
         panelCheckBox.add(checkAll);
@@ -191,7 +191,7 @@ public class PanelTaches extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-		private void checkAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAllActionPerformed
+		private void checkAllActionPerformed() {//GEN-FIRST:event_checkAllActionPerformed
 			selectAllCkeckbox(checkAll.isSelected());
 			selectionContextes();
 		}//GEN-LAST:event_checkAllActionPerformed

@@ -54,6 +54,7 @@ public class MyTreeRenderer extends DefaultTreeCellRenderer {
 					}
 				}
 			} catch (ClassCastException e) {
+				e.printStackTrace();
 			}
 		} else {
 			setIcon(null);

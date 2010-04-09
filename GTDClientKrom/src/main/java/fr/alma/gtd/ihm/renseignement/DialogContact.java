@@ -69,7 +69,7 @@ public class DialogContact extends javax.swing.JDialog {
         valider.setText("Valider");
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validerActionPerformed(evt);
+                validerActionPerformed();
             }
         });
 
@@ -78,14 +78,14 @@ public class DialogContact extends javax.swing.JDialog {
         ajouterBouton.setText(">");
         ajouterBouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterBoutonActionPerformed(evt);
+                ajouterBoutonActionPerformed();
             }
         });
 
         retirerBouton.setText("<");
         retirerBouton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retirerBoutonActionPerformed(evt);
+                retirerBoutonActionPerformed();
             }
         });
 
@@ -136,7 +136,7 @@ public class DialogContact extends javax.swing.JDialog {
         creerContact.setText("Ajouter un contact");
         creerContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                creerContactActionPerformed(evt);
+                creerContactActionPerformed();
             }
         });
 
@@ -166,11 +166,11 @@ public class DialogContact extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
+	private void validerActionPerformed() {//GEN-FIRST:event_validerActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_validerActionPerformed
 
-	private void creerContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creerContactActionPerformed
+	private void creerContactActionPerformed() {//GEN-FIRST:event_creerContactActionPerformed
 		Contact contact = new DialogAjoutContact(null, true).showDialog();
 		if (contact != null) {
 			controleur.ajoutContact(contact);
@@ -178,7 +178,7 @@ public class DialogContact extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_creerContactActionPerformed
 
-	private void ajouterBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterBoutonActionPerformed
+	private void ajouterBoutonActionPerformed() {//GEN-FIRST:event_ajouterBoutonActionPerformed
 		int indices[] = listExistant.getSelectedIndices();
 		List<Contact> listeTemp = new LinkedList<Contact>();
 		for (int i : indices) {
@@ -193,7 +193,7 @@ public class DialogContact extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_ajouterBoutonActionPerformed
 
-	private void retirerBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirerBoutonActionPerformed
+	private void retirerBoutonActionPerformed() {//GEN-FIRST:event_retirerBoutonActionPerformed
 		int indices[] = listAjoutee.getSelectedIndices();
 		List<Contact> listeTemp = new LinkedList<Contact>();
 		for (int i : indices) {

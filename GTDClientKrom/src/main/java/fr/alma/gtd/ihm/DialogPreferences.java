@@ -59,21 +59,21 @@ public class DialogPreferences extends javax.swing.JDialog {
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
-                closeDialog(evt);
+                closeDialog();
             }
         });
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
+                okButtonActionPerformed();
             }
         });
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
+                cancelButtonActionPerformed();
             }
         });
 
@@ -87,7 +87,7 @@ public class DialogPreferences extends javax.swing.JDialog {
         checkConnection.setText("Se connecter à un serveur");
         checkConnection.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                checkConnectionItemStateChanged(evt);
+                checkConnectionItemStateChanged();
             }
         });
 
@@ -182,20 +182,20 @@ public class DialogPreferences extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+    private void okButtonActionPerformed() {//GEN-FIRST:event_okButtonActionPerformed
         doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed
 
-    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+    private void cancelButtonActionPerformed() {//GEN-FIRST:event_cancelButtonActionPerformed
         doClose(RET_CANCEL);
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /** Closes the dialog */
-    private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
+    private void closeDialog() {//GEN-FIRST:event_closeDialog
         doClose(RET_CANCEL);
     }//GEN-LAST:event_closeDialog
 
-	private void checkConnectionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkConnectionItemStateChanged
+	private void checkConnectionItemStateChanged() {//GEN-FIRST:event_checkConnectionItemStateChanged
 		textURL.setEnabled(checkConnection.isSelected());
 		labelURL.setEnabled(checkConnection.isSelected());
 	}//GEN-LAST:event_checkConnectionItemStateChanged

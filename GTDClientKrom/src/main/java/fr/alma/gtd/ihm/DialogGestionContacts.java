@@ -161,7 +161,7 @@ public class DialogGestionContacts extends javax.swing.JDialog {
         });
         listContacts.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listContactsValueChanged(evt);
+                listContactsValueChanged();
             }
         });
         jScrollPane1.setViewportView(listContacts);
@@ -187,14 +187,14 @@ public class DialogGestionContacts extends javax.swing.JDialog {
         ok.setText("OK");
         ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okActionPerformed(evt);
+                okActionPerformed();
             }
         });
 
         ajouter.setText("Ajouter un contact");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterActionPerformed(evt);
+                ajouterActionPerformed();
             }
         });
 
@@ -224,7 +224,7 @@ public class DialogGestionContacts extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-	private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
+	private void ajouterActionPerformed() {//GEN-FIRST:event_ajouterActionPerformed
 		Contact contact = new DialogAjoutContact(null, true).showDialog();
 		if (contact != null) {
 			controleur.ajoutContact(contact);
@@ -232,11 +232,11 @@ public class DialogGestionContacts extends javax.swing.JDialog {
 		}
 	}//GEN-LAST:event_ajouterActionPerformed
 
-	private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
+	private void okActionPerformed() {//GEN-FIRST:event_okActionPerformed
 		setVisible(false);
 	}//GEN-LAST:event_okActionPerformed
 
-	private void listContactsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listContactsValueChanged
+	private void listContactsValueChanged() {//GEN-FIRST:event_listContactsValueChanged
 		int indice = listContacts.getLeadSelectionIndex();
 		if (indice >= 0) {
 			Contact c = (Contact) listeDisponibleModel.get(indice);
@@ -300,7 +300,7 @@ public class DialogGestionContacts extends javax.swing.JDialog {
 				contact.setEmail(temp.getEmail());
 				contact.setTelephone(temp.getTelephone());
 				controleur.actualiserContact(contact);
-				listContactsValueChanged(null);
+				listContactsValueChanged();
 			}
 		}
 	}

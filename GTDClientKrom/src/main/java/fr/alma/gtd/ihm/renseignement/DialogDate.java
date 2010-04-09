@@ -54,7 +54,7 @@ public class DialogDate extends javax.swing.JDialog {
         comboMois.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" }));
         comboMois.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                comboMoisItemStateChanged(evt);
+                comboMoisItemStateChanged();
             }
         });
 
@@ -62,7 +62,7 @@ public class DialogDate extends javax.swing.JDialog {
 
         spinnerAnnee.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spinnerAnneeStateChanged(evt);
+                spinnerAnneeStateChanged();
             }
         });
 
@@ -152,11 +152,11 @@ public class DialogDate extends javax.swing.JDialog {
 		dispose();
 	}//GEN-LAST:event_tableauJourMouseClicked
 
-	private void spinnerAnneeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinnerAnneeStateChanged
+	private void spinnerAnneeStateChanged() {//GEN-FIRST:event_spinnerAnneeStateChanged
 		updateMatrice();
 	}//GEN-LAST:event_spinnerAnneeStateChanged
 
-	private void comboMoisItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboMoisItemStateChanged
+	private void comboMoisItemStateChanged() {//GEN-FIRST:event_comboMoisItemStateChanged
 		updateMatrice();
 	}//GEN-LAST:event_comboMoisItemStateChanged
 
