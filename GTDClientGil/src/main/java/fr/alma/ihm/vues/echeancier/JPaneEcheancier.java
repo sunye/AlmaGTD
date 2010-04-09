@@ -33,7 +33,7 @@ public class JPaneEcheancier extends JScrollPane {
 	 * 
 	 */
 	private Echeancier echeancier;
-	private ArrayList<Tache> taches;
+	private List<Tache> taches;
 
 	/**
 	 * Constructeur.
@@ -53,9 +53,9 @@ public class JPaneEcheancier extends JScrollPane {
 		JPanel p1 = new JPanel();
 		p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 		ArrayList<Echeancier> l = new ArrayList<Echeancier>();
-		this.getListeTacheEcheance();
+		taches = getListeTacheEcheance();
 		for(Tache t : taches){
-			l.add(new Echeancier(t.getNom(), t.getContexte(), Controleur.df.format(t.getDateEcheance())));
+			l.add(new Echeancier(t.getNom(), t.getContexte(), Controleur.DATEFORMAT.format(t.getDateEcheance())));
 		}
 		for (int i=0; i< l.size();i++){
 			GridBagConstraints gbc1 = new GridBagConstraints();
@@ -68,7 +68,7 @@ public class JPaneEcheancier extends JScrollPane {
 		setViewportView(p1);
 	}
 
-	private List<Tache> getListeTacheEcheance(){
+	private final List<Tache> getListeTacheEcheance(){
 		ArrayList<Tache> l = new ArrayList<Tache>();
 		TacheDao dao = DaoFactory.createTacheDao();
 		l = (ArrayList<Tache>) dao.recupererTout();
@@ -77,15 +77,15 @@ public class JPaneEcheancier extends JScrollPane {
 		return l;
 	}
 
-	private void recupererEcheance(List<Tache> taches){
-		for(Tache t : taches){
+	private final void recupererEcheance(List<Tache> tacheList){
+		for(Tache t : tacheList){
 			if(t.getDateEcheance() != null){
-				this.taches.add(t);
+				taches.add(t);
 			}
 		}
 	}
 
-	private void trierTaches(){
+	private final void trierTaches(){
 		Tache[] ltrie = new Tache[taches.size()];
 		int k = 0;
 		for(Tache t : taches){
@@ -123,11 +123,11 @@ public class JPaneEcheancier extends JScrollPane {
 		this.echeancier = echeancier;
 	}
 
-	public ArrayList<Tache> getTaches() {
+	public List<Tache> getTaches() {
 		return taches;
 	}
 
-	public void setTaches(ArrayList<Tache> taches) {
+	public void setTaches(List<Tache> taches) {
 		this.taches = taches;
 	}
 }

@@ -2,6 +2,7 @@ package fr.alma.controleur;
 
 //Start of user code for imports
 import java.util.HashMap;
+import java.util.Map;
 
 import fr.alma.modele.noyau.IContact;
 
@@ -19,21 +20,21 @@ public interface IControleur {
 
 	//ci-dessous la liste des différentes actions utilisateurs.
 	
-	public void connecter(String login, char[] mdp);
-	public void deconnecter();
+	void connecter(String login, char[] mdp);
+	void deconnecter();
 	
-	public void creerCompte(String login, char[] pwd, char[] pwd2, String email);
+	void creerCompte(String login, char[] pwd, char[] pwd2, String email);
 	
-	public void ajouterEditerTache(HashMap<Integer, Object> valeurs, TypeAction a);
-	public void ajouterEditerProjet(HashMap<Integer, Object> valeurs, TypeAction a);
+	void ajouterEditerTache(Map<Integer, Object> valeurs, TypeAction aTypeAction);
+	void ajouterEditerProjet(Map<Integer, Object> valeurs, TypeAction aTypeAction);
 
-	public void mettreDansCorbeille(Object o);
-	public void viderCorbeille();
+	void mettreDansCorbeille(Object object);
+	void viderCorbeille();
 	
-	public void creerContact(String nom, String email, String adresse, String tel);
-	public void supprimerContact(IContact contact);
+	void creerContact(String nom, String email, String adresse, String tel);
+	void supprimerContact(IContact contact);
 	
-	public void commit();
-	public void update();
-	public void synchro();
+	void commit();
+	void update();
+	void synchro();
 }

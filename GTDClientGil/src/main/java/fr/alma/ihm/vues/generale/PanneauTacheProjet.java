@@ -111,13 +111,13 @@ public class PanneauTacheProjet extends JPanel {
 		if (o.getDateDebut() == null) {
 			jLabelValDDebut = new JLabel("(Non renseignée)");
 		} else {
-			jLabelValDDebut = new JLabel(Controleur.df.format(o.getDateDebut()));
+			jLabelValDDebut = new JLabel(Controleur.DATEFORMAT.format(o.getDateDebut()));
 		}
 		JLabel jLabelValDEchance;
 		if (o.getDateEcheance() == null) {
 			jLabelValDEchance = new JLabel("(Non renseignée)");
 		} else {
-			jLabelValDEchance = new JLabel(Controleur.df.format(o.getDateEcheance()));
+			jLabelValDEchance = new JLabel(Controleur.DATEFORMAT.format(o.getDateEcheance()));
 		}
 
 		p1.add(jLabelNom);
@@ -167,7 +167,7 @@ public class PanneauTacheProjet extends JPanel {
 			}
 			jLabelValFrequence = new JLabel(o.getPeriodicite().getFrequence());
 		} else {
-			jLabelValDArret = new JLabel(Controleur.df.format(o.getPeriodicite().getDateFinRepetition()));
+			jLabelValDArret = new JLabel(Controleur.DATEFORMAT.format(o.getPeriodicite().getDateFinRepetition()));
 			if (o.getPeriodicite().getFrequence().equals("Pas de fréquence")) {
 				o.getPeriodicite().setFrequence("Evénement ponctuel");
 				jLabelValFrequence = new JLabel(o.getPeriodicite().getFrequence());

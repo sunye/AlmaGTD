@@ -20,7 +20,7 @@ import fr.alma.modele.noyau.Tache;
  * @since 2009
  * @version 1.0
  */
-public class AjouterTachePopup extends AbstractAjouterEditerTache {
+public final class AjouterTachePopup extends AbstractAjouterEditerTache {
 
 	/**
 	 * UID généré.

@@ -27,7 +27,7 @@ import fr.alma.modele.persistance.dao.TacheDao;
  * @since 2009
  * @version 1.0
  */
-public class ArbreGTD extends JPanel {
+public final class ArbreGTD extends JPanel {
 
 	/**
 	 * UID généré.
@@ -184,11 +184,13 @@ public class ArbreGTD extends JPanel {
 	 */
 	public NoeudGTD addObject(NoeudGTD parent, Object child, boolean shouldBeVisible) {
 		NoeudGTD childNode = new NoeudGTD(child);
-		if (parent == null) {
-			parent = new NoeudGTD(ModeleAbstrait.getProjetRacine());
+		NoeudGTD prt = parent;
+		
+		if (prt == null) {
+			prt = new NoeudGTD(ModeleAbstrait.getProjetRacine());
 		}
 
-		treeModel.insertNodeInto(childNode, parent, parent.getChildCount());
+		treeModel.insertNodeInto(childNode, prt, prt.getChildCount());
 
 		if (shouldBeVisible) {
 			getArbre().scrollPathToVisible(new TreePath(childNode.getPath()));

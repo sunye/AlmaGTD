@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.BoxLayout;
@@ -23,6 +24,7 @@ import fr.univnantes.alma.gtd.controler.ressources.IControlerRessources;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.EtatTache;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.Idee;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.Projet;
+import fr.univnantes.alma.gtd.model.gestionnaireressources.TacheExtendInfo;
 
 
 public class DialogPanier extends JDialog{
@@ -47,7 +49,7 @@ public class DialogPanier extends JDialog{
 			return "Créer contexte";
 		}
 		
-		@Override
+		
 		public String toString(){
 			return this.getNom();
 		}
@@ -95,7 +97,7 @@ public class DialogPanier extends JDialog{
 			return "Créer Tache";
 		}
 		
-		@Override
+		
 		public String toString(){
 			return this.getNom();
 		}
@@ -115,7 +117,7 @@ public class DialogPanier extends JDialog{
 			return "Créer Projet";
 		}
 		
-		@Override
+		
 		public String toString(){
 			return this.getNom();
 		}
@@ -150,7 +152,7 @@ public class DialogPanier extends JDialog{
 		centre.add(prem);
 		annuler.addActionListener(new ActionListener() {
 			
-			@Override
+			
 			public void actionPerformed(ActionEvent arg0) {
 				DialogPanier.this.setVisible(false);
 				
@@ -170,7 +172,7 @@ public class DialogPanier extends JDialog{
 		listepos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listepos.addListSelectionListener(new ListSelectionListener() {
 			
-			@Override
+			
 			public void valueChanged(ListSelectionEvent e) {
 				JPanel p = (JPanel)listepos.getSelectedValue();
 				centre.removeAll();
@@ -180,16 +182,20 @@ public class DialogPanier extends JDialog{
 		});
 		confirmer.addActionListener(new ActionListener() {
 			
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				int choix = listepos.getSelectedIndex();
 				Boolean result = false;
 				switch (choix){
 					case 0 : result = gestR.addProject(formProj.nomP.getText());break;
 					case 1 : 
-						result = gestR.addTache(formTache.nomT.getText(),
-								(Integer)formTache.prior.getSelectedItem(),
-								(Integer)formTache.eff.getSelectedItem(),
+						TacheExtendInfo info = 
+							new TacheExtendInfo(formTache.nomT.getText(),
+												(Integer)formTache.prior.getSelectedItem(),
+												(Integer)formTache.eff.getSelectedItem(),
+												new ArrayList<String>(),
+												new ArrayList<String>());
+						result = gestR.addTache(info,								
 								(EtatTache)formTache.et.getSelectedItem(),
 								formTache.rev.getDate(),
 								formTache.ech.getDate(),

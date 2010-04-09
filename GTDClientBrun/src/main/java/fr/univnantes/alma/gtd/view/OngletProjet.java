@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.BorderFactory;
@@ -36,6 +37,7 @@ import fr.univnantes.alma.gtd.model.gestionnaireressources.Contexte;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.EtatTache;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.Projet;
 import fr.univnantes.alma.gtd.model.gestionnaireressources.Tache;
+import fr.univnantes.alma.gtd.model.gestionnaireressources.TacheExtendInfo;
 
 public class OngletProjet extends JPanel {
 	/** ELEMENT DE L ONGLET PROJET **/
@@ -340,7 +342,7 @@ public class OngletProjet extends JPanel {
 		});
 		addcontactprojet.addActionListener(new ActionListener(){
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				DefaultMutableTreeNode node = (DefaultMutableTreeNode)
 				arbretache.getLastSelectedPathComponent();
@@ -367,7 +369,7 @@ public class OngletProjet extends JPanel {
 		});
 		deletecontactgest.addActionListener(new ActionListener(){
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				Contact c = (Contact) contacts.getSelectedItem();
 				if (c!=null){
@@ -583,10 +585,10 @@ public class OngletProjet extends JPanel {
 							JOptionPane.ERROR_MESSAGE, null, null, null);
 				}else{
 
-
+					TacheExtendInfo info = new TacheExtendInfo(tnomtache.getText(), (Integer)tpriorite.getSelectedItem(),
+							(Integer) teffort.getSelectedItem(),new ArrayList<String>(),new ArrayList<String>());
 					Projet p = (Projet) node.getUserObject();
-					gestR.addTache(tnomtache.getText(), (Integer)tpriorite.getSelectedItem(),
-							(Integer) teffort.getSelectedItem(),
+					gestR.addTache(info,
 							(EtatTache) tetat.getSelectedItem(), dreveil.getDate(), decheance.getDate(), p);					
 					createTree();
 				}
@@ -705,8 +707,10 @@ public class OngletProjet extends JPanel {
 					Projet p = gestR.getTaskProjet(t);
 
 					gestR.deleteTache(t);
-					gestR.addTache(tnomtache.getText(), (Integer)tpriorite.getSelectedItem(),
-							(Integer) teffort.getSelectedItem(),
+
+					TacheExtendInfo info = new TacheExtendInfo(tnomtache.getText(), (Integer)tpriorite.getSelectedItem(),
+							(Integer) teffort.getSelectedItem(),new ArrayList<String>(),new ArrayList<String>());
+					gestR.addTache(info,
 							(EtatTache) tetat.getSelectedItem(), dreveil.getDate(), decheance.getDate(), p);
 					createTree();
 				}
