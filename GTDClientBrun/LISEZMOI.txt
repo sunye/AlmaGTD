@@ -5,3 +5,6 @@ ant jar 	: génère le JAR
 ant run 	: lance l'application
 
 GTD.jar est un jar exécutable
+
+
+installer manuellement les 2 librairies du dossier lib/
