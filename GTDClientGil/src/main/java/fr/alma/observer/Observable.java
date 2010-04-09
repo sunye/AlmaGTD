@@ -1,6 +1,6 @@
 package fr.alma.observer;
 
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 
 /**
  * Interface Observable (damier).
@@ -24,6 +24,6 @@ public interface Observable {
 	 * Méthode appliquée lors d'un changement dans la vue.
 	 * @param modele le modèle courant.
 	 */
-	public void notifyObserver(ModeleAbstrait modele);
+	public void notifyObserver(AbstractModele modele);
 	
 }

@@ -83,7 +83,7 @@ public interface IGestionnaireTaches {
 	//**************************************************
 	
 	public BD getBd();
-	public void setBd(BD bd);
+	public void setBd(BD dbase);
 	
 	
 }

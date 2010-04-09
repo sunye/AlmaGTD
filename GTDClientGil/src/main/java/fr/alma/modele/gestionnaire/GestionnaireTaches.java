@@ -15,126 +15,130 @@ import fr.alma.modele.persistance.BD;
  */
 public class GestionnaireTaches implements IGestionnaireTaches {
 
-	/** 
-	 * la base de données
-	 */
-	private BD bd;
+    /**
+     * la base de données
+     */
+    private BD database;
+    /**
+     * la liste de projets en cours
+     */
+    private List<IProjet> projets;
 
-	/**  
-	 * la liste de projets en cours
-	 */
-	private List<IProjet> projets;
+    /**
+     * Constructeur.
+     */
+    public GestionnaireTaches() {
+        this.database = new BD();
+        this.projets = new ArrayList<IProjet>();
+    }
 
-	/**
-	 * Constructeur.
-	 */
-	public GestionnaireTaches () {
-		this.bd = new BD();
-		this.projets = new ArrayList<IProjet>();
-	}
+    @Override
+    public Boolean creerTache(ITache tache, IProjet projet) {
+        //Start of user code for creerTache method body
+        projet.getTaches().add(tache);
+        return null;
+        //End of user code
+    }
 
-	@Override
-	public Boolean creerTache(ITache tache, IProjet projet) {
-		//Start of user code for creerTache method body
-		projet.getTaches().add(tache);
-		return null;
-		//End of user code
-	}
+    @Override
+    public Boolean modifierTache(ITache tache) {
 
-	@Override
-	public Boolean modifierTache(ITache tache) {
-		//Start of user code for modifierTache method body
-		for(IProjet p : projets){
-			ITache t = p.getTache(tache.getId());
-			if(t != null){
-				t = tache;
-				return true;
-			}
-		}
-		return false;
-		//End of user code
-	}
+        Boolean etat = false;
+        //Start of user code for modifierTache method body
+        for (IProjet p : projets) {
+            ITache tche = p.getTache(tache.getId());
+            if (tche != null) {
+                tche = tache;
+                etat = true;
+            }
+        }
+        return etat;
+        //End of user code
+    }
 
-	@Override
-	public Boolean supprimerTache(ITache tache) {
-		//Start of user code for supprimerTache method body
-		for(IProjet p : projets){
-			if(p.supprimerTache(tache.getId())){
-				return true;
-			}
-		}
-		return false;
-		//End of user code
-	}
+    @Override
+    public Boolean supprimerTache(ITache tache) {
+        Boolean etat = false;
+        //Start of user code for supprimerTache method body
+        for (IProjet p : projets) {
+            if (p.supprimerTache(tache.getId())) {
+                etat = true;
+            }
+        }
+        return etat;
+        //End of user code
+    }
 
-	@Override
-	public Boolean creerProjet(IProjet projet) {
-		//Start of user code for creerProjet method body
-		this.projets.add(projet);
-		return true;
-		//End of user code
-	}
+    @Override
+    public Boolean creerProjet(IProjet projet) {
+        //Start of user code for creerProjet method body
+        this.projets.add(projet);
+        return true;
+        //End of user code
+    }
 
-	@Override
-	public Boolean modifierProjet(IProjet projet) {
-		//Start of user code for modifierProjet method body
-		for(IProjet p : projets){
-			if(p.getId() == projet.getId()){
-				p = projet;
-				return true;
-			}
-		}
-		return false;
-		//End of user code
-	}
+    @Override
+    public Boolean modifierProjet(IProjet projet) {
+        Boolean etat = false;
+        //Start of user code for modifierProjet method body
+        for (IProjet p : projets) {
+            if (p.getId() == projet.getId()) {
+                p = projet;
+                etat = true;
+            }
+        }
+        return etat;
+        //End of user code
+    }
 
-	@Override
-	public Boolean supprimerProjet(IProjet projet) {
-		//Start of user code for supprimerProjet method body
-		for(IProjet p : projets){
-			if(p.getId() == projet.getId()){
-				projets.remove(projet);
-				return true;
-			}
-		}
-		return false;
-		//End of user code
-	}
+    @Override
+    public Boolean supprimerProjet(IProjet projet) {
+        Boolean etat = false;
+        //Start of user code for supprimerProjet method body
+        for (IProjet p : projets) {
+            if (p.getId() == projet.getId()) {
+                projets.remove(projet);
+                etat = true;
+            }
+        }
+        return etat;
+        //End of user code
+    }
 
-	@Override
-	public List<ITache> getTaches() {
-		//Start of user code for getTaches method body
-		List<ITache> l = new ArrayList<ITache>();
-		for(IProjet p : projets){
-			l = p.getAllTaches(l);
-		}
-		return l;
-		//End of user code
-	}
+    @Override
+    public List<ITache> getTaches() {
+        //Start of user code for getTaches method body
+        List<ITache> tacheList = new ArrayList<ITache>();
+        for (IProjet p : projets) {
+            tacheList = p.getAllTaches(tacheList);
+        }
+        return tacheList;
+        //End of user code
+    }
 
-	public List<IProjet> getModifs(Date date) {
-		//Start of user code for getModifs method body
-		//TODO
-		return null;
-		//End of user code
-	}
-	
-	@Override
-	public IProjet getProjetRacine() {
-		return bd.recupererProjetRacine();
-	}
+    @Override
+    public List<IProjet> getModifs(Date date) {
+        //Start of user code for getModifs method body
+        //TODO
+        return null;
+        //End of user code
+    }
 
-	//**************************************************
-	//		         GETTERS AND SETTERS
-	//**************************************************
-	
-	@Override
-	public BD getBd() {
-		return bd;
-	}
+    @Override
+    public IProjet getProjetRacine() {
+        return database.recupererProjetRacine();
+    }
 
-	@Override
-	public void setBd(BD bd) {
-		this.bd = bd;
-	}
+    //**************************************************
+    //		         GETTERS AND SETTERS
+    //**************************************************
+    @Override
+    public BD getBd() {
+        return database;
+    }
+
+    @Override
+    public void setBd(BD dbase) {
+        this.database = dbase;
+    }
 }

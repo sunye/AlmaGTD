@@ -13,6 +13,8 @@ import fr.alma.modele.noyau.IProjet;
 import fr.alma.modele.noyau.ITache;
 import fr.alma.modele.noyau.Projet;
 import fr.alma.modele.noyau.Tache;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Classe faisant office de façade.
@@ -20,7 +22,7 @@ import fr.alma.modele.noyau.Tache;
  * @since 2009
  * @version 1.0
  */
-public class Modele extends ModeleAbstrait {
+public class Modele extends AbstractModele {
 
 	/** Composant qui gère les tâches */
 	private IGestionnaireTaches gestionnaireTaches;
@@ -41,29 +43,29 @@ public class Modele extends ModeleAbstrait {
 
 	@Override
 	public void creerCompte(String login, char[] password, String email) {
-		System.out.println("Création du compte...");
+		Logger.getAnonymousLogger().log(Level.INFO, "Création du compte...");
 		gestionnaireTaches.getBd().creerCompte(login, password, email);
 	}
 	
 	@Override
 	public IContact creerContact(String nom, String email, String adresse, String tel) {
-		IContact c = new Contact(nom, email, adresse, tel);
-		((Contact) c).setIdUtilisateur(ModeleAbstrait.getIdUtilisateur());
-		gestionnaireTaches.getBd().ajouterContactBD(c);
-		return c;
+		IContact contact = new Contact(nom, email, adresse, tel);
+		((Contact) contact).setIdUtilisateur(AbstractModele.getIdUtilisateur());
+		gestionnaireTaches.getBd().ajouterContactBD(contact);
+		return contact;
 	}
 
 	@Override
 	public Long creerProjet(String nom, String contexte, String notes, IProjet projetPere) {
-		Projet p = new Projet(nom, contexte, notes);
+		Projet projet = new Projet(nom, contexte, notes);
 		Long idProjet;
 		if (projetPere == null) {
-			idProjet = gestionnaireTaches.getBd().ajouterProjetBD(p, null);
+			idProjet = gestionnaireTaches.getBd().ajouterProjetBD(projet, null);
 		} else {
-			projetPere.ajouterSousProjet(p);
-			idProjet = gestionnaireTaches.getBd().ajouterProjetBD(p, projetPere.getId());
+			projetPere.ajouterSousProjet(projet);
+			idProjet = gestionnaireTaches.getBd().ajouterProjetBD(projet, projetPere.getId());
 		}
-		ArbreGTD.getInstance().addObject(p);
+		ArbreGTD.getInstance().addObject(projet);
 		notifyObserver(this);
 		return idProjet;
 	}
@@ -71,20 +73,20 @@ public class Modele extends ModeleAbstrait {
 	@Override
 	public void creerTache(String nom, IProjet projet, String contexte, String notes, Date dDebut, Date dEcheance, Integer priorite, 
 			Integer tauxEffort, IContact[] contacts, Frequence frequence, Date dArretFrequenceRep, List<String> urls, List<String> tags) {
-		Tache t = new Tache(nom, contexte, notes, dDebut, dEcheance, priorite, tauxEffort, contacts, frequence, dArretFrequenceRep, urls, tags);
-		gestionnaireTaches.getBd().ajouterTacheBD(t, projet);
-		ArbreGTD.getInstance().addObject(t);
+		Tache tache = new Tache(nom, contexte, notes, dDebut, dEcheance, priorite, tauxEffort, contacts, frequence, dArretFrequenceRep, urls, tags);
+		gestionnaireTaches.getBd().ajouterTacheBD(tache, projet);
+		ArbreGTD.getInstance().addObject(tache);
 		notifyObserver(this);
 	}
 
 	@Override
-	public void editerTache(ITache t) {
-		gestionnaireTaches.getBd().modifierTache(t);
+	public void editerTache(ITache tache) {
+		gestionnaireTaches.getBd().modifierTache(tache);
 	}
 
 	@Override
-	public void editerProjet(IProjet p) {
-		gestionnaireTaches.getBd().modifierProjet(p);
+	public void editerProjet(IProjet projet) {
+		gestionnaireTaches.getBd().modifierProjet(projet);
 	}
 
 
@@ -95,25 +97,26 @@ public class Modele extends ModeleAbstrait {
 
 	@Override
 	public void commit() {
-		System.out.println("Commit !!!");
+                Logger.getAnonymousLogger().log(Level.INFO, "Commit !!!");
 	}
 
 	@Override
 	public void update() {
-		System.out.println("Update !!!");
+                Logger.getAnonymousLogger().log(Level.INFO, "Update !!!");
+
 	}
 
 	@Override
 	public void synchro() {
-		System.out.println("Synchronisation !!!");
+		Logger.getAnonymousLogger().log(Level.INFO, "Synchronisation !!!");
 	}
 
 	@Override
-	public void mettreDansCorbeille(Object o) {
-		if (o instanceof IProjet) {
-			gestionnaireTaches.getBd().mettreDansCorbeille((IProjet) o);
-		} else if (o instanceof ITache) {
-			gestionnaireTaches.getBd().mettreDansCorbeille((ITache) o);
+	public void mettreDansCorbeille(Object object) {
+		if (object instanceof IProjet) {
+			gestionnaireTaches.getBd().mettreDansCorbeille((IProjet) object);
+		} else if (object instanceof ITache) {
+			gestionnaireTaches.getBd().mettreDansCorbeille((ITache) object);
 		}
 	}
 	

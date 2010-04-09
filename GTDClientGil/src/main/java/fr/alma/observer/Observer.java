@@ -1,6 +1,6 @@
 package fr.alma.observer;
 
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 
 /**
  * Interface Observer(Afficheur).
@@ -9,5 +9,5 @@ import fr.alma.modele.ModeleAbstrait;
  */
 public interface Observer {
 	
-	public void update(ModeleAbstrait modele);
+	public void update(AbstractModele modele);
 }

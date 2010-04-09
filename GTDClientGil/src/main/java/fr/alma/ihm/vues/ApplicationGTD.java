@@ -12,7 +12,7 @@ import javax.swing.UIManager;
 import fr.alma.controleur.IControleur;
 import fr.alma.ihm.Menu;
 import fr.alma.ihm.vues.generale.popup.ConnexionPopup;
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 import fr.alma.observer.Observer;
 
 /**
@@ -182,7 +182,7 @@ public final class ApplicationGTD extends JFrame implements Observer {
 	// IMPLEMENTATION DU PATTERN OBSERVER
 	// ************************************************
 	@Override
-	public void update(ModeleAbstrait modele) {
+	public void update(AbstractModele modele) {
 
 	}
 

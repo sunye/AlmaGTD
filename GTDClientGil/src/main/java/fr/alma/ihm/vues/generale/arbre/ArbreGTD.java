@@ -12,7 +12,7 @@ import javax.swing.tree.TreePath;
 import fr.alma.ihm.vues.ApplicationGTD;
 import fr.alma.ihm.vues.generale.JToolBarGTD;
 import fr.alma.ihm.vues.generale.PanneauTacheProjet;
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 import fr.alma.modele.noyau.IProjet;
 import fr.alma.modele.noyau.ITache;
 import fr.alma.modele.noyau.Projet;
@@ -131,7 +131,7 @@ public final class ArbreGTD extends JPanel {
 	 * initialisation de l'arbre
 	 */
 	public void initialiser() {
-		IProjet root = ModeleAbstrait.getProjetRacine();
+		IProjet root = AbstractModele.getProjetRacine();
 		noeudRacine = new NoeudGTD(root);
 		treeModel.setRoot(noeudRacine);
 		peuplerArbre(noeudRacine);
@@ -187,7 +187,7 @@ public final class ArbreGTD extends JPanel {
 		NoeudGTD prt = parent;
 		
 		if (prt == null) {
-			prt = new NoeudGTD(ModeleAbstrait.getProjetRacine());
+			prt = new NoeudGTD(AbstractModele.getProjetRacine());
 		}
 
 		treeModel.insertNodeInto(childNode, prt, prt.getChildCount());

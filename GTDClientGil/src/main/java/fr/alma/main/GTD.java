@@ -4,7 +4,7 @@ import fr.alma.controleur.Controleur;
 import fr.alma.controleur.IControleur;
 import fr.alma.ihm.vues.ApplicationGTD;
 import fr.alma.modele.Modele;
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 
 /**
  * Classe principale.
@@ -21,7 +21,7 @@ public class GTD {
 	public static void main(String[] args) {
 
 		//pattern mvc
-		ModeleAbstrait modele = new Modele();
+		AbstractModele modele = new Modele();
 		IControleur controler = new Controleur((Modele) modele);
 		ApplicationGTD appli = ApplicationGTD.getInstance();
 		appli.setControler(controler);

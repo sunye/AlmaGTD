@@ -25,7 +25,7 @@ import fr.alma.ihm.vues.generale.popup.CreationContactPopup;
 import fr.alma.ihm.vues.generale.popup.EditerProjetPopup;
 import fr.alma.ihm.vues.generale.popup.EditerTachePopup;
 import fr.alma.modele.Modele;
-import fr.alma.modele.ModeleAbstrait;
+import fr.alma.modele.AbstractModele;
 import fr.alma.modele.noyau.Frequence;
 import fr.alma.modele.noyau.IContact;
 import fr.alma.modele.noyau.IProjet;
@@ -93,8 +93,8 @@ public class Controleur implements IControleur {
 				.gererMessage(2,
 						"La connexion a échoué - L'utilisateur n'est pas reconnu");
 			} else {
-				ModeleAbstrait.setIdUtilisateur(idUtilisateur);
-				ModeleAbstrait.setProjetRacine(modele.getGestionnaireTaches()
+				AbstractModele.setIdUtilisateur(idUtilisateur);
+				AbstractModele.setProjetRacine(modele.getGestionnaireTaches()
 						.getProjetRacine());
 				ArbreGTD.getInstance().initialiser();
 				ApplicationGTD.getInstance().gererMessage(1,
@@ -439,7 +439,7 @@ public class Controleur implements IControleur {
 					this.projetPere = (IProjet) nodeInfo;
 					modele.creerProjet(nom, contexte, notes, projetPere);
 				} else {
-					modele.creerProjet(nom, contexte, notes, ModeleAbstrait
+					modele.creerProjet(nom, contexte, notes, AbstractModele
 							.getProjetRacine());
 				}
 				AjouterProjetPopup.getInstance().dispose();

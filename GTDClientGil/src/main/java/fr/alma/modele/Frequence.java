@@ -10,14 +10,17 @@ public enum Frequence implements Serializable {
 	
 	@Override
 	public String toString() {
-		if (this == EVENEMENT_PONCTUEL) {
-			return "Evénement ponctuel";
+            String retour = null;
+            if (this == EVENEMENT_PONCTUEL) {
+			retour = "Evénement ponctuel";
 		} else if (this == JOURNALIERE) {
-			return "Journalière";
+			retour = "Journalière";
 		} else if (this == HEBDOMADAIRE) {
-			return "Hebdomadaire";
+			retour = "Hebdomadaire";
 		} else {
-			return "Mensuelle";
+			retour = "Mensuelle";
 		}
+
+            return retour;
 	}
 }
