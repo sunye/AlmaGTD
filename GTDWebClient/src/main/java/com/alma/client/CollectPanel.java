@@ -15,16 +15,16 @@ import com.smartgwt.client.types.DragAppearance;
 import com.smartgwt.client.widgets.Canvas;
 import com.smartgwt.client.widgets.Label;
 import com.smartgwt.client.util.EventHandler;  
-import com.smartgwt.client.util.SC; 
 import com.smartgwt.client.widgets.events.*;
 
 public class CollectPanel extends AbsolutePanel{
-	private DialogBox newIdeaDialogBox;
-	private Button newIdeaValidButton,newIdeaCancelButton;
-	private TextBox ideaTitle;
-	private TextArea ideaContent ;
-	private Canvas canvas;
-	private AlmaGTD agtdgui;
+	
+	private final DialogBox newIdeaDialogBox;
+	private final Button newIdeaValidButton,newIdeaCancelButton;
+	private final TextBox ideaTitle;
+	private final TextArea ideaContent ;
+	private final Canvas canvas;
+	private final AlmaGTD agtdgui;
 	private static int curAdd=50;
 	
 	public CollectPanel(final AlmaGTD agtdgui){
@@ -35,7 +35,7 @@ public class CollectPanel extends AbsolutePanel{
 		
 		final Button btnNew = new Button("<img src='img/plus.png' width='25' height='25'/>");
         btnNew.addClickHandler(new ClickHandler() {
-        	public void onClick(ClickEvent event) {
+        	public void onClick(final ClickEvent event) {
         		newIdeaDialogBox.center();
         		canvas.setVisible(false);
 				newIdeaValidButton.setFocus(true);
@@ -60,20 +60,20 @@ public class CollectPanel extends AbsolutePanel{
         trash.setAlign(Alignment.CENTER);  
         trash.setCanAcceptDrop(true);  
         trash.addDropOverHandler(new DropOverHandler() {  
-            public void onDropOver(DropOverEvent event) {  
+            public void onDropOver(final DropOverEvent event) {  
                 trash.setBackgroundColor("#FFFF88");                
             }  
         });  
           
         trash.addDropOutHandler(new DropOutHandler() {  
-            public void onDropOut(DropOutEvent event) {  
+            public void onDropOut(final DropOutEvent event) {  
                 trash.setBackgroundColor("white");  
             }             
         });  
           
         trash.addDropHandler(new DropHandler() {  
-            public void onDrop(DropEvent event) {  
-            	DragLabel target = ((DragLabel)EventHandler.getDragTarget());               
+            public void onDrop(final DropEvent event) {  
+            	final DragLabel target = ((DragLabel)EventHandler.getDragTarget());               
                      
                 String title = target.getTitle();
                 title=title.substring(4, title.indexOf("</h3>"));
@@ -101,7 +101,7 @@ public class CollectPanel extends AbsolutePanel{
 		// We can set the id of a widget by accessing its Element
 		newIdeaValidButton.getElement().setId("closeButton");
 		newIdeaCancelButton.getElement().setId("closeButton");
-		VerticalPanel newIdeaBoxVPanel = new VerticalPanel();
+		final VerticalPanel newIdeaBoxVPanel = new VerticalPanel();
 		newIdeaBoxVPanel.addStyleName("dialogVPanel");
 		newIdeaBoxVPanel.add(new HTML("<b>Idea title:</b>"));
 		ideaTitle = new TextBox();
@@ -114,7 +114,7 @@ public class CollectPanel extends AbsolutePanel{
 		newIdeaBoxVPanel.add(ideaContent);
 		newIdeaBoxVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
 		//Command buttons
-		HorizontalPanel cmdPanel = new HorizontalPanel();
+		final HorizontalPanel cmdPanel = new HorizontalPanel();
 		cmdPanel.setSpacing(5);
 		cmdPanel.add(newIdeaValidButton);
 		cmdPanel.add(newIdeaCancelButton);		
@@ -124,7 +124,7 @@ public class CollectPanel extends AbsolutePanel{
 		
 		// Add a handler to close the newIdeaDialogBox
 		newIdeaValidButton.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				newIdeaDialogBox.hide();
 				btnNew.setEnabled(true);
 				btnNew.setFocus(true);
@@ -136,7 +136,7 @@ public class CollectPanel extends AbsolutePanel{
 		});		
 		// Add a handler to close the newIdeaDialogBox doing nothing
 		newIdeaCancelButton.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				newIdeaDialogBox.hide();
 				btnNew.setEnabled(true);
 				btnNew.setFocus(true);
@@ -154,13 +154,13 @@ public class CollectPanel extends AbsolutePanel{
 		// We can set the id of a widget by accessing its Element
 		closeButton.getElement().setId("closeButton");
 		final Label textToServerLabel = new Label();
-		final HTML serverResponseLabel = new HTML();
-		VerticalPanel dialogVPanel = new VerticalPanel();
+		final HTML srvRespLabel = new HTML();
+		final VerticalPanel dialogVPanel = new VerticalPanel();
 		dialogVPanel.addStyleName("dialogVPanel");
 		dialogVPanel.add(new HTML("<b>Sending name to the server:</b>"));
 		dialogVPanel.add(textToServerLabel);
 		dialogVPanel.add(new HTML("<br><b>Server replies:</b>"));
-		dialogVPanel.add(serverResponseLabel);
+		dialogVPanel.add(srvRespLabel);
 		dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
 		dialogVPanel.add(closeButton);
 		dialogBox.setWidget(dialogVPanel);
@@ -169,8 +169,44 @@ public class CollectPanel extends AbsolutePanel{
 		
 	}
 	
+	public DialogBox getNewIdeaDialogBox() {
+		return newIdeaDialogBox;
+	}
+	
+	public TextBox getIdeaTitle() {
+		return ideaTitle;
+	}
+	
+	public TextArea getIdeaContent() {
+		return ideaContent;
+	}
+	
+	public AlmaGTD getAgtdgui() {
+		return agtdgui;
+	}
+	
+	public static int getCurAdd() {
+		return curAdd;
+	}
+
+	public static void setCurAdd(final int curAdd) {
+		CollectPanel.curAdd = curAdd;
+	}
+
+	public Button getNewIdeaValidButton() {
+		return newIdeaValidButton;
+	}
+
+	public Button getNewIdeaCancelButton() {
+		return newIdeaCancelButton;
+	}
+
+	public Canvas getCanvas() {
+		return canvas;
+	}
+	
 	@Override
-	public void setVisible(boolean visible){
+	public void setVisible(final boolean visible){
 		super.setVisible(visible);
 		init();
 	}
@@ -178,13 +214,13 @@ public class CollectPanel extends AbsolutePanel{
 	public void init(){
 		for(Canvas child : canvas.getChildren()){
 			System.out.println(child.getTitle());
-			if(child.getTitle()!=null)
-				if(child.getTitle().startsWith("<h3>"))
+			if((child.getTitle()!=null)&&(child.getTitle().startsWith("<h3>"))){
 					canvas.removeChild(child);
+			}
 		}
 		
+		final DragLabel dragTranslucent = new DragLabel("Translucent", 50);
 		for(String title : agtdgui.getListIdeas().keySet()){
-			DragLabel dragTranslucent = new DragLabel("Translucent", 50);
 	        dragTranslucent.setDragAppearance(DragAppearance.OUTLINE);
 	        dragTranslucent.setDragOpacity(60);
 	        dragTranslucent.setContents("<h3>"+title+"</h3>"+"<br><p style='text-align:left;'>"+ agtdgui.getListIdeas().get(title)+"</p>");
@@ -195,9 +231,9 @@ public class CollectPanel extends AbsolutePanel{
 		}
 	}
 	
-	public void addNote(String title,String note){
+	public void addNote(final String title, final String note){
 		
-		DragLabel dragTranslucent = new DragLabel("Translucent", 50);
+		final DragLabel dragTranslucent = new DragLabel("Translucent", 50);
         dragTranslucent.setDragAppearance(DragAppearance.OUTLINE);
         dragTranslucent.setDragOpacity(60);
         dragTranslucent.setContents("<h3>"+title+"</h3>"+"<br><p style='text-align:left;'>"+note+"</p>");
@@ -210,8 +246,9 @@ public class CollectPanel extends AbsolutePanel{
 	}
 	
     public static class DragLabel extends Label {
-        public DragLabel(String contents, int left) {        	
-            setTop(50);
+        public DragLabel(final String contents, final int left) {        	
+            super();
+        	setTop(50);
             setLeft(curAdd);
             setContents(contents);
             setAlign(Alignment.CENTER);

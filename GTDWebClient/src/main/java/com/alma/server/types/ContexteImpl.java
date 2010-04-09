@@ -60,7 +60,7 @@ public class ContexteImpl implements Context, Serializable {
     public ContexteImpl(final IContexte ctx) {
             this.nom = ctx.getNom();
             this.createur = ctx.getCreateur();
-            this.dateDeDerniereModification = ctx.getDateDeDerniereModification();
+            this.dateDeDerniereModification = ctx.getDateDeDerModif();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class ContexteImpl implements Context, Serializable {
 		return this.nom;
 	}
 	
-	public Date getDateDeDerniereModification() {
+	public Date getDateDeDerModif() {
 		return this.dateDeDerniereModification;
 	}
 	
@@ -86,7 +86,7 @@ public class ContexteImpl implements Context, Serializable {
 		return createur;
 	}
 
-	public void setDateDeDerniereModification(Date dateDeDerniereModification) {
+	public void setDateDeDerModif(Date dateDeDerniereModification) {
 		this.dateDeDerniereModification = dateDeDerniereModification;
 	}
 	

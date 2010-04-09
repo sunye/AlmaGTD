@@ -10,20 +10,16 @@ public class Context implements Serializable {
     private static final long serialVersionUID = 2868136479716970129L;
     private String nom;
     private Participant createur;
-    private Date dateDeDerniereModification;
+    private Date dateDeDerModif;
     private String identifiant;
-    
-  
-    public Context(){
-    	
-    }
+
     
     /**
      * Le constructeur initialisant le nom.
-     * @param n Le nom choisi.
+     * @param nom Le nom choisi.
      */
-    public Context(final String n) {
-           this.nom = n;
+    public Context(final String nom) {
+           this.nom = nom;
     }
 
     /**
@@ -33,56 +29,44 @@ public class Context implements Serializable {
     public Context(final Context ctx) {
             this.nom = ctx.getNom();
             this.createur = ctx.getCreateur();
-            this.dateDeDerniereModification = ctx.getDateDeDerniereModification();
+            this.dateDeDerModif = ctx.getDateDeDerModif();
+            this.identifiant = ctx.getIdentifiant(); 
     }
 
     
-    public final void setNom(final String n) {
-            this.nom = n;
+    public final void setNom(final String nom) {
+            this.nom = nom;
     }
 
-    
-    public final void setCreateur(final Participant c) {
-            this.createur = c;
-    }
-
-	
-	public String getNom() {		
+    public String getNom() {		
 		return this.nom;
 	}
-	
-	public Date getDateDeDerniereModification() {
-		return this.dateDeDerniereModification;
-	}
-	
-	public Participant getCreateur() {
+    
+    public final void setCreateur(final Participant createur) {
+            this.createur = createur;
+    }
+
+    public Participant getCreateur() {
 		return createur;
 	}
+	
+	
+	public Date getDateDeDerModif() {
+		return this.dateDeDerModif;
+	}
+	
 
-	public void setDateDeDerniereModification(Date dateDeDerniereModification) {
-		this.dateDeDerniereModification = dateDeDerniereModification;
+	public void setDateDeDerModif(final Date dateDeDerModif) {
+		this.dateDeDerModif = dateDeDerModif;
 	}
 	
 	public String getIdentifiant() {
 		return this.identifiant;
 	}
 
-	public void setIdentifiant(String id) {
-		this.identifiant = id;		
+	
+	public void setIdentifiant(final String identifiant) {	
+		this.identifiant=identifiant;
 	}
-
-	
-	public String getIdentifiantServeur() {
-		return this.identifiant;
-	}
-
-	
-	public void setIdentifiantServeur(String idServeur) {	
-		this.identifiant=idServeur;
-	}
-
-	
-	
-	
 
 }

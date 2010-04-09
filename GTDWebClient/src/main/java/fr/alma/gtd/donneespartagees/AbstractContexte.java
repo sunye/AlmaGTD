@@ -34,17 +34,17 @@ public abstract class AbstractContexte extends AbstractObjetServeur implements I
 	 * Le constructeur initialisant le nom.
 	 * @param n Le nom choisi.
 	 */
-	public AbstractContexte(final String n) {
+	public AbstractContexte(final String nom) {
 		super();
-		this.nom = n;
+		this.nom = nom;
 	}
 
 	/**
 	 * Constructeur de recopie d'un contexte.
 	 * @param ctx Contexte a recopier.
 	 */
-	public AbstractContexte(final IContexte ctx) {
-		this.copier(ctx);
+	public AbstractContexte(final IContexte contexte) {
+		this.copier(contexte);
 	}
 
 	/**
@@ -54,17 +54,25 @@ public abstract class AbstractContexte extends AbstractObjetServeur implements I
 	public void copier(final IContexte ctx) {
 		this.nom = ctx.getNom();
 		this.createur = ctx.getCreateur();
-		this.dateDeDerniereModification = ctx.getDateDeDerniereModification();
+		this.dateDeDerModif = ctx.getDateDeDerModif();
 		
 	}
 
 	@Override
-	public final void setNom(final String n) {
-		this.nom = n;
+	public final void setNom(final String nom) {
+		this.nom = nom;
 	}
 
 	@Override
-	public final void setCreateur(final IParticipant c) {
-		this.createur = c;
+	public final void setCreateur(final IParticipant createur) {
+		this.createur = createur;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public IParticipant getCreateur() {
+		return createur;
 	}
 }

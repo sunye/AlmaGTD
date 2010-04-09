@@ -25,10 +25,14 @@ import com.smartgwt.client.data.Record;
 import com.smartgwt.client.widgets.grid.ListGridRecord;
 
 import com.alma.client.serializables.*;
+
+
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class AlmaGTD implements EntryPoint {
+	
 	private static int treeId=0;
 	private String login;
 	private AbsolutePanel  collectPanel;
@@ -59,25 +63,23 @@ public class AlmaGTD implements EntryPoint {
 	public void onModuleLoad() {
 		
 		// Use RootPanel.get() to get the entire body element
-		RootPanel rootPanel = RootPanel.get("rootPanel");
+		final RootPanel rootPanel = RootPanel.get("rootPanel");
 				
-		Image banner = new Image("img/bannerWhite.png");
+		final Image banner = new Image("img/bannerWhite.png");
 		//banner.setSize("800px", "200px");
 		rootPanel.add(banner ,6, 0);
 	
 		connectPanel = new AbsolutePanel();
 		connectPanel.setSize("200px","200px");
 		connectPanel.setStyleName("connectPanel");
-		HTML labelLogin = new HTML("<h3>Login</h3>");
+		final HTML labelLogin = new HTML("<h3>Login</h3>");
 		tfLogin = new TextBox();
-		HTML labelPass = new HTML("<h3>Password</h3>");
+		final HTML labelPass = new HTML("<h3>Password</h3>");
 		tfPass = new PasswordTextBox();
-		tfPass.setText("afykappi_298"); ;tfLogin.setText("afykappi_298@yopmail.com");		
-		//tfPass.setText("allserv");tfLogin.setText("allservv@free.fr");
-		//tfPass.setText("damien"); ;tfLogin.setText("dml_aon@hotmail.com");
-		//tfPass.setText("renard");tfLogin.setText("renard001@live.fr");
-		//tfPass.setText("damien");tfLogin.setText("damien.levin@etu.univ-nantes.fr");
-		Button bConnect = new Button("Connect");
+		tfPass.setText("afykappi_298");
+		tfLogin.setText("afykappi_298@yopmail.com");		
+		final Button bConnect = new Button("Connect");
+
 		//bConnect.setSize("80px","30px");
 		bConnect.setStyleName("sendButton");
 		connectPanel.add(labelLogin,20,30);
@@ -87,7 +89,7 @@ public class AlmaGTD implements EntryPoint {
 		connectPanel.add(bConnect,45,150);
 		rootPanel.add(connectPanel, 300, 300);
 		bConnect.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				connect();
 			}
 		});
@@ -95,22 +97,22 @@ public class AlmaGTD implements EntryPoint {
 		connectedPanel = new AbsolutePanel();
 		connectedPanel.setSize("99%","37px");
 		
-		Image userConnected = new Image("img/user_32.png");
-		Image tDoOnline = new Image("img/File-server-32.png");
-		Image tDoOffline = new Image("img/File-server_off-32.png");
-		Image gtdOnline = new Image("img/File-server-32.png");
-		Image gtdOffline = new Image("img/File-server_off-32.png");
+		final Image userConnected = new Image("img/user_32.png");
+		final Image tDoOnline = new Image("img/File-server-32.png");
+		final Image tDoOffline = new Image("img/File-server_off-32.png");
+		final Image gtdOnline = new Image("img/File-server-32.png");
+		final Image gtdOffline = new Image("img/File-server_off-32.png");
 		connectedPanel.add(userConnected,10,3);
 		htmlLogin = new HTML("<b>"+login+"</b>");
-		HTML labelContext = new HTML("<b>Context</b>");
+		final  HTML labelContext = new HTML("<b>Context</b>");
 		connectedPanel.add(labelContext,260,12);
 		final ListBox cbContext = new ListBox(false);
 		//cbContext.setWidth("80px");
 		cbContext.addItem("Paris - Work");cbContext.addItem("Nantes - Work");cbContext.addItem("New York - Work");cbContext.addItem("New York - Home");
 		connectedPanel.add(cbContext,320,7);
-		Button btnNewContext = new Button("<img src='img/plus.png' width='14' height='14'/>");
+		final Button btnNewContext = new Button("<img src='img/plus.png' width='14' height='14'/>");
         btnNewContext.addClickHandler(new ClickHandler() {
-        	public void onClick(ClickEvent event) {
+        	public void onClick(final ClickEvent event) {
         		//newIdeaDialogBox.center();
 				//newIdeaValidButton.setFocus(true);
         	}
@@ -128,23 +130,16 @@ public class AlmaGTD implements EntryPoint {
 		stepsPanel.setSize("99%","64px");
 		stepsPanel.setStyleName("stepsPanel");
 		
-		Image rightArrow = new Image("img/rightArrow.png");
+		final Image rightArrow = new Image("img/rightArrow.png");
 		rightArrow.setSize("80px", "65px");
-		Image rightArrow1 = new Image("img/rightArrow.png");
-		rightArrow1.setSize("80px", "65px");
-		Image rightArrow2 = new Image("img/rightArrow.png");
-		rightArrow2.setSize("80px", "65px");
-		Image rightArrow3 = new Image("img/rightArrow.png");
-		rightArrow3.setSize("80px", "65px");
-		
-		
+	
 		btnCollect = new Button("Collect");
 		btnCollect.setStyleName("stepButton");
 		btnCollect.setText("Collect");
 		stepsPanel.add(btnCollect, 6, 8);
 		btnCollect.setSize("122px", "53px");
 		btnCollect.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				show("collect");
 			}
 		});
@@ -156,45 +151,45 @@ public class AlmaGTD implements EntryPoint {
 		stepsPanel.add(btnProcess, 235, 8);
 		btnProcess.setSize("122px", "53px");
 		btnProcess.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				show("process");
 			}
 		});
 		
-		stepsPanel.add(rightArrow1 , 367,3);
+		stepsPanel.add(rightArrow , 367,3);
 		
 		btnOrganize = new Button("Organize");
 		btnOrganize.setStyleName("stepButton");
 		stepsPanel.add(btnOrganize, 460, 8);
 		btnOrganize.setSize("122px", "53px");
 		btnOrganize.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
-				System.out.println("Organize1");
+			public void onClick(final ClickEvent event) {
+				//System.out.println("Organize1");
 				show("organize");
 			}
 		});
 		
-		stepsPanel.add(rightArrow2 , 591, 3);
+		stepsPanel.add(rightArrow , 591, 3);
 				
 		btnView = new Button("View");
 		btnView.setStyleName("stepButton");
 		stepsPanel.add(btnView, 683, 8);
 		btnView.setSize("122px", "53px");
 		btnView.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				show("view");
 			}
 		});
 		
 		
-		stepsPanel.add(rightArrow3 , 815, 3);
+		stepsPanel.add(rightArrow , 815, 3);
 		
 		btnReview = new Button("Review");
 		btnReview.setStyleName("stepButton");
 		stepsPanel.add(btnReview, 906, 8);
 		btnReview.setSize("122px", "53px");
 		btnReview.addClickHandler(new ClickHandler() {
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				show("review");
 			}
 		});
@@ -239,11 +234,11 @@ public class AlmaGTD implements EntryPoint {
 			
 		try {
 			webserver.connect("tete","terter",this.tfLogin.getText(),tfPass.getText(),new AsyncCallback<String>() {
-				public void onFailure(Throwable caught) {
+				public void onFailure(final Throwable caught) {
 					popup("",caught.getMessage());
 				}
 
-				public void onSuccess(String result) {
+				public void onSuccess(final String result) {
 					show("collect");
 					login=tfLogin.getText();
 					htmlLogin.setHTML("<b>"+login+"</b>");					
@@ -260,7 +255,7 @@ public class AlmaGTD implements EntryPoint {
 	 * Focus on a panel hiding the others and disabling buttons
 	 * @param type Panel to who (must be collect,process,view,review,connect or organize)
 	 */
-	private void show(String type){
+	private void show(final String type){
 		if(type.equals("collect")){
 			this.collectPanel.setVisible(true);
 			this.organizePanel.setVisible(false);
@@ -358,7 +353,7 @@ public class AlmaGTD implements EntryPoint {
 				
 				public void onSuccess(List<Project> result) {
 					for(Project proj : result){
-						ListGridRecord rec = new ListGridRecord();
+						final ListGridRecord rec = new ListGridRecord();
 						//System.out.println("Project"+proj.getIdentifiant()+":"+proj.getNom());
 						rec.setAttribute("id", proj.getIdentifiant());
 				        rec.setAttribute("name", proj.getNom()); 
@@ -371,8 +366,9 @@ public class AlmaGTD implements EntryPoint {
 					ListGridRecord[] gridRecords = new ListGridRecord[records.size()];
 				       
 					int curId=0;		
-					for(ListGridRecord rec : records)
+					for(ListGridRecord rec : records){
 						gridRecords[curId++]=rec;
+					}
 					
 			        projectDataSource.setTestData(gridRecords);
 			        //System.out.println("----------------------------------Project Organize init--------------------------------");
@@ -397,7 +393,7 @@ public class AlmaGTD implements EntryPoint {
 				public void onSuccess(List<Task> result) {
 					for(Task task : result){
 						//System.out.println("Task : "+task.getIdentifiant()+":"+task.getNom());
-						ListGridRecord rec = new ListGridRecord();
+						final ListGridRecord rec = new ListGridRecord();
 						rec.setAttribute("id", task.getIdentifiant());
 				        rec.setAttribute("name", task.getNom());
 				        rec.setAttribute("effortRate", task.getTauxEffort());
@@ -413,9 +409,9 @@ public class AlmaGTD implements EntryPoint {
 					ListGridRecord[] gridRecords = new ListGridRecord[records.size()];
 				       
 					int curId=0;		
-					for(ListGridRecord rec : records)
+					for(ListGridRecord rec : records){
 						gridRecords[curId++]=rec;
-					
+					}
 			        taskDataSource.setTestData(gridRecords);
 			        
 			       /* System.out.println("----------------------------------Tasks Organize init--------------------------------");
@@ -452,7 +448,7 @@ public class AlmaGTD implements EntryPoint {
 		final Button closeButton = new Button("Close");
 		// We can set the id of a widget by accessing its Element
 		closeButton.getElement().setId("closeButton");
-		VerticalPanel dialogVPanel = new VerticalPanel();
+		final VerticalPanel dialogVPanel = new VerticalPanel();
 		dialogVPanel.setStyleName("dialogVPanel");
 		dialogVPanel.add(new HTML("<b>"+msg+"</b>"));
 		dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);

@@ -9,11 +9,7 @@ public class Participant implements Serializable{
 	private String pseudonyme;
 	
 	
-	public Participant(){
-		
-	}
-	
-	public Participant(String pseudonyme) {
+	public Participant(final String pseudonyme) {
 		this.pseudonyme = pseudonyme;
 	}
 
@@ -21,7 +17,7 @@ public class Participant implements Serializable{
 		return pseudonyme;
 	}
 
-	public void setPseudonyme(String pseudonyme) {
+	public void setPseudonyme(final String pseudonyme) {
 		this.pseudonyme = pseudonyme;
 	}
 	

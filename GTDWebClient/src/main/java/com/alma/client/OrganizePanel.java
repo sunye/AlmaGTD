@@ -1,14 +1,9 @@
 package com.alma.client;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 
-import com.alma.client.serializables.Project;
-import com.alma.client.serializables.Task;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -17,7 +12,6 @@ import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
 import com.gwtext.client.widgets.tree.event.TreeNodeListener;
 import com.smartgwt.client.core.DataClass;
-import com.smartgwt.client.data.Record;
 import com.smartgwt.client.widgets.Label;
 import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.grid.ListGrid;
@@ -30,14 +24,15 @@ import com.gwtext.client.data.Node;
 import com.gwtext.client.data.NodeTraversalCallback;
 import com.gwtext.client.data.Tree;
 
+
 public class OrganizePanel extends HorizontalPanel{
-	private AlmaGTD agtdgui;
-	private HashMap<String,Integer> taskKeyToRecid=new HashMap<String,Integer>();
-	private HashMap<String,Integer> projKeyToRecid=new HashMap<String,Integer>();
-	private HashMap<Node,DataClass> nodeDt = new HashMap<Node,DataClass>();
+	private final AlmaGTD agtdgui;
+	private final HashMap<String,Integer> taskKeyToRecid=new HashMap<String,Integer>();
+	private final HashMap<String,Integer> projKeyToRecid=new HashMap<String,Integer>();
+	private final HashMap<Node,DataClass> nodeDt = new HashMap<Node,DataClass>();
 	
 	private final TreePanel treePanel;
-	private TreeNode root;
+	private final TreeNode root;
 	private final ListGrid projectsListGrid = new ListGrid();
 	private final ListGrid tasksListGrid = new ListGrid();
 	private final DynamicForm taskForm ;
@@ -47,13 +42,13 @@ public class OrganizePanel extends HorizontalPanel{
 	private final ProjectsLocalDS projectDataSource = ProjectsLocalDS.getInstance();
 	private final TasksLocalDS taskDataSource = TasksLocalDS.getInstance();
 	
-	public OrganizePanel(AlmaGTD agtdgui){	
+	public OrganizePanel(final AlmaGTD agtdgui){	
 		super();
 		this.agtdgui = agtdgui;
 		this.addStyleName("panel");
 		this.setSize("99%", "70%");		
 				
-		VerticalPanel col1 = new VerticalPanel();		
+		final VerticalPanel col1 = new VerticalPanel();		
 		//create source tasks/projects tree  
         treePanel = new TreePanel();  
         treePanel.setTitle("Tasks and Projects");  
@@ -74,14 +69,14 @@ public class OrganizePanel extends HorizontalPanel{
         
         /* ******************************** PANEL INFO TASK ********************************/
 	    		
-        HorizontalPanel formPanel = new HorizontalPanel();
+        final HorizontalPanel formPanel = new HorizontalPanel();
         formPanel.setSize("100%", "400px");
         //formPanel.addStyleName("panel");
-		VLayout layoutOrganize = new VLayout(15);  
+        final VLayout layoutOrganize = new VLayout(15);  
 		/*layoutOrganize.setWidth("45%");
 		layoutOrganize.setHeight("400px");*/
 		
-        Label labelOrganize = new Label();  
+        final Label labelOrganize = new Label();  
         labelOrganize.setHeight(10);  
         labelOrganize.setWidth("150px");  
         labelOrganize.setContents("Current Task");  
@@ -100,7 +95,7 @@ public class OrganizePanel extends HorizontalPanel{
         tasksListGrid.setDataSource(taskDataSource);  
         tasksListGrid.setAutoFetchData(true);  
         tasksListGrid.addRecordClickHandler(new RecordClickHandler() {  
-            public void onRecordClick(RecordClickEvent event) {  
+            public void onRecordClick(final RecordClickEvent event) {  
                 taskForm.reset();  
                 taskForm.editSelectedData(tasksListGrid);
             }  
@@ -113,10 +108,10 @@ public class OrganizePanel extends HorizontalPanel{
         
         /* ******************************** PANEL PROJECT CREATION  ********************************/
 	    
-	    VLayout layoutProjects = new VLayout(15);  
+        final VLayout layoutProjects = new VLayout(15);  
         layoutProjects.setWidth("45%");
         
-        Label label = new Label();  
+        final Label label = new Label();  
         label.setHeight(10);  
         label.setWidth100();  
         label.setContents("Current Projects List");
@@ -136,7 +131,7 @@ public class OrganizePanel extends HorizontalPanel{
         projectsListGrid.setDataSource(projectDataSource);  
         projectsListGrid.setAutoFetchData(true);  
         projectsListGrid.addRecordClickHandler(new RecordClickHandler() {  
-            public void onRecordClick(RecordClickEvent event) {  
+            public void onRecordClick(final RecordClickEvent event) {  
                 projectForm.reset();  
                 projectForm.editSelectedData(projectsListGrid);
             }  
@@ -144,19 +139,19 @@ public class OrganizePanel extends HorizontalPanel{
         layoutProjects.addMember(projectsListGrid);  
         layoutProjects.addMember(projectForm);  
   
-        Button buttonSave = new Button("Save");  
+        final Button buttonSave = new Button("Save");  
         buttonSave.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {  
+			public void onClick(final ClickEvent event) {  
                 projectForm.saveData();
                 projectDataSource.saveData();
                 init();
             }  
         });
         
-        Button buttonAdd = new Button("Add");  
+        final Button buttonAdd = new Button("Add");  
         buttonAdd.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {
-		        ListGridRecord rec = projectDataSource.getSampleRec();			        	              
+			public void onClick(final ClickEvent event) {
+				final ListGridRecord rec = projectDataSource.getSampleRec();			        	              
 		        projectsListGrid.addData(rec);
 		        projectsListGrid.selectRecord(rec);
 		        projectForm.editSelectedData(projectsListGrid);
@@ -164,16 +159,16 @@ public class OrganizePanel extends HorizontalPanel{
             }  
         });
         
-        Button buttonDel = new Button("Del");     
+        final Button buttonDel = new Button("Del");     
         buttonDel.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				projectsListGrid.removeSelectedData();
 		        projectForm.saveData();
 		        init();
 			}  
         });
            
-        HorizontalPanel cmdPanel = new HorizontalPanel();
+        final HorizontalPanel cmdPanel = new HorizontalPanel();
         cmdPanel.add(buttonSave);
         cmdPanel.add(buttonAdd);
         cmdPanel.add(buttonDel);
@@ -191,7 +186,7 @@ public class OrganizePanel extends HorizontalPanel{
 	}
 	
 	@Override
-	public void setVisible(boolean visible){
+	public void setVisible(final boolean visible){
 		super.setVisible(visible);
 		
 		if(visible){
@@ -209,23 +204,23 @@ public class OrganizePanel extends HorizontalPanel{
 		projListId=0;
 		
 		//Remove all old nodes
-		for(Node n : root.getChildNodes()) n.remove();
+		for(Node node : root.getChildNodes()) {node.remove();}
         		
-        for(final DataClass dt : projectDataSource.getTestData()){        	        	        	
+        for(final DataClass data : projectDataSource.getTestData()){        	        	        	
         	//node creation with attributes from datasource
-        	TreeNode curNode = dataClassToNode(dt,"project");        	
+        	final TreeNode curNode = dataClassToNode(data,"project");        	
             //If node has'nt project, adding it to root	
         	
-        	System.out.println("Project tree "+dt.getAttribute("name"));
+        	System.out.println("Project tree "+data.getAttribute("name"));
         	
-        	if(dt.getAttribute("project")==null  || dt.getAttribute("project").equals("")){
+        	if(data.getAttribute("project")== null  || data.getAttribute("project").equals("")){
         		root.appendChild(curNode);
         	}
         	//Else, seeking correct owner
         	else{
-        		Node projectNode = root.findChildBy(new NodeTraversalCallback() {
-        			public boolean execute(Node node) {
-                       return node.getAttribute("id").equals(dt.getAttribute("projectId"));
+        		final Node projectNode = root.findChildBy(new NodeTraversalCallback() {
+        			public boolean execute(final Node node) {
+                       return node.getAttribute("id").equals(data.getAttribute("projectId"));
                     }
                 });
                 if (projectNode != null) {
@@ -240,15 +235,15 @@ public class OrganizePanel extends HorizontalPanel{
         	
         	System.out.println("Task tree : "+dt.getAttribute("name"));
         	//node creation with attributes from datasource
-        	TreeNode curNode = dataClassToNode(dt,"task");        	
+        	final TreeNode curNode = dataClassToNode(dt,"task");        	
         	//If node has'nt project, adding it to root	
         	if(dt.getAttribute("projectId")==null  || dt.getAttribute("projectId").equals("")){
         		root.appendChild(curNode);
         	}
         	//Else, seeking correct owner
         	else{
-        		Node projectNode = root.findChildBy(new NodeTraversalCallback() {
-        			public boolean execute(Node node) {
+        		final Node projectNode = root.findChildBy(new NodeTraversalCallback() {
+        			public boolean execute(final Node node) {
                        return node.getAttribute("id").equals(dt.getAttribute("projectId"));
                     }
                 });
@@ -274,10 +269,10 @@ public class OrganizePanel extends HorizontalPanel{
 	 * Adding a listener on the node for click and move
 	 * @param node : node on which adding listener.
 	 */
-	private void addNodeClickListener(TreeNode node) {
+	private void addNodeClickListener(final TreeNode node) {
 		     node.addListener(new TreeNodeListener() {
         	 @Override
-        	 public void onClick(Node node, EventObject e) {
+        	 public void onClick(final Node node, final EventObject event) {
         		 
         		 if(node.getAttribute("type").equals("task")){
         			 projectForm.clearValues();        			 
@@ -296,51 +291,65 @@ public class OrganizePanel extends HorizontalPanel{
         	 }
 
 			@Override
-			public boolean doBeforeChildrenRendered(Node node) {return true;}
+			public boolean doBeforeChildrenRendered(final Node node) {return true;}
 
 			@Override
-			public boolean doBeforeClick(Node node, EventObject e) {return true;}
+			public boolean doBeforeClick(final Node node, final EventObject event) {return true;}
 
 			@Override
-			public boolean doBeforeCollapse(Node node, boolean deep,boolean anim) {return true;}
+			public boolean doBeforeCollapse(final Node node, final boolean deep,final boolean anim) {return true;}
 
 			@Override
-			public boolean doBeforeExpand(Node node, boolean deep, boolean anim) {return true;}
+			public boolean doBeforeExpand(final Node node, final boolean deep, final boolean anim) {return true;}
 
 			@Override
-			public void onCheckChanged(Node node, boolean checked) {}
+			public void onCheckChanged(final Node node, final boolean checked) {
+				//TODO
+			}
 
 			@Override
-			public void onCollapse(Node node) {}
+			public void onCollapse(final Node node) {
+				//TODO
+			}
 
 			@Override
-			public void onContextMenu(Node node, EventObject e) {}
+			public void onContextMenu(final Node node, final EventObject event) {
+				//TODO
+			}
 
 			@Override
-			public void onDblClick(Node node, EventObject e) {}
+			public void onDblClick(final Node node, final EventObject event) {
+				//TODO
+			}
 
 			@Override
-			public void onDisabledChange(Node node, boolean disabled) {}
+			public void onDisabledChange(final Node node, final boolean disabled) {
+				//TODO
+			}
 
 			@Override
-			public void onExpand(Node node) {}
+			public void onExpand(final Node node) {
+				//TODO
+			}
 
 			@Override
-			public void onTextChange(Node node, String text, String oldText) {}
+			public void onTextChange(final Node node, final String text, final String oldText) {
+				//TODO
+			}
 
 			@Override
-			public boolean doBeforeAppend(Tree tree, Node self, Node node) {return true;}
+			public boolean doBeforeAppend(final Tree tree, final Node self, final Node node) {return true;}
 
 			@Override
-			public boolean doBeforeInsert(Tree tree, Node self, Node node,Node refNode) {return true;}
+			public final boolean doBeforeInsert(final Tree tree, final Node self, final Node node,final Node refNode) {return true;}
 
 			@Override
-			public boolean doBeforeMove(Tree tree, Node self, Node oldParent,Node newParent, int index) {
+			public boolean doBeforeMove(final Tree tree, final Node self, final Node oldParent,final Node newParent, final int index) {
 				//If new parent is root, project owner attribute set to "".
 				if(newParent.equals(root)){
 					nodeDt.get(self).setAttribute("projectId", "");
 					nodeDt.get(self).setAttribute("project", "");					
-					return true;
+					return true; 
 				}
 				//If new parent is a project, project owner attribute set to its id.				
 				else if (newParent.getAttribute("type").equals("project")){
@@ -367,49 +376,57 @@ public class OrganizePanel extends HorizontalPanel{
 			}
 
 			@Override
-			public boolean doBeforeRemove(Tree tree, Node self, Node node) {return true;}
+			public final boolean doBeforeRemove(final Tree tree, final Node self, final Node node) {return true;}
 
 			@Override
-			public void onAppend(Tree tree, Node self, Node node, int index) {}
+			public final void onAppend(final Tree tree, final Node self, final Node node, final int index) {
+				//TODO
+			}
 
 			@Override
-			public void onInsert(Tree tree, Node self, Node node, Node refNode) {}
+			public final void onInsert(final Tree tree, final Node self, final Node node, final Node refNode) {
+				//TODO
+			}
 			
 			@Override
-			public void onMove(Tree tree, Node self, Node oldParent,Node newParent, int index) {}
+			public void onMove(final Tree tree, final Node self, final Node oldParent,final Node newParent, final int index) {
+				//TODO
+			}
 
 			@Override
-			public void onRemove(Tree tree, Node self, Node node) {}			
+			public void onRemove(final Tree tree, final Node self, final Node node) {
+				//TODO
+			}			
          });
          
    }
 	
 	/**
 	 * Create a node from a dataclass,knowing his type (task or project)
-	 * @param dt : dataclass containing task or project attribute
+	 * @param data : dataclass containing task or project attribute
 	 * @param type : project or task
 	 * @return Node with task or project attributes.
 	 */
-	private TreeNode dataClassToNode(DataClass dt,String type){
-		TreeNode node = new TreeNode(dt.getAttribute("name"));
+	private TreeNode dataClassToNode(final DataClass data,final String type){
+		final TreeNode node = new TreeNode(data.getAttribute("name"));
 		node.setAttribute("type",type);
 		
 		if(type.equals("task")){
 			node.setLeaf(true);
 			node.setIcon("img/Writing-Journal-64.png");
-			System.out.println("Create task : "+dt.getAttribute("id"));
-			taskKeyToRecid.put(dt.getAttribute("id"), taskListId++);
+			System.out.println("Create task : "+data.getAttribute("id"));
+			taskKeyToRecid.put(data.getAttribute("id"), taskListId++);
 		}			
 		else{
 			node.setIcon("img/case1.png");
-			projKeyToRecid.put(dt.getAttribute("id"), projListId++);
+			projKeyToRecid.put(data.getAttribute("id"), projListId++);
 		}	
 		
-    	for(String attr : dt.getAttributes()){
-    		node.setAttribute(attr,dt.getAttribute(attr));
+    	for(String attr : data.getAttributes()){
+    		node.setAttribute(attr,data.getAttribute(attr));
     	}
     	
-    	nodeDt.put(node, dt);
+    	nodeDt.put(node, data);
     	
     	return node;
 	}

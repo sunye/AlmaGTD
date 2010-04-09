@@ -69,7 +69,7 @@ public class Task implements Serializable {
     /**
      * La date de derniere modification.
      */
-    protected Date dateDeDerniereModification;
+    protected Date dateDeDerModif;
     
     /**
      * Le contexte.
@@ -101,26 +101,18 @@ public class Task implements Serializable {
      */
     protected List<Task> tachesAnterieures;
     
-    /**
-     * Initialisation des variables.
-     */
-    {
+	public Task () {
             this.priorite = 0;
             this.tauxEffort = 0;
             this.dateDebut = new Date();
             this.dateFin = new Date();
             this.dansLaPoubelle = false;
-            this.dateDeDerniereModification = new Date();
+            this.dateDeDerModif = new Date();
             this.listeDesTags = new ArrayList<Tag>();
             this.listeDesURLs = new ArrayList<String>();
             this.contacts = new ArrayList<Contact>();
     }
     
-    /**
-     * Le constructeur par defaut.
-     */
-    public Task() {}
-
     /**
      * Le constructeur avec initialisation du nom, de la priorite, du taux d'effort, du contexte et du createur.
      * @param n Le nom.
@@ -129,13 +121,13 @@ public class Task implements Serializable {
      * @param c Le contexte.
      * @param cr Le createur de la tache.
      */
-    public Task(final String i,final String n, final int p, final int effort, final Context c, final Participant cr) {
-            this.identifiant = i;
-    		this.nom = n;
-            this.priorite = p;
+    public Task(final String identifiant,final String nom, final int priorite, final int effort, final Context contexte, final Participant createur) {
+            this.identifiant = identifiant;
+    		this.nom = nom;
+            this.priorite = priorite;
             this.tauxEffort = effort;
-            this.contexte = c;
-            this.createur = cr;
+            this.contexte = contexte;
+            this.createur = createur;
     }   
     
     /**
@@ -146,47 +138,47 @@ public class Task implements Serializable {
      * @param c Le contexte.
      * @param cr Le createur de la tache.
      */
-    public Task(final String n, final int p, final int effort, final Context c, final Participant cr) {
-            this.nom = n;
-            this.priorite = p;
+    public Task(final String nom, final int priorite, final int effort, final Context contexte, final Participant createur) {
+            this.nom = nom;
+            this.priorite = priorite;
             this.tauxEffort = effort;
-            this.contexte = c;
-            this.createur = cr;
+            this.contexte = contexte;
+            this.createur = createur;
     }
     
     /**
      * Constructeur de recopie d'une tache.
      * @param t Tache a recopier
      */
-    public Task(final Task t) {
-            this.nom = t.getNom();
-            this.priorite =  t.getPriorite();
-            this.tauxEffort = t.getTauxEffort();
-            this.dateDebut = t.getDateDebut();
-            this.dateFin = t.getDateFin();
-            this.dansLaPoubelle = t.isDansLaPoubelle();
+    public Task(final Task task) {
+            this.nom = task.getNom();
+            this.priorite =  task.getPriorite();
+            this.tauxEffort = task.getTauxEffort();
+            this.dateDebut = task.getDateDebut();
+            this.dateFin = task.getDateFin();
+            this.dansLaPoubelle = task.isDansLaPoubelle();
 
-            this.createur = t.getCreateur();
-            this.participant = t.getParticipant();
-            this.contexte = t.getContexte();
-            this.listeDesTags = t.getListeDeTags();
-            this.listeDesURLs = t.getListeDesURLs();
-            this.projetConteneur = t.getProjetConteneur();
+            this.createur =task.getCreateur();
+            this.participant = task.getParticipant();
+            this.contexte = task.getContexte();
+            this.listeDesTags = task.getListeDeTags();
+            this.listeDesURLs = task.getListeDesURLs();
+            this.projetConteneur = task.getProjetConteneur();
     }
 
     
     public final void archiver() {
-            //TODO
+    	//TODO
     }
     
     
     public final void mettreALaPoubelle() {
-            //TODO
+    	//TODO
     }
     
     
-    public final  void restaurer() {
-            //TODO
+    public void restaurer() {
+    	//TODO
     }
 
     
@@ -195,8 +187,8 @@ public class Task implements Serializable {
     }
 
     
-    public final void setNom(final String n) {
-            this.nom = n;
+    public final void setNom(final String nom) {
+            this.nom = nom;
     }
 
     
@@ -205,8 +197,8 @@ public class Task implements Serializable {
     }
 
     
-    public final void setPriorite(final int p) {
-            this.priorite = p;
+    public final void setPriorite(final int priorite) {
+            this.priorite = priorite;
     }
 
     
@@ -220,13 +212,13 @@ public class Task implements Serializable {
     }
 
     
-    public final void setAvancement(final Avancement a) {
-            this.avancement = a;
+    public final void setAvancement(final Avancement avancement) {
+            this.avancement = avancement;
     }
 
     
-    public final void setFrequence(final Frequence f) {
-            this.frequence = f;
+    public final void setFrequence(final Frequence frequence) {
+            this.frequence = frequence;
     }
 
     
@@ -245,18 +237,18 @@ public class Task implements Serializable {
     }
 
     
-    public final void setCreateur(final Participant c) {
-            this.createur = c;
+    public final void setCreateur(final Participant createur) {
+            this.createur = createur;
     }
 
     
-    public final void setParticipant(final Participant p) {
-            this.participant = p;
+    public final void setParticipant(final Participant participant) {
+            this.participant = participant;
     }
 
     
-    public final void setContexte(final Context c) {
-            this.contexte = c;
+    public final void setContexte(final Context contexte) {
+            this.contexte = contexte;
     }
 
     
@@ -306,7 +298,6 @@ public class Task implements Serializable {
 
 	
 	public Date getDateFin() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -347,13 +338,12 @@ public class Task implements Serializable {
 
 	
 	public boolean isDansLaPoubelle() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	
-	public Date getDateDeDerniereModification() {
-		return dateDeDerniereModification;
+	public Date getDateDeDerModif() {
+		return dateDeDerModif;
 	}
 
 	public String getIdentifiant() {
@@ -362,13 +352,13 @@ public class Task implements Serializable {
 
 
 	
-	public void setDateDeDerniereModification(Date dateDerniereModification) {
-		this.dateDeDerniereModification = dateDerniereModification;
+	public void setDateDeDerModif(final Date dateDerModif) {
+		this.dateDeDerModif = dateDerModif;
 		
 	}
 
-	public void setIdentifiant(String id) {
-		this.identifiant = id;		
+	public void setIdentifiant(final String ident) {
+		this.identifiant = ident;		
 	}
 	
 	
@@ -382,7 +372,33 @@ public class Task implements Serializable {
 	public String getIdentifiantServeur() {	return null;}
 	
 	
-	public void setIdentifiantServeur(String idServeur) {}
+	public void setIdentifiantServeur(final String idServeur) {
+		//TODO
+	}
+	
+    public List<Task> getTachesAnterieures() {
+		return tachesAnterieures;
+	}
+
+	public void setTachesAnterieures(final List<Task> tachesAnterieures) {
+		this.tachesAnterieures = tachesAnterieures;
+	}
+	
+	public List<Tag> getListeDesTags() {
+		return listeDesTags;
+	}
+
+	public void setListeDesTags(final List<Tag> listeDesTags) {
+		this.listeDesTags = listeDesTags;
+	}
+
+	public List<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(final List<Contact> contacts) {
+		this.contacts = contacts;
+	}
 }
 
 

@@ -1,5 +1,6 @@
 package com.alma.server.datamanager;
 
+import java.io.IOException;
 import java.util.List;
 
 import fr.alma.gtd.donneespartagees.IContexte;
@@ -20,33 +21,33 @@ public interface DataManagerNoSync {
 	 * @return La liste de contextes.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public List<IContexte> getContexts(Session session) throws Exception;
+	public List<IContexte> getContexts(final Session session) throws IOException;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste d'idees.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<IIdee> getIdeas(Session session) throws Exception;
+    public List<IIdee> getIdeas(final Session session) throws IOException;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de notes.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<ITag> getNotes(Session session) throws Exception;
+    public List<ITag> getNotes(final Session session) throws IOException;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de projets.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<IProjet> getProjects(Session session) throws Exception;
+    public List<IProjet> getProjects(final Session session) throws IOException;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de taches.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<ITache> getTasks(Session session) throws Exception;
+    public List<ITache> getTasks(final Session session) throws IOException;
 }

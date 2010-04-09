@@ -19,9 +19,8 @@ public class TestDataManager extends TestCase {
 		
 		//Session session = new Session("", "", "allservv@free.fr", "allserv");
 		//Session session = new Session("", "", "dml_aon@hotmail.com", "damien");
-		Session session = new Session("", "", "renard001@live.fr", "renard");
-		//Session session = new Session("", "", "damien.levin@etu.univ-nantes.fr", "damien");
-
+		//Session session = new Session("", "", "renard001@live.fr", "renard");
+		Session session = new Session("sefg", "wdvf", "damien.levin@etu.univ-nantes.fr", "damien");
 		
 		
 		Server toodleDoServer = new ServerToodleDoImp();
@@ -29,7 +28,7 @@ public class TestDataManager extends TestCase {
 		toodleDoServer.connect(session);
 		
 		
-		/*ProjetImpl projetA =  new ProjetImpl("FolderA",null,null);
+		ProjetImpl projetA =  new ProjetImpl("FolderA",null,null);
 		ProjetImpl projetB =  new ProjetImpl("FolderB",null,null);
 		ProjetImpl projetC =  new ProjetImpl("FolderC",null,null);
 
@@ -55,8 +54,6 @@ public class TestDataManager extends TestCase {
 		toodleDoServer.createTask(session, tacheC);
 		toodleDoServer.delTask(session, tacheC);
 
-		
-		*/
 
 		System.out.println("Liste des Projets");
 		for (IProjet projet : toodleDoServer.getProjects(session)) {

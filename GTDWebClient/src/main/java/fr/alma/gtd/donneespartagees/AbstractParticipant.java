@@ -19,15 +19,12 @@ public abstract class AbstractParticipant extends AbstractObjetServeur implement
 	 */
 	protected String pseudonyme;
 	
-	{
-		this.dateDeDerniereModification = new Date();
-	}
-	
 	/**
 	 * Le constructeur par defaut.
 	 */
 	public AbstractParticipant() {
 		super();
+		this.dateDeDerModif = new Date();
 	}
 	
 	/**
@@ -43,23 +40,27 @@ public abstract class AbstractParticipant extends AbstractObjetServeur implement
 	 * Constructeur de recopie d'un participant.
 	 * @param p Participant a recopier.
 	 */
-	public AbstractParticipant(final IParticipant p) {
-		this.copier(p);	
+	public AbstractParticipant(final IParticipant particip) {
+		this.copier(particip);	
 	}
 	
 	/**
 	 * Copie d'un participant.
 	 * @param p Participant a recopier.
 	 */
-	public void copier(final IParticipant p){
-		this.pseudonyme = p.getPseudonyme();
-		this.dateDeDerniereModification = p.getDateDeDerniereModification();
-		this.identifiantServeur = p.getIdentifiantServeur();
+	public void copier(final IParticipant particip){
+		this.pseudonyme = particip.getPseudonyme();
+		this.dateDeDerModif = particip.getDateDeDerModif();
+		this.identServeur = particip.getIdentifiantServeur();
 	}
 
 	@Override
 	public final void setPseudonyme(final String pseudo) {
 		this.pseudonyme = pseudo;
+	}
+
+	public String getPseudonyme() {
+		return pseudonyme;
 	}
 	
 }

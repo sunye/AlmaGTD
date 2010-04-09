@@ -10,11 +10,7 @@ public class Contact implements Serializable{
 	private String adresse;
 	private String telephone;
 	
-	public Contact(){
-		
-	}
-	
-	public Contact(String nom, String email, String adresse, String telephone) {
+	public Contact(final String nom, final String email, final String adresse, final String telephone) {
 		super();
 		this.nom = nom;
 		this.email = email;
@@ -26,25 +22,25 @@ public class Contact implements Serializable{
 	public String getNom() {
 		return nom;
 	}
-	public void setNom(String nom) {
+	public void setNom(final String nom) {
 		this.nom = nom;
 	}
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 	public String getAdresse() {
 		return adresse;
 	}
-	public void setAdresse(String adresse) {
+	public void setAdresse(final String adresse) {
 		this.adresse = adresse;
 	}
 	public String getTelephone() {
 		return telephone;
 	}
-	public void setTelephone(String telephone) {
+	public void setTelephone(final String telephone) {
 		this.telephone = telephone;
 	}
 	

@@ -12,7 +12,7 @@ import java.util.Date;
 public interface IObjetServeur extends Serializable {
 
 	/**
-	 * @return L'identifiantServeur.
+	 * @return L'identServeur.
 	 */
 	String getIdentifiantServeur();
 
@@ -27,8 +27,8 @@ public interface IObjetServeur extends Serializable {
 	Date getDateDeDerniereModification();
 
 	/**
-	 * @param dateDerniereModification La nouvelle date de derniere modification.
+	 * @param dateDerniereModif La nouvelle date de derniere modification.
 	 */
-	void setDateDeDerniereModification(final Date dateDerniereModification);
+	void setDateDeDerModif(final Date dateDerniereModif);
 
 }

@@ -9,7 +9,7 @@ public class Tag implements Serializable{
 	private Participant createur;
 	
 	
-	public Tag(String nom,Participant createur){
+	public Tag(final String nom,final Participant createur){
 		this.nom=nom;
 		this.createur=createur;
 	}
@@ -25,8 +25,8 @@ public class Tag implements Serializable{
 	/**
 	 * @param n La nouvelle valeur du nom.
 	 */
-	public void setNom(final String n){
-		this.nom=n;
+	public void setNom(final String nom){
+		this.nom=nom;
 	}
 
 	/**
@@ -39,8 +39,8 @@ public class Tag implements Serializable{
 	/**
 	 * @param c La nouvelle valeur du createur.
 	 */
-	public void setCreateur(final Participant c){
-		this.createur=c;;
+	public void setCreateur(final Participant createur){
+		this.createur=createur;
 	}
 
 }

@@ -21,9 +21,8 @@
  */  
    
   
- package com.alma.client; 
-  
-import com.google.gwt.core.client.EntryPoint;  
+package com.alma.client; 
+ 
 import com.gwtext.client.core.Function;  
 import com.gwtext.client.data.*;  
 import com.gwtext.client.widgets.MessageBox;  
@@ -42,58 +41,58 @@ import com.gwtext.client.widgets.portal.Portlet;
 public class PortalSample {  
   
     public static Panel getPanel() {  
-        Panel panel = new Panel();  
+    	final Panel panel = new Panel();  
         panel.setBorder(false);  
         panel.setPaddings(15);  
         panel.setLayout(new FitLayout());  
   
         //create some shared tools  
-        Tool gear = new Tool(Tool.GEAR, new Function() {  
+        final Tool gear = new Tool(Tool.GEAR, new Function() {  
             public void execute() {  
                 MessageBox.alert("Message", "The Settings Tool was clicked");  
             }  
         });  
   
-        Tool close = new Tool(Tool.CLOSE, new Function() {  
+        final Tool close = new Tool(Tool.CLOSE, new Function() {  
             public void execute() {  
                 MessageBox.alert("Message", "The Settings Tool was clicked");  
             }  
         });  
   
-        Tool[] tools = new Tool[]{gear, close};  
+        final Tool[] tools = new Tool[]{gear, close};  
   
         //create a portal  
-        Portal portal = new Portal();  
+        final Portal portal = new Portal();  
   
         //create portal columns  
-        PortalColumn firstCol = new PortalColumn();  
+        final PortalColumn firstCol = new PortalColumn();  
         firstCol.setPaddings(10, 10, 0, 10);  
   
         //add portlets to portal columns  
-        Portlet gridPortlet = new Portlet();  
+        final Portlet gridPortlet = new Portlet();  
         gridPortlet.setTitle("Grid in a Portlet");  
         gridPortlet.setLayout(new FitLayout());  
         gridPortlet.setTools(tools);  
-        GridPanel grid = getSampleGrid();  
+        final GridPanel grid = getSampleGrid();  
         grid.setFrame(false);  
         gridPortlet.add(grid);  
         firstCol.add(gridPortlet);  
   
-        Portlet portlet = new Portlet("Another Panel 1", getShortBogusMarkup(), tools);  
+        final Portlet portlet = new Portlet("Another Panel 1", getShortBogusMarkup(), tools);  
         firstCol.add(portlet);  
   
         //add portal column to portal  
         portal.add(firstCol, new ColumnLayoutData(.33));  
   
         //another column  
-        PortalColumn secondCol = new PortalColumn();  
+        final PortalColumn secondCol = new PortalColumn();  
         secondCol.setPaddings(10, 10, 0, 10);  
         secondCol.add(new Portlet("Panel 2", getShortBogusMarkup(), tools));  
         secondCol.add(new Portlet("Another Panel 2", getShortBogusMarkup(), tools));  
         portal.add(secondCol, new ColumnLayoutData(.33));  
   
         //third column  
-        PortalColumn thirdCol = new PortalColumn();  
+        final PortalColumn thirdCol = new PortalColumn();  
         thirdCol.setPaddings(10, 10, 0, 10);  
         thirdCol.add(new Portlet("Panel 3", getShortBogusMarkup(), tools));  
         thirdCol.add(new Portlet("Another Panel 3", getShortBogusMarkup(), tools));  
@@ -101,7 +100,7 @@ public class PortalSample {
   
         panel.add(portal);  
   
-        Viewport viewport = new Viewport(panel);  
+        final  Viewport viewport = new Viewport(panel);  
         return panel;
     }  
   
@@ -110,7 +109,7 @@ public class PortalSample {
     }  
   
     private static GridPanel getSampleGrid() {  
-        RecordDef recordDef = new RecordDef(  
+    	final RecordDef recordDef = new RecordDef(  
                 new FieldDef[]{  
                         new StringFieldDef("company"),  
                         new FloatFieldDef("price"),  
@@ -122,25 +121,25 @@ public class PortalSample {
                 }  
         );  
   
-        GridPanel grid = new GridPanel();  
+    	final GridPanel grid = new GridPanel();  
   
-        Object[][] data = getCompanyData();  
-        MemoryProxy proxy = new MemoryProxy(data);  
+    	final Object[][] data = getCompanyData();  
+    	final MemoryProxy proxy = new MemoryProxy(data);  
   
-        ArrayReader reader = new ArrayReader(recordDef);  
-        Store store = new Store(proxy, reader);  
+    	final ArrayReader reader = new ArrayReader(recordDef);  
+    	final Store store = new Store(proxy, reader);  
         store.load();  
         grid.setStore(store);  
   
   
-        ColumnConfig[] columns = new ColumnConfig[]{  
+        final ColumnConfig[] columns = new ColumnConfig[]{  
                 //column ID is company which is later used in setAutoExpandColumn  
                 new ColumnConfig("Company", "company", 160, true, null, "company"),  
                 new ColumnConfig("Change", "change", 45),  
                 new ColumnConfig("% Change", "pctChange", 65)  
         };  
   
-        ColumnModel columnModel = new ColumnModel(columns);  
+        final ColumnModel columnModel = new ColumnModel(columns);  
         grid.setColumnModel(columnModel);  
   
         grid.setFrame(true);  

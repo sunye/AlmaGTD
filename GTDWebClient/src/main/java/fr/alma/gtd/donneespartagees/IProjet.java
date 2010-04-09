@@ -14,13 +14,13 @@ public interface IProjet extends IObjetServeur {
 	 * Ajoute une tache au projet.
 	 * @param t La tache a ajouter.
 	 */
-	 void ajoutTache(final ITache t);
+	 void ajoutTache(final ITache task);
 
 	/**
 	 * Supprime la tache du projet.
 	 * @param t La tache a supprimer.
 	 */
-	 void supprimeTache(final ITache t);
+	 void supprimeTache(final ITache task);
 
 	/**
 	 * Supprime toutes les taches du projet.
@@ -50,7 +50,7 @@ public interface IProjet extends IObjetServeur {
 	/**
 	 * @param n La nouvelle valeur du nom.
 	 */
-	 void setNom(final String n);
+	 void setNom(final String nom);
 
 	/**
 	 * @return Le boolean indiquant si l'idee est dans la poubelle.
@@ -70,7 +70,7 @@ public interface IProjet extends IObjetServeur {
 	/**
 	 * @param a La nouvelle valeur de l'avancement.
 	 */
-	 void setAvancement(final Avancement a);
+	 void setAvancement(final Avancement avancement);
 
 	/**
 	 * @return Le contexteParDefaut.
@@ -103,7 +103,7 @@ public interface IProjet extends IObjetServeur {
 	 void setListeDeSousProjets(final List<IProjet> listeProjets);
 
 	/**
-	 * @return La listeDesParticipants.
+	 * @return La listeParticipants.
 	 */
 	 List<IParticipant> getListeDeParticipants();
 
@@ -120,7 +120,7 @@ public interface IProjet extends IObjetServeur {
 	/**
 	 * @param c La nouvelle valeur du createur.
 	 */
-	 void setCreateur(final IParticipant c);
+	 void setCreateur(final IParticipant createur);
 	 
 	 /**
 	 * @return Personnes a contacter a propos de cette projet.

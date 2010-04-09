@@ -31,8 +31,8 @@ public class ServerToodleDoImp implements Server {
 		toodledoApiImpl = new ToodledoApiImpl();
 	}
 
-	@Override
-	public String connect(Session session) throws Exception {
+	
+	public String connect(final Session session) throws Exception {
 
 		String userId = toodledoApiImpl.getUserId(session.getLoginToodleDo(), session
 				.getPasswordToodleDo());
@@ -44,15 +44,15 @@ public class ServerToodleDoImp implements Server {
 		return session.getIdSession();
 	}
 
-	@Override
-	public String disConnect(Session session) throws Exception {
+	
+	public String disConnect(final Session session) throws Exception {
 		return session.getIdSession();
 	}
 
-	@Override
-	public List<IProjet> getProjects(Session session) throws Exception {
+	
+	public List<IProjet> getProjects(final Session session) throws Exception {
 
-		List<IProjet> projects = new ArrayList<IProjet>();
+		final List<IProjet> projects = new ArrayList<IProjet>();
 		
 		//Récupération des dossiers
 		for (Folder folder : toodledoApiImpl.getFolders(session.getTokenToodleDo())) {
@@ -73,7 +73,7 @@ public class ServerToodleDoImp implements Server {
 		return projects;
 	}
 
-	@Override
+	
 	public List<ITache> getTasks(Session session) throws Exception {
 		
 		List<ITache> tasks = new ArrayList<ITache>();
@@ -96,7 +96,7 @@ public class ServerToodleDoImp implements Server {
 
 	}
 
-	@Override
+	
 	public IContexte createContext(Session session, IContexte context)
 			throws Exception {
 
@@ -107,7 +107,7 @@ public class ServerToodleDoImp implements Server {
 		return context;
 	}
 
-	@Override
+	
 	public List<IContexte> getContexts(Session session) throws Exception {
 
 		List<IContexte> contexts = new ArrayList<IContexte>();
@@ -120,47 +120,47 @@ public class ServerToodleDoImp implements Server {
 
 	}
 
-	@Override
+	
 	public String createAccount(String login, String password, String nickname)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String deleteAccount(String login, String password, Session session)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String updateAccountPassword(String oldPassword, String newPassword,
 			Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String updateAccountPseudo(String oldNickname, String newNickname,
 			Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public IIdee createIdea(Session session, IIdee idea) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public ITag createNote(Session session, ITag note) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public IProjet createProject(Session session, IProjet project)	throws Exception {
 		
 		Folder folderToodleDo = new Folder();
@@ -170,7 +170,7 @@ public class ServerToodleDoImp implements Server {
 		return project;
 	}
 
-	@Override
+	
 	public ITache createTask(Session session, ITache task) throws Exception {
 		
 		Todo taskToodleDo = new Todo();		
@@ -181,26 +181,26 @@ public class ServerToodleDoImp implements Server {
 		return task;
 	}
 
-	@Override
+	
 	public String delContext(Session session, IContexte context)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String delIdea(Session session, IIdee idea) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String delNote(Session session, ITag note) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public String delProject(Session session, IProjet project)
 			throws Exception {
 		System.out.println("del "+Integer.valueOf(((Project) project).getIdentifiant()));
@@ -208,38 +208,38 @@ public class ServerToodleDoImp implements Server {
 		return null;
 	}
 
-	@Override
+	
 	public String delTask(Session session, ITache task) throws Exception {
 		toodledoApiImpl.deleteTodo(session.getTokenToodleDo(), Integer.valueOf(((Task) task).getIdentifiant()));
 		return null;
 	}
 
-	@Override
+	
 	public IContexte updateContext(Session session, IContexte context)
 			throws Exception {
 		return null;
 	}
 
-	@Override
+	
 	public IIdee updateIdea(Session session, IIdee idea) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public ITag updateNote(Session session, ITag note) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public IProjet updateProject(Session session, IProjet project)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public ITache updateTask(Session session, ITache task) throws Exception {
 		
 		Todo taskToodleDo = new Todo();	
@@ -252,13 +252,13 @@ public class ServerToodleDoImp implements Server {
 		return new TacheImpl();
 	}
 
-	@Override
+	
 	public List<IIdee> getIdeas(Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public List<ITag> getNotes(Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;

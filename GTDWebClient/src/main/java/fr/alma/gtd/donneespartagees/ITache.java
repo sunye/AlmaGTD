@@ -32,7 +32,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param n La nouvelle valeur du nom.
 	 */
-	void setNom(final String n);
+	void setNom(final String nom);
 
 	/**
 	 * @return La priorite.
@@ -42,7 +42,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param p La nouvelle valeur de la priorite.
 	 */
-	void setPriorite(final int p);
+	void setPriorite(final int priorite);
 
 	/**
 	 * @return Le tauxEffort.
@@ -62,7 +62,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param a La nouvelle valeur de l'avancement.
 	 */
-	void setAvancement(final Avancement a);
+	void setAvancement(final Avancement avancement);
 
 	/**
 	 * @return La frequence.
@@ -72,7 +72,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param f La nouvelle valeur de la frequence.
 	 */
-	void setFrequence(final Frequence f);
+	void setFrequence(final Frequence frequence);
 
 	/**
 	 * @return La dateDebut.
@@ -112,7 +112,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param c La nouvelle valeur du createur.
 	 */
-	void setCreateur(final IParticipant c);
+	void setCreateur(final IParticipant createur);
 
 	/**
 	 * @return Le participant.
@@ -122,7 +122,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param p La nouvelle valeur du participant.
 	 */
-	void setParticipant(final IParticipant p);
+	void setParticipant(final IParticipant participant);
 
 	/**
 	 * @return Le contexte.
@@ -132,7 +132,7 @@ public interface ITache extends IObjetServeur {
 	/**
 	 * @param c La nouvelle valeur du contexte.
 	 */
-	void setContexte(final IContexte c);
+	void setContexte(final IContexte contexte);
 
 	/**
 	 * @return La listeDesTags.

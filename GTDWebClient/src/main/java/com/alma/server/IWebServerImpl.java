@@ -4,15 +4,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.loststone.toodledo.util.AuthToken;
 
 import com.alma.client.IWebServer;
 import com.alma.server.connectionmanager.ToConnectionManager;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 import com.alma.server.types.*;
-
-import fr.alma.gtd.donneespartagees.ITache;
 
 
 /**
@@ -22,12 +19,12 @@ import fr.alma.gtd.donneespartagees.ITache;
 public class IWebServerImpl extends RemoteServiceServlet implements
 IWebServer, ToConnectionManager {
 	
-	private HashMap<String,Session> activeSession = new HashMap<String,Session>();
+	private final HashMap<String,Session> activeSession = new HashMap<String,Session>();
 	
 	
-	public String greetServer(String input) {
-		String serverInfo = getServletContext().getServerInfo();
-		String userAgent = getThreadLocalRequest().getHeader("User-Agent");
+	public String greetServer(final String input) {
+		final String serverInfo = getServletContext().getServerInfo();
+		final String userAgent = getThreadLocalRequest().getHeader("User-Agent");
 		return "Hello, " + input + "!<br><br>I am running " + serverInfo
 				+ ".<br><br>It looks like you are using:<br>" + userAgent;
 	}
@@ -35,59 +32,59 @@ IWebServer, ToConnectionManager {
 	/*-----------------------------------ToConnectionManager----------------------------------*/
 	
 	@Override
-	public String connect(String loginGTD, String passGTD, String loginTdoo,
-			String passTDo) throws Exception {
+	public String connect(final String loginGTD, final String passGTD, final String loginTdoo,
+			final String passTDo) throws Exception {
 				
-		Session s1 = new Session(loginGTD,passGTD,loginTdoo,passTDo);
+		final Session session1 = new Session(loginGTD,passGTD,loginTdoo,passTDo);
 		
-		activeSession.put(loginTdoo, s1);
+		activeSession.put(loginTdoo, session1);
 				
-		return WebServerManager.getConnectToServer().connect(s1);
+		return WebServerManager.getConnectToServer().connect(session1);
 	}
 
 	@Override
-	public String createAccount(String login, String password, String nickname)
+	public String createAccount(final String login, final String password, final String nickname)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String delAccount(String login, String password, Session idSession)
+	public String delAccount(final String login, final String password, final Session idSession)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String disconnect(Session session) throws Exception {
+	public String disconnect(final Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateAccountPassword(String oldPassword, String newPassword,
-			Session session) throws Exception {
+	public String updateAccountPassword(final String oldPassword, final String newPassword,
+			final Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateAccountPseudo(String oldNickname, String newNickname,
-			Session session) throws Exception {
+	public String updateAccountPseudo(final String oldNickname, final String newNickname,
+			final Session session) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	
 	/*-----------------------------------------Task and projects--------------------------------------*/
-	public List<com.alma.client.serializables.Project> getProjects(String loginTdoo) throws Exception{
+	public final List<com.alma.client.serializables.Project> getProjects(String loginTdoo) throws Exception{
 					
 		DataManagerResult<fr.alma.gtd.donneespartagees.IProjet> dataResult;
 		
 		dataResult = WebServerManager.getToDataManager().getProjects(activeSession.get(loginTdoo));
 				
-		LinkedList<com.alma.client.serializables.Project> result = new LinkedList<com.alma.client.serializables.Project> ();
+		final LinkedList<com.alma.client.serializables.Project> result = new LinkedList<com.alma.client.serializables.Project> ();
 					
 		for(fr.alma.gtd.donneespartagees.IProjet proj : dataResult.getToodleDoList()){
 			System.out.println(proj.getNom()+":"+proj.getListeDeTaches().size()+" taches.");
@@ -98,11 +95,11 @@ IWebServer, ToConnectionManager {
 		
 	}
 	
-	public List<com.alma.client.serializables.Task> getTasks(String loginTdoo) throws Exception{
+	public final  List<com.alma.client.serializables.Task> getTasks(String loginTdoo) throws Exception{
 		
 		DataManagerResult<fr.alma.gtd.donneespartagees.ITache> dataResult = null;
 		
-		LinkedList<com.alma.client.serializables.Task> result = new LinkedList<com.alma.client.serializables.Task> ();
+		final  LinkedList<com.alma.client.serializables.Task> result = new LinkedList<com.alma.client.serializables.Task> ();
 				
 		dataResult = WebServerManager.getToDataManager().getTasks(activeSession.get(loginTdoo));
 								
@@ -115,7 +112,7 @@ IWebServer, ToConnectionManager {
 	}
 	
 	
-	public fr.alma.gtd.donneespartagees.ITache  updateTasks(String loginTdoo,com.alma.client.serializables.Task task) throws Exception{
+	public final  fr.alma.gtd.donneespartagees.ITache  updateTasks(String loginTdoo,com.alma.client.serializables.Task task) throws Exception{
 		
 		return WebServerManager.getToDataManager().updateTask(activeSession.get(loginTdoo),Converter.getClientType(task));	
 	}

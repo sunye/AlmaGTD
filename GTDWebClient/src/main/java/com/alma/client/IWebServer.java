@@ -7,7 +7,6 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import com.alma.client.serializables.Project;
 import com.alma.client.serializables.Task;
-import com.alma.server.types.ProjetImpl;
 
 /**
  * The client side stub for the RPC service.

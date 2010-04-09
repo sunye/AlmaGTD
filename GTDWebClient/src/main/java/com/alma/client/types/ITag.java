@@ -15,7 +15,7 @@ public interface ITag extends IObjetServeur {
 	/**
 	 * @param n La nouvelle valeur du nom.
 	 */
-	void setNom(final String n);
+	void setNom(final String nom);
 
 	/**
 	 * @return Le createur de l'idee.
@@ -25,6 +25,6 @@ public interface ITag extends IObjetServeur {
 	/**
 	 * @param c La nouvelle valeur du createur.
 	 */
-	void setCreateur(final IParticipant c);
+	void setCreateur(final IParticipant createur);
 
 }

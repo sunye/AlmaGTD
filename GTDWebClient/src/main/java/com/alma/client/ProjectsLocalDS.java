@@ -16,23 +16,23 @@ public class ProjectsLocalDS extends DataSource {
         return instance;  
     }  
   
-    public ProjectsLocalDS(String id) { 
+    public ProjectsLocalDS(final String identif) { 
     	super();    	
-    	this.setID(id);
+    	this.setID(identif);
         this.setClientOnly(true);
-        DataSourceIntegerField pkField = new DataSourceIntegerField("id");  
+        final DataSourceIntegerField pkField = new DataSourceIntegerField("id");  
         pkField.setHidden(false);  
         pkField.setPrimaryKey(true);  
                   
-        DataSourceTextField nameField = new DataSourceTextField("name", "Name", 128, true);
-        DataSourceTextField projectField = new DataSourceTextField("project", "Project", 128, false);
-        DataSourceTextField projectIdField = new DataSourceTextField("projectId", "Project Id", 128, false);
+        final DataSourceTextField nameField = new DataSourceTextField("name", "Name", 128, true);
+        final DataSourceTextField projectField = new DataSourceTextField("project", "Project", 128, false);
+        final DataSourceTextField projectIdField = new DataSourceTextField("projectId", "Project Id", 128, false);
         
         setFields(pkField,nameField,projectField,projectIdField);
           
     }  
   
-    protected Object transformRequest(DSRequest dsRequest) {  
+    protected Object transformRequest(final DSRequest dsRequest) {  
         return super.transformRequest(dsRequest);  
     }  
     
@@ -43,7 +43,7 @@ public class ProjectsLocalDS extends DataSource {
     }
     
     public ListGridRecord getSampleRec(){
-    	ListGridRecord rec = new ListGridRecord();
+    	final ListGridRecord rec = new ListGridRecord();
     	rec.setAttribute("id", AlmaGTD.nextId());
         rec.setAttribute("name", "New project"); 
         rec.setAttribute("projectId", "");

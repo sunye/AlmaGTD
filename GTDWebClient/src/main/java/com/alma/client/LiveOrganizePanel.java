@@ -1,18 +1,12 @@
 package com.alma.client;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.alma.client.serializables.Project;
 import com.alma.client.serializables.Task;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AbsolutePanel;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.gwtext.client.widgets.tree.MultiSelectionModel;
 import com.gwtext.client.widgets.tree.TreeNode;
 import com.gwtext.client.widgets.tree.TreePanel;
@@ -23,48 +17,25 @@ import com.gwtext.client.core.EventObject;
 import com.gwtext.client.data.Node;
 import com.gwtext.client.data.NodeTraversalCallback;
 import com.gwtext.client.data.Tree;
-import com.google.gwt.user.client.ui.FormPanel;
 import com.gwtext.client.widgets.Panel;
-import com.gwtext.client.widgets.grid.GridPanel;
-import com.gwtext.client.widgets.layout.AccordionLayout;
 import com.gwtext.client.widgets.layout.FormLayout;
-import com.gwtext.client.widgets.form.DateField;
 import com.gwtext.client.widgets.form.TextField;
-import com.gwtext.client.widgets.form.ComboBox;
-import com.gwtext.client.widgets.form.NumberField;
-import com.gwtext.client.widgets.layout.CardLayout;
-import com.gwtext.client.widgets.layout.FitLayout;
-import com.gwtext.client.widgets.TabPanel;
-import com.google.gwt.user.client.ui.DecoratedStackPanel;
-import com.google.gwt.user.client.ui.DeckPanel;
+
 
 public class LiveOrganizePanel extends AbsolutePanel{
-	private AlmaGTD agtdgui;
-	private HashMap<String,Integer> taskKeyToRecid=new HashMap<String,Integer>();
-	private HashMap<String,Integer> projKeyToRecid=new HashMap<String,Integer>();
-	private HashMap<Node,DataClass> nodeDt = new HashMap<Node,DataClass>();
-	private HashMap<String,Project> projectsList = new HashMap<String,Project>();
-	private HashMap<String,Task> tasksList = new HashMap<String,Task>();
-	private TreePanel treePanel;
-	private TreeNode root;
-	private int projListId=0;
-	private int taskListId=0;
-	private FormPanel formPanel;
-	private TextField textField_6;
-	private TextField textField_7;
-	private TextField textField_8;
-	private TextField textField_9;
-	private Panel panel;
-	private FormPanel formPanel_2;
-	private TextField textField_1;
-	private NumberField numberField;
-	private TextField textField_2;
-	private TextField textField_3;
-	private TextField textField_4;
-	private TextField textField_5;
-	private TextField textField;
+	private final AlmaGTD agtdgui;
+	private final HashMap<String,Integer> taskKeyToRecid=new HashMap<String,Integer>();
+	private final HashMap<String,Integer> projKeyToRecid=new HashMap<String,Integer>();
+	private final HashMap<Node,DataClass> nodeDt = new HashMap<Node,DataClass>();
+	private final HashMap<String,Project> projectsList = new HashMap<String,Project>();
+	private final HashMap<String,Task> tasksList = new HashMap<String,Task>();
+	private final TreePanel treePanel;
+	private final TreeNode root;
+	private static int projListId=0;
+	private static int taskListId=0;
+
 	
-	public LiveOrganizePanel(AlmaGTD agtdgui){	
+	public LiveOrganizePanel(final AlmaGTD agtdgui){	
 		super();
 		this.agtdgui = agtdgui;
 		this.addStyleName("panel");
@@ -86,61 +57,59 @@ public class LiveOrganizePanel extends AbsolutePanel{
 		treePanel.setHeight("400px");
 		add(treePanel, 6, 6);
 		
-	
-		
-		Panel pnlInformations = new Panel("Tasks Informations");
+		final Panel pnlInformations = new Panel("Tasks Informations");
 		pnlInformations.setLayout(new FormLayout());
 		
-		TextField textField_10 = new TextField("ID", "text_field", 100);
+		final TextField textField_10 = new TextField("ID", "text_field", 100);
 		textField_10.setReadOnly(true);
 		pnlInformations.add(textField_10);
 		textField_10.setWidth("60%");
 		
-		TextField textField_11 = new TextField("Name", "text_field", 100);
+		final TextField textField_11 = new TextField("Name", "text_field", 100);
 		pnlInformations.add(textField_11);
 		textField_11.setWidth("60%");
 		
-		TextField textField_12 = new TextField("Start Date", "text_field", 100);
+		final TextField textField_12 = new TextField("Start Date", "text_field", 100);
 		pnlInformations.add(textField_12);
 		textField_12.setWidth("60%");
 		
-		TextField textField_13 = new TextField("End Date", "text_field", 100);
+		final TextField textField_13 = new TextField("End Date", "text_field", 100);
 		pnlInformations.add(textField_13);
 		textField_13.setWidth("60%");
 		
-		TextField textField_14 = new TextField("Frequency", "text_field", 100);
+		final TextField textField_14 = new TextField("Frequency", "text_field", 100);
 		pnlInformations.add(textField_14);
 		textField_14.setWidth("60%");
 		
-		TextField textField_15 = new TextField("Progress", "text_field", 100);
+		final TextField textField_15 = new TextField("Progress", "text_field", 100);
 		textField_15.setReadOnly(true);
 		pnlInformations.add(textField_15);
 		textField_15.setWidth("60%");
 		add(pnlInformations, 412, 6);
 		pnlInformations.setSize("400px", "176px");
 		
-		Panel pnlProjectsInformations = new Panel("Projects Informations");
-		pnlProjectsInformations.setLayout(new FormLayout());
+		final Panel pnlProjectsInfo = new Panel("Projects Informations");
+		pnlProjectsInfo.setLayout(new FormLayout());
 		
-		TextField textField_16 = new TextField("ID", "text_field", 100);
-		pnlProjectsInformations.add(textField_16);
+		final TextField textField_16 = new TextField("ID", "text_field", 100);
+		pnlProjectsInfo.add(textField_16);
 		textField_16.setWidth("60%");
 		
-		TextField textField_17 = new TextField("Name", "text_field", 100);
+		final TextField textField_17 = new TextField("Name", "text_field", 100);
 		textField_17.setSize("60%", "");
-		pnlProjectsInformations.add(textField_17);
+		pnlProjectsInfo.add(textField_17);
 		
-		TextField textField_18 = new TextField("Frequency", "text_field", 100);
-		pnlProjectsInformations.add(textField_18);
+		final TextField textField_18 = new TextField("Frequency", "text_field", 100);
+		pnlProjectsInfo.add(textField_18);
 		textField_18.setWidth("60%");
-		add(pnlProjectsInformations, 412, 214);
-		pnlProjectsInformations.setSize("400px", "162px");
+		add(pnlProjectsInfo, 412, 214);
+		pnlProjectsInfo.setSize("400px", "162px");
        
 		
 	}
 	
 	@Override
-	public void setVisible(boolean visible){
+	public void setVisible(final boolean visible){
 		super.setVisible(visible);
 		
 		if(visible){
@@ -155,21 +124,21 @@ public class LiveOrganizePanel extends AbsolutePanel{
 		
 		System.out.println("Organize fetching data");
 		//Remove all old nodes
-		for(Node n : root.getChildNodes()) n.remove();
+		for(Node n : root.getChildNodes()) {n.remove();}
 		taskListId=0;
 		projListId=0;
 		
 		try {		
 			
 				agtdgui.getWebserver().getTasks(agtdgui.getLogin(), new AsyncCallback<List<Task>>() {
-					public void onSuccess(List<Task> result) {
+					public void onSuccess(final List<Task> result) {
 						for(Task task : result){
 							tasksList.put(task.getIdentifiant(), task);
 							
 							System.out.println( task.getNom()+"=>"+task.getProjetConteneur());
 							
 							if(task.getProjetConteneur()==null){								
-								ListGridRecord taskRec = new ListGridRecord();
+								final ListGridRecord taskRec = new ListGridRecord();
 					        	taskRec.setAttribute("id", task.getIdentifiant());
 					        	taskRec.setAttribute("name", task.getNom());
 					        	taskRec.setAttribute("effortRate", task.getTauxEffort());
@@ -180,7 +149,7 @@ public class LiveOrganizePanel extends AbsolutePanel{
 					        	taskRec.setAttribute("projectId", "");
 					        	taskRec.setAttribute("progress", "");
 					        	
-					        	TreeNode taskNode = dataClassToNode(taskRec,"task"); 
+					        	final TreeNode taskNode = dataClassToNode(taskRec,"task"); 
 					        	
 					        	root.appendChild(taskNode);
 					        	
@@ -191,14 +160,14 @@ public class LiveOrganizePanel extends AbsolutePanel{
 						}
 					}
 	
-					public void onFailure(Throwable caught) {
+					public void onFailure(final Throwable caught) {
 						caught.printStackTrace();					
 					}
 				});
 			
 			agtdgui.getWebserver().getProjects(agtdgui.getLogin(), new AsyncCallback<List<Project>>() {
 				
-				public void onSuccess(List<Project> result) {
+				public void onSuccess(final List<Project> result) {
 					for(Project proj : result){
 						final ListGridRecord rec = new ListGridRecord();
 						//System.out.println("Project"+proj.getIdentifiant()+":"+proj.getNom());
@@ -211,15 +180,15 @@ public class LiveOrganizePanel extends AbsolutePanel{
 				        projectsList.put(proj.getIdentifiant(), proj);
 				        
 				    	//node creation with attributes from datasource
-			        	TreeNode curNode = dataClassToNode(rec,"project");        	
+				        final TreeNode curNode = dataClassToNode(rec,"project");        	
 			            //If node has'nt project, adding it to root	
 			        	if(rec.getAttribute("project")==null  || rec.getAttribute("project").equals("")){
 			        		root.appendChild(curNode);
 			        	}
 			        	//Else, seeking correct owner
 			        	else{
-			        		Node projectNode = root.findChildBy(new NodeTraversalCallback() {
-			        			public boolean execute(Node node) {
+			        		final Node projectNode = root.findChildBy(new NodeTraversalCallback() {
+			        			public boolean execute(final Node node) {
 			                       return node.getAttribute("id").equals(rec.getAttribute("projectId"));
 			                    }
 			                });
@@ -246,7 +215,7 @@ public class LiveOrganizePanel extends AbsolutePanel{
 				        	taskRec.setAttribute("projectId", "");
 				        	taskRec.setAttribute("progress", "");
 				        	
-				        	TreeNode taskNode = dataClassToNode(taskRec,"task"); 
+				        	final TreeNode taskNode = dataClassToNode(taskRec,"task"); 
 				        	
 				        	curNode.appendChild(taskNode);
 				        	
@@ -257,7 +226,7 @@ public class LiveOrganizePanel extends AbsolutePanel{
 					}					   
 				}
 
-				public void onFailure(Throwable caught) {
+				public void onFailure(final Throwable caught) {
 					caught.printStackTrace();					
 				}
 			});
@@ -280,68 +249,59 @@ public class LiveOrganizePanel extends AbsolutePanel{
 	 * Adding a listener on the node for click and move
 	 * @param node : node on which adding listener.
 	 */
-	private void addNodeClickListener(TreeNode node) {
+	private void addNodeClickListener(final  TreeNode node) {
 		     node.addListener(new TreeNodeListener() {
-        	 @Override
-        	 public void onClick(Node node, EventObject e) {
-        		 
-        		 if(node.getAttribute("type").equals("task")){
-        			 /*projectForm.clearValues();        			 
-        			 tasksListGrid.deselectAllRecords();
-        			 System.out.println("id taks :"+node.getAttribute("id")+":"+taskKeyToRecid.get(node.getAttribute("id")));
-        			 tasksListGrid.selectRecord(taskKeyToRecid.get(node.getAttribute("id")));
-        			 taskForm.editSelectedData(tasksListGrid);*/
-        		 }
-        		 if(node.getAttribute("type").equals("project")){ 
-        			/* taskForm.clearValues();
-        			 projectsListGrid.deselectAllRecords();
-        			 System.out.println("id proj :"+node.getAttribute("id")+":"+projKeyToRecid.get(node.getAttribute("id")));
-        			 projectsListGrid.selectRecord(projKeyToRecid.get(node.getAttribute("id")));
-        			 projectForm.editSelectedData(projectsListGrid);*/        			
-        		 }
-        	 }
 
 			@Override
-			public boolean doBeforeChildrenRendered(Node node) {return true;}
+			public boolean doBeforeChildrenRendered(final Node node) {return true;}
 
 			@Override
-			public boolean doBeforeClick(Node node, EventObject e) {return true;}
+			public boolean doBeforeClick(final Node node, final EventObject eventObject) {return true;}
 
 			@Override
-			public boolean doBeforeCollapse(Node node, boolean deep,boolean anim) {return true;}
+			public boolean doBeforeCollapse(final Node node, final boolean deep,final boolean anim) {return true;}
 
 			@Override
-			public boolean doBeforeExpand(Node node, boolean deep, boolean anim) {return true;}
+			public boolean doBeforeExpand(final Node node, final boolean deep, final boolean anim) {return true;}
 
 			@Override
-			public void onCheckChanged(Node node, boolean checked) {}
+			public void onCollapse(final Node node) {
+				//TODO
+			}
 
 			@Override
-			public void onCollapse(Node node) {}
+			public void onContextMenu(final Node node, final EventObject event) {
+				//TODO
+			}
 
 			@Override
-			public void onContextMenu(Node node, EventObject e) {}
+			public void onDblClick(final Node node, final EventObject event) {
+				//TODO
+			}
 
 			@Override
-			public void onDblClick(Node node, EventObject e) {}
+			public void onDisabledChange(final Node node, final boolean disabled) {
+				//TODO
+			}
 
 			@Override
-			public void onDisabledChange(Node node, boolean disabled) {}
+			public void onExpand(final Node node) {
+				//TODO
+			}
 
 			@Override
-			public void onExpand(Node node) {}
+			public void onTextChange(final Node node, final String text, final String oldText) {
+				//TODO
+			}
 
 			@Override
-			public void onTextChange(Node node, String text, String oldText) {}
+			public boolean doBeforeAppend(final Tree tree, final Node self, final Node node) {return true;}
 
 			@Override
-			public boolean doBeforeAppend(Tree tree, Node self, Node node) {return true;}
+			public boolean doBeforeInsert(final Tree tree, final Node self, final Node node,final Node refNode) {return true;}
 
 			@Override
-			public boolean doBeforeInsert(Tree tree, Node self, Node node,Node refNode) {return true;}
-
-			@Override
-			public boolean doBeforeMove(Tree tree, Node self, Node oldParent,Node newParent, int index) {
+			public boolean doBeforeMove(final Tree tree, final Node self, final Node oldParent,final Node newParent, final int index) {
 				//If new parent is root, project owner attribute set to "".
 				if(newParent.equals(root)){
 					nodeDt.get(self).setAttribute("projectId", "");
@@ -354,38 +314,44 @@ public class LiveOrganizePanel extends AbsolutePanel{
 					nodeDt.get(self).setAttribute("project", newParent.getAttribute("name"));					
 					return true;
 				}
-				
-				//Display the node in the correct form	
-				if(self.getAttribute("type").equals("task")){
-        			/* projectForm.clearValues();        			 
-        			 tasksListGrid.deselectAllRecords();
-        			 tasksListGrid.selectRecord(taskKeyToRecid.get(self.getAttribute("id")));
-        			 taskForm.editSelectedData(tasksListGrid);*/
-        		}
-        		if(self.getAttribute("type").equals("project")){ 
-        			/* taskForm.clearValues();
-        			 projectsListGrid.deselectAllRecords();
-        			 projectsListGrid.selectRecord(projKeyToRecid.get(self.getAttribute("id")));
-        			 projectForm.editSelectedData(projectsListGrid); */       			
-        		}
 				//Else, fobide the move (return false)
 				return false;				
 			}
 
 			@Override
-			public boolean doBeforeRemove(Tree tree, Node self, Node node) {return true;}
+			public boolean doBeforeRemove(final Tree tree, final Node self, final Node node) {return true;}
 
 			@Override
-			public void onAppend(Tree tree, Node self, Node node, int index) {}
+			public void onAppend(final Tree tree, final Node self, final Node node, final int index) {
+				//TODO
+			}
 
 			@Override
-			public void onInsert(Tree tree, Node self, Node node, Node refNode) {}
+			public void onInsert(final Tree tree, final Node self, final Node node, final Node refNode) {
+				//TODO
+			}
 			
 			@Override
-			public void onMove(Tree tree, Node self, Node oldParent,Node newParent, int index) {}
+			public void onMove(final Tree tree, final Node self, final Node oldParent,final Node newParent, final int index) {
+				//TODO
+			}
 
 			@Override
-			public void onRemove(Tree tree, Node self, Node node) {}			
+			public void onRemove(final Tree tree, final Node self, final Node node) {
+				//TODO
+			}
+
+			@Override
+			public void onClick(final Node node, final EventObject event) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onCheckChanged(final Node node, final boolean checked) {
+				// TODO Auto-generated method stub
+				
+			}			
          });
          
    }
@@ -396,31 +362,27 @@ public class LiveOrganizePanel extends AbsolutePanel{
 	 * @param type : project or task
 	 * @return Node with task or project attributes.
 	 */
-	private TreeNode dataClassToNode(DataClass dt,String type){
-		TreeNode node = new TreeNode(dt.getAttribute("name"));
+	private TreeNode dataClassToNode(final DataClass dataClass,final String type){
+		final TreeNode node = new TreeNode(dataClass.getAttribute("name"));
 		node.setAttribute("type",type);
 		
 		if(type.equals("task")){
 			node.setLeaf(true);
 			node.setIcon("img/Writing-Journal-64.png");
-			System.out.println("Create task : "+dt.getAttribute("id"));
-			taskKeyToRecid.put(dt.getAttribute("id"), taskListId++);
+			System.out.println("Create task : "+dataClass.getAttribute("id"));
+			taskKeyToRecid.put(dataClass.getAttribute("id"), taskListId++);
 		}			
 		else{
 			node.setIcon("img/case1.png");
-			projKeyToRecid.put(dt.getAttribute("id"), projListId++);
+			projKeyToRecid.put(dataClass.getAttribute("id"), projListId++);
 		}	
 		
-    	for(String attr : dt.getAttributes()){
-    		node.setAttribute(attr,dt.getAttribute(attr));
+    	for(String attr : dataClass.getAttributes()){
+    		node.setAttribute(attr,dataClass.getAttribute(attr));
     	}
     	
-    	nodeDt.put(node, dt);
+    	nodeDt.put(node, dataClass);
     	
     	return node;
-	}
-	
-	private void showProject(String id){
-		
 	}
 }

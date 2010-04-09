@@ -33,26 +33,21 @@ public abstract class AbstractIdee extends AbstractObjetServeur implements IIdee
 	/**
 	 * La date de derniere modification.
 	 */
-	protected Date dateDeDerniereModification;
+	protected Date dateDeDerModif;
 
 	/**
 	 * Le createur.
 	 */
 	protected IParticipant createur;
 
-	/**
-	 * Initialisation des variables.
-	 */
-	{
-		this.dansLaPoubelle = false;
-		this.dateDeDerniereModification = new Date();
-	}
 
 	/**
 	 * Le constructeur par defaut.
 	 */
 	public AbstractIdee() {
 		super();
+		this.dansLaPoubelle = false;
+		this.dateDeDerModif = new Date();
 	}
 
 	/**
@@ -61,11 +56,11 @@ public abstract class AbstractIdee extends AbstractObjetServeur implements IIdee
 	 * @param desc Le description choisie.
 	 * @param c Le createur de l'idee.
 	 */
-	public AbstractIdee(final String n, final String desc, final IParticipant c) {
+	public AbstractIdee(final String nom, final String desc, final IParticipant createur) {
 		super();
-		this.nom = n;
+		this.nom = nom;
 		this.description = desc;
-		this.createur = c;
+		this.createur = createur;
 	}
 
 
@@ -80,15 +75,15 @@ public abstract class AbstractIdee extends AbstractObjetServeur implements IIdee
 	public void copier(final IIdee idee) {
 		this.nom = idee.getNom();
 		this.createur = idee.getCreateur();
-		this.dateDeDerniereModification = idee.getDateDeDerniereModification();
-		this.identifiantServeur = idee.getIdentifiantServeur();
+		this.dateDeDerModif = idee.getDateDeDerModif();
+		this.identServeur = idee.getIdentifiantServeur();
 		this.description = idee.getDescription();
 		this.dansLaPoubelle = idee.isDansLaPoubelle();
 	}
 	
 	@Override
-	public final void setNom(final String n) {
-		this.nom = n;
+	public final void setNom(final String nom) {
+		this.nom = nom;
 	}
 
 	@Override
@@ -102,7 +97,31 @@ public abstract class AbstractIdee extends AbstractObjetServeur implements IIdee
 	}
 
 	@Override
-	public final void setCreateur(final IParticipant c) {
-		this.createur = c;
+	public final void setCreateur(final IParticipant createur) {
+		this.createur = createur;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public boolean isDansLaPoubelle() {
+		return dansLaPoubelle;
+	}
+
+	public IParticipant getCreateur() {
+		return createur;
+	}
+
+	public Date getDateDeDerModif() {
+		return dateDeDerModif;
+	}
+
+	public void setDateDeDerModif(final Date dateDeDerModif) {
+		this.dateDeDerModif = dateDeDerModif;
 	}
 }

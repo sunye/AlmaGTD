@@ -17,20 +17,24 @@ public abstract class AbstractObjetServeur implements IObjetServeur {
 	/**
 	 * L'identifiant serveur.
 	 */
-	protected String identifiantServeur;
+	protected String identServeur;
 	/**
 	 * La date de derniere modification.
 	 */
-	protected Date dateDeDerniereModification;
-
-	@Override
-	public final void setIdentifiantServeur(final String idServeur) {
-		this.identifiantServeur = idServeur;
+	protected Date dateDeDerModif;
+	public String getIdentServeur() {
+		return identServeur;
+	}
+	public void setIdentServeur(final String identServeur) {
+		this.identServeur = identServeur;
+	}
+	public Date getDateDeDerModif() {
+		return dateDeDerModif;
+	}
+	public void setDateDeDerModif(final Date dateDeDerModif) {
+		this.dateDeDerModif = dateDeDerModif;
 	}
 
-	@Override
-	public final void setDateDeDerniereModification(final Date dateDerniereModification) {
-		this.dateDeDerniereModification = dateDerniereModification;
-	}
+
 
 }

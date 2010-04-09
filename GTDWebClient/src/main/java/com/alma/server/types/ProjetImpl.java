@@ -266,7 +266,7 @@ public class ProjetImpl implements Project, Serializable{
 	}
 
 	@Override
-	public Date getDateDeDerniereModification() {
+	public Date getDateDeDerModif() {
 		return dateDeDerniereModification;
 	}
 
@@ -275,7 +275,7 @@ public class ProjetImpl implements Project, Serializable{
 	}
 
 	@Override
-	public void setDateDeDerniereModification(Date dateDerniereModification) {
+	public void setDateDeDerModif(Date dateDerniereModification) {
 		this.dateDeDerniereModification = dateDerniereModification;
 
 	}

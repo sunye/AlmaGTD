@@ -10,10 +10,6 @@ import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.UIObject;
-import com.smartgwt.client.core.DataClass;
-import com.smartgwt.client.data.DataSource;
-import com.smartgwt.client.widgets.IButton;
 import com.smartgwt.client.widgets.Label;
 import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.grid.ListGrid;
@@ -23,14 +19,14 @@ import com.smartgwt.client.widgets.grid.events.RecordClickHandler;
 import com.smartgwt.client.widgets.layout.VLayout;
 
 public class ProcessPanel extends HorizontalPanel{
-	private AbsolutePanel processIdeasPanel,processTasksPanel;
+	private final AbsolutePanel processIdeasPanel,processTasksPanel;
 	private Grid ideasBox;	
 	private final ListGrid listGrid = new ListGrid();  
 	private AlmaGTD agtdgui;
-	private  final DynamicForm taskForm;
+	private final DynamicForm taskForm;
 	private final TasksLocalDS dataSource = TasksLocalDS.getInstance();  
 	
-	public ProcessPanel(AlmaGTD agtdgui){
+	public ProcessPanel(final AlmaGTD agtdgui){
 		super();
 		this.agtdgui=agtdgui;
 		this.setSize("99%", "550px");
@@ -49,10 +45,10 @@ public class ProcessPanel extends HorizontalPanel{
 		processTasksPanel.setSize("100%", "100%");
 		//processTasksPanel.addStyleName("panel");
 			  
-        VLayout layout = new VLayout(15);  
+		final VLayout layout = new VLayout(15);  
         layout.setWidth("45%");
         
-        Label label = new Label();  
+        final Label label = new Label();  
         label.setHeight(10);  
         label.setWidth100();  
         label.setContents("Current Tasks List");  
@@ -72,7 +68,7 @@ public class ProcessPanel extends HorizontalPanel{
         listGrid.setDataSource(dataSource);  
         //listGrid.setAutoFetchData(true);  
         listGrid.addRecordClickHandler(new RecordClickHandler() {  
-            public void onRecordClick(RecordClickEvent event) {  
+            public void onRecordClick(final RecordClickEvent event) {  
                 taskForm.reset();  
                 taskForm.editSelectedData(listGrid);  
             }  
@@ -83,19 +79,19 @@ public class ProcessPanel extends HorizontalPanel{
   
         
                
-        Button buttonSave = new Button("Save");  
+        final Button buttonSave = new Button("Save");  
         buttonSave.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {  
+			public void onClick(final ClickEvent event) {  
                 taskForm.saveData();
                 dataSource.saveData();
             }  
         });
         buttonSave.setStyleName("stdButton");
         
-        Button buttonAdd = new Button("Add");  
+        final Button buttonAdd = new Button("Add");  
         buttonAdd.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {
-		        ListGridRecord rec = dataSource.getSampleRec(0);		        	              
+			public void onClick(final ClickEvent event) {
+				final ListGridRecord rec = dataSource.getSampleRec(0);		        	              
 		        listGrid.addData(rec);
 		        listGrid.deselectAllRecords();
 		        listGrid.selectRecord(rec);
@@ -104,16 +100,16 @@ public class ProcessPanel extends HorizontalPanel{
         });
         buttonAdd.setStyleName("stdButton");
         
-        Button buttonDel = new Button("Del");     
+        final Button buttonDel = new Button("Del");     
         buttonDel.addClickHandler(new ClickHandler() {  
-			public void onClick(ClickEvent event) {
+			public void onClick(final ClickEvent event) {
 				listGrid.removeSelectedData();
 		        taskForm.saveData();			
 			}  
         });
         buttonDel.setStyleName("stdButton");
            
-        Grid cmdPanel = new Grid(1,3);
+        final Grid cmdPanel = new Grid(1,3);
         cmdPanel.setWidth("250px");
         cmdPanel.setCellSpacing(0);
         cmdPanel.setWidget(0,0,buttonSave);
@@ -129,7 +125,7 @@ public class ProcessPanel extends HorizontalPanel{
 	}
 	
 	@Override
-	public void setVisible(boolean visible){
+	public void setVisible(final boolean visible){
 		if(visible){
 			init();
 			taskForm.fetchData();
@@ -144,17 +140,18 @@ public class ProcessPanel extends HorizontalPanel{
 				
 		ideasBox = new Grid(listIdeas.keySet().size(),2);
 		
-		int i=0;
+		int integer=0;
+		
 		for(final String title : listIdeas.keySet()){			
-			DisclosurePanel pan = new DisclosurePanel(title);
+			final DisclosurePanel pan = new DisclosurePanel(title);
 			pan.setStyleName("disclosure");
 			pan.setContent(new HTML(listIdeas.get(title)));
 			
-			ideasBox.setWidget(i,0,pan);
-			final int row = i;						
-			Button loadButton = new Button("Load",
+			ideasBox.setWidget(integer,0,pan);
+			final int row = integer;						
+			final Button loadButton = new Button("Load",
 				        new ClickHandler() {
-				          public void onClick(ClickEvent event) {
+				          public void onClick(final ClickEvent event) {
 				        	  ListGridRecord rec = new ListGridRecord();  
 						        rec.setAttribute("name", title); 
 						        rec.setAttribute("effortRate", "0");  
@@ -168,14 +165,14 @@ public class ProcessPanel extends HorizontalPanel{
 						        listIdeas.remove(title);
 				          }
 				        });
-			 ideasBox.setWidget(i,1,loadButton);
+			 ideasBox.setWidget(integer,1,loadButton);
 			 
-			i++;
+			 integer++;
 		}
 		
 		ideasBox.setWidth("400px");
 		
-		Label label = new Label();
+		final Label label = new Label();
 		label.setHeight(10);  
         label.setWidth100();  
         label.setContents("IdeasBox"); 
@@ -196,7 +193,4 @@ public class ProcessPanel extends HorizontalPanel{
 		taskForm.setDataSource(dataSource);
 		
 	}
-	
-	
-	
 }

@@ -1,7 +1,6 @@
 package fr.alma.gtd.donneespartagees;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -43,7 +42,7 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	/**
 	 * La liste des participants.
 	 */
-	protected List<IParticipant> listeDesParticipants;
+	protected List<IParticipant> listeParticipants;
 	
 	/**
 	 * Le createur du projet.
@@ -69,25 +68,19 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	/**
 	 * Liste des sous-projets associ�s � ce projet.
 	 */
-	protected List<IProjet> listeDesSousProjets;
+	protected List<IProjet> listeSousProjets;
 	
-	
-	/**
-	 * Initialisation des variables.
-	 */
-	{
-		this.dansLaPoubelle = false;
-		this.dateDeDerniereModification = new Date();
-		this.listeDesTaches = new ArrayList<ITache>();
-		this.listeDesParticipants = new ArrayList<IParticipant>();
-		this.listeDesSousProjets = new ArrayList<IProjet>();
-	}
-	
+
 	/**
 	 * Le constructeur par defaut.
 	 */
 	public AbstractProjet() {
 		super();
+		this.dansLaPoubelle = false;
+		this.dateDeDerModif = new Date();
+		this.listeDesTaches = new ArrayList<ITache>();
+		this.listeParticipants = new ArrayList<IParticipant>();
+		this.listeSousProjets = new ArrayList<IProjet>();
 	}
 	
 	/**
@@ -96,43 +89,43 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	 * @param contexte Le contexte choisi.
 	 * @param c Le createur du projet.
 	 */
-	public AbstractProjet(final String n, final IContexte contexte, final IParticipant c) {
+	public AbstractProjet(final String nom, final IContexte contexte, final IParticipant createur) {
 		super();
-		this.nom = n;
+		this.nom = nom;
 		this.contexteParDefaut = contexte;
-		this.createur = c;
+		this.createur = createur;
 	}
 	
 	/**
 	 * Constructeur de recopie d'un projet.
 	 * @param p Projet a recopier
 	 */
-	public AbstractProjet(final IProjet p) {
-		this.copier(p);
+	public AbstractProjet(final IProjet proj) {
+		this.copier(proj);
 	}
 
 	
-	public void copier(final IProjet p ){
-		this.nom = p.getNom();
-		this.createur = p.getCreateur();
-		this.dateDeDerniereModification = p.getDateDeDerniereModification();
-		this.identifiantServeur = p.getIdentifiantServeur();
-		this.contexteParDefaut = p.getContexteParDefaut();
-		this.listeDesTaches = p.getListeDeTaches();
-		this.listeDesParticipants = p.getListeDeParticipants();
-		this.avancement = p.getAvancement();
-		this.dansLaPoubelle = p.isDansLaPoubelle();
-		this.contacts = p.getListeContacts();
-		this.listeDesSousProjets = p.getListeDeSousProjets();
+	public void copier(final IProjet proj ){
+		this.nom = proj.getNom();
+		this.createur = proj.getCreateur();
+		this.dateDeDerModif = proj.getDateDeDerModif();
+		this.identServeur = proj.getIdentifiantServeur();
+		this.contexteParDefaut = proj.getContexteParDefaut();
+		this.listeDesTaches = proj.getListeDeTaches();
+		this.listeParticipants = proj.getListeDeParticipants();
+		this.avancement = proj.getAvancement();
+		this.dansLaPoubelle = proj.isDansLaPoubelle();
+		this.contacts = proj.getListeContacts();
+		this.listeSousProjets = proj.getListeDeSousProjets();
 	}
 	
 	@Override
-	public final void ajoutTache(final ITache t) {
+	public final void ajoutTache(final ITache task) {
 		//TODO
 	}
 	
 	@Override
-	public final void supprimeTache(final ITache t) {
+	public final void supprimeTache(final ITache task) {
 		//TODO
 	}
 	
@@ -157,8 +150,8 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	}
 	
 	@Override
-	public final void setNom(final String n) {
-		this.nom = n;
+	public final void setNom(final String nom) {
+		this.nom = nom;
 	}
 
 	@Override
@@ -167,33 +160,20 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	}
 
 	@Override
-	public final void setAvancement(final Avancement a) {
-		this.avancement = a;
+	public final void setAvancement(final Avancement avancement) {
+		this.avancement = avancement;
 	}
 
 	@Override
 	public final void setContexteParDefaut(final IContexte contexteDefaut) {
 		this.contexteParDefaut = contexteDefaut;
 	}
+	
 
-	@Override
-	public final void setListeDeTaches(final ArrayList<ITache> listeTaches) {
-		this.listeDesTaches = listeTaches;
-	}
 	
 	@Override
-	public final void setListeDeSousProjets(final List<IProjet> listeProjets) {
-		this.listeDesSousProjets = listeProjets;
-	}
-
-	@Override
-	public final void setListeDeParticipants(final List<IParticipant> listeParticipants) {
-		this.listeDesParticipants = listeParticipants;
-	}
-	
-	@Override
-	public final void setCreateur(final IParticipant c) {
-		this.createur = c;
+	public final void setCreateur(final IParticipant createur) {
+		this.createur = createur;
 	}
 	
 	@Override
@@ -202,7 +182,63 @@ public abstract class AbstractProjet extends AbstractObjetServeur implements IPr
 	}
 	
 	@Override
-	public void setDansArchive(boolean dansArchive) {
+	public void setDansArchive(final boolean dansArchive) {
 	 this.dansArchive = dansArchive;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public Avancement getAvancement() {
+		return avancement;
+	}
+
+	public IContexte getContexteParDefaut() {
+		return contexteParDefaut;
+	}
+
+	public List<ITache> getListeDesTaches() {
+		return listeDesTaches;
+	}
+
+	public List<IParticipant> getListeParticipants() {
+		return listeParticipants;
+	}
+
+	public void setListeParticipants(final List<IParticipant> listeParticipants) {
+		this.listeParticipants = listeParticipants;
+	}
+
+	public IParticipant getCreateur() {
+		return createur;
+	}
+
+	public boolean isDansLaPoubelle() {
+		return dansLaPoubelle;
+	}
+
+	public boolean isDansArchive() {
+		return dansArchive;
+	}
+
+	public List<IContact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(final List<IContact> contacts) {
+		this.contacts = contacts;
+	}
+
+	public List<IProjet> getListeSousProjets() {
+		return listeSousProjets;
+	}
+
+	public void setListeSousProjets(final List<IProjet> listeSousProjets) {
+		this.listeSousProjets = listeSousProjets;
+	}
+
+	public void setListeDesTaches(final List<ITache> listeDesTaches) {
+		this.listeDesTaches = listeDesTaches;
 	}
 }

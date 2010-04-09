@@ -27,7 +27,7 @@ public abstract class AbstractTag implements ITag {
 	/**
 	 * L'identifiant serveur.
 	 */
-	protected String identifiantServeur;
+	protected String identServeur;
 	
 	/**
 	 * Le createur.
@@ -37,7 +37,7 @@ public abstract class AbstractTag implements ITag {
 	/**
 	 * La date de derniere modification.
 	 */
-	protected Date dateDeDerniereModification;
+	protected Date dateDeDerModif;
 	
 	/**
 	 * Le constructeur par defaut.
@@ -51,9 +51,9 @@ public abstract class AbstractTag implements ITag {
 	 * @param name Nom correspondant au Tag
 	 * @param p Participant ayant creer la tache
 	 */
-	public AbstractTag(final String name, final IParticipant p) {
+	public AbstractTag(final String name, final IParticipant createur) {
 		this.nom = name;
-		this.createur = p;
+		this.createur = createur;
 	}
 	
 	/**
@@ -66,28 +66,42 @@ public abstract class AbstractTag implements ITag {
 	
 	public void copier(final ITag tag){
 		this.nom = tag.getNom();
-		this.identifiantServeur = tag.getIdentifiantServeur();
+		this.identServeur = tag.getIdentifiantServeur();
 		this.createur = tag.getCreateur();
-		this.dateDeDerniereModification = tag.getDateDeDerniereModification();
+		this.dateDeDerModif = tag.getDateDeDerModif();
 	}
 	
 	@Override
-	public final void setNom(final String n) {
-		this.nom = n;
+	public final void setNom(final String nom) {
+		this.nom = nom;
+	}
+	
+	@Override
+	public final void setCreateur(final IParticipant createur) {
+		this.createur = createur;
 	}
 
-	@Override
-	public final void setIdentifiantServeur(final String idServeur) {
-		this.identifiantServeur = idServeur;
+	public String getNom() {
+		return nom;
 	}
-	
-	@Override
-	public final void setCreateur(final IParticipant c) {
-		this.createur = c;
+
+	public String getIdentServeur() {
+		return identServeur;
 	}
-	
-	@Override
-	public final void setDateDeDerniereModification(final Date dateDerniereModification) {
-		this.dateDeDerniereModification = dateDerniereModification;
+
+	public void setIdentServeur(final String identServeur) {
+		this.identServeur = identServeur;
+	}
+
+	public IParticipant getCreateur() {
+		return createur;
+	}
+
+	public Date getDateDeDerModif() {
+		return dateDeDerModif;
+	}
+
+	public void setDateDeDerModif(final Date dateDeDerModif) {
+		this.dateDeDerModif = dateDeDerModif;
 	}
 }

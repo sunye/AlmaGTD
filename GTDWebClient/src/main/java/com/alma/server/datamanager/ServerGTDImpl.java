@@ -38,13 +38,13 @@ public class ServerGTDImpl implements Server {
 		private T value;
 		private Exception exception;
 
-		public void onFailure(Exception e) {
-			this.exception = e;
+		public void onFailure(final Exception exception) {
+			this.exception = exception;
 			ServerGTDImpl.this.sync();
 		}
 
-		public void onSucces(T t) {
-			this.value  = t;
+		public void onSucces(final T value) {
+			this.value  = value;
 			ServerGTDImpl.this.sync();
 		}
 
@@ -55,13 +55,21 @@ public class ServerGTDImpl implements Server {
 		public T getValue() {
 			return value;
 		}
-	}
+
+		public void setValue(final T value) {
+			this.value = value;
+		}
+
+		public void setException(final Exception exception) {
+			this.exception = exception;
+		}
+	} 
 	
 	private ModeDeMiseAJour maj;
 	
 	private ServeurRMI serverGTDRMIAsync;
 	
-	public ServerGTDImpl(ModeDeMiseAJour maj) throws MalformedURLException, RemoteException, NotBoundException {
+	public ServerGTDImpl(final ModeDeMiseAJour maj) throws MalformedURLException, RemoteException, NotBoundException {
 		this.serverGTDRMIAsync = (ServeurRMI) Naming.lookup("rmi://" + /*host +*/ "/ServeurGTD_RMI") ;
 		this.maj = maj;
 	}
@@ -73,265 +81,281 @@ public class ServerGTDImpl implements Server {
 		this.notify();
 	}
 
-	public synchronized String connect(Session session) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.login(session.getLoginGTD(), session.getPasswordGTD(), cb);
+	public synchronized String connect(final Session session) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.login(session.getLoginGTD(), session.getPasswordGTD(), callb);
 		/* On attend le retour du CallBack */
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		session.setKeyGTD(cb.getValue());
-		return cb.getValue();
+		session.setKeyGTD(callb.getValue());
+		return callb.getValue();
 	}
 
-	public synchronized String createAccount(String login, String password, String nickname) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.creerCompte(login, password, nickname, cb);
+	public synchronized String createAccount(final String login, final String password, final String nickname) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.creerCompte(login, password, nickname, callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
-	public synchronized String deleteAccount(String login, String password, Session session) throws Exception {	
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerCompte(login, password, session.getKeyGTD(), cb);
+	public synchronized String deleteAccount(final String login, final String password, final Session session) throws Exception {	
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerCompte(login, password, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
-	}
-
-	public synchronized String updateAccountPassword(String oldPassword, String newPassword, Session session) throws Exception {	
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.modifierMotDePasse(oldPassword, newPassword, session.getKeyGTD(), cb);
-		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
-		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String updateAccountPseudo(String oldNickname, String newNickname, Session session) throws Exception {	
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.modifierPseudo(newNickname, session.getKeyGTD(), cb);
+	public synchronized String updateAccountPassword(final String oldPassword, final String newPassword, final Session session) throws Exception {	
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.modifierMotDePasse(oldPassword, newPassword, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized IContexte createContext(Session session, IContexte context) throws Exception {
-		CallBackSync<IContexte> cb = new CallBackSync<IContexte>();
-		this.serverGTDRMIAsync.creerContexte(context, session.getKeyGTD(), cb);
+	public synchronized String updateAccountPseudo(final String oldNickname, final String newNickname, final Session session) throws Exception {	
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.modifierPseudo(newNickname, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized IIdee createIdea(Session session, IIdee idea) throws Exception {
-		CallBackSync<IIdee> cb = new CallBackSync<IIdee>();
-		this.serverGTDRMIAsync.creerIdee(idea, session.getKeyGTD(), cb);
+	public synchronized IContexte createContext(final Session session, final IContexte context) throws Exception {
+		final CallBackSync<IContexte> callb = new CallBackSync<IContexte>();
+		this.serverGTDRMIAsync.creerContexte(context, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized List<IProjet> getProjects(Session session) throws Exception {
-		CallBackSync<List<IProjet>> cb = new CallBackSync<List<IProjet>>();
-		this.serverGTDRMIAsync.telechargeProjets(session.getKeyGTD(), cb);
+	public synchronized IIdee createIdea(final Session session, final IIdee idea) throws Exception {
+		final CallBackSync<IIdee> callb = new CallBackSync<IIdee>();
+		this.serverGTDRMIAsync.creerIdee(idea, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized List<ITache> getTasks(Session session) throws Exception {
-		CallBackSync<List<ITache>> cb = new CallBackSync<List<ITache>>();
-		this.serverGTDRMIAsync.telechargeTaches(session.getKeyGTD(), cb);
+	public synchronized List<IProjet> getProjects(final Session session) throws Exception {
+		final CallBackSync<List<IProjet>> callb = new CallBackSync<List<IProjet>>();
+		this.serverGTDRMIAsync.telechargeProjets(session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String disConnect(Session session) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.disconnect(session.getKeyGTD(), cb);
+	public synchronized List<ITache> getTasks(final Session session) throws Exception {
+		final CallBackSync<List<ITache>> callb = new CallBackSync<List<ITache>>();
+		this.serverGTDRMIAsync.telechargeTaches(session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized ITag createNote(Session session, ITag note) throws Exception {
-		CallBackSync<ITag> cb = new CallBackSync<ITag>();
-		this.serverGTDRMIAsync.creerTag(note, session.getKeyGTD(), cb);
+	public synchronized String disConnect(final Session session) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.disconnect(session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized IProjet createProject(Session session, IProjet project) throws Exception {
-		CallBackSync<IProjet> cb = new CallBackSync<IProjet>();
-		this.serverGTDRMIAsync.creerProjet(project, session.getKeyGTD(), cb);
+	public synchronized ITag createNote(final Session session, final ITag note) throws Exception {
+		final CallBackSync<ITag> callb = new CallBackSync<ITag>();
+		this.serverGTDRMIAsync.creerTag(note, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized ITache createTask(Session session, ITache task) throws Exception {
-		CallBackSync<ITache> cb = new CallBackSync<ITache>();
-		this.serverGTDRMIAsync.creerTache(task, session.getKeyGTD(), cb);
+	public synchronized IProjet createProject(final Session session, final IProjet project) throws Exception {
+		final CallBackSync<IProjet> callb = new CallBackSync<IProjet>();
+		this.serverGTDRMIAsync.creerProjet(project, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String delContext(Session session, IContexte context) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerContexte(context, session.getKeyGTD(), cb);
+	public synchronized ITache createTask(final Session session, final ITache task) throws Exception {
+		final CallBackSync<ITache> callb = new CallBackSync<ITache>();
+		this.serverGTDRMIAsync.creerTache(task, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String delIdea(Session session, IIdee idea) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerIdee(idea, session.getKeyGTD(), cb);
+	public synchronized String delContext(final Session session, final IContexte context) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerContexte(context, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String delNote(Session session, ITag note) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerTag(note, session.getKeyGTD(), cb);
+	public synchronized String delIdea(final Session session, final IIdee idea) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerIdee(idea, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String delProject(Session session, IProjet project)	throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerProjet(project, session.getKeyGTD(), cb);
+	public synchronized String delNote(final Session session, final ITag note) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerTag(note, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public synchronized String delTask(Session session, ITache task) throws Exception {
-		CallBackSync<String> cb = new CallBackSync<String>();
-		this.serverGTDRMIAsync.supprimerTache(task, session.getKeyGTD(), cb);
+	public synchronized String delProject(final Session session, final IProjet project)	throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerProjet(project, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public IContexte updateContext(Session session, IContexte context) throws Exception {
-		CallBackSync<IContexte> cb = new CallBackSync<IContexte>();
-		this.serverGTDRMIAsync.envoyerContexte(context, this.maj, session.getKeyGTD(), cb);
+	public synchronized String delTask(final Session session, final ITache task) throws Exception {
+		final CallBackSync<String> callb = new CallBackSync<String>();
+		this.serverGTDRMIAsync.supprimerTache(task, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public IIdee updateIdea(Session session, IIdee idea) throws Exception {
-		CallBackSync<IIdee> cb = new CallBackSync<IIdee>();
-		this.serverGTDRMIAsync.envoyerIdee(idea, this.maj, session.getKeyGTD(), cb);
+	public IContexte updateContext(final Session session, final IContexte context) throws Exception {
+		final CallBackSync<IContexte> callb = new CallBackSync<IContexte>();
+		this.serverGTDRMIAsync.envoyerContexte(context, this.maj, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public ITag updateNote(Session session, ITag note) throws Exception {
-		CallBackSync<ITag> cb = new CallBackSync<ITag>();
-		this.serverGTDRMIAsync.envoyerTag(note, this.maj, session.getKeyGTD(), cb);
+	public IIdee updateIdea(final Session session, final IIdee idea) throws Exception {
+		final CallBackSync<IIdee> callb = new CallBackSync<IIdee>();
+		this.serverGTDRMIAsync.envoyerIdee(idea, this.maj, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public IProjet updateProject(Session session, IProjet project) throws Exception {
-		CallBackSync<IProjet> cb = new CallBackSync<IProjet>();
-		this.serverGTDRMIAsync.envoyerProjet(project, this.maj, session.getKeyGTD(), cb);
+	public ITag updateNote(final Session session, final ITag note) throws Exception {
+		final CallBackSync<ITag> callb = new CallBackSync<ITag>();
+		this.serverGTDRMIAsync.envoyerTag(note, this.maj, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public ITache updateTask(Session session, ITache task) throws Exception {
-		CallBackSync<ITache> cb = new CallBackSync<ITache>();
-		this.serverGTDRMIAsync.envoyerTache(task, this.maj, session.getKeyGTD(), cb);
+	public IProjet updateProject(final Session session, final IProjet project) throws Exception {
+		final CallBackSync<IProjet> callb = new CallBackSync<IProjet>();
+		this.serverGTDRMIAsync.envoyerProjet(project, this.maj, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public List<IContexte> getContexts(Session session) throws Exception {
-		CallBackSync<List<IContexte>> cb = new CallBackSync<List<IContexte>>();
-		this.serverGTDRMIAsync.telechargeContextes(session.getKeyGTD(), cb);
+	public ITache updateTask(final Session session, final ITache task) throws Exception {
+		final CallBackSync<ITache> callb = new CallBackSync<ITache>();
+		this.serverGTDRMIAsync.envoyerTache(task, this.maj, session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public List<IIdee> getIdeas(Session session) throws Exception {
-		CallBackSync<List<IIdee>> cb = new CallBackSync<List<IIdee>>();
-		this.serverGTDRMIAsync.telechargeIdees(session.getKeyGTD(), cb);
+	public List<IContexte> getContexts(final Session session) throws Exception {
+		final CallBackSync<List<IContexte>> callb = new CallBackSync<List<IContexte>>();
+		this.serverGTDRMIAsync.telechargeContextes(session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
 	}
 
-	public List<ITag> getNotes(Session session) throws Exception {
-		CallBackSync<List<ITag>> cb = new CallBackSync<List<ITag>>();
-		this.serverGTDRMIAsync.telechargeTags(session.getKeyGTD(), cb);
+	public List<IIdee> getIdeas(final Session session) throws Exception {
+		final CallBackSync<List<IIdee>> callb = new CallBackSync<List<IIdee>>();
+		this.serverGTDRMIAsync.telechargeIdees(session.getKeyGTD(), callb);
 		this.wait();
-		if (cb.getException() != null) {
-			throw cb.getException();
+		if (callb.getException() != null) {
+			throw callb.getException();
 		}
-		return cb.getValue();
+		return callb.getValue();
+	}
+
+	public List<ITag> getNotes(final Session session) throws Exception {
+		final CallBackSync<List<ITag>> callb = new CallBackSync<List<ITag>>();
+		this.serverGTDRMIAsync.telechargeTags(session.getKeyGTD(), callb);
+		this.wait();
+		if (callb.getException() != null) {
+			throw callb.getException();
+		}
+		return callb.getValue();
+	}
+
+	public ModeDeMiseAJour getMaj() {
+		return maj;
+	}
+
+	public void setMaj(final ModeDeMiseAJour maj) {
+		this.maj = maj;
+	}
+
+	public ServeurRMI getServerGTDRMIAsync() {
+		return serverGTDRMIAsync;
+	}
+
+	public void setServerGTDRMIAsync(ServeurRMI serverGTDRMIAsync) {
+		this.serverGTDRMIAsync = serverGTDRMIAsync;
 	}
 }
 

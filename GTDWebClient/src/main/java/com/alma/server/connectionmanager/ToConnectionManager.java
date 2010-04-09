@@ -13,7 +13,7 @@ public interface ToConnectionManager {
 	 * @return renvoie l'id de la session.
 	 * @throws Exception - Erreur RMI, mauvais mot de passe, identifiant inexistant.
 	 */
-	public String connect(String loginGTD,String passGTD, String loginTdoo, String passTDo) throws Exception;
+	public String connect(final String loginGTD,final String passGTD, final String loginTdoo, final String passTDo) throws Exception;
 	
 	/**
 	 * Permet la deconnexion de l'utilisateur identifie par le parametre idSession.
@@ -21,7 +21,7 @@ public interface ToConnectionManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur de session.
 	 */
-	public String disconnect(Session session) throws Exception;
+	public String disconnect(final Session session) throws Exception;
 	
 	/**
 	 * Creer un compte utilisateur.
@@ -31,7 +31,7 @@ public interface ToConnectionManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur de session, identifiant deja existant, mot de passe invalide.
 	 */
-	public String createAccount(String login, String password, String nickname) throws Exception;
+	public String createAccount(final String login, final String password, final String nickname) throws Exception;
 	
 	/**
 	 * Supprimer un compte utilisateur.
@@ -41,7 +41,7 @@ public interface ToConnectionManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur de session, identifiant inexistant, mot de passe invalide.
 	 */
-	public String delAccount(String login, String password, Session idSession) throws Exception;
+	public String delAccount(final String login, final String password, final Session idSession) throws Exception;
 	
 	/**
 	 * Changer le mot de passe d'un utilisateur.
@@ -51,7 +51,7 @@ public interface ToConnectionManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur de session, mot de passe invalide.
 	 */
-	public String updateAccountPassword(String oldPassword, String newPassword, Session session) throws Exception;	
+	public String updateAccountPassword(final String oldPassword, final String newPassword, final Session session) throws Exception;	
 	
 	/**
 	 * Changer l'identifiant d'un utilisateur.
@@ -61,6 +61,6 @@ public interface ToConnectionManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur de session, identifiant deja existant.
 	 */
-	public String updateAccountPseudo(String oldNickname, String newNickname, Session session) throws Exception;
+	public String updateAccountPseudo(final String oldNickname, final String newNickname, final Session session) throws Exception;
 }
 

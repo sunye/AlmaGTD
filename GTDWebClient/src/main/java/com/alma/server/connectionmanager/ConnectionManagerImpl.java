@@ -11,7 +11,7 @@ import com.alma.server.types.Session;
 public class ConnectionManagerImpl implements ToConnectionManager {
 
 	private static ConnectionManagerImpl instance = null;
-	private HashMap<String, Session> listSessions;
+	private final HashMap<String, Session> listSessions;
 		
 	private ConnectionManagerImpl() throws MalformedURLException, RemoteException, NotBoundException {		
 		listSessions = new HashMap<String, Session>();
@@ -25,14 +25,14 @@ public class ConnectionManagerImpl implements ToConnectionManager {
 	}
 	
 	@Override
-	public String connect(String loginGTD, String passGTD, String loginTdoo, String passTDo) throws Exception {	
-		Session newSession = new Session(loginGTD, passGTD, loginTdoo, passTDo);
+	public String connect(final String loginGTD, final String passGTD, final String loginTdoo, final String passTDo) throws Exception {	
+		final Session newSession = new Session(loginGTD, passGTD, loginTdoo, passTDo);
 		listSessions.put(newSession.getIdSession(), newSession);		
 		return WebServerManager.getConnectToServer().connect(newSession);		
 	}
 
 	@Override
-	public String createAccount(String login, String password, String nickname) throws Exception {
+	public String createAccount(final String login, final String password, final String nickname) throws Exception {
 		return WebServerManager.getConnectToServer().createAccount(login, password, nickname);
 	}
 
@@ -53,5 +53,9 @@ public class ConnectionManagerImpl implements ToConnectionManager {
 
 	public String updateAccountPseudo(String oldNickname, String newNickname, Session session) throws Exception {
 		return WebServerManager.getConnectToServer().updateAccountPseudo(oldNickname, newNickname, session);
+	}
+
+	public HashMap<String, Session> getListSessions() {
+		return listSessions;
 	}
 }

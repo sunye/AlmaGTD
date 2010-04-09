@@ -11,85 +11,82 @@ public class Project implements Serializable {
 	private static final long serialVersionUID = 6151805554978202997L;
 	protected String identifiant;
 	protected String nom;
-	protected Date dateDeDerniereModification;
+	protected Date dateDeDerModif;
 	protected Avancement avancement;
 	protected Context contexteParDefaut;
-	protected List<Task> listeDesTaches = new ArrayList<Task>();
-	protected List<Participant> listeDesParticipants  = new ArrayList<Participant>();
+	protected List<Task> listeTaches = new ArrayList<Task>();
+	protected List<Participant> listeParticipants  = new ArrayList<Participant>();
 	protected Participant createur;
 	protected boolean dansLaPoubelle = false;
 	protected List<Contact> contacts;
-	protected List<Project> listeDesSousProjets = new ArrayList<Project>();
+	protected List<Project> listeSousProjets = new ArrayList<Project>();
 
-	/**
-	 * Le constructeur par defaut.
-	 */
-	public Project() {
-		super();
+	
+	public Project (){
+		
 	}
-
 	/**
 	 * Le constructeur avec initialisation de l'identifiant, du nom, du contexte
 	 * par defaut et du createur.
 	 * 
-	 * @param n
+	 * @param nom
 	 *            Le nom choisi.
 	 * @param contexte
 	 *            Le contexte choisi.
-	 * @param c
+	 * @param createur
 	 *            Le createur du projet.
 	 */
-	public Project(final String identifiant, final String n,
-			final Context contexte, final Participant c) {
+	public Project(final String identifiant, final String nom,
+			final Context contexte, final Participant createur) {
 		super();
 		this.identifiant = identifiant;
-		this.nom = n;
+		this.nom = nom;
 		this.contexteParDefaut = contexte;
-		this.createur = c;
+		this.createur = createur;
 	}
 
 	/**
 	 * Le constructeur avec initialisation du nom, du contexte par defaut et du
 	 * createur.
 	 * 
-	 * @param n
+	 * @param nom
 	 *            Le nom choisi.
 	 * @param contexte
 	 *            Le contexte choisi.
-	 * @param c
+	 * @param createur
 	 *            Le createur du projet.
 	 */
-	public Project(final String n, final Context contexte, final Participant c) {
+	public Project(final String nom, final Context contexte, final Participant createur) {
 		super();
-		this.nom = n;
+		this.nom = nom;
 		this.contexteParDefaut = contexte;
-		this.createur = c;
+		this.createur = createur;
 	}
 
 	/**
 	 * Constructeur de recopie d'un projet.
 	 * 
-	 * @param p
+	 * @param projet
 	 *            Projet a recopier
 	 */
-	public Project(final Project p) {
-		this.nom = p.getNom();
-		this.createur = p.getCreateur();
-		this.listeDesTaches = p.getListeDeTaches();
-		this.listeDesParticipants = p.getListeDeParticipants();
-		this.avancement = p.getAvancement();
-		this.dansLaPoubelle = p.isDansLaPoubelle();
-		this.contacts = p.getListeContacts();
-		this.listeDesSousProjets = p.getListeDeSousProjets();
+	public Project(final Project projet) {
+		this.nom = projet.getNom();
+		this.createur = projet.getCreateur();
+		this.listeTaches = projet.getListeDeTaches();
+		this.listeParticipants = projet.getListeDeParticipants();
+		this.avancement = projet.getAvancement();
+		this.dansLaPoubelle = projet.isDansLaPoubelle();
+		this.contacts = projet.getListeContacts();
+		this.listeSousProjets = projet.getListeDeSousProjets();
 	}
 
 	
-	public final void ajoutTache(final Task t) {
+	public final void ajoutTache(final Task task) {
 		// TODO
 	}
 
 	
-	public final void supprimeTache(final Task t) {
+	public final void supprimeTache(final Task task) {
 		// TODO
 	}
 
@@ -114,8 +111,8 @@ public class Project implements Serializable {
 	}
 
 	
-	public final void setNom(final String n) {
-		this.nom = n;
+	public final void setNom(final String nom) {
+		this.nom = nom;
 	}
 
 	
@@ -124,8 +121,8 @@ public class Project implements Serializable {
 	}
 
 	
-	public final void setAvancement(final Avancement a) {
-		this.avancement = a;
+	public final void setAvancement(final Avancement avancement) {
+		this.avancement = avancement;
 	}
 
 	
@@ -135,23 +132,26 @@ public class Project implements Serializable {
 
 	
 	public final void setListeDeTaches(final ArrayList<Task> listeTaches) {
-		this.listeDesTaches = listeTaches;
+		this.listeTaches = listeTaches;
 	}
 
+	public List<Task> getListeDeTaches() {
+		return listeTaches;
+	}
 	
 	public final void setListeDeSousProjets(final List<Project> listeProjets) {
-		this.listeDesSousProjets = listeProjets;
+		this.listeSousProjets = listeProjets;
 	}
 
 	
 	public final void setListeDeParticipants(
 			final List<Participant> listeParticipants) {
-		this.listeDesParticipants = listeParticipants;
+		this.listeParticipants = listeParticipants;
 	}
 
 	
-	public final void setCreateur(final Participant c) {
-		this.createur = c;
+	public final void setCreateur(final Participant createur) {
+		this.createur = createur;
 	}
 
 	
@@ -181,17 +181,12 @@ public class Project implements Serializable {
 
 	
 	public List<Participant> getListeDeParticipants() {
-		return listeDesParticipants;
+		return listeParticipants;
 	}
 
 	
 	public List<Project> getListeDeSousProjets() {
-		return listeDesSousProjets;
-	}
-
-	
-	public List<Task> getListeDeTaches() {
-		return listeDesTaches;
+		return listeSousProjets;
 	}
 
 	
@@ -205,8 +200,8 @@ public class Project implements Serializable {
 	}
 
 	
-	public Date getDateDeDerniereModification() {
-		return dateDeDerniereModification;
+	public Date getDateDeDerModif() {
+		return dateDeDerModif;
 	}
 
 	public String getIdentifiant() {
@@ -214,13 +209,13 @@ public class Project implements Serializable {
 	}
 
 	
-	public void setDateDeDerniereModification(Date dateDerniereModification) {
-		this.dateDeDerniereModification = dateDerniereModification;
+	public void setDateDeDerModif(final Date dateDerModif) {
+		this.dateDeDerModif = dateDerModif;
 
 	}
 
-	public void setIdentifiant(String id) {
-		this.identifiant = id;
+	public void setIdentifiant(final String identifiant) {
+		this.identifiant = identifiant;
 
 	}
 
@@ -230,25 +225,27 @@ public class Project implements Serializable {
 	}
 
 	
-	public void setIdentifiantServeur(String idServeur) {
+	public void setIdentifiantServeur(final String idServeur) {
+		//TODO
 	}
 
 	
 	public String toString() {
 		String result = "";
 		result = "Projet " + this.getIdentifiant() + " " + this.getNom();
-		for (Task tache : listeDesTaches) {
+		for (Task tache : listeTaches) {
 			result += "   >" + tache;
 		}
 		return result;
 	}
 
 	
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
+		boolean bool = false;
 		if (((Project) obj).getIdentifiant() == this.getIdentifiant()) {
-			return true;
+			 bool = true;
 		}
-		return false;
+		return bool;
 	}
 
 	
@@ -257,5 +254,7 @@ public class Project implements Serializable {
 	}
 
 	
-	public void setDansArchive(boolean dansArchive) {}
+	public void setDansArchive(final boolean dansArchive) {
+		//TODO
+	}
 }

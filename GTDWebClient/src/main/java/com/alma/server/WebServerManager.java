@@ -23,14 +23,14 @@ public class WebServerManager {
 	
 	private static ToProcessManager toProcessManager;
 	
-	private static ToConnectionManager toConnectionManager;
+	private static ToConnectionManager toConnectManager;
 	
 	static {
 		try {
 			WebServerManager.toDataManager = DataManagerImpl.getDataManagerInstance();
 			WebServerManager.connectToServer = DataManagerImpl.getConnectToServerInstance();
 			WebServerManager.toProcessManager = ProcessManagerImpl.getInstance();
-			WebServerManager.toConnectionManager = ConnectionManagerImpl.getInstance();
+			WebServerManager.toConnectManager = ConnectionManagerImpl.getInstance();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		} catch (RemoteException e) {
@@ -53,6 +53,6 @@ public class WebServerManager {
 	}
 	
 	public static ToConnectionManager getToConnectionManager() {
-		return WebServerManager.toConnectionManager;
+		return WebServerManager.toConnectManager;
 	}
 }

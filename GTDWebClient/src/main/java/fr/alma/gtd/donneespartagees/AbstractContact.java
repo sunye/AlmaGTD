@@ -64,8 +64,8 @@ public abstract class AbstractContact extends AbstractObjetServeur implements IC
 	 * @param contact contact a copier.
 	 */
 	public void copier(final IContact contact) {
-		this.identifiantServeur = contact.getIdentifiantServeur();
-		this.dateDeDerniereModification = contact.getDateDeDerniereModification();
+		this.identServeur = contact.getIdentifiantServeur();
+		this.dateDeDerModif = contact.getDateDeDerModif();
 		this.nom = contact.getNom();
 		this.email = contact.getEmail();
 		this.adresse = contact.getAdresse();
@@ -92,6 +92,26 @@ public abstract class AbstractContact extends AbstractObjetServeur implements IC
 	@Override
 	public void setTelephone(final String numeroTelephone) {
 		this.numeroTelephone = numeroTelephone;
+	}
+
+	public String getNumeroTelephone() {
+		return numeroTelephone;
+	}
+
+	public void setNumeroTelephone(final String numeroTelephone) {
+		this.numeroTelephone = numeroTelephone;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getNom() {
+		return nom;
 	}
 	
 

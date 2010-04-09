@@ -363,7 +363,7 @@ public class TacheImpl implements Task,Serializable {
 	}
 
 	@Override
-	public Date getDateDeDerniereModification() {
+	public Date getDateDeDerModif() {
 		return dateDeDerniereModification;
 	}
 
@@ -373,7 +373,7 @@ public class TacheImpl implements Task,Serializable {
 
 
 	@Override
-	public void setDateDeDerniereModification(Date dateDerniereModification) {
+	public void setDateDeDerModif(Date dateDerniereModification) {
 		this.dateDeDerniereModification = dateDerniereModification;
 		
 	}
