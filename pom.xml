@@ -4,348 +4,330 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:xs="http://www.w3.org/2001/XMLSchema"
          xmlns:ns="http://maven.apache.org/POM/4.0.0">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>fr.alma</groupId>
+    <groupId>fr.alma</groupId>
 
-  <artifactId>AlmaGTD</artifactId>
+    <artifactId>AlmaGTD</artifactId>
 
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
 
-  <version>1.0</version>
+    <version>1.0</version>
 
-  <name>Alma - Getting Things Done</name>
+    <name>Alma - Getting Things Done</name>
 
-  <description></description>
+    <description></description>
 
-  <url>http://alma.univ-nantes.fr/</url>
+    <url>http://alma.univ-nantes.fr/</url>
 
-  <licenses>
-    <license>
-      <name>GPL</name>
+    <licenses>
+        <license>
+            <name>GPL</name>
 
-      <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
+            <url>http://www.gnu.org/licenses/gpl-2.0.txt</url>
 
-      <distribution>repo</distribution>
+            <distribution>repo</distribution>
 
-      <comments>v2 or higher</comments>
-    </license>
-  </licenses>
+            <comments>v2 or higher</comments>
+        </license>
+    </licenses>
 
-  <organization>
-    <name>Université de Nantes - Master ALMA</name>
+    <organization>
+        <name>Université de Nantes - Master ALMA</name>
 
-    <url>http://alma.univ-nantes.fr</url>
-  </organization>
+        <url>http://alma.univ-nantes.fr</url>
+    </organization>
 
-  <properties>
-    <compileSource>1.6</compileSource>
+    <properties>
+        <compileSource>1.6</compileSource>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
 
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
 
-        <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
 
-        <checksumPolicy>warn</checksumPolicy>
-      </releases>
+            <snapshots>
+                <enabled>true</enabled>
 
-      <snapshots>
-        <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
 
-        <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
 
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
+            <id>codehausSnapshots</id>
 
-      <id>codehausSnapshots</id>
+            <name>Codehaus Snapshots</name>
 
-      <name>Codehaus Snapshots</name>
+            <url>http://snapshots.repository.codehaus.org/</url>
 
-      <url>http://snapshots.repository.codehaus.org/</url>
+            <layout>default</layout>
+        </repository>
 
-      <layout>default</layout>
-    </repository>
+        <repository>
+            <id>Java</id>
 
-    <repository>
-      <id>Java</id>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
 
-      <url>http://download.java.net/maven/2/</url>
-    </repository>
+        <repository>
+            <id>Codehaus</id>
 
-    <repository>
-      <id>Codehaus</id>
+            <url>http://repository.codehaus.org/</url>
+        </repository>
 
-      <url>http://repository.codehaus.org/</url>
-    </repository>
+        <repository>
+            <id>SmartGWT</id>
 
-    <repository>
-      <id>SmartGWT</id>
+            <url>http://www.smartclient.com/maven2/</url>
+        </repository>
 
-      <url>http://www.smartclient.com/maven2/</url>
-    </repository>
+        <repository>
+            <id>gwt-ext</id>
 
-    <repository>
-      <id>gwt-ext</id>
+            <url>http://www.gwt-ext.com/maven2/</url>
+        </repository>
 
-      <url>http://www.gwt-ext.com/maven2/</url>
-    </repository>
-    
-    <repository>
-      <id>iBiblio</id>
-      <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
-    </repository>
-  </repositories>
+        <repository>
+            <id>iBiblio</id>
+            <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+        </repository>
+    </repositories>
 
-  <modules>
-    <module>GTDServer</module>
+    <modules>
+        <module>GTDServer</module>
 
-    <module>GTDClientBrun</module>
+        <module>GTDClientBrun</module>
 
-    <module>GTDWebClient</module>
+        <module>GTDWebClient</module>
 
-    <module>GTDClientKrom</module>
+        <module>GTDClientKrom</module>
 
-    <module>GTDClientGil</module>
+        <module>GTDClientGil</module>
 
-    <module>GTDCommon</module>
-  </modules>
+        <module>GTDCommon</module>
+    </modules>
 
-  <developers>
-    <developer>
-      <id>sunye</id>
+    <developers>
+        <developer>
+            <id>sunye</id>
 
-      <name>Gerson Sunyé</name>
+            <name>Gerson Sunyé</name>
 
-      <email>gerson.sunye@univ-nantes.fr</email>
+            <email>gerson.sunye@univ-nantes.fr</email>
 
-      <roles>
-        <role>Architect</role>
-      </roles>
+            <roles>
+                <role>Architect</role>
+            </roles>
 
-      <organization>Université de Nantes</organization>
+            <organization>Université de Nantes</organization>
 
-      <timezone>+2</timezone>
-    </developer>
-  </developers>
+            <timezone>+2</timezone>
+        </developer>
+    </developers>
 
-  <build>
-    <pluginManagement>
-      <plugins></plugins>
-    </pluginManagement>
+    <build>
+        <pluginManagement>
+            <plugins></plugins>
+        </pluginManagement>
 
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-compiler-plugin</artifactId>
-
-        <configuration>
-          <source>${compileSource}</source>
-
-          <target>${compileSource}</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-checkstyle-plugin</artifactId>
-
-        <version>2.5</version>
-
-        <dependencies>
-          <dependency>
-            <groupId>fr.alma</groupId>
-
-            <artifactId>GTDCommon</artifactId>
-
-            <version>1.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-
-        <artifactId>javancss-maven-plugin</artifactId>
-
-        <version>2.0</version>
-
-        <configuration>
-          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-
-        <artifactId>emma-maven-plugin</artifactId>
-
-        <version>1.0-alpha-2</version>
-
-        <inherited>true</inherited>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-surefire-report-plugin</artifactId>
-
-        <version>2.5</version>
-
-        <configuration>
-          <inherited>true</inherited>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-jxr-plugin</artifactId>
-
-        <version>2.1</version>
-      </plugin>
-
-      <!--
+        <plugins>
             <plugin>
-                <groupId>net.sf.xradar</groupId>
-                <artifactId>maven-xradar-plugin</artifactId>
-                <version>1.2.2</version>
-				<configuration>
-					<autoRadar>true</autoRadar>
-					<aggregate>true</aggregate>
-				</configuration>
-            </plugin>  
-            -->
+                <groupId>org.apache.maven.plugins</groupId>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
 
-        <artifactId>dashboard-maven-plugin</artifactId>
+                <configuration>
+                    <source>${compileSource}</source>
 
-        <configuration>
-          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-        </configuration>
-      </plugin>
+                    <target>${compileSource}</target>
+                </configuration>
+            </plugin>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-
-        <artifactId>versions-maven-plugin</artifactId>
-
-        <version>1.1</version>
-
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>dependency-updates-report</report>
-
-              <report>plugin-updates-report</report>
-
-              <report>property-updates-report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-checkstyle-plugin</artifactId>
-
-        <version>2.5</version>
-
-        <configuration>
-          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-
-          <configLocation>checkstyle/checkstyle.xml</configLocation>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-
-        <artifactId>cobertura-maven-plugin</artifactId>
-
-        <version>2.3</version>
-
-        <configuration>
-          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-
-          <targetJdk>${compileSource}</targetJdk>
-
-          <instrumentation>
-            <ignores>
-              <ignore>**/CallBack</ignore>
-
-              <ignore>**/*RMI</ignore>
-            </ignores>
-
-            <excludes>
-              <exclude>**/*Stub.class</exclude>
-            </excludes>
-          </instrumentation>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-
-        <artifactId>maven-pmd-plugin</artifactId>
-
-        <version>2.4</version>
-
-        <configuration>
-          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-
-          <targetJdk>${compileSource}</targetJdk>
-        </configuration>
-      </plugin>
-
-      <!--
             <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-changelog-plugin</artifactId>
-				<configuration>
-					<type>range</type>
-					<range>20</range>
-					<headingDateFormat>dd MMMM yyyy</headingDateFormat>
-				</configuration>
-			</plugin>
-            -->
+                <groupId>org.apache.maven.plugins</groupId>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
 
-        <artifactId>jdepend-maven-plugin</artifactId>
-      </plugin>
+                <version>2.5</version>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+                <dependencies>
+                    <dependency>
+                        <groupId>fr.alma</groupId>
 
-        <artifactId>findbugs-maven-plugin</artifactId>
+                        <artifactId>GTDCommon</artifactId>
 
-        <version>2.3.1</version>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
-        <configuration>
-          <effort>Max</effort>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
 
-          <threshold>Low</threshold>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>emma-maven-plugin</artifactId>
+                <version>emma-maven-plugin</version>
+                <inherited>true</inherited>
+            </plugin>
 
-          <!--
-                    <includeFilterFile>whizbang/lib-filter.xml</includeFilterFile>
-                    -->
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <inherited>true</inherited>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+
+            <!--
+                  <plugin>
+                      <groupId>net.sf.xradar</groupId>
+                      <artifactId>maven-xradar-plugin</artifactId>
+                      <version>1.2.2</version>
+                      <configuration>
+                          <autoRadar>true</autoRadar>
+                          <aggregate>true</aggregate>
+                      </configuration>
+                  </plugin>
+                  -->
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+
+                <artifactId>dashboard-maven-plugin</artifactId>
+
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+
+                <artifactId>versions-maven-plugin</artifactId>
+
+                <version>1.1</version>
+
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>maven-checkstyle-plugin</artifactId>
+
+                <version>2.5</version>
+
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <configLocation>checkstyle/checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+
+                <artifactId>cobertura-maven-plugin</artifactId>
+
+                <version>2.3</version>
+
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+
+                    <targetJdk>${compileSource}</targetJdk>
+
+                    <instrumentation>
+                        <ignores>
+                            <ignore>**/CallBack</ignore>
+
+                            <ignore>**/*RMI</ignore>
+                        </ignores>
+
+                        <excludes>
+                            <exclude>**/*Stub.class</exclude>
+                        </excludes>
+                    </instrumentation>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+
+                <artifactId>maven-pmd-plugin</artifactId>
+
+                <version>2.4</version>
+
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+
+                    <targetJdk>${compileSource}</targetJdk>
+                </configuration>
+            </plugin>
+
+            <!--
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-changelog-plugin</artifactId>
+                      <configuration>
+                          <type>range</type>
+                          <range>20</range>
+                          <headingDateFormat>dd MMMM yyyy</headingDateFormat>
+                      </configuration>
+                  </plugin>
+                  -->
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+
+                <artifactId>findbugs-maven-plugin</artifactId>
+
+                <version>2.3.1</version>
+
+                <configuration>
+                    <effort>Max</effort>
+
+                    <threshold>Low</threshold>
+
+                    <!--
+                              <includeFilterFile>whizbang/lib-filter.xml</includeFilterFile>
+                              -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
