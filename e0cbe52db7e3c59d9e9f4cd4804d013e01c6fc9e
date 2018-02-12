@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4fb239a7_6476ff51",
+        "filename": "gtd-agenda/src/main/java/univ/calendar/Calendar.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1012723
+      },
+      "writtenOn": "2018-02-12T16:37:44Z",
+      "side": 1,
+      "message": "Use interfaces when possible: List\u003c\u003e instead of ArrayList\u003c\u003e.",
+      "revId": "e0cbe52db7e3c59d9e9f4cd4804d013e01c6fc9e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99275cb1_7fac5818",
+        "filename": "gtd-agenda/src/main/java/univ/calendar/Calendar.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1012723
+      },
+      "writtenOn": "2018-02-12T16:37:44Z",
+      "side": 1,
+      "message": "Cyclomatic complexity is too high, refactor.",
+      "revId": "e0cbe52db7e3c59d9e9f4cd4804d013e01c6fc9e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
