@@ -7,7 +7,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.alma</groupId>
-
     <artifactId>AlmaGTD</artifactId>
 
     <packaging>pom</packaging>
@@ -38,59 +37,42 @@
         <url>http://alma.univ-nantes.fr</url>
     </organization>
 
-    <properties>
-        <compileSource>1.6</compileSource>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
     <repositories>
+
         <repository>
             <releases>
                 <enabled>false</enabled>
-
                 <updatePolicy>always</updatePolicy>
-
                 <checksumPolicy>warn</checksumPolicy>
             </releases>
-
             <snapshots>
                 <enabled>true</enabled>
-
                 <updatePolicy>never</updatePolicy>
-
                 <checksumPolicy>fail</checksumPolicy>
             </snapshots>
-
             <id>codehausSnapshots</id>
-
             <name>Codehaus Snapshots</name>
-
             <url>http://snapshots.repository.codehaus.org/</url>
-
             <layout>default</layout>
         </repository>
 
         <repository>
             <id>Java</id>
-
             <url>http://download.java.net/maven/2/</url>
         </repository>
 
         <repository>
             <id>Codehaus</id>
-
             <url>http://repository.codehaus.org/</url>
         </repository>
 
         <repository>
             <id>SmartGWT</id>
-
             <url>http://www.smartclient.com/maven2/</url>
         </repository>
 
         <repository>
             <id>gwt-ext</id>
-
             <url>http://www.gwt-ext.com/maven2/</url>
         </repository>
 
@@ -98,19 +80,19 @@
             <id>iBiblio</id>
             <url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
         </repository>
+
+        <repository>
+            <id>JBoss</id>
+            <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+        </repository>
     </repositories>
 
     <modules>
         <module>GTDServer</module>
-
         <module>GTDClientBrun</module>
-
         <module>GTDWebClient</module>
-
         <module>GTDClientKrom</module>
-
         <module>GTDClientGil</module>
-
         <module>GTDCommon</module>
     </modules>
 
