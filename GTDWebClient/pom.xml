@@ -88,11 +88,13 @@
 		   <artifactId>gwtext</artifactId>
 		   <version>2.0.5</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.loststone.toodledo</groupId>
 			<artifactId>toodledo</artifactId>
 			<version>0.2.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/toodledo-java-0.2.1.jar</systemPath>
 		</dependency>
 		
 	  <dependency>
@@ -175,4 +177,12 @@
 			<version>0.9.1.2</version>
 		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>jboss-thirdparty-repository</id>
+			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 </project>

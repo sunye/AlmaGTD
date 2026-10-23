@@ -22,7 +22,7 @@ public interface DataManager {
 	 * @return La tache avec un identifiant affecte par le serveur.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public ITache createTask(final Session session, final ITache task) throws IOException;
+	public ITache createTask(final Session session, final ITache task) throws IOException, Exception;
 	
 	/**
 	 * Modifier une tache.
@@ -31,7 +31,7 @@ public interface DataManager {
 	 * @return La tache modifiee.
 	 * @throws Exception - Erreur RMI, erreur session, tache invalide.
 	 */
-	public ITache updateTask(final Session session, final ITache task) throws IOException;
+	public ITache updateTask(final Session session, final ITache task) throws IOException, Exception;
 
 	/**
 	 * Supprimer une tache
@@ -40,7 +40,7 @@ public interface DataManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur session, tache invalide.
 	 */
-	public String delTask(Session session, ITache task) throws IOException;
+	public String delTask(Session session, ITache task) throws IOException, Exception;
 
 	/**
 	 * Creer une note.
@@ -49,7 +49,7 @@ public interface DataManager {
 	 * @return La note avec un identifiant affecte par le serveur.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public ITag createNote(Session session, ITag note) throws IOException;
+	public ITag createNote(Session session, ITag note) throws IOException, Exception;
 	
 	/**
 	 * Modifier une note.
@@ -58,7 +58,7 @@ public interface DataManager {
 	 * @return La note modifiee.
 	 * @throws Exception - Erreur RMI, erreur session, note invalide.
 	 */
-	public ITag updateNote(final Session session, ITag note) throws IOException;
+	public ITag updateNote(final Session session, ITag note) throws IOException, Exception;
 	
 	/**
 	 * Supprimer une note.
@@ -67,7 +67,7 @@ public interface DataManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur session, note invalide.
 	 */
-	public String delNote(Session session, ITag note) throws IOException;
+	public String delNote(Session session, ITag note) throws IOException, Exception;
 	
 	/**
 	 * Creer un projet.
@@ -76,7 +76,7 @@ public interface DataManager {
 	 * @return Le projet avec un identifiant affecte par le serveur.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public IProjet createProject(Session session, IProjet project) throws IOException;
+	public IProjet createProject(Session session, IProjet project) throws IOException, Exception;
 
 	/**
 	 * Modifier un projet.
@@ -85,7 +85,7 @@ public interface DataManager {
 	 * @return Le projet modifie.
 	 * @throws Exception - Erreur RMI, erreur session, projet invalide.
 	 */
-	public IProjet updateProject(Session session, IProjet project) throws IOException;
+	public IProjet updateProject(Session session, IProjet project) throws IOException, Exception;
 
 	/**
 	 * Supprimer un projet.
@@ -94,7 +94,7 @@ public interface DataManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur session, projet invalide.
 	 */
-	public String delProject(Session session, IProjet project) throws IOException;
+	public String delProject(Session session, IProjet project) throws IOException, Exception;
 
 	/**
 	 * Creer un contexte.
@@ -103,7 +103,7 @@ public interface DataManager {
 	 * @return Le contexte avec un identifiant affecte par le serveur.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public IContexte createContext(Session session, IContexte context) throws IOException;
+	public IContexte createContext(Session session, IContexte context) throws IOException, Exception;
 	
 	/**
 	 * Modifier un contexte.
@@ -112,7 +112,7 @@ public interface DataManager {
 	 * @return Le contexte modifie.
 	 * @throws Exception - Erreur RMI, erreur session, contexte invalide.
 	 */
-	public IContexte updateContext(Session session, IContexte context) throws IOException;
+	public IContexte updateContext(Session session, IContexte context) throws IOException, Exception;
 	
 	/**
 	 * Supprimer un contexte.
@@ -121,7 +121,7 @@ public interface DataManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur session, contexte invalide.
 	 */
-	public String delContext(Session session, IContexte context) throws IOException; 
+	public String delContext(Session session, IContexte context) throws IOException, Exception;
 	
 	/**
 	 * Creer une idee.
@@ -130,7 +130,7 @@ public interface DataManager {
 	 * @return L'idee avec un identifiant affecte par le serveur.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public IIdee createIdea(Session session, IIdee idea) throws IOException;
+	public IIdee createIdea(Session session, IIdee idea) throws IOException, Exception;
 	
 	/**
 	 * Modifier une idee.
@@ -139,7 +139,7 @@ public interface DataManager {
 	 * @return L'idee modifiee.
 	 * @throws Exception - Erreur RMI, erreur session, l'idee invalide.
 	 */
-	public IIdee updateIdea(Session session, IIdee idea) throws IOException;
+	public IIdee updateIdea(Session session, IIdee idea) throws IOException, Exception;
 
 	/**
 	 * Supprimer une idee.
@@ -148,5 +148,5 @@ public interface DataManager {
 	 * @return Message de confirmation du serveur.
 	 * @throws Exception - Erreur RMI, erreur session, l'idee invalide.
 	 */
-	public String delIdea(Session session, IIdee idea) throws IOException;
+	public String delIdea(Session session, IIdee idea) throws IOException, Exception;
 }

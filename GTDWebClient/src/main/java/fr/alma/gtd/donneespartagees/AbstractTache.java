@@ -71,7 +71,7 @@ public abstract class AbstractTache extends AbstractObjetServeur implements ITac
 	/**
 	 * Le contexte.
 	 */
-	protected IObjetServeur contexte;
+	protected IContexte contexte;
 	
 	/**
 	 * La liste des tags.
@@ -118,13 +118,13 @@ public abstract class AbstractTache extends AbstractObjetServeur implements ITac
 	
 	/**
 	 * Le constructeur avec initialisation du nom, de la priorite, du taux d'effort, du contexte et du createur.
-	 * @param n Le nom.
-	 * @param p La priorite.
+	 * @param nom Le nom.
+	 * @param priorite La priorite.
 	 * @param effort Le taux d'effort.
-	 * @param c Le contexte.
-	 * @param cr Le createur de la tache.
+	 * @param contexte Le contexte.
+	 * @param createur Le createur de la tache.
 	 */
-	public AbstractTache(final String nom, final int priorite, final int effort, final IObjetServeur contexte, final IParticipant createur) {
+	public AbstractTache(final String nom, final int priorite, final int effort, final IContexte contexte, final IParticipant createur) {
 		super();
 		this.nom = nom;
 		this.priorite = priorite;
@@ -135,7 +135,7 @@ public abstract class AbstractTache extends AbstractObjetServeur implements ITac
 	
 	/**
 	 * Constructeur de recopie d'une tache.
-	 * @param t Tache a recopier
+	 * @param task Tache a recopier
 	 */
 	public AbstractTache(final ITache task) {
 		super();
@@ -291,12 +291,8 @@ public abstract class AbstractTache extends AbstractObjetServeur implements ITac
 		return participant;
 	}
 
-	public IObjetServeur getContexte() {
+	public IContexte getContexte() {
 		return contexte;
-	}
-
-	public void setContexte(final IObjetServeur contexte) {
-		this.contexte = contexte;
 	}
 
 	public List<ITag> getListeDesTags() {

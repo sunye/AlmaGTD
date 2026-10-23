@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
 
 
@@ -60,12 +61,22 @@ public class EtatUserType implements UserType {
 	}
 
 	@Override
+	public Object nullSafeGet(ResultSet resultSet, String[] strings, SharedSessionContractImplementor sharedSessionContractImplementor, Object o) throws HibernateException, SQLException {
+		return null;
+	}
+
+	@Override
+	public void nullSafeSet(PreparedStatement preparedStatement, Object o, int i, SharedSessionContractImplementor sharedSessionContractImplementor) throws HibernateException, SQLException {
+
+	}
+
+	@Override
 	public boolean isMutable() {
 		// Les Etat sont stateless, ils sont donc clairement figés (trad.) (?)
 		return false;
 	}
 
-	@Override
+
 	public Object nullSafeGet(ResultSet rs, String[] names, Object owner)
 	throws HibernateException, SQLException {
 		final String stateValue = rs.getString(names[0]);
@@ -84,7 +95,7 @@ public class EtatUserType implements UserType {
 		return etat;
 	}
 
-	@Override
+
 	public void nullSafeSet(PreparedStatement st, Object value, int index) throws HibernateException, SQLException {
 		if (value == null) {
 			st.setNull(index, Types.VARCHAR);

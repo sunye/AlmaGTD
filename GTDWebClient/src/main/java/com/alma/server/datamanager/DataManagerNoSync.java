@@ -21,33 +21,33 @@ public interface DataManagerNoSync {
 	 * @return La liste de contextes.
 	 * @throws Exception - Erreur RMI, erreur session.
 	 */
-	public List<IContexte> getContexts(final Session session) throws IOException;
+	public List<IContexte> getContexts(final Session session) throws IOException, Exception;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste d'idees.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<IIdee> getIdeas(final Session session) throws IOException;
+    public List<IIdee> getIdeas(final Session session) throws IOException, Exception;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de notes.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<ITag> getNotes(final Session session) throws IOException;
+    public List<ITag> getNotes(final Session session) throws IOException, Exception;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de projets.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<IProjet> getProjects(final Session session) throws IOException;
+    public List<IProjet> getProjects(final Session session) throws IOException, Exception;
 
     /**
      * @param session - Session de l'utilisateur.
      * @return La liste de taches.
      * @throws Exception - Erreur RMI, erreur session.
      */
-    public List<ITache> getTasks(final Session session) throws IOException;
+    public List<ITache> getTasks(final Session session) throws IOException, Exception;
 }
